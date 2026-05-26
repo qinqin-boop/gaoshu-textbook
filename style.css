@@ -1,0 +1,104 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  line-height: 1.8;
+}
+
+header {
+  text-align: center;
+  padding: 48px 16px 32px;
+  background: linear-gradient(135deg, #1f6feb 0%, #8957e5 100%);
+  color: #fff;
+}
+
+header h1 { font-size: 2rem; margin-bottom: 8px; }
+.tagline { font-size: 1rem; opacity: 0.9; margin-bottom: 16px; }
+
+header nav a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.15);
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+header nav a:hover { background: rgba(255,255,255,0.25); }
+
+main.textbook, main.textbook-toc {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+main.textbook h1 { display: none; }
+
+main.textbook h2 {
+  color: #58a6ff;
+  border-bottom: 2px solid #30363d;
+  padding-bottom: 8px;
+  margin: 32px 0 16px;
+  font-size: 1.5rem;
+}
+
+main.textbook h3 {
+  color: #d29922;
+  margin: 28px 0 12px;
+  font-size: 1.2rem;
+}
+
+main.textbook h4 {
+  color: #3fb950;
+  margin: 20px 0 10px;
+  font-size: 1.05rem;
+}
+
+main.textbook p { margin: 12px 0; color: #c9d1d9; }
+main.textbook strong { color: #58a6ff; }
+
+main.textbook blockquote {
+  border-left: 4px solid #d29922;
+  padding: 8px 16px;
+  margin: 16px 0;
+  background: #161b22;
+  font-style: italic;
+  color: #8b949e;
+  border-radius: 4px;
+}
+
+main.textbook ul, main.textbook ol { padding-left: 24px; margin: 12px 0; }
+main.textbook li { margin: 6px 0; color: #c9d1d9; }
+
+.textbook-toc h2 { color: #58a6ff; margin: 32px 0 16px; font-size: 1.4rem; }
+
+.textbook-toc .ch-list { list-style: none; padding: 0; }
+
+.textbook-toc .ch-list li {
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.textbook-toc .ch-list li a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.textbook-toc .ch-list li a:hover { text-decoration: underline; }
+
+.textbook-toc .meta { color: #8b949e; font-size: 0.85rem; margin-left: 8px; }
+
+footer {
+  text-align: center;
+  padding: 24px 16px;
+  color: #8b949e;
+  font-size: 0.85rem;
+  border-top: 1px solid #30363d;
+  margin-top: 48px;
+}
