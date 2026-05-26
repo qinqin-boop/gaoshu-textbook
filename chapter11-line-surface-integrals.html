@@ -441,6 +441,22 @@ dS = |r→_u × r→_v| du dv
 <p>
 <strong>生活类比</strong>: 河流流过一片网, 通量 = 单位时间穿过网的水量.
 </p>
+<h3>知识点 9.5: 第二类曲面积分跟第一类的转换 (对齐书 §11.5 三)</h3>
+<p>
+<strong>转换公式</strong>:
+∬_Σ P dydz + Q dzdx + R dxdy = ∬_Σ (P cosα + Q cosβ + R cosγ) dS
+其中 (cosα, cosβ, cosγ) 是曲面 Σ 上点的<strong>单位外法向量</strong> (有向曲面方向决定).
+</p>
+<p>
+<strong>应用</strong>: 当被积函数包含位置 + 法向量信息时, 转换为第一类便于参数化计算.
+</p>
+<p>
+<strong>例题 9-3</strong> (转换示例): ∬_Σ x dydz + y dzdx + z dxdy, Σ 是球面 x²+y²+z²=R² 外侧.
+外法向量: n→ = (x/R, y/R, z/R).
+(P, Q, R) = (x, y, z), 点乘 n→ = (x²+y²+z²)/R = R²/R = R.
+转第一类: ∬_Σ R dS = R · 4πR² = 4πR³.
+跟之前用高斯公式直接算得 4πR³ ✓.
+</p>
 <h3>知识点 10: 高斯公式 (本章核心 2)</h3>
 <p>
 联系<strong>闭合曲面</strong>通量跟<strong>体积内散度</strong>.
