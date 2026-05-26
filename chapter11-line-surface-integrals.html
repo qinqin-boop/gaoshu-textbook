@@ -227,6 +227,21 @@ W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
 ---
 </p>
 <h2>11.3 格林公式 (本章核心 1)</h2>
+<h3>知识点 4.5: 两类曲线积分之间的联系 (对齐书 §11.2 三)</h3>
+<p>
+<strong>关系</strong>: 第二类 ∫_L P dx + Q dy 可以通过"切向单位向量" 转换为第一类积分:
+∫_L (P, Q)·dr→ = ∫_L (P cosα + Q sinα) ds
+其中 (cosα, sinα) 是 L 上切线方向单位向量, ds 是弧长元.
+</p>
+<p>
+<strong>用法</strong>: 当 P, Q 难直接积时, 把 (P cosα + Q sinα) 当成新被积函数, 用第一类公式.
+</p>
+<p>
+<strong>例题 4-2</strong> (转换): ∫_L 2x dy - y dx, L 是单位圆周逆时针.
+参数: x=cos t, y=sin t. dx=-sin t dt, dy=cos t dt.
+= ∫_0^(2π) (2 cos t · cos t - sin t · (-sin t)) dt = ∫_0^(2π) (2cos²t + sin²t) dt
+= ∫_0^(2π) (1 + cos²t) dt = 2π + π = 3π.
+</p>
 <h3>知识点 5: 格林公式</h3>
 <p>
 <strong>联系第二类曲线积分跟二重积分</strong>.
