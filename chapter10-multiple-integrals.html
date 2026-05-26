@@ -932,6 +932,76 @@ I(0) = π/2. <strong>狄利克雷积分</strong> ✓
 <li>信号: 总能量 ∫|f|² &lt; ∞ 是 L² 空间条件</li>
 <li>神经网络: 损失函数在无穷处的衰减分析</li>
 </ul>
+<h3>知识点 13.13: 多重积分的 Fubini 定理详解</h3>
+<p>
+<strong>Fubini 定理</strong>: 若 f 在矩形 [a,b]×[c,d] 上 Riemann 可积, 则:
+∬ f dxdy = ∫_a^b [∫_c^d f(x,y) dy] dx = ∫_c^d [∫_a^b f(x,y) dx] dy
+</p>
+<p>
+可以交换积分次序.
+</p>
+<p>
+<strong>反例</strong> (无界函数, Fubini 失效):
+f(x,y) = (x-y)/(x+y)³ on (0,1]².
+∫_0^1 [∫_0^1 f dy] dx = 1/2.
+∫_0^1 [∫_0^1 f dx] dy = -1/2.
+</p>
+<p>
+两边不等! 因为 |f| 在原点附近不可积 (∬|f| dxdy = ∞).
+</p>
+<p>
+<strong>Tonelli 定理</strong> (Fubini 的非负版本):
+若 f ≥ 0 且可测, 则两种顺序积分总相等 (允许 ∞).
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>概率论: 期望的累积形式 E[X] = ∫ P(X&gt;t) dt (Layer Cake)</li>
+<li>偏微分方程: 弱解构造常用 Fubini</li>
+<li>信号: 卷积 ∫f(x-y)g(y)dy 频域分析</li>
+<li>ML: 多变量损失函数边缘化</li>
+</ul>
+<h3>知识点 13.14: 雅可比与微分形式的等价</h3>
+<p>
+回顾: 重积分换元 dxdy = |J| du dv.
+</p>
+<p>
+<strong>微分形式视角</strong>:
+dx ∧ dy = (∂x/∂u du + ∂x/∂v dv) ∧ (∂y/∂u du + ∂y/∂v dv)
+= (∂x/∂u · ∂y/∂v) du∧dv + (∂x/∂v · ∂y/∂u) dv∧du
+= (∂x/∂u · ∂y/∂v - ∂x/∂v · ∂y/∂u) du∧dv
+= det J · du∧dv
+</p>
+<p>
+外积反对称 dv∧du = -du∧dv 自动产生雅可比行列式. 这是微分形式优雅之处.
+</p>
+<h3>知识点 13.15: 立方体的"双重广义体积"</h3>
+<p>
+<strong>n 维球体体积</strong>:
+V_n(R) = π^(n/2) R^n / Γ(n/2 + 1)
+</p>
+<p>
+例:
+</p>
+<ul>
+<li>n=1: 2R</li>
+<li>n=2: πR²</li>
+<li>n=3: (4/3)πR³</li>
+<li>n=4: (1/2)π² R⁴</li>
+<li>n=10: π^5 R^10 / 120</li>
+</ul>
+<p>
+<strong>惊人现象</strong>: V_n(1) 在 n=5 达到峰值约 5.26, 然后<strong>下降</strong>, n→∞ 时 → 0. 高维单位球"几乎是空的".
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>"维数诅咒" (Curse of Dimensionality): 高维数据点几乎全在边界, ML 算法面对挑战</li>
+<li>蒙特卡洛积分: 高维球内采样效率随 n 指数下降</li>
+<li>KNN 算法: 高维下"近邻"概念失效</li>
+</ul>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
