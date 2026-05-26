@@ -124,10 +124,14 @@ $$\iint_D f(x,y)\,d\sigma = \lim_{\lambda \to 0} \sum_{i=1}^n f(\xi_i, \eta_i)\,
 </p>
 <h2 id="10-2">10.2 二重积分的计算</h2>
 <h3 id="3-x">知识点 3: 直角坐标 — X 型区域</h3>
+<div class="box-thm">
+<p>X 型区域积分</p>
 <p>
-D 由 a ≤ x ≤ b, φ₁(x) ≤ y ≤ φ₂(x) 定义.
-∬_D f(x,y)  dσ = ∫_a^b [∫_(φ₁(x))^(φ₂(x)) f(x,y)  dy] dx
+设 $D = \{(x,y) : a \le x \le b, \varphi_1(x) \le y \le \varphi_2(x)\}$ (上下边界是 x 的函数), 则:
+$$\iint_D f(x,y)\,d\sigma = \int_a^b \left[\int_{\varphi_1(x)}^{\varphi_2(x)} f(x,y)\,dy\right] dx$$
+<strong>做法</strong>: 先内层 (对 $y$ 积, 把 $x$ 当常数), 再外层 (对 $x$ 积).
 </p>
+</div>
 <p>
 <strong>做法</strong>: <strong>先内层后外层</strong>. 内层把 x 当常数对 y 积; 外层再对 x 积.
 </p>
@@ -154,13 +158,19 @@ D 由 a ≤ x ≤ b, φ₁(x) ≤ y ≤ φ₂(x) 定义.
 </p>
 </div>
 <h3 id="4-y">知识点 4: 直角坐标 — Y 型区域</h3>
+<div class="box-thm">
+<p>Y 型区域积分</p>
 <p>
-D 由 c ≤ y ≤ d, ψ₁(y) ≤ x ≤ ψ₂(y) 定义.
-∬_D f  dσ = ∫_c^d [∫_(ψ₁(y))^(ψ₂(y)) f  dx] dy
+设 $D = \{(x,y) : c \le y \le d, \psi_1(y) \le x \le \psi_2(y)\}$ (左右边界是 y 的函数), 则:
+$$\iint_D f(x,y)\,d\sigma = \int_c^d \left[\int_{\psi_1(y)}^{\psi_2(y)} f(x,y)\,dx\right] dy$$
 </p>
+</div>
+<div class="box-intuition">
+<p>X 型 vs Y 型口诀</p>
 <p>
-<strong>口诀</strong>: 谁的范围是常数, 谁是外层.
+<strong>谁的范围是常数, 谁就是外层</strong>. 外层积成 1 个数, 内层先把外层变量当常数算成函数, 再外层数值积分.
 </p>
+</div>
 <h3 id="4-5">知识点 4.5: 交换积分次序 (经典套路)</h3>
 <p>
 有时一个次序难算, 换次序就秒. 步骤:
