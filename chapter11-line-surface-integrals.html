@@ -97,23 +97,32 @@ ds = 曲线上小弧长元.
 ∫_L f  ds = ∫_α^$\beta$ f(x(t), y(t)) √(x'(t)² + y'(t)²)  dt
 √(x'² + y'²) dt = ds, <strong>弧微元公式</strong>.
 </p>
+<div class="box-example">
+<p>例题 1</p>
 <p>
-<strong>例题 1</strong>: 求圆周 x² + y² = 1 上 ∫ x² ds.
+求圆周 x² + y² = 1 上 ∫ x² ds.
 参数: x = cos t, y = sin t, t ∈ [0, 2π].
 x'² + y'² = sin² t + cos² t = 1, ds = dt.
 ∫ = ∫₀^(2π) cos² t  dt = $\pi$
 </p>
+</div>
+<div class="box-example">
+<p>例题 1-2</p>
 <p>
-<strong>例题 1-2</strong>: 一根直线段 L 从 (0,0) 到 (3,4), 线密度 ρ(x,y) = x+y, 求质量.
+一根直线段 L 从 (0,0) 到 (3,4), 线密度 ρ(x,y) = x+y, 求质量.
 参数 x = 3t, y = 4t, t ∈ [0,1], ds = √(9+16) dt = 5dt.
 M = ∫_L (x+y) ds = ∫_0¹ (3t+4t) · 5 dt = 35 · 1/2 = 17.5.
 </p>
+</div>
+<div class="box-example">
+<p>例题 1-3</p>
 <p>
-<strong>例题 1-3</strong>: 求半圆 y = √(1-x²) (y$\ge$0, x ∈ [-1,1]) 的弧长.
+求半圆 y = √(1-x²) (y$\ge$0, x ∈ [-1,1]) 的弧长.
 弧长 = ∫_L 1 ds.
 参数: x = cos t, y = sin t, t ∈ [0, $\pi$], ds = dt.
 弧长 = ∫_0^$\pi$ dt = $\pi$. ✓ (半径 1 半圆的弧长 = πR = $\pi$)
 </p>
+</div>
 <h3 id="1-5-11-1">知识点 1.5: 第一类曲线积分的物理应用 (对齐书 §11.1 一)</h3>
 <p>
 第一类曲线积分能算很多物理量, 都是"密度乘弧长" 的累计:
@@ -129,14 +138,17 @@ M = ∫_L (x+y) ds = ∫_0¹ (3t+4t) · 5 dt = 35 · 1/2 = 17.5.
 <ol>
 <li><strong>转动惯量</strong> (绕 z 轴): I_z = ∫_L (x²+y²) $\mu$ ds</li>
 </ol>
+<div class="box-example">
+<p>例题 1-2</p>
 <p>
-<strong>例题 1-2</strong> (质心): 一根均匀钢丝沿曲线 y = x² (0 ≤ x ≤ 1), 求质心 x̄.
+(质心): 一根均匀钢丝沿曲线 y = x² (0 ≤ x ≤ 1), 求质心 x̄.
 参数: x = t, y = t², ds = √(1+4t²) dt.
 M = ∫_0¹ √(1+4t²) dt (设密度 1, 弧长本身).
 x̄·M = ∫_0¹ t·√(1+4t²) dt = (1/12)[(1+4t²)^(3/2)]_0¹ = (5$\sqrt{5}$ - 1)/12.
 M = (1/2)[t√(1+4t²) + (1/2) sinh^(-1)(2t)]_0¹ = √5/2 + ln(2+√5)/4.
 (具体值代入算)
 </p>
+</div>
 <h3 id="2-5">知识点 2.5: 第一类曲线积分性质</h3>
 <ul>
 <li><strong>方向无关</strong>: 沿 L 正向走或反向走, 积分值一样 (因为 ds &gt; 0)</li>
@@ -163,12 +175,15 @@ ds = √(1 + y'(x)²) dx
 ds = √(r² + r'²) dθ
 ∫_L f ds = ∫_α^$\beta$ f(r $\cos\theta$, r $\sin\theta$) · √(r²+r'²) dθ
 </p>
+<div class="box-example">
+<p>例题 1-3</p>
 <p>
-<strong>例题 1-3</strong> (一般参数): 螺旋线 x = cos t, y = sin t, z = t (t ∈ [0, 2π]) 上 ∫(x²+y²+z²) ds.
+(一般参数): 螺旋线 x = cos t, y = sin t, z = t (t ∈ [0, 2π]) 上 ∫(x²+y²+z²) ds.
 ds = √(sin²+cos²+1) dt = √2 dt.
 x²+y²+z² = 1 + t².
 ∫ = ∫_0^(2π) (1+t²) · √2 dt = √2 · [t + t³/3]_0^(2π) = √2 · (2π + 8π³/3).
 </p>
+</div>
 <p>
 ---
 </p>
@@ -200,32 +215,43 @@ W = ∫_L P  dx + Q  dy
 <p>
 <strong>物理意义</strong>: 力沿正方向做正功, 沿反方向做负功 (反向走"克服了"力).
 </p>
+<div class="box-example">
+<p>例题 3-3</p>
 <p>
-<strong>例题 3-3</strong> (验证): L 从 (0,0) 到 (1,0), $\vec{F}$ = (1, 0) (沿 x 轴恒力).
+(验证): L 从 (0,0) 到 (1,0), $\vec{F}$ = (1, 0) (沿 x 轴恒力).
 正方向: W = ∫_L 1·dx + 0·dy = ∫_0¹ 1 dx = 1.
 反方向 (从 (1,0) 回 (0,0)): W = ∫_(L^-) = ∫_1⁰ 1 dx = -1. ✓
 </p>
 <p>
 第一类对比: ∫_L f ds 不分方向 (因为 ds &gt; 0 永远正).
 </p>
+</div>
 <h3 id="4">知识点 4: 计算</h3>
 <p>
 参数 x = x(t), y = y(t):
 ∫_L P  dx + Q  dy = ∫_α^$\beta$ [P(x(t), y(t)) x'(t) + Q(x(t), y(t)) y'(t)]  dt
 </p>
+<div class="box-example">
+<p>例题 2</p>
 <p>
-<strong>例题 2</strong>: ∫_L y  dx + x  dy, L 是从 (0,0) 到 (1,1) 的直线.
+∫_L y  dx + x  dy, L 是从 (0,0) 到 (1,1) 的直线.
 参数: x = t, y = t, t ∈ [0, 1], x' = y' = 1.
 = ∫_0¹ [t · 1 + t · 1] dt = ∫_0¹ 2t  dt = 1
 </p>
+</div>
+<div class="box-example">
+<p>例题 2-2</p>
 <p>
-<strong>例题 2-2</strong> (功的实际计算): 力场 $\vec{F}$ = (-y, x), 沿单位圆逆时针走一圈做的功?
+(功的实际计算): 力场 $\vec{F}$ = (-y, x), 沿单位圆逆时针走一圈做的功?
 参数 x = cos t, y = sin t, t ∈ [0, 2π], dx = -sin t dt, dy = cos t dt.
 W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
    = ∫_0^(2π) (sin² t + cos² t) dt = ∫_0^(2π) 1 dt = 2π.
 </p>
+</div>
+<div class="box-example">
+<p>例题 2-3</p>
 <p>
-<strong>例题 2-3</strong> (路径相同, 端点不同, 结果不同): ∫_L (y dx - x dy), L 从 (0,0) 到 (1,1).
+(路径相同, 端点不同, 结果不同): ∫_L (y dx - x dy), L 从 (0,0) 到 (1,1).
 </p>
 <ul>
 <li>路径 A (直线 y = x): 参数 x = t, y = t. = ∫_0¹ (t · 1 - t · 1) dt = 0.</li>
@@ -237,6 +263,7 @@ W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
   总 = -1.
 <strong>结论</strong>: A 跟 B 端点相同但路径不同 → 积分<strong>不同</strong> (说明这不是保守场, 不满足路径无关条件).
 </p>
+</div>
 <p>
 ---
 </p>
@@ -250,12 +277,15 @@ W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
 <p>
 <strong>用法</strong>: 当 P, Q 难直接积时, 把 (P cosα + Q sinα) 当成新被积函数, 用第一类公式.
 </p>
+<div class="box-example">
+<p>例题 4-2</p>
 <p>
-<strong>例题 4-2</strong> (转换): ∫_L 2x dy - y dx, L 是单位圆周逆时针.
+(转换): ∫_L 2x dy - y dx, L 是单位圆周逆时针.
 参数: x=cos t, y=sin t. dx=-sin t dt, dy=cos t dt.
 = ∫_0^(2π) (2 cos t · cos t - sin t · (-sin t)) dt = ∫_0^(2π) (2cos²t + sin²t) dt
 = ∫_0^(2π) (1 + cos²t) dt = 2π + $\pi$ = 3π.
 </p>
+</div>
 <h3 id="5">知识点 5: 格林公式</h3>
 <p>
 <strong>联系第二类曲线积分跟二重积分</strong>.
@@ -267,27 +297,36 @@ D 是平面闭区域, ∂ D 是它的边界 (取正方向: 逆时针):
 <p>
 <strong>思想</strong>: 沿闭曲线积分 = 内部"旋度"的累加.
 </p>
+<div class="box-example">
+<p>例题 3</p>
 <p>
-<strong>例题 3</strong>: 用格林公式求 ∮_C (x+y) dx + (x-y) dy, C 是单位圆周逆时针.
+用格林公式求 ∮_C (x+y) dx + (x-y) dy, C 是单位圆周逆时针.
 P = x+y, Q = x-y.
 Q_x = 1, P_y = 1, 被积函数 Q_x - P_y = 0.
 所以 ∮ = 0.
 </p>
+</div>
+<div class="box-example">
+<p>例题 3-2</p>
 <p>
-<strong>例题 3-2</strong> (用格林公式算面积): 用 ∮ x dy 算单位圆面积.
+(用格林公式算面积): 用 ∮ x dy 算单位圆面积.
 S = ∮_C x dy. 参数 x = cos t, y = sin t, dy = cos t dt.
 = ∫_0^(2π) cos t · cos t dt = ∫_0^(2π) cos² t dt = $\pi$. ✓
 </p>
+</div>
 <p>
 <strong>面积公式</strong>: 任何由闭曲线 C 围的平面区域 D 的面积:
 S = (1/2) ∮_C (x dy - y dx) = ∮_C x dy = -∮_C y dx
 (三个公式都对, 选 C 上容易算的)
 </p>
+<div class="box-example">
+<p>例题 3-3</p>
 <p>
-<strong>例题 3-3</strong>: 用格林公式算 ∮_C 2xy dx + x² dy, C 是顺时针单位圆周.
+用格林公式算 ∮_C 2xy dx + x² dy, C 是顺时针单位圆周.
 逆时针时: P = 2xy, Q = x², Q_x = 2x, P_y = 2x, Q_x - P_y = 0 → ∮ = 0.
 顺时针 = -(逆时针) = 0.
 </p>
+</div>
 <h3 id="5-5-11-3">知识点 5.5: 格林公式的推导 (对齐书 §11.3 一)</h3>
 <p>
 <strong>直觉</strong>: 把闭区域 D 切成大量小矩形 ΔS, 每个小矩形里 (Q_x - P_y) ΔS 等于沿这个小矩形边界的 P dx + Q dy. 相邻小矩形共边方向相反<strong>相消</strong>, 加起来只剩<strong>最外圈</strong> = ∮_(∂D).
@@ -301,14 +340,17 @@ S(D) = (1/2) ∮_(∂D) (x dy - y dx) = ∮ x dy = -∮ y dx
 <p>
 (三个公式都对, 选 ∂D 上容易算的)
 </p>
+<div class="box-example">
+<p>例题 3-4</p>
 <p>
-<strong>例题 3-4</strong>: 用格林公式算椭圆 x²/a² + y²/b² = 1 的面积.
+用格林公式算椭圆 x²/a² + y²/b² = 1 的面积.
 参数 x = a cos t, y = b sin t.
 dx = -a sin t dt, dy = b cos t dt.
 S = (1/2)∮(x dy - y dx) = (1/2)∫_0^(2π) [a cos t · b cos t - b sin t · (-a sin t)] dt
    = (1/2) · ab · ∫_0^(2π) (cos²t + sin²t) dt
    = (1/2) · ab · 2π = πab ✓
 </p>
+</div>
 <p>
 <strong>应用价值</strong>: 不规则区域面积难算, 沿边界一圈积分往往容易.
 </p>
@@ -353,13 +395,16 @@ S = (1/2)∮(x dy - y dx) = (1/2)∫_0^(2π) [a cos t · b cos t - b sin t · (-
 <li>存在 U 使 $\vec{F}$ = -∇U</li>
 <li>∇ × $\vec{F}$ = 0 (旋度为 0)</li>
 </ol>
+<div class="box-example">
+<p>例题 6-4</p>
 <p>
-<strong>例题 6-4</strong>: $\vec{F}$ = (y, x, 0). 检查是否保守.
+$\vec{F}$ = (y, x, 0). 检查是否保守.
 ∇×$\vec{F}$ = (0, 0, ∂x/∂x - ∂y/∂y) = (0, 0, 0). 保守 ✓
 势能: ∂U/∂x = -y → U = -xy + g(y). ∂U/∂y = -x = -x + g'(y) → g'(y)=0.
 U = -xy.
 $\vec{F}$ = -∇U = (y, x, 0) ✓.
 </p>
+</div>
 <h2 id="11-4">11.4 第一类曲面积分 (对面积)</h2>
 <h3 id="6-5-11-3">知识点 6.5: 全微分原函数 (对齐书 §11.3 三)</h3>
 <p>
@@ -376,13 +421,16 @@ $\vec{F}$ = -∇U = (y, x, 0) ✓.
 <li>对 ∂u/∂x = P 关于 x 积分: u = ∫P dx + g(y)</li>
 <li>求 ∂u/∂y, 跟 Q 比较, 解出 g(y)</li>
 </ol>
+<div class="box-example">
+<p>例题 6-3</p>
 <p>
-<strong>例题 6-3</strong>: 验证 (2x+y) dx + (x+2y) dy 是全微分, 求原函数.
+验证 (2x+y) dx + (x+2y) dy 是全微分, 求原函数.
 P = 2x+y, Q = x+2y. ∂Q/∂x = 1 = ∂P/∂y ✓.
 u = ∫(2x+y) dx = x² + xy + g(y).
 ∂u/∂y = x + g'(y) = Q = x + 2y → g'(y) = 2y → g(y) = y².
 <strong>u = x² + xy + y²</strong>. (验证: du = (2x+y)dx + (x+2y)dy ✓)
 </p>
+</div>
 <p>
 <strong>物理意义</strong>: 保守力场存在势能函数. 重力/弹性力/库仑电力都是保守的, 总有"势能".
 </p>
@@ -408,22 +456,27 @@ dS = 曲面上小面积元.
 <p>
 对 P dydz, Q dzdx 类似, 投到 yz, zx 平面.
 </p>
+<div class="box-example">
+<p>例题 5-3</p>
 <p>
-<strong>例题 5-3</strong> (经典): ∬_Σ z dxdy, Σ 是单位球面外侧.
+(经典): ∬_Σ z dxdy, Σ 是单位球面外侧.
 上半: z=√(1-x²-y²), 投 D_xy: x²+y²$\le$1.
 ∬_(上侧) = ∬_D √(1-x²-y²) dxdy. 极坐标: = ∫_0^(2π)∫_0¹ √(1-r²)·r drdθ = 2π·1/3 = 2π/3.
 下半: z=-√(1-x²-y²), 投影同, 下侧符号取负.
 ∬_(下侧) = -∬_D (-√(1-x²-y²)) dxdy = ∫_D √... dxdy = 2π/3.
 合计: 4π/3.
 </p>
+</div>
 <h3 id="8">知识点 8: 计算</h3>
 <p>
 曲面 z = z(x,y), 投影到 xy 平面得 D_(xy):
 dS = √(1 + z_x² + z_y²)  dxdy
 ∬_Σ f  dS = ∬_(D_(xy)) f(x,y,z(x,y)) √(1+z_x²+z_y²)  dxdy
 </p>
+<div class="box-example">
+<p>例题 4</p>
 <p>
-<strong>例题 4</strong>: ∬_Σ z  dS, Σ 是 z = 1 - x² - y² 在 z ≥ 0 部分.
+∬_Σ z  dS, Σ 是 z = 1 - x² - y² 在 z ≥ 0 部分.
 z_x = -2x, z_y = -2y, √(1+4x²+4y²).
 投影 D_(xy): x²+y² ≤ 1.
 ∬ (1-x²-y²)√(1+4(x²+y²))  dxdy
@@ -431,6 +484,7 @@ z_x = -2x, z_y = -2y, √(1+4x²+4y²).
 = ∫₀^(2π)∫_0¹ (1-r²)√(1+4r²) · r  drdθ
 (具体值代入算)
 </p>
+</div>
 <p>
 ---
 </p>
@@ -451,14 +505,17 @@ cos $\alpha$ = 1 / √(1 + f_x² + f_y²)
 加和取极限:
 <strong>A = ∬_D √(1 + f_x² + f_y²) dxdy</strong>
 </p>
+<div class="box-example">
+<p>例题 4-2</p>
 <p>
-<strong>例题 4-2</strong> (半球面积): 半球面 z = √(R² - x² - y²) (z ≥ 0) 的面积.
+(半球面积): 半球面 z = √(R² - x² - y²) (z ≥ 0) 的面积.
 f_x = -x/z, f_y = -y/z.
 1 + f_x² + f_y² = 1 + (x²+y²)/z² = R²/(R²-x²-y²).
 A = ∬_(x²+y²$\le$R²) R/√(R²-x²-y²) dxdy.
 极坐标: A = ∫_0^(2π) ∫_0^R R·r/√(R²-r²) drdθ = 2πR · [-√(R²-r²)]_0^R = 2πR · R = 2πR². ✓
 (整个球面 4πR², 半个 2πR² ✓)
 </p>
+</div>
 <p>
 ---
 </p>
@@ -477,11 +534,14 @@ dS = |$\vec{r}$_u × $\vec{r}$_v| du dv
 <p>
 <strong>球面参数化 (球坐标)</strong>: r = R sin $\varphi$ $\cos\theta$ → 球面 x²+y²+z²=R² 上 dS = R² sinφ dφ dθ.
 </p>
+<div class="box-example">
+<p>例题 4-3</p>
 <p>
-<strong>例题 4-3</strong> (球面积分): ∬_Σ (x²+y²+z²) dS, Σ 是 x²+y²+z²=R² 球面.
+(球面积分): ∬_Σ (x²+y²+z²) dS, Σ 是 x²+y²+z²=R² 球面.
 在球面上 x²+y²+z² = R² 为常数.
 = R² · S(球) = R² · 4πR² = 4πR⁴.
 </p>
+</div>
 <h3 id="9">知识点 9: 定义 (流量/通量)</h3>
 <p>
 流体的流速场 $\vec{v}$ = (P, Q, R), 流过有向曲面 Σ 的通量:
@@ -499,13 +559,16 @@ dS = |$\vec{r}$_u × $\vec{r}$_v| du dv
 <p>
 <strong>应用</strong>: 当被积函数包含位置 + 法向量信息时, 转换为第一类便于参数化计算.
 </p>
+<div class="box-example">
+<p>例题 9-3</p>
 <p>
-<strong>例题 9-3</strong> (转换示例): ∬_Σ x dydz + y dzdx + z dxdy, Σ 是球面 x²+y²+z²=R² 外侧.
+(转换示例): ∬_Σ x dydz + y dzdx + z dxdy, Σ 是球面 x²+y²+z²=R² 外侧.
 外法向量: $\vec{n}$ = (x/R, y/R, z/R).
 (P, Q, R) = (x, y, z), 点乘 $\vec{n}$ = (x²+y²+z²)/R = R²/R = R.
 转第一类: ∬_Σ R dS = R · 4πR² = 4πR³.
 跟之前用高斯公式直接算得 4πR³ ✓.
 </p>
+</div>
 <h3 id="10-2">知识点 10: 高斯公式 (本章核心 2)</h3>
 <p>
 联系<strong>闭合曲面</strong>通量跟<strong>体积内散度</strong>.
@@ -517,25 +580,34 @@ V 是空间闭区域, ∂ V 是它的边界曲面 (外侧):
 <p>
 <strong>通俗</strong>: 闭曲面流出去多少 = 内部"产出"多少 (散度).
 </p>
+<div class="box-example">
+<p>例题 5</p>
 <p>
-<strong>例题 5</strong>: ∯_Σ x  dydz + y  dzdx + z  dxdy, Σ 是单位球外侧.
+∯_Σ x  dydz + y  dzdx + z  dxdy, Σ 是单位球外侧.
 P_x + Q_y + R_z = 1 + 1 + 1 = 3.
 = ∭_V 3  dV = 3 · (4)/(3)$\pi$ = 4π
 经典!
 </p>
+</div>
+<div class="box-example">
+<p>例题 5-2</p>
 <p>
-<strong>例题 5-2</strong> (求体积的高斯公式技巧): 用 ∯ z dxdy 算单位球体积.
+(求体积的高斯公式技巧): 用 ∯ z dxdy 算单位球体积.
 P = 0, Q = 0, R = z. P_x + Q_y + R_z = 1.
 ∯ z dxdy = ∭_V 1 dV = V (球体积).
 所以 V = ∯ z dxdy. 等价地, V = (1/3) ∯ (x dydz + y dzdx + z dxdy).
 (代入单位球: V = (1/3) · 4π = 4π/3 ✓)
 </p>
+</div>
+<div class="box-example">
+<p>例题 5-3</p>
 <p>
-<strong>例题 5-3</strong>: 求向量场 $\vec{F}$ = (x², y², z²) 通过单位立方体表面 (外侧) 的通量.
+求向量场 $\vec{F}$ = (x², y², z²) 通过单位立方体表面 (外侧) 的通量.
 div F = 2x + 2y + 2z.
 ∯ F· dS = ∭_V (2x+2y+2z) dV
 = 2 ∫_0¹$\int$_0¹$\int$_0¹ (x+y+z) dx dy dz = 2 · 3 · (1/2) = 3. (对称性: ∭ x dV = ∭ y dV = ∭ z dV = 1/2)
 </p>
+</div>
 <p>
 ---
 </p>
@@ -552,8 +624,10 @@ div F = 2x + 2y + 2z.
 <li>用高斯: ∯_(Σ$\cup$Σ') = ∭_V div F dV</li>
 <li>反推: ∬_Σ = ∭ - ∬_(Σ')</li>
 </ul>
+<div class="box-example">
+<p>例题 5-4</p>
 <p>
-<strong>例题 5-4</strong>: ∬_Σ x dydz + y dzdx + z dxdy, Σ 是 z = 1-x²-y² (z ≥ 0) 上侧.
+∬_Σ x dydz + y dzdx + z dxdy, Σ 是 z = 1-x²-y² (z ≥ 0) 上侧.
 不是闭合. 补 Σ' = {z=0, x²+y²$\le$1} 下侧.
 Σ ∪ Σ' 包围立体 V (上方抛物面下方圆盘).
 div(P,Q,R) = 1+1+1 = 3.
@@ -561,6 +635,7 @@ div(P,Q,R) = 1+1+1 = 3.
 Σ' 部分: 在 z=0 平面, dz=0, x, y 部分也不贡献. ∬_(Σ') = 0.
 所以 ∬_Σ = 3π/2.
 </p>
+</div>
 <h3 id="11">知识点 11: 斯托克斯公式</h3>
 <p>
 联系<strong>有向曲面</strong>的旋度 跟 <strong>边界曲线</strong>的环流量.
@@ -594,8 +669,10 @@ div(P,Q,R) = 1+1+1 = 3.
 <p>
 这就是发电机原理 — 转动的磁铁让线圈周围 $\vec{B}$ 变, 引起 $\vec{E}$ 环量 (电压).
 </p>
+<div class="box-example">
+<p>例题 11</p>
 <p>
-<strong>例题 11</strong>: $\vec{F}$ = (-y, x, 0) 沿单位圆周 x²+y²=1 (z=0) 一圈的环量.
+$\vec{F}$ = (-y, x, 0) 沿单位圆周 x²+y²=1 (z=0) 一圈的环量.
 直接算: ∮ -y dx + x dy. 参数 x=cos t, y=sin t.
 = ∫_0^(2π) (sin²t + cos²t) dt = 2π.
 </p>
@@ -603,6 +680,7 @@ div(P,Q,R) = 1+1+1 = 3.
 用斯托克斯验证: ∇×$\vec{F}$ = (∂(0)/∂y - ∂x/∂z, ∂(-y)/∂z - ∂(0)/∂x, ∂x/∂x - ∂(-y)/∂y) = (0, 0, 2).
 ∬_Σ 2 dS = 2 · $\pi$ (圆面积) = 2π ✓
 </p>
+</div>
 <h3 id="12">知识点 12: 三大公式总结</h3>
 <p>
 | 公式 | 联系 |
@@ -920,10 +998,13 @@ rot $\vec{F}$ = ∇ × $\vec{F}$ = | $\vec{i}$ $\vec{j}$ $\vec{k}$  ∂/∂x ∂
 <p>
 这是<strong>波动方程</strong>, 波速 c = 1/√(μ₀ε₀) ≈ 3×10⁸ m/s. <strong>光就是电磁波</strong> — 麦克斯韦 1865 推出, 电磁学与光学大统一.
 </p>
+<div class="box-example">
+<p>例题 12-4</p>
 <p>
-<strong>例题 12-4</strong>: $\vec{E}$ = E₀ sin(kz - ωt) x̂→ (沿 z 传播, x 偏振).
+$\vec{E}$ = E₀ sin(kz - ωt) x̂→ (沿 z 传播, x 偏振).
 代入波方程: -k²E + (ω²/c²)E = 0 ⇒ ω = ck (色散关系). LED/激光/无线电的基本构型.
 </p>
+</div>
 <p>
 ---
 </p>
@@ -942,8 +1023,10 @@ $\vec{F}$ = -∇$\varphi$ + ∇×$\vec{A}$
 <p>
 <strong>物理含义</strong>: 任何流场 = 纯散场 + 纯旋场.
 </p>
+<div class="box-example">
+<p>例题 12-6</p>
 <p>
-<strong>例题 12-6</strong> (电磁场): 麦克斯韦方程中
+(电磁场): 麦克斯韦方程中
 </p>
 <ul>
 <li>电场 $\vec{E}$ = -∇$\varphi$ - ∂$\vec{A}$/∂t (静态部分 + 时变部分)</li>
@@ -952,6 +1035,7 @@ $\vec{F}$ = -∇$\varphi$ + ∇×$\vec{A}$
 <p>
 $\varphi$ 和 $\vec{A}$ 一起叫"四维势" ($\varphi$, $\vec{A}$) — 相对论中是 4-向量.
 </p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
@@ -1022,11 +1106,14 @@ V = 2π²R r²
 V = A · (2π·重心到轴距离)
 S = L · (2π·重心到轴距离), L 是图形周长.
 </p>
+<div class="box-example">
+<p>例题 12-8</p>
 <p>
-<strong>例题 12-8</strong>: 矩形 [0,1]×[0,1] 绕 x = 2 旋转的体积.
+矩形 [0,1]×[0,1] 绕 x = 2 旋转的体积.
 重心 (1/2, 1/2). 到轴距离 = 3/2. A = 1.
 V = 1 · 2π · 3/2 = 3π.
 </p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
@@ -1050,10 +1137,13 @@ V = 1 · 2π · 3/2 = 3π.
 <strong>点电荷 Gauss 定理</strong>: 任意闭曲面包围单位点电荷, ∮∮ $\vec{E}$·dS→ = 1/ε₀.
 本质: 4π·k_e (球面立体角积分).
 </p>
+<div class="box-example">
+<p>例题 12-9</p>
 <p>
-<strong>例题 12-9</strong>: 半球面对中心的立体角.
+半球面对中心的立体角.
 半球面积 2πr². $\Omega$ = 2πr²/r² = 2π sr.
 </p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
@@ -1117,10 +1207,13 @@ V = 1 · 2π · 3/2 = 3π.
 <strong>热传导方程</strong>: ∂T/∂t = $\alpha$ ΔT.
 解释: 温度变化率 ∝ 局部 Laplacian. 哪里"低于周围平均"哪里就被加热.
 </p>
+<div class="box-example">
+<p>例题 12-11</p>
 <p>
-<strong>例题 12-11</strong>: f = x² + y² + z².
+f = x² + y² + z².
 Δf = 2 + 2 + 2 = 6 &gt; 0. 该函数在每点 (除原点) 都是"凹" — 等于 r², 越远越高.
 </p>
+</div>
 <p>
 <strong>统一图谱</strong>:
 | 物理方程 | 形式 |
@@ -1150,9 +1243,12 @@ $\vec{S}$ = (1/μ₀) $\vec{E}$ × $\vec{B}$
 <p>
 意思: 局部能量增长率 + 能量流出散度 = -电场对电流做的功.
 </p>
+<div class="box-example">
+<p>例题 12-12</p>
 <p>
-<strong>例题 12-12</strong>: 电磁波 (前面推导过) 的 Poynting 向量沿传播方向, $|\vec{S}|$ = c·u. 光携带能量沿光线传播.
+电磁波 (前面推导过) 的 Poynting 向量沿传播方向, $|\vec{S}|$ = c·u. 光携带能量沿光线传播.
 </p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
@@ -1173,10 +1269,13 @@ $\vec{S}$ = (1/μ₀) $\vec{E}$ × $\vec{B}$
 <li>在每片上做欧氏积分</li>
 <li>用"单位分解"粘起来</li>
 </ul>
+<div class="box-example">
+<p>例题 12-13</p>
 <p>
-<strong>例题 12-13</strong> (球面积分): ∫_S² 1 dA = 4πR².
+(球面积分): ∫_S² 1 dA = 4πR².
 取参数化 (球坐标 $\varphi$, $\theta$), dA = R² sin $\varphi$ dφ dθ, 积出来 4πR² ✓.
 </p>
+</div>
 <p>
 <strong>关键概念</strong>:
 </p>

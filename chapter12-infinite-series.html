@@ -89,23 +89,35 @@
 若 lim_($\vec{n}$∞) S_n = S (有限数), 级数<strong>收敛</strong>, 和 = S.
 否则<strong>发散</strong>.
 </p>
+<div class="box-example">
+<p>例题 1</p>
 <p>
-<strong>例题 1</strong>: 等比级数 Σ_(n=0)^∞ q^n (公比 |q| &lt; 1).
+等比级数 Σ_(n=0)^∞ q^n (公比 |q| &lt; 1).
 S_n = (1 - q^(n+1))/(1 - q) → (1)/(1-q).
 <strong>收敛和</strong> = 1/(1-q).
 </p>
+</div>
+<div class="box-example">
+<p>例题 2</p>
 <p>
-<strong>例题 2</strong>: Σ 1 显然发散 (和趋无穷).
+Σ 1 显然发散 (和趋无穷).
 </p>
+</div>
+<div class="box-example">
+<p>例题 2-2</p>
 <p>
-<strong>例题 2-2</strong> (馅饼故事): 1/2 + 1/4 + 1/8 + ... = (1/2)/(1-1/2) = 1.
+(馅饼故事): 1/2 + 1/4 + 1/8 + ... = (1/2)/(1-1/2) = 1.
 <strong>故事</strong>: 想吃一整块饼, 先吃一半, 再吃剩下一半的一半 ... 累计吃了 1 块.
 </p>
+</div>
+<div class="box-example">
+<p>例题 2-3</p>
 <p>
-<strong>例题 2-3</strong> (telescoping/裂项): Σ_(n=1)^∞ 1/(n(n+1)).
+(telescoping/裂项): Σ_(n=1)^∞ 1/(n(n+1)).
 裂项: 1/(n(n+1)) = 1/n - 1/(n+1).
 S_N = (1-1/2) + (1/2-1/3) + ... + (1/N - 1/(N+1)) = 1 - 1/(N+1) → 1.
 </p>
+</div>
 <h3 id="2">知识点 2: 收敛必要条件</h3>
 <p>
 级数收敛 → lim u_n = 0.
@@ -133,16 +145,22 @@ S_N = (1-1/2) + (1/2-1/3) + ... + (1/N - 1/(N+1)) = 1 - 1/(N+1) → 1.
 <strong>正向</strong>: 知 Σ b_n 收敛 + 0$\le$a_n$\le$b_n → Σ a_n 也收敛.
 <strong>反向</strong>: 知 Σ a_n 发散 + 0$\le$a_n$\le$b_n → Σ b_n 也发散.
 </p>
+<div class="box-example">
+<p>例题 3-1-1</p>
 <p>
-<strong>例题 3-1-1</strong>: Σ 1/(2^n - 1).
+Σ 1/(2^n - 1).
 跟 Σ 1/2^n (等比, 收敛和 1) 比较: 1/(2^n-1) ≤ 2/2^n (n$\ge$1).
 2·Σ 1/2^n = 2 收敛 → Σ 1/(2^n-1) 收敛 (比较法).
 </p>
+</div>
+<div class="box-example">
+<p>例题 3-1-2</p>
 <p>
-<strong>例题 3-1-2</strong>: Σ 1/(n + √n).
+Σ 1/(n + √n).
 跟 Σ 1/(2n) 比较: 1/(n+√n) &gt; 1/(2n) (n$\ge$1).
 Σ 1/n 发散 → Σ 1/(2n) 发散 → Σ 1/(n+√n) 也发散.
 </p>
+</div>
 <h3 id="4">知识点 4: 比值判别法 (达朗贝尔)</h3>
 <p>
 ρ = lim_($\vec{n}$∞) (u_(n+1))/(u_n)
@@ -152,10 +170,13 @@ S_N = (1-1/2) + (1/2-1/3) + ... + (1/N - 1/(N+1)) = 1 - 1/(N+1) → 1.
 <li>ρ &gt; 1: 发散</li>
 <li>ρ = 1: 失效</li>
 </ul>
+<div class="box-example">
+<p>例题 3</p>
 <p>
-<strong>例题 3</strong>: Σ (n)/(2^n).
+Σ (n)/(2^n).
 (u_(n+1))/(u_n) = ((n+1)/2^(n+1))/(n/2^n) = (n+1)/(2n) → 1/2 &lt; 1 → <strong>收敛</strong>.
 </p>
+</div>
 <h3 id="5">知识点 5: 根值判别法 (柯西)</h3>
 <p>
 ρ = lim_($\vec{n}$∞) sqrt[n]{u_n}, 判别同比值法.
@@ -174,14 +195,20 @@ S_N = (1-1/2) + (1/2-1/3) + ... + (1/N - 1/(N+1)) = 1 - 1/(N+1) → 1.
 <p>
 <strong>实操</strong>: 拿到一个复杂正项级数 Σ u_n, 想想 u_n 对大 n "像什么 1/n^p", 然后查 p-级数.
 </p>
+<div class="box-example">
+<p>例题 3-3-1</p>
 <p>
-<strong>例题 3-3-1</strong>: Σ (3n+1)/(n³+2n+5).
+Σ (3n+1)/(n³+2n+5).
 大 n 时: u_n ≈ 3n/n³ = 3/n². 用 p=2 参照, lim u_n / (1/n²) = 3 &gt; 0. p=2 收敛 → 原级数收敛.
 </p>
+</div>
+<div class="box-example">
+<p>例题 3-3-2</p>
 <p>
-<strong>例题 3-3-2</strong>: Σ 1/(2n - √n).
+Σ 1/(2n - √n).
 大 n 时: u_n ≈ 1/(2n) → 用 p=1 参照, lim = 1/2 &gt; 0. p=1 (调和级数) 发散 → 原级数发散.
 </p>
+</div>
 <h3 id="6-p">知识点 6: p-级数 (重要参考)</h3>
 <p>
 Σ_(n=1)^∞ (1)/(n^p):
@@ -193,27 +220,39 @@ S_N = (1-1/2) + (1/2-1/3) + ... + (1/N - 1/(N+1)) = 1 - 1/(N+1) → 1.
 <p>
 特别 Σ 1/n (p=1) 发散, Σ 1/n² (p=2) 收敛 (实际上 = π²/6, 著名).
 </p>
+<div class="box-example">
+<p>例题 3-2</p>
 <p>
-<strong>例题 3-2</strong> (比较判别): 判断 Σ 1/(n²+1) 收敛性.
+(比较判别): 判断 Σ 1/(n²+1) 收敛性.
 1/(n²+1) &lt; 1/n², 而 Σ 1/n² 收敛 (p=2 &gt; 1). 由比较法 → <strong>收敛</strong>.
 </p>
+</div>
+<div class="box-example">
+<p>例题 3-3</p>
 <p>
-<strong>例题 3-3</strong> (比值判别): Σ n!/n^n 收敛性?
+(比值判别): Σ n!/n^n 收敛性?
 u_(n+1)/u_n = (n+1)!/(n+1)^(n+1) · n^n/n! = (n+1) · n^n / (n+1)^(n+1) = (n/(n+1))^n = 1/(1+1/n)^n → 1/e &lt; 1.
 <strong>收敛</strong>.
 </p>
+</div>
+<div class="box-example">
+<p>例题 3-4</p>
 <p>
-<strong>例题 3-4</strong> (根值判别): Σ (1/(ln n))^n 收敛性 (n$\ge$2).
+(根值判别): Σ (1/(ln n))^n 收敛性 (n$\ge$2).
 ⁿ√u_n = 1/ln n → 0 &lt; 1. <strong>收敛</strong>.
 </p>
+</div>
 <h3 id="6-5">知识点 6.5: 积分判别法</h3>
 <p>
 若 f(x) 单调递减且 f(n) = u_n, 则 Σ u_n 跟 ∫_1^∞ f(x) dx <strong>同时</strong>收敛或发散.
 </p>
+<div class="box-example">
+<p>例题 3-5</p>
 <p>
-<strong>例题 3-5</strong>: Σ 1/(n ln n) 收敛吗?
+Σ 1/(n ln n) 收敛吗?
 对应 ∫_2^∞ 1/(x ln x) dx, 令 u = ln x, du = dx/x → ∫ du/u → ln u → ∞. <strong>发散</strong>.
 </p>
+</div>
 <p>
 ---
 </p>
@@ -254,9 +293,12 @@ u_(n+1)/u_n = (n+1)!/(n+1)^(n+1) · n^n/n! = (n+1) · n^n / (n+1)^(n+1) = (n/(n+
 <ul>
 <li>若 u_n 单调递减且 u_n → 0 → 收敛</li>
 </ul>
+<div class="box-example">
+<p>例题 4</p>
 <p>
-<strong>例题 4</strong>: Σ (-1)^(n-1)/n = 1 - 1/2 + 1/3 - 1/4 + ... 满足条件 → 收敛 (实际 = ln 2).
+Σ (-1)^(n-1)/n = 1 - 1/2 + 1/3 - 1/4 + ... 满足条件 → 收敛 (实际 = ln 2).
 </p>
+</div>
 <h3 id="8-vs">知识点 8: 绝对收敛 vs 条件收敛</h3>
 <ul>
 <li>Σ |u_n| 收敛 → 称<strong>绝对收敛</strong>. 此时 Σ u_n 也收敛.</li>
@@ -276,12 +318,15 @@ u_(n+1)/u_n = (n+1)!/(n+1)^(n+1) · n^n/n! = (n+1) · n^n / (n+1)^(n+1) = (n/(n+
 <p>
 即取前 n 项作为近似, 误差不超过第 n+1 项的绝对值. <strong>简单实用</strong>.
 </p>
+<div class="box-example">
+<p>例题 4-2</p>
 <p>
-<strong>例题 4-2</strong>: Σ (-1)^(n-1)/n² 取前 5 项作近似值, 估误差.
+Σ (-1)^(n-1)/n² 取前 5 项作近似值, 估误差.
 S_5 = 1 - 1/4 + 1/9 - 1/16 + 1/25 ≈ 0.7836.
 |R_5| ≤ 1/36 ≈ 0.0278.
 精确值 S = π²/12 ≈ 0.8225. 实际误差 ≈ 0.0389, 略大于估值但同量级.
 </p>
+</div>
 <p>
 ---
 </p>
@@ -318,24 +363,33 @@ S_5 = 1 - 1/4 + 1/9 - 1/16 + 1/25 ≈ 0.7836.
 <li>|x| &gt; R: 发散</li>
 <li>x = ± R: 单独判别</li>
 </ul>
+<div class="box-example">
+<p>例题 5</p>
 <p>
-<strong>例题 5</strong>: Σ x^n / n! 的收敛半径?
+Σ x^n / n! 的收敛半径?
 a_n = 1/n!, |a_(n+1)/a_n| = 1/(n+1) → 0. R = ∞ → 对所有 x 收敛.
 </p>
+</div>
+<div class="box-example">
+<p>例题 5-2</p>
 <p>
-<strong>例题 5-2</strong>: Σ n x^n 的收敛半径?
+Σ n x^n 的收敛半径?
 a_n = n, |a_(n+1)/a_n| = (n+1)/n → 1. R = 1.
 即 |x| &lt; 1 收敛. x = ±1 时 Σ n(±1)^n 发散 (项不趋 0).
 <strong>收敛域</strong>: (-1, 1).
 </p>
+</div>
+<div class="box-example">
+<p>例题 5-3</p>
 <p>
-<strong>例题 5-3</strong>: Σ (x-1)^n / n² 的收敛半径 + 域?
+Σ (x-1)^n / n² 的收敛半径 + 域?
 中心在 x=1. a_n = 1/n², ρ = 1, R = 1.
 即 |x-1| &lt; 1 收敛, 0 &lt; x &lt; 2.
 x = 0: Σ (-1)^n/n² 绝对收敛.
 x = 2: Σ 1/n² 收敛.
 <strong>收敛域</strong>: [0, 2] (含端点).
 </p>
+</div>
 <h3 id="10-5-r-12-3">知识点 10.5: 收敛半径 R 的两种求法 (对齐书 §12.3 二)</h3>
 <p>
 <strong>比值法 (达朗贝尔)</strong>:
@@ -349,14 +403,20 @@ x = 2: Σ 1/n² 收敛.
 <strong>根值法 (柯西)</strong>:
 ρ = lim_($\vec{n}$∞) ⁿ√|a_n|, R = 1/ρ
 </p>
+<div class="box-example">
+<p>例题 5-3-1</p>
 <p>
-<strong>例题 5-3-1</strong> (比值法): Σ n²x^n.
+(比值法): Σ n²x^n.
 a_n = n², |a_(n+1)/a_n| = (n+1)²/n² → 1. R = 1. 收敛域: |x| &lt; 1.
 </p>
+</div>
+<div class="box-example">
+<p>例题 5-3-2</p>
 <p>
-<strong>例题 5-3-2</strong> (根值法): Σ (1/2^n) x^n.
+(根值法): Σ (1/2^n) x^n.
 ⁿ√|a_n| = 1/2 → R = 2. 收敛域: |x| &lt; 2.
 </p>
+</div>
 <h3 id="11">知识点 11: 几个重要幂级数展开</h3>
 <p>
 (背下来, AI 数值计算用)
@@ -403,12 +463,15 @@ d/dx (Σ a_n x^n) = Σ n a_n x^(n-1)
 <strong>4. 逐项积分</strong>:
 ∫_0^x (Σ a_n t^n) dt = Σ (a_n/(n+1)) x^(n+1)
 </p>
+<div class="box-example">
+<p>例题 5-6</p>
 <p>
-<strong>例题 5-6</strong> (推导 arctan x 展开):
+(推导 arctan x 展开):
 1/(1+x²) = Σ (-x²)^n = Σ (-1)^n x^(2n) (|x|&lt;1)
 逐项积: ∫_0^x 1/(1+t²) dt = arctan x = Σ (-1)^n x^(2n+1)/(2n+1)
 代 x=1 (极限存在): arctan 1 = $\pi$/4 = 1 - 1/3 + 1/5 - ... (莱布尼茨公式)
 </p>
+</div>
 <h3 id="12">知识点 12: 泰勒展开</h3>
 <p>
 函数 f(x) 在 x₀ 处的<strong>泰勒级数</strong>:
@@ -420,55 +483,79 @@ x₀ = 0 时叫<strong>麦克劳林级数</strong>.
 <p>
 <strong>思想</strong>: 任何"足够好"的函数都能用无穷多项多项式逼近. 取前几项即得近似公式 (上面的 sin, e^x 系列就是).
 </p>
+<div class="box-example">
+<p>例题 6</p>
 <p>
-<strong>例题 6</strong>: 求 f(x) = e^x 的麦克劳林展开.
+求 f(x) = e^x 的麦克劳林展开.
 f^((n))(x) = e^x, f^((n))(0) = 1.
 e^x = Σ_(n=0)^∞ (1)/(n!) x^n. ✓
 </p>
+</div>
+<div class="box-example">
+<p>例题 6-2</p>
 <p>
-<strong>例题 6-2</strong> (估算 e^(0.1)):
+(估算 e^(0.1)):
 取前 4 项: 1 + 0.1 + 0.005 + 0.0001667 ≈ 1.10517. (精确 1.10517091...)
 </p>
+</div>
+<div class="box-example">
+<p>例题 6-3</p>
 <p>
-<strong>例题 6-3</strong> (sin 30° 估算): $\pi$/6 ≈ 0.5236.
+(sin 30° 估算): $\pi$/6 ≈ 0.5236.
 sin($\pi$/6) ≈ 0.5236 - 0.5236³/6 ≈ 0.5236 - 0.0239 = 0.4997 ≈ 0.5. ✓
 </p>
+</div>
 <h3 id="12-5">知识点 12.5: 由已知展开导出新展开 (实用技巧)</h3>
 <p>
 <strong>思想</strong>: 从已知 e^x, sin x, cos x, 1/(1-x), ln(1+x) 展开式<strong>变换</strong> (代换/求导/积分) 出新函数的展开. 比直接套泰勒公式快得多.
 </p>
+<div class="box-example">
+<p>例题 6-4</p>
 <p>
-<strong>例题 6-4</strong>: 求 1/(1+x²) 的展开.
+求 1/(1+x²) 的展开.
 1/(1-u) = Σ u^n. 令 u = -x²:
 1/(1+x²) = 1 - x² + x⁴ - x⁶ + ...  (|x|&lt;1)
 </p>
+</div>
+<div class="box-example">
+<p>例题 6-5</p>
 <p>
-<strong>例题 6-5</strong> (莱布尼茨公式): 求 arctan x 的展开.
+(莱布尼茨公式): 求 arctan x 的展开.
 arctan x = ∫_0^x 1/(1+t²) dt = Σ (-1)^n x^(2n+1)/(2n+1) = x - x³/3 + x⁵/5 - ...
 代 x = 1 (条件收敛):
 $\pi$/4 = 1 - 1/3 + 1/5 - 1/7 + 1/9 - ...
 (这就是莱布尼茨求 $\pi$ 的著名公式)
 </p>
+</div>
+<div class="box-example">
+<p>例题 6-6</p>
 <p>
-<strong>例题 6-6</strong>: e^(x²) 的展开.
+e^(x²) 的展开.
 e^u = Σ u^n/n!. 令 u = x²:
 e^(x²) = 1 + x² + x⁴/2! + x⁶/3! + ...
 </p>
+</div>
+<div class="box-example">
+<p>例题 6-7</p>
 <p>
-<strong>例题 6-7</strong> (sin x / x 展开):
+(sin x / x 展开):
 sin x / x = (x - x³/3! + x⁵/5! - ...)/x = 1 - x²/3! + x⁴/5! - ...
 <strong>有用</strong>: 这就是为啥 lim_($\vec{x}$0) sin x/x = 1 (展开式第一项就是 1).
 </p>
+</div>
 <h3 id="12-6">知识点 12.6: 余项估计 (展开有多准?)</h3>
 <p>
 <strong>拉格朗日余项</strong>: 取展开前 n 项, 误差 R_n(x) ≤ M · |x-x₀|^(n+1) / (n+1)!
 其中 M 是 f^(n+1) 在区间上的最大值.
 </p>
+<div class="box-example">
+<p>例题 6-8</p>
 <p>
-<strong>例题 6-8</strong>: 用 sin x ≈ x - x³/6 算 sin(0.5), 误差有多大?
+用 sin x ≈ x - x³/6 算 sin(0.5), 误差有多大?
 |R_3(0.5)| ≤ max|sin''''| · 0.5⁵/5! ≤ 1 · (0.03125)/120 ≈ 0.00026.
 实际: x-x³/6 = 0.5 - 0.0208 = 0.4792, sin(0.5) = 0.4794, 误差 ≈ 0.0002 ✓.
 </p>
+</div>
 <p>
 ---
 </p>
@@ -518,8 +605,10 @@ R_n(x) = f^(n+1)(ξ)/(n+1)! · (x-x₀)^(n+1)
 <p>
 <strong>思想</strong>: 把未知函数 y(x) 写成幂级数 y = Σ a_n x^n, 代入微分方程, 比较系数解出 a_n.
 </p>
+<div class="box-example">
+<p>例题 6-9</p>
 <p>
-<strong>例题 6-9</strong>: y' = y, y(0) = 1. 用幂级数法解.
+y' = y, y(0) = 1. 用幂级数法解.
 设 y = Σ a_n x^n, 则 y' = Σ n·a_n x^(n-1).
 代入: Σ n·a_n x^(n-1) = Σ a_n x^n → (n+1) a_(n+1) = a_n.
 递推: a_(n+1) = a_n/(n+1), a₀ = 1.
@@ -528,6 +617,7 @@ R_n(x) = f^(n+1)(ξ)/(n+1)! · (x-x₀)^(n+1)
 <p>
 幂级数法在工程/物理特殊微分方程 (贝塞尔 / 勒让德) 必备.
 </p>
+</div>
 <h3 id="12-9-12-5">知识点 12.9: 欧拉公式 (对齐书 §12.5 三)</h3>
 <p>
 <strong>著名公式</strong>: e^(ix) = cos x + i sin x
@@ -774,13 +864,16 @@ c_n = (1/(2L)) ∫_{-L}^L f(x) e^(-i·nπx/L) dx
 <li>通信: 计算信号强度</li>
 <li>量子力学: 波函数模平方积分 = 概率守恒</li>
 </ul>
+<div class="box-example">
+<p>例题 6-10</p>
 <p>
-<strong>例题 6-10</strong>: 周期 2π 矩形波 f(x) = 1 (0&lt;x&lt;$\pi$), -1 (-$\pi$&lt;x&lt;0). 求 ∫|f|² dx 跟级数对应.
+周期 2π 矩形波 f(x) = 1 (0&lt;x&lt;$\pi$), -1 (-$\pi$&lt;x&lt;0). 求 ∫|f|² dx 跟级数对应.
 ∫_{-$\pi$}^$\pi$ |f|² dx = 2π.
 f 的傅里叶级数: f(x) = (4/$\pi$) Σ sin((2k-1)x)/(2k-1).
 Σ b_(2k-1)² = (16/π²) Σ 1/(2k-1)² = (16/π²) · (π²/8) = 2.
 $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 </p>
+</div>
 <p>
 ---
 </p>
@@ -870,8 +963,10 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 <li>部分和 |B_N| = |∑_(n=1)^N bₙ| 有界 (不需 ∑bₙ 收敛)</li>
 <li>{aₙ} 单调趋 0</li>
 </ol>
+<div class="box-example">
+<p>例题 8-3</p>
 <p>
-<strong>例题 8-3</strong> (用 Dirichlet): ∑ sin(nθ)/n, $\theta$≠2kπ.
+(用 Dirichlet): ∑ sin(nθ)/n, $\theta$≠2kπ.
 </p>
 <ul>
 <li>aₙ = 1/n 单调趋 0 ✓</li>
@@ -880,12 +975,16 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 <p>
 ∴ 收敛.
 </p>
+</div>
+<div class="box-example">
+<p>例题 8-4</p>
 <p>
-<strong>例题 8-4</strong>: ∑ cos(nθ)/√n, 0&lt;$\theta$&lt;2π. 同理由 Dirichlet 收敛.
+∑ cos(nθ)/√n, 0&lt;$\theta$&lt;2π. 同理由 Dirichlet 收敛.
 </p>
 <p>
 这解释了为什么傅里叶级数对一般连续函数能收敛 — 系数虽不绝对收敛, 但 Dirichlet 给出条件收敛.
 </p>
+</div>
 <h3 id="8-7-double-series">知识点 8.7: 双重级数 (Double Series)</h3>
 <p>
 <strong>定义</strong>: ∑∑ a_(m,n), m,n=1,2,...
@@ -932,11 +1031,14 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 <p>
 每次"压过"S 用掉一个 pₖ 或 qₖ; 因 aₙ→0, 每次"过头"幅度→0, 故部分和振荡收敛到 S.
 </p>
+<div class="box-example">
+<p>例题 8-5</p>
 <p>
-<strong>例题 8-5</strong>: 交错调和 ∑(-1)^(n+1)/n = ln 2.
+交错调和 ∑(-1)^(n+1)/n = ln 2.
 重排 (1正+2负): 1 - 1/2 - 1/4 + 1/3 - 1/6 - 1/8 + ... = (1/2)ln 2.
 重排改变了和!
 </p>
+</div>
 <p>
 <strong>教训</strong>: 处理条件收敛级数 (傅里叶系数、量子振幅), 不能随便交换顺序. <strong>绝对收敛</strong>是数值稳定的前提.
 </p>
@@ -981,12 +1083,15 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 ŝₙ = sₙ - (s_(n+1) - sₙ)² / (s_(n+2) - 2s_(n+1) + sₙ)
 ŝₙ → S 更快.
 </p>
+<div class="box-example">
+<p>例题 8-10</p>
 <p>
-<strong>例题 8-10</strong> (调和交错): 加速 1 - 1/2 + 1/3 - 1/4 + ... = ln 2.
+(调和交错): 加速 1 - 1/2 + 1/3 - 1/4 + ... = ln 2.
 取部分和 s₁=1, s₂=0.5, s₃=0.833...
 ŝ₁ = 1 - (-0.5)²/(0.333-1+1) = 1 - 0.75 = 0.25 (一次就跳到 ~0.7)
 经过几步达到 6 位精度, 直接累加需要数千项.
 </p>
+</div>
 <p>
 <strong>Euler 求和</strong>:
 ∑ (-1)^n aₙ = ∑_(k=0)^∞ Δ^k a₀ / 2^(k+1)
@@ -1004,8 +1109,10 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 <p>
 <strong>核心</strong>: 二阶变系数 ODE y'' + p(x)y' + q(x)y = 0 没有初等函数解时, 假设 y = ∑ aₙxⁿ, 代入求递推关系.
 </p>
+<div class="box-example">
+<p>例题 8-11</p>
 <p>
-<strong>例题 8-11</strong> (Airy 方程): y'' - xy = 0.
+(Airy 方程): y'' - xy = 0.
 设 y = ∑ aₙxⁿ, y'' = ∑ n(n-1)aₙx^(n-2).
 代入: ∑ n(n-1)aₙx^(n-2) - ∑ aₙx^(n+1) = 0.
 比较系数: a_(n+2)·(n+2)(n+1) = a_(n-1), 即 a_(n+3) = a_n / [(n+3)(n+2)].
@@ -1013,6 +1120,7 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 <p>
 由 a₀, a₁ 两个自由系数确定两个线性独立解 Ai(x), Bi(x). 这是量子隧道效应、彩虹超数光学的特殊函数.
 </p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
@@ -1036,10 +1144,13 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 <p>
 匹配条件: P(x)/Q(x) - f(x) = O(x^(L+M+1)).
 </p>
+<div class="box-example">
+<p>例题 8-12</p>
 <p>
-<strong>例题 8-12</strong>: e^x 的 [2/2] Padé:
+e^x 的 [2/2] Padé:
 e^x ≈ (1 + x/2 + x²/12) / (1 - x/2 + x²/12)
 </p>
+</div>
 <p>
 <strong>优势</strong>:
 </p>
@@ -1092,9 +1203,12 @@ ln Γ(z) ~ (z - 1/2) ln z - z + (1/2) ln(2π) + ∑_(k=1)^∞ B_(2k)/[2k(2k-1)z^
 <p>
 右边对每个 z 是发散级数! 但取<strong>有限</strong>前 N 项, 余项 ~ z^(-2N-1), 比任何多项式小. 这叫"渐近展开".
 </p>
+<div class="box-example">
+<p>例题 8-14</p>
 <p>
-<strong>例题 8-14</strong>: 误差函数 erf(x) ~ 1 - e^(-x²)/(x√$\pi$) · (1 - 1/(2x²) + 3/(4x⁴) - ...). x 越大前几项越精确, 但取无穷项发散.
+误差函数 erf(x) ~ 1 - e^(-x²)/(x√$\pi$) · (1 - 1/(2x²) + 3/(4x⁴) - ...). x 越大前几项越精确, 但取无穷项发散.
 </p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
@@ -1118,8 +1232,10 @@ X_k = ∑_(n=0)^(N-1) x_n · e^(-i 2π kn/N)
 <p>
 <strong>核心思路</strong>: 将 N 点分成奇偶, 复杂度 T(N) = 2 T(N/2) + O(N) ⟹ O(N log N).
 </p>
+<div class="box-example">
+<p>例题 8-15</p>
 <p>
-<strong>例题 8-15</strong>: N = 8 时:
+N = 8 时:
 </p>
 <ul>
 <li>朴素 DFT: 64 次乘法</li>
@@ -1128,6 +1244,7 @@ X_k = ∑_(n=0)^(N-1) x_n · e^(-i 2π kn/N)
 <p>
 N = 10⁶ 时: 10¹² vs 2×10⁷, 加速比 5 万倍.
 </p>
+</div>
 <p>
 <strong>应用 (现代算力支柱)</strong>:
 </p>
@@ -1175,11 +1292,14 @@ a = 尺度, b = 位置. 同时定位频率和时间.
 <strong>普通生成函数</strong>: 把序列 {a_n} 编码为幂级数 A(x) = ∑ a_n x^n.
 <strong>指数生成函数</strong>: E(x) = ∑ a_n x^n / n!.
 </p>
+<div class="box-example">
+<p>例题 8-17</p>
 <p>
-<strong>例题 8-17</strong> (Fibonacci): a_(n+2) = a_(n+1) + a_n, a_0=0, a_1=1.
+(Fibonacci): a_(n+2) = a_(n+1) + a_n, a_0=0, a_1=1.
 F(x) = ∑ a_n x^n. 由递推得 F(x) = x / (1 - x - x²).
 部分分式 + 几何级数展开 ⟹ a_n = ($\varphi$^n - ψ^n)/√5, $\varphi$=黄金比, ψ=1-$\varphi$.
 </p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
