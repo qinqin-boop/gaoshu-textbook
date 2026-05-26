@@ -490,16 +490,20 @@ M = ∭ r · r² sinφ dr dφ dθ = ∫_0^(2π) ∫_0^$\pi$ sinφ dφ dθ · ∫
 </p>
 </div>
 <h3 id="7">知识点 7: 柱坐标</h3>
+<div class="box-thm">
+<p>柱坐标换元</p>
 <p>
-适合<strong>轴对称</strong> (圆柱 / 圆锥) 体. 用 (r, $\theta$, z), 其中 x = r$\cos\theta$, y = r$\sin\theta$, z = z.
+适合<strong>轴对称</strong> (圆柱 / 圆锥) 体. 用 $(r, \theta, z)$:
+$$x = r\cos\theta, \quad y = r\sin\theta, \quad z = z$$
+Jacobian = $r$:
+$$\iiint_V f(x,y,z)\,dV = \iiint_{V'} f(r\cos\theta, r\sin\theta, z) \cdot r\,drd\theta dz$$
 </p>
+</div>
+<div class="box-intuition">
 <p>
-<strong>变换</strong>:
-∭ f(x,y,z)  dV = ∭ f(...) · r  dr dθ dz
+柱坐标 = 极坐标 + z 轴拉伸. 多 $r$ 因子跟二维极坐标同源 (面积微元 $dA = r\,drd\theta$, 再乘 $dz$ 得体积微元 $dV = r\,drd\theta dz$).
 </p>
-<p>
-<strong>(多一个 r 因子, 跟极坐标二重一样)</strong>
-</p>
+</div>
 <div class="box-example">
 <p>例题 7-2</p>
 <p>
