@@ -351,19 +351,22 @@ $$\iiint_V f(x,y,z)\,dV = \lim_{\lambda\to 0} \sum_{i=1}^n f(\xi_i,\eta_i,\zeta_
 <figcaption>图 10.3 三重积分: 把空间区域 V 切小立方块 ΔV, 求 f(ξ,η,ζ)·ΔV 累加</figcaption>
 </figure>
 <h3 id="5-5">知识点 5.5: 关于积分次序的"右手定则"</h3>
+<div class="box-intuition">
+<p>X 型 vs Y 型 选择</p>
 <p>
-<strong>X 型 vs Y 型 选择</strong>: 看 D 的边界曲线"哪个变量数值能用单调函数描述".
-</p>
-<p>
-<strong>实操</strong>:
+看 $D$ 的边界曲线"哪个变量能用单调函数描述":
 </p>
 <ul>
-<li>边界由 y = $\varphi$(x) 这种函数描述 (上下边界): 用 X 型, 外层 x 内层 y</li>
-<li>边界由 x = ψ(y) 描述 (左右边界): 用 Y 型, 外层 y 内层 x</li>
+<li>边界由 $y = \varphi(x)$ 描述 (上下边界) ⟹ <strong>X 型</strong> (外层 $x$ 内层 $y$)</li>
+<li>边界由 $x = \psi(y)$ 描述 (左右边界) ⟹ <strong>Y 型</strong> (外层 $y$ 内层 $x$)</li>
 </ul>
+</div>
+<div class="box-pitfall">
+<p>复杂区域要拆分</p>
 <p>
-<strong>复杂 D 的拆分</strong>: 不是 X 型也不是 Y 型, 用直线切成几块, 每块单独按 X/Y 型算.
+不是 X 型也不是 Y 型 (有凸凹/边界不单调) → 用直线<strong>切成几块</strong>, 每块单独按 X/Y 型算. 强行硬上一种类型会算错.
 </p>
+</div>
 <div class="box-example">
 <p>例题 5-5</p>
 <p>
