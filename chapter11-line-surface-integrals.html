@@ -423,18 +423,22 @@ S = (1/2) ∮_C (x dy - y dx) = ∮_C x dy = -∮_C y dx
 </p>
 </div>
 <h3 id="5-5-11-3">知识点 5.5: 格林公式的推导 (对齐书 §11.3 一)</h3>
+<div class="box-intuition">
+<p>Green 公式推导直觉</p>
 <p>
-<strong>直觉</strong>: 把闭区域 D 切成大量小矩形 ΔS, 每个小矩形里 (Q_x - P_y) ΔS 等于沿这个小矩形边界的 P dx + Q dy. 相邻小矩形共边方向相反<strong>相消</strong>, 加起来只剩<strong>最外圈</strong> = ∮_(∂D).
+把闭区域 $D$ 切成大量小矩形 $\Delta S$, 每小矩形里 $(Q_x - P_y) \Delta S$ 等于沿小矩形边界的 $P\,dx + Q\,dy$. <strong>相邻小矩形共边方向相反, 内部环量相消</strong>, 加起来只剩<strong>最外圈</strong> = $\oint_{\partial D}$.
 </p>
 <p>
-<strong>推论一</strong>: <strong>用格林公式算面积</strong>
+这是"局部 → 全局"的典型: 内部累加 = 边界积分.
 </p>
+</div>
+<div class="box-thm">
+<p>Green 公式算面积</p>
 <p>
-S(D) = (1/2) ∮_(∂D) (x dy - y dx) = ∮ x dy = -∮ y dx
+$$S(D) = \frac{1}{2}\oint_{\partial D} (x\,dy - y\,dx) = \oint_{\partial D} x\,dy = -\oint_{\partial D} y\,dx$$
+三个公式都对 (因为 $\iint_D 1\,dxdy = S$, 取 $P = -y/2, Q = x/2$ 或 $P=0, Q=x$ 或 $P=-y, Q=0$).
 </p>
-<p>
-(三个公式都对, 选 ∂D 上容易算的)
-</p>
+</div>
 <div class="box-example">
 <p>例题 3-4</p>
 <p>
