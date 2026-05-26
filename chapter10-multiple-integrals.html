@@ -103,13 +103,22 @@ $$\iint_D f(x,y)\,d\sigma = \lim_{\lambda \to 0} \sum_{i=1}^n f(\xi_i, \eta_i)\,
 <strong>生活类比</strong>: 一片田地按高低不平 (每点产量不同 f(x,y)), 算总产量 = 切成无数小方块, 每块产量 × 块面积, 加起来.
 </p>
 <h3 id="2">知识点 2: 性质 (跟一元积分类似)</h3>
-<ul>
-<li><strong>线性</strong>: ∬ (af + bg) = a∬ f + b∬ g</li>
-<li><strong>可加</strong>: 区域分成两部分, 积分等于两部分之和</li>
-<li><strong>比较</strong>: f ≤ g 则 ∬ f ≤ ∬ g</li>
-<li><strong>估值</strong>: m·σ ≤ ∬ f dσ ≤ M·σ (m, M 是 f 在 D 上的最小/最大值, σ 是 D 面积)</li>
-<li><strong>中值定理</strong>: 存在 (ξ, η) ∈ D 使 ∬ f dσ = f(ξ, η) · σ. 几何意义: "平均值 × 区域面积 = 总积分"</li>
-</ul>
+<div class="box-thm">
+<p>二重积分基本性质</p>
+<ol>
+<li><strong>线性</strong>: $\iint (af + bg)\,d\sigma = a\iint f\,d\sigma + b\iint g\,d\sigma$</li>
+<li><strong>区域可加</strong>: 若 $D = D_1 \cup D_2$ ($D_1 \cap D_2$ 是边界), 则 $\iint_D f = \iint_{D_1} f + \iint_{D_2} f$</li>
+<li><strong>比较</strong>: $f \le g$ on $D$ ⟹ $\iint_D f \le \iint_D g$</li>
+<li><strong>估值</strong>: $m \cdot \sigma \le \iint_D f\,d\sigma \le M \cdot \sigma$ ($m, M$ 是 $f$ 在 $D$ 上的最小/最大值, $\sigma$ 是 $D$ 面积)</li>
+<li><strong>中值定理</strong>: 存在 $(\xi, \eta) \in D$ 使 $\iint_D f\,d\sigma = f(\xi, \eta) \cdot \sigma$</li>
+</ol>
+</div>
+<div class="box-intuition">
+<p>中值定理 = "平均值 × 面积"</p>
+<p>
+$f(\xi, \eta) = \iint_D f\,d\sigma / \sigma$ 就是 $f$ 在 $D$ 上的<strong>平均值</strong>. 跟一元中值"平均值 × 长度 = 积分"完全同构.
+</p>
+</div>
 <div class="box-example">
 <p>例题 0-1</p>
 <p>
