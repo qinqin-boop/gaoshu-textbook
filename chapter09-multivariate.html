@@ -1022,6 +1022,70 @@ ar→ ∇f = λ∇g → y = 2λx, x = 2λy.
 <p>
 <strong>学完这章 = 你能看懂 AI 论文里 80% 的数学符号</strong> (∇, ∂, dx, ∂L/∂θ).
 </p>
+<p>
+---
+</p>
+<h2>补充: 优化深化 — 牛顿法 / KKT 条件</h2>
+<h3>知识点 9.5: 牛顿法 求多元极值</h3>
+<p>
+<strong>一元</strong>: 解 f'(x)=0 用 x_(n+1) = x_n - f'(x_n)/f''(x_n).
+</p>
+<p>
+<strong>多元推广</strong>: 解 ∇f(x)=0
+x_(n+1) = x_n - H(x_n)^(-1) · ∇f(x_n)
+H 是 Hessian.
+</p>
+<p>
+<strong>几何</strong>: 用二阶 Taylor 作"局部抛物面拟合", 跳到极值点.
+</p>
+<p>
+<strong>例题 9-5</strong>: f(x,y) = x⁴ + y⁴, 从 (1,1) 求极小.
+∇f = (4x³, 4y³). H = diag(12x², 12y²).
+x₁ = (1,1) - diag(1/12,1/12)·(4,4) = (2/3, 2/3).
+x₂ ≈ (4/9, 4/9). 二次收敛趋 (0,0).
+</p>
+<p>
+<strong>对比 GD</strong>: 牛顿法二次收敛, GD 线性收敛. 但 H 在大模型存不下, 实践用 quasi-Newton (BFGS/L-BFGS).
+</p>
+<h3>知识点 9.6: KKT 条件 (不等式约束)</h3>
+<p>
+拉格朗日乘子只处理等式. 实际多有不等式.
+</p>
+<p>
+<strong>问题</strong>: min f(x) s.t. g(x) ≤ 0, h(x) = 0.
+</p>
+<p>
+<strong>Lagrangian</strong>: L = f + λh + μg
+</p>
+<p>
+<strong>KKT 必要条件</strong>:
+</p>
+<ol>
+<li>梯度: ∇f + λ∇h + μ∇g = 0</li>
+<li>可行性: h=0, g≤0</li>
+<li>对偶可行: μ ≥ 0</li>
+<li>互补松弛: μ·g = 0</li>
+</ul>
+<p>
+<strong>直觉</strong>:
+</p>
+<ul>
+<li>g&lt;0 (约束不紧) → μ=0</li>
+<li>g=0 (约束紧) → μ 起作用</li>
+</ul>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>SVM: 二次规划 + KKT 推出"支持向量"</li>
+<li>投资组合: 财富约束 ≤ B</li>
+<li>神经网络剪枝: L1 稀疏</li>
+</ul>
+<p>
+<strong>例题 9-6</strong> (SVM): min (1/2)||w||² s.t. yᵢ(w·xᵢ+b) ≥ 1.
+L = (1/2)||w||² - ∑μᵢ[yᵢ(w·xᵢ+b)-1].
+∂L/∂w=0 → w = ∑μᵢyᵢxᵢ. 只有 μᵢ&gt;0 的样本 = 支持向量.
+</p>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
