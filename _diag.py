@@ -1,0 +1,17 @@
+import re
+content = open('D:/github/wechat-decrypt/notes/textbook/chapter08-vectors.md','r',encoding='utf-8').read()
+print('total chars:', len(content))
+print('single $:', len(re.findall(r'(?<!\\)\$(?!\$)', content)))
+print('double $$:', content.count('$$'))
+print('LaTeX \\frac:', content.count('\\frac'))
+print('LaTeX \\vec:', content.count('\\vec'))
+print('arrows ->:', content.count('->'))
+print('arrow uni →:', content.count('→'))
+print('unicode math:', sum(content.count(c) for c in '∇∑∫∞≤≥≠⟨'))
+print('a→ pattern:', content.count('a→'))
+print('h1:', len(re.findall(r'^#\s', content, re.M)))
+print('h2:', len(re.findall(r'^##\s', content, re.M)))
+print('h3:', len(re.findall(r'^###\s', content, re.M)))
+print('---first 60 lines---')
+for i,l in enumerate(content.split('\n')[:60]):
+    print(i,'|',l[:120])

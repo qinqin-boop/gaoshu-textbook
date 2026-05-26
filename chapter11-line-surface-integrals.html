@@ -84,8 +84,8 @@
 <h2 id="11-1">11.1 第一类曲线积分 (对弧长)</h2>
 <h3 id="1">知识点 1: 定义</h3>
 <p>
-曲线 L 上, 密度 μ(x,y) 不均匀, 求<strong>质量</strong>.
-∫_L μ(x,y)  ds
+曲线 L 上, 密度 $\mu$(x,y) 不均匀, 求<strong>质量</strong>.
+∫_L $\mu$(x,y)  ds
 ds = 曲线上小弧长元.
 </p>
 <p>
@@ -93,15 +93,15 @@ ds = 曲线上小弧长元.
 </p>
 <h3 id="2">知识点 2: 计算 — 参数法</h3>
 <p>
-曲线参数 x = x(t), y = y(t), t ∈ [α, β]:
-∫_L f  ds = ∫_α^β f(x(t), y(t)) √(x'(t)² + y'(t)²)  dt
+曲线参数 x = x(t), y = y(t), t ∈ [$\alpha$, $\beta$]:
+∫_L f  ds = ∫_α^$\beta$ f(x(t), y(t)) √(x'(t)² + y'(t)²)  dt
 √(x'² + y'²) dt = ds, <strong>弧微元公式</strong>.
 </p>
 <p>
 <strong>例题 1</strong>: 求圆周 x² + y² = 1 上 ∫ x² ds.
 参数: x = cos t, y = sin t, t ∈ [0, 2π].
 x'² + y'² = sin² t + cos² t = 1, ds = dt.
-∫ = ∫₀^(2π) cos² t  dt = π
+∫ = ∫₀^(2π) cos² t  dt = $\pi$
 </p>
 <p>
 <strong>例题 1-2</strong>: 一根直线段 L 从 (0,0) 到 (3,4), 线密度 ρ(x,y) = x+y, 求质量.
@@ -109,10 +109,10 @@ x'² + y'² = sin² t + cos² t = 1, ds = dt.
 M = ∫_L (x+y) ds = ∫_0¹ (3t+4t) · 5 dt = 35 · 1/2 = 17.5.
 </p>
 <p>
-<strong>例题 1-3</strong>: 求半圆 y = √(1-x²) (y≥0, x ∈ [-1,1]) 的弧长.
+<strong>例题 1-3</strong>: 求半圆 y = √(1-x²) (y$\ge$0, x ∈ [-1,1]) 的弧长.
 弧长 = ∫_L 1 ds.
-参数: x = cos t, y = sin t, t ∈ [0, π], ds = dt.
-弧长 = ∫_0^π dt = π. ✓ (半径 1 半圆的弧长 = πR = π)
+参数: x = cos t, y = sin t, t ∈ [0, $\pi$], ds = dt.
+弧长 = ∫_0^$\pi$ dt = $\pi$. ✓ (半径 1 半圆的弧长 = πR = $\pi$)
 </p>
 <h3 id="1-5-11-1">知识点 1.5: 第一类曲线积分的物理应用 (对齐书 §11.1 一)</h3>
 <p>
@@ -120,20 +120,20 @@ M = ∫_L (x+y) ds = ∫_0¹ (3t+4t) · 5 dt = 35 · 1/2 = 17.5.
 </p>
 <ol>
 <li><strong>弧长</strong>: L = ∫_L 1 ds (密度 = 1)</li>
-<li><strong>质量</strong>: M = ∫_L μ(x,y,z) ds</li>
+<li><strong>质量</strong>: M = ∫_L $\mu$(x,y,z) ds</li>
 <li><strong>质心</strong>:</li>
 </ol>
 <p>
-   x̄ = ∫_L x·μ ds / M, ȳ = ∫_L y·μ ds / M
+   x̄ = ∫_L x·$\mu$ ds / M, ȳ = ∫_L y·$\mu$ ds / M
 </p>
 <ol>
-<li><strong>转动惯量</strong> (绕 z 轴): I_z = ∫_L (x²+y²) μ ds</li>
+<li><strong>转动惯量</strong> (绕 z 轴): I_z = ∫_L (x²+y²) $\mu$ ds</li>
 </ol>
 <p>
 <strong>例题 1-2</strong> (质心): 一根均匀钢丝沿曲线 y = x² (0 ≤ x ≤ 1), 求质心 x̄.
 参数: x = t, y = t², ds = √(1+4t²) dt.
 M = ∫_0¹ √(1+4t²) dt (设密度 1, 弧长本身).
-x̄·M = ∫_0¹ t·√(1+4t²) dt = (1/12)[(1+4t²)^(3/2)]_0¹ = (5√5 - 1)/12.
+x̄·M = ∫_0¹ t·√(1+4t²) dt = (1/12)[(1+4t²)^(3/2)]_0¹ = (5$\sqrt{5}$ - 1)/12.
 M = (1/2)[t√(1+4t²) + (1/2) sinh^(-1)(2t)]_0¹ = √5/2 + ln(2+√5)/4.
 (具体值代入算)
 </p>
@@ -141,7 +141,7 @@ M = (1/2)[t√(1+4t²) + (1/2) sinh^(-1)(2t)]_0¹ = √5/2 + ln(2+√5)/4.
 <ul>
 <li><strong>方向无关</strong>: 沿 L 正向走或反向走, 积分值一样 (因为 ds &gt; 0)</li>
 <li>可加性: ∫_(L₁+L₂) f ds = ∫_(L₁) + ∫_(L₂)</li>
-<li>线性: ∫ (af+bg) ds = a∫f + b∫g</li>
+<li>线性: ∫ (af+bg) ds = a$\int$f + b$\int$g</li>
 </ul>
 <p>
 ---
@@ -149,9 +149,9 @@ M = (1/2)[t√(1+4t²) + (1/2) sinh^(-1)(2t)]_0¹ = √5/2 + ln(2+√5)/4.
 <h2 id="11-2">11.2 第二类曲线积分 (对坐标)</h2>
 <h3 id="2-7-11-1">知识点 2.7: 第一类曲线积分参数法详细 (对齐书 §11.1 二)</h3>
 <p>
-<strong>情况 1: 一般参数 x=x(t), y=y(t), t ∈ [α, β]</strong>
+<strong>情况 1: 一般参数 x=x(t), y=y(t), t ∈ [$\alpha$, $\beta$]</strong>
 ds = √(x'(t)² + y'(t)²) dt
-∫_L f ds = ∫_α^β f(x(t), y(t)) · √(x'² + y'²) dt
+∫_L f ds = ∫_α^$\beta$ f(x(t), y(t)) · √(x'² + y'²) dt
 </p>
 <p>
 <strong>情况 2: 直接 y = y(x), x ∈ [a, b]</strong> (相当于 x=x, y=y(x))
@@ -159,9 +159,9 @@ ds = √(1 + y'(x)²) dx
 ∫_L f ds = ∫_a^b f(x, y(x)) · √(1+y'²) dx
 </p>
 <p>
-<strong>情况 3: 极坐标 r = r(θ), θ ∈ [α, β]</strong>
+<strong>情况 3: 极坐标 r = r($\theta$), $\theta$ ∈ [$\alpha$, $\beta$]</strong>
 ds = √(r² + r'²) dθ
-∫_L f ds = ∫_α^β f(r cosθ, r sinθ) · √(r²+r'²) dθ
+∫_L f ds = ∫_α^$\beta$ f(r $\cos\theta$, r $\sin\theta$) · √(r²+r'²) dθ
 </p>
 <p>
 <strong>例题 1-3</strong> (一般参数): 螺旋线 x = cos t, y = sin t, z = t (t ∈ [0, 2π]) 上 ∫(x²+y²+z²) ds.
@@ -174,11 +174,11 @@ x²+y²+z² = 1 + t².
 </p>
 <h3 id="3">知识点 3: 定义 (力沿路径做功)</h3>
 <p>
-变力 F→(x,y) = (P, Q) 沿曲线 L 做的功:
+变力 $\vec{F}$(x,y) = (P, Q) 沿曲线 L 做的功:
 W = ∫_L P  dx + Q  dy
 </p>
 <p>
-<strong>生活类比</strong>: 你推车, 力跟方向都变, 走弯曲路径, 总功 = F→ · dr→ 沿路径积分.
+<strong>生活类比</strong>: 你推车, 力跟方向都变, 走弯曲路径, 总功 = $\vec{F}$ · dr→ 沿路径积分.
 </p>
 <p>
 <strong>第一类 vs 第二类区别</strong>:
@@ -201,7 +201,7 @@ W = ∫_L P  dx + Q  dy
 <strong>物理意义</strong>: 力沿正方向做正功, 沿反方向做负功 (反向走"克服了"力).
 </p>
 <p>
-<strong>例题 3-3</strong> (验证): L 从 (0,0) 到 (1,0), F→ = (1, 0) (沿 x 轴恒力).
+<strong>例题 3-3</strong> (验证): L 从 (0,0) 到 (1,0), $\vec{F}$ = (1, 0) (沿 x 轴恒力).
 正方向: W = ∫_L 1·dx + 0·dy = ∫_0¹ 1 dx = 1.
 反方向 (从 (1,0) 回 (0,0)): W = ∫_(L^-) = ∫_1⁰ 1 dx = -1. ✓
 </p>
@@ -211,7 +211,7 @@ W = ∫_L P  dx + Q  dy
 <h3 id="4">知识点 4: 计算</h3>
 <p>
 参数 x = x(t), y = y(t):
-∫_L P  dx + Q  dy = ∫_α^β [P(x(t), y(t)) x'(t) + Q(x(t), y(t)) y'(t)]  dt
+∫_L P  dx + Q  dy = ∫_α^$\beta$ [P(x(t), y(t)) x'(t) + Q(x(t), y(t)) y'(t)]  dt
 </p>
 <p>
 <strong>例题 2</strong>: ∫_L y  dx + x  dy, L 是从 (0,0) 到 (1,1) 的直线.
@@ -219,7 +219,7 @@ W = ∫_L P  dx + Q  dy
 = ∫_0¹ [t · 1 + t · 1] dt = ∫_0¹ 2t  dt = 1
 </p>
 <p>
-<strong>例题 2-2</strong> (功的实际计算): 力场 F→ = (-y, x), 沿单位圆逆时针走一圈做的功?
+<strong>例题 2-2</strong> (功的实际计算): 力场 $\vec{F}$ = (-y, x), 沿单位圆逆时针走一圈做的功?
 参数 x = cos t, y = sin t, t ∈ [0, 2π], dx = -sin t dt, dy = cos t dt.
 W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
    = ∫_0^(2π) (sin² t + cos² t) dt = ∫_0^(2π) 1 dt = 2π.
@@ -232,8 +232,8 @@ W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
 <li>路径 B (折线先 (0,0)→(1,0) 再 (1,0)→(1,1)):</li>
 </ul>
 <p>
-  段 1: y=0, dy=0, x: 0→1, ∫ 0 dx - x · 0 = 0.
-  段 2: x=1, dx=0, y: 0→1, ∫ y · 0 - 1 · dy = -1.
+  段 1: y=0, dy=0, x: $\vec{0}$1, ∫ 0 dx - x · 0 = 0.
+  段 2: x=1, dx=0, y: $\vec{0}$1, ∫ y · 0 - 1 · dy = -1.
   总 = -1.
 <strong>结论</strong>: A 跟 B 端点相同但路径不同 → 积分<strong>不同</strong> (说明这不是保守场, 不满足路径无关条件).
 </p>
@@ -254,7 +254,7 @@ W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
 <strong>例题 4-2</strong> (转换): ∫_L 2x dy - y dx, L 是单位圆周逆时针.
 参数: x=cos t, y=sin t. dx=-sin t dt, dy=cos t dt.
 = ∫_0^(2π) (2 cos t · cos t - sin t · (-sin t)) dt = ∫_0^(2π) (2cos²t + sin²t) dt
-= ∫_0^(2π) (1 + cos²t) dt = 2π + π = 3π.
+= ∫_0^(2π) (1 + cos²t) dt = 2π + $\pi$ = 3π.
 </p>
 <h3 id="5">知识点 5: 格林公式</h3>
 <p>
@@ -276,7 +276,7 @@ Q_x = 1, P_y = 1, 被积函数 Q_x - P_y = 0.
 <p>
 <strong>例题 3-2</strong> (用格林公式算面积): 用 ∮ x dy 算单位圆面积.
 S = ∮_C x dy. 参数 x = cos t, y = sin t, dy = cos t dt.
-= ∫_0^(2π) cos t · cos t dt = ∫_0^(2π) cos² t dt = π. ✓
+= ∫_0^(2π) cos t · cos t dt = ∫_0^(2π) cos² t dt = $\pi$. ✓
 </p>
 <p>
 <strong>面积公式</strong>: 任何由闭曲线 C 围的平面区域 D 的面积:
@@ -327,16 +327,16 @@ S = (1/2)∮(x dy - y dx) = (1/2)∫_0^(2π) [a cos t · b cos t - b sin t · (-
 </p>
 <h3 id="6-7">知识点 6.7: 保守力场与势能函数</h3>
 <p>
-<strong>定义</strong>: 力场 F→ 保守 ⟺ 沿任意闭路径 W = ∮ F→·dr→ = 0 ⟺ 存在势能函数 U 使 F→ = -∇U.
+<strong>定义</strong>: 力场 $\vec{F}$ 保守 ⟺ 沿任意闭路径 W = ∮ $\vec{F}$·dr→ = 0 ⟺ 存在势能函数 U 使 $\vec{F}$ = -∇U.
 </p>
 <p>
 <strong>保守力场举例</strong>:
 </p>
 <ul>
-<li>重力: F→ = -mg k→, U = mgh</li>
+<li>重力: $\vec{F}$ = -mg $\vec{k}$, U = mgh</li>
 <li>弹簧弹力: F = -kx, U = (1/2)kx²</li>
-<li>库仑电力: F→ = -k Qq/r² r̂→, U = kQq/r</li>
-<li>万有引力: F→ = -GMm/r² r̂→, U = -GMm/r</li>
+<li>库仑电力: $\vec{F}$ = -k Qq/r² r̂→, U = kQq/r</li>
+<li>万有引力: $\vec{F}$ = -GMm/r² r̂→, U = -GMm/r</li>
 </ul>
 <p>
 <strong>非保守力</strong>:
@@ -349,16 +349,16 @@ S = (1/2)∮(x dy - y dx) = (1/2)∫_0^(2π) [a cos t · b cos t - b sin t · (-
 <strong>判别 3 等价条件 (单连通区域)</strong>:
 </p>
 <ol>
-<li>∮ F→·dr→ = 0 (任意闭路径)</li>
-<li>存在 U 使 F→ = -∇U</li>
-<li>∇ × F→ = 0 (旋度为 0)</li>
+<li>∮ $\vec{F}$·dr→ = 0 (任意闭路径)</li>
+<li>存在 U 使 $\vec{F}$ = -∇U</li>
+<li>∇ × $\vec{F}$ = 0 (旋度为 0)</li>
 </ol>
 <p>
-<strong>例题 6-4</strong>: F→ = (y, x, 0). 检查是否保守.
-∇×F→ = (0, 0, ∂x/∂x - ∂y/∂y) = (0, 0, 0). 保守 ✓
+<strong>例题 6-4</strong>: $\vec{F}$ = (y, x, 0). 检查是否保守.
+∇×$\vec{F}$ = (0, 0, ∂x/∂x - ∂y/∂y) = (0, 0, 0). 保守 ✓
 势能: ∂U/∂x = -y → U = -xy + g(y). ∂U/∂y = -x = -x + g'(y) → g'(y)=0.
 U = -xy.
-F→ = -∇U = (y, x, 0) ✓.
+$\vec{F}$ = -∇U = (y, x, 0) ✓.
 </p>
 <h2 id="11-4">11.4 第一类曲面积分 (对面积)</h2>
 <h3 id="6-5-11-3">知识点 6.5: 全微分原函数 (对齐书 §11.3 三)</h3>
@@ -388,8 +388,8 @@ u = ∫(2x+y) dx = x² + xy + g(y).
 </p>
 <h3 id="7">知识点 7: 定义</h3>
 <p>
-曲面 Σ 上密度 μ(x,y,z), 求质量:
-∬_Σ μ(x,y,z)  dS
+曲面 Σ 上密度 $\mu$(x,y,z), 求质量:
+∬_Σ $\mu$(x,y,z)  dS
 dS = 曲面上小面积元.
 </p>
 <h3 id="7-5-11-5">知识点 7.5: 第二类曲面积分参数化 (对齐书 §11.5)</h3>
@@ -410,7 +410,7 @@ dS = 曲面上小面积元.
 </p>
 <p>
 <strong>例题 5-3</strong> (经典): ∬_Σ z dxdy, Σ 是单位球面外侧.
-上半: z=√(1-x²-y²), 投 D_xy: x²+y²≤1.
+上半: z=√(1-x²-y²), 投 D_xy: x²+y²$\le$1.
 ∬_(上侧) = ∬_D √(1-x²-y²) dxdy. 极坐标: = ∫_0^(2π)∫_0¹ √(1-r²)·r drdθ = 2π·1/3 = 2π/3.
 下半: z=-√(1-x²-y²), 投影同, 下侧符号取负.
 ∬_(下侧) = -∬_D (-√(1-x²-y²)) dxdy = ∫_D √... dxdy = 2π/3.
@@ -439,10 +439,10 @@ z_x = -2x, z_y = -2y, √(1+4x²+4y²).
 <strong>问题</strong>: 曲面 z = f(x,y) 在区域 D 上的面积 A 怎么算?
 </p>
 <p>
-<strong>思想</strong>: 把 D 切小, 每个小区域 ΔS_xy 对应曲面上一片倾斜的小面积 ΔS. 倾斜板面积 = 平面投影面积 / |cos α|, 其中 α 是切平面跟 xy 面的夹角.
+<strong>思想</strong>: 把 D 切小, 每个小区域 ΔS_xy 对应曲面上一片倾斜的小面积 ΔS. 倾斜板面积 = 平面投影面积 / |cos $\alpha$|, 其中 $\alpha$ 是切平面跟 xy 面的夹角.
 </p>
 <p>
-cos α = 1 / √(1 + f_x² + f_y²)
+cos $\alpha$ = 1 / √(1 + f_x² + f_y²)
 </p>
 <p>
 所以 ΔS = √(1 + f_x² + f_y²) · ΔS_xy.
@@ -455,7 +455,7 @@ cos α = 1 / √(1 + f_x² + f_y²)
 <strong>例题 4-2</strong> (半球面积): 半球面 z = √(R² - x² - y²) (z ≥ 0) 的面积.
 f_x = -x/z, f_y = -y/z.
 1 + f_x² + f_y² = 1 + (x²+y²)/z² = R²/(R²-x²-y²).
-A = ∬_(x²+y²≤R²) R/√(R²-x²-y²) dxdy.
+A = ∬_(x²+y²$\le$R²) R/√(R²-x²-y²) dxdy.
 极坐标: A = ∫_0^(2π) ∫_0^R R·r/√(R²-r²) drdθ = 2πR · [-√(R²-r²)]_0^R = 2πR · R = 2πR². ✓
 (整个球面 4πR², 半个 2πR² ✓)
 </p>
@@ -471,11 +471,11 @@ dS = √(1 + z_x² + z_y²) dxdy
 </p>
 <p>
 <strong>参数方程 (u, v)</strong>:
-r→ = (x(u,v), y(u,v), z(u,v))
-dS = |r→_u × r→_v| du dv
+$\vec{r}$ = (x(u,v), y(u,v), z(u,v))
+dS = |$\vec{r}$_u × $\vec{r}$_v| du dv
 </p>
 <p>
-<strong>球面参数化 (球坐标)</strong>: r = R sin φ cos θ → 球面 x²+y²+z²=R² 上 dS = R² sinφ dφ dθ.
+<strong>球面参数化 (球坐标)</strong>: r = R sin $\varphi$ $\cos\theta$ → 球面 x²+y²+z²=R² 上 dS = R² sinφ dφ dθ.
 </p>
 <p>
 <strong>例题 4-3</strong> (球面积分): ∬_Σ (x²+y²+z²) dS, Σ 是 x²+y²+z²=R² 球面.
@@ -484,7 +484,7 @@ dS = |r→_u × r→_v| du dv
 </p>
 <h3 id="9">知识点 9: 定义 (流量/通量)</h3>
 <p>
-流体的流速场 v→ = (P, Q, R), 流过有向曲面 Σ 的通量:
+流体的流速场 $\vec{v}$ = (P, Q, R), 流过有向曲面 Σ 的通量:
 ∬_Σ P  dydz + Q  dzdx + R  dxdy
 </p>
 <p>
@@ -501,8 +501,8 @@ dS = |r→_u × r→_v| du dv
 </p>
 <p>
 <strong>例题 9-3</strong> (转换示例): ∬_Σ x dydz + y dzdx + z dxdy, Σ 是球面 x²+y²+z²=R² 外侧.
-外法向量: n→ = (x/R, y/R, z/R).
-(P, Q, R) = (x, y, z), 点乘 n→ = (x²+y²+z²)/R = R²/R = R.
+外法向量: $\vec{n}$ = (x/R, y/R, z/R).
+(P, Q, R) = (x, y, z), 点乘 $\vec{n}$ = (x²+y²+z²)/R = R²/R = R.
 转第一类: ∬_Σ R dS = R · 4πR² = 4πR³.
 跟之前用高斯公式直接算得 4πR³ ✓.
 </p>
@@ -520,7 +520,7 @@ V 是空间闭区域, ∂ V 是它的边界曲面 (外侧):
 <p>
 <strong>例题 5</strong>: ∯_Σ x  dydz + y  dzdx + z  dxdy, Σ 是单位球外侧.
 P_x + Q_y + R_z = 1 + 1 + 1 = 3.
-= ∭_V 3  dV = 3 · (4)/(3)π = 4π
+= ∭_V 3  dV = 3 · (4)/(3)$\pi$ = 4π
 经典!
 </p>
 <p>
@@ -531,10 +531,10 @@ P = 0, Q = 0, R = z. P_x + Q_y + R_z = 1.
 (代入单位球: V = (1/3) · 4π = 4π/3 ✓)
 </p>
 <p>
-<strong>例题 5-3</strong>: 求向量场 F→ = (x², y², z²) 通过单位立方体表面 (外侧) 的通量.
+<strong>例题 5-3</strong>: 求向量场 $\vec{F}$ = (x², y², z²) 通过单位立方体表面 (外侧) 的通量.
 div F = 2x + 2y + 2z.
 ∯ F· dS = ∭_V (2x+2y+2z) dV
-= 2 ∫_0¹∫_0¹∫_0¹ (x+y+z) dx dy dz = 2 · 3 · (1/2) = 3. (对称性: ∭ x dV = ∭ y dV = ∭ z dV = 1/2)
+= 2 ∫_0¹$\int$_0¹$\int$_0¹ (x+y+z) dx dy dz = 2 · 3 · (1/2) = 3. (对称性: ∭ x dV = ∭ y dV = ∭ z dV = 1/2)
 </p>
 <p>
 ---
@@ -549,15 +549,15 @@ div F = 2x + 2y + 2z.
 </p>
 <ul>
 <li>设开曲面 Σ, 补一个 Σ' 让 Σ ∪ Σ' 闭合包围 V</li>
-<li>用高斯: ∯_(Σ∪Σ') = ∭_V div F dV</li>
+<li>用高斯: ∯_(Σ$\cup$Σ') = ∭_V div F dV</li>
 <li>反推: ∬_Σ = ∭ - ∬_(Σ')</li>
 </ul>
 <p>
 <strong>例题 5-4</strong>: ∬_Σ x dydz + y dzdx + z dxdy, Σ 是 z = 1-x²-y² (z ≥ 0) 上侧.
-不是闭合. 补 Σ' = {z=0, x²+y²≤1} 下侧.
+不是闭合. 补 Σ' = {z=0, x²+y²$\le$1} 下侧.
 Σ ∪ Σ' 包围立体 V (上方抛物面下方圆盘).
 div(P,Q,R) = 1+1+1 = 3.
-∯ = 3·V体积 = 3·∫_0¹ π(1-r²)·... 算得 3π/2.
+∯ = 3·V体积 = 3·∫_0¹ $\pi$(1-r²)·... 算得 3π/2.
 Σ' 部分: 在 z=0 平面, dz=0, x, y 部分也不贡献. ∬_(Σ') = 0.
 所以 ∬_Σ = 3π/2.
 </p>
@@ -577,7 +577,7 @@ div(P,Q,R) = 1+1+1 = 3.
 <strong>核心想象</strong>: 一片旋转的水面 (曲面 Σ), 边界是绕圈水流 (∂Σ).
 </p>
 <p>
-斯托克斯公式: ∮_(∂Σ) F→·dr→ = ∬_Σ (∇×F→)·dS→
+斯托克斯公式: ∮_(∂Σ) $\vec{F}$·dr→ = ∬_Σ (∇×$\vec{F}$)·dS→
 </p>
 <p>
 <strong>左边</strong>: 沿边界绕一圈做的功 (环量).
@@ -585,23 +585,23 @@ div(P,Q,R) = 1+1+1 = 3.
 </p>
 <p>
 <strong>物理验证 (法拉第电磁感应)</strong>:
-∮_L E→·dr→ = - d/dt ∬_Σ B→·dS→
+∮_L $\vec{E}$·dr→ = - d/dt ∬_Σ $\vec{B}$·dS→
 </p>
 <ul>
 <li>左: 闭合导线电动势 (环量)</li>
 <li>右: 磁通量随时间变化的负数</li>
 </ul>
 <p>
-这就是发电机原理 — 转动的磁铁让线圈周围 B→ 变, 引起 E→ 环量 (电压).
+这就是发电机原理 — 转动的磁铁让线圈周围 $\vec{B}$ 变, 引起 $\vec{E}$ 环量 (电压).
 </p>
 <p>
-<strong>例题 11</strong>: F→ = (-y, x, 0) 沿单位圆周 x²+y²=1 (z=0) 一圈的环量.
+<strong>例题 11</strong>: $\vec{F}$ = (-y, x, 0) 沿单位圆周 x²+y²=1 (z=0) 一圈的环量.
 直接算: ∮ -y dx + x dy. 参数 x=cos t, y=sin t.
 = ∫_0^(2π) (sin²t + cos²t) dt = 2π.
 </p>
 <p>
-用斯托克斯验证: ∇×F→ = (∂(0)/∂y - ∂x/∂z, ∂(-y)/∂z - ∂(0)/∂x, ∂x/∂x - ∂(-y)/∂y) = (0, 0, 2).
-∬_Σ 2 dS = 2 · π (圆面积) = 2π ✓
+用斯托克斯验证: ∇×$\vec{F}$ = (∂(0)/∂y - ∂x/∂z, ∂(-y)/∂z - ∂(0)/∂x, ∂x/∂x - ∂(-y)/∂y) = (0, 0, 2).
+∬_Σ 2 dS = 2 · $\pi$ (圆面积) = 2π ✓
 </p>
 <h3 id="12">知识点 12: 三大公式总结</h3>
 <p>
@@ -621,60 +621,60 @@ div(P,Q,R) = 1+1+1 = 3.
 <h2 id="11-6-11-6">11.6 通量与散度 (对齐书 §11.6 三)</h2>
 <h3 id="12-5-flux">知识点 12.5: 通量 (flux)</h3>
 <p>
-<strong>定义</strong>: 向量场 F→ = (P, Q, R) 通过有向曲面 Σ 的<strong>通量</strong>:
-Φ = ∬_Σ F→ · dS→ = ∬_Σ P dydz + Q dzdx + R dxdy
+<strong>定义</strong>: 向量场 $\vec{F}$ = (P, Q, R) 通过有向曲面 Σ 的<strong>通量</strong>:
+Φ = ∬_Σ $\vec{F}$ · dS→ = ∬_Σ P dydz + Q dzdx + R dxdy
 </p>
 <p>
-<strong>生活类比</strong>: 流体的速度场 F→, 通量 Φ = 单位时间穿过曲面 Σ 的流量 (体积).
+<strong>生活类比</strong>: 流体的速度场 $\vec{F}$, 通量 Φ = 单位时间穿过曲面 Σ 的流量 (体积).
 </p>
 <h3 id="12-6-divergence">知识点 12.6: 散度 (divergence)</h3>
 <p>
 <strong>定义</strong>: 标量场, 描述向量场在某点"产出"或"吸收"的强度:
-div F→ = ∂P/∂x + ∂Q/∂y + ∂R/∂z = ∇ · F→
+div $\vec{F}$ = ∂P/∂x + ∂Q/∂y + ∂R/∂z = ∇ · $\vec{F}$
 </p>
 <p>
 <strong>几何意义</strong>:
 </p>
 <ul>
-<li>div F→ &gt; 0: 该点是<strong>源</strong> (向外发射)</li>
-<li>div F→ &lt; 0: 该点是<strong>汇</strong> (向内吸收)</li>
-<li>div F→ = 0: 该点既不源也不汇 (流入 = 流出, 称"无源场")</li>
+<li>div $\vec{F}$ &gt; 0: 该点是<strong>源</strong> (向外发射)</li>
+<li>div $\vec{F}$ &lt; 0: 该点是<strong>汇</strong> (向内吸收)</li>
+<li>div $\vec{F}$ = 0: 该点既不源也不汇 (流入 = 流出, 称"无源场")</li>
 </ul>
 <p>
 <strong>生活类比</strong>: 一片湖, 在某点散度 &gt; 0 说明这里有泉眼往外冒水; 散度 &lt; 0 说明这里有漏洞往里吸水.
 </p>
 <p>
 <strong>高斯公式 (向量形式)</strong>:
-∯_(∂V) F→ · dS→ = ∭_V div F→ dV
+∯_(∂V) $\vec{F}$ · dS→ = ∭_V div $\vec{F}$ dV
 通量 = 散度的体积积分. <strong>闭曲面通量 = 内部源/汇 累计</strong>.
 </p>
 <h2 id="11-7-11-7">11.7 环流量与旋度 (对齐书 §11.7 三)</h2>
 <h3 id="12-7-circulation">知识点 12.7: 环流量 (circulation)</h3>
 <p>
-<strong>定义</strong>: 向量场 F→ 沿闭曲线 L 的<strong>环流量</strong>:
-Γ = ∮_L F→ · dr→ = ∮_L P dx + Q dy + R dz
+<strong>定义</strong>: 向量场 $\vec{F}$ 沿闭曲线 L 的<strong>环流量</strong>:
+Γ = ∮_L $\vec{F}$ · dr→ = ∮_L P dx + Q dy + R dz
 </p>
 <p>
-<strong>生活类比</strong>: 沿闭曲线"绕一圈" F→ 做的功. 涡漩中心环流量大.
+<strong>生活类比</strong>: 沿闭曲线"绕一圈" $\vec{F}$ 做的功. 涡漩中心环流量大.
 </p>
 <h3 id="12-8-curl">知识点 12.8: 旋度 (curl)</h3>
 <p>
 <strong>定义</strong>: 向量场, 描述某点"旋转"强度:
-rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
+rot $\vec{F}$ = ∇ × $\vec{F}$ = | $\vec{i}$ $\vec{j}$ $\vec{k}$  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 </p>
 <p>
 <strong>几何意义</strong>: 在某点放一个小风车, 旋度方向 = 风车轴方向, 旋度大小 = 转速.
 </p>
 <ul>
-<li>rot F→ = 0 处: <strong>无旋场</strong> (流体不打转)</li>
-<li>|rot F→| 大: 涡漩中心</li>
+<li>rot $\vec{F}$ = 0 处: <strong>无旋场</strong> (流体不打转)</li>
+<li>|rot $\vec{F}$| 大: 涡漩中心</li>
 </ul>
 <p>
 <strong>生活类比</strong>: 龙卷风中心旋度极大, 平直气流旋度为 0.
 </p>
 <p>
 <strong>斯托克斯公式 (向量形式)</strong>:
-∮_(∂Σ) F→ · dr→ = ∬_Σ rot F→ · dS→
+∮_(∂Σ) $\vec{F}$ · dr→ = ∬_Σ rot $\vec{F}$ · dS→
 环流量 = 旋度通过曲面 的通量. <strong>闭曲线环流 = 内部旋转累计</strong>.
 </p>
 <p>
@@ -682,7 +682,7 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 </p>
 <ul>
 <li>麦克斯韦电磁: ∇·E = ρ/ε₀ (高斯定律, 电场散度跟电荷密度) / ∇×B = μ₀J + ... (安培定律, 磁场旋度跟电流)</li>
-<li>流体: ∇·v→ = 0 (不可压缩) / ∇×v→ = 0 (无旋流)</li>
+<li>流体: ∇·$\vec{v}$ = 0 (不可压缩) / ∇×$\vec{v}$ = 0 (无旋流)</li>
 </ul>
 <p>
 ---
@@ -744,32 +744,32 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 麦克斯韦电磁学 4 个方程, <strong>都是</strong>高数下册的公式 — 这章学的就是它们的数学基础:
 </p>
 <p>
-<strong>1. 高斯定律 (电)</strong>: ∮_(∂V) E→ · dS→ = Q/ε₀
+<strong>1. 高斯定律 (电)</strong>: ∮_(∂V) $\vec{E}$ · dS→ = Q/ε₀
 </p>
 <ul>
 <li>类: 高斯公式 (闭曲面通量 = 内部电荷)</li>
-<li>微分形式: ∇·E→ = ρ/ε₀ (电场散度 = 电荷密度)</li>
+<li>微分形式: ∇·$\vec{E}$ = ρ/ε₀ (电场散度 = 电荷密度)</li>
 </ul>
 <p>
-<strong>2. 高斯定律 (磁)</strong>: ∮_(∂V) B→ · dS→ = 0
+<strong>2. 高斯定律 (磁)</strong>: ∮_(∂V) $\vec{B}$ · dS→ = 0
 </p>
 <ul>
 <li>闭曲面磁通量 = 0 (磁场没"源", 只有"环")</li>
-<li>微分形式: ∇·B→ = 0</li>
+<li>微分形式: ∇·$\vec{B}$ = 0</li>
 </ul>
 <p>
-<strong>3. 法拉第电磁感应</strong>: ∮_L E→ · dr→ = -dΦ/dt
+<strong>3. 法拉第电磁感应</strong>: ∮_L $\vec{E}$ · dr→ = -dΦ/dt
 </p>
 <ul>
 <li>类: 斯托克斯公式 (环量 = 旋度通量)</li>
-<li>微分形式: ∇×E→ = -∂B→/∂t</li>
+<li>微分形式: ∇×$\vec{E}$ = -∂$\vec{B}$/∂t</li>
 </ul>
 <p>
-<strong>4. 安培-麦克斯韦定律</strong>: ∮_L B→ · dr→ = μ₀(I + ε₀ dΦ_E/dt)
+<strong>4. 安培-麦克斯韦定律</strong>: ∮_L $\vec{B}$ · dr→ = μ₀(I + ε₀ dΦ_E/dt)
 </p>
 <ul>
 <li>类: 斯托克斯公式</li>
-<li>微分形式: ∇×B→ = μ₀(J→ + ε₀ ∂E→/∂t)</li>
+<li>微分形式: ∇×$\vec{B}$ = μ₀($\vec{J}$ + ε₀ ∂$\vec{E}$/∂t)</li>
 </ul>
 <p>
 <strong>学完高数下册你就能"看懂"麦克斯韦方程组的数学结构</strong> — 即使物理细节不懂, 数学层面所有符号 (∇·, ∇×, 闭曲面/线积分) 都是这章教的.
@@ -782,11 +782,11 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 <strong>1. 物理学经典</strong>:
 </p>
 <ul>
-<li>力做的功: W = ∫_L F→·dr→</li>
-<li>质量: M = ∫_L μ ds (一维) 或 ∬_Σ μ dS (二维)</li>
-<li>流体通量 Φ = ∬_Σ v→·dS→</li>
+<li>力做的功: W = ∫_L $\vec{F}$·dr→</li>
+<li>质量: M = ∫_L $\mu$ ds (一维) 或 ∬_Σ $\mu$ dS (二维)</li>
+<li>流体通量 Φ = ∬_Σ $\vec{v}$·dS→</li>
 <li>引力场强 / 电场强度</li>
-<li>电流: I = ∬_Σ J→·dS→</li>
+<li>电流: I = ∬_Σ $\vec{J}$·dS→</li>
 </ul>
 <p>
 <strong>2. 电磁学 (Maxwell 完整版)</strong>:
@@ -801,8 +801,8 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 <strong>3. 流体力学 (Navier-Stokes)</strong>:
 </p>
 <ul>
-<li>不可压缩: ∇·v→ = 0</li>
-<li>涡量: ω→ = ∇×v→</li>
+<li>不可压缩: ∇·$\vec{v}$ = 0</li>
+<li>涡量: ω→ = ∇×$\vec{v}$</li>
 <li>边界条件: 闭曲面通量 = 流入流出之差</li>
 </ul>
 <p>
@@ -852,7 +852,7 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 </p>
 <ul>
 <li>∇ × (∇f) = 0 — 梯度场无旋 (势能场无环流)</li>
-<li>∇ · (∇ × F→) = 0 — 旋度场无源 (没有"磁单极")</li>
+<li>∇ · (∇ × $\vec{F}$) = 0 — 旋度场无源 (没有"磁单极")</li>
 </ul>
 <h3 id="12-2">知识点 12.2: 拉普拉斯算子 Δ = ∇·∇</h3>
 <p>
@@ -881,7 +881,7 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 推导: 高斯定理 ∮∮ ρv→·dS→ = ∭ ∇·(ρv→) dV 是流出质量; 等于内部质量减少率 -∂/∂t ∭ ρ dV.
 </p>
 <p>
-<strong>不可压缩</strong> (ρ 常数): ∇·v→ = 0. 这就是 CFD 模拟、空气动力学的基础方程之一.
+<strong>不可压缩</strong> (ρ 常数): ∇·$\vec{v}$ = 0. 这就是 CFD 模拟、空气动力学的基础方程之一.
 </p>
 <p>
 ---
@@ -895,25 +895,25 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 <strong>微分形式</strong> (本地):
 </p>
 <ol>
-<li>高斯电场: ∇·E→ = ρ/ε₀ (电荷是电场源)</li>
-<li>高斯磁场: ∇·B→ = 0 (无磁单极)</li>
-<li>法拉第: ∇×E→ = -∂B→/∂t</li>
-<li>安培-麦克斯韦: ∇×B→ = μ₀J→ + μ₀ε₀ ∂E→/∂t</li>
+<li>高斯电场: ∇·$\vec{E}$ = ρ/ε₀ (电荷是电场源)</li>
+<li>高斯磁场: ∇·$\vec{B}$ = 0 (无磁单极)</li>
+<li>法拉第: ∇×$\vec{E}$ = -∂$\vec{B}$/∂t</li>
+<li>安培-麦克斯韦: ∇×$\vec{B}$ = μ₀J→ + μ₀ε₀ ∂$\vec{E}$/∂t</li>
 </ol>
 <p>
 <strong>积分形式</strong> (全局, 用高斯/斯托克斯转化):
 </p>
 <ol>
-<li>∮∮ E→·dS→ = Q_内/ε₀</li>
-<li>∮∮ B→·dS→ = 0</li>
-<li>∮ E→·dr→ = -dΦ_B/dt</li>
-<li>∮ B→·dr→ = μ₀I_内 + μ₀ε₀ dΦ_E/dt</li>
+<li>∮∮ $\vec{E}$·dS→ = Q_内/ε₀</li>
+<li>∮∮ $\vec{B}$·dS→ = 0</li>
+<li>∮ $\vec{E}$·dr→ = -dΦ_B/dt</li>
+<li>∮ $\vec{B}$·dr→ = μ₀I_内 + μ₀ε₀ dΦ_E/dt</li>
 </ol>
 <h3 id="12-5">知识点 12.5: 电磁波 (波动方程推导)</h3>
 <p>
 真空 (ρ=0, J=0), 对法拉第方程取旋度:
-∇×(∇×E→) = -∂(∇×B→)/∂t
-左边 = ∇(∇·E→) - ΔE→ = -ΔE→.
+∇×(∇×$\vec{E}$) = -∂(∇×$\vec{B}$)/∂t
+左边 = ∇(∇·$\vec{E}$) - ΔE→ = -ΔE→.
 右边 = -μ₀ε₀ ∂²E→/∂t².
 ∴ ΔE→ - μ₀ε₀ ∂²E→/∂t² = 0
 </p>
@@ -921,7 +921,7 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 这是<strong>波动方程</strong>, 波速 c = 1/√(μ₀ε₀) ≈ 3×10⁸ m/s. <strong>光就是电磁波</strong> — 麦克斯韦 1865 推出, 电磁学与光学大统一.
 </p>
 <p>
-<strong>例题 12-4</strong>: E→ = E₀ sin(kz - ωt) x̂→ (沿 z 传播, x 偏振).
+<strong>例题 12-4</strong>: $\vec{E}$ = E₀ sin(kz - ωt) x̂→ (沿 z 传播, x 偏振).
 代入波方程: -k²E + (ω²/c²)E = 0 ⇒ ω = ck (色散关系). LED/激光/无线电的基本构型.
 </p>
 <p>
@@ -930,14 +930,14 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 <h2 id="helmholtz">补充: Helmholtz 分解 + 微分形式入门</h2>
 <h3 id="12-6-helmholtz">知识点 12.6: Helmholtz 分解定理</h3>
 <p>
-<strong>定理</strong>: 在合适条件下, 任意向量场 F→ 可唯一分解为:
-F→ = -∇φ + ∇×A→
+<strong>定理</strong>: 在合适条件下, 任意向量场 $\vec{F}$ 可唯一分解为:
+$\vec{F}$ = -∇$\varphi$ + ∇×$\vec{A}$
 </p>
 <ul>
-<li>φ 是标量势 (scalar potential)</li>
-<li>A→ 是向量势 (vector potential)</li>
-<li>-∇φ 部分: 无旋 (∇×(-∇φ)=0) — "源"部分</li>
-<li>∇×A→ 部分: 无散 (∇·(∇×A→)=0) — "旋"部分</li>
+<li>$\varphi$ 是标量势 (scalar potential)</li>
+<li>$\vec{A}$ 是向量势 (vector potential)</li>
+<li>-∇$\varphi$ 部分: 无旋 (∇×(-∇$\varphi$)=0) — "源"部分</li>
+<li>∇×$\vec{A}$ 部分: 无散 (∇·(∇×$\vec{A}$)=0) — "旋"部分</li>
 </ul>
 <p>
 <strong>物理含义</strong>: 任何流场 = 纯散场 + 纯旋场.
@@ -946,11 +946,11 @@ F→ = -∇φ + ∇×A→
 <strong>例题 12-6</strong> (电磁场): 麦克斯韦方程中
 </p>
 <ul>
-<li>电场 E→ = -∇φ - ∂A→/∂t (静态部分 + 时变部分)</li>
-<li>磁场 B→ = ∇×A→</li>
+<li>电场 $\vec{E}$ = -∇$\varphi$ - ∂$\vec{A}$/∂t (静态部分 + 时变部分)</li>
+<li>磁场 $\vec{B}$ = ∇×$\vec{A}$</li>
 </ul>
 <p>
-φ 和 A→ 一起叫"四维势" (φ, A→) — 相对论中是 4-向量.
+$\varphi$ 和 $\vec{A}$ 一起叫"四维势" ($\varphi$, $\vec{A}$) — 相对论中是 4-向量.
 </p>
 <p>
 <strong>应用</strong>:
@@ -963,7 +963,7 @@ F→ = -∇φ + ∇×A→
 <h3 id="12-7-differential-forms">知识点 12.7: 微分形式 (Differential Forms) 入门</h3>
 <p>
 <strong>统一观点</strong>: 高数下册末尾的 Green/Gauss/Stokes 三公式本质上是<strong>同一个定理</strong>(广义 Stokes), 用"微分形式"语言能写成:
-∫_M dω = ∫_∂M ω
+∫_M dω = ∫_$\partial$M ω
 </p>
 <p>
 其中:
@@ -978,12 +978,12 @@ F→ = -∇φ + ∇×A→
 | 经典 | 微分形式 | k |
 |---|---|---|
 | Newton-Leibniz | ∫_[a,b] df = f(b)-f(a) | 1 |
-| Green | ∫_D dω = ∫_∂D ω | 2 |
-| Stokes | ∫_S dω = ∫_∂S ω | 2 |
-| Gauss | ∫_V dω = ∫_∂V ω | 3 |
+| Green | ∫_D dω = ∫_$\partial$D ω | 2 |
+| Stokes | ∫_S dω = ∫_$\partial$S ω | 2 |
+| Gauss | ∫_V dω = ∫_$\partial$V ω | 3 |
 </p>
 <p>
-<strong>外导数 d 的核心性质</strong>: d∘d = 0 (二阶外导为零). 这就是 "∇×(∇f)=0" 和 "∇·(∇×F→)=0" 的统一表述.
+<strong>外导数 d 的核心性质</strong>: d∘d = 0 (二阶外导为零). 这就是 "∇×(∇f)=0" 和 "∇·(∇×$\vec{F}$)=0" 的统一表述.
 </p>
 <p>
 <strong>应用</strong>:
@@ -1038,21 +1038,21 @@ V = 1 · 2π · 3/2 = 3π.
 </ul>
 <h3 id="12-9-solid-angle">知识点 12.9: 立体角 (Solid Angle) 概念</h3>
 <p>
-<strong>问题</strong>: 二维"角"用弧长 / 半径 = θ (弧度). 三维"立体角"如何定义?
+<strong>问题</strong>: 二维"角"用弧长 / 半径 = $\theta$ (弧度). 三维"立体角"如何定义?
 </p>
 <p>
-<strong>定义</strong>: 立体角 Ω = 球面上面积 / r² (单位: 球面度 steradian sr).
+<strong>定义</strong>: 立体角 $\Omega$ = 球面上面积 / r² (单位: 球面度 steradian sr).
 </p>
 <p>
-<strong>全球面 Ω = 4π sr</strong> (即面积 4πr² / r²).
+<strong>全球面 $\Omega$ = 4π sr</strong> (即面积 4πr² / r²).
 </p>
 <p>
-<strong>点电荷 Gauss 定理</strong>: 任意闭曲面包围单位点电荷, ∮∮ E→·dS→ = 1/ε₀.
+<strong>点电荷 Gauss 定理</strong>: 任意闭曲面包围单位点电荷, ∮∮ $\vec{E}$·dS→ = 1/ε₀.
 本质: 4π·k_e (球面立体角积分).
 </p>
 <p>
 <strong>例题 12-9</strong>: 半球面对中心的立体角.
-半球面积 2πr². Ω = 2πr²/r² = 2π sr.
+半球面积 2πr². $\Omega$ = 2πr²/r² = 2π sr.
 </p>
 <p>
 <strong>应用</strong>:
@@ -1066,20 +1066,20 @@ V = 1 · 2π · 3/2 = 3π.
 <h3 id="12-10-navier-stokes">知识点 12.10: 流体力学 Navier-Stokes 方程 (千禧难题)</h3>
 <p>
 <strong>N-S 方程</strong> (不可压缩流体):
-∂v→/∂t + (v→·∇)v→ = -∇p/ρ + ν Δv→ + f→
+∂$\vec{v}$/∂t + ($\vec{v}$·∇)$\vec{v}$ = -∇p/ρ + ν Δv→ + $\vec{f}$
 </p>
 <p>
 各项含义:
 </p>
 <ul>
-<li>∂v→/∂t: 局部加速度</li>
-<li>(v→·∇)v→: 对流加速度 (非线性核心)</li>
+<li>∂$\vec{v}$/∂t: 局部加速度</li>
+<li>($\vec{v}$·∇)$\vec{v}$: 对流加速度 (非线性核心)</li>
 <li>-∇p/ρ: 压力梯度</li>
 <li>ν Δv→: 粘性扩散 (ν = 运动黏度)</li>
-<li>f→: 体力 (重力等)</li>
+<li>$\vec{f}$: 体力 (重力等)</li>
 </ul>
 <p>
-<strong>连续性方程</strong> (不可压缩): ∇·v→ = 0.
+<strong>连续性方程</strong> (不可压缩): ∇·$\vec{v}$ = 0.
 </p>
 <p>
 <strong>Clay 千禧难题</strong>: 三维 N-S 方程是否存在光滑全局解? 至今未解决, 100 万美元奖金.
@@ -1095,12 +1095,12 @@ V = 1 · 2π · 3/2 = 3π.
 </ul>
 <h3 id="12-11-laplacian">知识点 12.11: 散度与 Laplacian 的源汇直觉</h3>
 <p>
-<strong>散度 ∇·F→</strong> = 体积"源"密度.
+<strong>散度 ∇·$\vec{F}$</strong> = 体积"源"密度.
 </p>
 <ul>
-<li>∇·F→ &gt; 0: 该点是"源" (流出 &gt; 流入)</li>
-<li>∇·F→ &lt; 0: 该点是"汇" (流入 &gt; 流出)</li>
-<li>∇·F→ = 0: 无源无汇 (不可压缩流, 静电场真空)</li>
+<li>∇·$\vec{F}$ &gt; 0: 该点是"源" (流出 &gt; 流入)</li>
+<li>∇·$\vec{F}$ &lt; 0: 该点是"汇" (流入 &gt; 流出)</li>
+<li>∇·$\vec{F}$ = 0: 无源无汇 (不可压缩流, 静电场真空)</li>
 </ul>
 <p>
 <strong>Laplacian Δf</strong> = "二阶散度" 通量平均.
@@ -1114,7 +1114,7 @@ V = 1 · 2π · 3/2 = 3π.
 <li>Δf = 0: 调和函数 (稳态)</li>
 </ul>
 <p>
-<strong>热传导方程</strong>: ∂T/∂t = α ΔT.
+<strong>热传导方程</strong>: ∂T/∂t = $\alpha$ ΔT.
 解释: 温度变化率 ∝ 局部 Laplacian. 哪里"低于周围平均"哪里就被加热.
 </p>
 <p>
@@ -1125,7 +1125,7 @@ V = 1 · 2π · 3/2 = 3π.
 <strong>统一图谱</strong>:
 | 物理方程 | 形式 |
 |---|---|
-| 热传导 | ∂T/∂t = α ΔT |
+| 热传导 | ∂T/∂t = $\alpha$ ΔT |
 | 波动 | ∂²u/∂t² = c² Δu |
 | Schrödinger | iℏ ∂ψ/∂t = -ℏ²/(2m) Δψ + Vψ |
 | Poisson | ΔΦ = -ρ/ε₀ (静态) |
@@ -1140,18 +1140,18 @@ u = (1/2)(ε₀ E² + B²/μ₀)
 </p>
 <p>
 <strong>Poynting 向量</strong> (能量流密度):
-S→ = (1/μ₀) E→ × B→
+$\vec{S}$ = (1/μ₀) $\vec{E}$ × $\vec{B}$
 单位: W/m²
 </p>
 <p>
 <strong>能量守恒</strong> (Poynting 定理):
-∂u/∂t + ∇·S→ = -E→·J→
+∂u/∂t + ∇·$\vec{S}$ = -$\vec{E}$·$\vec{J}$
 </p>
 <p>
 意思: 局部能量增长率 + 能量流出散度 = -电场对电流做的功.
 </p>
 <p>
-<strong>例题 12-12</strong>: 电磁波 (前面推导过) 的 Poynting 向量沿传播方向, |S→| = c·u. 光携带能量沿光线传播.
+<strong>例题 12-12</strong>: 电磁波 (前面推导过) 的 Poynting 向量沿传播方向, $|\vec{S}|$ = c·u. 光携带能量沿光线传播.
 </p>
 <p>
 <strong>应用</strong>:
@@ -1175,7 +1175,7 @@ S→ = (1/μ₀) E→ × B→
 </ul>
 <p>
 <strong>例题 12-13</strong> (球面积分): ∫_S² 1 dA = 4πR².
-取参数化 (球坐标 φ, θ), dA = R² sin φ dφ dθ, 积出来 4πR² ✓.
+取参数化 (球坐标 $\varphi$, $\theta$), dA = R² sin $\varphi$ dφ dθ, 积出来 4πR² ✓.
 </p>
 <p>
 <strong>关键概念</strong>:

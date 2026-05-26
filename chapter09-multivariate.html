@@ -497,15 +497,15 @@ f_x = 2x, f_y = 2y, 在 (1,2): f_x = 2, f_y = 4.
 <h2 id="9-5">9.5 隐函数求导</h2>
 <h3 id="7-7-9-4">知识点 7.7: 高阶混合偏导数 (对齐书 §9.4 进一步)</h3>
 <p>
-复杂复合函数有时要算 ∂²z/∂x∂y 这种二阶偏导.
+复杂复合函数有时要算 ∂²z/∂x$\partial$y 这种二阶偏导.
 </p>
 <p>
 <strong>关键</strong>: 先求一阶, 再"求导整个结果". 注意一阶结果可能仍是 (x,y) 的函数, 求二阶时要用乘积/链式法则.
 </p>
 <p>
-<strong>例题 7-3</strong>: z = f(u, v), u = x+y, v = xy. 求 ∂²z/∂x∂y.
+<strong>例题 7-3</strong>: z = f(u, v), u = x+y, v = xy. 求 ∂²z/∂x$\partial$y.
 一阶: ∂z/∂x = f_u + y · f_v (按链式).
-二阶: ∂²z/∂x∂y = ∂/∂y (f_u + y f_v)
+二阶: ∂²z/∂x$\partial$y = ∂/∂y (f_u + y f_v)
    = f_uu·1 + f_uv·x + f_v + y(f_vu·1 + f_vv·x)
    = f_uu + (x+y) f_uv + xy f_vv + f_v
 </p>
@@ -582,10 +582,10 @@ J = (-1)(-1) - (-1)(2) = 1 + 2 = 3.
 <h2 id="9-6-ai">9.6 方向导数与梯度 (AI 训练直接相关)</h2>
 <h3 id="10">知识点 10: 方向导数</h3>
 <p>
-偏导是沿 x/y 轴变化率, <strong>方向导数</strong>是沿<strong>任意方向</strong> l→ 的变化率.
+偏导是沿 x/y 轴变化率, <strong>方向导数</strong>是沿<strong>任意方向</strong> $\vec{l}$ 的变化率.
 </p>
 <p>
-<strong>公式</strong>: 沿单位方向 l→ = (cosα, cosβ) 的方向导数:
+<strong>公式</strong>: 沿单位方向 $\vec{l}$ = (cosα, cosβ) 的方向导数:
 (∂ f)/(∂ l) = f_x cosα + f_y cosβ
 </p>
 <p>
@@ -611,23 +611,23 @@ J = (-1)(-1) - (-1)(2) = 1 + 2 = 3.
 </p>
 <p>
 <strong>方向导数跟梯度关系</strong>:
-(∂ f)/(∂ l) = ∇ f · l→
+(∂ f)/(∂ l) = ∇ f · $\vec{l}$
 (梯度点乘方向向量)
 </p>
 <p>
-<strong>例题 8</strong>: f(x, y) = x² + 2y², 求在 (1, 1) 处沿 l→ = (1, 1) 方向的方向导数.
+<strong>例题 8</strong>: f(x, y) = x² + 2y², 求在 (1, 1) 处沿 $\vec{l}$ = (1, 1) 方向的方向导数.
 </p>
 <ul>
 <li>f_x = 2x, f_y = 4y, 在 (1,1): ∇ f = (2, 4)</li>
-<li>单位化 l→⁰ = (1/√(2), 1/√(2))</li>
-<li>方向导数 = ∇ f · l→⁰ = 2/√(2) + 4/√(2) = 6/√(2) = 3√(2).</li>
+<li>单位化 $\vec{l}$⁰ = (1/√(2), 1/√(2))</li>
+<li>方向导数 = ∇ f · $\vec{l}$⁰ = 2/√(2) + 4/√(2) = 6/√(2) = 3√(2).</li>
 </ul>
 <p>
 <strong>例题 8-2</strong>: f(x,y) = x² + y², 在 (1, 2) 处:
 </p>
 <ul>
 <li>沿哪个方向变化最快? — 沿 ∇f = (2, 4), 单位化 = (1/√5, 2/√5).</li>
-<li>最大变化率 = |∇f| = √20 = 2√5.</li>
+<li>最大变化率 = |∇f| = √20 = 2$\sqrt{5}$.</li>
 <li>沿哪个方向不变? — 跟 ∇f 垂直方向, 即 (2, -1)/√5 或 (-2, 1)/√5.</li>
 </ul>
 <p>
@@ -661,9 +661,9 @@ J = (-1)(-1) - (-1)(2) = 1 + 2 = 3.
 <strong>算法步骤</strong>:
 </p>
 <ol>
-<li><strong>初始化</strong>: 给参数 θ 一个起始值</li>
-<li><strong>计算梯度</strong>: ∇L(θ) (损失函数对 θ 的偏导)</li>
-<li><strong>更新</strong>: θ ← θ - η · ∇L(θ) (η 是学习率)</li>
+<li><strong>初始化</strong>: 给参数 $\theta$ 一个起始值</li>
+<li><strong>计算梯度</strong>: ∇L($\theta$) (损失函数对 $\theta$ 的偏导)</li>
+<li><strong>更新</strong>: $\theta$ ← $\theta$ - η · ∇L($\theta$) (η 是学习率)</li>
 <li><strong>重复</strong>: 直到 |∇L| 足够小</li>
 </ol>
 <p>
@@ -696,16 +696,16 @@ J = (-1)(-1) - (-1)(2) = 1 + 2 = 3.
 梯度 ∇f 不只是"导数向量", 它有几个深刻的几何意义:
 </p>
 <p>
-<strong>① 等值线/等值面的法向量</strong>: 等高线 f(x, y) = c 上每点的切方向跟 ∇f 垂直 (因为沿等值线 f 不变, 方向导数 = 0 = ∇f·t→).
+<strong>① 等值线/等值面的法向量</strong>: 等高线 f(x, y) = c 上每点的切方向跟 ∇f 垂直 (因为沿等值线 f 不变, 方向导数 = 0 = ∇f·$\vec{t}$).
 </p>
 <p>
-<strong>② 增长最快方向</strong>: 在某点, 方向导数 = ∇f · l→⁰ = |∇f| cos α. 最大值当 α = 0, 即 l→ 方向跟 ∇f 同向.
+<strong>② 增长最快方向</strong>: 在某点, 方向导数 = ∇f · $\vec{l}$⁰ = |∇f| cos $\alpha$. 最大值当 $\alpha$ = 0, 即 $\vec{l}$ 方向跟 ∇f 同向.
 </p>
 <p>
 <strong>③ 几何例题</strong>: 等高线密 = ∇f 大 = 山陡; 等高线疏 = ∇f 小 = 山缓.
 </p>
 <p>
-<strong>例题 8-4</strong> (等值线-梯度关系): f(x,y) = x² + y² (碗形). 等值线: x² + y² = c (圆). ∇f = (2x, 2y) = 2(x, y) = 2 ·r→.
+<strong>例题 8-4</strong> (等值线-梯度关系): f(x,y) = x² + y² (碗形). 等值线: x² + y² = c (圆). ∇f = (2x, 2y) = 2(x, y) = 2 ·$\vec{r}$.
 观察: 这跟"圆的半径方向" 一致 — <strong>梯度永远跟等值线垂直</strong> ✓
 </p>
 <h3 id="11-7-hessian-9-8">知识点 11.7: 多元函数极值的二阶判别 (Hessian 矩阵, 对齐书 §9.8)</h3>
@@ -732,7 +732,7 @@ f(x+h, y+k) ≈ f(x,y) + (1/2)[A h² + 2B hk + C k²]
 </p>
 <h3 id="12">知识点 12: 空间曲线的切线</h3>
 <p>
-参数曲线 r→(t) = (x(t), y(t), z(t)), 切向量 = r→'(t) = (x'(t), y'(t), z'(t)).
+参数曲线 $\vec{r}$(t) = (x(t), y(t), z(t)), 切向量 = $\vec{r}$'(t) = (x'(t), y'(t), z'(t)).
 </p>
 <p>
 切线方程 (点向式): 用切向量做方向向量.
@@ -827,34 +827,34 @@ f_x(x₀, y₀) = 0    且    f_y(x₀, y₀) = 0
 </p>
 <h3 id="16">知识点 16: 条件极值 — 拉格朗日乘数法</h3>
 <p>
-求 f(x, y) 在约束 φ(x, y) = 0 下的极值.
+求 f(x, y) 在约束 $\varphi$(x, y) = 0 下的极值.
 </p>
 <p>
-<strong>构造拉格朗日函数</strong>: L = f + λ φ, 然后求驻点:
+<strong>构造拉格朗日函数</strong>: L = f + $\lambda$ $\varphi$, 然后求驻点:
 L_x = 0, L_y = 0, L_λ = 0
 </p>
 <p>
-<strong>生活类比</strong>: 给定预算 (约束), 求快乐最大 (目标函数). 拉格朗日乘数 λ 就是"边际快乐" = 多 1 元预算能多多少快乐.
+<strong>生活类比</strong>: 给定预算 (约束), 求快乐最大 (目标函数). 拉格朗日乘数 $\lambda$ 就是"边际快乐" = 多 1 元预算能多多少快乐.
 </p>
 <p>
 <strong>例题 11</strong>: 求 f(x, y) = xy 在 x + y = 1 约束下的极值.
 </p>
 <ul>
-<li>L = xy + λ(x + y - 1)</li>
-<li>L_x = y + λ = 0 → y = -λ</li>
-<li>L_y = x + λ = 0 → x = -λ</li>
-<li>L_λ = x + y - 1 = 0 → -2λ = 1 → λ = -1/2, x = y = 1/2</li>
+<li>L = xy + $\lambda$(x + y - 1)</li>
+<li>L_x = y + $\lambda$ = 0 → y = -$\lambda$</li>
+<li>L_y = x + $\lambda$ = 0 → x = -$\lambda$</li>
+<li>L_λ = x + y - 1 = 0 → -2λ = 1 → $\lambda$ = -1/2, x = y = 1/2</li>
 <li>极大值 = 1/4.</li>
 </ul>
 <p>
 <strong>例题 11-2</strong> (经典几何题): 在椭圆 x²/4 + y² = 1 上求一点, 距原点最远 + 最近.
 目标函数 = 距离平方 f(x,y) = x² + y² (避免根号).
 约束: g(x,y) = x²/4 + y² - 1 = 0.
-L = x² + y² + λ(x²/4 + y² - 1)
+L = x² + y² + $\lambda$(x²/4 + y² - 1)
 </p>
 <ul>
-<li>∂L/∂x = 2x + λx/2 = x(2 + λ/2) = 0 → x = 0 或 λ = -4</li>
-<li>∂L/∂y = 2y + 2λy = 2y(1+λ) = 0 → y = 0 或 λ = -1</li>
+<li>∂L/∂x = 2x + λx/2 = x(2 + $\lambda$/2) = 0 → x = 0 或 $\lambda$ = -4</li>
+<li>∂L/∂y = 2y + 2λy = 2y(1+$\lambda$) = 0 → y = 0 或 $\lambda$ = -1</li>
 <li>约束: 椭圆方程</li>
 </ul>
 <p>
@@ -871,11 +871,11 @@ L = x² + y² + λ(x²/4 + y² - 1)
 <strong>例题 11-3</strong> (实用问题): 用 12 平方米材料做长方体盒子无盖, 求最大体积.
 设长 x, 宽 y, 高 z, 体积 V = xyz.
 约束: xy + 2xz + 2yz = 12 (无盖, 底 + 4 个侧面).
-拉格朗日: L = xyz + λ(xy + 2xz + 2yz - 12)
+拉格朗日: L = xyz + $\lambda$(xy + 2xz + 2yz - 12)
 偏导联立:
-yz + λ(y + 2z) = 0
-xz + λ(x + 2z) = 0
-xy + λ(2x + 2y) = 0
+yz + $\lambda$(y + 2z) = 0
+xz + $\lambda$(x + 2z) = 0
+xy + $\lambda$(2x + 2y) = 0
 解得 x = y = 2, z = 1, V = 4 立方米.
 </p>
 <h3 id="17">知识点 17: 多元函数最值 (在有界闭区域上)</h3>
@@ -891,8 +891,8 @@ xy + λ(2x + 2y) = 0
 <p>
 <strong>例题 11-4</strong>: 求 f(x,y) = xy 在 D = {x² + y² ≤ 1} 上的最值.
 内部驻点: f_x = y = 0, f_y = x = 0 → (0,0), f = 0.
-边界 x² + y² = 1, 用参数 x = cosθ, y = sinθ: f = cosθ sinθ = sin(2θ)/2.
-最大值 = 1/2 (在 θ=π/4, 即 (√2/2, √2/2)), 最小值 = -1/2.
+边界 x² + y² = 1, 用参数 x = $\cos\theta$, y = $\sin\theta$: f = $\cos\theta$ $\sin\theta$ = sin(2θ)/2.
+最大值 = 1/2 (在 $\theta$=$\pi$/4, 即 (√2/2, √2/2)), 最小值 = -1/2.
 <strong>结论</strong>: max = 1/2, min = -1/2.
 </p>
 <p>
@@ -960,7 +960,7 @@ b = (14 - 0.8·10)/4 = 6/4 = 1.5.
 <strong>极值点的关键特征</strong>: 在最优点, <strong>f 的等值线跟约束曲线 g=0 相切</strong>. 切点 = 极值候选.
 </p>
 <p>
-相切 ⇔ 两曲线的<strong>法向量平行</strong> ⇔ ∇f = λ∇g (λ 是乘数).
+相切 ⇔ 两曲线的<strong>法向量平行</strong> ⇔ ∇f = $\lambda$∇g ($\lambda$ 是乘数).
 </p>
 <p>
 <strong>推广 (KKT 条件)</strong>: 多约束 + 不等式约束情况. 是机器学习 SVM 优化的核心数学.
@@ -968,10 +968,10 @@ b = (14 - 0.8·10)/4 = 6/4 = 1.5.
 <p>
 <strong>例题 12</strong> (经典 + 几何): 在 x² + y² = 1 上求 f(x,y) = xy 的极值.
 ∇f = (y, x), ∇g = (2x, 2y).
-ar→ ∇f = λ∇g → y = 2λx, x = 2λy.
-两式相乘: xy = 4λ²xy → 若 xy ≠ 0, 4λ² = 1, λ = ±1/2.
-λ=1/2: y = x, 代入 x²+y² = 1 → x = ±1/√2, y = ±1/√2 同号. f = 1/2 (极大).
-λ=-1/2: y = -x, → x = ±1/√2, y = ∓1/√2. f = -1/2 (极小).
+ar→ ∇f = $\lambda$∇g → y = 2λx, x = 2λy.
+两式相乘: xy = 4λ²xy → 若 xy ≠ 0, 4λ² = 1, $\lambda$ = ±1/2.
+$\lambda$=1/2: y = x, 代入 x²+y² = 1 → x = ±1/√2, y = ±1/√2 同号. f = 1/2 (极大).
+$\lambda$=-1/2: y = -x, → x = ±1/√2, y = ∓1/√2. f = -1/2 (极小).
 <strong>结论</strong>: max = 1/2, min = -1/2.
 </p>
 <p>
@@ -1000,13 +1000,13 @@ ar→ ∇f = λ∇g → y = 2λx, x = 2λy.
 </p>
 <ul>
 <li>效用函数 U(x, y) (x 食物, y 衣服), MU_x = ∂U/∂x (食物边际效用)</li>
-<li>拉格朗日乘数: 给定预算约束 px·x + py·y = I, 求 U 最大. λ = 边际效用 / 边际价格 = "1 块钱能换多少效用"</li>
+<li>拉格朗日乘数: 给定预算约束 px·x + py·y = I, 求 U 最大. $\lambda$ = 边际效用 / 边际价格 = "1 块钱能换多少效用"</li>
 </ul>
 <p>
 <strong>2. 物理学</strong>:
 </p>
 <ul>
-<li>偏微分方程: 热传导 ∂T/∂t = α·∇²T (T 是温度), ∇² = 拉普拉斯算子</li>
+<li>偏微分方程: 热传导 ∂T/∂t = $\alpha$·∇²T (T 是温度), ∇² = 拉普拉斯算子</li>
 <li>波动方程: ∂²u/∂t² = c²·∇²u</li>
 <li>量子力学 Schrödinger 方程: iℏ ∂ψ/∂t = -ℏ²/(2m)·∇²ψ + Vψ</li>
 </ul>
@@ -1014,9 +1014,9 @@ ar→ ∇f = λ∇g → y = 2λx, x = 2λy.
 <strong>3. AI/ML 训练</strong>:
 </p>
 <ul>
-<li>损失函数 L(θ) = 多元函数 (θ 是模型参数 — 神经网络可能有千亿参数)</li>
+<li>损失函数 L($\theta$) = 多元函数 ($\theta$ 是模型参数 — 神经网络可能有千亿参数)</li>
 <li>反向传播: 链式法则求 ∇L</li>
-<li>梯度下降: θ ← θ - η·∇L (η 学习率)</li>
+<li>梯度下降: $\theta$ ← $\theta$ - η·∇L (η 学习率)</li>
 <li>二阶方法 (Newton/quasi-Newton): 用 Hessian 加速收敛</li>
 </ul>
 <p>
@@ -1034,7 +1034,7 @@ ar→ ∇f = λ∇g → y = 2λx, x = 2λy.
 <li>隐函数定理: 价格变化引起需求量变化的"敏感度"</li>
 </ul>
 <p>
-<strong>学完这章 = 你能看懂 AI 论文里 80% 的数学符号</strong> (∇, ∂, dx, ∂L/∂θ).
+<strong>学完这章 = 你能看懂 AI 论文里 80% 的数学符号</strong> (∇, ∂, dx, ∂L/∂$\theta$).
 </p>
 <p>
 ---
@@ -1075,17 +1075,17 @@ x₂ ≈ (4/9, 4/9). 二次收敛趋 (0,0).
 <strong>KKT 必要条件</strong>:
 </p>
 <ol>
-<li>梯度: ∇f + λ∇h + μ∇g = 0</li>
-<li>可行性: h=0, g≤0</li>
-<li>对偶可行: μ ≥ 0</li>
-<li>互补松弛: μ·g = 0</li>
+<li>梯度: ∇f + $\lambda$∇h + $\mu$∇g = 0</li>
+<li>可行性: h=0, g$\le$0</li>
+<li>对偶可行: $\mu$ ≥ 0</li>
+<li>互补松弛: $\mu$·g = 0</li>
 </ol>
 <p>
 <strong>直觉</strong>:
 </p>
 <ul>
-<li>g&lt;0 (约束不紧) → μ=0</li>
-<li>g=0 (约束紧) → μ 起作用</li>
+<li>g&lt;0 (约束不紧) → $\mu$=0</li>
+<li>g=0 (约束紧) → $\mu$ 起作用</li>
 </ul>
 <p>
 <strong>应用</strong>:
@@ -1102,27 +1102,27 @@ L = (1/2)||w||² - ∑μᵢ[yᵢ(w·xᵢ+b)-1].
 </p>
 <h3 id="9-7">知识点 9.7: 多元函数的方向导数完整定义</h3>
 <p>
-<strong>方向导数 D_u→ f(x₀)</strong>: 沿单位向量 u→ 方向 f 的变化率.
-D_u→ f(x₀) = lim_(t→0) [f(x₀+tu→) - f(x₀)] / t
+<strong>方向导数 D_u→ f(x₀)</strong>: 沿单位向量 $\vec{u}$ 方向 f 的变化率.
+D_u→ f(x₀) = lim_($\vec{t}$0) [f(x₀+tu→) - f(x₀)] / t
 </p>
 <p>
-<strong>与梯度关系</strong>: D_u→ f = ∇f · u→ = |∇f| cos θ
+<strong>与梯度关系</strong>: D_u→ f = ∇f · $\vec{u}$ = |∇f| $\cos\theta$
 </p>
 <p>
 <strong>核心几何意义</strong>:
 </p>
 <ul>
-<li>u→ = ∇f/|∇f| (沿梯度): D_u→ f = |∇f|, <strong>最大</strong>.</li>
-<li>u→ ⊥ ∇f: D_u→ f = 0 (沿等高线方向不变).</li>
-<li>u→ = -∇f/|∇f|: D_u→ f = -|∇f|, <strong>最小</strong> (最速下降方向).</li>
+<li>$\vec{u}$ = ∇f/|∇f| (沿梯度): D_u→ f = |∇f|, <strong>最大</strong>.</li>
+<li>$\vec{u}$ ⊥ ∇f: D_u→ f = 0 (沿等高线方向不变).</li>
+<li>$\vec{u}$ = -∇f/|∇f|: D_u→ f = -|∇f|, <strong>最小</strong> (最速下降方向).</li>
 </ul>
 <p>
-<strong>例题 9-7</strong>: f(x,y) = x²+y², 求 (1,1) 沿 u→=(3/5, 4/5) 的方向导数.
+<strong>例题 9-7</strong>: f(x,y) = x²+y², 求 (1,1) 沿 $\vec{u}$=(3/5, 4/5) 的方向导数.
 ∇f|_(1,1) = (2, 2).
 D_u→ f = (2,2)·(3/5, 4/5) = 6/5 + 8/5 = 14/5 = 2.8.
 </p>
 <p>
-<strong>ML 训练核心</strong>: 梯度下降 θ ← θ - η·∇L, 选 -∇L 方向就是因为它是最速下降 — 局部下降最快.
+<strong>ML 训练核心</strong>: 梯度下降 $\theta$ ← $\theta$ - η·∇L, 选 -∇L 方向就是因为它是最速下降 — 局部下降最快.
 </p>
 <h3 id="9-8-envelope">知识点 9.8: 包络 (Envelope) 与判别曲线</h3>
 <p>
@@ -1177,7 +1177,7 @@ D_u→ f = (2,2)·(3/5, 4/5) = 6/5 + 8/5 = 14/5 = 2.8.
 F: R^(n+m) → R^m, F(x₀, y₀)=0, ∂F/∂y 满秩 m. 则存在 y=y(x).
 </p>
 <p>
-<strong>例题 9-9</strong>: F(x,y) = x²+y²-1=0. F_y = 2y. 在 (1/2, √3/2) 处 F_y≠0, 可解.
+<strong>例题 9-9</strong>: F(x,y) = x²+y²-1=0. F_y = 2y. 在 (1/2, √3/2) 处 F_y$\neq$0, 可解.
 y'(x) = -F_x/F_y = -2x/(2y) = -x/y = -(1/2)/(√3/2) = -1/√3.
 </p>
 <p>
@@ -1222,26 +1222,26 @@ e^(x+y) ≈ 1 + x + y + (1/2)(x² + 2xy + y²) = 1 + (x+y) + (1/2)(x+y)²
 <h3 id="9-11">知识点 9.11: 梯度下降变体 (深度学习核心)</h3>
 <p>
 <strong>1. 动量法 (Momentum)</strong> — "惯性":
-v_t = β v_(t-1) + ∇L(θ_t)
+v_t = $\beta$ v_(t-1) + ∇L(θ_t)
 θ_(t+1) = θ_t - η v_t
 把过去梯度累积成"速度", 像球滚下山.
 </p>
 <p>
 <strong>2. Nesterov 加速梯度 (NAG)</strong>:
-v_t = β v_(t-1) + ∇L(θ_t - η β v_(t-1))
+v_t = $\beta$ v_(t-1) + ∇L(θ_t - η $\beta$ v_(t-1))
 "看一眼前方"再更新.
 </p>
 <p>
-<strong>3. AdaGrad</strong>: G_t = G_(t-1) + (∇L)². θ ← θ - η·∇L/(√G_t + ε). 自适应每参数学习率.
+<strong>3. AdaGrad</strong>: G_t = G_(t-1) + (∇L)². $\theta$ ← $\theta$ - η·∇L/(√G_t + ε). 自适应每参数学习率.
 </p>
 <p>
-<strong>4. RMSProp</strong>: G_t = β G_(t-1) + (1-β)(∇L)². 解决 AdaGrad 学习率渐弱.
+<strong>4. RMSProp</strong>: G_t = $\beta$ G_(t-1) + (1-$\beta$)(∇L)². 解决 AdaGrad 学习率渐弱.
 </p>
 <p>
 <strong>5. Adam</strong> = Momentum + RMSProp (深度学习默认):
 m_t = β₁ m_(t-1) + (1-β₁)∇L
 v_t = β₂ v_(t-1) + (1-β₂)(∇L)²
-θ ← θ - η · m̂_t / (√v̂_t + ε)
+$\theta$ ← $\theta$ - η · m̂_t / (√v̂_t + ε)
 β₁=0.9, β₂=0.999 标准. <strong>训 LLM/Diffusion 首选</strong>.
 </p>
 <h3 id="9-12-autograd">知识点 9.12: 自动微分 (Autograd)</h3>
@@ -1259,7 +1259,7 @@ v_t = β₂ v_(t-1) + (1-β₂)(∇L)²
 <li>反向: O(1) 倍前向</li>
 </ul>
 <p>
-L 标量, θ 亿级 ⟹ 反向快 10⁹ 倍. <strong>Backprop 革命核心</strong>.
+L 标量, $\theta$ 亿级 ⟹ 反向快 10⁹ 倍. <strong>Backprop 革命核心</strong>.
 </p>
 <ul>
 <li><strong>jvp (Jacobian-vector product)</strong>: 正向</li>
@@ -1292,10 +1292,10 @@ L 标量, θ 亿级 ⟹ 反向快 10⁹ 倍. <strong>Backprop 革命核心</stro
 <strong>深度学习泛化</strong> (核心理论):
 </p>
 <ul>
-<li>训练: 在数据集 D_n 上最小化 L_n(θ) = (1/n) ∑ ℓ(f(x_i), y_i)</li>
-<li>真实目标: L(θ) = E_(x,y)[ℓ]</li>
-<li>泛化 = 学到的 θ̂ 使 L(θ̂) ≈ L_n(θ̂) ?</li>
-<li>VC 维 / Rademacher 复杂度 给出 sup_θ |L_n(θ) - L(θ)| 上界</li>
+<li>训练: 在数据集 D_n 上最小化 L_n($\theta$) = (1/n) ∑ ℓ(f(x_i), y_i)</li>
+<li>真实目标: L($\theta$) = E_(x,y)[ℓ]</li>
+<li>泛化 = 学到的 $\theta$̂ 使 L($\theta$̂) ≈ L_n($\theta$̂) ?</li>
+<li>VC 维 / Rademacher 复杂度 给出 sup_θ |L_n($\theta$) - L($\theta$)| 上界</li>
 </ul>
 <p>
 这就是<strong>一致收敛</strong>在 ML 里的"统计学习理论"角度.
