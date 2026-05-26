@@ -968,14 +968,21 @@ b_n = (1/L) ∫_{-L}^L f(x) sin(nπx/L) dx
 <p>
 <strong>特例 L = $\pi$</strong>: 退化到周期 2π 公式.
 </p>
+<div class="box-def">
+<p>周期 2L 函数的复数傅里叶级数</p>
 <p>
-<strong>复数形式</strong> (欧拉公式重写):
-f(x) = Σ_(n=-∞)^∞ c_n · e^(i·nπx/L)
-c_n = (1/(2L)) ∫_{-L}^L f(x) e^(-i·nπx/L) dx
+$$f(x) = \sum_{n=-\infty}^\infty c_n e^{i n\pi x/L}, \quad c_n = \frac{1}{2L}\int_{-L}^L f(x) e^{-in\pi x/L}\,dx$$
 </p>
-<p>
-<strong>为啥用复数</strong>: 信号处理领域更优雅, FFT 算法原生支持. 实数版本可看作复数版本的"特例".
-</p>
+</div>
+<div class="box-intuition">
+<p>为啥用复数版本</p>
+<ol>
+<li><strong>表达统一</strong>: 一个 $c_n$ 系数序列代替两个 $a_n, b_n$</li>
+<li><strong>FFT 原生支持</strong>: 离散傅里叶变换/快速傅里叶变换都用复指数</li>
+<li><strong>频谱直观</strong>: $|c_n|$ 给频率 $n$ 处的幅度, $\arg c_n$ 给相位</li>
+<li><strong>实数是特例</strong>: 实数 $f$ 时 $c_{-n} = \overline{c_n}$</li>
+</ol>
+</div>
 <h3 id="14-7-vs">知识点 14.7: 傅里叶级数 vs 傅里叶变换</h3>
 <div class="box-intuition">
 <p>级数 vs 变换的对比</p>
