@@ -160,20 +160,31 @@ M = ∫_L (x+y) ds = ∫_0¹ (3t+4t) · 5 dt = 35 · 1/2 = 17.5.
 </p>
 </div>
 <h3 id="1-5-11-1">知识点 1.5: 第一类曲线积分的物理应用 (对齐书 §11.1 一)</h3>
+<div class="box-thm">
+<p>第一类曲线积分 4 大物理量</p>
 <p>
-第一类曲线积分能算很多物理量, 都是"密度乘弧长" 的累计:
+都是"密度乘弧长"的累积:
 </p>
 <ol>
-<li><strong>弧长</strong>: L = ∫_L 1 ds (密度 = 1)</li>
-<li><strong>质量</strong>: M = ∫_L $\mu$(x,y,z) ds</li>
-<li><strong>质心</strong>:</li>
+<li><strong>弧长</strong>: $L = \int_L 1\,ds$ (密度 = 1)</li>
+<li><strong>质量</strong>: $M = \int_L \mu(x,y,z)\,ds$</li>
+<li><strong>质心</strong>: $\bar{x} = \int_L x \mu\,ds / M$, $\bar{y} = \int_L y \mu\,ds / M$</li>
+<li><strong>转动惯量</strong> (绕 z 轴): $I_z = \int_L (x^2+y^2) \mu\,ds$</li>
 </ol>
+</div>
+<div class="box-intuition">
+<p>跟二重积分类比</p>
 <p>
-   x̄ = ∫_L x·$\mu$ ds / M, ȳ = ∫_L y·$\mu$ ds / M
+| 二维平板 (ch10) | 弯曲线 (ch11) |
+|---|---|
+| 质量 = $\iint \mu\,d\sigma$ | 质量 = $\int_L \mu\,ds$ |
+| 重心 = $\iint x\mu\,d\sigma / M$ | 重心 = $\int_L x\mu\,ds / M$ |
+| 转惯 = $\iint (x^2+y^2)\mu\,d\sigma$ | 转惯 = $\int_L (x^2+y^2)\mu\,ds$ |
 </p>
-<ol>
-<li><strong>转动惯量</strong> (绕 z 轴): I_z = ∫_L (x²+y²) $\mu$ ds</li>
-</ol>
+<p>
+公式同形, 只是积分对象从"面积"变成"弧长". 物理 / 几何含义完全对应.
+</p>
+</div>
 <div class="box-example">
 <p>例题 1-2</p>
 <p>
