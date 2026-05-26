@@ -773,9 +773,27 @@ e^(iπ) + 1 = 0
 <figcaption>图 6.1 傅里叶级数逼近方波 — 1 项基波只是粗略, 3 项已较像, 无穷项收敛到方波</figcaption>
 </figure>
 <h3 id="12-10-12-7">知识点 12.10: 三角函数系正交性 (对齐书 §12.7 一)</h3>
+<div class="box-thm">
+<p>三角函数系正交性</p>
 <p>
-<strong>正交性</strong>: 在 [-$\pi$, $\pi$] 上, 函数系 {1, cos x, sin x, cos 2x, sin 2x, ..., cos nx, sin nx, ...} 两两的积分为 0 (除自己跟自己).
+在区间 $[-\pi, \pi]$ 上, 函数系 $\{1, \cos x, \sin x, \cos 2x, \sin 2x, \ldots\}$ 满足:
 </p>
+<ul>
+<li>$\int_{-\pi}^{\pi} \cos(mx)\cos(nx)\,dx = 0$ ($m \ne n$)</li>
+<li>$\int_{-\pi}^{\pi} \sin(mx)\sin(nx)\,dx = 0$ ($m \ne n$)</li>
+<li>$\int_{-\pi}^{\pi} \cos(mx)\sin(nx)\,dx = 0$ (所有 $m, n$)</li>
+<li>$\int_{-\pi}^{\pi} \cos^2(nx)\,dx = \int_{-\pi}^{\pi} \sin^2(nx)\,dx = \pi$ ($n \ge 1$)</li>
+<li>$\int_{-\pi}^{\pi} 1\cdot 1\,dx = 2\pi$</li>
+</ul>
+<p>
+即两两"内积"为 0, 自己跟自己内积 = 模平方.
+</p>
+</div>
+<div class="box-intuition">
+<p>
+把每个函数看作"无穷维向量", "内积" 定义为 $\int f g\,dx$. 正交 = "向量两两垂直", 类比 $\mathbb{R}^3$ 的 $(\vec{i}, \vec{j}, \vec{k})$ 标准正交基. 傅里叶系数就是"f 在每个三角基函数上的投影".
+</p>
+</div>
 <p>
 <strong>验证 (举例)</strong>:
 ∫_{-$\pi$}^$\pi$ cos(mx) cos(nx) dx = 0 (m ≠ n)
