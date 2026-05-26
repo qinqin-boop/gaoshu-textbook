@@ -814,10 +814,19 @@ $f(x,y)$ 满足 $f \ge 0$ 且 $\iint_{\mathbb{R}^2} f\,dxdy = 1$ (归一化).
 <strong>AI 应用</strong>: 贝叶斯网络 / 概率图模型 / 高斯混合模型 (GMM) — 都涉及多维概率分布的积分.
 </p>
 <h3 id="14">知识点 14: 曲面面积公式</h3>
+<div class="box-thm">
+<p>曲面面积公式</p>
 <p>
-曲面 z = f(x,y) 在区域 D 上的面积:
-S = ∬_D √(1 + f_x² + f_y²) dxdy
+曲面 $z = f(x, y)$ 在区域 $D$ 上的面积:
+$$S = \iint_D \sqrt{1 + f_x^2 + f_y^2}\,dxdy$$
 </p>
+</div>
+<div class="box-intuition">
+<p>几何推导</p>
+<p>
+小块切平面 $dxdy$ 在斜曲面上对应面积 $\sqrt{1 + f_x^2 + f_y^2}\,dxdy$ — 倾斜板面积 / 投影面积 = $1/\cos\alpha$ ($\alpha$ = 法线跟 $z$ 轴夹角). 越陡, 系数越大.
+</p>
+</div>
 <div class="box-example">
 <p>例题 14</p>
 <p>
