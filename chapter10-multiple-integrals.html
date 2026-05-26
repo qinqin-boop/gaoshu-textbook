@@ -1228,22 +1228,29 @@ dxdydz = r² sin $\varphi$ dr dφ dθ.
 </p>
 </div>
 <h3 id="13-10">知识点 13.10: 概率密度变换 (机器学习的核心)</h3>
+<div class="box-thm">
+<p>概率密度变换公式</p>
 <p>
-设随机变量 X 密度 p_X(x), 单调变换 Y = g(X). 则 Y 的密度:
-p_Y(y) = p_X(g⁻¹(y)) · |dg⁻¹(y)/dy| = p_X(x) / |g'(x)|
+设随机变量 $X$ 密度 $p_X(x)$, <strong>单调可逆</strong>变换 $Y = g(X)$. 则 $Y$ 密度:
+$$p_Y(y) = p_X(g^{-1}(y)) \cdot |dg^{-1}(y)/dy| = \frac{p_X(x)}{|g'(x)|}$$
+<strong>多元</strong>: $p_Y(\vec{y}) = p_X(\vec{x}) / |\det J|$, 其中 $J = \partial \vec{y}/\partial \vec{x}$.
 </p>
+</div>
+<div class="box-intuition">
+<p>ML 现代生成模型核心</p>
 <p>
-<strong>多元</strong>: p_Y(y) = p_X(x) / |det J|, 其中 J = ∂y/∂x.
-</p>
-<p>
-<strong>应用</strong>:
+现代生成模型全用这条公式:
 </p>
 <ul>
-<li>标准化流 (Normalizing Flows): 用一系列可逆变换 + 雅可比把简单分布变复杂</li>
-<li>变分自编码器 VAE: 重参数化 z = $\mu$+σ·ε, 用雅可比传梯度</li>
-<li>GAN: 生成器 G 把 N(0,I) 变成数据分布</li>
-<li>扩散模型: 加噪逆过程的概率密度变换</li>
+<li><strong>Normalizing Flows</strong>: 一系列可逆变换 + 雅可比, 把简单分布 (高斯) 变复杂分布 (图像)</li>
+<li><strong>VAE</strong>: 重参数化 $z = \mu + \sigma \epsilon$, 用雅可比传梯度</li>
+<li><strong>GAN</strong>: 生成器 $G$ 把 $\mathcal{N}(0, I)$ 变成数据分布</li>
+<li><strong>Diffusion</strong>: 加噪 / 去噪逆过程的概率密度变换</li>
 </ul>
+<p>
+<strong>没有概率密度变换公式, 现代生成式 AI 不成立</strong>.
+</p>
+</div>
 <div class="box-example">
 <p>例题 13-11</p>
 <p>
