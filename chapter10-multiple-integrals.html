@@ -685,14 +685,26 @@ $f$ 是曲面高度, 体积 = 曲面在 $D$ 上方与 $xy$ 平面之间的空间
 x̄ = (∬ xμ  dσ)/(∬ $\mu$  dσ),    ȳ = (∬ yμ  dσ)/(∬ $\mu$  dσ)
 </p>
 <h3 id="12">知识点 12: 求转动惯量</h3>
+<div class="box-def">
+<p>转动惯量 (Moment of Inertia)</p>
 <p>
-绕 x 轴: I_x = ∬ y² $\mu$  dσ
-绕 y 轴: I_y = ∬ x² $\mu$  dσ
-绕原点: I_O = ∬ (x²+y²) $\mu$  dσ
+平面薄板的转动惯量 (绕指定轴):
 </p>
+<ul>
+<li>绕 $x$ 轴: $I_x = \iint_D y^2 \mu\,d\sigma$</li>
+<li>绕 $y$ 轴: $I_y = \iint_D x^2 \mu\,d\sigma$</li>
+<li>绕原点 (极): $I_O = \iint_D (x^2 + y^2) \mu\,d\sigma = I_x + I_y$</li>
+</ul>
 <p>
-(<strong>距离² × 质量微元</strong> 是核心思想)
+<strong>核心思想</strong>: $I = \int (\text{到轴距离})^2 \cdot dm$.
 </p>
+</div>
+<div class="box-intuition">
+<p>转动惯量 = "转动难度"</p>
+<p>
+质量分布越远离轴, $I$ 越大, 越难转动. 物理上 $L = I\omega$ (角动量), $\tau = I\alpha$ (扭矩驱动角加速度). <strong>花样滑冰</strong>演员收腿 ($I$ 减小) 旋转加速.
+</p>
+</div>
 <div class="box-example">
 <p>例题 12</p>
 <p>
