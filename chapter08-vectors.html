@@ -1545,27 +1545,34 @@ $(\kappa, \tau)$ 唯一刻画曲线形状 (相差刚体运动). 平面曲线 $\t
 </p>
 </div>
 <h3 id="6-10">知识点 6.10: 高斯曲率 与 高斯-博内定理</h3>
+<div class="box-def">
+<p>高斯曲率</p>
 <p>
-<strong>高斯曲率 K</strong> (曲面上):
-K = 主曲率 κ₁ · κ₂
-</p>
-<p>
-其中 κ₁, κ₂ 是过该点的两个极端方向曲率.
+曲面上一点的<strong>高斯曲率</strong> $K = \kappa_1 \cdot \kappa_2$, 其中 $\kappa_1, \kappa_2$ 是该点过此点两个极端方向 (主方向) 的曲率.
 </p>
 <ul>
-<li>K &gt; 0: 椭圆点 (球面, 鼓胀)</li>
-<li>K = 0: 抛物点 (圆柱)</li>
-<li>K &lt; 0: 双曲点 (马鞍)</li>
+<li>$K > 0$: <strong>椭圆点</strong> (球面, 鼓胀)</li>
+<li>$K = 0$: <strong>抛物点</strong> (圆柱, 锥面)</li>
+<li>$K < 0$: <strong>双曲点</strong> (马鞍, 鞍面)</li>
 </ul>
+</div>
+<div class="box-thm">
+<p>Gauss 惊人定理 (Theorema Egregium)</p>
 <p>
-<strong>惊人定理</strong> (Gauss, Theorema Egregium): K 只依赖曲面"内蕴度量", 不依赖嵌入. 这意味着平面到地图的"等距映射"不存在 (球面 K=1/R²&gt;0, 平面 K=0).
+$K$ <strong>只依赖曲面内蕴度量</strong>, 不依赖曲面在 $\mathbb{R}^3$ 中如何嵌入. <strong>推论</strong>: 球面 ($K = 1/R^2 > 0$) 到平面 ($K = 0$) 不存在等距映射 — 这就是为什么地图永远会变形.
+</p>
+</div>
+<div class="box-thm">
+<p>Gauss-Bonnet 定理</p>
+<p>
+闭合曲面 $\Sigma$ 上:
+$$\iint_\Sigma K\,dA = 2\pi \chi$$
+其中 $\chi$ = <strong>欧拉示性数</strong> (拓扑不变量, 球面 $\chi=2$, 环面 $\chi=0$).
 </p>
 <p>
-<strong>Gauss-Bonnet 定理</strong>: 闭合曲面 ∬ K dA = 2π·χ
+<strong>意义</strong>: <strong>几何 (曲率积分) = 拓扑 (欧拉数)</strong> — 微分几何里最优雅的定理之一.
 </p>
-<ul>
-<li>χ = 欧拉示性数 (球面 χ=2, 环面 χ=0)</li>
-</ul>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
