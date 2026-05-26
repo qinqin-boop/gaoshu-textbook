@@ -639,6 +639,26 @@ e^(iπ) + 1 = 0
 <strong>AI 应用</strong>: 离散傅里叶变换 (DFT) 用 e^(-2πikn/N), 这就是欧拉公式离散版.
 </p>
 <h2 id="12-6-12-7">12.6 傅里叶级数 (对齐书 §12.7)</h2>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 方波 (目标函数) + 不同阶逼近 -->
+  <!-- 坐标轴 -->
+  <line x1="20" y1="120" x2="460" y2="120" stroke="#666" stroke-width="1"/>
+  <line x1="240" y1="20" x2="240" y2="230" stroke="#666" stroke-width="1"/>
+  <!-- 目标方波 (高度 ±50) -->
+  <path d="M 20,170 L 130,170 L 130,70 L 350,70 L 350,170 L 460,170" fill="none" stroke="#1a365d" stroke-width="3"/>
+  <!-- 1 项: sin x -->
+  <path d="M 20,120 Q 75,40 130,120 T 240,120 T 350,120 T 460,120" fill="none" stroke="#c53030" stroke-width="1.5" opacity="0.7"/>
+  <!-- 3 项叠加 (smooth approximation) -->
+  <path d="M 20,140 L 60,80 L 100,80 L 130,90 L 150,75 L 200,75 L 240,90 L 280,75 L 330,75 L 350,90 L 380,80 L 420,80 L 460,140"
+        fill="none" stroke="#22543d" stroke-width="2" opacity="0.8"/>
+  <text x="20" y="20" font-size="13" font-family="serif" fill="#1a365d">方波 f(x)</text>
+  <text x="20" y="40" font-size="12" font-family="serif" fill="#c53030">— 1 项 (基波)</text>
+  <text x="20" y="60" font-size="12" font-family="serif" fill="#22543d">— 3 项 (逼近)</text>
+  <text x="200" y="225" font-size="11" font-family="serif" fill="#999">傅里叶: 越多项叠加越像方波</text>
+</svg>
+<figcaption>图 6.1 傅里叶级数逼近方波 — 1 项基波只是粗略, 3 项已较像, 无穷项收敛到方波</figcaption>
+</figure>
 <h3 id="12-10-12-7">知识点 12.10: 三角函数系正交性 (对齐书 §12.7 一)</h3>
 <p>
 <strong>正交性</strong>: 在 [-$\pi$, $\pi$] 上, 函数系 {1, cos x, sin x, cos 2x, sin 2x, ..., cos nx, sin nx, ...} 两两的积分为 0 (除自己跟自己).
