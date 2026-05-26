@@ -138,9 +138,19 @@ S_N = (1-1/2) + (1/2-1/3) + ... + (1/N - 1/(N+1)) = 1 - 1/(N+1) → 1.
 </p>
 </div>
 <h3 id="2">知识点 2: 收敛必要条件</h3>
+<div class="box-thm">
+<p>必要条件 (项趋零)</p>
 <p>
-级数收敛 → lim u_n = 0.
+若 $\sum u_n$ 收敛, 则 $\lim_{n\to\infty} u_n = 0$.
+<strong>逆否命题</strong> (实际常用): 若 $\lim u_n \ne 0$, 级数<strong>发散</strong>.
 </p>
+</div>
+<div class="box-pitfall">
+<p>必要 ≠ 充分</p>
+<p>
+$\lim u_n = 0$ <strong>不一定</strong>收敛! 反例: 调和级数 $\sum 1/n$, $1/n \to 0$ 但级数发散.
+</p>
+</div>
 <p>
 <strong>逆命题不一定</strong>! u_n → 0 不一定收敛. 反例: 调和级数 Σ 1/n, 1/n → 0 但<strong>发散</strong>.
 </p>
@@ -309,9 +319,13 @@ u_(n+1)/u_n = (n+1)!/(n+1)^(n+1) · n^n/n! = (n+1) · n^n / (n+1)^(n+1) = (n/(n+
 </p>
 </div>
 <h3 id="6-5">知识点 6.5: 积分判别法</h3>
+<div class="box-thm">
+<p>积分判别法</p>
 <p>
-若 f(x) 单调递减且 f(n) = u_n, 则 Σ u_n 跟 ∫_1^∞ f(x) dx <strong>同时</strong>收敛或发散.
+设 $f(x) > 0$ 在 $[1, +\infty)$ 上<strong>单调递减</strong>, 且 $f(n) = u_n$. 则:
+$$\sum_{n=1}^\infty u_n \text{ 收敛} \Leftrightarrow \int_1^\infty f(x)\,dx \text{ 收敛}$$
 </p>
+</div>
 <div class="box-example">
 <p>例题 3-5</p>
 <p>
