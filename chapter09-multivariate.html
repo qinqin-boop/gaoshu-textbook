@@ -311,6 +311,30 @@ f(x,y) = xy/√(x²+y²), f(0,0)=0.
 可微要求"线性逼近", 这函数不行.
 </p>
 <h2>9.3 全微分</h2>
+<h3>知识点 5.8: 偏导数的高级应用 — 雅可比矩阵</h3>
+<p>
+<strong>雅可比矩阵 (Jacobian)</strong>: 多元向量函数的偏导数排成矩阵.
+</p>
+<p>
+设 F: R^n → R^m, F(x) = (f₁(x), ..., f_m(x)). 雅可比:
+J = [∂fᵢ/∂xⱼ]_(m×n)
+</p>
+<p>
+<strong>作用</strong>:
+</p>
+<ol>
+<li>多元函数的"导数" 推广 — 线性逼近系数</li>
+<li>换元法: |det J| = 变换的"放大比"</li>
+<li>神经网络反向传播: 每层 Jacobian 乘起来 = 链式法则</li>
+</ul>
+<p>
+<strong>例题 5-7</strong>: F(x,y) = (x²+y, xy). 求 Jacobian.
+J = [[2x, 1], [y, x]] (2×2 矩阵)
+|det J| = 2x² - y.
+</p>
+<p>
+<strong>深度学习</strong>: 神经网络每层 z = f(Wx+b), Jacobian = f'(...)·W. 反向传播从后往前累乘 J. 这是 PyTorch/TensorFlow 自动求导的数学基础.
+</p>
 <h3>知识点 6: 全微分定义</h3>
 <p>
 <strong>一元的微分</strong>: dy = f'(x) dx — 自变量小变化引起函数小变化.
