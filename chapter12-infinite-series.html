@@ -769,21 +769,25 @@ $\sum u_n(x)$ 在区间 $I$ 上<strong>一致收敛</strong>到 $S(x)$ ⟺ $\for
 ---
 </p>
 <h3 id="12-7-12-4">知识点 12.7: 泰勒级数收敛条件 (对齐书 §12.4)</h3>
+<div class="box-thm">
+<p>泰勒级数收敛条件</p>
 <p>
-f(x) 在 x₀ 处的泰勒级数收敛到 f(x) 的条件: <strong>拉格朗日余项 → 0</strong>.
+$f(x)$ 在 $x_0$ 处的泰勒级数收敛到 $f(x)$ ⟺ <strong>拉格朗日余项</strong>趋零:
+$$R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0)^{n+1} \to 0 \quad (n \to \infty)$$
 </p>
+</div>
+<div class="box-pitfall">
+<p>无限可微 ≠ Taylor 收敛到函数</p>
 <p>
-R_n(x) = f^(n+1)(ξ)/(n+1)! · (x-x₀)^(n+1)
+<strong>经典反例</strong>: $f(x) = e^{-1/x^2}$ ($x \ne 0$), $f(0) = 0$. 在 $x_0 = 0$ 处所有 $f^{(n)}(0) = 0$, Taylor 级数恒等于 0, 但 $f$ 在邻域 $\ne 0$. 此函数 $C^\infty$ 光滑但<strong>非解析</strong>.
 </p>
+</div>
+<div class="box-intuition">
+<p>工程常见函数都好</p>
 <p>
-当 R_n(x) → 0 (n → ∞), 泰勒级数才真"代表" 该函数.
+实用中, $e^x, \sin x, \cos x, \ln(1+x), (1+x)^\alpha$ 在收敛半径内都收敛到原函数 — 这些是"解析函数". 数值计算这套函数才可靠.
 </p>
-<p>
-<strong>反例</strong>: f(x) = e^(-1/x²) (x ≠ 0), f(0) = 0. 在 x₀ = 0 处所有 f^(n)(0) = 0, 泰勒级数 = 0, 但 f 在邻域 ≠ 0.
-</p>
-<p>
-<strong>这说明</strong>: 函数无限可微 ≠ 泰勒展开收敛到函数本身. 工程实用中, e^x, sin x, cos x, ln(1+x), (1+x)^$\alpha$ 在它们的收敛半径内都收敛到原函数 (这是好情况).
-</p>
+</div>
 <h3 id="12-8-12-5">知识点 12.8: 用幂级数解微分方程 (对齐书 §12.5 二)</h3>
 <p>
 <strong>思想</strong>: 把未知函数 y(x) 写成幂级数 y = Σ a_n x^n, 代入微分方程, 比较系数解出 a_n.
