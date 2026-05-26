@@ -1399,31 +1399,38 @@ $$dx \wedge dy = (\tfrac{\partial x}{\partial u} du + \tfrac{\partial x}{\partia
 </p>
 </div>
 <h3 id="13-15">知识点 13.15: 立方体的"双重广义体积"</h3>
+<div class="box-thm">
+<p>n 维球体积公式</p>
 <p>
-<strong>n 维球体体积</strong>:
-V_n(R) = $\pi$^(n/2) R^n / Γ(n/2 + 1)
+$$V_n(R) = \frac{\pi^{n/2} R^n}{\Gamma(n/2 + 1)}$$
 </p>
 <p>
-例:
+<strong>特例</strong>:
+| $n$ | 体积 | 数值 ($R=1$) |
+|---|---|---|
+| 1 | $2R$ | 2 |
+| 2 | $\pi R^2$ | 3.14 |
+| 3 | $\frac{4}{3}\pi R^3$ | 4.19 |
+| 4 | $\frac{1}{2}\pi^2 R^4$ | 4.93 |
+| <strong>5</strong> | $\frac{8}{15}\pi^2 R^5$ | <strong>5.26 (峰值)</strong> |
+| 10 | $\frac{\pi^5}{120} R^{10}$ | 2.55 |
+</p>
+</div>
+<div class="box-pitfall">
+<p>维数诅咒 (Curse of Dimensionality)</p>
+<p>
+<strong>惊人现象</strong>: $V_n(1)$ 在 $n = 5$ 达到峰值 5.26, 然后<strong>单调下降</strong>, $n \to \infty$ 时 $\to 0$. 高维单位球"几乎是空的".
+</p>
+<p>
+<strong>ML 影响</strong>:
 </p>
 <ul>
-<li>n=1: 2R</li>
-<li>n=2: πR²</li>
-<li>n=3: (4/3)πR³</li>
-<li>n=4: (1/2)π² R⁴</li>
-<li>n=10: $\pi$^5 R^10 / 120</li>
+<li>高维数据点几乎全在<strong>边界附近</strong> (内部太稀)</li>
+<li>蒙特卡洛采样在高维球内<strong>效率指数下降</strong></li>
+<li>KNN 算法在高维下<strong>"近邻"概念失效</strong> (所有点离你都差不多远)</li>
+<li>必须用流形假设 / 降维 (PCA/t-SNE) 应对</li>
 </ul>
-<p>
-<strong>惊人现象</strong>: V_n(1) 在 n=5 达到峰值约 5.26, 然后<strong>下降</strong>, $\vec{n}$∞ 时 → 0. 高维单位球"几乎是空的".
-</p>
-<p>
-<strong>应用</strong>:
-</p>
-<ul>
-<li>"维数诅咒" (Curse of Dimensionality): 高维数据点几乎全在边界, ML 算法面对挑战</li>
-<li>蒙特卡洛积分: 高维球内采样效率随 n 指数下降</li>
-<li>KNN 算法: 高维下"近邻"概念失效</li>
-</ul>
+</div>
 </main>
 </div>
 <footer>
