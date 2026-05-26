@@ -263,6 +263,34 @@ V_z = ∬_(D_z) z dxdy = z · z² = z³.
 切片 z 固定, D_z 是 x²+y² ≤ z (半径 √z 的圆), 面积 = πz.
 ∭ = ∫_0⁴ z · πz dz = π · z³/3 |_0⁴ = 64π/3.
 </p>
+<h3>知识点 6.7: 三重积分球坐标用法 (对齐书 §10.3 三 进一步)</h3>
+<p>
+<strong>球坐标 (r, φ, θ)</strong> 适合<strong>球对称区域</strong>:
+</p>
+<ul>
+<li>r ≥ 0: 到原点距离</li>
+<li>0 ≤ φ ≤ π: 跟 z 轴正半轴的夹角 (天顶角)</li>
+<li>0 ≤ θ ≤ 2π: 在 xy 平面投影跟 x 轴的夹角 (方位角)</li>
+</ul>
+<p>
+<strong>坐标转换</strong>:
+x = r sinφ cosθ
+y = r sinφ sinθ
+z = r cosφ
+</p>
+<p>
+<strong>Jacobian</strong> = r² sinφ
+</p>
+<p>
+<strong>例题 6-4</strong> (球体体积): x²+y²+z² ≤ R².
+V = ∭_球 1 dV = ∫_0^(2π) ∫_0^π ∫_0^R r² sinφ dr dφ dθ
+   = 2π · 2 · R³/3 = (4/3) π R³ ✓
+</p>
+<p>
+<strong>例题 6-5</strong> (球体质量 + 密度随 r 变): ρ = r (中心 0 边缘大).
+M = ∭ r · r² sinφ dr dφ dθ = ∫_0^(2π) ∫_0^π sinφ dφ dθ · ∫_0^R r³ dr
+   = 2π · 2 · R⁴/4 = π R⁴.
+</p>
 <h3>知识点 7: 柱坐标</h3>
 <p>
 适合<strong>轴对称</strong> (圆柱 / 圆锥) 体. 用 (r, θ, z), 其中 x = rcosθ, y = rsinθ, z = z.
