@@ -606,18 +606,21 @@ z_x = -2x, z_y = -2y, √(1+4x²+4y²).
 ---
 </p>
 <h3 id="8-5-11-4">知识点 8.5: 曲面面积公式推导 (对齐书 §11.4)</h3>
+<div class="box-thm">
+<p>曲面面积公式</p>
 <p>
-<strong>问题</strong>: 曲面 z = f(x,y) 在区域 D 上的面积 A 怎么算?
+曲面 $z = f(x,y)$ 在区域 $D$ 上的面积:
+$$A = \iint_D \sqrt{1 + f_x^2 + f_y^2}\,dxdy$$
 </p>
+</div>
+<div class="box-intuition">
+<p>几何推导</p>
 <p>
-<strong>思想</strong>: 把 D 切小, 每个小区域 ΔS_xy 对应曲面上一片倾斜的小面积 ΔS. 倾斜板面积 = 平面投影面积 / |cos $\alpha$|, 其中 $\alpha$ 是切平面跟 xy 面的夹角.
+切片小区域 $\Delta S_{xy}$ 对应曲面一片<strong>倾斜</strong>小面积 $\Delta S$. 倾斜板面积 = 平面投影 / $|\cos\alpha|$, 其中 $\alpha$ 是切平面跟 xy 面的夹角.
+$$\cos\alpha = \frac{1}{\sqrt{1 + f_x^2 + f_y^2}}$$
+所以 $\Delta S = \sqrt{1 + f_x^2 + f_y^2}\,\Delta S_{xy}$.
 </p>
-<p>
-cos $\alpha$ = 1 / √(1 + f_x² + f_y²)
-</p>
-<p>
-所以 ΔS = √(1 + f_x² + f_y²) · ΔS_xy.
-</p>
+</div>
 <p>
 加和取极限:
 <strong>A = ∬_D √(1 + f_x² + f_y²) dxdy</strong>
