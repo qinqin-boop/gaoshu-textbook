@@ -839,17 +839,16 @@ c_n = (1/(2π)) ∫_{-$\pi$}^$\pi$ f(x) e^(-inx) dx
 <li>复指数 e^(inx) 周期性自然</li>
 </ol>
 <h3 id="13">知识点 13: 周期函数的傅里叶级数</h3>
+<div class="box-def">
+<p>周期 2π 函数的傅里叶级数</p>
 <p>
-周期 2π 的函数 f(x) 展开成正弦/余弦无穷和:
-f(x) = (a₀)/(2) + Σ_(n=1)^∞ (a_n cos nx + b_n sin nx)
+$$f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty (a_n \cos nx + b_n \sin nx)$$
+<strong>系数公式</strong> (由正交性推出):
+$$a_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos nx\,dx, \quad b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin nx\,dx$$
 </p>
+</div>
 <p>
-<strong>系数</strong>:
-a_n = (1)/($\pi$) ∫_(-$\pi$)^$\pi$ f(x) cos nx  dx
-b_n = (1)/($\pi$) ∫_(-$\pi$)^$\pi$ f(x) sin nx  dx
-</p>
-<p>
-<strong>思想</strong>: <strong>任何周期函数都能拆成一堆不同频率的正弦余弦叠加</strong>.
+<strong>思想</strong>: <strong>任何周期函数都能拆成不同频率的正弦/余弦叠加</strong>.
 </p>
 <p>
 <strong>生活类比</strong>: 钢琴弹一个音 = 基音 + 多个泛音叠加. 傅里叶就是这么拆.
@@ -858,23 +857,29 @@ b_n = (1)/($\pi$) ∫_(-$\pi$)^$\pi$ f(x) sin nx  dx
 <strong>音频/图像压缩 (MP3/JPG)</strong>: 用傅里叶变换转到频域, 去掉人耳/眼不敏感的高频, 数据量大幅减小.
 </p>
 <h3 id="13-5-12-7">知识点 13.5: 狄利克雷收敛定理 (对齐书 §12.7 二)</h3>
+<div class="box-thm">
+<p>Dirichlet 收敛定理</p>
 <p>
-<strong>问题</strong>: 一个函数的傅里叶级数, 在什么条件下"真的等于"原函数?
-</p>
-<p>
-<strong>狄利克雷条件</strong>:
+设 $f(x)$ 满足 (Dirichlet 条件):
 </p>
 <ol>
-<li>f(x) 在 [-$\pi$, $\pi$] 上分段连续 (有限个间断点)</li>
-<li>f(x) 在 [-$\pi$, $\pi$] 上分段单调 (有限个极值)</li>
+<li>在 $[-\pi, \pi]$ 上<strong>分段连续</strong> (有限个间断点)</li>
+<li>在 $[-\pi, \pi]$ 上<strong>分段单调</strong> (有限个极值)</li>
 </ol>
 <p>
-满足时, 傅里叶级数:
+则 $f$ 的 Fourier 级数处处收敛:
 </p>
 <ul>
-<li>连续点处: 收敛到 f(x) 本身</li>
-<li>间断点处: 收敛到 (f(x⁺) + f(x⁻))/2 (左右极限平均值)</li>
+<li><strong>连续点 $x$</strong>: 收敛到 $f(x)$</li>
+<li><strong>间断点 $x$</strong>: 收敛到 $\frac{f(x^+) + f(x^-)}{2}$ (左右极限平均值)</li>
 </ul>
+</div>
+<div class="box-pitfall">
+<p>吉布斯现象 (Gibbs phenomenon)</p>
+<p>
+方波 $f(x) = \text{sgn}(x)$ 等阶跃函数, Fourier 部分和在间断点处<strong>永远超出真值约 9%</strong> (即使取无穷项). 这是数值/信号处理常见坑.
+</p>
+</div>
 <p>
 <strong>经典反例 (吉布斯现象)</strong>:
 方波 f(x) = sgn(x). 傅里叶级数在 0 处"震荡"且<strong>峰值超出 9% 不能消除</strong>, 即使 N → ∞.
