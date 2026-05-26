@@ -286,16 +286,21 @@ $\rho = \lim_{n\to\infty} \sqrt[n]{u_n}$:
 </p>
 </div>
 <h3 id="6-p">知识点 6: p-级数 (重要参考)</h3>
+<div class="box-thm">
+<p>p-级数收敛性</p>
 <p>
-Σ_(n=1)^∞ (1)/(n^p):
+$$\sum_{n=1}^\infty \frac{1}{n^p}: \begin{cases} p > 1 & \text{收敛} \\ p \le 1 & \text{发散} \end{cases}$$
 </p>
+</div>
+<div class="box-intuition">
+<p>经典特例</p>
 <ul>
-<li>p &gt; 1 → 收敛</li>
-<li>p ≤ 1 → 发散</li>
+<li>$p=1$ (调和级数): $\sum 1/n$ 发散 (但慢, $\sim \ln n$)</li>
+<li>$p=2$ (Basel 问题): $\sum 1/n^2 = \pi^2/6$ (Euler 解出, 1734)</li>
+<li>$p=3$: $\sum 1/n^3 = \zeta(3) \approx 1.202$ (Apéry 常数, 无理性 1978 才证)</li>
+<li>$p=1.001$: 收敛 (即使略 &gt; 1)</li>
 </ul>
-<p>
-特别 Σ 1/n (p=1) 发散, Σ 1/n² (p=2) 收敛 (实际上 = π²/6, 著名).
-</p>
+</div>
 <div class="box-example">
 <p>例题 3-2</p>
 <p>
