@@ -355,6 +355,39 @@ V_z = ∬_(D_z) z dxdy = z · z² = z³.
 <li>0 ≤ $\varphi$ ≤ $\pi$: 跟 z 轴正半轴的夹角 (天顶角)</li>
 <li>0 ≤ $\theta$ ≤ 2π: 在 xy 平面投影跟 x 轴的夹角 (方位角)</li>
 </ul>
+<figure>
+<svg viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="arrSp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a365d"/></marker>
+  </defs>
+  <!-- 坐标轴: x 横, y 斜后, z 竖 -->
+  <line x1="60" y1="280" x2="340" y2="280" stroke="#666" stroke-width="1"/>
+  <line x1="60" y1="280" x2="60" y2="40" stroke="#666" stroke-width="1"/>
+  <line x1="60" y1="280" x2="180" y2="200" stroke="#666" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="345" y="280" font-size="13">x</text>
+  <text x="55" y="35" font-size="13">z</text>
+  <text x="185" y="195" font-size="13">y</text>
+  <!-- 点 P 在球上 -->
+  <circle cx="240" cy="140" r="5" fill="#c53030"/>
+  <text x="250" y="135" font-size="14" font-weight="bold" fill="#c53030">P</text>
+  <!-- r: 原点到 P -->
+  <line x1="60" y1="280" x2="240" y2="140" stroke="#1a365d" stroke-width="2" marker-end="url(#arrSp)"/>
+  <text x="135" y="220" font-size="14" fill="#1a365d" font-weight="bold">r</text>
+  <!-- z 轴上投影 P_z -->
+  <line x1="240" y1="140" x2="60" y2="140" stroke="#999" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="240" y1="140" x2="240" y2="280" stroke="#999" stroke-width="1" stroke-dasharray="3 3"/>
+  <!-- φ 天顶角 (从 z 轴到 r) -->
+  <path d="M 60,200 A 80,80 0 0 1 90,162" fill="none" stroke="#22543d" stroke-width="2"/>
+  <text x="70" y="190" font-size="14" fill="#22543d" font-weight="bold">φ</text>
+  <!-- θ 方位角 (xy 平面投影到 x 轴) -->
+  <line x1="60" y1="280" x2="240" y2="280" stroke="#999" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="60" y1="280" x2="240" y2="280" stroke="#c9b97a" stroke-width="2"/>
+  <path d="M 105,280 A 45,45 0 0 0 100,270" fill="none" stroke="#8b3a0a" stroke-width="2"/>
+  <text x="115" y="270" font-size="14" fill="#8b3a0a" font-weight="bold">θ</text>
+  <text x="100" y="310" font-size="12" fill="#666">球坐标: P = (r, φ, θ), Jacobian = r² sinφ</text>
+</svg>
+<figcaption>图 6.7.1 球坐标系: r=到原点距离, φ=天顶角 (从 z 轴), θ=方位角 (xy 平面投影到 x 轴)</figcaption>
+</figure>
 <p>
 <strong>坐标转换</strong>:
 x = r sinφ $\cos\theta$
