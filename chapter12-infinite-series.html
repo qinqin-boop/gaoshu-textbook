@@ -723,16 +723,32 @@ sin x / x = (x - x³/3! + x⁵/5! - ...)/x = 1 - x²/3! + x⁴/5! - ...
 之前讲的是 Σ a_n (常数项) 或 Σ a_n x^n (幂级数). 更一般的是 Σ u_n(x), 每项是任意 x 的函数.
 </p>
 <h3 id="13-5">知识点 13.5: 一致收敛 (核心概念)</h3>
+<div class="box-def">
+<p>一致收敛 (Uniform Convergence)</p>
 <p>
-<strong>普通收敛 (pointwise)</strong>: 在每个固定的 x, Σ u_n(x) → S(x) 收敛.
-<strong>一致收敛 (uniform)</strong>: 收敛速度跟 x 无关 — 不管 x 取啥, 加到 N 项后误差都小于 ε.
+$\sum u_n(x)$ 在区间 $I$ 上<strong>一致收敛</strong>到 $S(x)$ ⟺ $\forall \epsilon > 0, \exists N, \forall n > N, \forall x \in I: |S_n(x) - S(x)| < \epsilon$.
 </p>
 <p>
-<strong>为啥重要</strong>: 一致收敛允许"积分换序" / "求导换序" / "极限换序". 普通收敛不一定能.
+<strong>核心</strong>: $N$ 不依赖 $x$ — 收敛速度跟 $x$ 无关.
 </p>
+</div>
+<div class="box-thm">
+<p>一致收敛 vs 逐点收敛</p>
 <p>
-<strong>生活类比</strong>: 100 个学生考试. 普通收敛 = "每个人最终都及格" (但有人慢有人快). 一致收敛 = "全班同时及格" (整体进度齐).
+<strong>逐点收敛</strong>: 在每个固定 $x$ 处, $S_n(x) \to S(x)$ (允许 $N$ 跟 $x$ 有关).
+<strong>一致收敛</strong>: 比逐点收敛<strong>强</strong>, 允许"求导/积分/极限<strong>换序</strong>". 逐点收敛<strong>不</strong>一定能.
 </p>
+</div>
+<div class="box-intuition">
+<p>生活类比</p>
+<p>
+100 个学生考试:
+</p>
+<ul>
+<li><strong>逐点收敛</strong> = "每人最终都及格" (有人快有人慢)</li>
+<li><strong>一致收敛</strong> = "全班同时及格" (整体进度齐)</li>
+</ul>
+</div>
 <h3 id="13-6-weierstrass-m">知识点 13.6: Weierstrass M 判别法</h3>
 <p>
 如果存在 M_n 使 |u_n(x)| ≤ M_n 对所有 x 都成立, 且 Σ M_n 收敛, 则 Σ u_n(x) <strong>一致收敛</strong>.
