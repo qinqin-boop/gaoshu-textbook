@@ -502,15 +502,17 @@ V = ∫₀^(2π) ∫_0¹ ∫_r¹ r dz dr dθ = 2π ∫_0¹ r(1-r) dr = 2π · (1
 ---
 </p>
 <h3 id="7-5-10-2">知识点 7.5: 二重积分换元法 (一般化) (对齐书 §10.2 三)</h3>
+<div class="box-thm">
+<p>二重积分换元公式</p>
 <p>
-极坐标只是换元的特例. 一般情况:
+设变换 $T: (u,v) \to (x,y)$, $x=x(u,v), y=y(u,v)$ 在 $D'$ 上可逆 + 连续可微. Jacobian
+$$J = \frac{\partial(x,y)}{\partial(u,v)} = \det \begin{pmatrix} \partial x/\partial u & \partial x/\partial v \\ \partial y/\partial u & \partial y/\partial v \end{pmatrix}$$
+则
+$$\iint_D f(x,y)\,dxdy = \iint_{D'} f(x(u,v), y(u,v)) \cdot |J|\,dudv$$
 </p>
+</div>
 <p>
-x = x(u, v), y = y(u, v), 是从 (u, v) 平面到 (x, y) 平面的变换.
-∬_D f(x,y) dxdy = ∬_(D') f(x(u,v), y(u,v)) · |J| du dv
-</p>
-<p>
-其中 <strong>Jacobian</strong> J = ∂(x,y)/∂(u,v) = | ∂x/∂u ∂x/∂v   ∂y/∂u ∂y/∂v |
+<strong>生活类比</strong>: 把方格地图扭曲变形 (鱼眼镜头), 每个小方格面积变了 — $|J|$ 是"变形比".
 </p>
 <p>
 <strong>生活类比</strong>: 你把方格地图扭曲变形 (比如鱼眼镜头), 每个小方格面积变了 — |J| 就是"变形比".
@@ -1185,10 +1187,20 @@ I(0) = $\pi$/2. <strong>狄利克雷积分</strong> ✓
 <li>神经网络: 损失函数在无穷处的衰减分析</li>
 </ul>
 <h3 id="13-13-fubini">知识点 13.13: 多重积分的 Fubini 定理详解</h3>
+<div class="box-thm">
+<p>Fubini 定理</p>
 <p>
-<strong>Fubini 定理</strong>: 若 f 在矩形 [a,b]×[c,d] 上 Riemann 可积, 则:
-∬ f dxdy = ∫_a^b [∫_c^d f(x,y) dy] dx = ∫_c^d [∫_a^b f(x,y) dx] dy
+若 $f$ 在矩形 $[a,b]\times[c,d]$ 上 Riemann 可积, 则:
+$$\iint_{[a,b]\times[c,d]} f\,dxdy = \int_a^b\!\!\int_c^d f(x,y)\,dy\,dx = \int_c^d\!\!\int_a^b f(x,y)\,dx\,dy$$
+即<strong>积分次序可交换</strong>.
 </p>
+</div>
+<div class="box-thm">
+<p>Tonelli 定理 (非负版)</p>
+<p>
+若 $f \ge 0$ 且可测, 两种顺序积分总相等 (允许 $+\infty$).
+</p>
+</div>
 <p>
 可以交换积分次序.
 </p>
