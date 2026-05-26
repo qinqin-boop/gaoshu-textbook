@@ -739,14 +739,20 @@ $$\iint_\Sigma \vec{v}\cdot d\vec{S} = \iint_\Sigma P\,dydz + Q\,dzdx + R\,dxdy$
 <strong>生活类比</strong>: 河流流过一片网, 通量 = 单位时间穿过网的水量.
 </p>
 <h3 id="9-5-11-5">知识点 9.5: 第二类曲面积分跟第一类的转换 (对齐书 §11.5 三)</h3>
+<div class="box-thm">
+<p>两类曲面积分转换</p>
 <p>
-<strong>转换公式</strong>:
-∬_Σ P dydz + Q dzdx + R dxdy = ∬_Σ (P cosα + Q cosβ + R cosγ) dS
-其中 (cosα, cosβ, cosγ) 是曲面 Σ 上点的<strong>单位外法向量</strong> (有向曲面方向决定).
+设 $\vec{n} = (\cos\alpha, \cos\beta, \cos\gamma)$ 是曲面 $\Sigma$ 单位<strong>外</strong>法向量:
+$$\iint_\Sigma P\,dydz + Q\,dzdx + R\,dxdy = \iint_\Sigma (P\cos\alpha + Q\cos\beta + R\cos\gamma)\,dS$$
+即 $\iint_\Sigma \vec{F}\cdot d\vec{S} = \iint_\Sigma \vec{F}\cdot \vec{n}\,dS$.
 </p>
+</div>
+<div class="box-intuition">
+<p>几何理解</p>
 <p>
-<strong>应用</strong>: 当被积函数包含位置 + 法向量信息时, 转换为第一类便于参数化计算.
+$d\vec{S} = \vec{n}\,dS$ — 第二类的 $d\vec{S}$ 是带方向的面积元 (法向乘面积). 转换公式只是把方向显式拆出来.
 </p>
+</div>
 <div class="box-example">
 <p>例题 9-3</p>
 <p>
