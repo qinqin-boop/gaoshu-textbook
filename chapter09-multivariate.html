@@ -378,16 +378,31 @@ f(x,y) = x² + y² (碗形). ∂f/∂x = 2x, ∂f/∂y = 2y.
 ---
 </p>
 <h3 id="5">知识点 5: 高阶偏导数</h3>
+<div class="box-def">
+<p>二阶偏导</p>
 <p>
-偏导再求偏导 = 二阶偏导.
+偏导再求偏导:
 </p>
+<ul>
+<li>$\dfrac{\partial^2 z}{\partial x^2} = (z_x)_x$: 对 $x$ 求两次</li>
+<li>$\dfrac{\partial^2 z}{\partial x \partial y} = (z_y)_x$: 先 $y$ 后 $x$</li>
+<li>$\dfrac{\partial^2 z}{\partial y \partial x} = (z_x)_y$: 先 $x$ 后 $y$</li>
+</ul>
+</div>
+<div class="box-thm">
+<p>Clairaut/Schwarz 定理 (混合偏导对称性)</p>
 <p>
-(∂² z)/(∂ x²) = 对 x 偏导后再对 x 偏导.
-(∂² z)/(∂ x ∂ y) = 先对 y 偏导, 再对 x 偏导.
+若 $f_{xy}, f_{yx}$ 在 $(x_0, y_0)$ 附近<strong>都连续</strong>, 则:
+$$f_{xy}(x_0, y_0) = f_{yx}(x_0, y_0)$$
+即<strong>混合偏导跟求导顺序无关</strong>.
 </p>
+</div>
+<div class="box-pitfall">
+<p>连续性是关键</p>
 <p>
-<strong>重要定理</strong>: 若 f_(xy) 和 f_(yx) 都连续, 则相等 (<strong>混合偏导跟求导顺序无关</strong>).
+混合偏导不连续时可能不相等. 经典反例 (大多数实际函数满足): $f(x,y) = xy(x^2-y^2)/(x^2+y^2)$ 在原点 $f_{xy}(0,0) \ne f_{yx}(0,0)$.
 </p>
+</div>
 <div class="box-example">
 <p>例题 4</p>
 <p>
