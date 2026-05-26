@@ -1205,6 +1205,55 @@ e^(x+y) ≈ 1 + x + y + (1/2)(x² + 2xy + y²) = 1 + (x+y) + (1/2)(x+y)²
 <li>物理: 谐振子近似 = 势能函数二阶 Taylor</li>
 <li>ML 解释性: LIME 局部线性近似复杂模型</li>
 </ul>
+<h3>知识点 9.11: 梯度下降变体 (深度学习核心)</h3>
+<p>
+<strong>1. 动量法 (Momentum)</strong> — "惯性":
+v_t = β v_(t-1) + ∇L(θ_t)
+θ_(t+1) = θ_t - η v_t
+把过去梯度累积成"速度", 像球滚下山.
+</p>
+<p>
+<strong>2. Nesterov 加速梯度 (NAG)</strong>:
+v_t = β v_(t-1) + ∇L(θ_t - η β v_(t-1))
+"看一眼前方"再更新.
+</p>
+<p>
+<strong>3. AdaGrad</strong>: G_t = G_(t-1) + (∇L)². θ ← θ - η·∇L/(√G_t + ε). 自适应每参数学习率.
+</p>
+<p>
+<strong>4. RMSProp</strong>: G_t = β G_(t-1) + (1-β)(∇L)². 解决 AdaGrad 学习率渐弱.
+</p>
+<p>
+<strong>5. Adam</strong> = Momentum + RMSProp (深度学习默认):
+m_t = β₁ m_(t-1) + (1-β₁)∇L
+v_t = β₂ v_(t-1) + (1-β₂)(∇L)²
+θ ← θ - η · m̂_t / (√v̂_t + ε)
+β₁=0.9, β₂=0.999 标准. <strong>训 LLM/Diffusion 首选</strong>.
+</p>
+<h3>知识点 9.12: 自动微分 (Autograd)</h3>
+<p>
+<strong>前向模式</strong>: 对每个 x_i 同时计算 (x_i, dx_i/dx). 链式法则正向.
+</p>
+<p>
+<strong>反向模式 (Backprop)</strong>: 正向算 L, 再从 L 反向用 dL/dy → dL/dx.
+</p>
+<p>
+<strong>复杂度对比</strong>: 输出 1 维, n 个输入:
+</p>
+<ul>
+<li>正向: O(n) 倍前向</li>
+<li>反向: O(1) 倍前向</li>
+</ul>
+<p>
+L 标量, θ 亿级 ⟹ 反向快 10⁹ 倍. <strong>Backprop 革命核心</strong>.
+</p>
+<ul>
+<li><strong>jvp (Jacobian-vector product)</strong>: 正向</li>
+<li><strong>vjp (Vector-Jacobian product)</strong>: 反向</li>
+</ul>
+<p>
+<strong>应用</strong>: PyTorch/TF/JAX 的 .backward() 都用 vjp. 元学习用 jvp 算二阶梯度. 可微分物理用 autodiff 优化设计.
+</p>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
