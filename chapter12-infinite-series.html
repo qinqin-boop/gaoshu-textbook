@@ -861,12 +861,15 @@ e^(iπ) + 1 = 0
 <p>
 a_n cos nx + b_n sin nx = ((a_n - i b_n)/2) e^(inx) + ((a_n + i b_n)/2) e^(-inx)
 </p>
+<div class="box-def">
+<p>复数形式傅里叶级数</p>
 <p>
-<strong>定义</strong>: c_n = (a_n - i b_n)/2 (n&gt;0), c_{-n} = (a_n + i b_n)/2, c₀ = a₀/2.
-<strong>复数形式</strong>:
-f(x) = Σ_{n=-∞}^∞ c_n e^(inx)
-c_n = (1/(2π)) ∫_{-$\pi$}^$\pi$ f(x) e^(-inx) dx
+$$f(x) = \sum_{n=-\infty}^{\infty} c_n e^{inx}$$
+其中复系数 $c_n$ 由统一公式给出:
+$$c_n = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x) e^{-inx}\,dx, \quad n \in \mathbb{Z}$$
+跟实形式关系: $c_n = (a_n - ib_n)/2$ ($n>0$), $c_{-n} = (a_n + ib_n)/2$, $c_0 = a_0/2$.
 </p>
+</div>
 <p>
 <strong>为啥复数形式好用</strong>:
 </p>
