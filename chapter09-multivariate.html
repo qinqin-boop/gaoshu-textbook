@@ -643,15 +643,15 @@ z = f(u, v), u = x+y, v = xy. 求 ∂²z/∂x$\partial$y.
 </p>
 </div>
 <h3 id="8">知识点 8: 单变量隐函数</h3>
+<div class="box-thm">
+<p>隐函数求导</p>
 <p>
-方程 F(x, y) = 0 隐含定义了 y = y(x), 求 dy/dx.
+方程 $F(x, y) = 0$ 在某点附近隐含定义 $y = y(x)$ (要求 $F_y \ne 0$), 则:
+$$\frac{dy}{dx} = -\frac{F_x}{F_y}$$
 </p>
+</div>
 <p>
-<strong>公式</strong>:
-(dy)/(dx) = -(F_x)/(F_y)
-</p>
-<p>
-<strong>推理</strong>: 两边对 x 求全导数, F_x + F_y · dy/dx = 0, 解出.
+<strong>推导</strong>: $F(x, y(x)) = 0$ 两边对 $x$ 求导, $F_x + F_y \cdot dy/dx = 0$, 解出.
 </p>
 <div class="box-example">
 <p>例题 7</p>
@@ -1092,15 +1092,36 @@ f(x,y) = x² + y² + 2x - 4y + 3, 求极值.
 ---
 </p>
 <h3 id="16">知识点 16: 条件极值 — 拉格朗日乘数法</h3>
+<div class="box-thm">
+<p>拉格朗日乘数法</p>
 <p>
-求 f(x, y) 在约束 $\varphi$(x, y) = 0 下的极值.
+求 $f(x, y)$ 在约束 $\varphi(x, y) = 0$ 下的极值. 构造<strong>拉格朗日函数</strong>:
+$$L(x, y, \lambda) = f(x, y) + \lambda\,\varphi(x, y)$$
+极值点必满足:
+$$L_x = 0, \quad L_y = 0, \quad L_\lambda = 0 \quad (\text{即约束 } \varphi = 0)$$
 </p>
+</div>
+<figure>
+<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 等高线 (f 的) + 约束曲线 -->
+  <ellipse cx="200" cy="120" rx="130" ry="70" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="200" cy="120" rx="100" ry="55" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="200" cy="120" rx="70" ry="38" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.6"/>
+  <ellipse cx="200" cy="120" rx="30" ry="18" fill="#c9b97a" opacity="0.5" stroke="#1a365d" stroke-width="1"/>
+  <!-- 约束曲线 (一条曲线穿过) -->
+  <path d="M 50,180 Q 180,160 280,90 T 380,40" fill="none" stroke="#c53030" stroke-width="2.5"/>
+  <!-- 切点 (极值点) -->
+  <circle cx="248" cy="105" r="5" fill="#c53030"/>
+  <text x="255" y="100" font-size="13" font-family="serif" fill="#c53030" font-weight="bold">极值点</text>
+  <text x="260" y="120" font-size="11" font-family="serif" fill="#666">∇f ∥ ∇φ</text>
+  <text x="60" y="220" font-size="12" font-family="serif" fill="#1a365d">f 等高线 (灰)</text>
+  <text x="60" y="235" font-size="12" font-family="serif" fill="#c53030">约束 φ=0 (红线)</text>
+  <text x="220" y="220" font-size="11" font-family="serif" fill="#666">极值在等高线跟约束相切处</text>
+</svg>
+<figcaption>图 16.1 拉格朗日法几何: f 等高线 + 约束曲线相切处即极值点 (∇f∥∇φ)</figcaption>
+</figure>
 <p>
-<strong>构造拉格朗日函数</strong>: L = f + $\lambda$ $\varphi$, 然后求驻点:
-L_x = 0, L_y = 0, L_λ = 0
-</p>
-<p>
-<strong>生活类比</strong>: 给定预算 (约束), 求快乐最大 (目标函数). 拉格朗日乘数 $\lambda$ 就是"边际快乐" = 多 1 元预算能多多少快乐.
+<strong>生活类比</strong>: 给定预算 (约束), 求快乐最大 (目标函数). 拉格朗日乘数 $\lambda$ = "边际快乐" = 多 1 元预算多多少快乐.
 </p>
 <div class="box-example">
 <p>例题 11</p>
