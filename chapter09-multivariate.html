@@ -1488,24 +1488,30 @@ x₂ ≈ (4/9, 4/9). 二次收敛趋 (0,0).
 <strong>对比 GD</strong>: 牛顿法二次收敛, GD 线性收敛. 但 H 在大模型存不下, 实践用 quasi-Newton (BFGS/L-BFGS).
 </p>
 <h3 id="9-6-kkt">知识点 9.6: KKT 条件 (不等式约束)</h3>
+<div class="box-intuition">
+<p>为啥要 KKT</p>
 <p>
-拉格朗日乘子只处理等式. 实际多有不等式.
+拉格朗日乘子只处理<strong>等式约束</strong>. 实际优化问题往往含不等式约束 (如非负、上下界、预算上限). KKT 是处理不等式的标准工具.
+</p>
+</div>
+<div class="box-thm">
+<p>KKT 必要条件</p>
+<p>
+问题: $\min f(\vec{x})$ s.t. $g(\vec{x}) \le 0$, $h(\vec{x}) = 0$.
 </p>
 <p>
-<strong>问题</strong>: min f(x) s.t. g(x) ≤ 0, h(x) = 0.
+<strong>Lagrangian</strong>: $L = f + \lambda h + \mu g$
 </p>
 <p>
-<strong>Lagrangian</strong>: L = f + λh + μg
-</p>
-<p>
-<strong>KKT 必要条件</strong>:
+最优解需满足:
 </p>
 <ol>
-<li>梯度: ∇f + $\lambda$∇h + $\mu$∇g = 0</li>
-<li>可行性: h=0, g$\le$0</li>
-<li>对偶可行: $\mu$ ≥ 0</li>
-<li>互补松弛: $\mu$·g = 0</li>
+<li><strong>梯度</strong>: $\nabla f + \lambda \nabla h + \mu \nabla g = 0$</li>
+<li><strong>原始可行</strong>: $h = 0, g \le 0$</li>
+<li><strong>对偶可行</strong>: $\mu \ge 0$</li>
+<li><strong>互补松弛</strong>: $\mu \cdot g = 0$</li>
 </ol>
+</div>
 <p>
 <strong>直觉</strong>:
 </p>
