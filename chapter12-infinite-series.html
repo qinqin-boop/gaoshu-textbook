@@ -1200,25 +1200,32 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 </p>
 <h2 id="">补充: 阿贝尔与狄利克雷判别法</h2>
 <h3 id="8-6">知识点 8.6: 阿贝尔判别法与狄利克雷判别法</h3>
+<div class="box-intuition">
+<p>为啥还要这两个?</p>
 <p>
-<strong>问题</strong>: 莱布尼茨判别法只能判交错级数. 一般"半正半负"或"振荡符号"如何判?
+莱布尼茨只能判<strong>交错</strong> $(-1)^n a_n$. 一般"半正半负"或"振荡符号" (如 $\sin n\theta$) 需要更强工具.
 </p>
+</div>
+<div class="box-thm">
+<p>Abel 判别法</p>
 <p>
-<strong>阿贝尔判别法 (Abel)</strong>:
-∑ aₙbₙ 收敛, 若:
-</p>
-<ol>
-<li>∑ bₙ 收敛</li>
-<li>{aₙ} 单调有界</li>
-</ol>
-<p>
-<strong>狄利克雷判别法 (Dirichlet)</strong>:
-∑ aₙbₙ 收敛, 若:
+$\sum a_n b_n$ 收敛, 若:
 </p>
 <ol>
-<li>部分和 |B_N| = |∑_(n=1)^N bₙ| 有界 (不需 ∑bₙ 收敛)</li>
-<li>{aₙ} 单调趋 0</li>
+<li>$\sum b_n$ 收敛</li>
+<li>$\{a_n\}$ <strong>单调有界</strong></li>
 </ol>
+</div>
+<div class="box-thm">
+<p>Dirichlet 判别法</p>
+<p>
+$\sum a_n b_n$ 收敛, 若:
+</p>
+<ol>
+<li>部分和 $|B_N| = |\sum_{n=1}^N b_n|$ <strong>有界</strong> (不需 $\sum b_n$ 收敛)</li>
+<li>$\{a_n\}$ <strong>单调趋 0</strong></li>
+</ol>
+</div>
 <div class="box-example">
 <p>例题 8-3</p>
 <p>
