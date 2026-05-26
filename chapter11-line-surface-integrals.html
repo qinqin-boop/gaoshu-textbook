@@ -287,13 +287,27 @@ W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
 </p>
 </div>
 <h3 id="5">知识点 5: 格林公式</h3>
+<div class="box-thm">
+<p>Green 公式</p>
 <p>
-<strong>联系第二类曲线积分跟二重积分</strong>.
+<strong>联系第二类曲线积分跟二重积分</strong>. D 是平面闭区域, $\partial D$ 是边界 (正方向 = 逆时针):
+$$\oint_{\partial D} P\,dx + Q\,dy = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy$$
 </p>
-<p>
-D 是平面闭区域, ∂ D 是它的边界 (取正方向: 逆时针):
-∮_(∂ D) P  dx + Q  dy = ∬_D ((∂ Q)/(∂ x) - (∂ P)/(∂ y)) dxdy
-</p>
+</div>
+<figure>
+<svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="arrGr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a365d"/></marker>
+  </defs>
+  <ellipse cx="190" cy="120" rx="120" ry="75" fill="#eef4fb" stroke="#1a365d" stroke-width="2"/>
+  <path d="M 310,120 A 120,75 0 0 1 70,120" fill="none" stroke="#1a365d" stroke-width="2" marker-end="url(#arrGr)"/>
+  <path d="M 70,120 A 120,75 0 0 1 310,120" fill="none" stroke="#1a365d" stroke-width="2" marker-end="url(#arrGr)"/>
+  <text x="170" y="125" font-size="22" font-family="serif" font-weight="bold" fill="#1a365d">D</text>
+  <text x="280" y="50" font-size="14" font-family="serif" fill="#1a365d">∂D (逆时针正)</text>
+  <text x="30" y="225" font-size="13" font-family="serif" fill="#666">∮ P dx + Q dy = ∬ (Qx − Py) dxdy</text>
+</svg>
+<figcaption>图 5.1 Green 公式: 边界曲线积分 = 区域内二重积分</figcaption>
+</figure>
 <p>
 <strong>思想</strong>: 沿闭曲线积分 = 内部"旋度"的累加.
 </p>
@@ -570,13 +584,32 @@ dS = |$\vec{r}$_u × $\vec{r}$_v| du dv
 </p>
 </div>
 <h3 id="10-2">知识点 10: 高斯公式 (本章核心 2)</h3>
+<div class="box-thm">
+<p>Gauss 公式</p>
 <p>
-联系<strong>闭合曲面</strong>通量跟<strong>体积内散度</strong>.
+联系<strong>闭合曲面</strong>通量跟<strong>体积内散度</strong>. V 是空间闭区域, $\partial V$ 是边界曲面 (外侧):
+$$\oiint_{\partial V} \vec{F}\cdot d\vec{S} = \iiint_V \nabla\cdot\vec{F}\,dV$$
 </p>
-<p>
-V 是空间闭区域, ∂ V 是它的边界曲面 (外侧):
-∯_(∂ V) P  dydz + Q  dzdx + R  dxdy = ∭_V ((∂ P)/(∂ x) + (∂ Q)/(∂ y) + (∂ R)/(∂ z)) dV
-</p>
+</div>
+<figure>
+<svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="arrGs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c53030"/></marker>
+  </defs>
+  <!-- 球体 (闭曲面) -->
+  <ellipse cx="190" cy="120" rx="100" ry="75" fill="#eef4fb" stroke="#1a365d" stroke-width="2"/>
+  <ellipse cx="190" cy="120" rx="100" ry="25" fill="none" stroke="#1a365d" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <!-- 流出箭头 (从内向外) -->
+  <line x1="190" y1="120" x2="280" y2="80" stroke="#c53030" stroke-width="2" marker-end="url(#arrGs)"/>
+  <line x1="190" y1="120" x2="100" y2="170" stroke="#c53030" stroke-width="2" marker-end="url(#arrGs)"/>
+  <line x1="190" y1="120" x2="270" y2="170" stroke="#c53030" stroke-width="2" marker-end="url(#arrGs)"/>
+  <line x1="190" y1="120" x2="110" y2="70" stroke="#c53030" stroke-width="2" marker-end="url(#arrGs)"/>
+  <text x="180" y="125" font-size="20" font-family="serif" font-weight="bold" fill="#1a365d">V</text>
+  <text x="285" y="50" font-size="13" font-family="serif" fill="#1a365d">∂V 外法向</text>
+  <text x="30" y="220" font-size="13" font-family="serif" fill="#666">∯ F·dS = ∭ (∇·F) dV  通量 = 散度积分</text>
+</svg>
+<figcaption>图 10.1 Gauss 散度定理: 闭曲面通量 = 内部散度积分 (流出 = 内部产出)</figcaption>
+</figure>
 <p>
 <strong>通俗</strong>: 闭曲面流出去多少 = 内部"产出"多少 (散度).
 </p>
