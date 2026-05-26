@@ -1067,20 +1067,25 @@ $e^{-x^2}$ 的一维不定积分<strong>没有初等表达</strong>! 但二维 $
 <li>扩散模型: 加噪 transition kernel 是高斯</li>
 </ul>
 <h3 id="13-7-beta-gamma">知识点 13.7: Beta 函数 与 Gamma 函数</h3>
+<div class="box-def">
+<p>Gamma 函数</p>
 <p>
-<strong>Gamma 函数</strong>: Γ(s) = ∫_0^∞ x^(s-1) e^(-x) dx, s &gt; 0.
-</p>
-<p>
+$$\Gamma(s) = \int_0^\infty x^{s-1} e^{-x}\,dx, \quad s > 0$$
 <strong>核心性质</strong>:
 </p>
 <ul>
-<li>阶乘推广: Γ(n+1) = n!, 因 Γ(s+1) = s·Γ(s).</li>
-<li>Γ(1/2) = √$\pi$ (用高斯积分 + 换元).</li>
-<li>解析延拓后定义在除 0,-1,-2,... 外整个复平面.</li>
+<li>$\Gamma(s+1) = s \cdot \Gamma(s)$ (阶乘推广公式)</li>
+<li>$\Gamma(n+1) = n!$ (整数情形)</li>
+<li>$\Gamma(1/2) = \sqrt{\pi}$ (用高斯积分 + 换元 $u = \sqrt{x}$ 证)</li>
+<li>解析延拓: 定义于除 $0, -1, -2, \ldots$ 外整个复平面</li>
 </ul>
+</div>
+<div class="box-def">
+<p>Beta 函数</p>
 <p>
-<strong>Beta 函数</strong>: B(p, q) = ∫_0^1 x^(p-1) (1-x)^(q-1) dx, p,q &gt; 0.
+$$B(p, q) = \int_0^1 x^{p-1} (1-x)^{q-1}\,dx, \quad p, q > 0$$
 </p>
+</div>
 <p>
 <strong>桥</strong>: B(p, q) = Γ(p)Γ(q) / Γ(p+q).
 </p>
