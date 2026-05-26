@@ -1254,6 +1254,58 @@ L 标量, θ 亿级 ⟹ 反向快 10⁹ 倍. <strong>Backprop 革命核心</stro
 <p>
 <strong>应用</strong>: PyTorch/TF/JAX 的 .backward() 都用 vjp. 元学习用 jvp 算二阶梯度. 可微分物理用 autodiff 优化设计.
 </p>
+<h3>知识点 9.13: 函数族的一致收敛 (深度学习的泛化基石)</h3>
+<p>
+<strong>逐点收敛</strong>: f_n(x) → f(x) 在每个 x 单独看收敛.
+</p>
+<p>
+<strong>一致收敛</strong>: ∀ε&gt;0, ∃N, ∀n&gt;N, sup_x |f_n(x) - f(x)| &lt; ε. 整个函数族<strong>整体</strong>收敛.
+</p>
+<p>
+<strong>关键差别</strong>:
+</p>
+<ul>
+<li>逐点收敛允许连续函数极限不连续 (例 x^n on [0,1])</li>
+<li>一致收敛保留连续性: f_n 连续 → f 连续</li>
+<li>一致收敛保留可积性: lim ∫f_n = ∫lim f_n</li>
+</ul>
+<p>
+<strong>例题 9-13</strong>: f_n(x) = x^n on [0, 1].
+逐点: → 0 if x&lt;1, → 1 if x=1. 不连续.
+但每个 f_n 连续 ⟹ 没有一致收敛.
+</p>
+<p>
+<strong>深度学习泛化</strong> (核心理论):
+</p>
+<ul>
+<li>训练: 在数据集 D_n 上最小化 L_n(θ) = (1/n) ∑ ℓ(f(x_i), y_i)</li>
+<li>真实目标: L(θ) = E_(x,y)[ℓ]</li>
+<li>泛化 = 学到的 θ̂ 使 L(θ̂) ≈ L_n(θ̂) ?</li>
+<li>VC 维 / Rademacher 复杂度 给出 sup_θ |L_n(θ) - L(θ)| 上界</li>
+</ul>
+<p>
+这就是<strong>一致收敛</strong>在 ML 里的"统计学习理论"角度.
+</p>
+<h3>知识点 9.14: 多元微分的微分形式回看</h3>
+<p>
+回想第十一章引入的微分形式视角:
+</p>
+<ul>
+<li>df = ∑ (∂f/∂x_i) dx_i ← 一次形式</li>
+<li>d²f = 0 ← 这是 d∘d=0</li>
+<li>ddf 写出: ∑ (∂²f/∂x_i ∂x_j) dx_j ∧ dx_i. 利用 dx_j ∧ dx_i = -dx_i ∧ dx_j + 对称性, 可证 d²f=0.</li>
+</ul>
+<p>
+<strong>几何与代数统一</strong>: 多元微分 = 标量函数的一次形式; 梯度 = 一次形式的"对偶向量". 这是高数下册多元微分的现代视角.
+</p>
+<p>
+<strong>应用</strong> (跨学科):
+</p>
+<ul>
+<li>物理: Lagrange/Hamilton 力学的辛形式</li>
+<li>控制理论: 微分平坦性</li>
+<li>几何深度学习: 图神经网络的"消息传递" 本质是一次形式的离散版本</li>
+</ul>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
