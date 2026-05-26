@@ -1452,17 +1452,29 @@ $\lambda$=-1/2: y = -x, → x = ±1/√2, y = ∓1/√2. f = -1/2 (极小).
 </p>
 <h2 id="kkt">补充: 优化深化 — 牛顿法 / KKT 条件</h2>
 <h3 id="9-5">知识点 9.5: 牛顿法 求多元极值</h3>
+<div class="box-thm">
+<p>牛顿法迭代公式</p>
 <p>
-<strong>一元</strong>: 解 f'(x)=0 用 x_(n+1) = x_n - f'(x_n)/f''(x_n).
+<strong>一元</strong>: 解 $f'(x) = 0$ 用 $x_{n+1} = x_n - f'(x_n)/f''(x_n)$.
 </p>
 <p>
-<strong>多元推广</strong>: 解 ∇f(x)=0
-x_(n+1) = x_n - H(x_n)^(-1) · ∇f(x_n)
-H 是 Hessian.
+<strong>多元</strong>: 解 $\nabla f(\vec{x}) = 0$ 用
+$$\vec{x}_{n+1} = \vec{x}_n - H(\vec{x}_n)^{-1} \cdot \nabla f(\vec{x}_n)$$
+其中 $H$ 是 Hessian 矩阵.
 </p>
+</div>
+<div class="box-intuition">
+<p>牛顿法 = 二阶 Taylor 局部拟合</p>
 <p>
-<strong>几何</strong>: 用二阶 Taylor 作"局部抛物面拟合", 跳到极值点.
+每一步用<strong>二阶 Taylor 展开</strong>作"局部抛物面拟合", 跳到该抛物面的极值点. 跟梯度下降 (只用一阶) 比, 牛顿法<strong>二次收敛</strong> (极快), 但每步代价高 (要算 Hessian 和它的逆).
 </p>
+</div>
+<div class="box-pitfall">
+<p>牛顿法实战不直接用</p>
+<p>
+$H$ 在大模型 (亿级参数) 中<strong>存不下、求不出逆</strong>. 实践用 <strong>quasi-Newton</strong> (BFGS/L-BFGS) 近似 Hessian. 神经网络用 Adam (一阶) 而非牛顿法 (二阶).
+</p>
+</div>
 <div class="box-example">
 <p>例题 9-5</p>
 <p>
