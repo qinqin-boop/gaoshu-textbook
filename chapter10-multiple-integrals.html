@@ -230,6 +230,24 @@ V = ∫₀^(2π) ∫_0¹ ∫_r¹ r dz dr dθ = 2π ∫_0¹ r(1-r) dr = 2π · (1
 <p>
 ---
 </p>
+<h3>知识点 7.5: 二重积分换元法 (一般化) (对齐书 §10.2 三)</h3>
+<p>
+极坐标只是换元的特例. 一般情况:
+</p>
+<p>
+x = x(u, v), y = y(u, v), 是从 (u, v) 平面到 (x, y) 平面的变换.
+∬_D f(x,y) dxdy = ∬_(D') f(x(u,v), y(u,v)) · |J| du dv
+</p>
+<p>
+其中 <strong>Jacobian</strong> J = ∂(x,y)/∂(u,v) = | ∂x/∂u ∂x/∂v   ∂y/∂u ∂y/∂v |
+</p>
+<p>
+<strong>生活类比</strong>: 你把方格地图扭曲变形 (比如鱼眼镜头), 每个小方格面积变了 — |J| 就是"变形比".
+</p>
+<p>
+<strong>极坐标特例</strong>: x = r cosθ, y = r sinθ.
+J = | cosθ -r sinθ   sinθ r cosθ | = r(cos²θ + sin²θ) = r. ✓ (跟之前的 r 因子一致)
+</p>
 <h3>知识点 8: 球坐标</h3>
 <p>
 适合<strong>球对称</strong> (球 / 半球) 体. 用 (r, φ, θ):
