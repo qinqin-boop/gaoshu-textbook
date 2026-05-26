@@ -809,17 +809,25 @@ div F = 2x + 2y + 2z.
 </p>
 <h2 id="11-6-3">11.6 斯托克斯公式 (本章核心 3)</h2>
 <h3 id="10-5-vs-vs-11-6">知识点 10.5: 高斯公式 vs 闭曲面 vs 开曲面 (对齐书 §11.6)</h3>
+<div class="box-pitfall">
+<p>Gauss 只对闭曲面有效</p>
 <p>
-<strong>高斯公式只对闭合曲面成立</strong>. 如果是开曲面 (没"包围立体"), 不能直接用.
+<strong>Gauss 公式要求曲面闭合</strong> (有内外明确分隔, 取外侧). 开曲面 (没包围立体) 不能直接套.
 </p>
+</div>
+<div class="box-intuition">
+<p>补面法 (常用技巧)</p>
 <p>
-<strong>应对策略</strong>: 加一个"补面" 让它闭合, 算两次相减:
+开曲面 $\Sigma$ → 补一个 $\Sigma'$ 让 $\Sigma \cup \Sigma'$ 闭合包围 $V$:
 </p>
-<ul>
-<li>设开曲面 Σ, 补一个 Σ' 让 Σ ∪ Σ' 闭合包围 V</li>
-<li>用高斯: ∯_(Σ$\cup$Σ') = ∭_V div F dV</li>
-<li>反推: ∬_Σ = ∭ - ∬_(Σ')</li>
-</ul>
+<ol>
+<li>用 Gauss: $\oiint_{\Sigma \cup \Sigma'} \vec{F}\cdot d\vec{S} = \iiint_V \nabla\cdot\vec{F}\,dV$</li>
+<li>反推: $\iint_\Sigma \vec{F}\cdot d\vec{S} = \iiint_V \nabla\cdot\vec{F}\,dV - \iint_{\Sigma'} \vec{F}\cdot d\vec{S}$</li>
+</ol>
+<p>
+(补面通常选<strong>平面</strong>, 因为平面上的曲面积分容易算.)
+</p>
+</div>
 <div class="box-example">
 <p>例题 5-4</p>
 <p>
