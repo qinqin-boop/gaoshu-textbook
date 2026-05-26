@@ -815,6 +815,59 @@ ln(100!) ≈ (1/2)ln(200π) + 100·ln(100) - 100 ≈ 363.7
 <li>复杂度理论: 阶乘增长的算法 (TSP 暴力 = O(n!))</li>
 <li>香农定理: 编码界限</li>
 </ul>
+<h3>知识点 13.9: 多元积分换元雅可比详细推导</h3>
+<p>
+<strong>问题</strong>: 重积分换元 ∬ f(x,y) dxdy → ∬ f(x(u,v), y(u,v)) |J| du dv 中, |J| 从哪里来?
+</p>
+<p>
+<strong>几何推导</strong>: 在 (u,v) 平面取小矩形 [u, u+du]×[v, v+dv]. 映射到 (x,y) 平面变成"准平行四边形":
+</p>
+<ul>
+<li>边 1: r→_u = (∂x/∂u, ∂y/∂u) du</li>
+<li>边 2: r→_v = (∂x/∂v, ∂y/∂v) dv</li>
+</ul>
+<p>
+面积 = |r→_u × r→_v| = |∂x/∂u · ∂y/∂v - ∂x/∂v · ∂y/∂u| · du dv = |J| du dv.
+</p>
+<p>
+即雅可比 = 局部"面积放大比".
+</p>
+<p>
+<strong>例题 13-9</strong> (极坐标): x = r cos θ, y = r sin θ.
+J = |∂x/∂r  ∂x/∂θ| = |cos θ  -r sin θ| = r cos²θ + r sin²θ = r.
+    |∂y/∂r  ∂y/∂θ|   |sin θ   r cos θ|
+</p>
+<p>
+所以 dxdy = r dr dθ. <strong>这就是极坐标多出 r 的原因</strong>.
+</p>
+<p>
+<strong>例题 13-10</strong> (球坐标): x = r sin φ cos θ, y = r sin φ sin θ, z = r cos φ.
+J = r² sin φ.
+dxdydz = r² sin φ dr dφ dθ.
+</p>
+<h3>知识点 13.10: 概率密度变换 (机器学习的核心)</h3>
+<p>
+设随机变量 X 密度 p_X(x), 单调变换 Y = g(X). 则 Y 的密度:
+p_Y(y) = p_X(g⁻¹(y)) · |dg⁻¹(y)/dy| = p_X(x) / |g'(x)|
+</p>
+<p>
+<strong>多元</strong>: p_Y(y) = p_X(x) / |det J|, 其中 J = ∂y/∂x.
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>标准化流 (Normalizing Flows): 用一系列可逆变换 + 雅可比把简单分布变复杂</li>
+<li>变分自编码器 VAE: 重参数化 z = μ+σ·ε, 用雅可比传梯度</li>
+<li>GAN: 生成器 G 把 N(0,I) 变成数据分布</li>
+<li>扩散模型: 加噪逆过程的概率密度变换</li>
+</ul>
+<p>
+<strong>例题 13-11</strong> (Box-Muller): 从均匀分布生成高斯随机数.
+U₁, U₂ ~ Uniform(0,1).
+Z₁ = √(-2 ln U₁) cos(2π U₂), Z₂ = √(-2 ln U₁) sin(2π U₂).
+计算雅可比可证 Z₁, Z₂ ~ N(0,1) 独立. 这是计算机生成正态随机数的经典方法.
+</p>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
