@@ -433,21 +433,32 @@ S_5 = 1 - 1/4 + 1/9 - 1/16 + 1/25 ≈ 0.7836.
 </p>
 <h2 id="12-4">12.4 幂级数 (本章核心)</h2>
 <h3 id="8-5-12-4">知识点 8.5: 阿贝尔判别法 (对齐书 §12.4 进一步)</h3>
+<div class="box-thm">
+<p>Abel 定理</p>
 <p>
-<strong>阿贝尔定理</strong>: 若幂级数 Σ a_n x^n 在 x = x₀ ≠ 0 处收敛, 则在 |x| &lt; |x₀| 上<strong>绝对收敛</strong>.
+若幂级数 $\sum a_n x^n$ 在 $x = x_0 \ne 0$ 处<strong>收敛</strong>, 则在 $|x| < |x_0|$ 上<strong>绝对收敛</strong>.
 </p>
+</div>
+<div class="box-intuition">
+<p>收敛半径几何意义</p>
 <p>
-<strong>几何意义</strong>: 幂级数有"收敛半径 R" — 在 (-R, R) 内绝对收敛, |x| &gt; R 处发散. 边界 x = ±R 单独判.
+幂级数有"收敛半径 $R$":
 </p>
-<p>
-<strong>推论 (求收敛域 4 步)</strong>:
-</p>
+<ul>
+<li>$(-R, R)$ 内: 绝对收敛</li>
+<li>$|x| > R$: 发散</li>
+<li>边界 $x = \pm R$: <strong>单独判</strong></li>
+</ul>
+</div>
+<div class="box-intuition">
+<p>求收敛域 4 步法</p>
 <ol>
-<li>用比值/根值法求 R</li>
-<li>写出 |x| &lt; R 即 (x₀-R, x₀+R) 区间</li>
-<li>单独判 x = x₀ + R 和 x = x₀ - R 处的常数项级数</li>
-<li>合并得到收敛域</li>
+<li>用<strong>比值/根值</strong>法求 $R$</li>
+<li>写区间 $|x - x_0| < R$ 即 $(x_0-R, x_0+R)$</li>
+<li>单独判<strong>两个端点</strong> $x = x_0 \pm R$ 的常数项级数</li>
+<li><strong>合并</strong>得收敛域 (可能开/闭/半开半闭)</li>
 </ol>
+</div>
 <h3 id="9">知识点 9: 定义</h3>
 <div class="box-def">
 <p>幂级数</p>
