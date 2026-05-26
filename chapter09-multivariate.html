@@ -1692,22 +1692,30 @@ $\theta$ ← $\theta$ - η · m̂_t / (√v̂_t + ε)
 β₁=0.9, β₂=0.999 标准. <strong>训 LLM/Diffusion 首选</strong>.
 </p>
 <h3 id="9-12-autograd">知识点 9.12: 自动微分 (Autograd)</h3>
-<p>
-<strong>前向模式</strong>: 对每个 x_i 同时计算 (x_i, dx_i/dx). 链式法则正向.
-</p>
-<p>
-<strong>反向模式 (Backprop)</strong>: 正向算 L, 再从 L 反向用 dL/dy → dL/dx.
-</p>
-<p>
-<strong>复杂度对比</strong>: 输出 1 维, n 个输入:
-</p>
+<div class="box-def">
+<p>自动微分两种模式</p>
 <ul>
-<li>正向: O(n) 倍前向</li>
-<li>反向: O(1) 倍前向</li>
+<li><strong>前向模式 (Forward-mode AD)</strong>: 对每个 $x_i$ 同时计算 $(x_i, dx_i/dx)$, 链式法则<strong>正向</strong>传播.</li>
+<li><strong>反向模式 (Reverse-mode AD / Backprop)</strong>: 先正向算损失 $L$, 再<strong>反向</strong>用 $dL/dy \to dL/dx$ 传播.</li>
 </ul>
+</div>
+<div class="box-intuition">
+<p>Backprop 复杂度优势</p>
 <p>
-L 标量, $\theta$ 亿级 ⟹ 反向快 10⁹ 倍. <strong>Backprop 革命核心</strong>.
+输出 $L$ 是<strong>标量</strong> (1 维), 输入 $\theta$ 是 <strong>亿级</strong>:
+| 模式 | 复杂度 |
+|---|---|
+| 前向 | $O(n)$ 倍前向 |
+| 反向 | $O(1)$ 倍前向 |
 </p>
+<p>
+亿级参数 ⟹ <strong>反向快 10⁹ 倍</strong>. 这就是为什么神经网络训练用 backprop, 而不是数值差分.
+</p>
+</div>
+<ul>
+<li><strong>jvp (Jacobian-vector product)</strong>: 正向</li>
+<li><strong>vjp (Vector-Jacobian product)</strong>: 反向</li>
+</ul>
 <ul>
 <li><strong>jvp (Jacobian-vector product)</strong>: 正向</li>
 <li><strong>vjp (Vector-Jacobian product)</strong>: 反向</li>
