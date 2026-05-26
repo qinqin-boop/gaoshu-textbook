@@ -1349,15 +1349,20 @@ $\sum a_n b_n$ 收敛, 若:
 <li>密码学: 大整数因子分解的难度依赖素数分布</li>
 </ul>
 <h3 id="8-10-aitken-euler">知识点 8.10: 收敛加速 (Aitken / Euler 求和)</h3>
+<div class="box-intuition">
+<p>加速级数收敛的需求</p>
 <p>
-<strong>问题</strong>: 很多级数收敛慢, 要算几千项才精确到 5 位. 能不能"加速"?
+很多级数收敛慢, 算几千项才精确到 5 位 (如调和交错 → $\ln 2$). 数值计算需要"<strong>加速</strong>" — 用很少项达到高精度.
 </p>
+</div>
+<div class="box-thm">
+<p>Aitken $\Delta^2$ 加速</p>
 <p>
-<strong>Aitken Δ² 法</strong>:
-若 sₙ → S 线性收敛 (s_(n+1) - S ≈ $\lambda$(s_n - S)), 则:
-ŝₙ = sₙ - (s_(n+1) - sₙ)² / (s_(n+2) - 2s_(n+1) + sₙ)
-ŝₙ → S 更快.
+若 $s_n \to S$ <strong>线性收敛</strong> ($s_{n+1} - S \approx \lambda(s_n - S)$), 则:
+$$\hat{s}_n = s_n - \frac{(s_{n+1} - s_n)^2}{s_{n+2} - 2s_{n+1} + s_n}$$
+$\hat{s}_n \to S$ <strong>二次收敛</strong>, 大幅快于原数列.
 </p>
+</div>
 <div class="box-example">
 <p>例题 8-10</p>
 <p>
