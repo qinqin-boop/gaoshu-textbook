@@ -257,12 +257,14 @@ $$W = \int_L \vec{F}\cdot d\vec{r} = \int_L P\,dx + Q\,dy$$
 <li>第二类: dx, dy 带方向 (反向走积分变号)</li>
 </ul>
 <h3 id="3-5-11-2">知识点 3.5: 第二类曲线积分跟方向相关 (对齐书 §11.2 一 进一步)</h3>
+<div class="box-pitfall">
+<p>第二类必看方向</p>
 <p>
-<strong>核心</strong>: 第二类曲线积分<strong>取负</strong>当方向反向.
+<strong>第二类曲线积分跟路径方向相关</strong>! 反向走积分<strong>变号</strong>:
+$$\int_{L^-} P\,dx + Q\,dy = -\int_L P\,dx + Q\,dy$$
+做题忘标方向 (逆时针/顺时针, 从 A 到 B 还是 B 到 A) → 符号错.
 </p>
-<p>
-∫_{L^-} P dx + Q dy = - ∫_L P dx + Q dy
-</p>
+</div>
 <p>
 (L^- 表示 L 的反向)
 </p>
@@ -323,11 +325,23 @@ W = ∫_L P dx + Q dy = ∫_0^(2π) [(-sin t)(-sin t) + cos t · cos t] dt
 </p>
 <h2 id="11-3-1">11.3 格林公式 (本章核心 1)</h2>
 <h3 id="4-5-11-2">知识点 4.5: 两类曲线积分之间的联系 (对齐书 §11.2 三)</h3>
+<div class="box-thm">
+<p>两类曲线积分转换</p>
 <p>
-<strong>关系</strong>: 第二类 ∫_L P dx + Q dy 可以通过"切向单位向量" 转换为第一类积分:
-∫_L (P, Q)·dr→ = ∫_L (P cosα + Q sinα) ds
-其中 (cosα, sinα) 是 L 上切线方向单位向量, ds 是弧长元.
+第二类 $\int_L P\,dx + Q\,dy$ 可通过<strong>切向单位向量</strong> $(\cos\alpha, \sin\alpha)$ 转换为第一类:
+$$\int_L (P, Q)\cdot d\vec{r} = \int_L (P\cos\alpha + Q\sin\alpha)\,ds$$
 </p>
+</div>
+<div class="box-intuition">
+<p>第一类 vs 第二类 区别</p>
+<ul>
+<li><strong>第一类</strong> (对弧长): $ds$ 是标量长度, 跟方向无关. 反向走积分<strong>不变号</strong>.</li>
+<li><strong>第二类</strong> (对坐标): $dx, dy$ 带方向. 反向走积分<strong>变号</strong> (做负功).</li>
+</ul>
+<p>
+记忆: 第一类 = "走多远 (距离)", 第二类 = "顺势走还是逆势走 (有向)".
+</p>
+</div>
 <p>
 <strong>用法</strong>: 当 P, Q 难直接积时, 把 (P cosα + Q sinα) 当成新被积函数, 用第一类公式.
 </p>
