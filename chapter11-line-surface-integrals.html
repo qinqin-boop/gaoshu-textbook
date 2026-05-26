@@ -1119,6 +1119,67 @@ V = 1 · 2π · 3/2 = 3π.
 <p>
 <strong>全部都是 Laplacian 的变奏曲</strong>. 这就是高数下册场论的统一威力.
 </p>
+<h3>知识点 12.12: Maxwell 应力张量 (电磁场的"压力")</h3>
+<p>
+<strong>电磁场的能量密度</strong>:
+u = (1/2)(ε₀ E² + B²/μ₀)
+</p>
+<p>
+<strong>Poynting 向量</strong> (能量流密度):
+S→ = (1/μ₀) E→ × B→
+单位: W/m²
+</p>
+<p>
+<strong>能量守恒</strong> (Poynting 定理):
+∂u/∂t + ∇·S→ = -E→·J→
+</p>
+<p>
+意思: 局部能量增长率 + 能量流出散度 = -电场对电流做的功.
+</p>
+<p>
+<strong>例题 12-12</strong>: 电磁波 (前面推导过) 的 Poynting 向量沿传播方向, |S→| = c·u. 光携带能量沿光线传播.
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>太阳能板: 计算辐照度 (1361 W/m² at AU)</li>
+<li>微波炉: Poynting 向量在腔内分布决定加热均匀性</li>
+<li>激光: 高能密度光束</li>
+</ul>
+<h3>知识点 12.13: 流形上的积分初步</h3>
+<p>
+<strong>流形 (Manifold)</strong>: 局部看像 R^n 的几何对象. 例: 球面 S² (局部看像 R²), 莫比乌斯带, 环面 T².
+</p>
+<p>
+<strong>积分在流形上</strong>:
+</p>
+<ul>
+<li>用局部坐标 (chart) 把流形碎片化</li>
+<li>在每片上做欧氏积分</li>
+<li>用"单位分解"粘起来</li>
+</ul>
+<p>
+<strong>例题 12-13</strong> (球面积分): ∫_S² 1 dA = 4πR².
+取参数化 (球坐标 φ, θ), dA = R² sin φ dφ dθ, 积出来 4πR² ✓.
+</p>
+<p>
+<strong>关键概念</strong>:
+</p>
+<ul>
+<li>切丛 (Tangent Bundle): 流形上每点的切空间组合</li>
+<li>余切丛 / 微分形式</li>
+<li>流形上的体积形式</li>
+</ul>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>广义相对论: 时空是 4 维伪 Riemann 流形</li>
+<li>机器学习: 流形假设 (manifold hypothesis) — 高维数据实际在低维流形上</li>
+<li>拓扑数据分析 (TDA)</li>
+<li>数据可视化: t-SNE/UMAP 假设数据在低维流形上展开</li>
+</ul>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
