@@ -205,21 +205,29 @@ M = (1/2)[t√(1+4t²) + (1/2) sinh^(-1)(2t)]_0¹ = √5/2 + ln(2+√5)/4.
 </p>
 <h2 id="11-2">11.2 第二类曲线积分 (对坐标)</h2>
 <h3 id="2-7-11-1">知识点 2.7: 第一类曲线积分参数法详细 (对齐书 §11.1 二)</h3>
+<div class="box-thm">
+<p>三种参数化弧微元公式</p>
 <p>
-<strong>情况 1: 一般参数 x=x(t), y=y(t), t ∈ [$\alpha$, $\beta$]</strong>
-ds = √(x'(t)² + y'(t)²) dt
-∫_L f ds = ∫_α^$\beta$ f(x(t), y(t)) · √(x'² + y'²) dt
+<strong>1. 一般参数</strong> $x = x(t), y = y(t), t \in [\alpha, \beta]$:
+$$ds = \sqrt{x'(t)^2 + y'(t)^2}\,dt$$
 </p>
 <p>
-<strong>情况 2: 直接 y = y(x), x ∈ [a, b]</strong> (相当于 x=x, y=y(x))
-ds = √(1 + y'(x)²) dx
-∫_L f ds = ∫_a^b f(x, y(x)) · √(1+y'²) dx
+<strong>2. 直接</strong> $y = y(x), x \in [a, b]$ (即 $x = x, y = y(x)$):
+$$ds = \sqrt{1 + y'(x)^2}\,dx$$
 </p>
 <p>
-<strong>情况 3: 极坐标 r = r($\theta$), $\theta$ ∈ [$\alpha$, $\beta$]</strong>
-ds = √(r² + r'²) dθ
-∫_L f ds = ∫_α^$\beta$ f(r $\cos\theta$, r $\sin\theta$) · √(r²+r'²) dθ
+<strong>3. 极坐标</strong> $r = r(\theta), \theta \in [\alpha, \beta]$:
+$$ds = \sqrt{r^2 + r'(\theta)^2}\,d\theta$$
 </p>
+</div>
+<div class="box-intuition">
+<p>选参数化的实战经验</p>
+<ul>
+<li>参数方程直接给: 用情况 1</li>
+<li>函数形式 $y = f(x)$: 用情况 2 (无需引参数)</li>
+<li>圆 / 心脏线 / 玫瑰线: 用情况 3 (极坐标天然)</li>
+</ul>
+</div>
 <div class="box-example">
 <p>例题 1-3</p>
 <p>
