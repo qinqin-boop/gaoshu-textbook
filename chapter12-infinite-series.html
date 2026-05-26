@@ -571,25 +571,22 @@ ln(1+x) = Σ_(n=1)^∞ (-1)^(n-1) (x^n)/(n) = x - (x²)/(2) + (x³)/(3) - ...   
 </p>
 <h2 id="12-5">12.5 泰勒级数</h2>
 <h3 id="11-5-12-3">知识点 11.5: 幂级数的运算 (对齐书 §12.3 三)</h3>
+<div class="box-thm">
+<p>幂级数四则运算</p>
 <p>
-幂级数像无穷多项式, 有以下运算:
+幂级数像无穷多项式, 有以下运算 (在共同收敛域内):
+<strong>1. 加减</strong>: $\sum a_n x^n \pm \sum b_n x^n = \sum (a_n \pm b_n) x^n$
+<strong>2. Cauchy 乘积</strong>: $(\sum a_n x^n)(\sum b_n x^n) = \sum c_n x^n$, $c_n = \sum_{k=0}^n a_k b_{n-k}$
+<strong>3. 逐项求导</strong> (在 $(-R, R)$ 内): $\frac{d}{dx}\sum a_n x^n = \sum n a_n x^{n-1}$
+<strong>4. 逐项积分</strong>: $\int_0^x \sum a_n t^n\,dt = \sum \frac{a_n}{n+1} x^{n+1}$
 </p>
+</div>
+<div class="box-intuition">
+<p>幂级数 = 无穷多项式</p>
 <p>
-<strong>1. 加减</strong> (相同收敛半径下):
-Σ a_n x^n ± Σ b_n x^n = Σ (a_n ± b_n) x^n
+在收敛半径内, 幂级数行为跟多项式完全一致 — 可加可减可乘可微可积. 这是为啥 CPU 用 Taylor 算 sin/cos/exp.
 </p>
-<p>
-<strong>2. 乘法</strong> (Cauchy 乘积):
-(Σ a_n x^n)(Σ b_n x^n) = Σ c_n x^n, 其中 c_n = Σ_{k=0}^n a_k b_{n-k}
-</p>
-<p>
-<strong>3. 逐项求导</strong> (在收敛半径内):
-d/dx (Σ a_n x^n) = Σ n a_n x^(n-1)
-</p>
-<p>
-<strong>4. 逐项积分</strong>:
-∫_0^x (Σ a_n t^n) dt = Σ (a_n/(n+1)) x^(n+1)
-</p>
+</div>
 <div class="box-example">
 <p>例题 5-6</p>
 <p>
