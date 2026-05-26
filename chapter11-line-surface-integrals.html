@@ -670,13 +670,35 @@ div(P,Q,R) = 1+1+1 = 3.
 </p>
 </div>
 <h3 id="11">知识点 11: 斯托克斯公式</h3>
+<div class="box-thm">
+<p>Stokes 公式</p>
 <p>
-联系<strong>有向曲面</strong>的旋度 跟 <strong>边界曲线</strong>的环流量.
+联系<strong>有向曲面</strong>的旋度 跟 <strong>边界曲线</strong>的环流量. $\Sigma$ 是空间有向曲面, $\partial\Sigma$ 是边界 (右手法则取正向):
+$$\oint_{\partial\Sigma} \vec{F}\cdot d\vec{r} = \iint_\Sigma (\nabla\times\vec{F})\cdot d\vec{S}$$
 </p>
-<p>
-Σ 是空间有向曲面, ∂ Σ 是它的边界 (取相应正方向):
-∮_(∂ Σ) P dx + Q dy + R dz = ∬_Σ | dydz &amp; dzdx &amp; dxdy   ∂/∂ x &amp; ∂/∂ y &amp; ∂/∂ z   P &amp; Q &amp; R |
-</p>
+</div>
+<figure>
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="arrSt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a365d"/></marker>
+    <marker id="arrCurl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c53030"/></marker>
+  </defs>
+  <!-- 曲面 Σ (椭圆代表) -->
+  <ellipse cx="200" cy="130" rx="130" ry="60" fill="#eef4fb" stroke="#1a365d" stroke-width="2"/>
+  <!-- 边界 ∂Σ 闭合曲线 + 箭头 -->
+  <path d="M 330,130 A 130,60 0 0 1 70,130" fill="none" stroke="#1a365d" stroke-width="2.5" marker-end="url(#arrSt)"/>
+  <path d="M 70,130 A 130,60 0 0 1 330,130" fill="none" stroke="#1a365d" stroke-width="2.5" marker-end="url(#arrSt)"/>
+  <!-- 旋度 (法向 + 旋转) -->
+  <line x1="200" y1="130" x2="200" y2="50" stroke="#c53030" stroke-width="2.5" marker-end="url(#arrCurl)"/>
+  <path d="M 175,80 A 20,15 0 0 0 225,80" fill="none" stroke="#c53030" stroke-width="2" marker-end="url(#arrCurl)"/>
+  <text x="180" y="135" font-size="20" font-family="serif" font-weight="bold" fill="#1a365d">Σ</text>
+  <text x="207" y="65" font-size="13" font-family="serif" fill="#c53030" font-weight="bold">∇×F (旋度)</text>
+  <text x="290" y="195" font-size="13" font-family="serif" fill="#1a365d">∂Σ 环流</text>
+  <text x="40" y="240" font-size="12" font-family="serif" fill="#666">∮ F·dr = ∬ (∇×F)·dS (环流 = 旋度通量)</text>
+  <text x="100" y="255" font-size="11" font-family="serif" fill="#999">右手定则: 边界正向↔法向</text>
+</svg>
+<figcaption>图 11.1 Stokes 公式: 边界环流 = 曲面旋度通量. Green 公式是它在平面上的特例</figcaption>
+</figure>
 <p>
 <strong>通俗</strong>: 沿边界绕一圈的环流量 = 曲面上"旋度"累加. 格林公式是它的平面特例.
 </p>
