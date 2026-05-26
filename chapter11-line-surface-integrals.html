@@ -646,10 +646,38 @@ dS = |$\vec{r}$_u × $\vec{r}$_v| du dv
 </p>
 </div>
 <h3 id="9">知识点 9: 定义 (流量/通量)</h3>
+<div class="box-def">
+<p>第二类曲面积分 (对坐标 / 通量)</p>
 <p>
-流体的流速场 $\vec{v}$ = (P, Q, R), 流过有向曲面 Σ 的通量:
-∬_Σ P  dydz + Q  dzdx + R  dxdy
+流体流速场 $\vec{v} = (P, Q, R)$, 通过<strong>有向</strong>曲面 $\Sigma$ 的<strong>通量</strong> (flux):
+$$\iint_\Sigma \vec{v}\cdot d\vec{S} = \iint_\Sigma P\,dydz + Q\,dzdx + R\,dxdy$$
+<strong>单位时间内穿过曲面的流量</strong>.
 </p>
+</div>
+<figure>
+<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="arrV" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a365d"/></marker>
+    <marker id="arrN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c53030"/></marker>
+  </defs>
+  <!-- 曲面 Σ -->
+  <path d="M 80,40 L 320,40 L 320,180 L 80,180 Z" fill="#eef4fb" stroke="#1a365d" stroke-width="2"/>
+  <!-- 流体 v→ 穿过 -->
+  <line x1="40" y1="80" x2="120" y2="80" stroke="#1a365d" stroke-width="2" marker-end="url(#arrV)"/>
+  <line x1="40" y1="110" x2="120" y2="110" stroke="#1a365d" stroke-width="2" marker-end="url(#arrV)"/>
+  <line x1="40" y1="140" x2="120" y2="140" stroke="#1a365d" stroke-width="2" marker-end="url(#arrV)"/>
+  <line x1="280" y1="80" x2="360" y2="80" stroke="#1a365d" stroke-width="2" marker-end="url(#arrV)"/>
+  <line x1="280" y1="110" x2="360" y2="110" stroke="#1a365d" stroke-width="2" marker-end="url(#arrV)"/>
+  <line x1="280" y1="140" x2="360" y2="140" stroke="#1a365d" stroke-width="2" marker-end="url(#arrV)"/>
+  <!-- 法向量 n -->
+  <line x1="200" y1="110" x2="280" y2="110" stroke="#c53030" stroke-width="2.5" marker-end="url(#arrN)"/>
+  <text x="240" y="100" font-size="14" font-family="serif" fill="#c53030" font-weight="bold">n→</text>
+  <text x="190" y="115" font-size="20" font-family="serif" font-weight="bold" fill="#1a365d">Σ</text>
+  <text x="20" y="190" font-size="13" font-family="serif" fill="#1a365d">流速 v→</text>
+  <text x="40" y="210" font-size="12" font-family="serif" fill="#666">通量 = ∬ v→·n→ dS (穿过曲面的"分量"积分)</text>
+</svg>
+<figcaption>图 9.1 通量: 河流流过一片网, 单位时间穿过的水量 = ∬ v→·n→ dS</figcaption>
+</figure>
 <p>
 <strong>生活类比</strong>: 河流流过一片网, 通量 = 单位时间穿过网的水量.
 </p>
