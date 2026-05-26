@@ -216,17 +216,38 @@ lim_{(x,y)→(0,0)} (x²y)/(x⁴+y²).
 </p>
 </div>
 <h3 id="4">知识点 4: 偏导数定义</h3>
+<div class="box-def">
+<p>偏导数</p>
 <p>
-<strong>一元导数</strong> 是函数沿 x 方向的变化率.
-<strong>二元偏导数</strong> 是函数沿 x <strong>或</strong> y 单一方向的变化率.
+二元函数 $z = f(x, y)$ 沿 <strong>x 方向</strong> 的偏导数 (把 y 当常数):
+$$\frac{\partial z}{\partial x} = \lim_{\Delta x \to 0} \frac{f(x+\Delta x, y) - f(x, y)}{\Delta x}$$
+记号: $f_x$, $\partial z/\partial x$, $z_x$ 都是它. 类似定义 $\partial z/\partial y$.
 </p>
-<p>
-<strong>对 x 的偏导</strong> (把 y 当常数, 对 x 求一元导数):
-(∂ z)/(∂ x) = lim_(Δ x → 0) (f(x+Δ x, y) - f(x, y))/(Δ x)
-</p>
-<p>
-记号: f_x(x, y), ∂ z / ∂ x, z_x 都是它.
-</p>
+</div>
+<figure>
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="arrPx" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c53030"/></marker>
+    <marker id="arrPy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#22543d"/></marker>
+  </defs>
+  <!-- 等高线 (山坡) -->
+  <ellipse cx="200" cy="130" rx="140" ry="80" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="200" cy="130" rx="100" ry="55" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="200" cy="130" rx="60" ry="32" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.6"/>
+  <ellipse cx="200" cy="130" rx="25" ry="13" fill="#c9b97a" opacity="0.3" stroke="#1a365d" stroke-width="1"/>
+  <text x="195" y="135" font-size="13" font-family="serif" fill="#666">高</text>
+  <text x="60" y="50" font-size="13" font-family="serif" fill="#666">低</text>
+  <!-- 站点 + 两个偏导方向 -->
+  <circle cx="290" cy="170" r="5" fill="#1a365d"/>
+  <text x="298" y="167" font-size="13" font-family="serif">P(x,y)</text>
+  <line x1="290" y1="170" x2="340" y2="170" stroke="#c53030" stroke-width="2.5" marker-end="url(#arrPx)"/>
+  <text x="295" y="195" font-size="13" font-family="serif" fill="#c53030" font-weight="bold">∂z/∂x (东向)</text>
+  <line x1="290" y1="170" x2="290" y2="120" stroke="#22543d" stroke-width="2.5" marker-end="url(#arrPy)"/>
+  <text x="220" y="120" font-size="13" font-family="serif" fill="#22543d" font-weight="bold">∂z/∂y (北向)</text>
+  <text x="50" y="240" font-size="12" font-family="serif" fill="#666">偏导数 = 沿单一坐标方向的高度变化率</text>
+</svg>
+<figcaption>图 4.1 偏导数几何意义: 站山坡某点, 只往东走一小步的高度变化率 = ∂z/∂x; 只往北走 = ∂z/∂y</figcaption>
+</figure>
 <p>
 <strong>生活类比</strong>: 站在山坡某点, <strong>只往东走一小步</strong>, 高度变化率 = ∂ z / ∂ x. <strong>只往北走一小步</strong>, 高度变化率 = ∂ z / ∂ y.
 </p>
