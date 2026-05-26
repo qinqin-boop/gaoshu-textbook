@@ -73,12 +73,19 @@
 <strong>为啥这章关键</strong>: AI 训练 = 找一个<strong>多元函数 (损失) 的最低点</strong>. 整套技巧 (梯度下降/反向传播) 全靠这章基础.
 </p>
 <h3 id="1">知识点 1: 二元函数定义</h3>
+<div class="box-def">
+<p>二元函数</p>
 <p>
-<strong>一元</strong>: 一个输入一个输出. y = f(x) 比如 y = x².
+两个输入一个输出. $z = f(x, y)$. 例: $z = x^2 + y^2$ (抛物面/碗形曲面).
 </p>
+</div>
 <p>
-<strong>二元</strong>: 两个输入一个输出. z = f(x, y) 比如 z = x² + y² (碗形曲面).
+<strong>一元 vs 二元</strong>:
 </p>
+<ul>
+<li>一元 $y = f(x)$ 图像是曲线</li>
+<li>二元 $z = f(x, y)$ 图像是曲面 (3D)</li>
+</ul>
 <p>
 <strong>生活类比</strong>:
 </p>
@@ -86,8 +93,32 @@
 <li>一元: 你的工资 = f(工龄) — 只看工龄</li>
 <li>二元: 工资 = f(工龄, 学历) — 两个都看</li>
 </ul>
+<figure>
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 二元函数曲面示意 z = x²+y² -->
+  <defs>
+    <linearGradient id="bowl" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a365d" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#c9b97a" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <!-- 椭圆 (z 高度递增的等高线) -->
+  <ellipse cx="200" cy="220" rx="140" ry="22" fill="none" stroke="#1a365d" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="200" cy="180" rx="115" ry="18" fill="none" stroke="#1a365d" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="200" cy="140" rx="85" ry="14" fill="none" stroke="#1a365d" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="200" cy="100" rx="55" ry="9" fill="none" stroke="#1a365d" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="200" cy="70" rx="25" ry="4" fill="#c9b97a" stroke="#1a365d" stroke-width="1.5"/>
+  <!-- 左右轮廓 -->
+  <path d="M 60,220 Q 200,40 340,220" fill="none" stroke="#1a365d" stroke-width="2"/>
+  <text x="155" y="40" font-size="16" font-family="serif" fill="#1a365d" font-weight="bold">z = x² + y²</text>
+  <text x="20" y="220" font-size="13" font-family="serif">y</text>
+  <text x="345" y="265" font-size="13" font-family="serif">x</text>
+  <text x="200" y="265" font-size="12" font-family="serif" fill="#666">(碗形曲面, 顶点 (0,0,0))</text>
+</svg>
+<figcaption>图 1.1 二元函数 z=x²+y² 是抛物面 (carbon 切碗形), 等高线是同心圆</figcaption>
+</figure>
 <p>
-<strong>定义域</strong>: 满足函数有定义的 (x, y) 集合. 比如 z = √(1 - x² - y²) 的定义域是单位圆盘内.
+<strong>定义域</strong>: 满足函数有定义的 (x, y) 集合. 比如 $z = \sqrt{1 - x^2 - y^2}$ 的定义域是单位圆盘内.
 </p>
 <div class="box-example">
 <p>例题 1</p>
@@ -696,6 +727,28 @@ $\nabla$ 读作「nabla」或「del」,可视为算子 $\nabla=\big(\tfrac{\part
 把方向导数公式用点乘改写:
 $$\frac{\partial f}{\partial\vec{l}}=f_x\cos\alpha+f_y\cos\beta=\nabla f\cdot\vec{l}.$$
 </p>
+<figure>
+<svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c53030"/></marker>
+  </defs>
+  <!-- 等高线 (同心椭圆) -->
+  <ellipse cx="200" cy="140" rx="140" ry="70" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="200" cy="140" rx="100" ry="50" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.6"/>
+  <ellipse cx="200" cy="140" rx="60" ry="30" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="200" cy="140" rx="25" ry="13" fill="#c9b97a" opacity="0.4" stroke="#1a365d" stroke-width="1"/>
+  <!-- 梯度向量 (从外指向高处) -->
+  <line x1="280" y1="180" x2="220" y2="150" stroke="#c53030" stroke-width="3" marker-end="url(#arrG)"/>
+  <!-- 切线方向 (等高线切向) -->
+  <line x1="280" y1="180" x2="320" y2="120" stroke="#2d6e2d" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="220" y="150" font-size="14" font-family="serif" fill="#c53030" font-weight="bold">∇f (上升最快)</text>
+  <text x="320" y="105" font-size="13" font-family="serif" fill="#2d6e2d">切向 (等高)</text>
+  <text x="180" y="143" font-size="13" font-family="serif" fill="#666">高</text>
+  <text x="80" y="80" font-size="13" font-family="serif" fill="#666">低</text>
+  <text x="150" y="265" font-size="12" font-family="serif" fill="#666">等高线: f(x,y)=C</text>
+</svg>
+<figcaption>图 6.2.1 梯度 ∇f 垂直于等高线, 指向函数值上升最快方向</figcaption>
+</figure>
 <p>
 这一改写极其重要——它把「沿某方向的变化率」表达成「梯度向量与方向向量的点乘」。下面的定理是梯度的灵魂。
 </p>
