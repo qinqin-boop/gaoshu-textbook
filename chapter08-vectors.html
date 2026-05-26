@@ -1441,16 +1441,19 @@ z=1 时 x² - y² = 1 ⇒ 在 z=1 平面上的双曲线.
 </p>
 </div>
 <h3 id="6-7">知识点 6.7: 空间曲线的弧长公式</h3>
+<div class="box-thm">
+<p>空间曲线弧长</p>
 <p>
-设曲线参数化 $\vec{r}$(t) = (x(t), y(t), z(t)), t ∈ [$\alpha$, $\beta$].
+设曲线参数化 $\vec{r}(t) = (x(t), y(t), z(t)), t \in [\alpha, \beta]$:
+$$s = \int_\alpha^\beta |\vec{r}'(t)|\,dt = \int_\alpha^\beta \sqrt{x'^2 + y'^2 + z'^2}\,dt$$
 </p>
+</div>
+<div class="box-intuition">
+<p>弧元推导</p>
 <p>
-<strong>弧长公式</strong>:
-s = ∫_α^$\beta$ |$\vec{r}$'(t)| dt = ∫_α^$\beta$ √(x'² + y'² + z'²) dt
+在 $t \to t+dt$ 上, 弧元 $ds \approx |\vec{r}(t+dt) - \vec{r}(t)| \approx |\vec{r}'(t)|\,dt$ — 切向量长度乘 $dt$. 几何上把曲线"伸直"看是直线段 $|\vec{r}'(t)|\,dt$.
 </p>
-<p>
-<strong>推导</strong>: 在 t 到 t+dt 上, 弧元 ds ≈ |$\vec{r}$(t+dt) - $\vec{r}$(t)| ≈ |$\vec{r}$'(t)| dt.
-</p>
+</div>
 <div class="box-example">
 <p>例题 6-7</p>
 <p>
