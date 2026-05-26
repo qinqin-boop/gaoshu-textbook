@@ -750,11 +750,20 @@ $\sum u_n(x)$ 在区间 $I$ 上<strong>一致收敛</strong>到 $S(x)$ ⟺ $\for
 </ul>
 </div>
 <h3 id="13-6-weierstrass-m">知识点 13.6: Weierstrass M 判别法</h3>
+<div class="box-thm">
+<p>Weierstrass M 判别法</p>
 <p>
-如果存在 M_n 使 |u_n(x)| ≤ M_n 对所有 x 都成立, 且 Σ M_n 收敛, 则 Σ u_n(x) <strong>一致收敛</strong>.
+存在常数列 $M_n$ 使 $|u_n(x)| \le M_n$ 对所有 $x \in I$ 都成立, 且 $\sum M_n$ 收敛, 则 $\sum u_n(x)$ 在 $I$ 上<strong>一致收敛</strong>.
 </p>
+</div>
+<div class="box-intuition">
+<p>强势压一压</p>
 <p>
-<strong>应用</strong>: 判断幂级数在收敛半径内的子区间上一致收敛.
+找一个"全局上界"序列 $M_n$ (跟 $x$ 无关), 只要 $M_n$ 的级数收敛, $u_n(x)$ 就被"压住"一致收敛. 是判断一致收敛最常用的方法.
+</p>
+</div>
+<p>
+<strong>应用</strong>: 判断幂级数在收敛半径内的<strong>闭子区间</strong>上一致收敛 (即 $[-r, r] \subset (-R, R)$, $r < R$).
 </p>
 <p>
 ---
