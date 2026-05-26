@@ -500,11 +500,33 @@ u = ∫(2x+y) dx = x² + xy + g(y).
 <strong>物理意义</strong>: 保守力场存在势能函数. 重力/弹性力/库仑电力都是保守的, 总有"势能".
 </p>
 <h3 id="7">知识点 7: 定义</h3>
+<div class="box-def">
+<p>第一类曲面积分 (对面积)</p>
 <p>
-曲面 Σ 上密度 $\mu$(x,y,z), 求质量:
-∬_Σ $\mu$(x,y,z)  dS
-dS = 曲面上小面积元.
+曲面 $\Sigma$ 上密度 $\mu(x,y,z)$, 求质量:
+$$\iint_\Sigma \mu(x,y,z)\,dS$$
+$dS$ = 曲面上小面积元. 物理意义: $\mu$=密度则 = 总质量; $\mu=1$ 则 = 曲面面积.
 </p>
+</div>
+<figure>
+<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 曲面 Σ + 切片 dS -->
+  <defs>
+    <linearGradient id="surf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a365d" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#c9b97a" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <path d="M 40,150 Q 100,40 200,80 T 360,60 L 360,160 Q 300,180 200,150 T 40,170 Z" fill="url(#surf)" stroke="#1a365d" stroke-width="2"/>
+  <!-- 高亮一个 dS -->
+  <ellipse cx="200" cy="115" rx="20" ry="10" fill="#c9b97a" opacity="0.9" stroke="#8b3a0a" stroke-width="1.5"/>
+  <text x="205" y="135" font-size="13" font-family="serif" fill="#8b3a0a" font-weight="bold">dS</text>
+  <text x="178" y="119" font-size="11" font-family="serif" fill="#c53030">(x,y,z)</text>
+  <text x="190" y="60" font-size="20" font-family="serif" font-weight="bold" fill="#1a365d">Σ</text>
+  <text x="40" y="200" font-size="12" font-family="serif" fill="#666">∬_Σ μ dS = Σ μ(x,y,z)·ΔSᵢ → 极限 (按面积累加)</text>
+</svg>
+<figcaption>图 7.1 第一类曲面积分: 弯曲钢板按面积切片 dS, 每片密度×面积累加</figcaption>
+</figure>
 <h3 id="7-5-11-5">知识点 7.5: 第二类曲面积分参数化 (对齐书 §11.5)</h3>
 <p>
 <strong>第二类 vs 第一类区别</strong>: 第二类<strong>带方向</strong> (上侧/下侧 / 内侧/外侧).
