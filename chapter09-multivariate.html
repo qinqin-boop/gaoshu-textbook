@@ -656,11 +656,13 @@ z = u² + v², u = x + y, v = x - y. 求 ∂ z / ∂ x.
 ---
 </p>
 <h3 id="7-5-9-4">知识点 7.5: 链式法则"树状图"画法 (对齐书 §9.4)</h3>
+<div class="box-intuition">
+<p>链式法则树状图法</p>
 <p>
-<strong>复杂复合函数</strong>: z = f(u, v, w), 而 u, v, w 都是 (x, y) 的函数. 求 ∂z/∂x.
+复杂复合函数 $z = f(u, v, w)$, $u, v, w$ 都是 $(x, y)$ 函数. 求 $\partial z/\partial x$.
 </p>
 <p>
-<strong>树状图法</strong> (避免漏路径):
+<strong>树状图</strong> (避免漏路径):
 ```
         z
       / | \
@@ -670,12 +672,19 @@ z = u² + v², u = x + y, v = x - y. 求 ∂ z / ∂ x.
 ```
 </p>
 <p>
-每条从 z 到 x 的路径贡献一项, 沿路相乘. 所有路径求和:
-∂z/∂x = ∂z/∂u · ∂u/∂x + ∂z/∂v · ∂v/∂x + ∂z/∂w · ∂w/∂x
+<strong>规则</strong>: 每条从 $z$ 到 $x$ 的路径贡献一项 (沿路相乘), 所有路径求和:
+$$\frac{\partial z}{\partial x} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial z}{\partial v}\frac{\partial v}{\partial x} + \frac{\partial z}{\partial w}\frac{\partial w}{\partial x}$$
 </p>
 <p>
-<strong>生活类比</strong>: 多条路通往同一目的地, 走每条都算一份, 加起来才是总. AI 反向传播梯度计算就是这个思想.
+<strong>AI 应用</strong>: <strong>反向传播 (backprop)</strong> 就是这套链式法则递归应用 — 神经网络每层都是复合函数, 从损失反向算梯度.
 </p>
+</div>
+<div class="box-pitfall">
+<p>链式法则不能漏路径</p>
+<p>
+多变量链式法则容易<strong>漏掉某条路径</strong>. 一定<strong>画完整树状图</strong>核对.
+</p>
+</div>
 <div class="box-example">
 <p>例题 6-2-2</p>
 <p>
