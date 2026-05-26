@@ -354,6 +354,25 @@ A = ∬_(x²+y²≤R²) R/√(R²-x²-y²) dxdy.
 ---
 </p>
 <h2>11.5 第二类曲面积分 (对坐标)</h2>
+<h3>知识点 8.7: 第一类曲面积分参数化 (对齐书 §11.4 二)</h3>
+<p>
+<strong>直接参数 z = z(x,y) (用 xy 投影)</strong>:
+dS = √(1 + z_x² + z_y²) dxdy
+∬_Σ f dS = ∬_(D_xy) f(x, y, z(x,y)) √(1+z_x²+z_y²) dxdy
+</p>
+<p>
+<strong>参数方程 (u, v)</strong>:
+r→ = (x(u,v), y(u,v), z(u,v))
+dS = |r→_u × r→_v| du dv
+</p>
+<p>
+<strong>球面参数化 (球坐标)</strong>: r = R sin φ cos θ → 球面 x²+y²+z²=R² 上 dS = R² sinφ dφ dθ.
+</p>
+<p>
+<strong>例题 4-3</strong> (球面积分): ∬_Σ (x²+y²+z²) dS, Σ 是 x²+y²+z²=R² 球面.
+在球面上 x²+y²+z² = R² 为常数.
+= R² · S(球) = R² · 4πR² = 4πR⁴.
+</p>
 <h3>知识点 9: 定义 (流量/通量)</h3>
 <p>
 流体的流速场 v→ = (P, Q, R), 流过有向曲面 Σ 的通量:
