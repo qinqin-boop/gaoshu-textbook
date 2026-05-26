@@ -1243,6 +1243,73 @@ K = 主曲率 κ₁ · κ₂
 <li>凸优化: K&gt;0 区域损失函数好优化</li>
 <li>相对论: 时空曲率推出引力</li>
 </ul>
+<h3>知识点 6.11: 四元数 (Quaternion) 与三维旋转</h3>
+<p>
+<strong>问题</strong>: 三维旋转用 3×3 矩阵表示, 但矩阵相乘代价高且会数值漂移. 工程上用<strong>四元数</strong>.
+</p>
+<p>
+<strong>定义</strong>: 四元数 q = a + bi + cj + dk, 其中 i²=j²=k²=ijk=-1.
+</p>
+<p>
+<strong>单位四元数</strong>表示旋转: 绕轴 n→=(x,y,z) 转角 θ ⟹ q = (cos(θ/2), x sin(θ/2), y sin(θ/2), z sin(θ/2)).
+</p>
+<p>
+<strong>旋转应用</strong>: 对向量 v→, 用 v'→ = q v→ q⁻¹.
+</p>
+<p>
+<strong>优势 vs 旋转矩阵</strong>:
+</p>
+<ul>
+<li>内存: 4 数 vs 9 数</li>
+<li>插值: SLERP 球面线性插值, 无万向锁</li>
+<li>数值稳定性: 归一化简单</li>
+<li>复合: 两个旋转 q₃ = q₁ q₂</li>
+</ul>
+<p>
+<strong>例题 6-11</strong>: 绕 z 轴转 90°.
+n→ = (0,0,1), θ = π/2.
+q = (cos 45°, 0, 0, sin 45°) = (√2/2, 0, 0, √2/2).
+</p>
+<p>
+<strong>应用全表</strong>:
+</p>
+<ul>
+<li>3D 游戏引擎 (Unity/Unreal 内部用四元数)</li>
+<li>机器人姿态控制</li>
+<li>卫星姿态: NASA 用四元数避免万向锁</li>
+<li>AR/VR 头部追踪</li>
+<li>物理引擎: 刚体旋转</li>
+<li>AI 三维生成: NeRF / Gaussian Splatting 也用四元数</li>
+</ul>
+<h3>知识点 6.12: 张量初步 (Tensor)</h3>
+<p>
+<strong>张量</strong> = "多维数组" 的几何对象, 各阶对应:
+</p>
+<ul>
+<li>0 阶: 标量 (温度)</li>
+<li>1 阶: 向量 (速度)</li>
+<li>2 阶: 矩阵 (应力, Hessian)</li>
+<li>3 阶: 立方体数组 (RGB 图像 H×W×3)</li>
+<li>高阶: 神经网络权重 (4 阶卷积核 N×C×H×W)</li>
+</ul>
+<p>
+<strong>张量积</strong>: 把两个张量"合并"扩展维度:
+(a⊗b)_(ij) = a_i · b_j
+</p>
+<p>
+<strong>爱因斯坦求和约定</strong>: 重复指标自动求和.
+A_(ij) B^(j) = ∑_j A_(ij) B^j
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>广义相对论: 时空度量 g_(μν) 是 2 阶张量</li>
+<li>ML: PyTorch/TF 的 tensor 就是多维数组</li>
+<li>物理: 应力/应变张量</li>
+<li>图像: 彩色图像 = (H, W, 3) 张量</li>
+<li>量子: 多体波函数是高阶张量</li>
+</ul>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
