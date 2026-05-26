@@ -46,15 +46,22 @@
 <strong>对你的意义</strong>: 计算机算 sin, cos, e^x, log 全用幂级数 (CPU 没那魔法直接算). 信号处理/音频/图像压缩全用傅里叶. 概率统计的特征函数也是.
 </p>
 <h2 id="12-0-5">12.0.5 入门: 为啥"无限加" 居然能得到有限数?</h2>
+<div class="box-intuition">
+<p>无限加 vs 有限和的核心区别</p>
 <p>
-直觉: 1 + 1 + 1 + ... = 无穷大. 这是对的.
+<strong>反直觉但成立</strong>:
+</p>
+<ul>
+<li>$1 + 1 + 1 + \ldots = \infty$ (每项不衰减 → 发散)</li>
+<li>$1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots = 2$ (每项指数衰减 → 收敛)</li>
+</ul>
+<p>
+<strong>关键</strong>: 每一项<strong>越加越小</strong>且<strong>衰减够快</strong>, 总和可能收敛到有限数.
 </p>
 <p>
-但: 1 + 1/2 + 1/4 + 1/8 + ... = 2 也是对的! 怎么回事?
+<strong>类比</strong>: 往杯子里<strong>先倒半杯水, 再倒半杯的半杯</strong>... 永远倒不满第二杯 (杯子大小=1), 但能无限逼近.
 </p>
-<p>
-<strong>关键</strong>: "每一项<strong>越加越小</strong>" 且<strong>衰减够快</strong>, 总和可能收敛到有限数. 就像往杯子里<strong>先倒半杯水, 再倒半杯的半杯, 再再倒半杯...</strong> 永远倒不满第二杯 (杯子大小 = 1), 但能逼近 1.
-</p>
+</div>
 <p>
 <strong>这章学</strong>:
 </p>
