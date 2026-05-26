@@ -910,6 +910,76 @@ rot F→ = ∇ × F→ = | i→ j→ k→  ∂/∂x ∂/∂y ∂/∂z  P Q R |
 <strong>例题 12-4</strong>: E→ = E₀ sin(kz - ωt) x̂→ (沿 z 传播, x 偏振).
 代入波方程: -k²E + (ω²/c²)E = 0 ⇒ ω = ck (色散关系). LED/激光/无线电的基本构型.
 </p>
+<p>
+---
+</p>
+<h2>补充: Helmholtz 分解 + 微分形式入门</h2>
+<h3>知识点 12.6: Helmholtz 分解定理</h3>
+<p>
+<strong>定理</strong>: 在合适条件下, 任意向量场 F→ 可唯一分解为:
+F→ = -∇φ + ∇×A→
+</p>
+<ul>
+<li>φ 是标量势 (scalar potential)</li>
+<li>A→ 是向量势 (vector potential)</li>
+<li>-∇φ 部分: 无旋 (∇×(-∇φ)=0) — "源"部分</li>
+<li>∇×A→ 部分: 无散 (∇·(∇×A→)=0) — "旋"部分</li>
+</ul>
+<p>
+<strong>物理含义</strong>: 任何流场 = 纯散场 + 纯旋场.
+</p>
+<p>
+<strong>例题 12-6</strong> (电磁场): 麦克斯韦方程中
+</p>
+<ul>
+<li>电场 E→ = -∇φ - ∂A→/∂t (静态部分 + 时变部分)</li>
+<li>磁场 B→ = ∇×A→</li>
+</ul>
+<p>
+φ 和 A→ 一起叫"四维势" (φ, A→) — 相对论中是 4-向量.
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>流体力学: 不可压缩流速分解 (势流 + 涡流)</li>
+<li>图像处理: 法线场分解 = 法向反射 + 切向流</li>
+<li>GIS: 风场分解 (辐散场 + 旋转场), 用于气象预测</li>
+</ul>
+<h3>知识点 12.7: 微分形式 (Differential Forms) 入门</h3>
+<p>
+<strong>统一观点</strong>: 高数下册末尾的 Green/Gauss/Stokes 三公式本质上是<strong>同一个定理</strong>(广义 Stokes), 用"微分形式"语言能写成:
+∫_M dω = ∫_∂M ω
+</p>
+<p>
+其中:
+</p>
+<ul>
+<li>ω 是 (k-1) 次形式</li>
+<li>dω 是 k 次形式 (外导数)</li>
+<li>M 是 k 维流形, ∂M 是其边界</li>
+</ul>
+<p>
+<strong>对应表</strong>:
+| 经典 | 微分形式 | k |
+|---|---|---|
+| Newton-Leibniz | ∫_[a,b] df = f(b)-f(a) | 1 |
+| Green | ∫_D dω = ∫_∂D ω | 2 |
+| Stokes | ∫_S dω = ∫_∂S ω | 2 |
+| Gauss | ∫_V dω = ∫_∂V ω | 3 |
+</p>
+<p>
+<strong>外导数 d 的核心性质</strong>: d∘d = 0 (二阶外导为零). 这就是 "∇×(∇f)=0" 和 "∇·(∇×F→)=0" 的统一表述.
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>现代物理: 广义相对论用张量, 张量= 多线性微分形式</li>
+<li>微分几何: 流形上微积分</li>
+<li>拓扑学: de Rham 上同调 = "几何拓扑桥"</li>
+<li>数据科学: 拓扑数据分析 (TDA) 用微分形式衡量数据流形拓扑</li>
+</ul>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
