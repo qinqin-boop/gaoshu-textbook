@@ -998,23 +998,34 @@ $$L(\theta')\le L(\theta)-\eta\|\nabla L\|^2+\tfrac{L\eta^2}{2}\|\nabla L\|^2=L(
 <strong>AI/ML 直接用</strong>: 二阶优化 (Newton 法) 用 Hessian 加速收敛, 比梯度下降快得多.
 </p>
 <h3 id="12">知识点 12: 空间曲线的切线</h3>
+<div class="box-thm">
+<p>空间曲线切线</p>
 <p>
-参数曲线 $\vec{r}$(t) = (x(t), y(t), z(t)), 切向量 = $\vec{r}$'(t) = (x'(t), y'(t), z'(t)).
+参数曲线 $\vec{r}(t) = (x(t), y(t), z(t))$, 切向量 $\vec{r}'(t) = (x'(t), y'(t), z'(t))$.
 </p>
 <p>
-切线方程 (点向式): 用切向量做方向向量.
+切线方程 (点向式, 在 $t_0$ 处):
+$$\frac{x - x(t_0)}{x'(t_0)} = \frac{y - y(t_0)}{y'(t_0)} = \frac{z - z(t_0)}{z'(t_0)}$$
 </p>
+</div>
 <p>
 ---
 </p>
 <h3 id="13">知识点 13: 曲面的切平面</h3>
+<div class="box-thm">
+<p>隐式曲面切平面</p>
 <p>
-曲面 F(x, y, z) = 0, 法向量 = ∇ F = (F_x, F_y, F_z).
+曲面 $F(x, y, z) = 0$, 法向量 $\vec{n} = \nabla F = (F_x, F_y, F_z)$. 在点 $(x_0, y_0, z_0)$ 处的<strong>切平面方程</strong>:
+$$F_x(x_0,y_0,z_0)(x-x_0) + F_y(\ldots)(y-y_0) + F_z(\ldots)(z-z_0) = 0$$
+<strong>法线方程</strong>: $\frac{x-x_0}{F_x} = \frac{y-y_0}{F_y} = \frac{z-z_0}{F_z}$
 </p>
+</div>
+<div class="box-intuition">
+<p>梯度 = 等高面法向</p>
 <p>
-<strong>切平面方程</strong>: 用 ∇ F 做法向量, 套点法式.
-F_x(x₀, y₀, z₀)(x - x₀) + F_y(...)(y - y₀) + F_z(...)(z - z₀) = 0
+$F(x,y,z) = c$ 是等值面 (曲面). $\nabla F$ 永远垂直于等值面 — 这跟二维 "$\nabla f$ 垂直等高线" 同源.
 </p>
+</div>
 <div class="box-example">
 <p>例题 9</p>
 <p>
