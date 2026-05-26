@@ -350,23 +350,32 @@ $$\sum_{n=1}^\infty u_n \text{ 收敛} \Leftrightarrow \int_1^\infty f(x)\,dx \t
 </p>
 <h2 id="12-3">12.3 交错级数 (一正一负)</h2>
 <h3 id="6-5-p-12-2">知识点 6.5: p-级数完整证明 (对齐书 §12.2 一 进一步)</h3>
+<div class="box-thm">
+<p>p-级数收敛性 (完整定理)</p>
 <p>
-<strong>定理</strong>: Σ 1/n^p 当 p &gt; 1 收敛, p ≤ 1 发散.
+$$\sum_{n=1}^\infty \frac{1}{n^p} = \begin{cases} \text{收敛} & p > 1 \\ \text{发散} & p \le 1 \end{cases}$$
 </p>
+</div>
+<div class="box-intuition">
+<p>用积分判别法证明</p>
 <p>
-<strong>证明 (用积分判别法)</strong>: 函数 f(x) = 1/x^p 在 [1, ∞) 单调减.
-∫_1^∞ 1/x^p dx = lim_{$\vec{N}$∞} ∫_1^N 1/x^p dx
-</p>
-<ul>
-<li>p ≠ 1: = lim [x^(1-p)/(1-p)]_1^N</li>
-</ul>
-<p>
-  - p &gt; 1: → -1/(1-p) = 1/(p-1) (有限) → 收敛
-  - p &lt; 1: → ∞ (无限) → 发散
+$f(x) = 1/x^p$ 在 $[1, \infty)$ 单调减:
+$$\int_1^\infty \frac{dx}{x^p} = \lim_{N\to\infty} \int_1^N x^{-p}\,dx$$
 </p>
 <ul>
-<li>p = 1: ∫ 1/x dx = ln x → ln N → ∞ (发散)</li>
+<li>$p \ne 1$: $= \lim_N \frac{x^{1-p}}{1-p}\Big|_1^N$</li>
 </ul>
+<p>
+  - $p > 1$: $\to \frac{1}{p-1}$ (有限) → <strong>收敛</strong>
+  - $p < 1$: $\to \infty$ → <strong>发散</strong>
+</p>
+<ul>
+<li>$p = 1$: $\int dx/x = \ln x \to \infty$ → <strong>发散</strong></li>
+</ul>
+<p>
+积分判别法把"级数收敛性"问题化为"积分收敛性"问题, 后者是中学/上册已会的内容.
+</p>
+</div>
 <p>
 由积分判别法, 级数跟积分同收敛/同发散. ∎
 </p>
