@@ -892,26 +892,30 @@ F_z = G·m ∬_D (z-z₀)/r³ · $\mu$ dA
 </p>
 <h2 id="10-5-10-5">10.5 含参变量的积分 (对齐书 §10.5)</h2>
 <h3 id="15">知识点 15: 含参变量的积分</h3>
+<div class="box-def">
+<p>含参变量积分</p>
 <p>
-<strong>问题</strong>: 一个积分里, 除了积分变量 x 还有"参数" t. 比如:
-I(t) = ∫_a^b f(x, t) dx
+积分变量 $x$ + <strong>参数</strong> $t$:
+$$I(t) = \int_a^b f(x, t)\,dx$$
+$I$ 是 $t$ 的函数 — 参数变, 积分值跟着变.
 </p>
+</div>
+<div class="box-intuition">
+<p>风量类比</p>
 <p>
-这个 I 是 t 的函数 — 参数 t 变, 积分值跟着变.
+"风强度" $f(x, t)$, $x$ 位置, $t$ 时间. 不同时间 $t$ 算"整片区域总风量" $\int f\,dx$ 就是 $I(t)$ — 参数化的积分.
 </p>
-<p>
-<strong>生活类比</strong>: 一片区域内"风强度" f(x, t), x 是位置, t 是时间. 不同时间 t 算"整片区域总风量" 就是 I(t).
-</p>
-<p>
-<strong>关键性质</strong>:
-</p>
+</div>
+<div class="box-thm">
+<p>含参积分 2 大性质</p>
 <ol>
-<li><strong>连续性</strong>: f 连续 → I(t) 连续</li>
-<li><strong>可微性 (Leibniz 公式)</strong>: 在合理条件下可以"积分号下求导":</li>
+<li><strong>连续性</strong>: $f(x, t)$ 在矩形上连续 → $I(t)$ 连续</li>
+<li><strong>可微性 (Leibniz 公式)</strong>: $\partial f/\partial t$ 连续 → 可"积分号下求导":</li>
 </ol>
 <p>
-   I'(t) = ∫_a^b ∂f/∂t dx
+$$I'(t) = \int_a^b \frac{\partial f}{\partial t}\,dx$$
 </p>
+</div>
 <div class="box-example">
 <p>例题 12-2</p>
 <p>
