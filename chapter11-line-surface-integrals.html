@@ -251,6 +251,31 @@ S = (1/2)∮(x dy - y dx) = (1/2)∫_0^(2π) [a cos t · b cos t - b sin t · (-
 ---
 </p>
 <h2>11.4 第一类曲面积分 (对面积)</h2>
+<h3>知识点 6.5: 全微分原函数 (对齐书 §11.3 三)</h3>
+<p>
+<strong>问题</strong>: P dx + Q dy 啥时候是某个函数 u(x,y) 的全微分?
+</p>
+<p>
+<strong>条件</strong>: ∂Q/∂x = ∂P/∂y (单连通区域)
+此时存在 u 使 du = P dx + Q dy, <strong>u 称为原函数</strong>.
+</p>
+<p>
+<strong>求 u 的方法</strong>:
+</p>
+<ol>
+<li>对 ∂u/∂x = P 关于 x 积分: u = ∫P dx + g(y)</li>
+<li>求 ∂u/∂y, 跟 Q 比较, 解出 g(y)</li>
+</ul>
+<p>
+<strong>例题 6-3</strong>: 验证 (2x+y) dx + (x+2y) dy 是全微分, 求原函数.
+P = 2x+y, Q = x+2y. ∂Q/∂x = 1 = ∂P/∂y ✓.
+u = ∫(2x+y) dx = x² + xy + g(y).
+∂u/∂y = x + g'(y) = Q = x + 2y → g'(y) = 2y → g(y) = y².
+<strong>u = x² + xy + y²</strong>. (验证: du = (2x+y)dx + (x+2y)dy ✓)
+</p>
+<p>
+<strong>物理意义</strong>: 保守力场存在势能函数. 重力/弹性力/库仑电力都是保守的, 总有"势能".
+</p>
 <h3>知识点 7: 定义</h3>
 <p>
 曲面 Σ 上密度 μ(x,y,z), 求质量:
