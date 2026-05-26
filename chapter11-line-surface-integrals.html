@@ -83,11 +83,35 @@
 </p>
 <h2 id="11-1">11.1 第一类曲线积分 (对弧长)</h2>
 <h3 id="1">知识点 1: 定义</h3>
+<div class="box-def">
+<p>第一类曲线积分 (对弧长)</p>
 <p>
-曲线 L 上, 密度 $\mu$(x,y) 不均匀, 求<strong>质量</strong>.
-∫_L $\mu$(x,y)  ds
-ds = 曲线上小弧长元.
+曲线 L 上, 密度 $\mu(x,y)$ 不均匀, 求<strong>质量</strong>.
+$$\int_L \mu(x,y)\,ds$$
+$ds$ = 曲线上小弧长元素.
 </p>
+</div>
+<figure>
+<svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 曲线 + 切成段 -->
+  <path d="M 30,180 Q 100,80 200,120 T 350,60" fill="none" stroke="#1a365d" stroke-width="2.5"/>
+  <!-- 切点 -->
+  <circle cx="30" cy="180" r="3" fill="#1a365d"/>
+  <circle cx="100" cy="100" r="3" fill="#c53030"/>
+  <circle cx="170" cy="116" r="3" fill="#c53030"/>
+  <circle cx="240" cy="120" r="3" fill="#c53030"/>
+  <circle cx="310" cy="80" r="3" fill="#c53030"/>
+  <circle cx="350" cy="60" r="3" fill="#1a365d"/>
+  <!-- ds 标注 -->
+  <text x="120" y="125" font-size="14" font-family="serif" fill="#c53030" font-weight="bold">ds</text>
+  <text x="195" y="140" font-size="14" font-family="serif" fill="#c53030" font-weight="bold">ds</text>
+  <text x="265" y="110" font-size="14" font-family="serif" fill="#c53030" font-weight="bold">ds</text>
+  <text x="15" y="200" font-size="13" font-family="serif">A</text>
+  <text x="345" y="50" font-size="13" font-family="serif">B</text>
+  <text x="50" y="225" font-size="13" font-family="serif" fill="#666">∫_L μ ds ≈ Σ μ(Pᵢ) · Δsᵢ  (切→密度×弧长→累加)</text>
+</svg>
+<figcaption>图 1.1 第一类曲线积分: 弯曲钢丝按弧长切段, 每段密度×长度, 累加</figcaption>
+</figure>
 <p>
 <strong>生活类比</strong>: 一根弯曲钢丝, 每点密度不同, 总质量 = 切成小段, 每段密度×长度, 加起来.
 </p>
