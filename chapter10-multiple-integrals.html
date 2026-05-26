@@ -1304,23 +1304,23 @@ I(0) = $\pi$/2. <strong>狄利克雷积分</strong> ✓
 <li>高维 ML: backprop 链式法则本质是含参求导</li>
 </ul>
 <h3 id="13-12">知识点 13.12: 反常重积分 与 收敛性判别</h3>
-<p>
-<strong>反常 (improper) 重积分</strong>: 积分区域无界或被积函数无界.
-</p>
-<p>
-<strong>两种类型</strong>:
-</p>
+<div class="box-def">
+<p>反常 (improper) 重积分两种情形</p>
 <ol>
-<li>区域无界: ∬_(R²) f dA = lim_($\vec{D}$R²) ∬_D f dA</li>
-<li>函数无界: ∬_(D\{P}) f dA, P 是奇点</li>
+<li><strong>区域无界</strong>: $\iint_{\mathbb{R}^2} f\,dA = \lim_{D \to \mathbb{R}^2} \iint_D f\,dA$</li>
+<li><strong>函数无界</strong> (有奇点): $\iint_{D \setminus \{P\}} f\,dA$, $P$ 是奇点</li>
 </ol>
-<p>
-<strong>收敛判别 (二维)</strong>:
-</p>
+</div>
+<div class="box-thm">
+<p>二维反常积分收敛判别</p>
 <ul>
-<li>在原点 $\vec{r}$0: 若 |f| ~ 1/r^$\alpha$, $\alpha$ &lt; 2 则收敛 (用极坐标 r dr dθ)</li>
-<li>在无穷 $\vec{r}$∞: 若 |f| ~ 1/r^$\alpha$, $\alpha$ &gt; 2 则收敛</li>
+<li><strong>原点附近</strong> ($r \to 0$): 若 $|f| \sim 1/r^\alpha$, 则 $\alpha < 2$ 时收敛 (极坐标 $r\,drd\theta$)</li>
+<li><strong>无穷远</strong> ($r \to \infty$): 若 $|f| \sim 1/r^\alpha$, 则 $\alpha > 2$ 时收敛</li>
 </ul>
+<p>
+<strong>对比一维</strong>: 一维 $1/x^\alpha$ 在 0 收敛需 $\alpha < 1$, 在 $\infty$ 收敛需 $\alpha > 1$. <strong>维数</strong>会改变临界值.
+</p>
+</div>
 <div class="box-example">
 <p>例题 13-13</p>
 <p>
