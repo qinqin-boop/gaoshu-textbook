@@ -998,20 +998,27 @@ $$\Gamma = \oint_L \vec{F}\cdot d\vec{r} = \oint_L P\,dx + Q\,dy + R\,dz$$
 </p>
 </div>
 <h3 id="12-8-curl">知识点 12.8: 旋度 (curl)</h3>
+<div class="box-def">
+<p>旋度</p>
 <p>
-<strong>定义</strong>: 向量场, 描述某点"旋转"强度:
-rot $\vec{F}$ = ∇ × $\vec{F}$ = | $\vec{i}$ $\vec{j}$ $\vec{k}$  ∂/∂x ∂/∂y ∂/∂z  P Q R |
+向量场 $\vec{F} = (P, Q, R)$ 的<strong>旋度</strong>是向量场:
+$$\text{curl}\,\vec{F} = \nabla \times \vec{F} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ \partial/\partial x & \partial/\partial y & \partial/\partial z \\ P & Q & R \end{vmatrix}$$
+展开: $\left(\dfrac{\partial R}{\partial y} - \dfrac{\partial Q}{\partial z}, \dfrac{\partial P}{\partial z} - \dfrac{\partial R}{\partial x}, \dfrac{\partial Q}{\partial x} - \dfrac{\partial P}{\partial y}\right)$
 </p>
+</div>
+<div class="box-intuition">
+<p>小风车几何</p>
 <p>
-<strong>几何意义</strong>: 在某点放一个小风车, 旋度方向 = 风车轴方向, 旋度大小 = 转速.
+某点放小风车, <strong>旋度方向 = 风车轴方向</strong>, <strong>旋度大小 = 转速</strong>.
 </p>
 <ul>
-<li>rot $\vec{F}$ = 0 处: <strong>无旋场</strong> (流体不打转)</li>
-<li>|rot $\vec{F}$| 大: 涡漩中心</li>
+<li>$\nabla\times\vec{F} = 0$: <strong>无旋场</strong> (流体不打转, 即保守场)</li>
+<li>$|\nabla\times\vec{F}|$ 大: 涡旋中心</li>
 </ul>
 <p>
-<strong>生活类比</strong>: 龙卷风中心旋度极大, 平直气流旋度为 0.
+<strong>类比</strong>: 龙卷风中心旋度极大, 平直气流旋度为 0.
 </p>
+</div>
 <p>
 <strong>斯托克斯公式 (向量形式)</strong>:
 ∮_(∂Σ) $\vec{F}$ · dr→ = ∬_Σ rot $\vec{F}$ · dS→
