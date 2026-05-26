@@ -868,6 +868,70 @@ U₁, U₂ ~ Uniform(0,1).
 Z₁ = √(-2 ln U₁) cos(2π U₂), Z₂ = √(-2 ln U₁) sin(2π U₂).
 计算雅可比可证 Z₁, Z₂ ~ N(0,1) 独立. 这是计算机生成正态随机数的经典方法.
 </p>
+<h3>知识点 13.11: 含参积分 (Feynman 求导技巧)</h3>
+<p>
+<strong>问题</strong>: 直接积分困难时, 引入参数将积分化为参数函数, 再对参数求导.
+</p>
+<p>
+<strong>Leibniz 求导规则</strong>:
+d/dα [∫_a^b f(x, α) dx] = ∫_a^b ∂f/∂α dx (积分限不依赖α)
+</p>
+<p>
+<strong>例题 13-12</strong>: 求 I = ∫_0^∞ (sin x)/x dx.
+引入 I(α) = ∫_0^∞ e^(-αx) (sin x)/x dx, α≥0.
+∂I/∂α = -∫_0^∞ e^(-αx) sin x dx = -1/(α²+1)
+I(α) = -arctan α + C. α→∞: I→0, 所以 C = π/2.
+I(0) = π/2. <strong>狄利克雷积分</strong> ✓
+</p>
+<p>
+<strong>Feynman 技巧威力</strong>: 物理学家 Feynman 这套方法被誉为"积分黑魔法". 把一个难积分通过参数化变成 ODE 问题.
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>物理: 路径积分计算</li>
+<li>信号: 滤波器频响推导</li>
+<li>统计: 矩生成函数求矩 E[X^n] = M^(n)(0)</li>
+<li>高维 ML: backprop 链式法则本质是含参求导</li>
+</ul>
+<h3>知识点 13.12: 反常重积分 与 收敛性判别</h3>
+<p>
+<strong>反常 (improper) 重积分</strong>: 积分区域无界或被积函数无界.
+</p>
+<p>
+<strong>两种类型</strong>:
+</p>
+<ol>
+<li>区域无界: ∬_(R²) f dA = lim_(D→R²) ∬_D f dA</li>
+<li>函数无界: ∬_(D\{P}) f dA, P 是奇点</li>
+</ul>
+<p>
+<strong>收敛判别 (二维)</strong>:
+</p>
+<ul>
+<li>在原点 r→0: 若 |f| ~ 1/r^α, α &lt; 2 则收敛 (用极坐标 r dr dθ)</li>
+<li>在无穷 r→∞: 若 |f| ~ 1/r^α, α &gt; 2 则收敛</li>
+</ul>
+<p>
+<strong>例题 13-13</strong>: ∬_(R²) e^(-(x²+y²)) dA = π (前面高斯积分已证).
+</p>
+<ul>
+<li>区域无界但 e^(-r²) 在 r→∞ 急剧衰减 ⟹ 收敛.</li>
+</ul>
+<p>
+<strong>例题 13-14</strong>: ∬_(B(0,1)) 1/r dxdy.
+极坐标 = ∫_0^(2π)∫_0^1 (1/r)·r dr dθ = 2π. 收敛 (α=1&lt;2) ✓
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>量子: 波函数归一化 ∫|ψ|² = 1 必须收敛</li>
+<li>概率: pdf 积分 = 1 是反常积分</li>
+<li>信号: 总能量 ∫|f|² &lt; ∞ 是 L² 空间条件</li>
+<li>神经网络: 损失函数在无穷处的衰减分析</li>
+</ul>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
