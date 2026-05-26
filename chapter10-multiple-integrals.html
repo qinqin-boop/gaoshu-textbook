@@ -419,30 +419,28 @@ V_z = ∬_(D_z) z dxdy = z · z² = z³.
 ---
 </p>
 <h3 id="6-5-10-3">知识点 6.5: 三重积分的"先一后二"与"先二后一" 思想 (对齐书 §10.3)</h3>
-<p>
-<strong>两种切法</strong>:
-</p>
+<div class="box-thm">
+<p>三重积分两种切法</p>
 <p>
 <strong>先一后二 (投影法)</strong>:
-∭_V f dV = ∬_(D_xy) [∫_(z₁(x,y))^(z₂(x,y)) f dz] dxdy
-</p>
-<p>
-先把 z 当一元变量积 (x, y 当常数), 内层得到一个仅是 (x,y) 的函数, 然后对 (x,y) 在投影区域 D_xy 上二重积分.
+$$\iiint_V f\,dV = \iint_{D_{xy}} \left[\int_{z_1(x,y)}^{z_2(x,y)} f\,dz\right] dxdy$$
 </p>
 <p>
 <strong>先二后一 (切片法)</strong>:
-∭_V f dV = ∫_c^d [∬_(D_z) f(x,y,z) dxdy] dz
+$$\iiint_V f\,dV = \int_c^d \left[\iint_{D_z} f(x,y,z)\,dxdy\right] dz$$
+($D_z$ 是 $z$ 平面与 $V$ 的截面.)
 </p>
-<p>
-先固定 z 切一片 (z = c 平面与 V 的截面 D_z), 算这片上的二重积分得到 A(z), 然后对 z 在 [c, d] 上一元积分.
-</p>
-<p>
-<strong>选哪个?</strong>
-</p>
+</div>
+<div class="box-intuition">
+<p>怎么选?</p>
 <ul>
-<li>f 跟 z 有简单关系, 投影区域复杂 → 先一后二</li>
-<li>f 是 z 的简单函数, 切片形状好算 → 先二后一</li>
+<li>$f$ 跟 $z$ 简单, 投影区域 $D_{xy}$ 复杂 → <strong>先一后二</strong></li>
+<li>$f$ 是 $z$ 的简单函数, 切片 $D_z$ 好算 → <strong>先二后一</strong></li>
 </ul>
+<p>
+<strong>经验</strong>: 旋转体 / 沿轴密度变化 → 切片; 复杂三维区域 → 投影.
+</p>
+</div>
 <div class="box-example">
 <p>例题 3-2</p>
 <p>
