@@ -1110,12 +1110,20 @@ $$B(p, q) = \int_0^1 x^{p-1} (1-x)^{q-1}\,dx, \quad p, q > 0$$
 <li>推荐系统: Thompson 采样用 Beta 分布建模点击率不确定性</li>
 </ul>
 <h3 id="13-8-stirling-n">知识点 13.8: Stirling 公式 — n! 的渐近估计</h3>
+<div class="box-thm">
+<p>Stirling 公式</p>
 <p>
-<strong>Stirling</strong>: n! ~ √(2π n) · (n/e)^n (n → ∞)
+$$n! \sim \sqrt{2\pi n} \cdot \left(\frac{n}{e}\right)^n \quad (n \to \infty)$$
+<strong>精确版</strong> (含修正项):
+$$n! = \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1 + \frac{1}{12n} + \frac{1}{288n^2} - \cdots\right)$$
 </p>
+</div>
+<div class="box-intuition">
+<p>Stirling 在统计/物理中的意义</p>
 <p>
-<strong>精确版</strong>: n! = √(2π n) · (n/e)^n · (1 + 1/(12n) + 1/(288n²) - ...)
+$n!$ 增长极快 — 直接算 $100!$ 几乎不可能 ($\approx 10^{158}$). Stirling 把它变成乘幂形式, 取 $\ln$ 后 $\ln n! \approx n\ln n - n$, 统计力学 (玻尔兹曼熵) 和组合学 (排列计数) 处处用.
 </p>
+</div>
 <div class="box-example">
 <p>例题 13-8</p>
 <p>
