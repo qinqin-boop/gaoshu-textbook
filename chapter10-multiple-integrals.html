@@ -1261,13 +1261,22 @@ Z₁ = √(-2 ln U₁) cos(2π U₂), Z₂ = √(-2 ln U₁) sin(2π U₂).
 </p>
 </div>
 <h3 id="13-11-feynman">知识点 13.11: 含参积分 (Feynman 求导技巧)</h3>
+<div class="box-thm">
+<p>Leibniz 含参求导 (积分限不依赖参数)</p>
 <p>
-<strong>问题</strong>: 直接积分困难时, 引入参数将积分化为参数函数, 再对参数求导.
+$$\frac{d}{d\alpha}\int_a^b f(x, \alpha)\,dx = \int_a^b \frac{\partial f}{\partial \alpha}\,dx$$
+(求导跟积分<strong>交换次序</strong> — 要求被积函数对 $\alpha$ 偏导连续)
+</p>
+</div>
+<div class="box-intuition">
+<p>Feynman 黑魔法</p>
+<p>
+Feynman 用此技巧把"算不出的难积分" 变成"对参数求导得简单 ODE → 解 ODE 得结果". 难积分 $\to$ 易微分.
 </p>
 <p>
-<strong>Leibniz 求导规则</strong>:
-d/dα [∫_a^b f(x, $\alpha$) dx] = ∫_a^b ∂f/∂$\alpha$ dx (积分限不依赖α)
+<strong>典例</strong>: 狄利克雷积分 $\int_0^\infty \sin x/x\,dx = \pi/2$ — 直接算不出 (不定积分无初等表达), 加参数 $e^{-\alpha x}$ 求导后立刻能算.
 </p>
+</div>
 <div class="box-example">
 <p>例题 13-12</p>
 <p>
