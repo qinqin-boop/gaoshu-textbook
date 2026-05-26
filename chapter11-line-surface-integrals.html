@@ -578,16 +578,25 @@ $dS$ = 曲面上小面积元. 物理意义: $\mu$=密度则 = 总质量; $\mu=1$
 <figcaption>图 7.1 第一类曲面积分: 弯曲钢板按面积切片 dS, 每片密度×面积累加</figcaption>
 </figure>
 <h3 id="7-5-11-5">知识点 7.5: 第二类曲面积分参数化 (对齐书 §11.5)</h3>
+<div class="box-intuition">
+<p>第二类 vs 第一类 曲面积分</p>
+<ul>
+<li><strong>第一类</strong> (对面积): $\iint_\Sigma f\,dS$, $dS > 0$, <strong>方向无关</strong></li>
+<li><strong>第二类</strong> (对坐标): $\iint_\Sigma P\,dydz + Q\,dzdx + R\,dxdy$, <strong>带方向</strong> (上侧/下侧 / 内侧/外侧)</li>
+</ul>
 <p>
-<strong>第二类 vs 第一类区别</strong>: 第二类<strong>带方向</strong> (上侧/下侧 / 内侧/外侧).
+第二类换侧 (反向) → 积分<strong>变号</strong>.
 </p>
+</div>
+<div class="box-thm">
+<p>第二类曲面积分投影公式</p>
 <p>
-<strong>公式 (z = z(x,y) 形式)</strong>:
-∬_Σ P dydz + Q dzdx + R dxdy
+对于曲面 $\Sigma: z = z(x,y)$ 投影到 $xy$ 平面得 $D_{xy}$:
+$$\iint_\Sigma R(x,y,z)\,dxdy = \pm\iint_{D_{xy}} R(x, y, z(x,y))\,dxdy$$
+取 "+" 当 $\Sigma$ 是<strong>上侧</strong> (法向量与 $z$ 轴正向夹锐角), "−" 当下侧.
 </p>
+</div>
 <p>
-转换到 xy 投影积分:
-∬_Σ R dxdy = ±∬_(D_xy) R(x,y,z(x,y)) dxdy
 (上侧+, 下侧-)
 </p>
 <p>
