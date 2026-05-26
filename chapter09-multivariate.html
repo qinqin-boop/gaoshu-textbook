@@ -921,18 +921,42 @@ $$L(\theta')\le L(\theta)-\eta\|\nabla L\|^2+\tfrac{L\eta^2}{2}\|\nabla L\|^2=L(
 </p>
 </div>
 <h3 id="11-7-hessian-9-8">知识点 11.7: 多元函数极值的二阶判别 (Hessian 矩阵, 对齐书 §9.8)</h3>
+<div class="box-thm">
+<p>Hessian 二阶判别</p>
 <p>
-<strong>二阶判别公式来源</strong>: 在驻点 (∇f = 0), 用二阶泰勒展开:
-f(x+h, y+k) ≈ f(x,y) + (1/2)[A h² + 2B hk + C k²]
+在驻点 $\nabla f = 0$, 设 $A=f_{xx}, B=f_{xy}, C=f_{yy}$, 判别式 $\Delta = AC - B^2$:
 </p>
+<ul>
+<li>$\Delta > 0, A > 0$ → 极小值</li>
+<li>$\Delta > 0, A < 0$ → 极大值</li>
+<li>$\Delta < 0$ → <strong>鞍点</strong> (非极值)</li>
+<li>$\Delta = 0$ → 失效, 需更高阶</li>
+</ul>
+</div>
+<figure>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 三个二阶曲面示意: 碗 (极小) / 倒碗 (极大) / 鞍面 (鞍点) -->
+  <!-- 碗: 极小 -->
+  <path d="M 30,140 Q 80,40 130,140" fill="none" stroke="#22543d" stroke-width="2"/>
+  <ellipse cx="80" cy="140" rx="50" ry="14" fill="none" stroke="#22543d" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="40" y="180" font-size="13" font-family="serif" fill="#22543d" font-weight="bold">极小 (碗)</text>
+  <text x="40" y="200" font-size="11" font-family="serif" fill="#666">Δ&gt;0, A&gt;0</text>
+  <!-- 倒碗: 极大 -->
+  <path d="M 180,40 Q 230,140 280,40" fill="none" stroke="#c53030" stroke-width="2"/>
+  <ellipse cx="230" cy="40" rx="50" ry="14" fill="none" stroke="#c53030" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="195" y="180" font-size="13" font-family="serif" fill="#c53030" font-weight="bold">极大 (倒碗)</text>
+  <text x="195" y="200" font-size="11" font-family="serif" fill="#666">Δ&gt;0, A&lt;0</text>
+  <!-- 鞍面: 鞍点 -->
+  <path d="M 330,40 Q 380,140 430,40" fill="none" stroke="#8b3a0a" stroke-width="2"/>
+  <path d="M 330,140 Q 380,40 430,140" fill="none" stroke="#8b3a0a" stroke-width="2"/>
+  <circle cx="380" cy="90" r="4" fill="#8b3a0a"/>
+  <text x="350" y="180" font-size="13" font-family="serif" fill="#8b3a0a" font-weight="bold">鞍点 (马鞍)</text>
+  <text x="350" y="200" font-size="11" font-family="serif" fill="#666">Δ&lt;0</text>
+</svg>
+<figcaption>图 11.7 二阶判别 3 类: 碗 (极小) / 倒碗 (极大) / 鞍面 (一方向极大另一方向极小)</figcaption>
+</figure>
 <p>
-其中 A=f_xx, B=f_xy, C=f_yy. 二次型 Q(h,k) = A h² + 2B hk + C k² 正定 ↔ 极小, 负定 ↔ 极大.
-</p>
-<p>
-正定条件: A &gt; 0 且 AC - B² &gt; 0.
-</p>
-<p>
-<strong>Hessian 矩阵</strong>: H = | A B   B C |. 判别 H 的特征值:
+<strong>Hessian 矩阵</strong>: $H = \begin{pmatrix} A & B \\ B & C \end{pmatrix}$. 判别 H 的特征值:
 </p>
 <ul>
 <li>全正 → 极小</li>
