@@ -1383,19 +1383,21 @@ f(x,y) = (x-y)/(x+y)³ on (0,1]².
 <li>ML: 多变量损失函数边缘化</li>
 </ul>
 <h3 id="13-14">知识点 13.14: 雅可比与微分形式的等价</h3>
+<div class="box-thm">
+<p>微分形式视角看雅可比</p>
 <p>
-回顾: 重积分换元 dxdy = |J| du dv.
+$$dx \wedge dy = \det J \cdot du \wedge dv$$
+推导:
+$$dx \wedge dy = (\tfrac{\partial x}{\partial u} du + \tfrac{\partial x}{\partial v} dv) \wedge (\tfrac{\partial y}{\partial u} du + \tfrac{\partial y}{\partial v} dv)$$
+利用 $dv \wedge du = -du \wedge dv$ (外积反对称) 化简, 自动产生雅可比行列式.
 </p>
+</div>
+<div class="box-intuition">
+<p>微分形式 = 隐藏的优雅</p>
 <p>
-<strong>微分形式视角</strong>:
-dx ∧ dy = (∂x/∂u du + ∂x/∂v dv) ∧ (∂y/∂u du + ∂y/∂v dv)
-= (∂x/∂u · ∂y/∂v) du∧dv + (∂x/∂v · ∂y/∂u) dv∧du
-= (∂x/∂u · ∂y/∂v - ∂x/∂v · ∂y/∂u) du∧dv
-= det J · du∧dv
+普通换元公式 $dxdy = |\det J| dudv$ <strong>需要套上绝对值</strong>, 不优雅. 微分形式版本 $dx \wedge dy = \det J \cdot du \wedge dv$ <strong>无需绝对值</strong> — 符号自动从外积反对称性来. 这是微分流形上积分的现代视角.
 </p>
-<p>
-外积反对称 dv∧du = -du∧dv 自动产生雅可比行列式. 这是微分形式优雅之处.
-</p>
+</div>
 <h3 id="13-15">知识点 13.15: 立方体的"双重广义体积"</h3>
 <p>
 <strong>n 维球体体积</strong>:
