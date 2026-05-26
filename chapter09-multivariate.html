@@ -344,9 +344,22 @@ f(x,y) = x² + y² (碗形). ∂f/∂x = 2x, ∂f/∂y = 2y.
 </p>
 </div>
 <h3 id="4-5">知识点 4.5: 偏导数存在 ≠ 函数连续</h3>
+<div class="box-pitfall">
+<p>多元里偏导存在不蕴含连续</p>
 <p>
-⚠️ <strong>重要</strong>: 一元里"可导 ⇒ 连续", 二元里<strong>偏导都存在不能推出函数连续</strong>.
+<strong>一元</strong>: 可导 ⇒ 连续 (无条件成立).
+<strong>二元</strong>: 偏导 $f_x, f_y$ 都存在, 不能推出 $f$ 连续.
 </p>
+<p>
+这是多元微积分<strong>最容易踩的坑</strong>.
+</p>
+</div>
+<div class="box-pitfall">
+<p>偏导存在不蕴含可微</p>
+<p>
+更进一步: 偏导存在也不蕴含<strong>可微</strong>. 想可微需要 $f_x, f_y$ <strong>连续</strong> (足够条件).
+</p>
+</div>
 <p>
 <strong>反例</strong>: f(x,y) = xy/(x²+y²) (当 (x,y)≠(0,0)), f(0,0)=0.
 </p>
