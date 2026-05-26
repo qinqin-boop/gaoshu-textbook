@@ -1051,23 +1051,27 @@ $$\text{curl}\,\vec{F} = \nabla \times \vec{F} = \begin{vmatrix} \vec{i} & \vec{
 ---
 </p>
 <h3 id="12-9-generalized-stokes">知识点 12.9: 三大公式统一思想 (Generalized Stokes 定理)</h3>
+<div class="box-thm">
+<p>广义 Stokes 定理</p>
 <p>
-<strong>牛顿-莱布尼茨 / 格林公式 / 高斯公式 / 斯托克斯公式 — 一个公式的不同维度形态</strong>:
+$$\int_{\partial M} \omega = \int_M d\omega$$
+其中 $M$ 是流形, $\partial M$ 是其边界, $\omega$ 是微分形式, $d\omega$ 是外导数.
 </p>
+</div>
+<div class="box-intuition">
+<p>四个公式 = 一个公式的不同维度</p>
 <p>
 | 公式 | 维度 | 边界 | 内部 |
 |---|---|---|---|
-| 牛顿-莱布尼茨 | 1D | 端点 a, b | 区间 [a, b] |
-| 格林 | 2D | 闭曲线 ∂D | 平面区域 D |
-| 高斯 | 3D | 闭曲面 ∂V | 立体 V |
-| 斯托克斯 | 2D 嵌入 3D | 曲面边界 ∂Σ | 曲面 Σ |
+| 牛顿-莱布尼茨 | 1D | 端点 $a, b$ | 区间 $[a, b]$ |
+| Green | 2D | 闭曲线 $\partial D$ | 平面区域 $D$ |
+| Gauss | 3D | 闭曲面 $\partial V$ | 立体 $V$ |
+| Stokes | 2D 嵌入 3D | 曲面边界 $\partial\Sigma$ | 曲面 $\Sigma$ |
 </p>
 <p>
-<strong>统一</strong>: ∫_(∂M) ω = ∫_M dω (广义斯托克斯公式, 微分流形上)
+<strong>核心</strong>: 都是<strong>微积分基本定理的高维推广</strong> — "积分等于原函数在端点值的差", 从 1D 推广到任意维.
 </p>
-<p>
-<strong>意义</strong>: 这四个公式都是<strong>微积分基本定理的高维推广</strong> — "积分跟原函数 (或反导数) 的端点值差" 这件事, 从 1D 推广到任意维.
-</p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
