@@ -954,18 +954,21 @@ $$L(\theta')\le L(\theta)-\eta\|\nabla L\|^2+\tfrac{L\eta^2}{2}\|\nabla L\|^2=L(
 </p>
 <h2 id="9-7">9.7 多元微分的几何应用</h2>
 <h3 id="11-5-9-7">知识点 11.5: 梯度的物理意义 (对齐书 §9.7 二 进一步)</h3>
+<div class="box-intuition">
+<p>梯度的 3 大几何意义</p>
 <p>
-梯度 ∇f 不只是"导数向量", 它有几个深刻的几何意义:
+梯度 $\nabla f$ 不只是"导数向量", 它有三层深刻意义:
 </p>
 <p>
-<strong>① 等值线/等值面的法向量</strong>: 等高线 f(x, y) = c 上每点的切方向跟 ∇f 垂直 (因为沿等值线 f 不变, 方向导数 = 0 = ∇f·$\vec{t}$).
+<strong>① 等值线/等值面的法向量</strong>: 等高线 $f(x,y) = c$ 上每点切向跟 $\nabla f$ 垂直 (沿等值线 $f$ 不变 ⟹ 方向导数 = 0 = $\nabla f\cdot\vec{t}$).
 </p>
 <p>
-<strong>② 增长最快方向</strong>: 在某点, 方向导数 = ∇f · $\vec{l}$⁰ = |∇f| cos $\alpha$. 最大值当 $\alpha$ = 0, 即 $\vec{l}$ 方向跟 ∇f 同向.
+<strong>② 增长最快方向</strong>: 方向导数 $= \nabla f\cdot\vec{l}^0 = \|\nabla f\| \cos\alpha$, 在 $\alpha = 0$ 时最大, 即沿 $\nabla f$ 方向. <strong>下降最快</strong>沿 $-\nabla f$ — 这就是<strong>梯度下降算法</strong>的来源.
 </p>
 <p>
-<strong>③ 几何例题</strong>: 等高线密 = ∇f 大 = 山陡; 等高线疏 = ∇f 小 = 山缓.
+<strong>③ 等高线疏密 = 山的陡缓</strong>: 等高线<strong>密</strong> = $\|\nabla f\|$ 大 = 山陡; 等高线<strong>疏</strong> = $\|\nabla f\|$ 小 = 山缓.
 </p>
+</div>
 <div class="box-example">
 <p>例题 8-4</p>
 <p>
