@@ -959,21 +959,24 @@ $\vec{F}$ = (-y, x, 0) 沿单位圆周 x²+y²=1 (z=0) 一圈的环量.
 <strong>生活类比</strong>: 流体的速度场 $\vec{F}$, 通量 Φ = 单位时间穿过曲面 Σ 的流量 (体积).
 </p>
 <h3 id="12-6-divergence">知识点 12.6: 散度 (divergence)</h3>
+<div class="box-def">
+<p>散度</p>
 <p>
-<strong>定义</strong>: 标量场, 描述向量场在某点"产出"或"吸收"的强度:
-div $\vec{F}$ = ∂P/∂x + ∂Q/∂y + ∂R/∂z = ∇ · $\vec{F}$
+向量场 $\vec{F} = (P, Q, R)$ 的<strong>散度</strong>是标量场:
+$$\text{div}\,\vec{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} = \nabla \cdot \vec{F}$$
 </p>
-<p>
-<strong>几何意义</strong>:
-</p>
+</div>
+<div class="box-intuition">
+<p>散度几何/物理意义</p>
 <ul>
-<li>div $\vec{F}$ &gt; 0: 该点是<strong>源</strong> (向外发射)</li>
-<li>div $\vec{F}$ &lt; 0: 该点是<strong>汇</strong> (向内吸收)</li>
-<li>div $\vec{F}$ = 0: 该点既不源也不汇 (流入 = 流出, 称"无源场")</li>
+<li>$\text{div}\,\vec{F} > 0$: <strong>源</strong> (向外发射)</li>
+<li>$\text{div}\,\vec{F} < 0$: <strong>汇</strong> (向内吸收)</li>
+<li>$\text{div}\,\vec{F} = 0$: <strong>无源场</strong> (流入 = 流出)</li>
 </ul>
 <p>
-<strong>生活类比</strong>: 一片湖, 在某点散度 &gt; 0 说明这里有泉眼往外冒水; 散度 &lt; 0 说明这里有漏洞往里吸水.
+<strong>类比</strong>: 湖某点散度 &gt; 0 = 泉眼往外冒水; 散度 &lt; 0 = 漏洞往里吸水.
 </p>
+</div>
 <p>
 <strong>高斯公式 (向量形式)</strong>:
 ∯_(∂V) $\vec{F}$ · dS→ = ∭_V div $\vec{F}$ dV
@@ -981,13 +984,19 @@ div $\vec{F}$ = ∂P/∂x + ∂Q/∂y + ∂R/∂z = ∇ · $\vec{F}$
 </p>
 <h2 id="11-7-11-7">11.7 环流量与旋度 (对齐书 §11.7 三)</h2>
 <h3 id="12-7-circulation">知识点 12.7: 环流量 (circulation)</h3>
+<div class="box-def">
+<p>环流量</p>
 <p>
-<strong>定义</strong>: 向量场 $\vec{F}$ 沿闭曲线 L 的<strong>环流量</strong>:
-Γ = ∮_L $\vec{F}$ · dr→ = ∮_L P dx + Q dy + R dz
+向量场 $\vec{F}$ 沿闭曲线 $L$ 的<strong>环流量</strong>:
+$$\Gamma = \oint_L \vec{F}\cdot d\vec{r} = \oint_L P\,dx + Q\,dy + R\,dz$$
 </p>
+</div>
+<div class="box-intuition">
+<p>环流量物理意义</p>
 <p>
-<strong>生活类比</strong>: 沿闭曲线"绕一圈" $\vec{F}$ 做的功. 涡漩中心环流量大.
+沿闭曲线"绕一圈" $\vec{F}$ 做的总功. <strong>涡旋中心</strong>附近环流量大; <strong>均匀流</strong>环流量为 0; <strong>保守力</strong>沿任意闭曲线环流量为 0.
 </p>
+</div>
 <h3 id="12-8-curl">知识点 12.8: 旋度 (curl)</h3>
 <p>
 <strong>定义</strong>: 向量场, 描述某点"旋转"强度:
