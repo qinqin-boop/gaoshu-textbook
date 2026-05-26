@@ -502,13 +502,24 @@ $\vec{F}$ = -∇U = (y, x, 0) ✓.
 </div>
 <h2 id="11-4">11.4 第一类曲面积分 (对面积)</h2>
 <h3 id="6-5-11-3">知识点 6.5: 全微分原函数 (对齐书 §11.3 三)</h3>
+<div class="box-thm">
+<p>全微分判别</p>
 <p>
-<strong>问题</strong>: P dx + Q dy 啥时候是某个函数 u(x,y) 的全微分?
+设 $P, Q$ 在单连通区域 $D$ 上连续可微. 则下列等价:
 </p>
+<ol>
+<li>$P\,dx + Q\,dy$ 是某函数 $u(x,y)$ 的全微分 (即 $du = P\,dx + Q\,dy$)</li>
+<li>$\dfrac{\partial Q}{\partial x} = \dfrac{\partial P}{\partial y}$</li>
+<li>$\int_L P\,dx + Q\,dy$ 跟路径无关 (只跟起点终点有关)</li>
+<li>沿任意闭路径 $\oint_C P\,dx + Q\,dy = 0$</li>
+</ol>
+</div>
+<div class="box-intuition">
+<p>跟物理保守力对应</p>
 <p>
-<strong>条件</strong>: ∂Q/∂x = ∂P/∂y (单连通区域)
-此时存在 u 使 du = P dx + Q dy, <strong>u 称为原函数</strong>.
+$u$ 即"势能", $\vec{F}=(P,Q)$ 即保守力场. 重力/弹簧力/库仑力都满足这条件. 摩擦力不满足 (路径相关).
 </p>
+</div>
 <p>
 <strong>求 u 的方法</strong>:
 </p>
