@@ -230,9 +230,23 @@ $\rho = \lim_{n\to\infty} u_{n+1}/u_n$:
 </p>
 </div>
 <h3 id="5">知识点 5: 根值判别法 (柯西)</h3>
+<div class="box-thm">
+<p>根值判别法 Cauchy</p>
 <p>
-ρ = lim_($\vec{n}$∞) sqrt[n]{u_n}, 判别同比值法.
+$\rho = \lim_{n\to\infty} \sqrt[n]{u_n}$:
 </p>
+<ul>
+<li>$\rho < 1$: 收敛</li>
+<li>$\rho > 1$ (含 $+\infty$): 发散</li>
+<li>$\rho = 1$: <strong>失效</strong></li>
+</ul>
+</div>
+<div class="box-pitfall">
+<p>比值 vs 根值</p>
+<p>
+若比值 $\lim |u_{n+1}/u_n|$ 存在, 则根值 $\lim \sqrt[n]{u_n}$ 也存在且相等. 反之不一定 — 根值法<strong>更强</strong> (适用范围更广).
+</p>
+</div>
 <h3 id="5-5-12-2">知识点 5.5: 极限判别法 (对齐书 §12.2 进一步)</h3>
 <p>
 类比比值法, 但比的是 <strong>(u_n)/(1/n^p)</strong> — 用 p-级数当参照.
@@ -416,11 +430,15 @@ S_5 = 1 - 1/4 + 1/9 - 1/16 + 1/25 ≈ 0.7836.
 <li>合并得到收敛域</li>
 </ol>
 <h3 id="9">知识点 9: 定义</h3>
+<div class="box-def">
+<p>幂级数</p>
 <p>
-Σ a_n x^n = a₀ + a₁ x + a₂ x² + ... 含变量 x.
+形如 $\sum_{n=0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \cdots$ 的级数, 称为<strong>幂级数</strong>.
+更一般在 $x_0$ 处展开: $\sum a_n (x - x_0)^n$.
 </p>
+</div>
 <p>
-<strong>收敛域</strong>: 所有让级数收敛的 x 值.
+<strong>收敛域</strong>: 所有让级数收敛的 $x$ 值集合.
 </p>
 <h3 id="10-r">知识点 10: 收敛半径 R</h3>
 <p>
