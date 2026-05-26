@@ -188,9 +188,14 @@ D 由 c ≤ y ≤ d, ψ₁(y) ≤ x ≤ ψ₂(y) 定义.
 ---
 </p>
 <h3 id="5">知识点 5: 极坐标变换</h3>
+<div class="box-thm">
+<p>极坐标换元公式</p>
 <p>
-D 复杂 (圆 / 扇形) 时, 换极坐标 $x = r\cos\theta$, $y = r\sin\theta$ 算更简单.
+D 复杂 (圆 / 扇形) 时, 换极坐标 $x = r\cos\theta$, $y = r\sin\theta$:
+$$\iint_D f(x,y)\,dxdy = \iint_{D'} f(r\cos\theta, r\sin\theta) \cdot r\,drd\theta$$
+<strong>关键</strong>: 面积微元 $dA = r\,drd\theta$, 多一个 $r$ 因子.
 </p>
+</div>
 <p>
 <strong>变换公式</strong>:
 $$\iint_D f(x,y)\,dxdy = \iint_D f(r\cos\theta, r\sin\theta) \cdot r\,drd\theta$$
@@ -335,10 +340,13 @@ Y 型: 0 ≤ y ≤ 1, -√(1-y²) ≤ x ≤ √(1-y²).
 </p>
 </div>
 <h3 id="6">知识点 6: 直角坐标三重积分</h3>
+<div class="box-thm">
+<p>投影法 (先一后二)</p>
 <p>
-把空间区域 V 投影到 xy 平面得 D_(xy), V 由 z₁(x,y) ≤ z ≤ z₂(x,y) 定义:
-∭_V f(x,y,z)  dV = ∬_(D_(xy)) [∫_(z₁)^(z₂) f  dz] dσ
+把 V 投影到 xy 平面得 $D_{xy}$, V 由 $z_1(x,y) \le z \le z_2(x,y)$ 定义:
+$$\iiint_V f(x,y,z)\,dV = \iint_{D_{xy}} \left[\int_{z_1}^{z_2} f\,dz\right] d\sigma$$
 </p>
+</div>
 <p>
 <strong>口诀</strong>: 三层积分, <strong>由内到外算</strong>. 最内层把外两个当常数.
 </p>
