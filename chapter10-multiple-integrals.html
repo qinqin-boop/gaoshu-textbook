@@ -571,29 +571,28 @@ $$\iint_D f(x,y)\,dxdy = \iint_{D'} f(x(u,v), y(u,v)) \cdot |J|\,dudv$$
 J = | $\cos\theta$ -r $\sin\theta$   $\sin\theta$ r $\cos\theta$ | = r(cos²θ + sin²θ) = r. ✓ (跟之前的 r 因子一致)
 </p>
 <h3 id="8">知识点 8: 球坐标</h3>
+<div class="box-def">
+<p>球坐标系</p>
 <p>
-适合<strong>球对称</strong> (球 / 半球) 体. 用 (r, $\varphi$, $\theta$):
+适合<strong>球对称</strong> (球/半球) 体. 用 $(r, \varphi, \theta)$:
 </p>
 <ul>
-<li>r = 到原点距离</li>
-<li>$\varphi$ = 跟 z 轴正方向夹角 (0 到 $\pi$)</li>
-<li>$\theta$ = 在 xy 平面投影跟 x 轴夹角 (0 到 2π)</li>
+<li>$r \ge 0$: 到原点距离</li>
+<li>$0 \le \varphi \le \pi$: 跟 $z$ 轴正向夹角 (<strong>天顶角</strong>)</li>
+<li>$0 \le \theta \le 2\pi$: $xy$ 平面投影跟 $x$ 轴夹角 (<strong>方位角</strong>)</li>
 </ul>
 <p>
 <strong>坐标转换</strong>:
+$$x = r\sin\varphi \cos\theta, \quad y = r\sin\varphi \sin\theta, \quad z = r\cos\varphi$$
 </p>
-<ul>
-<li>x = rsinφ$\cos\theta$</li>
-<li>y = rsinφ$\sin\theta$</li>
-<li>z = rcosφ</li>
-</ul>
+</div>
+<div class="box-thm">
+<p>球坐标换元公式</p>
 <p>
-<strong>变换</strong>:
-∭ f  dV = ∭ f(...) · r² sinφ  dr dφ dθ
+$$\iiint_V f\,dV = \iiint_{V'} f(r\sin\varphi\cos\theta, r\sin\varphi\sin\theta, r\cos\varphi) \cdot r^2 \sin\varphi\,dr\,d\varphi\,d\theta$$
+<strong>Jacobian</strong> = $r^2 \sin\varphi$.
 </p>
-<p>
-<strong>(因子是 r² sinφ)</strong>
-</p>
+</div>
 <div class="box-example">
 <p>例题 4</p>
 <p>
