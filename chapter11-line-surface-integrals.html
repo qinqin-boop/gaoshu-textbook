@@ -116,11 +116,14 @@ $ds$ = 曲线上小弧长元素.
 <strong>生活类比</strong>: 一根弯曲钢丝, 每点密度不同, 总质量 = 切成小段, 每段密度×长度, 加起来.
 </p>
 <h3 id="2">知识点 2: 计算 — 参数法</h3>
+<div class="box-thm">
+<p>参数法弧微元公式</p>
 <p>
-曲线参数 x = x(t), y = y(t), t ∈ [$\alpha$, $\beta$]:
-∫_L f  ds = ∫_α^$\beta$ f(x(t), y(t)) √(x'(t)² + y'(t)²)  dt
-√(x'² + y'²) dt = ds, <strong>弧微元公式</strong>.
+曲线 $L$ 参数 $x = x(t), y = y(t)$, $t \in [\alpha, \beta]$:
+$$\int_L f(x,y)\,ds = \int_\alpha^\beta f(x(t), y(t)) \sqrt{x'(t)^2 + y'(t)^2}\,dt$$
+其中 $ds = \sqrt{x'^2 + y'^2}\,dt$ 是<strong>弧微元</strong>.
 </p>
+</div>
 <div class="box-example">
 <p>例题 1</p>
 <p>
@@ -433,9 +436,22 @@ S = (1/2)∮(x dy - y dx) = (1/2)∫_0^(2π) [a cos t · b cos t - b sin t · (-
 ---
 </p>
 <h3 id="6-7">知识点 6.7: 保守力场与势能函数</h3>
+<div class="box-def">
+<p>保守力场</p>
 <p>
-<strong>定义</strong>: 力场 $\vec{F}$ 保守 ⟺ 沿任意闭路径 W = ∮ $\vec{F}$·dr→ = 0 ⟺ 存在势能函数 U 使 $\vec{F}$ = -∇U.
+力场 $\vec{F}$ 称为<strong>保守的</strong>, 当且仅当沿任意闭路径做功为零:
+$$\oint \vec{F}\cdot d\vec{r} = 0$$
+等价于存在<strong>势能函数</strong> $U$ 使 $\vec{F} = -\nabla U$.
 </p>
+</div>
+<div class="box-thm">
+<p>保守力场 3 等价 (单连通区域)</p>
+<ol>
+<li>$\oint \vec{F}\cdot d\vec{r} = 0$ 沿任意闭路径</li>
+<li>存在 $U$ 使 $\vec{F} = -\nabla U$ (势能函数)</li>
+<li>$\nabla \times \vec{F} = 0$ (旋度为 0)</li>
+</ol>
+</div>
 <p>
 <strong>保守力场举例</strong>:
 </p>
