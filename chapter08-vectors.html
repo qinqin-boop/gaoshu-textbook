@@ -1188,6 +1188,61 @@ r→' × r→'' = (0, 0, R²). |·| = R².
 <li>黎曼几何: 高斯曲率描述曲面弯曲</li>
 <li>神经网络损失曲面: 二阶曲率 = Hessian, 决定优化收敛</li>
 </ul>
+<h3>知识点 6.9: Frenet 标架 (Frenet-Serret Frame)</h3>
+<p>
+曲线在每点有 3 个相互垂直的单位向量, 形成本地坐标系:
+</p>
+<ul>
+<li><strong>切向量</strong> T→ = r→'/|r→'|</li>
+<li><strong>主法向量</strong> N→ = T→'/|T→'|</li>
+<li><strong>副法向量</strong> B→ = T→ × N→</li>
+</ul>
+<p>
+<strong>Frenet 公式</strong>:
+</p>
+<ul>
+<li>dT→/ds = κ N→</li>
+<li>dN→/ds = -κ T→ + τ B→</li>
+<li>dB→/ds = -τ N→</li>
+</ul>
+<p>
+其中 κ = 曲率, τ = 挠率 (描述曲线脱离密切平面的程度).
+</p>
+<p>
+<strong>例题 6-9</strong> (圆螺旋线): r→(t) = (a cos t, a sin t, bt).
+计算得 κ = a/(a²+b²), τ = b/(a²+b²) (常数!).
+<strong>意义</strong>: κ, τ 唯一刻画曲线形状 (相差刚体运动). DNA 双螺旋、电感线圈、弹簧都是常曲率常挠率的曲线.
+</p>
+<h3>知识点 6.10: 高斯曲率 与 高斯-博内定理</h3>
+<p>
+<strong>高斯曲率 K</strong> (曲面上):
+K = 主曲率 κ₁ · κ₂
+</p>
+<p>
+其中 κ₁, κ₂ 是过该点的两个极端方向曲率.
+</p>
+<ul>
+<li>K &gt; 0: 椭圆点 (球面, 鼓胀)</li>
+<li>K = 0: 抛物点 (圆柱)</li>
+<li>K &lt; 0: 双曲点 (马鞍)</li>
+</ul>
+<p>
+<strong>惊人定理</strong> (Gauss, Theorema Egregium): K 只依赖曲面"内蕴度量", 不依赖嵌入. 这意味着平面到地图的"等距映射"不存在 (球面 K=1/R²&gt;0, 平面 K=0).
+</p>
+<p>
+<strong>Gauss-Bonnet 定理</strong>: 闭合曲面 ∬ K dA = 2π·χ
+</p>
+<ul>
+<li>χ = 欧拉示性数 (球面 χ=2, 环面 χ=0)</li>
+</ul>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>地图投影 (Mercator 必有畸变, 因 K 不同)</li>
+<li>凸优化: K&gt;0 区域损失函数好优化</li>
+<li>相对论: 时空曲率推出引力</li>
+</ul>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
