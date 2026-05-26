@@ -1056,16 +1056,27 @@ F = x²+y²+z² - 14. ∇F = (2x, 2y, 2z), 在 (1,2,3) = (2, 4, 6).
 <strong>特例</strong>: z = f(x,y) (显函数). 法向量 = (f_x, f_y, -1).
 </p>
 <h3 id="14">知识点 14: 极值的必要条件</h3>
+<div class="box-thm">
+<p>极值必要条件 (Fermat)</p>
 <p>
-可微函数 z = f(x, y) 在 (x₀, y₀) 取得极值, 则:
-f_x(x₀, y₀) = 0    且    f_y(x₀, y₀) = 0
+若可微函数 $z = f(x, y)$ 在 $(x_0, y_0)$ 取得极值, 则:
+$$f_x(x_0, y_0) = 0 \quad \text{且} \quad f_y(x_0, y_0) = 0$$
+即 $\nabla f(x_0, y_0) = 0$ (<strong>梯度为零</strong>).
 </p>
+</div>
+<div class="box-def">
+<p>驻点 / 鞍点</p>
+<ul>
+<li><strong>驻点 (Stationary point)</strong>: 满足 $\nabla f = 0$ 的点</li>
+<li><strong>极值点</strong>必是驻点, <strong>驻点不一定极值</strong> (可能是鞍点)</li>
+</ul>
+</div>
+<div class="box-pitfall">
+<p>驻点 ≠ 极值</p>
 <p>
-(梯度为零)
+反例: $f(x,y) = x^2 - y^2$ 在原点 $\nabla f = 0$, 但沿 $x$ 方向是极小 ($x^2$), 沿 $y$ 方向是极大 ($-y^2$) — 鞍点.
 </p>
-<p>
-<strong>驻点</strong>: 满足 f_x = f_y = 0 的点. 极值点必是驻点, 但驻点不一定极值 (可能是鞍点).
-</p>
+</div>
 <p>
 ---
 </p>
