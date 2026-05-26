@@ -1222,6 +1222,80 @@ F(x) = ∑ a_n x^n. 由递推得 F(x) = x / (1 - x - x²).
 <li>ML: SGD 在凸损失下收敛性证明</li>
 <li>PDE: Sobolev H¹ 是 Hilbert 空间</li>
 </ul>
+<h3>知识点 8.20: 中心极限定理 (CLT) 与级数</h3>
+<p>
+<strong>CLT 经典版</strong>: X₁, X₂, ... 独立同分布, EX=μ, Var X=σ². 则:
+S_n = (X₁ + ... + X_n - nμ)/(σ√n) → N(0, 1) 分布上.
+</p>
+<p>
+<strong>为什么这里讲</strong>: CLT 证明用到特征函数 (Fourier 变换), 是级数论 + 复分析的产物.
+</p>
+<p>
+<strong>证明大纲</strong>:
+</p>
+<ol>
+<li>特征函数 φ(t) = E[e^(itX)]. 中心化后 φ_(Xᵢ-μ)(t) = 1 - σ²t²/2 + o(t²).</li>
+<li>φ_(S_n)(t) = [φ_((X-μ)/(σ√n))(t)]^n = [1 - t²/(2n) + o(1/n)]^n → e^(-t²/2).</li>
+<li>e^(-t²/2) 是 N(0,1) 的特征函数.</li>
+</ul>
+<p>
+<strong>核心</strong>: 利用 (1+x/n)^n → e^x (高数 e 定义) + Taylor 展开 + 极限交换.
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>民意调查: 样本均值 ≈ 总体均值 + 正态误差</li>
+<li>物理: 布朗运动从随机分子碰撞 → CLT → 正态分布</li>
+<li>ML: 神经网络初始化 (Xavier/He 初始化用 CLT)</li>
+<li>金融: Black-Scholes 假设股价对数正态 (CLT 在时间维)</li>
+</ul>
+<h3>知识点 8.21: 大数定律 LLN (级数的概率版本)</h3>
+<p>
+<strong>弱大数定律 (WLLN)</strong>: S_n/n → μ 依概率收敛.
+<strong>强大数定律 (SLLN)</strong>: S_n/n → μ 几乎处处收敛.
+</p>
+<p>
+<strong>证明工具 (强)</strong>: Borel-Cantelli 引理 — 用级数 ∑ P(A_n) 收敛/发散判事件无穷次发生概率.
+</p>
+<p>
+<strong>应用</strong>:
+</p>
+<ul>
+<li>蒙特卡洛: ∑ f(X_i)/N → E[f] (LLN 是 MC 收敛性证明)</li>
+<li>保险精算: 大量保单期望损失稳定 (大数法则)</li>
+<li>ML: 经验风险最小化收敛到期望风险</li>
+<li>物理: 统计力学的"统计平均 = 时间平均" (各态历经)</li>
+</ul>
+<h3>知识点 8.22: 全章串讲 (级数论的统一观点)</h3>
+<p>
+<strong>核心思想</strong>: 用<strong>有限</strong>逼近<strong>无限</strong>.
+</p>
+<ul>
+<li>数项级数: 部分和逼近总和</li>
+<li>函数项级数: 部分函数序列逼近极限函数</li>
+<li>幂级数: 多项式逼近一般函数</li>
+<li>Taylor: 局部多项式逼近</li>
+<li>Fourier: 全局正弦/余弦基逼近周期函数</li>
+<li>Padé: 有理函数逼近 (Taylor 升级)</li>
+<li>渐近: 发散级数的"前几项"逼近</li>
+<li>生成函数: 序列编码为级数</li>
+</ul>
+<p>
+<strong>应用全图</strong>:
+| 学科 | 用级数干什么 |
+|---|---|
+| 高数 | 公式 (Taylor/Fourier/Euler) |
+| 物理 | 摄动理论, 波动, 量子 |
+| 工程 | 信号处理 (FFT), 控制论 |
+| 统计 | CLT, MGF, 矩计算 |
+| 数论 | ζ 函数, 素数定理 |
+| 算法 | 复杂度分析, 生成函数 |
+| ML | 神经网络逼近定理, 优化算法分析 |
+</p>
+<p>
+<strong>学完无穷级数 = 你掌握了"用有限算无限" 的全套工具</strong>.
+</p>
 </main>
 <footer>
   <p>富贵 (AI 助理) 编 · 同济大学《高等数学》第七版下册 · 零基础类比+例题</p>
