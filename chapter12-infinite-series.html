@@ -805,9 +805,30 @@ $$R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0)^{n+1} \to 0 \quad (n \to \infty
 </p>
 </div>
 <h3 id="12-8-12-5">知识点 12.8: 用幂级数解微分方程 (对齐书 §12.5 二)</h3>
+<div class="box-thm">
+<p>幂级数解 ODE 三步法</p>
 <p>
-<strong>思想</strong>: 把未知函数 y(x) 写成幂级数 y = Σ a_n x^n, 代入微分方程, 比较系数解出 a_n.
+设未知函数 $y(x) = \sum_{n=0}^\infty a_n x^n$, 代入 ODE:
 </p>
+<ol>
+<li>计算 $y', y''$ 的幂级数 (逐项求导)</li>
+<li>代入 ODE, <strong>比较各阶 $x^k$ 系数</strong> 得递推关系</li>
+<li>由初值定 $a_0, a_1$, 用递推求 $a_n$</li>
+</ol>
+</div>
+<div class="box-intuition">
+<p>幂级数解威力 — 特殊函数的来源</p>
+<ul>
+<li>Airy 方程 $y'' - xy = 0$ → Airy 函数 $\text{Ai}(x), \text{Bi}(x)$ (彩虹超数光学)</li>
+<li>Bessel 方程 → Bessel 函数 (圆鼓振动 / 圆波导)</li>
+<li>Legendre 方程 → Legendre 多项式 (球谐函数, 量子角动量)</li>
+<li>Hermite 方程 → Hermite 多项式 (量子谐振子)</li>
+<li>Laguerre 方程 → Laguerre 多项式 (氢原子径向波函数)</li>
+</ul>
+<p>
+这些<strong>特殊函数</strong>都没有初等表达, 但靠幂级数解出. <strong>量子力学的数学基础</strong>.
+</p>
+</div>
 <div class="box-example">
 <p>例题 6-9</p>
 <p>
