@@ -147,15 +147,36 @@ $\vec{a} = (2, -1, 2)$ 的模 + 单位向量?
 ---
 </p>
 <h3 id="2">知识点 2: 向量加法</h3>
+<div class="box-def">
+<p>向量加法</p>
 <p>
-<strong>几何意义</strong>: 平行四边形法则 — 两个向量首尾相接, 起点到终点就是和.
+两个向量首尾相接, 起点到终点的有向线段 = 它们的和. 又称<strong>平行四边形法则</strong>.
 </p>
+</div>
+<figure>
+<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="arrA2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a365d"/></marker>
+    <marker id="arrB2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c53030"/></marker>
+    <marker id="arrSum" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#22543d"/></marker>
+  </defs>
+  <line x1="50" y1="200" x2="200" y2="200" stroke="#1a365d" stroke-width="2.5" marker-end="url(#arrA2)"/>
+  <line x1="200" y1="200" x2="300" y2="80" stroke="#c53030" stroke-width="2.5" marker-end="url(#arrB2)"/>
+  <line x1="50" y1="200" x2="300" y2="80" stroke="#22543d" stroke-width="3" stroke-dasharray="6 3" marker-end="url(#arrSum)"/>
+  <line x1="50" y1="200" x2="150" y2="80" stroke="#c53030" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="150" y1="80" x2="300" y2="80" stroke="#1a365d" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+  <text x="115" y="220" font-size="15" font-family="serif" fill="#1a365d" font-weight="bold">a→</text>
+  <text x="255" y="140" font-size="15" font-family="serif" fill="#c53030" font-weight="bold">b→</text>
+  <text x="150" y="155" font-size="16" font-family="serif" fill="#22543d" font-weight="bold">a→ + b→</text>
+</svg>
+<figcaption>图 2.1 三角形/平行四边形法则: 首尾相接 a→+b→ = 起点到终点</figcaption>
+</figure>
 <p>
-<strong>生活类比</strong>: 你先往东走 3 米($\vec{a}$), 再往北走 4 米($\vec{b}$), 实际从起点到终点的位移 = $\vec{a}$ + $\vec{b}$, 模 = 5(勾股定理).
+<strong>生活类比</strong>: 先东走 3 米 ($\vec{a}$) 再北走 4 米 ($\vec{b}$), 总位移 $\vec{a}+\vec{b}$ 模 = 5 (勾股).
 </p>
 <p>
 <strong>坐标公式</strong>: 对应分量相加.
-$\vec{a}$ + $\vec{b}$ = (a₁+b₁, a₂+b₂, a₃+b₃)
+$\vec{a}+\vec{b} = (a_1+b_1, a_2+b_2, a_3+b_3)$
 </p>
 <p>
 <strong>性质</strong> (跟普通数加法一样):
