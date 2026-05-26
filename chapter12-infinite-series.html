@@ -668,9 +668,21 @@ sin($\pi$/6) ≈ 0.5236 - 0.5236³/6 ≈ 0.5236 - 0.0239 = 0.4997 ≈ 0.5. ✓
 </p>
 </div>
 <h3 id="12-5">知识点 12.5: 由已知展开导出新展开 (实用技巧)</h3>
+<div class="box-intuition">
+<p>4 大变换技巧</p>
 <p>
-<strong>思想</strong>: 从已知 e^x, sin x, cos x, 1/(1-x), ln(1+x) 展开式<strong>变换</strong> (代换/求导/积分) 出新函数的展开. 比直接套泰勒公式快得多.
+从已知 5 大经典 ($e^x, \sin x, \cos x, 1/(1-x), \ln(1+x)$) 展开式, 用 4 种<strong>变换</strong>导出新展开, 比直接套 Taylor 公式快得多:
 </p>
+<ol>
+<li><strong>代换</strong>: $\sin(2x), \cos(x^2)$ — 把 $x$ 换成新表达式</li>
+<li><strong>求导</strong>: $\sin' = \cos$, 展开式逐项求导</li>
+<li><strong>积分</strong>: $\arctan = \int 1/(1+x^2)$, 展开式逐项积分</li>
+<li><strong>乘除</strong>: $e^x/(1-x)$ — Cauchy 卷积乘积</li>
+</ol>
+<p>
+<strong>例</strong>: $\arctan x$ 的展开 = 对 $1/(1+x^2) = \sum (-1)^n x^{2n}$ 逐项积分得 $\sum (-1)^n x^{2n+1}/(2n+1)$.
+</p>
+</div>
 <div class="box-example">
 <p>例题 6-4</p>
 <p>
