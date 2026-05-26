@@ -758,27 +758,20 @@ $F(x, y, z(x,y)) = 0$ 两边对 $x$ 求偏导, 用链式法则: $F_x + F_z \cdot
 ---
 </p>
 <h3 id="9-5-9-5">知识点 9.5: 方程组隐函数 (对齐书 §9.5 二)</h3>
+<div class="box-thm">
+<p>方程组隐函数定理</p>
 <p>
-之前 (知识点 8/9) 讨论一个方程 F(x,y) = 0 或 F(x,y,z) = 0 隐含定义一个函数. 一般情况:
+设两方程 $F(x, y, u, v) = 0$, $G(x, y, u, v) = 0$ 联立, 若 <strong>Jacobian</strong>
+$$J = \frac{\partial(F, G)}{\partial(u, v)} = \begin{vmatrix} F_u & F_v \\ G_u & G_v \end{vmatrix} \ne 0$$
+则隐含定义 $u = u(x, y), v = v(x, y)$. 偏导数用 Cramer 法则解出.
 </p>
+</div>
+<div class="box-intuition">
+<p>鸡兔同笼升级</p>
 <p>
-<strong>两个方程定义两个函数</strong>: 联立
-```
-F(x, y, u, v) = 0
-G(x, y, u, v) = 0
-```
-隐含定义 u = u(x,y), v = v(x,y). 求 ∂u/∂x, ∂v/∂x 等.
+两个变量 (鸡数 $u$ + 兔数 $v$) 由两个约束 (头数 $x$ + 腿数 $y$) 唯一确定. Jacobian 测的就是这种"约束<strong>互不冗余</strong>"性 — $J = 0$ 时两方程退化成一个 (信息不够).
 </p>
-<p>
-<strong>Jacobian (雅可比行列式)</strong>:
-J = |∂(F,G)/∂(u,v)| = | F_u F_v   G_u G_v |
-</p>
-<p>
-非零时, 用 Cramer 法则解出偏导数.
-</p>
-<p>
-<strong>生活类比</strong>: 鸡兔同笼问题升级 — 两个变量 (鸡数 u + 兔数 v) 由两个约束 (头数 x + 腿数 y) 唯一确定. Jacobian 测的是这种"互不冗余" 性.
-</p>
+</div>
 <div class="box-example">
 <p>例题 7-2</p>
 <p>
