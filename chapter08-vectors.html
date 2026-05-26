@@ -1680,15 +1680,27 @@ A_(ij) B^(j) = ∑_j A_(ij) B^j
 <strong>坐标变换公式</strong>: 设旧基 {$\vec{e}$_i}, 新基 {$\vec{f}$_j}, $\vec{f}$_j = ∑ P_(ij) $\vec{e}$_i. 向量 $\vec{v}$ 旧坐标 x_i, 新坐标 y_j: x = P y.
 </p>
 <h3 id="6-14">知识点 6.14: 矩阵特征值 / 特征向量 (重要应用)</h3>
+<div class="box-def">
+<p>特征值 / 特征向量</p>
 <p>
-<strong>问题</strong>: 求 $\vec{v}$ 使 A $\vec{v}$ = $\lambda$ $\vec{v}$. $\lambda$ 是特征值 (eigenvalue), $\vec{v}$ 是特征向量 (eigenvector).
+矩阵 $A$ 的<strong>特征对</strong> $(\lambda, \vec{v})$ (其中 $\vec{v} \ne 0$):
+$$A \vec{v} = \lambda \vec{v}$$
+$\lambda \in \mathbb{R}$ 是<strong>特征值</strong> (eigenvalue), $\vec{v}$ 是<strong>特征向量</strong> (eigenvector).
 </p>
+</div>
+<div class="box-thm">
+<p>特征值求法</p>
 <p>
-<strong>几何</strong>: 特征向量是被 A 作用后<strong>方向不变</strong>(只伸缩)的特殊方向.
+$\lambda$ 是 $A$ 的特征值 ⟺ $\det(A - \lambda I) = 0$ (<strong>特征多项式</strong>).
+求出 $\lambda$ 后代入 $(A - \lambda I)\vec{v} = 0$ 解 $\vec{v}$.
 </p>
+</div>
+<div class="box-intuition">
+<p>特征向量几何</p>
 <p>
-<strong>求法</strong>: det(A - λI) = 0 解 $\lambda$, 再代入解 (A-λI)$\vec{v}$=0.
+$\vec{v}$ 是被 $A$ 作用后<strong>方向不变</strong>(只伸缩 $\lambda$ 倍)的特殊方向. 一般向量 $A\vec{x}$ 既转方向又变长, 唯有特征向量"原地伸缩".
 </p>
+</div>
 <div class="box-example">
 <p>例题 6-14</p>
 <p>
