@@ -857,12 +857,22 @@ $$\oint_{\partial\Sigma} \vec{F}\cdot d\vec{r} = \iint_\Sigma (\nabla\times\vec{
 <strong>通俗</strong>: 沿边界绕一圈的环流量 = 曲面上"旋度"累加. 格林公式是它的平面特例.
 </p>
 <h3 id="11-5">知识点 11.5: 斯托克斯公式的物理意义详解</h3>
+<div class="box-intuition">
+<p>Stokes 物理意义</p>
 <p>
-<strong>核心想象</strong>: 一片旋转的水面 (曲面 Σ), 边界是绕圈水流 (∂Σ).
+<strong>核心想象</strong>: 一片旋转的水面 (曲面 $\Sigma$), 边界是绕圈水流 ($\partial\Sigma$).
 </p>
 <p>
-斯托克斯公式: ∮_(∂Σ) $\vec{F}$·dr→ = ∬_Σ (∇×$\vec{F}$)·dS→
+$$\oint_{\partial\Sigma} \vec{F}\cdot d\vec{r} = \iint_\Sigma (\nabla\times\vec{F})\cdot d\vec{S}$$
 </p>
+<p>
+<strong>左边</strong>: 边界绕一圈的"环流量" (绕圈水流的总流速贡献).
+<strong>右边</strong>: 曲面上每一点"旋度向量"穿过曲面的总通量 ("局部转速"的全局累加).
+</p>
+<p>
+二者相等 = <strong>局部旋转 (旋度) 累加 = 边界整体环流</strong>.
+</p>
+</div>
 <p>
 <strong>左边</strong>: 沿边界绕一圈做的功 (环量).
 <strong>右边</strong>: 曲面内部每点"旋度" 的累加 (通量形式).
