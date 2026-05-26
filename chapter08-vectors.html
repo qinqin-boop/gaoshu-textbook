@@ -1819,27 +1819,33 @@ H = [[2,0],[0,2]] 正定 ⟹ 凸 ✓.
 <li>信息论: KL 散度对 q 是凸的 (Jensen 推出 ≥0)</li>
 </ul>
 <h3 id="6-17">知识点 6.17: 行列式深入 — 几何含义 + 性质</h3>
+<div class="box-def">
+<p>行列式 (Determinant)</p>
 <p>
-<strong>行列式 det(A)</strong> = n 维平行多面体的有向体积.
-</p>
-<p>
-<strong>几何</strong>:
+$\det(A)$ = $n$ 维平行多面体的<strong>有向体积</strong>.
 </p>
 <ul>
-<li>2D: det = 平行四边形面积 (= |a||b|$\sin\theta$)</li>
-<li>3D: det = 平行六面体体积 (混合积 a·(b×c))</li>
-<li>nD: 推广</li>
+<li>2D: $\det$ = 平行四边形面积 $= |a||b|\sin\theta$</li>
+<li>3D: $\det$ = 平行六面体体积 $= a \cdot (b \times c)$ (混合积)</li>
+<li>$n$D: 推广为"有向体积比"</li>
 </ul>
-<p>
-<strong>核心性质 (从体积出发)</strong>:
-</p>
+</div>
+<div class="box-thm">
+<p>行列式核心性质 (从体积出发)</p>
 <ol>
-<li>多线性: 一行加倍 → 体积加倍</li>
-<li>反对称: 交换两行 → 符号变, 绝对值不变</li>
-<li>det(AB) = det(A) det(B): 复合变换体积比相乘</li>
-<li>det(A^(-1)) = 1/det(A): 逆变换还原体积</li>
-<li>det = 0 ⟺ 列向量线性相关 ⟺ A 不可逆 ⟺ 平行多面体退化</li>
+<li><strong>多线性</strong>: 一行加倍 → 体积加倍</li>
+<li><strong>反对称</strong>: 交换两行 → 符号变, 绝对值不变</li>
+<li><strong>乘法</strong>: $\det(AB) = \det(A) \det(B)$ (复合变换体积比相乘)</li>
+<li><strong>逆</strong>: $\det(A^{-1}) = 1/\det(A)$</li>
+<li><strong>退化判别</strong>: $\det = 0$ ⟺ 列向量线性相关 ⟺ $A$ 不可逆 ⟺ 平行多面体退化</li>
 </ol>
+</div>
+<div class="box-intuition">
+<p>行列式 = "体积放大比"</p>
+<p>
+$A: \mathbb{R}^n \to \mathbb{R}^n$ 把单位 $n$-cube 变成平行多面体, 体积比 $= |\det A|$. 故重积分换元 $dx_1\ldots dx_n = |\det J|\,du_1\ldots du_n$.
+</p>
+</div>
 <div class="box-example">
 <p>例题 6-17</p>
 <p>
