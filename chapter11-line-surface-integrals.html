@@ -450,15 +450,21 @@ S = (1/2)∮(x dy - y dx) = (1/2)∫_0^(2π) [a cos t · b cos t - b sin t · (-
 <strong>应用价值</strong>: 不规则区域面积难算, 沿边界一圈积分往往容易.
 </p>
 <h3 id="6">知识点 6: 平面上曲线积分与路径无关</h3>
+<div class="box-thm">
+<p>路径无关判据 (单连通区域)</p>
 <p>
-∫_L P  dx + Q  dy 跟路径无关 ⟺ (∂ Q)/(∂ x) = (∂ P)/(∂ y) (单连通区域).
+$\int_L P\,dx + Q\,dy$ <strong>路径无关</strong> ⟺ 在单连通区域内 $\dfrac{\partial Q}{\partial x} = \dfrac{\partial P}{\partial y}$ ⟺ 存在原函数 $u(x,y)$ 使 $du = P\,dx + Q\,dy$.
+</p>
+</div>
+<div class="box-intuition">
+<p>路径无关 = 保守力</p>
+<p>
+"<strong>重力做功只跟起点终点高度差有关, 路径无关</strong>" — 重力是保守力, 满足该条件. 摩擦力做功跟路径长度有关, 不满足.
 </p>
 <p>
-⟺ 存在原函数 u(x,y) 使得 du = P dx + Q dy.
+工程意义: 路径无关时, 起点 A → 终点 B 的功 = $u(B) - u(A)$, 不需要算整条路径.
 </p>
-<p>
-<strong>生活类比</strong>: "重力做功只跟起点终点高度差有关, 走啥路径无关" — 重力是保守力, 满足这个.
-</p>
+</div>
 <p>
 ---
 </p>
