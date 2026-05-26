@@ -907,14 +907,14 @@ $$a_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos nx\,dx, \quad b_n = \frac{1}{\pi
 <strong>应用</strong>: 偏微分方程边值问题 — 弦振动方程 / 热传导方程的解都用正弦/余弦级数.
 </p>
 <h3 id="14-2l">知识点 14: 周期 2L 函数的傅里叶级数</h3>
+<div class="box-def">
+<p>周期 2L 函数的傅里叶级数</p>
 <p>
-更一般的, 周期 2L:
-f(x) = (a₀)/(2) + Σ_(n=1)^∞ (a_n cos(nπ x)/(L) + b_n sin(nπ x)/(L))
+$$f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty \left(a_n \cos\frac{n\pi x}{L} + b_n \sin\frac{n\pi x}{L}\right)$$
+$$a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\frac{n\pi x}{L}\,dx, \quad b_n = \frac{1}{L}\int_{-L}^L f(x)\sin\frac{n\pi x}{L}\,dx$$
+<strong>变量代换关系</strong>: 令 $t = \pi x/L$ 即从周期 2L 化到周期 $2\pi$.
 </p>
-<p>
-a_n = (1)/(L) ∫_(-L)^L f(x) cos(nπ x)/(L) dx
-b_n = (1)/(L) ∫_(-L)^L f(x) sin(nπ x)/(L) dx
-</p>
+</div>
 <p>
 ---
 </p>
@@ -1002,16 +1002,20 @@ c_n = (1/(2L)) ∫_{-L}^L f(x) e^(-i·nπx/L) dx
 | Σ x^n/n! | 全 x 收敛 | 和 = e^x |
 </p>
 <h3 id="14-8">知识点 14.8: 帕塞瓦尔定理 (能量守恒)</h3>
+<div class="box-thm">
+<p>Parseval 定理</p>
 <p>
-<strong>核心</strong>: 信号的"时域能量" = "频域能量".
+$f(x)$ 周期 $2\pi$, 傅里叶系数 $a_n, b_n$:
+$$\frac{1}{\pi}\int_{-\pi}^\pi |f(x)|^2\,dx = \frac{a_0^2}{2} + \sum_{n=1}^\infty (a_n^2 + b_n^2)$$
+即<strong>信号的"时域能量" = "频域能量"</strong> (能量守恒).
 </p>
+</div>
+<div class="box-intuition">
+<p>物理意义</p>
 <p>
-具体: f(x) 周期 2π, 傅里叶系数 a_n, b_n. 则:
-(1/$\pi$) ∫_{-$\pi$}^$\pi$ |f(x)|² dx = (a₀²)/2 + Σ_(n=1)^∞ (a_n² + b_n²)
+信号总能量 = 各频率分量能量之和. 类比向量内积: $\|f\|^2 = \sum (f, e_n)^2$ (Bessel 不等式等号成立, 即三角函数系是 $L^2$ 完备正交基).
 </p>
-<p>
-<strong>物理意义</strong>: 信号总能量 = 各频率分量能量之和.
-</p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
