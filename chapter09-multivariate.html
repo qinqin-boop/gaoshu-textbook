@@ -1694,19 +1694,31 @@ $$v_t = \beta v_{t-1} + \nabla L(\theta_t - \eta \beta v_{t-1})$$
 <strong>"看一眼前方"</strong> 再算梯度, 比 Momentum 更准.
 </p>
 </div>
+<div class="box-thm">
+<p>AdaGrad</p>
 <p>
-<strong>3. AdaGrad</strong>: G_t = G_(t-1) + (∇L)². $\theta$ ← $\theta$ - η·∇L/(√G_t + ε). 自适应每参数学习率.
+$$G_t = G_{t-1} + (\nabla L)^2, \quad \theta \leftarrow \theta - \frac{\eta \nabla L}{\sqrt{G_t} + \epsilon}$$
+按分量平方累加, <strong>自适应每参数学习率</strong> — 频繁更新的参数学习率小, 稀疏的大.
+</p>
+</div>
+<div class="box-thm">
+<p>RMSProp</p>
+<p>
+$$G_t = \beta G_{t-1} + (1-\beta)(\nabla L)^2$$
+AdaGrad 的指数衰减版, 解决学习率单调减到 0 问题.
+</p>
+</div>
+<div class="box-thm">
+<p>Adam (深度学习默认)</p>
+<p>
+$$m_t = \beta_1 m_{t-1} + (1-\beta_1) \nabla L, \quad v_t = \beta_2 v_{t-1} + (1-\beta_2)(\nabla L)^2$$
+$$\theta \leftarrow \theta - \eta \cdot \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}$$
+$\hat{m}, \hat{v}$ 是偏差校正后. $\beta_1=0.9, \beta_2=0.999$ 标准.
 </p>
 <p>
-<strong>4. RMSProp</strong>: G_t = $\beta$ G_(t-1) + (1-$\beta$)(∇L)². 解决 AdaGrad 学习率渐弱.
+<strong>= Momentum (一阶动量 $m_t$) + RMSProp (二阶动量 $v_t$) 合体</strong>. 训 LLM / Diffusion / 大部分神经网络的<strong>首选</strong>.
 </p>
-<p>
-<strong>5. Adam</strong> = Momentum + RMSProp (深度学习默认):
-m_t = β₁ m_(t-1) + (1-β₁)∇L
-v_t = β₂ v_(t-1) + (1-β₂)(∇L)²
-$\theta$ ← $\theta$ - η · m̂_t / (√v̂_t + ε)
-β₁=0.9, β₂=0.999 标准. <strong>训 LLM/Diffusion 首选</strong>.
-</p>
+</div>
 <h3 id="9-12-autograd">知识点 9.12: 自动微分 (Autograd)</h3>
 <div class="box-def">
 <p>自动微分两种模式</p>
