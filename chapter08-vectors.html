@@ -1241,6 +1241,33 @@ $\vec{r}$' × $\vec{r}$'' = (0, 0, R²). |·| = R².
 <li><strong>副法向量</strong> $\vec{B} = \vec{T} \times \vec{N}$</li>
 </ul>
 </div>
+<figure>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="frTarr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+    <marker id="frNarr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#22543d"/></marker>
+    <marker id="frBarr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <!-- 空间曲线 -->
+  <path d="M 60,200 C 90,100 200,80 240,140 S 380,180 420,80" fill="none" stroke="#1a365d" stroke-width="2.5" opacity="0.85"/>
+  <text x="380" y="55" font-size="13" fill="#1a365d" font-style="italic" font-weight="bold">空间曲线 r(t)</text>
+  <!-- P 点 -->
+  <circle cx="240" cy="140" r="4" fill="#000"/>
+  <text x="250" y="158" font-size="11" fill="#000">P</text>
+  <!-- T (切向) -->
+  <line x1="240" y1="140" x2="320" y2="120" stroke="#c2410c" stroke-width="2.5" marker-end="url(#frTarr)"/>
+  <text x="325" y="118" font-size="13" fill="#c2410c" font-weight="bold">T (切向)</text>
+  <!-- N (主法) -->
+  <line x1="240" y1="140" x2="220" y2="60" stroke="#22543d" stroke-width="2.5" marker-end="url(#frNarr)"/>
+  <text x="200" y="50" font-size="13" fill="#22543d" font-weight="bold">N (主法)</text>
+  <!-- B (副法) -->
+  <line x1="240" y1="140" x2="170" y2="180" stroke="#1a365d" stroke-width="2.5" marker-end="url(#frBarr)"/>
+  <text x="100" y="195" font-size="13" fill="#1a365d" font-weight="bold">B = T × N</text>
+  <text x="60" y="30" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">Frenet 标架: 曲线每点的"本地坐标系"</text>
+  <text x="60" y="245" font-size="11" fill="#666">κ = T 转的快慢 (曲率); τ = B 转的快慢 (挠率, 离开 T-N 平面)</text>
+</svg>
+<figcaption>图 6.9.1 Frenet 标架 $(\vec{T}, \vec{N}, \vec{B})$ 沿曲线移动的本地正交坐标系</figcaption>
+</figure>
 <div class="box-thm">
 <p>Frenet-Serret 公式</p>
 <p>
