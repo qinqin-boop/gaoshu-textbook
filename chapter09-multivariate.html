@@ -918,6 +918,29 @@ $$J_{\vec{F}^{-1}}(\vec{F}(\vec{x}_0))=[J_{\vec{F}}(\vec{x}_0)]^{-1}.$$
 这条等式是 §10.2 二重换元、§10.3 三重换元中<strong>雅可比因子 $|J|$</strong> 出现的根:正反变换的局部缩放因子互为倒数,所以面积 / 体积元素必须乘上 $|J|$ 来补偿。
 </p>
 <h3 id="9-5-5">9.5.5 与机器学习 / 经济学的关系</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="kk1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+    <marker id="kk2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2d6e2d"/></marker>
+  </defs>
+  <ellipse cx="200" cy="100" rx="120" ry="65" fill="none" stroke="#1a365d" stroke-width="1"/>
+  <ellipse cx="200" cy="100" rx="80" ry="42" fill="none" stroke="#1a365d" stroke-width="1.2"/>
+  <ellipse cx="200" cy="100" rx="40" ry="22" fill="none" stroke="#1a365d" stroke-width="1.4"/>
+  <text x="35" y="30" font-size="11" fill="#1a365d">f 等高线</text>
+  <path d="M 60 50 L 320 50 L 320 170 L 60 170 Z" fill="#fde2e2" fill-opacity="0.2" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="280" y="42" font-size="11" fill="#b91c1c">约束 g(x)≤0</text>
+  <line x1="60" y1="50" x2="60" y2="170" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="60" cy="100" r="4" fill="#2d6e2d"/>
+  <text x="40" y="103" font-size="12" font-weight="bold" fill="#2d6e2d">P*</text>
+  <line x1="60" y1="100" x2="100" y2="100" stroke="#c2410c" stroke-width="2" marker-end="url(#kk1)"/>
+  <text x="100" y="92" font-size="11" fill="#c2410c">∇f</text>
+  <line x1="60" y1="100" x2="30" y2="100" stroke="#2d6e2d" stroke-width="2" marker-end="url(#kk2)"/>
+  <text x="20" y="93" font-size="11" fill="#2d6e2d">μ∇g (μ≥0)</text>
+  <text x="30" y="195" font-size="11" fill="#444">KKT: ∇f=μ∇g+λ∇h, μg=0 (互补松弛)</text>
+</svg>
+<figcaption>图 9.5.4 KKT 条件几何(不等式约束):最优点 $P^*$ 在约束边界,$\nabla f$ 与 $\nabla g$ 反向($\mu\ge 0$);SVM / 凸优化 / 经济均衡的核心。</figcaption>
+</figure>
 <div class="box-intuition">
 <ul>
 <li><strong>隐式神经网络(implicit layer)</strong>:输出 $z$ 满足 $F(x,z;\theta)=0$,正向传播需解方程,反向传播需用隐函数定理求 $\partial z/\partial\theta$——这是 Deep Equilibrium Model(2019)、Neural ODE 内部机制。</li>

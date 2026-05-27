@@ -111,6 +111,28 @@
 ```
 </p>
 <h3 id="11-0-3-9-10">11.0.3 与 §9-10 的承接</h3>
+<figure>
+<svg viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="ar9" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <rect x="20" y="30" width="80" height="40" rx="5" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="35" y="55" font-size="12" font-weight="bold">§9 ∇</text>
+  <line x1="100" y1="50" x2="135" y2="50" stroke="#1a365d" marker-end="url(#ar9)"/>
+  <rect x="135" y="30" width="100" height="40" rx="5" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="148" y="55" font-size="11" font-weight="bold">∇f / ∇·F / ∇×F</text>
+  <line x1="235" y1="50" x2="270" y2="50" stroke="#1a365d" marker-end="url(#ar9)"/>
+  <rect x="270" y="30" width="90" height="40" rx="5" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="283" y="55" font-size="11" font-weight="bold">§11 三大公式</text>
+  <line x1="180" y1="70" x2="180" y2="100" stroke="#1a365d" marker-end="url(#ar9)"/>
+  <rect x="120" y="105" width="140" height="40" rx="5" fill="#fde2e2" stroke="#b91c1c"/>
+  <text x="135" y="130" font-size="11" font-weight="bold" fill="#b91c1c">∫_∂M ω = ∫_M dω</text>
+  <line x1="180" y1="145" x2="180" y2="170" stroke="#1a365d" marker-end="url(#ar9)"/>
+  <text x="80" y="185" font-size="11" fill="#444">物理: Maxwell + 流体 + 引力 + 量子 (全部从这一条来)</text>
+  <text x="30" y="210" font-size="11" fill="#666">微分几何 / GR / 规范场论 / de Rham 上同调</text>
+</svg>
+<figcaption>图 11.0.2 ch9 算子 → ch11 三大公式 → 广义 Stokes 一公式统一 → 现代物理与几何全部基础。</figcaption>
+</figure>
 <ul>
 <li>§9.6 <strong>梯度</strong> $\nabla f$、§9.7 <strong>切向 / 法向</strong>:本章 $d\vec{r}=\vec{\tau}\,ds$、$d\vec{S}=\vec{n}\,dS$ 的代数源;</li>
 <li>§9 偏导<strong>算子</strong> $\nabla=(\partial_x,\partial_y,\partial_z)$ 在本章具体体现为<strong>散度</strong> $\nabla\cdot\vec{F}$、<strong>旋度</strong> $\nabla\times\vec{F}$、<strong>梯度</strong> $\nabla\phi$;</li>
@@ -604,6 +626,22 @@ $$\oint=\int_0^{2\pi}\!\!\bigg[-\sin t\cdot(-\sin t)+\cos t\cdot\cos t\bigg]dt=\
 把第一类曲线积分 $\int_L f\,ds$(沿曲线对弧长积分)的思想升一维:对一张空间曲面 $\Sigma$ 算 $\iint_\Sigma f(x,y,z)\,dS$,几何意义是把 $f$ 当作曲面密度,$dS$ 是曲面上微元面积。这一节给出 $dS$ 的两种参数化公式——<strong>显式</strong>(曲面 $z=z(x,y)$)与<strong>一般参数</strong>($\vec{r}=\vec{r}(u,v)$),并解释为什么 $dS=\sqrt{1+z_x^2+z_y^2}\,dx\,dy$ 与 $|\vec{r}_u\times\vec{r}_v|\,du\,dv$ 都是同一回事。
 </p>
 <h3 id="11-4-1">11.4.1 定义与几何意义</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <linearGradient id="mfg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a365d" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#c9b97a" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <path d="M 30 150 Q 100 50 200 80 Q 280 100 340 60 L 340 170 Q 270 180 200 150 T 30 175 Z" fill="url(#mfg)" stroke="#1a365d" stroke-width="1.8"/>
+  <ellipse cx="180" cy="110" rx="50" ry="32" fill="#fef6e4" fill-opacity="0.7" stroke="#c9a227" stroke-width="1.5"/>
+  <text x="155" y="108" font-size="12" fill="#8b6f1c">小邻域 ≈ ℝ²</text>
+  <text x="35" y="30" font-size="12" font-weight="bold" fill="#1a365d">2-流形 Σ ⊂ ℝ³</text>
+  <text x="35" y="190" font-size="11" fill="#666">流形: 局部像 ℝⁿ, 全局可弯曲 (球/环/Möbius)</text>
+</svg>
+<figcaption>图 11.4.9 流形概念:曲面 $\Sigma$ 局部看起来像 $\mathbb{R}^2$ 平面(可参数化);全局可以弯曲、有孔(环面)、不可定向(Möbius)— 微分几何的核心对象。</figcaption>
+</figure>
 <figure>
 <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <circle cx="160" cy="110" r="80" fill="#eef4fb" fill-opacity="0.5" stroke="#1a365d" stroke-width="1.5"/>
@@ -1259,6 +1297,27 @@ $$(\nabla\times\vec{F})(P_0)\cdot\vec{n}=\lim_{r\to 0^+}\frac{1}{\pi r^2}\oint_{
 </p>
 </div>
 <h3 id="11-6-4">11.6.4 物理意义:法拉第电磁感应</h3>
+<figure>
+<svg viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <rect x="20" y="30" width="170" height="80" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <text x="30" y="55" font-size="13" font-weight="bold" fill="#1a365d">∮ E⃗·dS⃗ = Q_enc/ε₀</text>
+  <text x="30" y="80" font-size="11" fill="#1a365d">Gauss 电场 (Gauss 公式)</text>
+  <text x="30" y="100" font-size="10" fill="#666">微分: ∇·E = ρ/ε₀</text>
+  <rect x="200" y="30" width="170" height="80" fill="#fef6e4" stroke="#c9a227" stroke-width="1.5"/>
+  <text x="210" y="55" font-size="13" font-weight="bold" fill="#8b6f1c">∮ B⃗·dS⃗ = 0</text>
+  <text x="210" y="80" font-size="11" fill="#8b6f1c">无磁单极 (Gauss 磁场)</text>
+  <text x="210" y="100" font-size="10" fill="#666">微分: ∇·B = 0</text>
+  <rect x="20" y="120" width="170" height="80" fill="#ecf7ec" stroke="#2d6e2d" stroke-width="1.5"/>
+  <text x="30" y="145" font-size="13" font-weight="bold" fill="#2d6e2d">∮ E⃗·dr⃗ = -dΦ_B/dt</text>
+  <text x="30" y="170" font-size="11" fill="#2d6e2d">法拉第感应 (Stokes)</text>
+  <text x="30" y="190" font-size="10" fill="#666">微分: ∇×E = -∂B/∂t</text>
+  <rect x="200" y="120" width="170" height="80" fill="#fde2e2" stroke="#b91c1c" stroke-width="1.5"/>
+  <text x="210" y="145" font-size="13" font-weight="bold" fill="#b91c1c">∮ B⃗·dr⃗ = μ₀I + μ₀ε₀dΦ_E/dt</text>
+  <text x="210" y="170" font-size="11" fill="#b91c1c">Ampère-Maxwell</text>
+  <text x="210" y="190" font-size="10" fill="#666">微分: ∇×B = μ₀J+μ₀ε₀∂E/∂t</text>
+</svg>
+<figcaption>图 11.6.8 Maxwell 4 方程整体:全部用 Gauss/Stokes 公式从微分形式立得积分形式 — 经典物理学最伟大的方程组。</figcaption>
+</figure>
 <figure>
 <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <defs>
