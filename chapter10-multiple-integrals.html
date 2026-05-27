@@ -1037,15 +1037,17 @@ ln(100!) ≈ (1/2)ln(200π) + 100·ln(100) - 100 ≈ 363.7
 所以 100! ≈ 10^158.
 </p>
 </div>
+<div class="box-intuition">
+<p>Stirling 4 大领域应用</p>
 <p>
-<strong>应用</strong>:
+| 领域 | Stirling 怎么用 |
+|---|---|
+| 统计力学 | 玻尔兹曼熵 $S = k_B\ln(N!/\prod n_i!)$ 化简, 推导 Maxwell-Boltzmann 分布 |
+| 信息论 | 香农熵 / 大数定律推导 / 编码理论界限 |
+| 复杂度理论 | 阶乘增长算法 (TSP 暴力 = $O(n!)$), Stirling 给上界估计 |
+| 概率组合 | 二项系数 $\binom{2n}{n} \approx 4^n/\sqrt{\pi n}$, 推 Catalan / 随机游走 |
 </p>
-<ul>
-<li>统计力学: 玻尔兹曼熵 S = k_B ln(N!/...) 化简</li>
-<li>信息论: 大数定律 + 信息量</li>
-<li>复杂度理论: 阶乘增长的算法 (TSP 暴力 = O(n!))</li>
-<li>香农定理: 编码界限</li>
-</ul>
+</div>
 <h3 id="13-9">知识点 13.9: 多元积分换元雅可比详细推导</h3>
 <p>
 <strong>问题</strong>: 重积分换元 ∬ f(x,y) dxdy → ∬ f(x(u,v), y(u,v)) |J| du dv 中, |J| 从哪里来?
