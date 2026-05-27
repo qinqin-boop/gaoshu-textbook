@@ -276,9 +276,18 @@ $$I=\int_0^1\!dx\int_0^x e^{x^2}\,dy=\int_0^1 x\,e^{x^2}\,dx=\tfrac12 e^{x^2}\bi
 </ul>
 </div>
 <h3 id="10-2-3">10.2.3 极坐标变换与雅可比因子</h3>
+<div class="box-intuition">
+<p>何时该换极坐标 — 4 个信号</p>
+<ol>
+<li>区域 <strong>圆 / 圆环 / 扇形 / 心脏线</strong> (有圆对称)</li>
+<li>被积函数含 $x^2 + y^2$ (直接变成 $r^2$, 一阶简化)</li>
+<li>区域 / 函数沿原点呈<strong>轴对称</strong></li>
+<li>直角坐标下边界要分段分情况, 换极坐标后整段一根公式搞定</li>
+</ol>
 <p>
-某些区域(圆盘、圆环、扇形)与被积函数(含 $x^2+y^2$ 的)在直角坐标里<strong>很丑</strong>,换极坐标 $x=r\cos\theta,\,y=r\sin\theta$ 后变规则。变换公式里多出来的 $r$ 不是凑的,而是面积元素的几何因子。
+直角坐标算到一半发现"再积下去越来越复杂"时, 90% 概率该换极坐标. 变换公式里多出来的 $r$ 不是凑的, <strong>是扇环面积元素的几何因子</strong>.
 </p>
+</div>
 <div class="box-thm">
 <p>
 (极坐标变换)若 $f$ 在 $D$ 上连续,$D$ 在极坐标下记 $D'=\{(r,\theta):\alpha\le\theta\le\beta,\ r_1(\theta)\le r\le r_2(\theta)\}$,则
