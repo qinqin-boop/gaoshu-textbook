@@ -350,19 +350,20 @@ cosα = 1/2, cosβ = 1/2, cosγ = √2/2. 三个分别对应 60°, 60°, 45°.
 ---
 </p>
 <h3 id="3-7-8-1">知识点 3.7: 向量的投影 (对齐书 §8.1 五)</h3>
+<div class="box-def">
+<p>投影 (Projection)</p>
 <p>
-<strong>定义</strong>: 向量 $\vec{b}$ 在某条轴 u 上的<strong>投影</strong>, 是 $\vec{b}$ 在轴 u 方向上的"分量长度".
+向量 $\vec{b}$ 在某条轴 $u$ 上的<strong>投影</strong>, 是 $\vec{b}$ 在轴 $u$ 方向上的"分量长度":
+$$\text{Prj}_u(\vec{b}) = \vec{b} \cdot \vec{u}^{\,0} = |\vec{b}| \cos\theta$$
+其中 $\vec{u}^{\,0}$ 是轴 $u$ 上的单位向量, $\theta$ 是 $\vec{b}$ 跟 $u$ 的夹角.
 </p>
+</div>
+<div class="box-intuition">
+<p>影子直觉</p>
 <p>
-公式 ($\vec{b}$ 在单位向量 $\vec{u}$⁰ 上的投影):
-Prj_u($\vec{b}$) = $\vec{b}$ · $\vec{u}$⁰ = $|\vec{b}|$ $\cos\theta$
+阳光从天顶垂直射下, 一根斜插的杆子 (向量 $\vec{b}$) 在地面 (轴 $u$) 上的影子长度就是投影. 杆子越斜 ($\theta$ 越大), 影子越短.
 </p>
-<p>
-其中 $\theta$ 是 $\vec{b}$ 跟 u 的夹角.
-</p>
-<p>
-<strong>生活类比</strong>: 阳光从天顶垂直射下, 一根斜插的杆子 (向量 $\vec{b}$) 在地面 (轴 u) 上的影子长度就是投影.
-</p>
+</div>
 <div class="box-example">
 <p>例题 4-4</p>
 <p>
@@ -371,16 +372,19 @@ x 轴单位向量 = (1, 0, 0). 投影 = $\vec{a}$ · (1, 0, 0) = 4.
 直观: $\vec{a}$ 的 x 分量就是 4. ✓
 </p>
 </div>
-<p>
-<strong>性质</strong> (跟向量加法/数乘配合):
-</p>
+<div class="box-thm">
+<p>投影的线性性质</p>
 <ol>
-<li>Prj_u($\vec{a}$ + $\vec{b}$) = Prj_u($\vec{a}$) + Prj_u($\vec{b}$)  (分配律)</li>
-<li>Prj_u($\lambda$ $\vec{a}$) = $\lambda$ Prj_u($\vec{a}$)  (数乘提取)</li>
+<li>$\text{Prj}_u(\vec{a} + \vec{b}) = \text{Prj}_u(\vec{a}) + \text{Prj}_u(\vec{b})$ (分配律)</li>
+<li>$\text{Prj}_u(\lambda\vec{a}) = \lambda \text{Prj}_u(\vec{a})$ (数乘提取)</li>
 </ol>
+</div>
+<div class="box-intuition">
+<p>为啥投影重要</p>
 <p>
-<strong>为啥重要</strong>: 物理里"力做功" = 力在位移方向的投影 × 位移. 投影是 connecting "向量" 到 "标量" 的核心操作.
+物理里"力做功" $W = \vec{F}\cdot\vec{s} = |\vec{F}|\cdot\text{Prj}_F(\vec{s}) \cdot 1$ = 力在位移方向的投影 × 位移大小. <strong>投影是 connecting "向量" 到 "标量" 的核心操作</strong>, 后面的功 / 通量 / 散度都基于它.
 </p>
+</div>
 <p>
 ---
 </p>
