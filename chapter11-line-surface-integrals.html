@@ -1152,60 +1152,62 @@ $$\int_{\partial M} \omega = \int_M d\omega$$
 下一章 第十二章 无穷级数 — 把"无限项相加" 这件事说清楚.
 </p>
 <h3 id="13">知识点 13: 曲线/曲面积分应用大全 (本章工程价值)</h3>
+<div class="box-intuition">
+<p>6 大领域工程价值</p>
 <p>
 <strong>1. 物理学经典</strong>:
 </p>
 <ul>
-<li>力做的功: W = ∫_L $\vec{F}$·dr→</li>
-<li>质量: M = ∫_L $\mu$ ds (一维) 或 ∬_Σ $\mu$ dS (二维)</li>
-<li>流体通量 Φ = ∬_Σ $\vec{v}$·dS→</li>
-<li>引力场强 / 电场强度</li>
-<li>电流: I = ∬_Σ $\vec{J}$·dS→</li>
+<li>功: $W = \int_L \vec{F}\cdot d\vec{r}$</li>
+<li>质量: $M = \int_L \mu \,ds$ (一维) 或 $\iint_\Sigma \mu \,dS$ (二维)</li>
+<li>流体通量 $\Phi = \iint_\Sigma \vec{v}\cdot d\vec{S}$</li>
+<li>电流: $I = \iint_\Sigma \vec{J}\cdot d\vec{S}$</li>
 </ul>
 <p>
-<strong>2. 电磁学 (Maxwell 完整版)</strong>:
+<strong>2. 电磁学 (Maxwell)</strong>:
 </p>
 <ul>
-<li>电场高斯定律: 给定电荷 → 推算电场分布</li>
-<li>磁场: 安培定律由电流推磁场</li>
+<li>高斯定律: 电荷 → 电场分布</li>
+<li>安培定律: 电流 → 磁场</li>
 <li>法拉第感应: 磁通变化 → 电动势</li>
-<li>电磁波传播: Maxwell 方程 → 波动方程</li>
+<li>Maxwell 方程 → 电磁波动方程</li>
 </ul>
 <p>
 <strong>3. 流体力学 (Navier-Stokes)</strong>:
 </p>
 <ul>
-<li>不可压缩: ∇·$\vec{v}$ = 0</li>
-<li>涡量: ω→ = ∇×$\vec{v}$</li>
-<li>边界条件: 闭曲面通量 = 流入流出之差</li>
+<li>不可压缩: $\nabla\cdot\vec{v} = 0$</li>
+<li>涡量: $\vec{\omega} = \nabla\times\vec{v}$</li>
+<li>边界: 闭曲面通量 = 流入流出净值</li>
 </ul>
 <p>
 <strong>4. 计算机图形 (现代渲染)</strong>:
 </p>
 <ul>
-<li>表面积 → 决定阴影面积</li>
-<li>立体角积分 → 路径追踪</li>
-<li>BRDF / BTDF → 全局光照</li>
+<li>表面积 → 阴影面积</li>
+<li>立体角积分 → 路径追踪 (ray tracing)</li>
+<li>BRDF / BTDF → 全局光照 (Monte Carlo PT)</li>
 </ul>
 <p>
 <strong>5. 几何与拓扑</strong>:
 </p>
 <ul>
-<li>曲面面积 (机翼/船体 设计常用)</li>
-<li>体积公式 (高斯公式特例)</li>
-<li>计算流形曲率 (黎曼几何)</li>
+<li>机翼 / 船体曲面面积</li>
+<li>高斯公式特例 → 体积公式</li>
+<li>黎曼几何流形曲率</li>
 </ul>
 <p>
-<strong>6. 工程问题</strong>:
+<strong>6. 工程</strong>:
 </p>
 <ul>
-<li>飞机翼型升力: ∮ ρv→·dr→ 沿翼型周线</li>
-<li>船体推进力: 桨叶曲面通量</li>
-<li>风洞测试: 力和力矩都是曲线/曲面积分</li>
+<li>翼型升力: $\oint \rho\vec{v}\cdot d\vec{r}$</li>
+<li>桨叶推进力: 通量积分</li>
+<li>风洞: 力 / 力矩都是曲线 / 曲面积分</li>
 </ul>
 <p>
-<strong>学完这章 = 你能"算" 复杂三维场景里的"总量" (功/通量/质量/势)</strong>.
+<strong>学完这章 = 能"算"三维场景里的"总量" (功/通量/质量/势)</strong>.
 </p>
+</div>
 <p>
 ---
 </p>
