@@ -612,9 +612,14 @@ I'(t) = ∫_0¹ x/((1+tx)(1+x²)) dx.
 进一步用部分分式可解出. (繁琐略)
 </p>
 </div>
-<p>
-<strong>应用</strong>: 微分方程 / 变换积分顺序的桥梁 / Feynman 积分技巧 (沿参数微分让难积分变易).
-</p>
+<div class="box-intuition">
+<p>含参积分 3 大典型应用</p>
+<ol>
+<li><strong>变换积分顺序</strong>: 难的 $\int F(x)\,dx$ 写成 $\int_0^x \int g(x, t)\,dt\,dx$ 后换 $\int\!\int$ 顺序, 常常变易</li>
+<li><strong>Feynman 微分大法</strong>: 对参数求导让被积函数变简单, 然后再积回去. 老 Feynman 物理常用</li>
+<li><strong>常用 $\Gamma$ / $\beta$ 函数推导</strong>: $\Gamma(t) = \int_0^\infty x^{t-1}e^{-x}\,dx$ 就是含参积分, 性质都靠 Leibniz 求导推</li>
+</ol>
+</div>
 <p>
 ---
 </p>
