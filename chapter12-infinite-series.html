@@ -130,6 +130,31 @@
 总时间 $T=0.9+0.09+0.009+\dots=\frac{0.9}{1-0.1}=1$ 秒。<strong>这是几何级数 $\sum 0.9\cdot 0.1^n=1$,有限!</strong> Zeno 的"无穷段"在数学上和等于 $1$ 秒,在该秒后阿喀琉斯就追上了。<strong>关键是「无穷个项和有限」并不矛盾</strong>——只要项衰减够快。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="zeno_arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <!-- 数轴: T 时间 0 → 1 -->
+  <line x1="40" y1="120" x2="440" y2="120" stroke="#666" stroke-width="2"/>
+  <line x1="40" y1="115" x2="40" y2="125" stroke="#666" stroke-width="2"/>
+  <line x1="440" y1="115" x2="440" y2="125" stroke="#666" stroke-width="2"/>
+  <text x="35" y="145" font-size="12" fill="#666">0</text>
+  <text x="430" y="145" font-size="12" fill="#666" font-weight="bold">T=1 秒</text>
+  <!-- Zeno 各段累加 -->
+  <rect x="40" y="105" width="360" height="15" fill="#1a365d" fill-opacity="0.7" stroke="#1a365d"/>
+  <text x="180" y="100" font-size="12" fill="#1a365d" font-weight="bold">0.9 秒</text>
+  <rect x="400" y="105" width="36" height="15" fill="#22543d" fill-opacity="0.6" stroke="#22543d"/>
+  <text x="395" y="100" font-size="10" fill="#22543d">0.09</text>
+  <rect x="436" y="105" width="3.6" height="15" fill="#c2410c" fill-opacity="0.6" stroke="#c2410c"/>
+  <text x="430" y="160" font-size="10" fill="#c2410c">0.009...</text>
+  <!-- 标题 -->
+  <text x="40" y="35" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">Zeno 悖论破解: 无限段衰减时间和 = 有限</text>
+  <text x="40" y="55" font-size="13" font-family="serif" fill="#22543d">T = 0.9 + 0.09 + 0.009 + ... = 0.9 / (1-0.1) = 1 秒</text>
+  <text x="40" y="180" font-size="11" fill="#666">无穷多段, 越加越小, 总和锁定在 1 秒 — 阿喀琉斯准点追上乌龟</text>
+</svg>
+<figcaption>图 12.0.3 Zeno 悖论的几何级数解: 阿喀琉斯追乌龟的"无穷段"在 $T = 1$ 秒收敛 — 项衰减够快, 无穷加 = 有限</figcaption>
+</figure>
 <h3 id="12-0-6">12.0.6 怎么读这章</h3>
 <figure>
 <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
