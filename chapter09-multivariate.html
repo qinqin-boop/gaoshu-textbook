@@ -1319,24 +1319,44 @@ $$\theta^{(k+1)}=\theta^{(k)}-\big[H_f(\theta^{(k)})\big]^{-1}\nabla f(\theta^{(
 </p>
 <h2 id="9-9-9-9">9.9 二元函数的泰勒公式 (对齐书 §9.9)</h2>
 <h3 id="17">知识点 17: 二元泰勒公式</h3>
+<div class="box-thm">
+<p>二元泰勒展开 (在 $(a, b)$ 处, 假设 $f$ 足够光滑)</p>
 <p>
-一元有 f(x) ≈ f(a) + f'(a)(x-a) + f''(a)(x-a)²/2 + ... 这种"用多项式逼近函数"的展开. 二元同样有:
+$$\begin{aligned}
+f(x, y) &amp;= f(a, b) + \big[f_x(a,b)(x-a) + f_y(a,b)(y-b)\big] \\
+&amp;\quad + \frac{1}{2!}\big[f_{xx}(x-a)^2 + 2 f_{xy}(x-a)(y-b) + f_{yy}(y-b)^2\big] \\
+&amp;\quad + \cdots + R_n
+\end{aligned}$$
+向量记号: $f(\vec{x}) \approx f(\vec{x}_0) + \nabla f^\top \Delta\vec{x} + \frac{1}{2}\Delta\vec{x}^\top H \Delta\vec{x} + \cdots$
 </p>
+</div>
+<div class="box-intuition">
+<p>爬山几何</p>
 <p>
-f(x, y) ≈ f(a, b) + [f_x(a,b)(x-a) + f_y(a,b)(y-b)]
-         + (1/2!)[f_xx(x-a)² + 2 f_xy(x-a)(y-b) + f_yy(y-b)²]
-         + ...
+站在 $(a, b)$ 看附近地形:
 </p>
-<p>
-<strong>生活类比</strong>: 像爬山, 站在 (a,b) 看附近地形, 一阶展开 = 平面 (切平面), 二阶展开 = 抛物面 (凹凸感), 高阶继续精细化.
-</p>
+<ul>
+<li><strong>零阶</strong>: 单点 (高度 $f(a,b)$)</li>
+<li><strong>一阶展开</strong>: 切平面 (用切平面近似曲面)</li>
+<li><strong>二阶展开</strong>: 抛物面 (有"凹凸感", Hessian 决定碗 / 鞍)</li>
+<li><strong>更高阶</strong>: 越来越精细</li>
+</ul>
+</div>
 <h3 id="18-9-9">知识点 18: 二阶判别式的"由来" (对齐 §9.9 二)</h3>
+<div class="box-intuition">
+<p>$D = AC - B^2$ = Hessian 行列式</p>
 <p>
-之前 (知识点 15) 用 D = AC - B² 判极值类型. 这个<strong>就是二阶泰勒展开</strong>: A=f_xx, B=f_xy, C=f_yy, 是 Hessian 矩阵的项. D &gt; 0 + A &gt; 0 → Hessian 正定 → 极小值.
+之前 (知识点 15) 用 $D = AC - B^2$ 判极值类型. 这个<strong>就是二阶 Taylor 展开</strong>: $A = f_{xx}, B = f_{xy}, C = f_{yy}$ 是 Hessian 矩阵的项. 判别式 $D$ 实际就是 $\det H$.
 </p>
+<ul>
+<li>$D > 0$ 且 $A > 0$: Hessian 正定 → 局部极小</li>
+<li>$D > 0$ 且 $A < 0$: Hessian 负定 → 局部极大</li>
+<li>$D < 0$: Hessian 不定 → 鞍点</li>
+</ul>
 <p>
-<strong>应用</strong>: AI/ML 优化里用 Hessian 判断"局部最小 vs 鞍点", 是同一套数学.
+<strong>AI / ML 应用</strong>: 二阶优化 (Newton 法 / 牛顿型) 直接用 Hessian 判"局部最小 vs 鞍点", 是同一套数学.
 </p>
+</div>
 <h2 id="9-10-9-10">9.10 最小二乘法 (对齐书 §9.10)</h2>
 <h3 id="19">知识点 19: 最小二乘法</h3>
 <p>
