@@ -228,6 +228,19 @@ $$ds=\sqrt{1+g'(x)^2}\,dx,\quad\int_L f\,ds=\int_a^b f(x,g(x))\sqrt{1+g'(x)^2}\,
 $$ds=\sqrt{r^2+r'^2}\,d\theta.$$
 </p>
 <h3 id="11-1-3">11.1.3 物理 / 几何应用</h3>
+<figure>
+<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <path d="M 60 140 A 80 80 0 0 1 220 140" fill="none" stroke="#1a365d" stroke-width="3"/>
+  <line x1="60" y1="140" x2="220" y2="140" stroke="#888" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <text x="35" y="155" font-size="11" fill="#888">-R</text>
+  <text x="225" y="155" font-size="11" fill="#888">R</text>
+  <polygon points="140,108 130,90 150,90" fill="#c2410c"/>
+  <text x="155" y="100" font-size="12" fill="#c2410c">质心 (0, 2R/π)</text>
+  <line x1="140" y1="140" x2="140" y2="100" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="30" y="185" font-size="11" fill="#444">ȳ = (1/L) ∫_L y ds, 半圆 L=πR ⇒ ȳ=2R/π</text>
+</svg>
+<figcaption>图 11.1.2 半圆形丝质心 $\bar y=2R/\pi$(比半圆板质心 $4R/(3\pi)\approx 0.42R$ 更高,因质量集中在弧上)。</figcaption>
+</figure>
 <p>
 | 几何 / 物理量 | 公式 |
 | --- | --- |
@@ -983,6 +996,20 @@ $$\Phi_E=\oiint_\Sigma\vec{E}\cdot d\vec{S}=\iiint_V\frac{\rho}{\varepsilon_0}\,
 </p>
 </div>
 <h3 id="11-5-6">11.5.6 与三大公式的统一</h3>
+<figure>
+<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <circle cx="160" cy="100" r="70" fill="#eef4fb" fill-opacity="0.6" stroke="#1a365d" stroke-width="1.8"/>
+  <circle cx="160" cy="100" r="3" fill="#c2410c"/>
+  <text x="135" y="115" font-size="11" fill="#c2410c">点电荷 q</text>
+  <line x1="160" y1="100" x2="220" y2="60" stroke="#c2410c" stroke-width="1.5"/>
+  <line x1="160" y1="100" x2="100" y2="60" stroke="#c2410c" stroke-width="1.5"/>
+  <line x1="160" y1="100" x2="220" y2="140" stroke="#c2410c" stroke-width="1.5"/>
+  <line x1="160" y1="100" x2="100" y2="140" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="240" y="105" font-size="11" fill="#1a365d">全空间 Ω = 4π</text>
+  <text x="35" y="185" font-size="11" fill="#444">点电荷电通量 ∮E·dS = q/ε₀ · (Ω/4π) = q/ε₀ (整球)</text>
+</svg>
+<figcaption>图 11.5.5 立体角 $\Omega$ 守恒:点电荷对包围它的任意闭曲面通量都是 $q/\varepsilon_0$,因为整球 $\Omega=4\pi$ 球面度。</figcaption>
+</figure>
 <p>
 | 公式 | 边界 | 内部 |
 | --- | --- | --- |
