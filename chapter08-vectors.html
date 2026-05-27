@@ -1493,23 +1493,25 @@ f(x,y) = x² + y² 是凸的.
 H = [[2,0],[0,2]] 正定 ⟹ 凸 ✓.
 </p>
 </div>
+<div class="box-thm">
+<p>凸函数 3 大核心性质</p>
+<ol>
+<li><strong>局部最小 = 全局最小</strong> (优化简化, 这是 ML 优化"好做" vs "难做"的分水岭)</li>
+<li><strong>凸优化算法保证收敛</strong>: 梯度下降 / 内点法在凸函数上必收敛</li>
+<li><strong>Jensen 不等式</strong>: $\mathbb{E}[f(X)] \ge f(\mathbb{E}[X])$ (凸函数交换期望顺序方向)</li>
+</ol>
+</div>
+<div class="box-intuition">
+<p>凸性 4 大领域应用</p>
 <p>
-<strong>核心性质</strong>:
+| 领域 | 凸性怎么用 |
+|---|---|
+| 经典优化 | SVM / Lasso / Ridge 都是凸问题, 全局最优 + 闭式解 |
+| 神经网络 | 整体非凸, 但<strong>局部凸</strong> + Adam / momentum 仍能收敛到良好局部最优 |
+| 经济学 | 效用函数常假设凹 (风险厌恶), 损失函数常凸 (风险偏离) |
+| 信息论 | KL 散度对 $q$ 是凸的 → Jensen 推出 $D_{\text{KL}} \ge 0$ (信息论第一定理) |
 </p>
-<ul>
-<li>凸函数局部最小 = 全局最小 (优化简化)</li>
-<li>凸优化算法保证收敛 (梯度下降, 内点法)</li>
-<li>Jensen 不等式: E[f(X)] ≥ f(E[X])</li>
-</ul>
-<p>
-<strong>应用</strong>:
-</p>
-<ul>
-<li>凸优化: SVM/Lasso/Ridge 都是凸问题, 有全局最优</li>
-<li>神经网络: 非凸但局部凸 + Adam 仍可收敛到良好局部最优</li>
-<li>经济学: 效用函数常假设凸 (风险厌恶)</li>
-<li>信息论: KL 散度对 q 是凸的 (Jensen 推出 ≥0)</li>
-</ul>
+</div>
 <h3 id="6-17">知识点 6.17: 行列式深入 — 几何含义 + 性质</h3>
 <div class="box-def">
 <p>行列式 (Determinant)</p>
