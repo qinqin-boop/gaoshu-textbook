@@ -1604,19 +1604,21 @@ $$W(a, b) = \int f(x) \cdot \frac{1}{\sqrt{a}} \psi\left(\frac{x-b}{a}\right) dx
 $a$ = 尺度 (频率), $b$ = 位置 (时间). <strong>同时定位频率和时间</strong>.
 </p>
 </div>
+<div class="box-intuition">
+<p>小波 5 大现代应用</p>
 <p>
-<strong>应用</strong>:
+| 领域 | 小波怎么用 |
+|---|---|
+| 图像压缩 | JPEG2000 (替代 JPEG) — 主流卫星 / 医学 / DCI 影像格式 |
+| 视频压缩 | HEVC / H.266 部分模块用小波 |
+| 生物医学 | 地震 / 心电图 / 脑电瞬时异常事件检测 |
+| 深度学习 | WaveNet (DeepMind 语音合成奠基模型) |
+| 量子化学 | 多尺度建模 (Multiresolution Analysis 框架) |
 </p>
-<ul>
-<li>JPEG2000 (替代 JPEG): 用小波</li>
-<li>视频压缩: HEVC 部分用小波</li>
-<li>地震/心电图分析: 检测瞬时事件</li>
-<li>神经网络: WaveNet (Google DeepMind 语音合成)</li>
-<li>量子化学: 多尺度建模</li>
-</ul>
 <p>
-<strong>意义</strong>: 小波 = 傅里叶 2.0 — 把"频域分析"扩展到"时频联合分析", 信号处理新基石.
+<strong>小波 = 傅里叶 2.0</strong> — 把"频域分析"扩展到"<strong>时频联合分析</strong>" (海森堡测不准的最优逼近), 现代信号处理新基石.
 </p>
+</div>
 <h3 id="8-17-generating-functions">知识点 8.17: 生成函数 (Generating Functions)</h3>
 <div class="box-def">
 <p>生成函数 (两种)</p>
