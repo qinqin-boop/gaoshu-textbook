@@ -2279,6 +2279,29 @@ $$X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-i 2\pi kn/N}, \quad k = 0, 1, \ldots, N-1
 朴素计算: $O(N^2)$ 次复乘.
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- FFT vs Naive DFT 复杂度对比 -->
+  <line x1="40" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="40" y1="200" x2="40" y2="30" stroke="#666" stroke-width="1.5"/>
+  <text x="455" y="205" font-size="11" fill="#666">N (数据点数)</text>
+  <text x="20" y="35" font-size="11" fill="#666">复乘次数</text>
+  <!-- Naive O(N²) 曲线 (红) -->
+  <path d="M 60,185 Q 130,160 200,110 Q 270,55 340,35" fill="none" stroke="#c2410c" stroke-width="3"/>
+  <text x="290" y="55" font-size="14" fill="#c2410c" font-weight="bold">朴素 DFT: O(N²)</text>
+  <!-- FFT O(N log N) 曲线 (绿) — 几乎线性 -->
+  <path d="M 60,195 L 200,180 L 340,160 L 440,140" fill="none" stroke="#22543d" stroke-width="3"/>
+  <text x="320" y="135" font-size="14" fill="#22543d" font-weight="bold">FFT: O(N log N)</text>
+  <!-- N=10⁶ 标注 -->
+  <line x1="380" y1="200" x2="380" y2="40" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="370" y="220" font-size="11" fill="#666">N=10⁶</text>
+  <text x="385" y="50" font-size="11" fill="#c2410c">10¹² 乘 (不可行)</text>
+  <text x="385" y="160" font-size="11" fill="#22543d">2×10⁷ 乘 (秒级)</text>
+  <!-- 加速比 -->
+  <text x="60" y="30" font-size="13" font-family="serif" fill="#1a365d" font-weight="bold">FFT 加速比: N=10⁶ 时快 50,000 倍</text>
+</svg>
+<figcaption>图 12.5.5 FFT vs 朴素 DFT 复杂度: $O(N^2)$ 抛物增长 vs $O(N\log N)$ 近线性 — 数据量越大优势越大</figcaption>
+</figure>
 <div class="box-thm">
 <p>Cooley-Tukey FFT (1965)</p>
 <p>
