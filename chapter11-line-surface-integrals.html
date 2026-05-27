@@ -235,6 +235,38 @@ $$\int_L P\,dx+Q\,dy+R\,dz\quad\text{或}\quad\int_L\vec{F}\cdot d\vec{r}.$$
 <strong>物理意义</strong>:沿曲线 $L$ 由力 $\vec{F}$ 做的总功 $W=\int_L\vec{F}\cdot d\vec{r}$。每小段位移 $d\vec{r}$,力的有效分量 $\vec{F}\cdot d\vec{r}$。<strong>反向走</strong> $\vec{r}_-$(从 $B$ 到 $A$)时所有 $d\vec{r}$ 反号,积分整体变号 $\int_{-L}=-\int_L$——这是和第一类的本质区别。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="frcarr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+    <marker id="dirarr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#22543d"/></marker>
+    <marker id="larr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <!-- 曲线 L 带方向 (从 A 到 B) -->
+  <path d="M 50,180 Q 130,80 230,140 T 430,80" fill="none" stroke="#1a365d" stroke-width="2.5" marker-end="url(#larr)"/>
+  <text x="35" y="200" font-size="13" fill="#1a365d" font-weight="bold">A</text>
+  <text x="438" y="80" font-size="13" fill="#1a365d" font-weight="bold">B</text>
+  <text x="350" y="55" font-size="13" fill="#1a365d" font-style="italic" font-weight="bold">曲线 L</text>
+  <!-- 几个点上画 F 和 dr -->
+  <circle cx="130" cy="115" r="3" fill="#000"/>
+  <line x1="130" y1="115" x2="190" y2="65" stroke="#c2410c" stroke-width="2.5" marker-end="url(#frcarr)"/>
+  <text x="195" y="62" font-size="12" fill="#c2410c" font-weight="bold">F (力)</text>
+  <line x1="130" y1="115" x2="170" y2="130" stroke="#22543d" stroke-width="2" marker-end="url(#dirarr)"/>
+  <text x="142" y="148" font-size="11" fill="#22543d" font-weight="bold">dr</text>
+
+  <circle cx="280" cy="125" r="3" fill="#000"/>
+  <line x1="280" y1="125" x2="335" y2="85" stroke="#c2410c" stroke-width="2.5" marker-end="url(#frcarr)"/>
+  <text x="340" y="82" font-size="12" fill="#c2410c" font-weight="bold">F</text>
+  <line x1="280" y1="125" x2="318" y2="115" stroke="#22543d" stroke-width="2" marker-end="url(#dirarr)"/>
+  <text x="292" y="138" font-size="11" fill="#22543d" font-weight="bold">dr</text>
+
+  <!-- 标题 -->
+  <text x="40" y="35" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">第二类曲线积分: 力沿路径做功 W = ∫_L F·dr</text>
+  <text x="50" y="225" font-size="11" fill="#666">每点取力 F 在位移 dr 方向上的投影 (点乘), 沿路径累加</text>
+  <text x="50" y="240" font-size="11" fill="#c2410c">反向走 (B→A): 所有 dr 反向 → 积分整体变号 ∫_{-L} = -∫_L</text>
+</svg>
+<figcaption>图 11.2.1 第二类曲线积分 $\int_L \vec{F}\cdot d\vec{r}$ — 力做功的连续累加版, 跟方向相关</figcaption>
+</figure>
 <h3 id="11-2-2">11.2.2 计算公式</h3>
 <div class="box-thm">
 <p>
