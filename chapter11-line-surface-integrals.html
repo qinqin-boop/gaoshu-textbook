@@ -1254,27 +1254,38 @@ $$\int_{\partial M} \omega = \int_M d\omega$$
 </p>
 <h2 id="">补充: 麦克斯韦四方程 + 电磁波</h2>
 <h3 id="12-4">知识点 12.4: 麦克斯韦方程组 (微分 + 积分形式)</h3>
+<div class="box-thm">
+<p>Maxwell 方程组 4 条 (微分形式)</p>
 <p>
-电磁场的核心 4 方程, 用场论算子统一表达:
-</p>
-<p>
-<strong>微分形式</strong> (本地):
-</p>
-<ol>
-<li>高斯电场: ∇·$\vec{E}$ = ρ/ε₀ (电荷是电场源)</li>
-<li>高斯磁场: ∇·$\vec{B}$ = 0 (无磁单极)</li>
-<li>法拉第: ∇×$\vec{E}$ = -∂$\vec{B}$/∂t</li>
-<li>安培-麦克斯韦: ∇×$\vec{B}$ = μ₀J→ + μ₀ε₀ ∂$\vec{E}$/∂t</li>
-</ol>
-<p>
-<strong>积分形式</strong> (全局, 用高斯/斯托克斯转化):
+电磁场核心 4 方程, 用场论算子统一表达:
 </p>
 <ol>
-<li>∮∮ $\vec{E}$·dS→ = Q_内/ε₀</li>
-<li>∮∮ $\vec{B}$·dS→ = 0</li>
-<li>∮ $\vec{E}$·dr→ = -dΦ_B/dt</li>
-<li>∮ $\vec{B}$·dr→ = μ₀I_内 + μ₀ε₀ dΦ_E/dt</li>
+<li><strong>高斯电场</strong>: $\nabla \cdot \vec{E} = \rho/\epsilon_0$ (电荷是电场源)</li>
+<li><strong>高斯磁场</strong>: $\nabla \cdot \vec{B} = 0$ (无磁单极)</li>
+<li><strong>法拉第</strong>: $\nabla \times \vec{E} = -\partial \vec{B}/\partial t$ (变磁场生电场)</li>
+<li><strong>安培-Maxwell</strong>: $\nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \epsilon_0 \partial \vec{E}/\partial t$ (电流 + 变电场生磁场)</li>
 </ol>
+</div>
+<div class="box-thm">
+<p>Maxwell 方程组 (积分形式)</p>
+<p>
+用 Gauss/Stokes 转化全局形式:
+</p>
+<ol>
+<li>$\oiint_{\partial V} \vec{E}\cdot d\vec{S} = Q_{\text{内}}/\epsilon_0$</li>
+<li>$\oiint_{\partial V} \vec{B}\cdot d\vec{S} = 0$</li>
+<li>$\oint_{\partial \Sigma} \vec{E}\cdot d\vec{r} = -d\Phi_B/dt$</li>
+<li>$\oint_{\partial \Sigma} \vec{B}\cdot d\vec{r} = \mu_0 I_{\text{内}} + \mu_0 \epsilon_0 d\Phi_E/dt$</li>
+</ol>
+</div>
+<div class="box-intuition">
+<p>微分 vs 积分形式选哪个</p>
+<ul>
+<li><strong>微分</strong>: 偏微分方程, 解析推导 (波动方程从这推)</li>
+<li><strong>积分</strong>: 直接对应实验测量 (电容器/磁通 等)</li>
+<li>二者等价, Gauss/Stokes 公式互通.</li>
+</ul>
+</div>
 <h3 id="12-5">知识点 12.5: 电磁波 (波动方程推导)</h3>
 <div class="box-thm">
 <p>电磁波动方程</p>
