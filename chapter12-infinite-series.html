@@ -492,6 +492,35 @@ $\rho<1$:取 $r$ 使 $\rho<r<1$,$\exists N$ 使 $n\ge N\Rightarrow\sqrt[n]{u_n}<
 (积分判别法)设 $f:[N,\infty)\to[0,\infty)$ 是<strong>连续、单调递减</strong>函数,$u_n=f(n)$。则 $\sum_{n=N}^\infty u_n$ 与广义积分 $\int_N^\infty f(x)\,dx$ <strong>同收敛或同发散</strong>。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 积分判别法: 矩形+曲线对比 -->
+  <line x1="40" y1="190" x2="450" y2="190" stroke="#666" stroke-width="1.5"/>
+  <line x1="40" y1="190" x2="40" y2="40" stroke="#666" stroke-width="1.5"/>
+  <text x="455" y="195" font-size="11" fill="#666">x</text>
+  <text x="20" y="40" font-size="11" fill="#666">y</text>
+  <!-- 连续递减曲线 f(x) -->
+  <path d="M 60,60 Q 130,140 220,170 Q 310,182 430,187" fill="none" stroke="#1a365d" stroke-width="2.5"/>
+  <text x="240" y="155" font-size="12" fill="#1a365d" font-weight="bold">y = f(x)</text>
+  <!-- 上界矩形 (高 = f(n)) — 浅蓝 -->
+  <rect x="60" y="65" width="50" height="125" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="110" y="100" width="50" height="90" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="160" y="135" width="50" height="55" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="210" y="155" width="50" height="35" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="260" y="167" width="50" height="23" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+  <!-- 下界矩形 (高 = f(n+1)) — 浅红 (offset 1 step) -->
+  <rect x="60" y="100" width="50" height="90" fill="#c2410c" fill-opacity="0.2" stroke="#c2410c" stroke-width="1" stroke-dasharray="3 2"/>
+  <rect x="110" y="135" width="50" height="55" fill="#c2410c" fill-opacity="0.2" stroke="#c2410c" stroke-width="1" stroke-dasharray="3 2"/>
+  <rect x="160" y="155" width="50" height="35" fill="#c2410c" fill-opacity="0.2" stroke="#c2410c" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="70" y="210" font-size="11" fill="#666">N</text>
+  <text x="120" y="210" font-size="11" fill="#666">N+1</text>
+  <text x="172" y="210" font-size="11" fill="#666">N+2</text>
+  <!-- 标题 -->
+  <text x="60" y="30" font-size="13" font-family="serif" fill="#1a365d" font-weight="bold">积分判别法: 矩形和 (级数) ↔ 曲线下面积 (积分)</text>
+  <text x="60" y="226" font-size="11" fill="#666">∫_N^∞ f dx 与 Σ f(n) 同收敛或同发散 (差异 = u_N 有限)</text>
+</svg>
+<figcaption>图 12.2.1 积分判别法的几何: 把连续递减曲线 $f(x)$ 用左 / 右端点矩形夹逼, 矩形和 = 级数, 曲线下面积 = 积分; 二者只差 $u_N$ 有限项</figcaption>
+</figure>
 <div class="box-proof">
 <p>
 单调递减意味着 $f(n+1)\le f(x)\le f(n)$ 对 $x\in[n,n+1]$。积分:
