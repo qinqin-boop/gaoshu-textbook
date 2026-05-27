@@ -1502,19 +1502,25 @@ V = 1 · 2π · 3/2 = 3π.
 <li>AI: 数据可能分布在低维环面上 (流形假设)</li>
 </ul>
 <h3 id="12-9-solid-angle">知识点 12.9: 立体角 (Solid Angle) 概念</h3>
+<div class="box-def">
+<p>立体角 (Solid Angle)</p>
 <p>
-<strong>问题</strong>: 二维"角"用弧长 / 半径 = $\theta$ (弧度). 三维"立体角"如何定义?
+二维"角" = 弧长 / 半径 = $\theta$ (弧度). 三维<strong>立体角</strong>:
+$$\Omega = \frac{\text{球面上所截面积}}{r^2}$$
+单位: 球面度 (steradian, sr). 全球面 $\Omega = 4\pi r^2 / r^2 = 4\pi$ sr.
 </p>
+</div>
+<div class="box-intuition">
+<p>立体角 = 三维"开口大小"</p>
+<ul>
+<li>二维: 角度量"从一个顶点看到的弧"占整圈的多少</li>
+<li>三维: 立体角量"从一个顶点看到的曲面"占整球的多少</li>
+<li>全空间 $4\pi$ sr; 半空间 $2\pi$ sr; 1° × 1° 小方块 $\approx (1°)^2 \cdot \pi^2/180^2 \approx 3 \times 10^{-4}$ sr</li>
+</ul>
 <p>
-<strong>定义</strong>: 立体角 $\Omega$ = 球面上面积 / r² (单位: 球面度 steradian sr).
+<strong>Gauss 定理本质</strong>: 任意闭曲面包围单位点电荷, $\oiint \vec{E}\cdot d\vec{S} = 1/\varepsilon_0$. 原因是球面立体角积分 $= 4\pi$, 跟距离无关.
 </p>
-<p>
-<strong>全球面 $\Omega$ = 4π sr</strong> (即面积 4πr² / r²).
-</p>
-<p>
-<strong>点电荷 Gauss 定理</strong>: 任意闭曲面包围单位点电荷, ∮∮ $\vec{E}$·dS→ = 1/ε₀.
-本质: 4π·k_e (球面立体角积分).
-</p>
+</div>
 <div class="box-example">
 <p>例题 12-9</p>
 <p>
