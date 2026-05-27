@@ -373,6 +373,16 @@ u_(n+1)/u_n = (n+1)!/(n+1)^(n+1) · n^n/n! = (n+1) · n^n / (n+1)^(n+1) = (n/(n+
 $$\sum_{n=1}^\infty u_n \text{ 收敛} \Leftrightarrow \int_1^\infty f(x)\,dx \text{ 收敛}$$
 </p>
 </div>
+<div class="box-intuition">
+<p>积分判别法适用场景</p>
+<ul>
+<li>$u_n$ 跟"连续函数" $f(x)$ 易于对应 (如 $1/n^p$ ↔ $1/x^p$)</li>
+<li>反常积分有<strong>初等原函数</strong>容易算 (如 $\ln n$ ↔ $\int 1/x = \ln x$)</li>
+</ul>
+<p>
+经典: $\sum 1/(n\ln n) \leftrightarrow \int dx/(x\ln x) = \ln\ln x \to \infty$ 发散.
+</p>
+</div>
 <div class="box-example">
 <p>例题 3-5</p>
 <p>
