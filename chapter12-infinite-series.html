@@ -1381,9 +1381,17 @@ $$\sum_{n=0}^\infty (-1)^n a_n = \sum_{k=0}^\infty \frac{\Delta^k a_0}{2^{k+1}}$
 </p>
 </div>
 <h3 id="8-11">知识点 8.11: 级数与微分方程的桥梁 — 幂级数解法</h3>
+<div class="box-intuition">
+<p>幂级数法 — 没初等解时的"万能解锁器"</p>
 <p>
-<strong>核心</strong>: 二阶变系数 ODE y'' + p(x)y' + q(x)y = 0 没有初等函数解时, 假设 y = ∑ aₙxⁿ, 代入求递推关系.
+二阶变系数 ODE
+$$y'' + p(x)y' + q(x)y = 0$$
+若 $p, q$ 不是常数, 通常<strong>没有初等函数闭式解</strong>. 此时<strong>假设 $y = \sum a_n x^n$ 代入</strong>, 通过比较系数得到关于 $a_n$ 的<strong>递推关系</strong>, 逐项求出.
 </p>
+<p>
+这是 19 世纪发现整个"特殊函数家族" (Bessel / Legendre / Hermite / Laguerre) 的统一方法.
+</p>
+</div>
 <div class="box-example">
 <p>例题 8-11</p>
 <p>
@@ -1396,18 +1404,20 @@ $$\sum_{n=0}^\infty (-1)^n a_n = \sum_{k=0}^\infty \frac{\Delta^k a_0}{2^{k+1}}$
 由 a₀, a₁ 两个自由系数确定两个线性独立解 Ai(x), Bi(x). 这是量子隧道效应、彩虹超数光学的特殊函数.
 </p>
 </div>
+<div class="box-intuition">
+<p>4 大特殊函数家族 — 都是幂级数法的胜利</p>
 <p>
-<strong>应用</strong>:
+| 方程 | 解 | 物理来源 |
+|---|---|---|
+| Bessel $x^2y''+xy'+(x^2-n^2)y=0$ | $J_n(x), Y_n(x)$ | 圆鼓振动, 圆波导, 柱坐标 PDE |
+| Legendre $(1-x^2)y''-2xy'+l(l+1)y=0$ | $P_l(x)$ | 球谐函数 (量子角动量, 静电势多极展开) |
+| Hermite $y''-2xy'+2ny=0$ | $H_n(x)$ | 量子谐振子波函数 (一维, 二次势阱) |
+| Laguerre $xy''+(1-x)y'+ny=0$ | $L_n(x)$ | 氢原子径向波函数 (库仑势) |
 </p>
-<ul>
-<li>贝塞尔方程 J_n(x): 圆鼓振动, 圆波导</li>
-<li>勒让德方程 P_n(x): 球谐函数 (量子角动量)</li>
-<li>埃尔米特方程 H_n(x): 量子谐振子波函数</li>
-<li>拉盖尔方程 L_n(x): 氢原子径向波函数</li>
-</ul>
 <p>
-这些"特殊函数"全是用幂级数法求出, <strong>多项式逼近的胜利</strong>.
+<strong>这些"特殊函数"全部用幂级数法求出 — 是多项式逼近思想跟微分方程结合的"工业产品"</strong>, 撑起了 19-20 世纪整个数学物理.
 </p>
+</div>
 <h3 id="8-12-pad">知识点 8.12: Padé 逼近 (有理函数逼近)</h3>
 <div class="box-intuition">
 <p>Taylor 的局限</p>
