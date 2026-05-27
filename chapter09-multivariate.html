@@ -1236,6 +1236,23 @@ $$L(\theta')\le L(\theta)-\eta\|\nabla L\|^2+\tfrac{L\eta^2}{2}\|\nabla L\|^2=L(
 </p>
 </div>
 <h3 id="9-7-2">9.7.2 曲面的切平面与法线(隐式)</h3>
+<figure>
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="nm1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <circle cx="160" cy="110" r="70" fill="#eef4fb" fill-opacity="0.6" stroke="#1a365d" stroke-width="1.8"/>
+  <circle cx="160" cy="110" r="3" fill="#1a365d"/>
+  <text x="125" y="113" font-size="12" font-weight="bold" fill="#1a365d">球心</text>
+  <circle cx="220" cy="75" r="4" fill="#c2410c"/>
+  <text x="228" y="73" font-size="11" fill="#c2410c">P</text>
+  <line x1="160" y1="110" x2="270" y2="45" stroke="#c2410c" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#nm1)"/>
+  <text x="225" y="48" font-size="11" fill="#c2410c">法线</text>
+  <line x1="160" y1="110" x2="220" y2="75" stroke="#888" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <text x="35" y="200" font-size="11" fill="#666">球面性质: 任一点法线 = ∇F = 2(x,y,z) 必过球心</text>
+</svg>
+<figcaption>图 9.7.3 球面 $x^2+y^2+z^2=R^2$ 法线必过球心:$\nabla F=2(x,y,z)$ 方向沿 $\vec{OP}$,这是球的本质几何性质。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 设曲面 $\Sigma:F(x,y,z)=0$ 在 $P_0(x_0,y_0,z_0)$ 处满足 $\nabla F(P_0)\neq\vec{0}$。则:
@@ -1838,6 +1855,33 @@ $$X=\begin{pmatrix}1&x_1^{(1)}&\cdots&x_1^{(p)}\\ \vdots&\vdots&&\vdots\\ 1&x_n^
 <strong>非线性拟合用基函数线性化</strong>:拟合 $y=c_0+c_1\sin x+c_2\cos x+c_3\sin 2x+\dots$,把基函数 $\{1,\sin x,\cos x,\dots\}$ 在数据点取值组成 $X$,再走 $\hat\beta=(X^\top X)^{-1}X^\top\vec{y}$——这就是 Fourier 级数离散数据情形的最小二乘版本。把基函数换成多项式 $\{1,x,x^2,\dots,x^k\}$ 得<strong>多项式拟合</strong>;换成高斯径向基 $\{e^{-\|x-c_i\|^2/2\sigma^2}\}$ 得<strong>RBF 回归</strong>。
 </p>
 <h3 id="9-10-5">9.10.5 与机器学习的关系</h3>
+<figure>
+<svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="nf1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+    <marker id="nf2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <text x="35" y="40" font-size="12" font-weight="bold" fill="#1a365d">forward (正向: 用链式法则)</text>
+  <circle cx="50" cy="80" r="15" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="44" y="85" font-size="12">x</text>
+  <line x1="65" y1="80" x2="95" y2="80" stroke="#1a365d" marker-end="url(#nf1)"/>
+  <circle cx="115" cy="80" r="15" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="105" y="85" font-size="11">σ(W₁)</text>
+  <line x1="130" y1="80" x2="160" y2="80" stroke="#1a365d" marker-end="url(#nf1)"/>
+  <circle cx="180" cy="80" r="15" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="170" y="85" font-size="11">σ(W₂)</text>
+  <line x1="195" y1="80" x2="225" y2="80" stroke="#1a365d" marker-end="url(#nf1)"/>
+  <circle cx="245" cy="80" r="15" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="242" y="85" font-size="12">ŷ</text>
+  <line x1="260" y1="80" x2="290" y2="80" stroke="#1a365d" marker-end="url(#nf1)"/>
+  <circle cx="310" cy="80" r="15" fill="#fde2e2" stroke="#b91c1c"/>
+  <text x="306" y="85" font-size="12">L</text>
+  <text x="35" y="135" font-size="12" font-weight="bold" fill="#c2410c">backprop (反向: 应用矩阵链式)</text>
+  <path d="M 310 100 Q 200 165 50 100" fill="none" stroke="#c2410c" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#nf2)"/>
+  <text x="155" y="200" font-size="11" fill="#c2410c">∂L/∂Wₖ = ∂L/∂ŷ · ∂ŷ/∂Wₖ (链式回传)</text>
+</svg>
+<figcaption>图 9.10.5 神经网络训练 = 多元链式法则的工程实现:forward 用链式合并;backprop 用矩阵链式从损失逐层回传到每个 $W_k$。</figcaption>
+</figure>
 <figure>
 <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <line x1="40" y1="120" x2="320" y2="120" stroke="#888" stroke-width="1"/>

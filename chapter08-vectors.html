@@ -966,6 +966,22 @@ $$\boxed{f(\pm\sqrt{x^2+y^2},\,z)=0}\quad(\text{把 }y\text{ 替换为 }\pm\sqrt
 </p>
 </div>
 <h3 id="8-3-5">8.3.5 截痕法画曲面</h3>
+<figure>
+<svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <ellipse cx="80" cy="100" rx="50" ry="35" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <ellipse cx="80" cy="100" rx="35" ry="25" fill="none" stroke="#1a365d" stroke-width="1.1"/>
+  <ellipse cx="80" cy="100" rx="20" ry="14" fill="none" stroke="#1a365d" stroke-width="0.9"/>
+  <text x="55" y="170" font-size="11" fill="#1a365d">z=c 切片 (椭圆)</text>
+  <ellipse cx="200" cy="100" rx="40" ry="55" fill="#fef6e4" stroke="#c9a227" stroke-width="1.5"/>
+  <ellipse cx="200" cy="100" rx="28" ry="38" fill="none" stroke="#c9a227" stroke-width="1.1"/>
+  <text x="175" y="170" font-size="11" fill="#8b6f1c">x=c 切片 (椭圆)</text>
+  <ellipse cx="320" cy="100" rx="50" ry="40" fill="#ecf7ec" stroke="#2d6e2d" stroke-width="1.5"/>
+  <ellipse cx="320" cy="100" rx="35" ry="28" fill="none" stroke="#2d6e2d" stroke-width="1.1"/>
+  <text x="293" y="170" font-size="11" fill="#2d6e2d">y=c 切片 (椭圆)</text>
+  <text x="60" y="30" font-size="12" font-weight="bold" fill="#444">椭球面三族截痕 (堆叠还原 3D)</text>
+</svg>
+<figcaption>图 8.3.3 截痕法画椭球面:用 $x=c,y=c,z=c$ 三族平面截切,得三族同心椭圆;堆叠还原 3D 曲面 — 机械绘图与 matplotlib 内部算法。</figcaption>
+</figure>
 <div class="box-intuition">
 <p>
 <strong>截痕法</strong>:用 $x=$ 常、$y=$ 常、$z=$ 常的三族平面分别截曲面,得到三族<strong>平面曲线</strong>(交线),把这些曲线"堆叠"还原三维曲面。这是机械绘图、几何分析、Python matplotlib 等工具背后的核心思想。

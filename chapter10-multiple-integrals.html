@@ -363,6 +363,18 @@ $$I=\int_0^1\!dx\int_0^x e^{x^2}\,dy=\int_0^1 x\,e^{x^2}\,dx=\tfrac12 e^{x^2}\bi
 </div>
 <h3 id="10-2-3">10.2.3 极坐标变换与雅可比因子</h3>
 <figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <text x="35" y="40" font-size="13" fill="#1a365d">I = ∫_{-∞}^{∞} e^{-x²} dx = ?</text>
+  <text x="35" y="65" font-size="13" fill="#c2410c">技巧: I² = (∫e^{-x²}dx)(∫e^{-y²}dy)</text>
+  <text x="55" y="90" font-size="13" fill="#c2410c">       = ∬ e^{-(x²+y²)} dxdy</text>
+  <text x="55" y="115" font-size="13" font-style="italic" fill="#2d6e2d">换极坐标: x²+y²=r²</text>
+  <text x="55" y="140" font-size="13" fill="#2d6e2d">= ∫₀^{2π} dθ ∫₀^∞ e^{-r²}·r dr = 2π·(1/2) = π</text>
+  <text x="50" y="170" font-size="14" font-weight="bold" fill="#b91c1c">⇒ I = √π</text>
+  <text x="200" y="170" font-size="11" fill="#666">→ 正态分布归一化系数 1/√(2π)</text>
+</svg>
+<figcaption>图 10.2.6 Gauss 积分 $\int e^{-x^2}dx=\sqrt{\pi}$:平方+极坐标 = 经典推导;给出正态分布密度归一化系数 $\frac{1}{\sqrt{2\pi}}e^{-x^2/2}$。</figcaption>
+</figure>
+<figure>
 <svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <circle cx="50" cy="180" r="40" fill="none" stroke="#1a365d" stroke-width="0.7" opacity="0.5"/>
   <circle cx="50" cy="180" r="80" fill="none" stroke="#1a365d" stroke-width="0.7" opacity="0.5"/>
@@ -633,6 +645,15 @@ $$I=\int_0^{2\pi}\!d\theta\int_0^2\!\int_r^2 z\cdot r\,dz\,dr=2\pi\int_0^2 r\cdo
 <figcaption>图 10.3.2 柱坐标体积微元 $dV = r\,dr\,d\theta\,dz$ — "扇环柱体"几何; $r$ 因子来自扇环面积</figcaption>
 </figure>
 <h3 id="10-3-3">10.3.3 球坐标(关键)</h3>
+<figure>
+<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <circle cx="160" cy="100" r="70" fill="#eef4fb" fill-opacity="0.5" stroke="#1a365d" stroke-width="1.8"/>
+  <ellipse cx="160" cy="100" rx="70" ry="14" fill="none" stroke="#1a365d" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="115" y="115" font-size="13" fill="#1a365d">球 R=R</text>
+  <text x="30" y="190" font-size="12" font-weight="bold" fill="#444">V = ∫₀^{2π}∫₀^π∫₀^R ρ²sinφ dρdφdθ = 4πR³/3</text>
+</svg>
+<figcaption>图 10.3.4 球体积公式推导:$V=\int_0^{2\pi}d\theta\int_0^\pi\sin\varphi\,d\varphi\int_0^R\rho^2\,d\rho=2\pi\cdot 2\cdot\frac{R^3}{3}=\frac{4\pi R^3}{3}$。</figcaption>
+</figure>
 <figure>
 <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <defs>
