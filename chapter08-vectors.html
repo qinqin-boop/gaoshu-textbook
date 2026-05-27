@@ -1498,6 +1498,31 @@ $(\kappa, \tau)$ 唯一刻画曲线形状 (相差刚体运动). 平面曲线 $\t
 <li>$K < 0$: <strong>双曲点</strong> (马鞍, 鞍面)</li>
 </ul>
 </div>
+<figure>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 3 类曲率点对比 -->
+  <!-- 椭圆点 (球面) K > 0 -->
+  <text x="40" y="30" font-size="13" fill="#1a365d" font-weight="bold">K > 0 (椭圆点)</text>
+  <circle cx="90" cy="105" r="55" fill="#22543d" fill-opacity="0.25" stroke="#22543d" stroke-width="2"/>
+  <text x="62" y="180" font-size="11" fill="#22543d">球面 / 椭球</text>
+  <text x="55" y="200" font-size="11" fill="#666">两主曲率同号</text>
+
+  <!-- 抛物点 (圆柱) K = 0 -->
+  <text x="195" y="30" font-size="13" fill="#1a365d" font-weight="bold">K = 0 (抛物点)</text>
+  <path d="M 200,70 Q 200,90 240,90 Q 280,90 280,70 L 280,150 Q 280,170 240,170 Q 200,170 200,150 Z" fill="#c9a227" fill-opacity="0.3" stroke="#c9a227" stroke-width="2"/>
+  <text x="216" y="180" font-size="11" fill="#c9a227">圆柱 / 锥</text>
+  <text x="210" y="200" font-size="11" fill="#666">一主曲率 = 0</text>
+
+  <!-- 双曲点 (鞍面) K < 0 -->
+  <text x="345" y="30" font-size="13" fill="#1a365d" font-weight="bold">K < 0 (双曲点)</text>
+  <path d="M 350,80 Q 390,140 430,80" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+  <path d="M 350,150 Q 390,90 430,150" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+  <path d="M 350,80 L 350,150 M 430,80 L 430,150" fill="none" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="358" y="180" font-size="11" fill="#c2410c">马鞍 / 薯片</text>
+  <text x="358" y="200" font-size="11" fill="#666">两主曲率反号</text>
+</svg>
+<figcaption>图 8.6.10 高斯曲率 3 大类型: 椭圆点 ($K{>}0$, 球) / 抛物点 ($K{=}0$, 圆柱) / 双曲点 ($K{<}0$, 鞍面)</figcaption>
+</figure>
 <div class="box-thm">
 <p>Gauss 惊人定理 (Theorema Egregium)</p>
 <p>
