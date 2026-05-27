@@ -1238,50 +1238,53 @@ $\pi$ · Σ b² = $\pi$ · 2 = 2π ✓ (帕塞瓦尔验证)
 </p>
 </div>
 <h3 id="15">知识点 15: 无穷级数应用大全 (本章工程价值)</h3>
+<div class="box-intuition">
+<p>5 大领域 — 级数是现代技术 backbone</p>
 <p>
 <strong>1. 数值计算 (CPU 内部)</strong>:
 </p>
 <ul>
-<li>sin/cos/exp/log 任何超越函数, CPU 都用泰勒级数前 N 项近似</li>
-<li>例: sin(0.5) = 0.5 - 0.5³/6 + 0.5⁵/120 - ... 取 4 项已精确到 6 位</li>
-<li>计算器/GPU 用 CORDIC 或 minimax 优化</li>
+<li>$\sin / \cos / \exp / \log$ 等超越函数, CPU 用 Taylor 前 $N$ 项近似</li>
+<li>例: $\sin(0.5) = 0.5 - 0.5^3/6 + 0.5^5/120 - \ldots$ 取 4 项 → 6 位精度</li>
+<li>计算器 / GPU 实际用 CORDIC 或 minimax 优化 (比 Taylor 更准)</li>
 </ul>
 <p>
 <strong>2. 信号处理 (傅里叶 → 万物)</strong>:
 </p>
 <ul>
-<li>MP3/AAC 音频压缩: 傅里叶变换到频域 + 丢人耳不敏感高频</li>
-<li>JPEG/HEIF 图像压缩: 余弦变换 (DCT) + 量化</li>
-<li>5G/WiFi 调制: OFDM 用傅里叶级数把频带分给多人</li>
+<li><strong>MP3 / AAC</strong>: FFT 到频域 + 丢人耳不敏感高频</li>
+<li><strong>JPEG / HEIF</strong>: DCT (余弦变换) + 量化</li>
+<li><strong>5G / WiFi</strong>: OFDM 调制把频带分给多用户</li>
 </ul>
 <p>
-<strong>3. AI/ML</strong>:
+<strong>3. AI / ML</strong>:
 </p>
 <ul>
-<li>注意力机制 (Transformer): softmax 用泰勒展开数值稳定</li>
-<li>高斯过程: 协方差核函数本质是级数</li>
-<li>神经网络无限宽极限 (NTK): 是个高斯过程级数</li>
+<li>Transformer softmax: 数值稳定靠 Taylor 局部展开</li>
+<li>高斯过程: 协方差核 = 级数</li>
+<li>NTK (神经网络无限宽极限): 高斯过程级数</li>
 </ul>
 <p>
 <strong>4. 物理</strong>:
 </p>
 <ul>
-<li>量子力学波函数: 用本征函数 (类傅里叶级数) 展开</li>
-<li>弦/膜振动: 正交基函数级数解</li>
-<li>电磁场: 多极展开 (球谐函数级数)</li>
+<li>量子力学波函数: 本征函数展开 (类傅里叶)</li>
+<li>弦 / 膜振动: 正交基函数级数解</li>
+<li>电磁场: 多极展开 = 球谐函数级数</li>
 </ul>
 <p>
 <strong>5. 数学美感</strong>:
 </p>
 <ul>
-<li>$\pi$ = 4(1 - 1/3 + 1/5 - 1/7 + ...) (莱布尼茨公式)</li>
-<li>e = 1 + 1/1! + 1/2! + 1/3! + ...</li>
-<li>巴塞尔: Σ 1/n² = π²/6</li>
-<li>欧拉乘积: ζ(s) = Σ 1/n^s = Π_p 1/(1-p^(-s)), 连接素数</li>
+<li>$\pi = 4(1 - 1/3 + 1/5 - 1/7 + \ldots)$ (Leibniz)</li>
+<li>$e = \sum_{n=0}^\infty 1/n!$</li>
+<li>Basel: $\sum 1/n^2 = \pi^2/6$</li>
+<li>Euler 乘积: $\zeta(s) = \prod_p 1/(1 - p^{-s})$ 连接素数</li>
 </ul>
 <p>
-<strong>学完这章 = 你能"看见" 复杂函数本质上都是简单函数的无穷叠加</strong> — 这是傅里叶、量子、信号处理的核心直觉.
+<strong>学完这章 = 能"看见"复杂函数 = 简单函数的无穷叠加</strong> — Fourier / 量子 / 信号处理的核心直觉.
 </p>
+</div>
 <p>
 ---
 </p>
