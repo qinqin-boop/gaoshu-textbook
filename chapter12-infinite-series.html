@@ -1559,21 +1559,27 @@ e^x ≈ (1 + x/2 + x²/12) / (1 - x/2 + x²/12)
 <li>AI: 神经网络架构 (有理激活函数比 ReLU 性能更优)</li>
 </ul>
 <h3 id="8-13">知识点 8.13: 级数与勒贝格积分 (一瞥)</h3>
+<div class="box-intuition">
+<p>极限交换问题</p>
 <p>
-<strong>经典极限交换问题</strong>: 何时 lim ∑aₙ(x) = ∑ lim aₙ(x)?
-高数范围: 一致收敛保证可以.
+<strong>何时 $\lim \sum a_n(x) = \sum \lim a_n(x)$</strong>? 高数: <strong>一致收敛</strong>保证可以. 但很多实际情形非一致收敛, 需要更强工具.
+</p>
+</div>
+<div class="box-thm">
+<p>Lebesgue 三大极限定理</p>
+<p>
+<strong>单调收敛定理 (MCT)</strong>: $a_n(x)$ 单调上升 ⟹ $\lim\int = \int\lim$.
 </p>
 <p>
-<strong>勒贝格观点</strong> (更强工具):
+<strong>控制收敛定理 (DCT)</strong>: $|a_n(x)| \le g(x)$, $\int g < \infty$ ⟹ 可交换.
 </p>
-<ul>
-<li><strong>单调收敛定理 (MCT)</strong>: aₙ(x) 单调上升 → 可以交换</li>
-<li><strong>控制收敛定理 (DCT)</strong>: |aₙ(x)| ≤ g(x), ∫g(x)dx&lt;∞ → 可以交换</li>
-<li><strong>法图引理 (Fatou)</strong>: ∫liminf ≤ liminf∫</li>
-</ul>
 <p>
-这是<strong>实分析</strong>的核心, 高数级数论是它的特例.
+<strong>Fatou 引理</strong>: $\int \liminf a_n \le \liminf \int a_n$ (无需收敛假设).
 </p>
+<p>
+这是<strong>实分析</strong>核心. 高数级数论是它的特例.
+</p>
+</div>
 <p>
 <strong>意义</strong>:
 </p>
