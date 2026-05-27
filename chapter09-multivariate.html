@@ -199,21 +199,27 @@ $\nabla f$ 永远跟等高线<strong>垂直</strong>, 指向 $z$ 增加最快方
 </div>
 <h2 id="9-2">9.2 偏导数 (本章核心)</h2>
 <h3 id="3-7-9-1">知识点 3.7: 二元函数极限的多路径检测 (对齐书 §9.1 三)</h3>
+<div class="box-intuition">
+<p>二元极限 = 任意路径同值</p>
 <p>
-<strong>核心</strong>: 二元极限要求"<strong>任意路径</strong> 趋近都得到同一值".
+<strong>核心</strong>: 二元极限要求"<strong>任意路径</strong>趋近 $(x_0, y_0)$ 都得到同一值"; 一元只有左右两侧, 二元有 $\infty$ 多条路径, <strong>要求更严</strong>.
 </p>
 <p>
 <strong>实操检测法</strong>:
 </p>
 <ol>
-<li><strong>沿 x 轴</strong>: y = 0, x → 0. f(x, 0) → ?</li>
-<li><strong>沿 y 轴</strong>: x = 0, y → 0. f(0, y) → ?</li>
-<li><strong>沿 y = kx 直线</strong>: 看是否含 k</li>
-<li><strong>沿 y = x²</strong> 等曲线</li>
+<li><strong>沿 $x$ 轴</strong>: $y = 0, x \to 0$, 看 $f(x, 0)$</li>
+<li><strong>沿 $y$ 轴</strong>: $x = 0, y \to 0$, 看 $f(0, y)$</li>
+<li><strong>沿 $y = kx$ 直线</strong>: 看是否含 $k$ (含 $k$ → 不存在)</li>
+<li><strong>沿 $y = x^2$</strong> 等曲线 (上面 3 不出问题但仍可能差)</li>
 </ol>
+</div>
+<div class="box-pitfall">
+<p>找到两条不同 = 不存在</p>
 <p>
-<strong>如果两条路径给不同值</strong> → 极限<strong>不存在</strong> (反例反证, 不必所有路径检测).
+两条路径值不同 → 极限<strong>不存在</strong> (反例反证, 不必检测所有路径). 但反过来"3 条路径相等 ≠ 极限存在" — 真证存在要用 $\varepsilon\delta$ 或夹逼.
 </p>
+</div>
 <p>
 <strong>经典反例</strong>:
 </p>
