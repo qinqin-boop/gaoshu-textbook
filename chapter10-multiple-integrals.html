@@ -1510,6 +1510,26 @@ $$I^2 = \iint_{\mathbb{R}^2} e^{-(x^2+y^2)}\,dxdy = \int_0^{2\pi}\!\!\int_0^\inf
 <strong>n 维</strong>: $\int_{\mathbb{R}^n} e^{-\frac{1}{2} \vec{x}^T A \vec{x}}\,d\vec{x} = \frac{(2\pi)^{n/2}}{\sqrt{\det A}}$ ($A$ 正定).
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 高斯曲线 e^{-x²} -->
+  <line x1="40" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="240" y1="40" x2="240" y2="220" stroke="#666" stroke-width="1.5"/>
+  <text x="455" y="205" font-size="11" fill="#666">x</text>
+  <text x="248" y="40" font-size="11" fill="#666">y</text>
+  <!-- 钟形曲线 e^{-x²} -->
+  <path d="M 60,200 Q 150,200 195,180 Q 220,150 240,60 Q 260,150 285,180 Q 330,200 420,200" fill="#c2410c" fill-opacity="0.35" stroke="#c2410c" stroke-width="3"/>
+  <!-- 标 √π 面积 -->
+  <text x="280" y="125" font-size="14" fill="#1a365d" font-weight="bold">面积 = √π ≈ 1.7725</text>
+  <!-- 关键点 -->
+  <circle cx="240" cy="60" r="3" fill="#c2410c"/>
+  <text x="248" y="55" font-size="10" fill="#c2410c">峰值 = 1 (at x=0)</text>
+  <!-- 标题 -->
+  <text x="40" y="35" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">高斯积分: ∫_{-∞}^∞ e^{-x²} dx = √π</text>
+  <text x="40" y="225" font-size="11" fill="#666">一维不定积分无初等表达, 二维转极坐标立刻可算 — 概率密度归一化的根</text>
+</svg>
+<figcaption>图 10.5.3 高斯钟形曲线 $e^{-x^2}$ 下面积 = $\sqrt{\pi}$ — 升维到 $\mathbb{R}^2$ 换极坐标得到的"数学美技"</figcaption>
+</figure>
 <div class="box-intuition">
 <p>一维做不出, 二维一招制胜</p>
 <p>
