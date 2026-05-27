@@ -862,9 +862,26 @@ $$\int_{\partial M}\omega=\int_M d\omega$$
 | $3$ | $2$ | $3$ | Gauss | 通量 ↔ 散度 |
 | $n$ | $k$ | $k+1$ | 一般 Stokes | (任意维) |
 </p>
+<div class="box-intuition">
+<p>外微分 $d^2 = 0$ — 两条经典向量恒等式的统一</p>
 <p>
-外微分满足 <strong>$d^2=0$</strong>(连用两次外微分为零),对应于:$\nabla\cdot(\nabla\times\vec{F})=0$(旋度场无源)、$\nabla\times(\nabla\phi)=\vec{0}$(梯度场无旋)。这两条恒等式在物理上分别表达"磁场来自旋度故无磁单极"、"势场无环流故路径无关"——<strong>经典 Maxwell 理论与 de Rham 上同调的接口</strong>。
+外微分满足 $\boxed{d \circ d = 0}$ (连用两次外微分为零). 退化到向量分析就是两条<strong>永远成立</strong>的恒等式:
 </p>
+<ul>
+<li>$\nabla \cdot (\nabla \times \vec{F}) = 0$ — <strong>旋度场必无源</strong> (散度永远 0)</li>
+<li>$\nabla \times (\nabla \phi) = \vec{0}$ — <strong>梯度场必无旋</strong> (旋度永远 0)</li>
+</ul>
+<p>
+<strong>物理意义</strong>:
+</p>
+<ul>
+<li>第一条 → "磁场来自旋度故无磁单极" (Maxwell 第二方程的代数原因)</li>
+<li>第二条 → "势场无环流故路径无关" (保守力 / 静电势的代数原因)</li>
+</ul>
+<p>
+<strong>经典 Maxwell 理论与 de Rham 上同调的接口</strong> — 高数下册学到这里, 摸到了 20 世纪几何代数理论的边.
+</p>
+</div>
 <div class="box-pitfall">
 <p>
 <strong>易错点</strong>:
