@@ -35,6 +35,29 @@
 上册定积分 $\int_a^b f(x)\,dx$ 解决"曲线下面积"。本章把它升到<strong>多维区域上的积分</strong>:平面区域上的二重积分(曲面下体积 / 板的质量 / 联合概率)、空间立体上的三重积分(立体质量 / 转动惯量 / 引力 / 电场)。核心工具是 <strong>Fubini 定理</strong>(化累次积分)与<strong>坐标变换</strong>(极 / 柱 / 球,带雅可比因子)。这是物理 / 概率 / 工程"分布量"计算的统一语言。
 </p>
 <h3 id="10-0-1">10.0.1 全章地图</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="t1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <rect x="20" y="30" width="80" height="40" rx="5" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="30" y="55" font-size="12" font-weight="bold">10.1 概念</text>
+  <line x1="100" y1="50" x2="125" y2="50" stroke="#1a365d" marker-end="url(#t1)"/>
+  <rect x="125" y="30" width="80" height="40" rx="5" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="130" y="55" font-size="12" font-weight="bold">10.2 二重</text>
+  <line x1="205" y1="50" x2="230" y2="50" stroke="#1a365d" marker-end="url(#t1)"/>
+  <rect x="230" y="30" width="80" height="40" rx="5" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="235" y="55" font-size="12" font-weight="bold">10.3 三重</text>
+  <line x1="270" y1="70" x2="270" y2="100" stroke="#1a365d" marker-end="url(#t1)"/>
+  <rect x="180" y="110" width="80" height="40" rx="5" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="185" y="135" font-size="12" font-weight="bold">10.4 应用</text>
+  <line x1="180" y1="130" x2="160" y2="130" stroke="#1a365d" marker-end="url(#t1)"/>
+  <rect x="60" y="110" width="100" height="40" rx="5" fill="#fde2e2" stroke="#b91c1c"/>
+  <text x="65" y="135" font-size="12" font-weight="bold">10.5 含参变量</text>
+  <text x="65" y="172" font-size="11" fill="#666">→ Γ/Beta + 物理 + 概率 + AI 贝叶斯</text>
+</svg>
+<figcaption>图 10.0.1 ch10 学习路径:概念性质 → 二重 → 三重 → 应用 + 含参积分;落地到物理 / 概率 / 工程 / AI 贝叶斯。</figcaption>
+</figure>
 <p>
 ```
 §10.1 概念 ─→ 二重积分定义 (Riemann 和极限) + 7 大性质
@@ -118,6 +141,22 @@
 </p>
 </div>
 <h3 id="10-1-2">10.1.2 几何意义与可积性</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <path d="M 30 170 Q 100 50 200 80 Q 280 110 340 60" fill="none" stroke="#1a365d" stroke-width="2.5"/>
+  <text x="35" y="35" font-size="12" fill="#1a365d">z=f(x,y)</text>
+  <rect x="50" y="80" width="40" height="100" fill="#fef6e4" stroke="#c9a227" stroke-width="1" opacity="0.7"/>
+  <rect x="90" y="60" width="40" height="120" fill="#fef6e4" stroke="#c9a227" stroke-width="1" opacity="0.7"/>
+  <rect x="130" y="60" width="40" height="120" fill="#fef6e4" stroke="#c9a227" stroke-width="1" opacity="0.7"/>
+  <rect x="170" y="75" width="40" height="105" fill="#fef6e4" stroke="#c9a227" stroke-width="1" opacity="0.7"/>
+  <rect x="210" y="85" width="40" height="95" fill="#fef6e4" stroke="#c9a227" stroke-width="1" opacity="0.7"/>
+  <rect x="250" y="95" width="40" height="85" fill="#fef6e4" stroke="#c9a227" stroke-width="1" opacity="0.7"/>
+  <line x1="30" y1="180" x2="340" y2="180" stroke="#888" stroke-width="1"/>
+  <text x="50" y="195" font-size="11" fill="#8b6f1c">小柱体高 = f(ξᵢ) (代表点)</text>
+  <text x="35" y="20" font-size="11" fill="#666">∬f dσ = lim Σ f(ξᵢ,ηᵢ)ΔSᵢ (柱体逼近 → 真体积)</text>
+</svg>
+<figcaption>图 10.1.2 Riemann 和近似:把 $D$ 划成小块,每小块上建一根柱体(高 = $f$ 在代表点的值),柱体体积之和取极限 = 二重积分。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 (可积的充分条件)

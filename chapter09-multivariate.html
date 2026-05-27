@@ -35,6 +35,46 @@
 一元微分 $\frac{dy}{dx}$ 描述「单变量函数」局部变化率;但<strong>现实世界几乎所有现象都依赖多个变量</strong>:温度依赖位置 $(x,y,z)$ 和时间 $t$,损失函数依赖神经网络的百万个参数,经济模型依赖价格 / 利率 / 货币供应。本章把"微分"扩展到多元函数:偏导(单方向)、全微分(线性主部)、方向导数 + 梯度(任意方向)、Hessian(二阶)、链式法则(复合)、隐函数定理(约束)、Taylor(高阶逼近)、极值(最优化)。这就是<strong>所有现代优化、机器学习、物理 PDE 的微分语言</strong>。
 </p>
 <h3 id="9-0-1">9.0.1 全章地图</h3>
+<figure>
+<svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="ma1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <rect x="20" y="40" width="55" height="30" rx="4" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="28" y="60" font-size="11">9.1 概念</text>
+  <rect x="85" y="40" width="55" height="30" rx="4" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="95" y="60" font-size="11">9.2 偏导</text>
+  <rect x="150" y="40" width="60" height="30" rx="4" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="158" y="60" font-size="11">9.3 全微分</text>
+  <line x1="75" y1="55" x2="84" y2="55" stroke="#1a365d" marker-end="url(#ma1)"/>
+  <line x1="140" y1="55" x2="149" y2="55" stroke="#1a365d" marker-end="url(#ma1)"/>
+  <rect x="220" y="40" width="55" height="30" rx="4" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="227" y="60" font-size="11">9.4 链式</text>
+  <rect x="285" y="40" width="55" height="30" rx="4" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="293" y="60" font-size="11">9.5 隐函数</text>
+  <line x1="210" y1="55" x2="219" y2="55" stroke="#1a365d" marker-end="url(#ma1)"/>
+  <line x1="275" y1="55" x2="284" y2="55" stroke="#1a365d" marker-end="url(#ma1)"/>
+  <rect x="20" y="110" width="55" height="30" rx="4" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="30" y="130" font-size="11">9.6 梯度</text>
+  <rect x="85" y="110" width="60" height="30" rx="4" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="92" y="130" font-size="11">9.7 切平面</text>
+  <rect x="155" y="110" width="60" height="30" rx="4" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="160" y="130" font-size="11">9.8 Hessian</text>
+  <rect x="225" y="110" width="60" height="30" rx="4" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="232" y="130" font-size="11">9.9 Taylor</text>
+  <rect x="295" y="110" width="65" height="30" rx="4" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="298" y="130" font-size="11">9.10 OLS</text>
+  <line x1="75" y1="125" x2="84" y2="125" stroke="#1a365d" marker-end="url(#ma1)"/>
+  <line x1="145" y1="125" x2="154" y2="125" stroke="#1a365d" marker-end="url(#ma1)"/>
+  <line x1="215" y1="125" x2="224" y2="125" stroke="#1a365d" marker-end="url(#ma1)"/>
+  <line x1="285" y1="125" x2="294" y2="125" stroke="#1a365d" marker-end="url(#ma1)"/>
+  <text x="20" y="180" font-size="11" font-weight="bold" fill="#444">核心定理库:</text>
+  <text x="20" y="200" font-size="10" fill="#666">Clairaut · 可微 ⇒ 连续+偏导 · 雅可比链式 · 隐函数定理</text>
+  <text x="20" y="218" font-size="10" fill="#666">梯度最速 · Cauchy-Schwarz · Hessian D=AC-B² · Newton 法</text>
+  <text x="20" y="236" font-size="10" fill="#666">Descent Lemma · Taylor 余项 · OLS = 正交投影 · Ridge</text>
+</svg>
+<figcaption>图 9.0.2 ch9 学习流程:概念→偏导→全微分→链式/隐函数→梯度/切平面/Hessian/Taylor/OLS,每节对应一个核心定理。</figcaption>
+</figure>
 <p>
 ```
 §9.1 概念 ─→ 多元极限 + 连续 (路径敏感)
