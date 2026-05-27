@@ -756,6 +756,28 @@ $$V=-2\pi G\rho_0\cdot\frac{2}{d}\!\int_0^R\!\rho^2 d\rho=-\frac{4\pi G\rho_0 R^
 重积分把「微元 $\times$ 密度后累加」推广到二维三维,所以凡是「分布量的总效应」都能用它算。本节给出<strong>面积/体积、质量、质心、转动惯量、引力、曲面面积、概率分布</strong>七大经典应用,每个都从微元推导。这些公式不仅是物理常用工具,也是机器学习中<strong>期望 / 协方差 / 边缘分布</strong>计算的连续版。
 </p>
 <h3 id="10-4-1">10.4.1 几何量:面积、体积、曲面面积</h3>
+<figure>
+<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <rect x="40" y="20" width="160" height="160" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <circle cx="120" cy="100" r="80" fill="#fef6e4" stroke="#c9a227" stroke-width="1.5"/>
+  <circle cx="90" cy="50" r="2.5" fill="#2d6e2d"/>
+  <circle cx="130" cy="80" r="2.5" fill="#2d6e2d"/>
+  <circle cx="160" cy="120" r="2.5" fill="#2d6e2d"/>
+  <circle cx="80" cy="140" r="2.5" fill="#2d6e2d"/>
+  <circle cx="170" cy="60" r="2.5" fill="#2d6e2d"/>
+  <circle cx="50" cy="100" r="2.5" fill="#2d6e2d"/>
+  <circle cx="130" cy="160" r="2.5" fill="#2d6e2d"/>
+  <circle cx="60" cy="30" r="2.5" fill="#b91c1c"/>
+  <circle cx="190" cy="170" r="2.5" fill="#b91c1c"/>
+  <circle cx="180" cy="30" r="2.5" fill="#b91c1c"/>
+  <text x="225" y="55" font-size="11" fill="#2d6e2d">圆内 7 个</text>
+  <text x="225" y="75" font-size="11" fill="#b91c1c">圆外 3 个</text>
+  <text x="220" y="115" font-size="12" font-weight="bold">π ≈ 4×(7/10)</text>
+  <text x="220" y="135" font-size="12" font-weight="bold">= 2.8</text>
+  <text x="220" y="160" font-size="11" fill="#666">N→∞ 收敛到 π</text>
+</svg>
+<figcaption>图 10.4.5 蒙特卡洛积分估 $\pi$:在 $[-1,1]^2$ 随机撒点,落圆内比例 $\to\pi/4$ — 高维积分跑不动时的实用方法(Bayesian 推断 / 路径积分)。</figcaption>
+</figure>
 <div class="box-thm">
 <p>三大几何量公式</p>
 <ul>
@@ -929,6 +951,22 @@ $$\Phi=-2\pi G\rho_0\cdot\tfrac{2}{d}\!\int_0^R\!\rho^2\,d\rho=-\tfrac{4\pi G\rh
 <figcaption>图 10.4.4 Newton 球壳定理: 均匀球对球外一点的引力 = 把全部质量集中在球心算; 钻地球到中心时重力线性减小</figcaption>
 </figure>
 <h3 id="10-4-5">10.4.5 概率应用:边缘分布、期望、协方差</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <rect x="80" y="40" width="120" height="120" fill="#eef4fb" stroke="#1a365d" stroke-width="1"/>
+  <ellipse cx="140" cy="100" rx="40" ry="35" fill="#1a365d" fill-opacity="0.3"/>
+  <ellipse cx="140" cy="100" rx="25" ry="20" fill="#1a365d" fill-opacity="0.5"/>
+  <text x="115" y="180" font-size="11" fill="#1a365d">联合 f(x,y)</text>
+  <path d="M 80 170 Q 140 145 200 170" fill="none" stroke="#c2410c" stroke-width="2"/>
+  <text x="100" y="195" font-size="11" fill="#c2410c">边缘 f_X(x) (∫ f dy)</text>
+  <path d="M 60 160 Q 35 100 60 40" fill="none" stroke="#2d6e2d" stroke-width="2"/>
+  <text x="20" y="35" font-size="11" fill="#2d6e2d">边缘 f_Y(y)</text>
+  <text x="240" y="60" font-size="11" fill="#444">f_X(x) = ∫f(x,y) dy</text>
+  <text x="240" y="85" font-size="11" fill="#444">f_Y(y) = ∫f(x,y) dx</text>
+  <text x="240" y="125" font-size="11" fill="#666">"压扁": 联合密度沿一个方向积分掉</text>
+</svg>
+<figcaption>图 10.4.6 联合密度 → 边缘密度:把 2D 联合分布沿 $y$ 积分得 $f_X$,沿 $x$ 积分得 $f_Y$ — 几何上"压扁"到一维。Bayesian 边缘化的基本动作。</figcaption>
+</figure>
 <figure>
 <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <ellipse cx="180" cy="120" rx="120" ry="75" fill="#eef4fb" fill-opacity="0.3" stroke="#1a365d" stroke-width="0.8" stroke-dasharray="3 2"/>

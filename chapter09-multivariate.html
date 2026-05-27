@@ -99,6 +99,22 @@
 ```
 </p>
 <h3 id="9-0-2">9.0.2 核心定理速查</h3>
+<figure>
+<svg viewBox="0 0 380 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <rect x="20" y="40" width="100" height="60" rx="6" fill="#eef4fb" stroke="#1a365d" stroke-width="1.8"/>
+  <text x="35" y="65" font-size="13" font-weight="bold" fill="#1a365d">∇f 梯度</text>
+  <text x="25" y="85" font-size="11" fill="#1a365d">标量 → 向量</text>
+  <rect x="140" y="40" width="100" height="60" rx="6" fill="#fef6e4" stroke="#c9a227" stroke-width="1.8"/>
+  <text x="155" y="65" font-size="13" font-weight="bold" fill="#8b6f1c">∇·F 散度</text>
+  <text x="145" y="85" font-size="11" fill="#8b6f1c">向量 → 标量</text>
+  <rect x="260" y="40" width="100" height="60" rx="6" fill="#fde2e2" stroke="#b91c1c" stroke-width="1.8"/>
+  <text x="275" y="65" font-size="13" font-weight="bold" fill="#b91c1c">∇×F 旋度</text>
+  <text x="265" y="85" font-size="11" fill="#b91c1c">向量 → 向量</text>
+  <text x="30" y="130" font-size="11" fill="#444">同一算子 ∇ = (∂/∂x, ∂/∂y, ∂/∂z) 不同搭配:</text>
+  <text x="30" y="150" font-size="11" fill="#666">∇·∇=∇²(拉普拉斯) / ∇·(∇×F)=0 / ∇×(∇f)=0</text>
+</svg>
+<figcaption>图 9.0.3 ∇ 算子三件套:梯度(标量→向量)/ 散度(向量→标量)/ 旋度(向量→向量),组合得 Laplacian 与两条 $d^2=0$ 恒等式。</figcaption>
+</figure>
 <p>
 | 概念 | 关键定理 / 公式 | 后续应用 |
 | --- | --- | --- |
@@ -1126,6 +1142,26 @@ $$\theta^{(1)}=\theta^{(0)}-\eta\nabla L=(4,3)-0.1\cdot(8,6)=(3.2,2.4).$$
 </p>
 </div>
 <h3 id="9-6-4-ai">9.6.4 与 AI 优化的联系</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="gd1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+    <marker id="gd2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <ellipse cx="100" cy="120" rx="60" ry="50" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="2 2"/>
+  <ellipse cx="100" cy="120" rx="40" ry="33" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="2 2"/>
+  <ellipse cx="100" cy="120" rx="20" ry="16" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="2 2"/>
+  <circle cx="100" cy="120" r="3" fill="#1a365d"/>
+  <path d="M 35 80 L 55 100 L 75 110 L 90 118 L 98 119 L 100 120" fill="none" stroke="#1a365d" stroke-width="2" marker-end="url(#gd1)"/>
+  <circle cx="35" cy="80" r="3" fill="#1a365d"/>
+  <text x="20" y="195" font-size="11" fill="#1a365d">凸: 收敛快</text>
+  <circle cx="270" cy="120" r="3" fill="#c2410c"/>
+  <path d="M 270 120 Q 285 80 240 60 Q 200 50 280 70 Q 320 90 300 110" fill="none" stroke="#c2410c" stroke-width="2" marker-end="url(#gd2)"/>
+  <text x="220" y="195" font-size="11" fill="#c2410c">非凸: SGD 噪声跳出鞍点</text>
+  <text x="200" y="30" font-size="11" fill="#888">SGD 在高维非凸优化中比 Newton 更好用</text>
+</svg>
+<figcaption>图 9.6.5 梯度下降轨迹:凸损失下沿等高线垂直收敛快;非凸 + SGD 随机噪声反而能跳出鞍点(deep learning 实践证据)。</figcaption>
+</figure>
 <p>
 机器学习把模型参数记作 $\theta\in\mathbb{R}^d$,把训练损失记作 $L(\theta)$。<strong>最速下降 / 梯度下降</strong>就是把上面定理 9.6.B 的「负梯度方向是最速下降方向」直接搬到 $d$ 维:
 $$\theta^{(k+1)}=\theta^{(k)}-\eta_k\,\nabla L(\theta^{(k)}).$$
