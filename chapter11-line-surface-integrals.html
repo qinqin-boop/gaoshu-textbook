@@ -1568,29 +1568,34 @@ $$\Omega = \frac{\text{球面上所截面积}}{r^2}$$
 <li>推进 AI 物理引擎: 流体特效 (好莱坞 VFX)</li>
 </ul>
 <h3 id="12-11-laplacian">知识点 12.11: 散度与 Laplacian 的源汇直觉</h3>
+<div class="box-intuition">
+<p>散度 = "局部源 / 汇" 密度</p>
 <p>
-<strong>散度 ∇·$\vec{F}$</strong> = 体积"源"密度.
+$\nabla \cdot \vec{F}$ 在某点的值:
 </p>
 <ul>
-<li>∇·$\vec{F}$ &gt; 0: 该点是"源" (流出 &gt; 流入)</li>
-<li>∇·$\vec{F}$ &lt; 0: 该点是"汇" (流入 &gt; 流出)</li>
-<li>∇·$\vec{F}$ = 0: 无源无汇 (不可压缩流, 静电场真空)</li>
+<li>$> 0$: 该点是<strong>源</strong> (净流出, 像水龙头喷水)</li>
+<li>$< 0$: 该点是<strong>汇</strong> (净流入, 像下水道吸水)</li>
+<li>$= 0$: 无源无汇 (不可压缩流; 真空中静电场)</li>
 </ul>
 <p>
-<strong>Laplacian Δf</strong> = "二阶散度" 通量平均.
+<strong>例</strong>: $\vec{F} = (x, y, z)$ (径向扩散), $\nabla\cdot\vec{F} = 3 > 0$ — 每个点都是源, 跟"宇宙膨胀"图景一致.
 </p>
+</div>
+<div class="box-intuition">
+<p>Laplacian = "跟周围平均的差距"</p>
 <p>
-<strong>几何直觉</strong>:
+$\Delta f$ 几何直觉 (球面平均值定理):
 </p>
 <ul>
-<li>Δf &gt; 0: 当地值低于周围平均 (温度场: 该点正在升温)</li>
-<li>Δf &lt; 0: 当地值高于周围平均 (该点正在降温)</li>
-<li>Δf = 0: 调和函数 (稳态)</li>
+<li>$\Delta f > 0$: 当地值<strong>低于</strong>周围平均 → 会被"拉高"</li>
+<li>$\Delta f < 0$: 当地值<strong>高于</strong>周围平均 → 会被"拉低"</li>
+<li>$\Delta f = 0$: <strong>调和函数</strong> (跟周围平均完全相等, 稳态)</li>
 </ul>
 <p>
-<strong>热传导方程</strong>: ∂T/∂t = $\alpha$ ΔT.
-解释: 温度变化率 ∝ 局部 Laplacian. 哪里"低于周围平均"哪里就被加热.
+<strong>热传导方程</strong> $\partial T/\partial t = \alpha \Delta T$ 解释: 温度变化率 $\propto$ 局部 Laplacian. "低于周围平均"的点会自然加热 — 这是"热从高温流向低温"在数学上的精确表达.
 </p>
+</div>
 <div class="box-example">
 <p>例题 12-11</p>
 <p>
