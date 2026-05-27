@@ -1333,22 +1333,36 @@ $\sum a_n b_n$ 收敛, 若:
 </p>
 </div>
 <h3 id="8-7-double-series">知识点 8.7: 双重级数 (Double Series)</h3>
+<div class="box-def">
+<p>双重级数</p>
 <p>
-<strong>定义</strong>: ∑∑ a_(m,n), m,n=1,2,...
+$\sum_{m,n=1}^\infty a_{m,n}$ — 项按 $(m, n)$ 双指标的级数.
 </p>
+</div>
+<div class="box-thm">
+<p>Cauchy 双重级数定理</p>
 <p>
-<strong>柯西定理</strong>: 若 ∑∑ |a_(m,n)| 收敛, 则按任意方式累加都得到同一极限. 此时可以
+若 $\sum\sum |a_{m,n}|$ 收敛, 则任意累加方式收敛到同一极限:
 </p>
 <ul>
-<li>按行累加: ∑_m (∑_n a_(m,n))</li>
-<li>按列累加: ∑_n (∑_m a_(m,n))</li>
-<li>沿反对角累加: ∑_(m+n=k) a_(m,n) 然后对 k 求和</li>
+<li>按行: $\sum_m (\sum_n a_{m,n})$</li>
+<li>按列: $\sum_n (\sum_m a_{m,n})$</li>
+<li>沿反对角: $\sum_{m+n=k} a_{m,n}$ 然后对 $k$ 求和</li>
+</ul>
+</div>
+<div class="box-pitfall">
+<p>条件收敛时累加顺序敏感</p>
+<p>
+反例: $a_{m,n}$ 取 $m=n$ 时 $= 1$, $m=n+1$ 时 $= -1$, 其余 $= 0$.
+</p>
+<ul>
+<li><strong>按行累加</strong>: 每行 $0+0+\ldots = 0$, 总和 $0$</li>
+<li><strong>按列累加</strong>: 第一列 $1$, 之后列 $-1+1=0$... 总和 $1$. ❌ 不一致!</li>
 </ul>
 <p>
-<strong>反例</strong> (条件收敛时不可交换): 取 a_(m,n) 为 m=n 时 = 1, m=n+1 时 = -1, 其余 = 0.
-按行: 全是 0+0+... = 0. 总和 0.
-按列: 全是 1+(-1)+(-1)+... = 1 然后 0+... 总和 1. ❌ 不一致.
+绝对收敛是无穷加法保<strong>交换律 + 结合律</strong>的充分条件.
 </p>
+</div>
 <p>
 这就是为什么"绝对收敛"在重排理论里至关重要 — 它是无穷加法保持"交换律 + 结合律"的充分条件.
 </p>
