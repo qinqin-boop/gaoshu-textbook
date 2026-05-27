@@ -1517,16 +1517,23 @@ $\hat{s}_n \to S$ <strong>二次收敛</strong>, 大幅快于原数列.
 这些"特殊函数"全是用幂级数法求出, <strong>多项式逼近的胜利</strong>.
 </p>
 <h3 id="8-12-pad">知识点 8.12: Padé 逼近 (有理函数逼近)</h3>
+<div class="box-intuition">
+<p>Taylor 的局限</p>
 <p>
-<strong>问题</strong>: Taylor 级数在收敛半径之外不可用 (例 f(x)=1/(1-x) 在 x&gt;1 时 Taylor 级数发散).
+Taylor 级数在<strong>收敛半径外不可用</strong>. 例: $f(x) = 1/(1-x)$ 在 $x > 1$ 时 Taylor 级数 $\sum x^n$ 发散, 但函数本身 (除 $x = 1$ 外) 处处有意义.
 </p>
 <p>
-<strong>Padé 逼近</strong>: 用有理函数 P(x)/Q(x) 代替多项式.
-[L/M] = ∑_(k=0)^L p_k x^k / ∑_(k=0)^M q_k x^k
+需要更强工具.
 </p>
+</div>
+<div class="box-def">
+<p>Padé 逼近</p>
 <p>
-匹配条件: P(x)/Q(x) - f(x) = O(x^(L+M+1)).
+用<strong>有理函数</strong> $[L/M] = P(x)/Q(x)$ 代替多项式逼近, 阶 $L+M$:
+$$[L/M] = \frac{\sum_{k=0}^L p_k x^k}{\sum_{k=0}^M q_k x^k}$$
+<strong>匹配条件</strong>: $P(x)/Q(x) - f(x) = O(x^{L+M+1})$ (前 $L+M+1$ 项与 $f$ 的 Taylor 系数一致).
 </p>
+</div>
 <div class="box-example">
 <p>例题 8-12</p>
 <p>
