@@ -1314,24 +1314,28 @@ $\sum_{m,n=1}^\infty a_{m,n}$ — 项按 $(m, n)$ 双指标的级数.
 "加法满足交换律"是有限和的事. 无穷和 ($\sum$) 只有绝对收敛才保留交换律. 这是无穷加法的"危险"之处.
 </p>
 </div>
+<div class="box-proof">
+<p>黎曼重排定理证明思路</p>
 <p>
-<strong>核心思路</strong>: 设 ∑aₙ 条件收敛. 把项分成正项 ∑pₖ 和负项 ∑qₖ (相反数).
+设 $\sum a_n$ 条件收敛. 把项分成<strong>正项</strong> $\sum p_k$ 和<strong>负项</strong> $\sum q_k$ (取相反数后):
 </p>
 <ul>
-<li>∑aₙ 条件收敛 ⇒ ∑pₖ = +∞ 且 ∑qₖ = +∞ (否则要么 ∑|aₙ|&lt;∞ 要么本身发散)</li>
+<li>$\sum a_n$ 条件收敛 $\Rightarrow$ $\sum p_k = +\infty$ 且 $\sum q_k = +\infty$ (否则要么 $\sum|a_n| < \infty$ 要么本身发散)</li>
 </ul>
 <p>
-<strong>构造任意目标 S</strong>:
+<strong>构造任意目标 $S$</strong>:
 </p>
 <ol>
-<li>取正项直到部分和首次 &gt; S</li>
-<li>加负项直到部分和首次 &lt; S</li>
-<li>加正项直到首次 &gt; S</li>
+<li>取正项 $p_1, p_2, \ldots$ 直到部分和首次 $> S$</li>
+<li>加负项 $-q_1, -q_2, \ldots$ 直到部分和首次 $< S$</li>
+<li>加正项直到首次 $> S$</li>
+<li>加负项直到首次 $< S$</li>
 <li>...</li>
 </ol>
 <p>
-每次"压过"S 用掉一个 pₖ 或 qₖ; 因 aₙ→0, 每次"过头"幅度→0, 故部分和振荡收敛到 S.
+每次"压过 $S$"用掉一个 $p_k$ 或 $q_k$; 因 $a_n \to 0$, 每次"过头"幅度 $\to 0$, 故部分和振荡<strong>收敛到 $S$</strong>. $\square$
 </p>
+</div>
 <div class="box-example">
 <p>例题 8-5</p>
 <p>
