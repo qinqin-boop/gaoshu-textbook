@@ -918,21 +918,29 @@ $$\hat{I} = V \cdot \frac{1}{N} \sum_{i=1}^N f(\vec{x}_i)$$
 N=10⁶ 时, $\pi$ ≈ 3.1416 ± 0.002.
 </p>
 </div>
+<div class="box-thm">
+<p>重要性采样 (Importance Sampling)</p>
 <p>
-<strong>重要性采样</strong>: 若 f 在某些区域取值大, 应多采那里. 引提议分布 q(x):
-I = ∫ [f/q] · q dx = E_q[f/q]
-Î = (1/N) ∑ f(xᵢ)/q(xᵢ), xᵢ ~ q
+若 $f$ 在某区域取值大, 应<strong>多采那里</strong>. 引提议分布 $q(\vec{x})$:
+$$I = \int \frac{f(\vec{x})}{q(\vec{x})} \cdot q(\vec{x})\,d\vec{x} = \mathbb{E}_q\!\left[\frac{f}{q}\right], \qquad \hat{I} = \frac{1}{N}\sum_{i=1}^N \frac{f(\vec{x}_i)}{q(\vec{x}_i)}, \quad \vec{x}_i \sim q$$
+<strong>直觉</strong>: 用 $q$ 而非均匀采, 让样本"扎堆"在 $f$ 大的地方, 同样 $N$ 误差更小.
+</p>
+</div>
+<div class="box-intuition">
+<p>蒙特卡洛 5 大 AI 关键应用</p>
+<p>
+| 应用 | MC 在哪里 |
+|---|---|
+| <strong>NeRF / 神经渲染</strong> | 沿光线积分需 MC 估期望颜色 |
+| <strong>强化学习</strong> | 策略梯度 $\nabla J = \mathbb{E}[\nabla\log\pi \cdot A]$ — 不能解析必用 MC |
+| <strong>变分推断</strong> | ELBO 中的期望要 MC 估计 |
+| <strong>LLM RLHF / PPO / DPO</strong> | Advantage estimation 必 MC |
+| <strong>扩散模型</strong> | Score matching 高维期望全靠 MC |
 </p>
 <p>
-<strong>AI 关键应用</strong>:
+<strong>MC 是高维 AI 的命根</strong> — 没它现代 AI 大半算不动.
 </p>
-<ul>
-<li>神经渲染 NeRF: 沿光线积分</li>
-<li>强化学习: 策略梯度 ∇J = E[∇log $\pi$ · A]</li>
-<li>变分推断: ELBO 中的期望</li>
-<li>LLM PPO/DPO: advantage estimation</li>
-<li>扩散模型: score matching 中的高维期望</li>
-</ul>
+</div>
 <h3 id="13-6">知识点 13.6: 高斯积分</h3>
 <div class="box-thm">
 <p>高斯积分 (Gaussian Integral)</p>
