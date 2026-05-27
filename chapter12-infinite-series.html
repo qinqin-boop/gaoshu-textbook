@@ -1142,39 +1142,32 @@ $$f(x) = \sum_{n=-\infty}^\infty c_n e^{i n\pi x/L}, \quad c_n = \frac{1}{2L}\in
 ---
 </p>
 <h3 id="14-9">知识点 14.9: 级数判敛的"决策树" 速查</h3>
+<div class="box-intuition">
+<p>级数判敛决策树 (按顺序检查)</p>
 <p>
-拿到一个级数 Σ a_n, 一步步判断:
+<strong>步 1</strong>: $\lim a_n = 0$? 不是 → <strong>发散</strong> (停).
 </p>
-<ol>
-<li><strong>先看必要条件</strong>: lim a_n → 0 吗?</li>
-</ol>
 <p>
-   - 不趋 0 → <strong>发散</strong> (不用再判)
-   - 趋 0 → 继续
+<strong>步 2 (正项级数 $a_n \ge 0$)</strong>:
 </p>
-<ol>
-<li><strong>正项级数</strong> (a_n ≥ 0):</li>
-</ol>
+<ul>
+<li>像 $1/n^p$? → p-级数判别 ($p>1$ 收敛)</li>
+<li>含 $n!$ / 指数 $a^n$? → <strong>比值法</strong> $\lim a_{n+1}/a_n = \rho$</li>
+<li>含 $n$ 次幂? → <strong>根值法</strong> $\lim \sqrt[n]{a_n} = \rho$</li>
+<li>跟已知级数比? → 比较法 / 极限判别</li>
+<li>单调且对应函数易积? → 积分判别法</li>
+</ul>
 <p>
-   - 像 1/n^p? → p-级数 (p&gt;1 收敛, p$\le$1 发散)
-   - 比值 a_(n+1)/a_n 有极限 ρ? → 比值判别 (ρ&lt;1 收敛, ρ&gt;1 发散, ρ=1 失效)
-   - 是否单调? → 积分判别
-   - 跟已知级数比? → 比较法 / 极限判别
+<strong>步 3 (交错级数 $(-1)^n b_n$)</strong>:
 </p>
-<ol>
-<li><strong>交错级数</strong> (符号正负相间):</li>
-</ol>
+<ul>
+<li>$b_n$ 单调减趋 0? → <strong>Leibniz</strong> → 收敛</li>
+<li>$\sum |a_n|$ 收敛吗? → 绝对收敛 (强) / 条件收敛 (弱)</li>
+</ul>
 <p>
-   - |a_n| 单调减且 → 0? → 莱布尼茨判别 → 收敛
-   - 进一步: Σ|a_n| 收敛吗? 收 → 绝对收敛 (强), 不收 → 条件收敛
+<strong>步 4 (任意级数)</strong>: 用 $\sum |a_n|$ 转正项处理.
 </p>
-<ol>
-<li><strong>任意级数</strong>:</li>
-</ol>
-<p>
-   - 先用 Σ|a_n| 转成正项级数判
-   - Σ|a_n| 收 → 原级数绝对收敛
-</p>
+</div>
 <h3 id="14-10">知识点 14.10: 常见经典级数收敛性记忆表</h3>
 <p>
 | 级数 | 收敛/发散 | 备注 |
