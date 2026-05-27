@@ -31,21 +31,24 @@
 <blockquote>对照: 同济大学《高等数学》第七版下册 第十一章</blockquote>
 <blockquote>一元定积分在直线上, 重积分在区域上, 这章在<strong>曲线</strong>和<strong>曲面</strong>上.</blockquote>
 <h2 id="11-0">11.0 整章在干啥?</h2>
+<div class="box-intuition">
+<p>升级到弯曲对象上积分</p>
 <p>
-之前积分都在<strong>直线段</strong> (一元) 或<strong>平面区域/立体区域</strong> (重积分). 现实问题:
+之前积分都在<strong>直线段</strong> (一元 $\int f\,dx$) 或<strong>平面/立体区域</strong> (重积分). 现实问题:
 </p>
 <ul>
-<li>沿弯曲的钢丝丝求质量 → <strong>第一类曲线积分</strong></li>
-<li>力沿弯曲路径做的功 → <strong>第二类曲线积分</strong></li>
-<li>弯曲钢板的质量 → <strong>第一类曲面积分</strong></li>
-<li>流体穿过曲面的通量 → <strong>第二类曲面积分</strong></li>
+<li>沿弯曲钢丝求<strong>质量</strong> → 第一类曲线积分 $\int_L \mu\,ds$</li>
+<li>力沿弯曲路径<strong>做功</strong> → 第二类曲线积分 $\int_L \vec{F}\cdot d\vec{r}$</li>
+<li>弯曲钢板<strong>质量</strong> → 第一类曲面积分 $\iint_\Sigma \mu\,dS$</li>
+<li>流体穿过曲面<strong>通量</strong> → 第二类曲面积分 $\iint_\Sigma \vec{F}\cdot d\vec{S}$</li>
 </ul>
 <p>
-<strong>核心工具</strong>: 格林公式 / 高斯公式 / 斯托克斯公式 — 把曲线/曲面积分转化为简单的重积分.
+<strong>核心工具</strong>: Green / Gauss / Stokes 三大公式, 把曲线/曲面积分转回简单重积分.
 </p>
 <p>
-<strong>对你的意义</strong>: 电磁学麦克斯韦方程组 / 流体动力学 / 计算机图形学的光照渲染 / Bezier 曲线长度 — 全用.
+<strong>对你的意义</strong>: 电磁学 Maxwell 方程组 / 流体动力学 N-S 方程 / 计算机图形学光照渲染 / Bezier 曲线长度 — 全靠这章.
 </p>
+</div>
 <h2 id="11-0-5">11.0.5 入门: 为啥从"区域上积分" 升级到"曲线/曲面上"?</h2>
 <div class="box-intuition">
 <p>升级地图: 4 种积分 + 3 大公式</p>
