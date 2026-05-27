@@ -288,6 +288,23 @@ $$f(x,y)=\begin{cases}\dfrac{xy(x^2-y^2)}{x^2+y^2},&(x,y)\neq(0,0)\\ 0,&(x,y)=(0
 </p>
 </div>
 <h3 id="9-2-4">9.2.4 偏导数的几何意义与切平面</h3>
+<figure>
+<svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="pd1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <path d="M 40 180 Q 130 60 240 90 Q 310 105 340 70" fill="none" stroke="#1a365d" stroke-width="1.5"/>
+  <text x="35" y="40" font-size="12" fill="#1a365d">z=f(x,y)</text>
+  <path d="M 40 180 Q 100 130 130 80" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="190" cy="100" r="4" fill="#c2410c"/>
+  <text x="198" y="98" font-size="11" fill="#c2410c">P₀</text>
+  <line x1="120" y1="135" x2="260" y2="65" stroke="#c2410c" stroke-width="2" marker-end="url(#pd1)"/>
+  <text x="265" y="63" font-size="11" fill="#c2410c">沿 x 切线斜率 f_x</text>
+  <line x1="160" y1="130" x2="220" y2="70" stroke="#2d6e2d" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="155" y="155" font-size="11" fill="#2d6e2d">y=y₀ 切面</text>
+</svg>
+<figcaption>图 9.2.1 偏导数几何意义:$f_x(x_0,y_0)$ = 把曲面用 $y=y_0$ 截切得到的剖面曲线在 $P_0$ 处的斜率。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 若 $f$ 在 $(x_0,y_0)$ 处可微(§9.3),则曲面 $z=f(x,y)$ 在该点的<strong>切平面</strong>(§9.7)

@@ -699,6 +699,21 @@ $$1+\tfrac13-\tfrac12+\tfrac15+\tfrac17-\tfrac14+\dots=\tfrac32\ln 2.$$
 </p>
 <h3 id="12-4-1">12.4.1 收敛半径与收敛区间</h3>
 <figure>
+<svg viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <line x1="20" y1="80" x2="340" y2="80" stroke="#1a365d" stroke-width="1.5"/>
+  <line x1="340" y1="80" x2="332" y2="76" stroke="#1a365d"/>
+  <line x1="340" y1="80" x2="332" y2="84" stroke="#1a365d"/>
+  <line x1="180" y1="68" x2="180" y2="92" stroke="#1a365d" stroke-width="2"/>
+  <text x="174" y="105" font-size="11" fill="#1a365d">0</text>
+  <circle cx="240" cy="80" r="4" fill="#c2410c"/>
+  <text x="225" y="105" font-size="11" fill="#c2410c">x₁ (收敛)</text>
+  <rect x="120" y="74" width="120" height="12" fill="#ecf7ec" stroke="#2d6e2d" stroke-width="1.5"/>
+  <text x="125" y="65" font-size="11" fill="#2d6e2d">|x|<|x₁| 全部绝对收敛</text>
+  <text x="20" y="135" font-size="11" fill="#666">Abel I: 在 x₁ 收敛 ⇒ 整个 (−|x₁|,|x₁|) 绝对收敛</text>
+</svg>
+<figcaption>图 12.4.3 Abel 第一定理:若幂级数在 $x_1$ 收敛,则对所有 $|x|<|x_1|$ 处绝对收敛 — 收敛性可"沿用"到中心更近的所有点。</figcaption>
+</figure>
+<figure>
 <svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <line x1="20" y1="60" x2="340" y2="60" stroke="#1a365d" stroke-width="2"/>
   <line x1="340" y1="60" x2="332" y2="56" stroke="#1a365d" stroke-width="2"/>
@@ -1020,6 +1035,22 @@ $$\ln(1+x)=\sum_{n=1}^\infty\frac{(-1)^{n-1}x^n}{n}\quad(-1<x\le 1),\quad(1+x)^\
 <figcaption>图 12.5.1 Maclaurin 展开: 一阶 $T_1=x$ 只在原点附近吻合, 三阶 $T_3=x-x^3/6$ 弯曲跟上, 五阶 $T_5$ 几乎跟真函数重合</figcaption>
 </figure>
 <h3 id="12-5-3">12.5.3 光滑但非解析:经典反例</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <line x1="40" y1="140" x2="340" y2="140" stroke="#888" stroke-width="1"/>
+  <line x1="180" y1="20" x2="180" y2="180" stroke="#888" stroke-width="1"/>
+  <text x="345" y="145" font-size="11" fill="#888">x</text>
+  <text x="185" y="20" font-size="11" fill="#888">y</text>
+  <line x1="40" y1="140" x2="180" y2="140" stroke="#1a365d" stroke-width="2.5"/>
+  <text x="100" y="160" font-size="12" fill="#1a365d">f≡0 (x≤0)</text>
+  <path d="M 180 140 Q 210 138 225 110 Q 245 60 280 40 L 340 35" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+  <text x="240" y="65" font-size="12" fill="#c2410c">f=e^{-1/x²} (x>0)</text>
+  <circle cx="180" cy="140" r="4" fill="#2d6e2d"/>
+  <text x="186" y="158" font-size="11" fill="#2d6e2d">x=0: 所有阶导数 = 0</text>
+  <text x="30" y="190" font-size="11" fill="#666">但 f≠0 (x>0) → Taylor 级数 = 0 不收敛到 f</text>
+</svg>
+<figcaption>图 12.5.1 $e^{-1/x^2}$ 反例:$f$ 在 $x=0$ 处无穷次可导且**所有阶导数 = 0**,但 $f$ 不恒为零。Taylor 级数 $\equiv 0$ 但不收敛到原函数 — 实分析 vs 复分析分水岭。</figcaption>
+</figure>
 <div class="box-example">
 <p>
 <strong>例 2</strong>(光滑 ≠ 解析)定义
