@@ -994,8 +994,9 @@ $$\vec{F}(\vec{P})=G\iiint_\Omega\frac{\vec{x}-\vec{P}}{|\vec{x}-\vec{P}|^3}\,\r
 <p>
 <strong>例 5</strong>(Newton 球壳定理积分证)均匀球(密度 $\rho_0$,半径 $R$)对<strong>球外</strong>距球心 $d>R$ 的单位质点的引力势为 $-GM/d$,等同于把球质量集中在球心。
 </p>
+<details class="box-answer"><summary>🔍 点击展开证明</summary>
+<p>球坐标 $\vec{x}=(\rho\sin\varphi\cos\theta,\dots)$,$|\vec{x}-\vec{P}|=\sqrt{\rho^2+d^2-2\rho d\cos\varphi}$($\vec{P}$ 放 $z$ 轴 $d$ 处)。</p>
 <p>
-<strong>证明</strong>:球坐标 $\vec{x}=(\rho\sin\varphi\cos\theta,\dots)$,$|\vec{x}-\vec{P}|=\sqrt{\rho^2+d^2-2\rho d\cos\varphi}$($\vec{P}$ 放 $z$ 轴 $d$ 处)。
 $$\Phi=-G\rho_0\!\int_0^R\!\rho^2\,d\rho\!\int_0^{2\pi}\!d\theta\!\int_0^\pi\!\frac{\sin\varphi\,d\varphi}{\sqrt{\rho^2+d^2-2\rho d\cos\varphi}}.$$
 内层换元 $u=\cos\varphi$:$\int_{-1}^1\frac{du}{\sqrt{\rho^2+d^2-2\rho du}}=\frac{1}{\rho d}\big[\sqrt{\rho^2+d^2-2\rho du}\big]_{-1}^{1}=\frac{|\rho+d|-|\rho-d|}{\rho d}=\frac{2}{d}$($d>\rho$)。代回
 $$\Phi=-2\pi G\rho_0\cdot\tfrac{2}{d}\!\int_0^R\!\rho^2\,d\rho=-\tfrac{4\pi G\rho_0 R^3}{3d}=-\tfrac{GM}{d},\quad M=\tfrac{4\pi R^3}{3}\rho_0.\;\square$$
@@ -1003,6 +1004,7 @@ $$\Phi=-2\pi G\rho_0\cdot\tfrac{2}{d}\!\int_0^R\!\rho^2\,d\rho=-\tfrac{4\pi G\rh
 <p>
 <strong>球内</strong>($d<R$):同样计算给出 $\Phi=-\frac{GM}{R}\big(\tfrac32-\tfrac{d^2}{2R^2}\big)$,引力 $=-d\Phi/dd=\frac{GMd}{R^3}$,即「线性比例距离球心」——这就是为什么钻地球到中心时重力随深度线性减小。
 </p>
+</details>
 </div>
 <div class="box-intuition">
 <p>

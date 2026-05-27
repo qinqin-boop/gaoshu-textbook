@@ -101,16 +101,17 @@ def md_to_html(md):
                 if rest:
                     out.append(f"<p>{format_inline_math_safe(rest)}</p>")
             continue
-        # box-example 内自动把"**解**:"或"**解**" 之后内容包成可折叠 (老大要求的"开关")
-        if in_box == "box-example" and re.match(r"^\*\*解\*\*[::]?", line):
+        # box-example 内自动把"**解**:"或"**思路**:"之后内容包成可折叠 (老大要求的"开关")
+        ans_marker = re.match(r"^\*\*(解|思路|证明|证)\*\*[::]?", line)
+        if in_box == "box-example" and ans_marker:
             if in_p: out.append("</p>"); in_p = False
             if in_ul: out.append(f"</{ul_tag}>"); in_ul = False
-            # 关 box-example 内置 details (若未开则开启)
             if not getattr(md_to_html, "_in_ans", False):
-                out.append('<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>')
+                marker_name = ans_marker.group(1)
+                label = "📖 点击展开答案 / 详解" if marker_name in ("解","思路") else f"🔍 点击展开{marker_name}"
+                out.append(f'<details class="box-answer"><summary>{label}</summary>')
                 setattr(md_to_html, "_in_ans", True)
-            # 处理后续 "**解**:" 内容(可能含同行后续文字, 比如 "**解**: 由对称性...")
-            after = re.sub(r"^\*\*解\*\*[::]?\s*", "", line).strip()
+            after = re.sub(r"^\*\*(解|思路|证明|证)\*\*[::]?\s*", "", line).strip()
             if after:
                 out.append(f"<p>{format_inline_math_safe(after)}</p>")
             continue

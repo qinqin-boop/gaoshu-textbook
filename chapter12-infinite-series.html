@@ -472,13 +472,13 @@ $L\in(0,\infty)$ 时,$\exists N$,$n\ge N$ 有 $\tfrac{L}{2}<\tfrac{u_n}{v_n}<2L$
 <p>
 <strong>例 1</strong>(p-级数 $\sum 1/n^p$)收敛 $\iff p>1$。
 </p>
-<p>
-<strong>思路</strong>:与积分比较(下节)或直接用 Cauchy 浓缩。<strong>这是所有比较判别的"参考级数"</strong>,记牢:
-</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>与积分比较(下节)或直接用 Cauchy 浓缩。<strong>这是所有比较判别的"参考级数"</strong>,记牢:</p>
 <ul>
 <li>$p\le 1$ 时发散($p=1$ 调和级数);</li>
 <li>$p>1$ 时收敛($\sum 1/n^2=\pi^2/6$、$\sum 1/n^3=\zeta(3)\approx 1.202$ Apéry 常数)。</li>
 </ul>
+</details>
 </div>
 <h3 id="12-2-2-d-alembert">12.2.2 比值判别法(d'Alembert)</h3>
 <figure>
@@ -1315,12 +1315,12 @@ $$\ln(1+x)=\sum_{n=1}^\infty\frac{(-1)^{n-1}x^n}{n}\quad(-1<x\le 1),\quad(1+x)^\
 $$f(x)=\begin{cases}e^{-1/x^2},&x>0\\ 0,&x\le 0\end{cases}$$
 $f$ 在 $\mathbb{R}$ 上<strong>无穷次可导</strong>,且在 $x=0$ 处所有阶导数为 $0$:$f^{(n)}(0)=0$ 对所有 $n\ge 0$ 成立。
 </p>
-<p>
-<strong>证明</strong>:对 $x>0$,$f^{(n)}(x)=P_n(1/x)e^{-1/x^2}$($P_n$ 为多项式,归纳证)。$x\to 0^+$ 时 $1/x\to\infty$ 但 $e^{-1/x^2}\to 0$ 比任何多项式都快,所以 $f^{(n)}(0^+)=0=f^{(n)}(0^-)$,可导且零。
-</p>
+<details class="box-answer"><summary>🔍 点击展开证明</summary>
+<p>对 $x>0$,$f^{(n)}(x)=P_n(1/x)e^{-1/x^2}$($P_n$ 为多项式,归纳证)。$x\to 0^+$ 时 $1/x\to\infty$ 但 $e^{-1/x^2}\to 0$ 比任何多项式都快,所以 $f^{(n)}(0^+)=0=f^{(n)}(0^-)$,可导且零。</p>
 <p>
 <strong>结论</strong>:$f$ 在 $0$ 处的 Taylor 级数恒为 $\sum 0\cdot x^n=0$,但 $f(x)\neq 0$ 在 $x>0$。故 <strong>Taylor 级数处处收敛但不收敛到原函数</strong>。
 </p>
+</details>
 </div>
 <div class="box-intuition">
 <p>
