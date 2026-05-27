@@ -1154,6 +1154,30 @@ $$\nabla\times\vec{F}=\begin{vmatrix}\vec{i}&\vec{j}&\vec{k}\\ \partial_x&\parti
 </p>
 </div>
 <h3 id="11-6-2-stokes">11.6.2 Stokes 公式</h3>
+<figure>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="stk_arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+    <marker id="stk_narr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#22543d"/></marker>
+  </defs>
+  <!-- 凸起曲面 Σ -->
+  <path d="M 80,200 Q 180,80 280,80 Q 380,80 420,200 Q 250,160 80,200 Z" fill="#1a365d" fill-opacity="0.18" stroke="#1a365d" stroke-width="2"/>
+  <!-- 边界曲线 ∂Σ (带方向) -->
+  <path d="M 80,200 Q 180,80 280,80 Q 380,80 420,200" fill="none" stroke="#c2410c" stroke-width="3" marker-end="url(#stk_arr)"/>
+  <path d="M 420,200 Q 250,160 80,200" fill="none" stroke="#c2410c" stroke-width="3"/>
+  <text x="200" y="220" font-size="13" fill="#c2410c" font-weight="bold">∂Σ 边界 (右手定则定向)</text>
+  <!-- 法向量 n -->
+  <line x1="250" y1="130" x2="250" y2="50" stroke="#22543d" stroke-width="2.5" marker-end="url(#stk_narr)"/>
+  <text x="258" y="55" font-size="13" fill="#22543d" font-weight="bold">n</text>
+  <!-- 小风车 (旋度) -->
+  <circle cx="250" cy="130" r="4" fill="#000"/>
+  <text x="258" y="135" font-size="11" fill="#000">∇×F 旋度</text>
+  <!-- 标题 -->
+  <text x="40" y="35" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">Stokes 公式: ∮_∂Σ F·dr = ∬_Σ (∇×F)·dS</text>
+  <text x="40" y="248" font-size="11" fill="#666">边界一圈环流 (左) = 曲面上每点"小风车"旋度通量累加 (右)</text>
+</svg>
+<figcaption>图 11.6.2 Stokes 公式: 曲面 $\Sigma$ 边界 $\partial\Sigma$ 上的环流 (橙色) = $\Sigma$ 上旋度 $\nabla\times\vec{F}$ 沿法向通量积分</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 (Stokes 公式)设 $\Sigma$ 是 $\mathbb{R}^3$ 中分片光滑、双侧的有向曲面,边界 $\partial\Sigma$ 为分段光滑闭曲线,取右手系正向。若 $\vec{F}=(P,Q,R)$ 在含 $\Sigma$ 的开集上有连续一阶偏导,则
