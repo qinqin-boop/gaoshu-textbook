@@ -318,6 +318,25 @@ $$\cos\alpha=\frac{a_1}{|\vec{a}|},\quad\cos\beta=\frac{a_2}{|\vec{a}|},\quad\co
 向量加法和数乘还停留在「方向 + 长度」的一维操控。这一节我们引入<strong>两种向量间的乘法</strong>:点乘把两向量压成一个<strong>标量</strong>(用来量「相似度 / 投影 / 夹角」),叉乘生成一个<strong>新向量</strong>(用来量「平行四边形 / 平面法向」)。再把它们组合成混合积(三向量的「带号体积」)。这三件套是后续曲面方程、Maxwell 方程组、计算机图形学渲染的代数底座。
 </p>
 <h3 id="8-2-1">8.2.1 数量积(点乘 / 内积)</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="dt1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+    <marker id="dt2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <line x1="40" y1="130" x2="260" y2="130" stroke="#1a365d" stroke-width="2.5" marker-end="url(#dt1)"/>
+  <text x="265" y="135" font-size="13" font-style="italic" fill="#1a365d">位移 d⃗</text>
+  <line x1="40" y1="130" x2="170" y2="50" stroke="#c2410c" stroke-width="2.5" marker-end="url(#dt2)"/>
+  <text x="175" y="50" font-size="13" font-style="italic" fill="#c2410c">力 F⃗</text>
+  <line x1="170" y1="50" x2="170" y2="130" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+  <line x1="40" y1="130" x2="170" y2="130" stroke="#2d6e2d" stroke-width="4"/>
+  <text x="80" y="150" font-size="12" fill="#2d6e2d">|F⃗|cosθ (有效分量)</text>
+  <path d="M 70 130 A 30 30 0 0 0 60 110" fill="none" stroke="#444" stroke-width="0.8"/>
+  <text x="65" y="118" font-size="11" fill="#444">θ</text>
+  <text x="30" y="170" font-size="11" fill="#444">W = F⃗·d⃗ = |F⃗||d⃗|cosθ (做功)</text>
+</svg>
+<figcaption>图 8.2.3 数量积物理意义:力沿位移做的功 $W=\vec{F}\cdot\vec{d}=|\vec{F}|\,|\vec{d}|\cos\theta$。垂直力($\theta=90°$)做功为零。</figcaption>
+</figure>
 <div class="box-def">
 <p>
 <strong>数量积</strong>(scalar product / dot product / inner product)是把两个向量映射为一个实数的二元运算。在 $\mathbb{R}^3$ 中,设 $\vec{a}=(a_1,a_2,a_3)$,$\vec{b}=(b_1,b_2,b_3)$,夹角为 $\theta\in[0,\pi]$,则
