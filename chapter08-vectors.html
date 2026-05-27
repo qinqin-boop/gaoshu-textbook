@@ -297,11 +297,14 @@ $$\lambda \vec{a} = (\lambda a_1, \lambda a_2, \lambda a_3)$$
 <li>$\lambda = 0$: 零向量</li>
 </ul>
 </div>
+<div class="box-def">
+<p>单位向量 (Unit vector)</p>
 <p>
-<strong>单位向量</strong>: 长度为 1 的向量. 求一个向量的单位向量:
-$\vec{a}$⁰ = ($\vec{a}$)/($|\vec{a}|$)
-<strong>推理</strong>: 把自己除以自己的长度, 长度就变成 1.
+长度 (模) 为 1 的向量. 任意非零向量 $\vec{a}$ 的单位向量:
+$$\vec{a}^{\,0} = \frac{\vec{a}}{|\vec{a}|}$$
+<strong>推理</strong>: 自己除以自己的长度 → 长度变成 1, 方向不变.
 </p>
+</div>
 <div class="box-example">
 <p>例题 4</p>
 <p>
@@ -320,25 +323,35 @@ $|\vec{a}|$ = 5, 所以 $\vec{a}$⁰ = (3/5, 4/5, 0) = (0.6, 0.8, 0).
 ---
 </p>
 <h3 id="3-5-vec-i-vec-j-vec-k">知识点 3.5: 标准基 $\vec{i}$ $\vec{j}$ $\vec{k}$ 与向量分量分解</h3>
+<div class="box-def">
+<p>标准正交基</p>
 <p>
-<strong>核心思想</strong>: 把任何 3D 向量拆成 x/y/z 三个轴方向的"基本砖块" 之和.
+3D 标准正交基:
+$$\vec{i} = (1, 0, 0), \quad \vec{j} = (0, 1, 0), \quad \vec{k} = (0, 0, 1)$$
+分别指 $x / y / z$ 轴正方向, 模均为 1, 两两正交.
 </p>
 <p>
-<strong>三个基本向量</strong> (标准正交基):
-$\vec{i}$ = (1, 0, 0) — 指 x 轴正方向, 模 = 1
-$\vec{j}$ = (0, 1, 0) — 指 y 轴正方向, 模 = 1
-$\vec{k}$ = (0, 0, 1) — 指 z 轴正方向, 模 = 1
+任意向量 $\vec{a} = (a_1, a_2, a_3)$ 可以<strong>唯一分解</strong>为:
+$$\vec{a} = a_1 \vec{i} + a_2 \vec{j} + a_3 \vec{k}$$
+</p>
+</div>
+<div class="box-intuition">
+<p>"拆砖头"的核心思想</p>
+<p>
+把 3D 向量拆成 $x/y/z$ 三个轴方向的"基本砖块"之和.
 </p>
 <p>
-<strong>任意向量 $\vec{a}$ = (a₁, a₂, a₃) 都可以写成</strong>:
-$\vec{a}$ = a₁ $\vec{i}$ + a₂ $\vec{j}$ + a₃ $\vec{k}$
+<strong>生活类比</strong>: 说"东 3 米, 北 4 米, 上 2 米" → 实际就是 $3\vec{i} + 4\vec{j} + 2\vec{k}$. 三个独立方向的"刻度数".
 </p>
 <p>
-<strong>生活类比</strong>: 你说"东 3 米, 北 4 米, 上 2 米" → 实际就是 3i→ + 4j→ + 2k→. 三个独立方向的"刻度数".
+<strong>为啥重要</strong>:
 </p>
-<p>
-<strong>为什么重要</strong>: 物理上力的分解 (重力分解到斜面方向 + 垂直方向) / 计算机图形学 RGB 颜色空间也是这种"基"分解.
-</p>
+<ul>
+<li>物理: 力的分解 (重力沿斜面 + 垂直分量)</li>
+<li>计算机图形: RGB 颜色空间也是"基"分解 (R 砖 + G 砖 + B 砖)</li>
+<li>高维: $n$ 维空间需要 $n$ 个标准基, 推广到 $\vec{e}_1, \ldots, \vec{e}_n$</li>
+</ul>
+</div>
 <p>
 <strong>方向余弦</strong>: 单位向量 $\vec{a}$⁰ = (cosα, cosβ, cosγ), 其中 $\alpha$, $\beta$, $\gamma$ 分别是 $\vec{a}$ 跟 x/y/z 轴的夹角. 满足:
 cos²α + cos²β + cos²γ = 1
