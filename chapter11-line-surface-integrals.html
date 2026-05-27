@@ -750,6 +750,22 @@ $\omega$ 是 $k$-形式, $d\omega$ 是它的外微分, 定理把"边界上的 $k
 平面上<strong>边界环路</strong> $=$ <strong>内部旋度密度积分</strong>(Green);三维空间<strong>闭曲面通量</strong> $=$ <strong>内部散度积分</strong>(Gauss)。还差一种联系——<strong>空间曲线环流</strong> $=$ 张在曲线上的<strong>任意曲面的旋度通量</strong>——这就是 Stokes 公式,Green 在三维曲面上的完整推广。它统一了所有"边界 $\leftrightarrow$ 内部"的对应,也是 19 世纪经典电磁学(法拉第电磁感应、Ampère 环路定律)与现代微分几何(de Rham 上同调、规范场论)共同的代数根。
 </p>
 <h3 id="11-6-1">11.6.1 旋度与方向匹配</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="cw1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+    <marker id="cw2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <circle cx="180" cy="100" r="60" fill="none" stroke="#1a365d" stroke-width="1.5"/>
+  <line x1="180" y1="100" x2="180" y2="20" stroke="#c2410c" stroke-width="2.5" marker-end="url(#cw2)"/>
+  <text x="185" y="25" font-size="13" fill="#c2410c" font-style="italic" font-weight="bold">∇×F</text>
+  <path d="M 200 65 Q 215 80 200 95" fill="none" stroke="#1a365d" stroke-width="2" marker-end="url(#cw1)"/>
+  <path d="M 200 95 Q 215 110 200 125" fill="none" stroke="#1a365d" stroke-width="2" marker-end="url(#cw1)"/>
+  <text x="220" y="105" font-size="11" fill="#1a365d">流场绕轴转</text>
+  <text x="42" y="170" font-size="11" fill="#666">点 P 处放小风车: 旋度方向 = 轴向, 大小 = 转速</text>
+</svg>
+<figcaption>图 11.6.1 旋度 = 小风车几何:风车轴沿 $\nabla\times\vec{F}$,转速 $=|\nabla\times\vec{F}|$。</figcaption>
+</figure>
 <div class="box-def">
 <p>
 向量场 $\vec{F}=(P,Q,R)$ 的<strong>旋度</strong>(curl)是新的向量场:
