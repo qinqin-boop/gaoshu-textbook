@@ -711,6 +711,19 @@ $$\frac{\partial L}{\partial\theta_k}=\underbrace{\frac{\partial L}{\partial f_N
 </p>
 </div>
 <h3 id="9-4-5">9.4.5 高阶导数</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <text x="30" y="40" font-size="13" font-family="serif" fill="#1a365d">∂²z/∂x² =</text>
+  <text x="130" y="40" font-size="13" font-family="serif" fill="#c2410c">f_uu·u_x²</text>
+  <text x="220" y="40" font-size="13" fill="#c2410c">+ 2f_uv·u_x v_x</text>
+  <text x="130" y="65" font-size="13" font-family="serif" fill="#c2410c">+ f_vv·v_x²</text>
+  <rect x="120" y="80" width="200" height="40" fill="#fde2e2" stroke="#b91c1c" stroke-width="1.5"/>
+  <text x="130" y="100" font-size="13" font-family="serif" fill="#b91c1c">+ f_u·u_xx + f_v·v_xx</text>
+  <text x="125" y="117" font-size="11" font-style="italic" fill="#b91c1c">⚠ 易忘高阶项</text>
+  <text x="30" y="150" font-size="11" fill="#666">链式法则二次应用: 二阶 = 一阶链式套一次 + u/v 二阶项</text>
+</svg>
+<figcaption>图 9.4.3 二阶偏导链式公式:含 $f_u u_{xx},\,f_v v_{xx}$ 高阶项 — 这是 PDE 推导(波动 / 热)中最易遗漏的部分。</figcaption>
+</figure>
 <p>
 链式法则用一次可以算一阶。<strong>二阶混合偏导</strong>需要把链式应用两次,公式繁琐但机械:
 $$\frac{\partial^2 z}{\partial x^2}=\frac{\partial}{\partial x}\bigg(f_u u_x+f_v v_x\bigg)=f_{uu}u_x^2+2f_{uv}u_xv_x+f_{vv}v_x^2+f_u u_{xx}+f_v v_{xx}.$$

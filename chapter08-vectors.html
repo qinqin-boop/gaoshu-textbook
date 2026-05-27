@@ -109,6 +109,31 @@
 | 二次曲面 | 椭球 / 抛物面 / 双曲面 | §10.3 球坐标 / §11.4 法向 |
 </p>
 <h3 id="8-0-3">8.0.3 学这章的意义</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <rect x="20" y="20" width="60" height="35" rx="4" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="34" y="42" font-size="11">向量 a⃗</text>
+  <line x1="80" y1="38" x2="100" y2="38" stroke="#888" stroke-width="1"/>
+  <text x="100" y="42" font-size="10" fill="#666">→ 词嵌入 (300d)</text>
+  <rect x="20" y="65" width="60" height="35" rx="4" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="28" y="87" font-size="11">a⃗·b⃗</text>
+  <line x1="80" y1="83" x2="100" y2="83" stroke="#888" stroke-width="1"/>
+  <text x="100" y="87" font-size="10" fill="#666">→ 余弦相似度 / 注意力</text>
+  <rect x="20" y="110" width="60" height="35" rx="4" fill="#ecf7ec" stroke="#2d6e2d"/>
+  <text x="28" y="132" font-size="11">a⃗×b⃗</text>
+  <line x1="80" y1="128" x2="100" y2="128" stroke="#888" stroke-width="1"/>
+  <text x="100" y="132" font-size="10" fill="#666">→ 力矩 / 法向 / CGI</text>
+  <rect x="220" y="20" width="60" height="35" rx="4" fill="#fde2e2" stroke="#b91c1c"/>
+  <text x="232" y="42" font-size="11">平面/曲面</text>
+  <line x1="220" y1="38" x2="200" y2="38" stroke="#888" stroke-width="1"/>
+  <text x="135" y="42" font-size="10" fill="#666">PDE 边界 / CAD</text>
+  <rect x="220" y="110" width="60" height="35" rx="4" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="232" y="132" font-size="11">3D 直线</text>
+  <line x1="220" y1="128" x2="200" y2="128" stroke="#888" stroke-width="1"/>
+  <text x="135" y="132" font-size="10" fill="#666">机器人 / GPS</text>
+</svg>
+<figcaption>图 8.0.3 向量代数在工程 / AI 落地:词向量(300d) / 余弦相似度(注意力) / 法向(CGI 光照) / PDE / 机器人。</figcaption>
+</figure>
 <ul>
 <li><strong>几何代数化</strong>:用代数式表达几何对象,告别"画图证明"——这是 Descartes 在 17 世纪发起的革命;</li>
 <li><strong>多元微积分的语言</strong>:§9-12 全靠向量记号才能简洁;</li>
@@ -337,6 +362,29 @@ $$\operatorname{prj}_{\vec{b}}\vec{F}=\frac{(3,4,0)\cdot(1,0,0)}{1}=3\,\mathrm{N
 </p>
 </div>
 <h3 id="8-1-6">8.1.6 方向余弦</h3>
+<figure>
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="dc1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <line x1="160" y1="200" x2="160" y2="20" stroke="#888" stroke-width="1"/>
+  <line x1="160" y1="200" x2="60" y2="170" stroke="#888" stroke-width="1"/>
+  <line x1="160" y1="200" x2="290" y2="180" stroke="#888" stroke-width="1"/>
+  <text x="152" y="15" font-size="12" fill="#888">z</text>
+  <text x="50" y="180" font-size="12" fill="#888">x</text>
+  <text x="295" y="190" font-size="12" fill="#888">y</text>
+  <line x1="160" y1="200" x2="240" y2="80" stroke="#c2410c" stroke-width="2.5" marker-end="url(#dc1)"/>
+  <text x="245" y="78" font-size="13" font-style="italic" fill="#c2410c">a⃗</text>
+  <path d="M 200 140 A 30 30 0 0 0 215 160" fill="none" stroke="#888" stroke-width="0.8"/>
+  <text x="205" y="155" font-size="11" fill="#888">α</text>
+  <path d="M 175 105 A 30 30 0 0 1 195 130" fill="none" stroke="#888" stroke-width="0.8"/>
+  <text x="178" y="125" font-size="11" fill="#888">γ</text>
+  <path d="M 215 175 A 30 30 0 0 0 235 165" fill="none" stroke="#888" stroke-width="0.8"/>
+  <text x="220" y="175" font-size="11" fill="#888">β</text>
+  <text x="30" y="210" font-size="11" fill="#444">cos²α + cos²β + cos²γ = 1 (单位向量)</text>
+</svg>
+<figcaption>图 8.1.4 方向余弦:向量 $\vec{a}$ 与三坐标轴夹角余弦 $(\cos\alpha,\cos\beta,\cos\gamma)$ = 单位向量分量,满足 $\sum\cos^2=1$。</figcaption>
+</figure>
 <div class="box-def">
 <p>
 $\vec{a}\neq\vec{0}$ 与三个坐标轴的夹角 $\alpha,\beta,\gamma$ 的余弦 $\cos\alpha,\cos\beta,\cos\gamma$ 称为 $\vec{a}$ 的<strong>方向余弦</strong>:
