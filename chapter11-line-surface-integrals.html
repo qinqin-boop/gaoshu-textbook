@@ -1211,23 +1211,26 @@ $$\int_{\partial M} \omega = \int_M d\omega$$
 </p>
 <h2 id="field-theory">补充: 场论 (Field Theory) 综合</h2>
 <h3 id="12-1">知识点 12.1: 三种"导数算子"梳理</h3>
-<p>
-向量场分析有三个核心算子, 各对应一种物理直觉:
-</p>
+<div class="box-def">
+<p>向量分析三大算子</p>
 <p>
 | 算子 | 输入 → 输出 | 公式 | 物理意义 |
 |---|---|---|---|
-| <strong>梯度 grad / ∇</strong> | 标量场 → 向量场 | (∂f/∂x, ∂f/∂y, ∂f/∂z) | 函数最快上升方向 |
-| <strong>散度 div / ∇·</strong> | 向量场 → 标量场 | ∂P/∂x + ∂Q/∂y + ∂R/∂z | 体积"源"密度 (流出 - 流入) |
-| <strong>旋度 curl / ∇×</strong> | 向量场 → 向量场 | (∂R/∂y - ∂Q/∂z, ...) | 局部"涡旋"轴向量 |
+| <strong>梯度 grad / $\nabla$</strong> | 标量场 → 向量场 | $(\partial f/\partial x, \partial f/\partial y, \partial f/\partial z)$ | 函数最快上升方向 |
+| <strong>散度 div / $\nabla\cdot$</strong> | 向量场 → 标量场 | $\partial P/\partial x + \partial Q/\partial y + \partial R/\partial z$ | 体积"源"密度 (流出−流入) |
+| <strong>旋度 curl / $\nabla\times$</strong> | 向量场 → 向量场 | $(\partial R/\partial y - \partial Q/\partial z, \ldots)$ | 局部"涡旋"轴向量 |
 </p>
+</div>
+<div class="box-thm">
+<p>两个零等式 (基本恒等式)</p>
+<ol>
+<li><strong>梯度场无旋</strong>: $\nabla \times (\nabla f) = 0$ — 势能场沿任意闭路环流为 0</li>
+<li><strong>旋度场无源</strong>: $\nabla \cdot (\nabla \times \vec{F}) = 0$ — "没有磁单极"</li>
+</ol>
 <p>
-<strong>两个零等式 (基本拓扑)</strong>:
+二者对应 de Rham 上同调中的 $d^2 = 0$, 是微分几何拓扑的核心.
 </p>
-<ul>
-<li>∇ × (∇f) = 0 — 梯度场无旋 (势能场无环流)</li>
-<li>∇ · (∇ × $\vec{F}$) = 0 — 旋度场无源 (没有"磁单极")</li>
-</ul>
+</div>
 <h3 id="12-2">知识点 12.2: 拉普拉斯算子 Δ = ∇·∇</h3>
 <p>
 <strong>定义</strong>: Δf = ∂²f/∂x² + ∂²f/∂y² + ∂²f/∂z² = div(grad f)
