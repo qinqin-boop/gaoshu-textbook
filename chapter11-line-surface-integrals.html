@@ -804,17 +804,37 @@ $$(\nabla\times\vec{F})(P_0)\cdot\vec{n}=\lim_{r\to 0^+}\frac{1}{\pi r^2}\oint_{
 由 Stokes:$\oint_{\partial\Sigma_r}\vec{F}\cdot d\vec{r}=\iint_{\Sigma_r}(\nabla\times\vec{F})\cdot\vec{n}\,dS$。由于 $\nabla\times\vec{F}$ 连续,$\Sigma_r$ 极小时被积函数近似为常值 $(\nabla\times\vec{F})(P_0)\cdot\vec{n}$,从而积分近似 $(\nabla\times\vec{F})(P_0)\cdot\vec{n}\cdot\pi r^2$。除以 $\pi r^2$ 并令 $r\to 0^+$ 即得。证毕。
 </p>
 </div>
+<div class="box-intuition">
+<p>旋度定义"内蕴"无关坐标系</p>
 <p>
-这条等式说明旋度的定义<strong>不依赖坐标系选择</strong>——把球面上的旋度搬到曲线坐标系,公式形式变(雅可比插入)但极限值不变。这就是为什么在 GR、规范场论中 $\nabla\times$ 推广为外微分 $d$。
+这条等式 (环量密度极限) 说明旋度定义<strong>不依赖坐标系</strong>: 把球面上的旋度搬到曲线坐标系, 公式形式变 (雅可比插入) 但极限值不变. 这就是为什么在 <strong>广义相对论 / 规范场论</strong> 中 $\nabla\times$ 推广为外微分 $d$ — 后者直接定义在流形上不需坐标.
 </p>
+</div>
 <h3 id="11-6-4">11.6.4 物理意义:法拉第电磁感应</h3>
+<div class="box-thm">
+<p>法拉第电磁感应定律 (从 Maxwell 推 Stokes)</p>
 <p>
-Maxwell 方程组的第三条:
-$$\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}.$$
-对任意有向曲面 $\Sigma$ 两边求曲面积分,左边用 Stokes 化为边界环流:
-$$\oint_{\partial\Sigma}\!\vec{E}\cdot d\vec{r}=-\frac{d}{dt}\iint_\Sigma\!\vec{B}\cdot d\vec{S}=-\frac{d\Phi_B}{dt}.$$
-左端是闭合导线沿 $\partial\Sigma$ 一圈的电动势($\mathrm{emf}$),右端是穿过 $\Sigma$ 的磁通量随时间变化的负数。这就是<strong>法拉第电磁感应定律</strong>:磁通量变化产生电动势——发电机、变压器、感应炉的物理基础。<strong>Stokes 公式把 Maxwell 微分形式跟工程师每天用的"绕圈"积分量直接打通</strong>。
+Maxwell 第三方程: $\nabla\times\vec{E} = -\partial\vec{B}/\partial t$.
+对任意有向曲面 $\Sigma$ 两边曲面积分, 左边用 <strong>Stokes</strong> 化为边界环流:
+$$\boxed{\oint_{\partial\Sigma}\vec{E}\cdot d\vec{r} = -\frac{d}{dt}\iint_\Sigma\vec{B}\cdot d\vec{S} = -\frac{d\Phi_B}{dt}}$$
+<strong>左端</strong>: 闭合导线沿 $\partial\Sigma$ 一圈的<strong>电动势</strong> (emf).
+<strong>右端</strong>: 穿过 $\Sigma$ 的磁通量随时间变化率取负.
 </p>
+</div>
+<div class="box-intuition">
+<p>工程价值 — 整个电力工业</p>
+<p>
+这条定律是<strong>发电机 / 变压器 / 感应炉 / 无线充电</strong> 的物理基础:
+</p>
+<ul>
+<li>发电机: 让磁通量周期变化 → 感应出周期电动势 (50 / 60 Hz 交流电)</li>
+<li>变压器: 原副边线圈共享磁通, $d\Phi/dt$ 一样 → 电压比 = 匝数比</li>
+<li>无线充电: 高频变化磁场跨气隙感应电压</li>
+</ul>
+<p>
+<strong>Stokes 公式把 Maxwell 微分形式 (理论) 跟工程师每天用的"绕圈" 积分量 (实测) 直接打通</strong>.
+</p>
+</div>
 <h3 id="11-6-5">11.6.5 例题</h3>
 <div class="box-example">
 <p>
