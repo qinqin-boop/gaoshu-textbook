@@ -655,17 +655,19 @@ $$\frac{\partial z}{\partial x} = \frac{\partial z}{\partial u}\frac{\partial u}
 类似得 $\partial z/\partial y$. <strong>AI 反向传播</strong>就是这一套链式法则的递归应用.
 </p>
 </div>
+<div class="box-intuition">
+<p>链式法则的"加权" 直觉</p>
 <p>
-<strong>情形 1 速写</strong>: $dz/dt = z_u \cdot u'(t) + z_v \cdot v'(t)$
+<strong>情形 1 速写</strong>: $dz/dt = z_u \cdot u'(t) + z_v \cdot v'(t)$.
 </p>
 <p>
-<strong>生活类比</strong>: 你的快乐 = f(收入, 健康), 收入和健康都跟时间相关 → 快乐对时间的变化 = (快乐对收入率 × 收入对时间率) + (快乐对健康率 × 健康对时间率).
+<strong>生活类比</strong>: 快乐 $=f$(收入, 健康), 收入 / 健康都随时间变化 → "快乐对时间变化" = (快乐对收入率 × 收入对时间率) + (快乐对健康率 × 健康对时间率). <strong>每条传导路径权重就是相应偏导数, 全部相加 = 总效应</strong>.
 </p>
 <p>
-<strong>情形 2</strong>: z = f(u, v), u = u(x, y), v = v(x, y). 求 ∂ z / ∂ x 和 ∂ z / ∂ y.
-(∂ z)/(∂ x) = (∂ z)/(∂ u) (∂ u)/(∂ x) + (∂ z)/(∂ v) (∂ v)/(∂ x)
-(∂ z)/(∂ y) = (∂ z)/(∂ u) (∂ u)/(∂ y) + (∂ z)/(∂ v) (∂ v)/(∂ y)
+<strong>情形 2 模板</strong>: $z = f(u, v)$, $u = u(x, y)$, $v = v(x, y)$:
+$$\frac{\partial z}{\partial x} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial z}{\partial v}\frac{\partial v}{\partial x}, \qquad \frac{\partial z}{\partial y} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial y} + \frac{\partial z}{\partial v}\frac{\partial v}{\partial y}$$
 </p>
+</div>
 <div class="box-example">
 <p>例题 6</p>
 <p>
