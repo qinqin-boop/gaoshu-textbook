@@ -245,11 +245,13 @@ $$\int_L f\,ds=\int_\alpha^\beta f(x(t),y(t),z(t))\,\sqrt{x'(t)^2+y'(t)^2+z'(t)^
 <p>
 <strong>例 1</strong>(参数化算简单积分)$L$:$x=t,y=t^2$,$t\in[0,1]$。算 $\int_L y\,ds$。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\vec{r}'=(1,2t)$,$|\vec{r}'|=\sqrt{1+4t^2}$。</p>
 <p>
-<strong>解</strong>:$\vec{r}'=(1,2t)$,$|\vec{r}'|=\sqrt{1+4t^2}$。
 $$\int_L y\,ds=\int_0^1 t^2\sqrt{1+4t^2}\,dt.$$
 (具体值靠数值或代换 $u=2t$ 给出 $\approx 0.55$)
 </p>
+</details>
 </div>
 <p>
 <strong>显式曲线情形</strong>:$L:y=g(x)$,$x\in[a,b]$ 取 $t=x$,$x'(t)=1,y'(t)=g'(x)$:
@@ -379,11 +381,13 @@ $$\int_L P\,dx+Q\,dy+R\,dz=\int_\alpha^\beta\big[P(x(t),y(t),z(t))x'(t)+Q\cdot y
 <p>
 <strong>例 3</strong>(算环量)$\vec{F}=(-y,x,0)$,$L$:单位圆 $x^2+y^2=1$,$z=0$,逆时针正向。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$x=\cos t,y=\sin t,t\in[0,2\pi]$,$dx=-\sin t\,dt,dy=\cos t\,dt$。</p>
 <p>
-<strong>解</strong>:$x=\cos t,y=\sin t,t\in[0,2\pi]$,$dx=-\sin t\,dt,dy=\cos t\,dt$。
 $$\int_L-y\,dx+x\,dy=\int_0^{2\pi}[\sin^2 t+\cos^2 t]\,dt=2\pi.$$
 <strong>物理</strong>:旋转流场 $\vec{F}=(-y,x,0)$(切向逆时针)沿圆环一圈做的功 = 环量。
 </p>
+</details>
 </div>
 <h3 id="11-2-3">11.2.3 两类曲线积分的转换</h3>
 <div class="box-thm">
@@ -581,31 +585,37 @@ $$\oint_{\partial D}\vec{F}\cdot d\vec{r}=\iint_D(\nabla\times\vec{F})\cdot d\ve
 <p>
 <strong>例 1</strong>(用 Green 算难积分)计算 $\displaystyle I=\oint_C\!(2xy-x^2)\,dx+(x+y^2)\,dy$,$C$ 是抛物线 $y=x^2$ 与 $y^2=x$ 围成区域的正向边界。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$P=2xy-x^2$,$Q=x+y^2$,$\partial_x Q-\partial_y P=1-2x$。区域 $D=\{0\le x\le 1,\ x^2\le y\le\sqrt x\}$。</p>
 <p>
-<strong>解</strong>:$P=2xy-x^2$,$Q=x+y^2$,$\partial_x Q-\partial_y P=1-2x$。区域 $D=\{0\le x\le 1,\ x^2\le y\le\sqrt x\}$。
 $$I=\iint_D(1-2x)\,dx\,dy=\int_0^1\!\!dx\int_{x^2}^{\sqrt x}(1-2x)\,dy=\int_0^1(1-2x)(\sqrt x-x^2)\,dx.$$
 展开 $(1-2x)(\sqrt x-x^2)=\sqrt x-x^2-2x^{3/2}+2x^3$,积分:
 $$\int_0^1\!=\tfrac{2}{3}-\tfrac{1}{3}-\tfrac{4}{5}+\tfrac{1}{2}=\tfrac{20}{30}-\tfrac{10}{30}-\tfrac{24}{30}+\tfrac{15}{30}=\tfrac{1}{30}.$$
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 2</strong>(算面积)用边界积分求椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 的面积。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>参数化 $x=a\cos t$,$y=b\sin t$,$t\in[0,2\pi]$,正向。</p>
 <p>
-<strong>解</strong>:参数化 $x=a\cos t$,$y=b\sin t$,$t\in[0,2\pi]$,正向。
 $$S=\tfrac12\oint x\,dy-y\,dx=\tfrac12\!\int_0^{2\pi}\!(a\cos t\cdot b\cos t-b\sin t\cdot(-a\sin t))\,dt=\tfrac{ab}{2}\!\int_0^{2\pi}\!dt=\pi ab.$$
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 3</strong>(复连通的关键反例)取 $\displaystyle P=-\frac{y}{x^2+y^2},\;Q=\frac{x}{x^2+y^2}$,验证 $\partial_x Q=\partial_y P$ 但 $\oint_{|x|^2+|y|^2=1}\!P\,dx+Q\,dy=2\pi\neq 0$。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>直接求偏导 $\partial_x Q=\partial_y P=\frac{y^2-x^2}{(x^2+y^2)^2}$。沿单位圆 $x=\cos t,y=\sin t$ 积分:</p>
 <p>
-<strong>解</strong>:直接求偏导 $\partial_x Q=\partial_y P=\frac{y^2-x^2}{(x^2+y^2)^2}$。沿单位圆 $x=\cos t,y=\sin t$ 积分:
 $$\oint=\int_0^{2\pi}\!\!\bigg[-\sin t\cdot(-\sin t)+\cos t\cdot\cos t\bigg]dt=\int_0^{2\pi}\!1\,dt=2\pi.$$
 为什么没等于 $0$?——因为 $(P,Q)$ 在原点不连续可微,$D$ 含原点,Green 公式条件破坏。挖掉原点后 $D$ 变复连通,需修正:外边界 $-$ 内边界 $=$ 内部积分,与原点处的<strong>绕数</strong>关联。这是复变函数中<strong>留数定理</strong>和拓扑中<strong>de Rham 上同调</strong>的起点。
 </p>
+</details>
 </div>
 <div class="box-pitfall">
 <p>
@@ -736,12 +746,14 @@ $$dS=\frac{dx\,dy}{\cos\alpha}=\sqrt{1+z_x^2+z_y^2}\,dx\,dy.\;\square$$
 <p>
 <strong>例 1</strong>(半球面积)上半球面 $z=\sqrt{R^2-x^2-y^2}$($z\ge 0$)。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$z_x=-x/z$,$z_y=-y/z$,</p>
 <p>
-<strong>解</strong>:$z_x=-x/z$,$z_y=-y/z$,
 $$1+z_x^2+z_y^2=1+\frac{x^2+y^2}{z^2}=\frac{R^2}{R^2-x^2-y^2}.$$
 $$S=\iint_{x^2+y^2\le R^2}\!\frac{R}{\sqrt{R^2-x^2-y^2}}\,dx\,dy=\int_0^{2\pi}\!d\theta\!\int_0^R\!\frac{R\,r}{\sqrt{R^2-r^2}}\,dr=2\pi R\cdot\big[-\sqrt{R^2-r^2}\big]_0^R=2\pi R^2.$$
 整个球面 $4\pi R^2$。
 </p>
+</details>
 </div>
 <h3 id="11-4-3-vec-r-vec-r-u-v">11.4.3 一般参数化 $\vec{r}=\vec{r}(u,v)$ 的面积元素</h3>
 <figure>
@@ -795,30 +807,35 @@ $|\vec{r}_u\times\vec{r}_v|$ 是从 $(u,v)$ 平面到曲面的「面积放大因
 <p>
 <strong>例 2</strong>(球面参数化)球面 $\vec{r}(\varphi,\theta)=R(\sin\varphi\cos\theta,\sin\varphi\sin\theta,\cos\varphi)$,$\varphi\in[0,\pi]$,$\theta\in[0,2\pi]$。算 $dS$。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
 <p>
-<strong>解</strong>:
 $$\vec{r}_\varphi=R(\cos\varphi\cos\theta,\cos\varphi\sin\theta,-\sin\varphi),\quad\vec{r}_\theta=R(-\sin\varphi\sin\theta,\sin\varphi\cos\theta,0).$$
 $$\vec{r}_\varphi\times\vec{r}_\theta=R^2\sin\varphi\,(\sin\varphi\cos\theta,\sin\varphi\sin\theta,\cos\varphi)=R^2\sin\varphi\cdot\hat{r}.$$
 $|\vec{r}_\varphi\times\vec{r}_\theta|=R^2\sin\varphi$,$dS=R^2\sin\varphi\,d\varphi\,d\theta$。球面面积 $=\int_0^{2\pi}\!d\theta\!\int_0^\pi R^2\sin\varphi\,d\varphi=2\pi R^2\cdot 2=4\pi R^2$。
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 3</strong>(对称巧算)$\Sigma$ 为球面 $x^2+y^2+z^2=R^2$,算 $\iint_\Sigma(x^2+y^2+z^2)\,dS$。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>在 $\Sigma$ 上 $x^2+y^2+z^2=R^2$ 是常数,所以</p>
 <p>
-<strong>解</strong>:在 $\Sigma$ 上 $x^2+y^2+z^2=R^2$ 是常数,所以
 $$\iint_\Sigma R^2\,dS=R^2\cdot 4\pi R^2=4\pi R^4.$$
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 4</strong>(锥面)$\Sigma$ 为锥面 $z=\sqrt{x^2+y^2}$,$0\le z\le 1$ 部分。算其侧面积。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$z_x=x/\sqrt{x^2+y^2}$,$z_y=y/\sqrt{x^2+y^2}$,$z_x^2+z_y^2=1$,$\sqrt{1+z_x^2+z_y^2}=\sqrt 2$。投影是 $x^2+y^2\le 1$ 的圆盘:</p>
 <p>
-<strong>解</strong>:$z_x=x/\sqrt{x^2+y^2}$,$z_y=y/\sqrt{x^2+y^2}$,$z_x^2+z_y^2=1$,$\sqrt{1+z_x^2+z_y^2}=\sqrt 2$。投影是 $x^2+y^2\le 1$ 的圆盘:
 $$S=\iint_{x^2+y^2\le 1}\sqrt 2\,dx\,dy=\sqrt 2\cdot\pi=\sqrt 2\,\pi.$$
 </p>
+</details>
 </div>
 <div class="box-pitfall">
 <p>
@@ -920,10 +937,12 @@ $d\vec{S}=\vec{n}\,dS=\vec{n}\cdot|\vec{r}_u\times\vec{r}_v|\,du\,dv=(\vec{r}_u\
 <p>
 <strong>例 1</strong>(球面通量)$\vec{F}=(x,y,z)$,$\Sigma$ 为单位球面外侧,求 $\iint_\Sigma\vec{F}\cdot d\vec{S}$。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>外法向 $\vec{n}=(x,y,z)$(在单位球面上),$\vec{F}\cdot\vec{n}=x^2+y^2+z^2=1$。</p>
 <p>
-<strong>解</strong>:外法向 $\vec{n}=(x,y,z)$(在单位球面上),$\vec{F}\cdot\vec{n}=x^2+y^2+z^2=1$。
 $$\iint_\Sigma 1\,dS=4\pi.$$
 </p>
+</details>
 </div>
 <h3 id="11-5-4-gauss">11.5.4 Gauss 公式(散度定理)</h3>
 <figure>
@@ -1067,30 +1086,36 @@ $$\oiint_{\partial V}\!R\,dx\,dy=\underbrace{\iint_{D_{xy}}\!R(x,y,z_2)\,dx\,dy}
 <p>
 <strong>例 2</strong>(直接套散度)$\vec{F}=(x,y,z)$,$\Sigma$ 为单位球外侧。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\nabla\cdot\vec{F}=1+1+1=3$,</p>
 <p>
-<strong>解</strong>:$\nabla\cdot\vec{F}=1+1+1=3$,
 $$\iint_\Sigma\vec{F}\cdot d\vec{S}=\iiint_V 3\,dV=3\cdot\tfrac{4\pi}{3}=4\pi.$$
 跟例 1 直接算结果一致。
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 3</strong>(求体积的反向技巧)单位球体积 $V$ 可由 $\oiint z\,dx\,dy$ 算出。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>取 $\vec{F}=(0,0,z)$,$\nabla\cdot\vec{F}=1$,</p>
 <p>
-<strong>解</strong>:取 $\vec{F}=(0,0,z)$,$\nabla\cdot\vec{F}=1$,
 $$\oiint_{\partial V}\!z\,dx\,dy=\iiint_V 1\,dV=V.$$
 对称版:$V=\tfrac13\oiint(x\,dy\,dz+y\,dz\,dx+z\,dx\,dy)$。
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 4</strong>(立方体通量)$\vec{F}=(x^2,y^2,z^2)$,$\Sigma$ 为单位立方体 $[0,1]^3$ 外表面。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\nabla\cdot\vec{F}=2x+2y+2z$,</p>
 <p>
-<strong>解</strong>:$\nabla\cdot\vec{F}=2x+2y+2z$,
 $$\iint_\Sigma\vec{F}\cdot d\vec{S}=\iiint_{[0,1]^3}(2x+2y+2z)\,dV=2\cdot 3\cdot\tfrac12=3.$$
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
@@ -1413,18 +1438,20 @@ $$\iint_\Sigma(\nabla\times\vec{F})\cdot d\vec{S}=\iint_{D}2\,dA=2\cdot\pi=2\pi.
 <p>
 <strong>例 2</strong>(用 Stokes 简化)$\vec{F}=(y,-x,z^2)$,$L$ 为三角形 $A(1,0,0)\to B(0,1,0)\to C(0,0,1)\to A$ 沿这个顺序走,求 $\oint_L\vec{F}\cdot d\vec{r}$。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>计算 $\nabla\times\vec{F}=(0-0,\,0-0,\,-1-1)=(0,0,-2)$。取 $\Sigma$ 为三角形所在平面 $x+y+z=1$ 的内部三角形片,法向 $\vec{n}=(1,1,1)/\sqrt 3$(由顶点顺序右手系定向)。三角形面积 $S=\tfrac{\sqrt 3}{2}$(三边都是 $\sqrt 2$,等边)。</p>
 <p>
-<strong>解</strong>:计算 $\nabla\times\vec{F}=(0-0,\,0-0,\,-1-1)=(0,0,-2)$。取 $\Sigma$ 为三角形所在平面 $x+y+z=1$ 的内部三角形片,法向 $\vec{n}=(1,1,1)/\sqrt 3$(由顶点顺序右手系定向)。三角形面积 $S=\tfrac{\sqrt 3}{2}$(三边都是 $\sqrt 2$,等边)。
 $$\oint=\iint_\Sigma(\nabla\times\vec{F})\cdot\vec{n}\,dS=(0,0,-2)\cdot\bigg(\frac{1}{\sqrt 3},\frac{1}{\sqrt 3},\frac{1}{\sqrt 3}\bigg)\cdot S=-\frac{2}{\sqrt 3}\cdot\frac{\sqrt 3}{2}=-1.$$
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 3</strong>(保守场判别)若 $\vec{F}$ 在单连通区域里满足 $\nabla\times\vec{F}=\vec{0}$,则<strong>任意闭曲线积分为零</strong>,从而 $\vec{F}$ 是<strong>保守场</strong>($\vec{F}=\nabla\phi$ 某势函数)。
 </p>
-<p>
-<strong>解</strong>(思路):由 Stokes,任意 $\partial\Sigma$ 上环流 $=\iint_\Sigma\vec{0}\cdot d\vec{S}=0$。在单连通区域里,任两条同起终点的曲线之差是闭路,所以 $\vec{F}$ 沿路径积分<strong>路径无关</strong>;固定起点 $P_0$ 后定义 $\phi(P)=\int_{P_0}^P\vec{F}\cdot d\vec{r}$,$\nabla\phi=\vec{F}$。<strong>注意</strong>:单连通条件不可去掉——反例 $\vec{F}=(-y,x,0)/(x^2+y^2)$ 在 $\mathbb{R}^3\setminus\{z\text{-轴}\}$ 上 $\nabla\times\vec{F}=\vec{0}$,但绕 $z$-轴一圈环流为 $2\pi$ 不为零(空间非单连通)。
-</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>(思路):由 Stokes,任意 $\partial\Sigma$ 上环流 $=\iint_\Sigma\vec{0}\cdot d\vec{S}=0$。在单连通区域里,任两条同起终点的曲线之差是闭路,所以 $\vec{F}$ 沿路径积分<strong>路径无关</strong>;固定起点 $P_0$ 后定义 $\phi(P)=\int_{P_0}^P\vec{F}\cdot d\vec{r}$,$\nabla\phi=\vec{F}$。<strong>注意</strong>:单连通条件不可去掉——反例 $\vec{F}=(-y,x,0)/(x^2+y^2)$ 在 $\mathbb{R}^3\setminus\{z\text{-轴}\}$ 上 $\nabla\times\vec{F}=\vec{0}$,但绕 $z$-轴一圈环流为 $2\pi$ 不为零(空间非单连通)。</p>
+</details>
 </div>
 <h3 id="11-6-6">11.6.6 三大公式与微分形式视角</h3>
 <figure>

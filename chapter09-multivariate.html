@@ -537,11 +537,13 @@ $$f(x_0+\Delta x,y_0+\Delta y)\approx f(x_0,y_0)+f_x(x_0,y_0)\Delta x+f_y(x_0,y_
 <p>
 <strong>例 2</strong> 估计 $\sqrt{(1.02)^2+(2.97)^2}$。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>取 $f(x,y)=\sqrt{x^2+y^2}$,$x_0=1,y_0=3$,$\Delta x=0.02,\Delta y=-0.03$。$f(1,3)=\sqrt{10}\approx 3.162$。$f_x=x/\sqrt{x^2+y^2}=1/\sqrt{10}$,$f_y=3/\sqrt{10}$,在 $(1,3)$。</p>
 <p>
-<strong>解</strong>:取 $f(x,y)=\sqrt{x^2+y^2}$,$x_0=1,y_0=3$,$\Delta x=0.02,\Delta y=-0.03$。$f(1,3)=\sqrt{10}\approx 3.162$。$f_x=x/\sqrt{x^2+y^2}=1/\sqrt{10}$,$f_y=3/\sqrt{10}$,在 $(1,3)$。
 $$f(1.02,2.97)\approx\sqrt{10}+\frac{0.02-0.09}{\sqrt{10}}\approx 3.162+\frac{-0.07}{3.162}\approx 3.140.$$
 真实值 $\sqrt{1.0404+8.8209}=\sqrt{9.8613}\approx 3.140$,误差在 $10^{-3}$ 数量级。
 </p>
+</details>
 </div>
 <h3 id="9-3-4">9.3.4 雅可比矩阵预热</h3>
 <p>
@@ -872,11 +874,13 @@ $$u_x=\frac{1}{J}\det\begin{pmatrix}-F_x&F_v\\ -G_x&G_v\end{pmatrix}=-\frac{1}{J
 <p>
 <strong>例 3</strong>(方程组) $F=x+y-u-v=0,\,G=x-y-u^2-v^2=0$ 在 $(1,1,1,0)$ 附近($F=0,G=0$ 都满足)。求 $u_x$。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$F_u=-1,F_v=-1,G_u=-2u=-2,G_v=-2v=0$,$J=(-1)(0)-(-1)(-2)=-2\neq 0$。$F_x=1,G_x=1$。</p>
 <p>
-<strong>解</strong>:$F_u=-1,F_v=-1,G_u=-2u=-2,G_v=-2v=0$,$J=(-1)(0)-(-1)(-2)=-2\neq 0$。$F_x=1,G_x=1$。
 $$\frac{\partial(F,G)}{\partial(x,v)}=\det\begin{pmatrix}1&-1\\ 1&0\end{pmatrix}=0-(-1)=1.$$
 $u_x=-1/(-2)=1/2$。
 </p>
+</details>
 </div>
 <h3 id="9-5-4">9.5.4 几何意义:隐函数定理与流形</h3>
 <figure>
@@ -1156,33 +1160,37 @@ $\cos\theta\in[-1,1]$,取 $+1$($\theta=0$,$\vec{l}$ 与 $\nabla f$ 同向)时最
 <p>
 <strong>例 1</strong>(直接计算)设 $f(x,y)=x^2+2y^2$,求在 $(1,1)$ 处沿 $\vec{u}=(1,1)$ 方向的方向导数。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>先单位化 $\vec{l}=\vec{u}/|\vec{u}|=(\tfrac{1}{\sqrt2},\tfrac{1}{\sqrt2})$。偏导 $f_x=2x$,$f_y=4y$,在 $(1,1)$ 处 $\nabla f=(2,4)$。</p>
 <p>
-<strong>解</strong>:先单位化 $\vec{l}=\vec{u}/|\vec{u}|=(\tfrac{1}{\sqrt2},\tfrac{1}{\sqrt2})$。偏导 $f_x=2x$,$f_y=4y$,在 $(1,1)$ 处 $\nabla f=(2,4)$。
 $$\frac{\partial f}{\partial\vec{l}}=\nabla f\cdot\vec{l}=\frac{2}{\sqrt2}+\frac{4}{\sqrt2}=\frac{6}{\sqrt2}=3\sqrt 2.$$
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 2</strong>(找最速方向)$f(x,y)=x^2+y^2$ 在 $(1,2)$ 处,问最快上升方向、最快下降方向、不变方向各是什么?最大变化率多少?
 </p>
-<p>
-<strong>解</strong>:$\nabla f(1,2)=(2,4)$,$|\nabla f|=\sqrt{20}=2\sqrt 5$。
-</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\nabla f(1,2)=(2,4)$,$|\nabla f|=\sqrt{20}=2\sqrt 5$。</p>
 <ul>
 <li>最快上升:$\vec{l}=\tfrac{1}{2\sqrt 5}(2,4)=(\tfrac{1}{\sqrt 5},\tfrac{2}{\sqrt 5})$,变化率 $+2\sqrt 5$;</li>
 <li>最快下降:反向 $(-\tfrac{1}{\sqrt 5},-\tfrac{2}{\sqrt 5})$,变化率 $-2\sqrt 5$;</li>
 <li>不变:垂直方向 $(\tfrac{2}{\sqrt 5},-\tfrac{1}{\sqrt 5})$ 或反向,变化率 $0$。</li>
 </ul>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 3</strong>(梯度下降一步)对凸二次函数 $L(\theta_1,\theta_2)=\theta_1^2+\theta_2^2$,初始参数 $\theta^{(0)}=(4,3)$,学习率 $\eta=0.1$,执行一次梯度下降。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\nabla L(\theta)=(2\theta_1,2\theta_2)$。在 $\theta^{(0)}$ 处 $\nabla L=(8,6)$,</p>
 <p>
-<strong>解</strong>:$\nabla L(\theta)=(2\theta_1,2\theta_2)$。在 $\theta^{(0)}$ 处 $\nabla L=(8,6)$,
 $$\theta^{(1)}=\theta^{(0)}-\eta\nabla L=(4,3)-0.1\cdot(8,6)=(3.2,2.4).$$
 再迭代一步:$\nabla L(3.2,2.4)=(6.4,4.8)$,$\theta^{(2)}=(3.2-0.64,2.4-0.48)=(2.56,1.92)$。每步距离最优点 $(0,0)$ 的范数比上一步缩小一个固定比例 $1-2\eta=0.8$,这就是凸二次问题的<strong>几何收敛</strong>。
 </p>
+</details>
 </div>
 <h3 id="9-6-4-ai">9.6.4 与 AI 优化的联系</h3>
 <figure>
@@ -1505,9 +1513,9 @@ $$\frac{x-x_0}{F_x(P_0)}=\frac{y-y_0}{F_y(P_0)}=\frac{z-z_0}{F_z(P_0)}.$$
 <p>
 <strong>例 1</strong>(球面法线过球心)球面 $x^2+y^2+z^2=14$ 在 $(1,2,3)$ 处的法线?
 </p>
-<p>
-<strong>解</strong>:$\nabla F=(2x,2y,2z)\big|_{(1,2,3)}=(2,4,6)$,方向化简为 $(1,2,3)$。法线 $\frac{x-1}{1}=\frac{y-2}{2}=\frac{z-3}{3}$,正是从球心 $(0,0,0)$ 出发的射线——球面任一点法线必过球心。
-</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\nabla F=(2x,2y,2z)\big|_{(1,2,3)}=(2,4,6)$,方向化简为 $(1,2,3)$。法线 $\frac{x-1}{1}=\frac{y-2}{2}=\frac{z-3}{3}$,正是从球心 $(0,0,0)$ 出发的射线——球面任一点法线必过球心。</p>
+</details>
 </div>
 <h3 id="9-8-2-fermat">9.8.2 极值的必要条件(Fermat)</h3>
 <div class="box-thm">
@@ -1612,21 +1620,21 @@ $$Q(\vec{h})=A\bigg(\Delta x+\frac{B}{A}\Delta y\bigg)^2+\frac{AC-B^2}{A}\Delta 
 <p>
 <strong>例 2</strong> $f(x,y)=x^2+y^2+2x-4y+3$。
 </p>
-<p>
-<strong>解</strong>:$f_x=2x+2$,$f_y=2y-4$。驻点:$x=-1,\,y=2$。$A=f_{xx}=2$,$B=f_{xy}=0$,$C=f_{yy}=2$,$D=4-0=4>0$,$A>0\Rightarrow$ 极小值。极小值 $f(-1,2)=1+4-2-8+3=-2$。
-</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$f_x=2x+2$,$f_y=2y-4$。驻点:$x=-1,\,y=2$。$A=f_{xx}=2$,$B=f_{xy}=0$,$C=f_{yy}=2$,$D=4-0=4>0$,$A>0\Rightarrow$ 极小值。极小值 $f(-1,2)=1+4-2-8+3=-2$。</p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 3</strong>(鞍点)$f(x,y)=x^3-3xy+y^3$ 找极值。
 </p>
-<p>
-<strong>解</strong>:$f_x=3x^2-3y=0$,$f_y=-3x+3y^2=0\Rightarrow y=x^2,\,x=y^2$,联立得 $(0,0)$ 与 $(1,1)$。
-</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$f_x=3x^2-3y=0$,$f_y=-3x+3y^2=0\Rightarrow y=x^2,\,x=y^2$,联立得 $(0,0)$ 与 $(1,1)$。</p>
 <ul>
 <li>在 $(0,0)$:$A=f_{xx}=6x=0$,$B=-3$,$C=6y=0$,$D=0\cdot 0-9=-9<0$ $\Rightarrow$ 鞍点;</li>
 <li>在 $(1,1)$:$A=6$,$B=-3$,$C=6$,$D=36-9=27>0$,$A>0$ $\Rightarrow$ 极小,极小值 $f(1,1)=-1$。</li>
 </ul>
+</details>
 </div>
 <p>
 <strong>$n$ 维推广</strong>:把 $f:\mathbb{R}^n\to\mathbb{R}$ 的 Hessian 写成 $H_f=(\partial^2 f/\partial x_i\partial x_j)$,驻点 $P_0$ 处局部:
@@ -1773,17 +1781,20 @@ $$f(\vec{x}_0+\vec{h})\approx f(\vec{x}_0)+\nabla f(\vec{x}_0)\cdot\vec{h}+\tfra
 <p>
 <strong>例 1</strong>(线性近似算)$f(x,y)=e^x\sin y$,在 $(0,0)$ 处展开到二阶。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$f(0,0)=0$。$f_x=e^x\sin y,\,f_y=e^x\cos y$,在 $(0,0)$ 为 $(0,1)$。$f_{xx}=e^x\sin y=0$,$f_{xy}=e^x\cos y=1$,$f_{yy}=-e^x\sin y=0$,在 $(0,0)$。所以</p>
 <p>
-<strong>解</strong>:$f(0,0)=0$。$f_x=e^x\sin y,\,f_y=e^x\cos y$,在 $(0,0)$ 为 $(0,1)$。$f_{xx}=e^x\sin y=0$,$f_{xy}=e^x\cos y=1$,$f_{yy}=-e^x\sin y=0$,在 $(0,0)$。所以
 $$f(x,y)\approx 0+0\cdot x+1\cdot y+\tfrac12(0\cdot x^2+2\cdot 1\cdot xy+0\cdot y^2)=y+xy.$$
 </p>
+</details>
 </div>
 <div class="box-example">
 <p>
 <strong>例 2</strong>(Peano vs Lagrange 的对照)$f(x,y)=\sqrt{1+x^2+y^2}$ 在 $(0,0)$ 处一阶展开。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$f(0,0)=1$。$f_x=x/\sqrt{1+x^2+y^2},f_y=y/\sqrt{\,\dots}$,在原点为零。</p>
 <p>
-<strong>解</strong>:$f(0,0)=1$。$f_x=x/\sqrt{1+x^2+y^2},f_y=y/\sqrt{\,\dots}$,在原点为零。
 一阶展开 $f\approx 1+0\cdot x+0\cdot y=1$,误差 $\sim$ 二次量 $(x^2+y^2)/2$(可由二阶展开得)。
 </p>
 <p>
@@ -1791,6 +1802,7 @@ Lagrange 余项 $R_1=\tfrac12 D^2 f(\theta x,\theta y)$,展开
 $$D^2 f=x^2 f_{xx}+2xy f_{xy}+y^2 f_{yy}.$$
 $|R_1|$ 受 $|\nabla^2 f|$ 在邻域内的最大值控制。
 </p>
+</details>
 </div>
 <h3 id="9-9-4-taylor-hessian">9.9.4 用 Taylor 推 Hessian 二阶判别(完整连接)</h3>
 <p>
@@ -1918,12 +1930,14 @@ $\det H=4n\sum x_i^2-4(\sum x_i)^2=4n\sum(x_i-\bar x)^2\ge 0$,且 $S_{aa}=2\sum 
 <p>
 <strong>例 1</strong>(4 个数据点)$(1,2),(2,3),(3,5),(4,4)$ 拟合直线。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$n=4$,$\sum x_i=10$,$\sum y_i=14$,$\sum x_iy_i=2+6+15+16=39$,$\sum x_i^2=1+4+9+16=30$。</p>
 <p>
-<strong>解</strong>:$n=4$,$\sum x_i=10$,$\sum y_i=14$,$\sum x_iy_i=2+6+15+16=39$,$\sum x_i^2=1+4+9+16=30$。
 $$a=\frac{4\cdot 39-10\cdot 14}{4\cdot 30-100}=\frac{156-140}{20}=\frac{16}{20}=0.8.$$
 $$b=\bar y-a\bar x=3.5-0.8\cdot 2.5=1.5.$$
 拟合直线 $y=0.8x+1.5$。
 </p>
+</details>
 </div>
 <h3 id="9-10-3">9.10.3 矩阵形式与几何意义</h3>
 <figure>

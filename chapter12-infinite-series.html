@@ -1137,11 +1137,13 @@ $$F_n=\frac{\phi^n-\psi^n}{\sqrt 5},\quad\phi=\frac{1+\sqrt 5}{2},\;\psi=\frac{1
 <p>
 <strong>例 4</strong>(数值积分)$\int_0^1\frac{\sin x}{x}\,dx$($\sin x/x$ 没有初等原函数)。
 </p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\sin x=\sum_{n=0}^\infty\frac{(-1)^n x^{2n+1}}{(2n+1)!}$,$\sin x/x=\sum\frac{(-1)^n x^{2n}}{(2n+1)!}$(在 $\mathbb{R}$ 上一致收敛于任意闭区间)。逐项积分:</p>
 <p>
-<strong>解</strong>:$\sin x=\sum_{n=0}^\infty\frac{(-1)^n x^{2n+1}}{(2n+1)!}$,$\sin x/x=\sum\frac{(-1)^n x^{2n}}{(2n+1)!}$(在 $\mathbb{R}$ 上一致收敛于任意闭区间)。逐项积分:
 $$\int_0^1\frac{\sin x}{x}\,dx=\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)(2n+1)!}.$$
 前几项 $1-\frac{1}{18}+\frac{1}{600}-\dots\approx 0.9461$。这是 <strong>Si(1)</strong> 的计算方法。
 </p>
+</details>
 </div>
 <div class="box-pitfall">
 <p>
