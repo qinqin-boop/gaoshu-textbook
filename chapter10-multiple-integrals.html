@@ -785,6 +785,31 @@ $$\Phi=-2\pi G\rho_0\cdot\tfrac{2}{d}\!\int_0^R\!\rho^2\,d\rho=-\tfrac{4\pi G\rh
 <strong>电磁学双胞胎</strong>:Coulomb 静电场满足 $\nabla\cdot\vec{E}=\rho/\varepsilon_0$ 与引力场 $\nabla\cdot\vec{g}=-4\pi G\rho$ 数学完全同构(差常数因子)。所有引力积分公式直接搬到电学(把 $G\rho_0\to\rho/\varepsilon_0$),反之亦然——这是 Maxwell 与 Newton 在数学层面共享同一 PDE 结构。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="ng_arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <!-- 均匀球 -->
+  <circle cx="170" cy="120" r="80" fill="#1a365d" fill-opacity="0.18" stroke="#1a365d" stroke-width="2"/>
+  <!-- 球心 + M 标 -->
+  <circle cx="170" cy="120" r="6" fill="#1a365d"/>
+  <text x="158" y="138" font-size="13" fill="#1a365d" font-weight="bold">M</text>
+  <!-- 球外质点 P -->
+  <circle cx="400" cy="120" r="5" fill="#c2410c"/>
+  <text x="395" y="148" font-size="13" fill="#c2410c" font-weight="bold">P</text>
+  <!-- 距离线 d -->
+  <line x1="170" y1="120" x2="400" y2="120" stroke="#666" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="270" y="113" font-size="13" fill="#666" font-weight="bold">d</text>
+  <!-- 引力方向 (从 P 指向 M) -->
+  <line x1="400" y1="120" x2="290" y2="120" stroke="#c2410c" stroke-width="2.5" marker-end="url(#ng_arr)"/>
+  <text x="335" y="108" font-size="12" fill="#c2410c" font-weight="bold">F = GMm/d²</text>
+  <!-- 公式 -->
+  <text x="40" y="35" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">Newton 球壳定理: 球外引力 = 把全部质量 M 集中到球心算</text>
+  <text x="40" y="220" font-size="11" fill="#666">证明 (重积分): Φ(P) = -G ∫_球 ρ/|x-P| dV → -GM/d (与 d 内部分布无关!)</text>
+</svg>
+<figcaption>图 10.4.4 Newton 球壳定理: 均匀球对球外一点的引力 = 把全部质量集中在球心算; 钻地球到中心时重力线性减小</figcaption>
+</figure>
 <h3 id="10-4-5">10.4.5 概率应用:边缘分布、期望、协方差</h3>
 <figure>
 <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
