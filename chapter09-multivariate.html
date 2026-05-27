@@ -1402,22 +1402,36 @@ b = (14 - 0.8·10)/4 = 6/4 = 1.5.
 ---
 </p>
 <h3 id="19-5">知识点 19.5: 拉格朗日乘数法的几何意义</h3>
+<div class="box-intuition">
+<p>等值线相切 = 极值点</p>
 <p>
-<strong>核心</strong>: 在约束 g(x,y) = 0 下求 f(x,y) 极值. 几何上:
+<strong>核心</strong>: 在约束 $g(x, y) = 0$ 下求 $f(x, y)$ 极值. 几何上:
 </p>
 <ul>
-<li>f 的等值线: f = c (一族曲线)</li>
-<li>约束 g = 0: 一条曲线</li>
+<li>$f$ 的<strong>等值线</strong> $f = c$ 是一族曲线 (高度图等高线)</li>
+<li>约束 $g = 0$ 是一条曲线</li>
 </ul>
 <p>
-<strong>极值点的关键特征</strong>: 在最优点, <strong>f 的等值线跟约束曲线 g=0 相切</strong>. 切点 = 极值候选.
+<strong>极值点的关键特征</strong>: 在最优点, <strong>$f$ 的等值线跟约束曲线 $g = 0$ 相切</strong> — 沿约束动, 不再能让 $f$ 增 / 减. 切点就是极值候选.
 </p>
 <p>
-相切 ⇔ 两曲线的<strong>法向量平行</strong> ⇔ ∇f = $\lambda$∇g ($\lambda$ 是乘数).
+<strong>相切的代数刻画</strong>: 两曲线在切点法向量平行
+$$\nabla f = \lambda \nabla g$$
+$\lambda$ 就是拉格朗日乘数. 联立 $g = 0$ 一起解.
 </p>
+</div>
+<div class="box-intuition">
+<p>KKT 推广 — 机器学习的根</p>
 <p>
-<strong>推广 (KKT 条件)</strong>: 多约束 + 不等式约束情况. 是机器学习 SVM 优化的核心数学.
+KKT 条件把拉格朗日法推广到<strong>多约束 + 不等式约束</strong>情形 (SVM, 凸优化基础). 包含 4 条:
 </p>
+<ol>
+<li>平稳性: $\nabla f = \sum \lambda_i \nabla g_i + \sum \mu_j \nabla h_j$</li>
+<li>原可行性: $g_i = 0, h_j \le 0$</li>
+<li>对偶可行性: $\mu_j \ge 0$</li>
+<li><strong>互补松弛</strong>: $\mu_j h_j = 0$ (要么约束等号成立, 要么 $\mu = 0$)</li>
+</ol>
+</div>
 <div class="box-example">
 <p>例题 12</p>
 <p>
