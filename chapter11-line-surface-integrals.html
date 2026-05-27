@@ -158,6 +158,22 @@ $$\sigma=\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\Delta s_i.$$
 <figcaption>图 11.1.1 第一类曲线积分: 把弯曲钢丝切成小弧 $ds$, 每段密度 × 弧长后累加, 极限就是积分</figcaption>
 </figure>
 <h3 id="11-1-2">11.1.2 计算公式</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="ls1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <path d="M 30 130 Q 100 30 200 60 T 340 110" fill="none" stroke="#1a365d" stroke-width="2.5"/>
+  <text x="40" y="155" font-size="12" fill="#1a365d">L: r⃗(t)</text>
+  <circle cx="170" cy="55" r="3" fill="#c2410c"/>
+  <line x1="170" y1="55" x2="230" y2="48" stroke="#c2410c" stroke-width="2" marker-end="url(#ls1)"/>
+  <text x="235" y="48" font-size="12" fill="#c2410c">r⃗'(t)</text>
+  <path d="M 170 55 L 200 50" stroke="#2d6e2d" stroke-width="4"/>
+  <text x="172" y="78" font-size="11" fill="#2d6e2d">ds</text>
+  <text x="30" y="170" font-size="11" fill="#666">ds = |r⃗'(t)| dt — 切向量长度 × 参数增量</text>
+</svg>
+<figcaption>图 11.1.1 弧长元素 $ds=|\vec{r}'(t)|\,dt$:沿曲线切向走 $dt$ 长的小段,长度为切向量模 $\times dt$。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 (参数化计算)设 $L$ 由 $\vec{r}(t)=(x(t),y(t),z(t))$,$t\in[\alpha,\beta]$ 光滑参数化($\vec{r}'(t)\neq\vec{0}$)。则
@@ -988,6 +1004,23 @@ $$\oint=\iint_\Sigma(\nabla\times\vec{F})\cdot\vec{n}\,dS=(0,0,-2)\cdot\bigg(\fr
 </p>
 </div>
 <h3 id="11-6-6">11.6.6 三大公式与微分形式视角</h3>
+<figure>
+<svg viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <text x="30" y="30" font-size="13" font-weight="bold" fill="#1a365d">∫_∂M ω = ∫_M dω</text>
+  <line x1="40" y1="60" x2="100" y2="60" stroke="#1a365d" stroke-width="2"/>
+  <circle cx="40" cy="60" r="3" fill="#c2410c"/>
+  <circle cx="100" cy="60" r="3" fill="#c2410c"/>
+  <text x="110" y="65" font-size="11" fill="#1a365d">Newton-Leibniz (1d: 区间 ↔ 端点)</text>
+  <rect x="40" y="80" width="50" height="30" fill="#eef4fb" stroke="#1a365d" stroke-width="2"/>
+  <text x="110" y="100" font-size="11" fill="#1a365d">Green (2d: 区域 ↔ 闭曲线)</text>
+  <path d="M 40 130 Q 65 115 90 130 Q 65 145 40 130 Z" fill="#fef6e4" stroke="#c9a227" stroke-width="2"/>
+  <text x="110" y="135" font-size="11" fill="#8b6f1c">Stokes (3d: 曲面 ↔ 边界曲线)</text>
+  <ellipse cx="65" cy="170" rx="30" ry="15" fill="#ecf7ec" stroke="#2d6e2d" stroke-width="2"/>
+  <text x="110" y="172" font-size="11" fill="#2d6e2d">Gauss (3d: 立体 ↔ 闭曲面)</text>
+  <text x="40" y="205" font-size="11" font-style="italic" fill="#666">边界 ↔ 内部 一切归一</text>
+</svg>
+<figcaption>图 11.6.2 广义 Stokes $\int_{\partial M}\omega=\int_M d\omega$ 一公式统一 NL / Green / Stokes / Gauss,$M$ 维度从 1 到 3。</figcaption>
+</figure>
 <p>
 把第 11.5 节末尾的统一表再展开一点:每条「边界 $\leftrightarrow$ 内部」定理都是同一条<strong>广义 Stokes 公式</strong>
 $$\int_{\partial M}\omega=\int_M d\omega$$

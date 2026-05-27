@@ -1239,6 +1239,30 @@ $$\lim_{N\to\infty}\bigg[S_N(x)-\frac{f(x^+)+f(x^-)}{2}\bigg]=0.$$
 </p>
 </div>
 <h3 id="12-6-4-bessel-parseval">12.6.4 Bessel 不等式与 Parseval 恒等式</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <line x1="40" y1="160" x2="340" y2="160" stroke="#888" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="180" stroke="#888" stroke-width="1"/>
+  <text x="345" y="165" font-size="11" fill="#888">n (频率)</text>
+  <text x="45" y="20" font-size="11" fill="#888">|cₙ|² 能量</text>
+  <rect x="55" y="40" width="20" height="120" fill="#1a365d" opacity="0.85"/>
+  <text x="58" y="180" font-size="11" fill="#1a365d">1</text>
+  <rect x="90" y="100" width="20" height="60" fill="#1a365d" opacity="0.7"/>
+  <text x="95" y="180" font-size="11" fill="#1a365d">3</text>
+  <rect x="125" y="125" width="20" height="35" fill="#1a365d" opacity="0.6"/>
+  <text x="130" y="180" font-size="11" fill="#1a365d">5</text>
+  <rect x="160" y="138" width="20" height="22" fill="#1a365d" opacity="0.55"/>
+  <text x="165" y="180" font-size="11" fill="#1a365d">7</text>
+  <rect x="195" y="148" width="20" height="12" fill="#1a365d" opacity="0.5"/>
+  <text x="200" y="180" font-size="11" fill="#1a365d">9</text>
+  <rect x="230" y="153" width="20" height="7" fill="#1a365d" opacity="0.4"/>
+  <text x="235" y="180" font-size="11" fill="#1a365d">11</text>
+  <rect x="265" y="156" width="20" height="4" fill="#1a365d" opacity="0.3"/>
+  <text x="270" y="180" font-size="11" fill="#1a365d">13</text>
+  <text x="100" y="40" font-size="11" fill="#666">Parseval: ‖f‖² = Σ|cₙ|² (能量在频域守恒)</text>
+</svg>
+<figcaption>图 12.6.2 方波 Fourier 频谱:奇次谐波幅度 $\propto 1/n$,能量按 $1/n^2$ 衰减;Parseval 保证总能量 $\sum|c_n|^2=\|f\|^2$。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 (Bessel 不等式)若 $f\in L^2[-\pi,\pi]$($\int f^2<\infty$),则其 Fourier 系数满足
