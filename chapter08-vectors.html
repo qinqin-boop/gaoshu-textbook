@@ -1143,17 +1143,23 @@ $\vec{r}$' = (-a sin t, a cos t, b). |$\vec{r}$'| = √(a² + b²).
 s = 2π√(a² + b²).
 </p>
 </div>
+<div class="box-def">
+<p>单位切向量 (Unit Tangent)</p>
 <p>
-<strong>单位切向量</strong>: $\vec{T}$ = $\vec{r}$'/|$\vec{r}$'|.
+$$\vec{T} = \frac{\vec{r}'(t)}{|\vec{r}'(t)|}$$
+长度恒为 1, 方向沿曲线"前进". 是 Frenet 标架的第一根支柱.
 </p>
+</div>
+<div class="box-intuition">
+<p>弧长 3 大工程应用</p>
 <p>
-<strong>应用</strong>:
+| 领域 | 用弧长干啥 |
+|---|---|
+| 道路 / 高速公路 | 弯道弧长可控制, 进出弯口曲率连续 (clothoid 螺线), 防离心力突变 |
+| 机器人轨迹 | 路径长度 = 关节能耗近似, 最短弧长 = 最低能耗轨迹 |
+| 字体 / CAD | Bézier / B-spline 曲线<strong>长度归一化</strong>, 控制点编辑后形状直观 |
 </p>
-<ul>
-<li>高速公路弯道设计 (要保证弧长可控制)</li>
-<li>机器人路径长度 (避免冗余移动)</li>
-<li>字体设计 (贝塞尔曲线长度归一化)</li>
-</ul>
+</div>
 <h3 id="6-8-curvature">知识点 6.8: 空间曲线的曲率 (Curvature)</h3>
 <div class="box-def">
 <p>曲率 (Curvature)</p>
