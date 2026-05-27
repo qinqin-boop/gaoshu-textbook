@@ -1455,33 +1455,35 @@ $$\int_M d\omega = \int_{\partial M} \omega$$
 </ol>
 </div>
 <h3 id="12-8-torus">知识点 12.8: 圆环面 (Torus) 面积体积 + 例题</h3>
+<div class="box-def">
+<p>圆环面 (Torus, donut)</p>
 <p>
-<strong>圆环面 (donut shape)</strong>: 大圆半径 R, 小圆半径 r, 用参数化:
-x = (R + r cos u) cos v
-y = (R + r cos u) sin v
-z = r sin u
-其中 u, v ∈ [0, 2π].
+大圆半径 $R$, 小圆半径 $r$ (要求 $R > r$). 参数化:
+$$\begin{cases} x = (R + r\cos u)\cos v \\ y = (R + r\cos u)\sin v \\ z = r\sin u \end{cases}, \qquad u, v \in [0, 2\pi]$$
+</p>
+</div>
+<div class="box-thm">
+<p>圆环面积 / 体积</p>
+<p>
+$$S = \int_0^{2\pi}\!\!\!\int_0^{2\pi} |\vec{r}_u \times \vec{r}_v|\,du\,dv = \int_0^{2\pi}\!\!\!\int_0^{2\pi} r(R + r\cos u)\,du\,dv = 4\pi^2 R r$$
+$$V = 2\pi^2 R r^2$$
+</p>
+</div>
+<div class="box-intuition">
+<p>Pappus 定理 — 旋转体一句话公式</p>
+<p>
+任意平面图形 (面积 $A$, 周长 $L$, <strong>重心到旋转轴距离</strong> $\bar{d}$) 绕轴旋转生成的旋转体:
+$$V = A \cdot (2\pi \bar{d}), \qquad S = L \cdot (2\pi \bar{d})$$
+<strong>直觉</strong>: 每一小块面积 / 弧扫过的圆周长 = $2\pi \cdot$(其到轴距离), 加权平均后就是 $2\pi\bar{d}$.
 </p>
 <p>
-<strong>面积</strong>:
-S = ∫_0^(2π)∫_0^(2π) |r_u × r_v| du dv = ∫_0^(2π)∫_0^(2π) r(R + r cos u) du dv = 4π²Rr.
-</p>
-<p>
-<strong>体积</strong> (圆环内部):
-V = 2π²R r²
-</p>
-<p>
-<strong>Pappus 定理 (旋转体)</strong>:
+<strong>验证圆环</strong>:
 </p>
 <ul>
-<li>圆环表面积 = 小圆周长 × 大圆周长 = (2πr)(2πR) = 4π²Rr ✓</li>
-<li>圆环体积 = 小圆面积 × 大圆周长 = (πr²)(2πR) = 2π²Rr² ✓</li>
+<li>表面积 = (小圆周长 $2\pi r$) $\times$ ($2\pi R$) = $4\pi^2 Rr$ ✓</li>
+<li>体积 = (小圆面积 $\pi r^2$) $\times$ ($2\pi R$) = $2\pi^2 Rr^2$ ✓</li>
 </ul>
-<p>
-<strong>Pappus 定理一般化</strong>: 任意平面图形 (面积 A) 绕同平面外的轴旋转, 旋转体:
-V = A · (2π·重心到轴距离)
-S = L · (2π·重心到轴距离), L 是图形周长.
-</p>
+</div>
 <div class="box-example">
 <p>例题 12-8</p>
 <p>
