@@ -1347,19 +1347,32 @@ $\vec{E}$ = E₀ sin(kz - ωt) x̂→ (沿 z 传播, x 偏振).
 </p>
 <h2 id="helmholtz">补充: Helmholtz 分解 + 微分形式入门</h2>
 <h3 id="12-6-helmholtz">知识点 12.6: Helmholtz 分解定理</h3>
+<div class="box-thm">
+<p>Helmholtz 分解</p>
 <p>
-<strong>定理</strong>: 在合适条件下, 任意向量场 $\vec{F}$ 可唯一分解为:
-$\vec{F}$ = -∇$\varphi$ + ∇×$\vec{A}$
+在合适条件下, 任意向量场 $\vec{F}$ 可唯一分解为:
+$$\vec{F} = -\nabla \varphi + \nabla \times \vec{A}$$
 </p>
 <ul>
-<li>$\varphi$ 是标量势 (scalar potential)</li>
-<li>$\vec{A}$ 是向量势 (vector potential)</li>
-<li>-∇$\varphi$ 部分: 无旋 (∇×(-∇$\varphi$)=0) — "源"部分</li>
-<li>∇×$\vec{A}$ 部分: 无散 (∇·(∇×$\vec{A}$)=0) — "旋"部分</li>
+<li>$\varphi$ 是<strong>标量势</strong> (scalar potential)</li>
+<li>$\vec{A}$ 是<strong>向量势</strong> (vector potential)</li>
+<li>$-\nabla\varphi$ 部分: <strong>无旋</strong> ($\nabla \times (-\nabla \varphi) = 0$) — "源"部分</li>
+<li>$\nabla \times \vec{A}$ 部分: <strong>无散</strong> ($\nabla \cdot (\nabla \times \vec{A}) = 0$) — "旋"部分</li>
+</ul>
+</div>
+<div class="box-intuition">
+<p>任何向量场 = 散场 + 旋场</p>
+<p>
+$\vec{F}$ 永远拆成 "<strong>源/汇主导</strong>" 部分 + "<strong>涡旋主导</strong>" 部分. 例: 麦克斯韦方程:
+</p>
+<ul>
+<li>$\vec{E} = -\nabla\varphi - \partial \vec{A}/\partial t$ (静态势 + 时变向量势)</li>
+<li>$\vec{B} = \nabla \times \vec{A}$ (向量势的旋度)</li>
 </ul>
 <p>
-<strong>物理含义</strong>: 任何流场 = 纯散场 + 纯旋场.
+气象/流体: 风场分解 = 辐散场 + 旋转场, 用于天气预报模型.
 </p>
+</div>
 <div class="box-example">
 <p>例题 12-6</p>
 <p>
