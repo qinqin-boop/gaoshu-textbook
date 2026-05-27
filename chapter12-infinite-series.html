@@ -1010,6 +1010,32 @@ $$g(x)\approx g(x_k)+g'(x_k)(x-x_k).$$
 <strong>例 5</strong>(物理小角度近似)单摆方程 $\ddot\theta+\frac{g}{L}\sin\theta=0$ 非线性难解。但 $\sin\theta\approx\theta-\theta^3/6+\dots$,在 $\theta$ 小时取首阶 $\sin\theta\approx\theta$,方程线性化为 $\ddot\theta+\frac{g}{L}\theta=0$,解为简谐振动 $\theta(t)=A\cos(\omega t+\phi)$,$\omega=\sqrt{g/L}$。<strong>所有线性化物理(声学、电路 RLC、近恒温热传导)</strong> 都用 Taylor 一阶截断。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- Fourier 三角函数分解: 方波 = sin x + sin 3x/3 + sin 5x/5 + ... -->
+  <!-- 坐标轴 -->
+  <line x1="40" y1="140" x2="460" y2="140" stroke="#999" stroke-width="1"/>
+  <line x1="250" y1="20" x2="250" y2="260" stroke="#999" stroke-width="1"/>
+  <text x="455" y="155" font-size="11" fill="#666">x</text>
+  <text x="255" y="20" font-size="11" fill="#666">y</text>
+  <!-- 目标方波 (黑色阶梯) -->
+  <path d="M 40,90 L 145,90 L 145,190 L 250,190 L 250,90 L 355,90 L 355,190 L 460,190" fill="none" stroke="#1a365d" stroke-width="3"/>
+  <text x="50" y="80" font-size="13" fill="#1a365d" font-weight="bold">目标方波 (周期信号)</text>
+  <!-- n=1 sin x (蓝色淡) -->
+  <path d="M 40,140 Q 80,80 145,80 Q 210,80 250,140 Q 290,200 355,200 Q 420,200 460,140" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.85"/>
+  <text x="55" y="55" font-size="11" fill="#3b82f6">n=1: sin(x)</text>
+  <!-- n=3 sin 3x/3 (绿色淡) -->
+  <path d="M 40,140 Q 60,120 75,140 Q 92,160 110,140 Q 130,118 145,140 Q 165,162 180,140 Q 200,117 215,140 Q 235,164 250,140" fill="none" stroke="#22543d" stroke-width="1.5" opacity="0.6"/>
+  <text x="80" y="40" font-size="11" fill="#22543d">n=3: sin(3x)/3</text>
+  <!-- n=5/7 折线表示 -->
+  <text x="155" y="40" font-size="11" fill="#c2410c">+ sin(5x)/5 + sin(7x)/7 + ...</text>
+  <!-- 累加结果 -->
+  <text x="50" y="245" font-size="12" font-family="serif" fill="#1a365d">方波 = (4/π)·[sin x + sin 3x/3 + sin 5x/5 + ...]</text>
+  <text x="50" y="262" font-size="11" fill="#c2410c">加得越多, 越像方波 (吉布斯现象: 跳跃点尖角永远 ~9% 过冲)</text>
+  <text x="100" y="35" font-size="13" font-family="serif" fill="#000" font-weight="bold">Fourier 三角分解: 任何周期函数 = ∞ 个 sin/cos 叠加</text>
+</svg>
+<figcaption>图 12.5.2 Fourier 分解几何: 方波由 $\sin nx/n$ ($n$ 奇) 累加, 加越多越逼近, 但跳跃点永远过冲 ≈9% (Gibbs)</figcaption>
+</figure>
 <h3 id="12-5-5-taylor">12.5.5 多元 Taylor 公式概览</h3>
 <div class="box-thm">
 <p>多元 Taylor 公式</p>
