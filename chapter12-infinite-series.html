@@ -278,19 +278,29 @@ $\rho = \lim_{n\to\infty} \sqrt[n]{u_n}$:
 </p>
 </div>
 <h3 id="5-5-12-2">知识点 5.5: 极限判别法 (对齐书 §12.2 进一步)</h3>
+<div class="box-thm">
+<p>极限判别法 (跟 p-级数比)</p>
 <p>
-类比比值法, 但比的是 <strong>(u_n)/(1/n^p)</strong> — 用 p-级数当参照.
-</p>
-<p>
-若 lim u_n/(1/n^p) = c (0 &lt; c &lt; ∞):
+设 $u_n \ge 0$, 用 p-级数 $\sum 1/n^p$ 作参照:
+$$\lim_{n\to\infty} \frac{u_n}{1/n^p} = c \quad (0 < c < \infty)$$
+则 $\sum u_n$ 跟 $\sum 1/n^p$ <strong>同收敛同发散</strong>:
 </p>
 <ul>
-<li>p &gt; 1: 都收敛</li>
-<li>p ≤ 1: 都发散</li>
+<li>$p > 1$: 两个都收敛</li>
+<li>$p \le 1$: 两个都发散</li>
 </ul>
+</div>
+<div class="box-intuition">
+<p>极限判别法实战 3 步</p>
+<ol>
+<li>看 $u_n$ <strong>大 $n$ 时近似</strong> $1/n^p$ 中 $p$ 是几 (主项分析)</li>
+<li>算 $\lim u_n / (1/n^p) = c$ 验证</li>
+<li>查 p-级数: $p > 1$ 收敛, 否则发散</li>
+</ol>
 <p>
-<strong>实操</strong>: 拿到一个复杂正项级数 Σ u_n, 想想 u_n 对大 n "像什么 1/n^p", 然后查 p-级数.
+例: $u_n = (3n+1)/(n^3+2n+5)$ 大 $n$ 时 $\sim 3/n^2$, 取 $p = 2$, $c = 3$. ⟹ 收敛.
 </p>
+</div>
 <div class="box-example">
 <p>例题 3-3-1</p>
 <p>
