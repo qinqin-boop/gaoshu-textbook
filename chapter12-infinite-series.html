@@ -835,6 +835,24 @@ $$\ln 2=\lim_{x\to 1^-}\ln(1+x)=\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n}=1-\tfrac12
 </div>
 <h3 id="12-4-4">12.4.4 内部的一致收敛与解析性</h3>
 <figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <text x="40" y="35" font-size="13" font-family="serif" fill="#1a365d">f(x) = a₀ + a₁x + a₂x² + a₃x³ + ...</text>
+  <line x1="55" y1="50" x2="55" y2="60" stroke="#c2410c"/>
+  <text x="40" y="78" font-size="11" fill="#c2410c">f(0)</text>
+  <text x="55" y="78" font-size="11" fill="#c2410c">=a₀</text>
+  <line x1="95" y1="50" x2="95" y2="60" stroke="#c2410c"/>
+  <text x="73" y="100" font-size="11" fill="#c2410c">f'(0)</text>
+  <text x="95" y="100" font-size="11" fill="#c2410c">=1!·a₁</text>
+  <line x1="143" y1="50" x2="143" y2="60" stroke="#c2410c"/>
+  <text x="120" y="122" font-size="11" fill="#c2410c">f''(0)</text>
+  <text x="148" y="122" font-size="11" fill="#c2410c">=2!·a₂</text>
+  <line x1="200" y1="50" x2="200" y2="60" stroke="#c2410c"/>
+  <text x="175" y="144" font-size="11" fill="#c2410c">f⁽ⁿ⁾(0)=n!·aₙ</text>
+  <text x="40" y="170" font-size="11" fill="#666">系数 aₙ 由 f 的导数唯一决定 → 两个幂级数和函数同 ⇒ 系数同</text>
+</svg>
+<figcaption>图 12.4.4 幂级数系数唯一性:对和函数求 $n$ 阶导代 $x=0$,得 $f^{(n)}(0)=n!\,a_n$,逆推系数唯一确定。这是 Taylor 级数定义的根。</figcaption>
+</figure>
+<figure>
 <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <line x1="30" y1="120" x2="290" y2="120" stroke="#888" stroke-width="1"/>
   <line x1="160" y1="20" x2="160" y2="220" stroke="#888" stroke-width="1"/>
