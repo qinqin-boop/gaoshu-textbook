@@ -447,6 +447,21 @@ $$=\int_0^{2\pi}\!d\theta\int_0^2 r\cdot r\,dr=2\pi\cdot\tfrac{r^3}{3}\bigg|_0^2
 </p>
 </div>
 <h3 id="10-2-4">10.2.4 一般换元公式</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="jc1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <rect x="20" y="60" width="80" height="80" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <text x="35" y="155" font-size="11" fill="#1a365d">(u,v) 平面 du dv</text>
+  <line x1="105" y1="100" x2="155" y2="100" stroke="#1a365d" stroke-width="2" marker-end="url(#jc1)"/>
+  <text x="115" y="93" font-size="11" fill="#1a365d">T</text>
+  <polygon points="170,60 280,80 290,150 180,140" fill="#fef6e4" stroke="#c9a227" stroke-width="1.5"/>
+  <text x="190" y="170" font-size="11" fill="#8b6f1c">(x,y) 平面 |J| du dv</text>
+  <text x="30" y="30" font-size="11" fill="#444">∬f dxdy = ∬f(T(u,v))·|J| dudv  (|J|=面积放大因子)</text>
+</svg>
+<figcaption>图 10.2.5 雅可比变换:$(u,v)$ 小方块映到 $(x,y)$ 平面成平行四边形,$|J|$ 是局部面积放大因子。</figcaption>
+</figure>
 <p>
 更一般地,任何二维微分同胚 $(u,v)\mapsto(x(u,v),y(u,v))$ 都把面积元素变换为雅可比行列式倍。
 </p>

@@ -628,6 +628,19 @@ $dS$ 是<strong>正</strong>的面积元素,与曲面的「正向 / 反向」无
 <figcaption>图 11.4.1 曲面 $\Sigma$ 上一个微元面积 $dS$ 及切平面法向 $\vec{n}$。</figcaption>
 </figure>
 <h3 id="11-4-2-z-z-x-y">11.4.2 显式参数化 $z=z(x,y)$ 的面积元素</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <polygon points="40,160 140,160 160,140 60,140" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <text x="55" y="180" font-size="11" fill="#1a365d">dx dy (xy 平面)</text>
+  <polygon points="180,60 280,40 300,110 200,130" fill="#fef6e4" stroke="#c9a227" stroke-width="1.8"/>
+  <text x="200" y="100" font-size="12" font-style="italic" fill="#8b6f1c">dS</text>
+  <line x1="100" y1="150" x2="240" y2="80" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+  <path d="M 145 145 A 25 25 0 0 0 130 130" fill="none" stroke="#666" stroke-width="0.8"/>
+  <text x="140" y="135" font-size="11" fill="#666">α</text>
+  <text x="35" y="30" font-size="11" fill="#444">dS = dxdy / cosα, cosα = 1/√(1+z_x²+z_y²)</text>
+</svg>
+<figcaption>图 11.4.6 切平面投影:倾斜曲面微元 $dS$ = 投影 $dxdy$ 除以倾角余弦 = $\sqrt{1+z_x^2+z_y^2}\,dxdy$。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 若曲面 $\Sigma$ 在区域 $D_{xy}\subset\mathbb{R}^2$ 上由 $z=z(x,y)$ 给出(光滑,$z_x,z_y$ 连续),则
@@ -1230,6 +1243,27 @@ $$\oint=\iint_\Sigma(\nabla\times\vec{F})\cdot\vec{n}\,dS=(0,0,-2)\cdot\bigg(\fr
 </p>
 </div>
 <h3 id="11-6-6">11.6.6 三大公式与微分形式视角</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="dd1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <rect x="20" y="40" width="80" height="40" rx="5" fill="#eef4fb" stroke="#1a365d"/>
+  <text x="40" y="65" font-size="13">φ (0-form)</text>
+  <line x1="100" y1="60" x2="135" y2="60" stroke="#1a365d" marker-end="url(#dd1)"/>
+  <text x="105" y="55" font-size="10" fill="#888">∇</text>
+  <rect x="135" y="40" width="80" height="40" rx="5" fill="#fef6e4" stroke="#c9a227"/>
+  <text x="145" y="65" font-size="13">∇φ (1-form)</text>
+  <line x1="215" y1="60" x2="250" y2="60" stroke="#1a365d" marker-end="url(#dd1)"/>
+  <text x="222" y="55" font-size="10" fill="#888">∇×</text>
+  <rect x="250" y="40" width="80" height="40" rx="5" fill="#fde2e2" stroke="#b91c1c"/>
+  <text x="270" y="65" font-size="13" fill="#b91c1c">0</text>
+  <text x="20" y="110" font-size="12" font-weight="bold" fill="#444">∇×(∇φ) = 0 (梯度场无旋)</text>
+  <text x="20" y="140" font-size="12" font-weight="bold" fill="#444">∇·(∇×F) = 0 (旋度场无源)</text>
+  <text x="20" y="160" font-size="11" fill="#666">外微分 d²=0 的经典版本</text>
+</svg>
+<figcaption>图 11.6.4 $d^2=0$ 推导:梯度的旋度为零 + 旋度的散度为零,是外微分代数最深的恒等式 — 通向 de Rham 上同调 / 同伦论。</figcaption>
+</figure>
 <figure>
 <svg viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <text x="30" y="30" font-size="13" font-weight="bold" fill="#1a365d">∫_∂M ω = ∫_M dω</text>
