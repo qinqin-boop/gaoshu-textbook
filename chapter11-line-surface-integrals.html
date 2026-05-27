@@ -1589,22 +1589,33 @@ f = x² + y² + z².
 <strong>全部都是 Laplacian 的变奏曲</strong>. 这就是高数下册场论的统一威力.
 </p>
 <h3 id="12-12-maxwell">知识点 12.12: Maxwell 应力张量 (电磁场的"压力")</h3>
+<div class="box-def">
+<p>Poynting 向量 (能量流密度)</p>
 <p>
-<strong>电磁场的能量密度</strong>:
-u = (1/2)(ε₀ E² + B²/μ₀)
+$$\vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B}$$
+单位 W/m². 给出电磁场<strong>能量流方向和强度</strong>.
 </p>
 <p>
-<strong>Poynting 向量</strong> (能量流密度):
-$\vec{S}$ = (1/μ₀) $\vec{E}$ × $\vec{B}$
-单位: W/m²
+<strong>电磁能量密度</strong>: $u = \frac{1}{2}(\epsilon_0 E^2 + B^2/\mu_0)$.
 </p>
+</div>
+<div class="box-thm">
+<p>Poynting 定理 (电磁能量守恒)</p>
 <p>
-<strong>能量守恒</strong> (Poynting 定理):
-∂u/∂t + ∇·$\vec{S}$ = -$\vec{E}$·$\vec{J}$
+$$\frac{\partial u}{\partial t} + \nabla \cdot \vec{S} = -\vec{E} \cdot \vec{J}$$
+即"局部能量增长率 + 能量流出散度 = $-$电场对电流做的功". 是 Gauss 散度定理的电磁学版本.
 </p>
+</div>
+<div class="box-intuition">
+<p>太阳能 / 激光威力来源</p>
 <p>
-意思: 局部能量增长率 + 能量流出散度 = -电场对电流做的功.
+$|\vec{S}| = c u$ — 光携带能量沿光线传播.
 </p>
+<ul>
+<li>太阳辐照: 1361 W/m² (in AU 处, 太阳常数)</li>
+<li>激光: 通过聚焦 $\vec{S}$ 极高 (聚焦镜把 W/m² 提到 GW/m²)</li>
+</ul>
+</div>
 <div class="box-example">
 <p>例题 12-12</p>
 <p>
