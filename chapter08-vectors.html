@@ -1518,14 +1518,37 @@ $A: \mathbb{R}^n \to \mathbb{R}^n$ 把单位 $n$-cube 变成平行多面体, 体
 <strong>三重积</strong>: $\vec{a}$·($\vec{b}$×$\vec{c}$) = det[$\vec{a}$, $\vec{b}$, $\vec{c}$].
 <strong>Vector Triple Product</strong>: $\vec{a}$×($\vec{b}$×$\vec{c}$) = $\vec{b}$($\vec{a}$·$\vec{c}$) - $\vec{c}$($\vec{a}$·$\vec{b}$). (BAC-CAB 法则)
 </p>
+<div class="box-thm">
+<p>Rodrigues 旋转公式 (向量绕单位轴 $\vec{n}$ 转 $\theta$)</p>
 <p>
-<strong>四元数表示旋转的本质</strong>: 推导 $\vec{v}$' = q $\vec{v}$ q⁻¹ 展开后等价于 Rodrigues 公式:
-$\vec{v}$' = $\vec{v}$ $\cos\theta$ + ($\vec{n}$×$\vec{v}$) $\sin\theta$ + $\vec{n}$($\vec{n}$·$\vec{v}$)(1 - $\cos\theta$)
+$$\vec{v}' = \vec{v}\cos\theta + (\vec{n}\times\vec{v})\sin\theta + \vec{n}(\vec{n}\cdot\vec{v})(1 - \cos\theta)$$
 </p>
+</div>
+<div class="box-proof">
+<p>分解法</p>
 <p>
-<strong>Rodrigues 公式</strong> (用向量绕 $\vec{n}$ 转 $\theta$):
-直接证: 把 $\vec{v}$ 分解为 ($\vec{n}$·$\vec{v}$)$\vec{n}$ + $\vec{v}$_⊥. 转的只是 $\vec{v}$_⊥ 部分.
+把 $\vec{v}$ 分解为<strong>平行分量</strong> $\vec{v}_\| = (\vec{n}\cdot\vec{v})\vec{n}$ + <strong>垂直分量</strong> $\vec{v}_\perp = \vec{v} - \vec{v}_\|$.
 </p>
+<ul>
+<li>平行分量不变 (绕自己转一圈也没变化)</li>
+<li>垂直分量在垂直 $\vec{n}$ 的平面内转 $\theta$: $\vec{v}_\perp \cos\theta + (\vec{n}\times\vec{v}_\perp)\sin\theta = \vec{v}_\perp \cos\theta + (\vec{n}\times\vec{v})\sin\theta$</li>
+</ul>
+<p>
+合起来即 Rodrigues 公式. $\square$
+</p>
+</div>
+<div class="box-intuition">
+<p>四元数旋转 $\vec{v}' = q\vec{v}q^{-1}$ 跟 Rodrigues 同源</p>
+<p>
+四元数 $q = \cos(\theta/2) + \sin(\theta/2)\,\vec{n}$. 用 $q\vec{v}q^{-1}$ 旋转向量 $\vec{v}$, 展开后<strong>完全等价于 Rodrigues 公式</strong>. 四元数是它的"代数压缩":
+</p>
+<ul>
+<li>4 个数代替 9 个数 (旋转矩阵)</li>
+<li>无 gimbal lock (万向锁)</li>
+<li>插值用 slerp 平滑</li>
+<li>游戏 / VR / 飞控 / 机械臂全用</li>
+</ul>
+</div>
 <div class="box-example">
 <p>例题 6-18</p>
 <p>
