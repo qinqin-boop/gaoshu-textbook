@@ -753,9 +753,21 @@ z = f(u, v), u = x+y, v = xy. 求 ∂²z/∂x$\partial$y.
 $$\frac{dy}{dx} = -\frac{F_x}{F_y}$$
 </p>
 </div>
+<div class="box-proof">
+<p>隐函数求导推导</p>
 <p>
-<strong>推导</strong>: $F(x, y(x)) = 0$ 两边对 $x$ 求导, $F_x + F_y \cdot dy/dx = 0$, 解出.
+$F(x, y(x)) = 0$ 两边对 $x$ 求导 (用链式法则), 得
+$$F_x \cdot 1 + F_y \cdot \frac{dy}{dx} = 0$$
+若 $F_y \ne 0$, 移项: $\dfrac{dy}{dx} = -\dfrac{F_x}{F_y}$. $\square$
 </p>
+</div>
+<div class="box-intuition">
+<p>为啥 $F_y \ne 0$ 是关键</p>
+<ul>
+<li>$F_y \ne 0$: $F$ 沿 $y$ 方向"有坡度", 给定 $x$ 能"切片"找到唯一 $y$</li>
+<li>$F_y = 0$: $F$ 沿 $y$ 平的, 同一 $x$ 可能对应多个 $y$ (隐函数不唯一) → 隐函数定理失效</li>
+</ul>
+</div>
 <div class="box-example">
 <p>例题 7</p>
 <p>
