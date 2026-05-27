@@ -207,10 +207,23 @@ $\lim u_n = 0$ <strong>不一定</strong>收敛! 反例: 调和级数 $\sum 1/n$
 <strong>生活类比</strong>: 小数列被大数列盖住, 大的有限小的也有限.
 </p>
 <h3 id="3-5-12-2">知识点 3.5: 比较判别法的反向应用 (对齐书 §12.2 进一步)</h3>
+<div class="box-thm">
+<p>比较判别法 (双向)</p>
 <p>
-<strong>正向</strong>: 知 Σ b_n 收敛 + 0$\le$a_n$\le$b_n → Σ a_n 也收敛.
-<strong>反向</strong>: 知 Σ a_n 发散 + 0$\le$a_n$\le$b_n → Σ b_n 也发散.
+设 $0 \le a_n \le b_n$:
 </p>
+<ul>
+<li><strong>正向</strong> (大盖小): $\sum b_n$ 收敛 $\Rightarrow \sum a_n$ 收敛</li>
+<li><strong>反向</strong> (小推大): $\sum a_n$ 发散 $\Rightarrow \sum b_n$ 发散</li>
+</ul>
+</div>
+<div class="box-intuition">
+<p>怎么选 b_n</p>
+<p>
+要证收敛 → 找<strong>收敛的"上界" $b_n$</strong> (常用 p-级数 $1/n^p$ ($p>1$) 或等比 $1/r^n$).
+要证发散 → 找<strong>发散的"下界" $a_n$</strong> (常用调和 $1/n$ 或 $1/n^p$ ($p\le 1$)).
+</p>
+</div>
 <div class="box-example">
 <p>例题 3-1-1</p>
 <p>
