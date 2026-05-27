@@ -1648,15 +1648,17 @@ F(x) = ∑ a_n x^n. 由递推得 F(x) = x / (1 - x - x²).
 部分分式 + 几何级数展开 ⟹ a_n = ($\varphi$^n - ψ^n)/√5, $\varphi$=黄金比, ψ=1-$\varphi$.
 </p>
 </div>
+<div class="box-intuition">
+<p>生成函数 4 大领域跨界应用</p>
 <p>
-<strong>应用</strong>:
+| 领域 | 生成函数 | 用来求 |
+|---|---|---|
+| 组合 | $C(x) = (1-\sqrt{1-4x})/(2x)$ | Catalan 数 (括号配对 / 二叉树个数) |
+| 概率 | $M(t) = \mathbb{E}[e^{tX}]$ (矩生成函数) | 均值 / 方差 / 高阶矩 |
+| 数论 | Dirichlet 级数 $\sum a_n/n^s$ | 素数分布 (黎曼 $\zeta$) |
+| 算法 | $T(n) \to T(x) = \sum T(n) x^n$ | 递归复杂度闭式解 (主定理通用版) |
 </p>
-<ul>
-<li>组合: Catalan 数 C(x) = (1-√(1-4x))/(2x)</li>
-<li>概率: 矩生成函数 M(t)=E[e^(tX)]</li>
-<li>数论: Dirichlet 级数 ∑ a_n/n^s</li>
-<li>算法: 递归复杂度分析</li>
-</ul>
+</div>
 <h3 id="8-18-analytic-continuation">知识点 8.18: 解析延拓 (Analytic Continuation)</h3>
 <div class="box-def">
 <p>解析延拓</p>
@@ -1680,14 +1682,14 @@ $$\zeta(s) = 2^s \pi^{s-1} \sin(\pi s/2)\,\Gamma(1-s)\,\zeta(1-s)$$
 $\sum_{n=1}^\infty n = -1/12$ 听起来荒谬, 但通过<strong>解析延拓</strong>赋予合理含义: $\zeta(-1)$ 的值. 卡西米尔效应 (真空能正规化) 实验上确认 — 这就是"看似发散的级数其实有物理意义"的来源.
 </p>
 </div>
-<p>
-<strong>意义</strong>:
-</p>
-<ul>
-<li>物理: 卡西米尔效应 ∑ n 形式发散, ζ(-1)=-1/12 是"物理答案"</li>
-<li>弦理论: 玻色弦 26 维等关系来自 ∑ n 正规化</li>
-<li>量子场论: 重整化群</li>
-</ul>
+<div class="box-intuition">
+<p>解析延拓的物理意义 — 高维物理的核心</p>
+<ol>
+<li><strong>卡西米尔效应</strong>: 真空里两片平行金属板感受到吸引力, 源于 $\sum n$ 的解析延拓值 $-1/12$ × 几何因子 — 1948 年 Casimir 预言, 1958 年实验确认</li>
+<li><strong>弦理论</strong>: 玻色弦 <strong>26 维</strong> 这种"奇怪结论"来自要求 $\sum n$ 用 $\zeta(-1)$ 正规化的代数自洽</li>
+<li><strong>量子场论 (QFT)</strong>: 重整化群 / 路径积分用解析延拓技术处理无穷大</li>
+</ol>
+</div>
 <h3 id="8-19-cauchy">知识点 8.19: Cauchy 收敛准则与完备性</h3>
 <div class="box-thm">
 <p>Cauchy 收敛准则</p>
