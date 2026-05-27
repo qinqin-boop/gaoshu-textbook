@@ -1355,21 +1355,29 @@ $$\Omega = \frac{\text{球面上所截面积}}{r^2}$$
 <li>ν Δv→: 粘性扩散 (ν = 运动黏度)</li>
 <li>$\vec{f}$: 体力 (重力等)</li>
 </ul>
+<div class="box-thm">
+<p>连续性方程 + Clay 千禧难题</p>
 <p>
-<strong>连续性方程</strong> (不可压缩): ∇·$\vec{v}$ = 0.
+<strong>连续性 (不可压缩)</strong>: $\nabla\cdot\vec{v} = 0$ (流体不被压缩, 进多少出多少).
 </p>
 <p>
-<strong>Clay 千禧难题</strong>: 三维 N-S 方程是否存在光滑全局解? 至今未解决, 100 万美元奖金.
+<strong>Clay 千禧难题</strong>: 三维 N-S 方程是否<strong>存在光滑全局解</strong> (含奇点 / 湍流爆破)? 至今<strong>未解决</strong> — Clay Math Institute 100 万美元奖.
+</p>
+</div>
+<div class="box-intuition">
+<p>N-S 方程 4 大应用 — 工程半个世界</p>
+<p>
+| 领域 | N-S 怎么用 |
+|---|---|
+| 天气 / 气候 | <strong>ECMWF / GFS</strong> 数值天气模型核心方程 (全球分辨率 9km) |
+| 航空 | <strong>飞机 / 火箭设计 CFD</strong> 仿真 (Boeing / SpaceX 必用) |
+| 医学 | 模拟血流 / 动脉粥样硬化 / 人工心脏阀膜 |
+| 影视 / AI | <strong>物理引擎 + 好莱坞 VFX 流体特效</strong> (Pixar 烟火 / 海浪) |
 </p>
 <p>
-<strong>应用</strong>:
+虽然全局解未证, 数值解每天在生产中跑 — 这是数学未完成但工程已大量用的经典案例.
 </p>
-<ul>
-<li>天气预报: ECMWF/GFS 数值天气模型基础方程</li>
-<li>飞机设计: CFD 仿真用 N-S</li>
-<li>心血管医学: 模拟血流</li>
-<li>推进 AI 物理引擎: 流体特效 (好莱坞 VFX)</li>
-</ul>
+</div>
 <h3 id="12-11-laplacian">知识点 12.11: 散度与 Laplacian 的源汇直觉</h3>
 <div class="box-intuition">
 <p>散度 = "局部源 / 汇" 密度</p>
