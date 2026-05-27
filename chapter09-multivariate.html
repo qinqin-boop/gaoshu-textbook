@@ -831,17 +831,20 @@ $$\theta^{(1)}=\theta^{(0)}-\eta\nabla L=(4,3)-0.1\cdot(8,6)=(3.2,2.4).$$
 机器学习把模型参数记作 $\theta\in\mathbb{R}^d$,把训练损失记作 $L(\theta)$。<strong>最速下降 / 梯度下降</strong>就是把上面定理 9.6.B 的「负梯度方向是最速下降方向」直接搬到 $d$ 维:
 $$\theta^{(k+1)}=\theta^{(k)}-\eta_k\,\nabla L(\theta^{(k)}).$$
 </p>
-<p>
-实际中常见的变体:
-</p>
+<div class="box-intuition">
+<p>梯度下降 4 大变体 — 现代 ML 优化器谱系</p>
 <p>
 | 方法 | 公式核心 | 解决什么问题 |
-| --- | --- | --- |
-| <strong>SGD</strong> | 用单样本(或 mini-batch)估计 $\nabla L$ | 大数据集,全量梯度算不起 |
-| <strong>Momentum</strong> | $v\gets\beta v+\nabla L$,$\theta\gets\theta-\eta v$ | 鞍点 / 长山谷震荡 |
-| <strong>Adam</strong> | 一阶矩 $m$ + 二阶矩 $v$ 自适应缩放 | 不同参数尺度差异大 |
-| <strong>Newton</strong> | $\theta\gets\theta-\eta\,H^{-1}\nabla L$,$H$ 是 Hessian | 二阶曲率快收敛,但 $H^{-1}$ 贵 |
+|---|---|---|
+| <strong>SGD</strong> | 用单样本 (或 mini-batch) 估计 $\nabla L$ | 大数据集, 全量梯度算不起 |
+| <strong>Momentum</strong> | $v \gets \beta v + \nabla L$, $\theta \gets \theta - \eta v$ | 鞍点 / 长山谷震荡 (类似惯性) |
+| <strong>Adam</strong> | 一阶矩 $m$ + 二阶矩 $v$ 自适应缩放 | 不同参数尺度差异大 (LLM 训练标配) |
+| <strong>Newton</strong> | $\theta \gets \theta - \eta H^{-1} \nabla L$, $H$ 是 Hessian | 二阶曲率快收敛, 但 $H^{-1}$ 贵 (准牛顿 LBFGS 折中) |
 </p>
+<p>
+<strong>Adam 几乎垄断现代 LLM / Stable Diffusion / Whisper 训练</strong>, 是高数下册"梯度 + 二阶 Hessian + 平均化"思想的现代综合体.
+</p>
+</div>
 <div class="box-thm">
 <p>
 (下降引理 / Descent Lemma)若 $\nabla L$ 是 $L$-Lipschitz 的(即 $\|\nabla L(\theta_1)-\nabla L(\theta_2)\|\le L\|\theta_1-\theta_2\|$),则梯度下降步骤满足
