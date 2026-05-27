@@ -1832,6 +1832,37 @@ $$S(a,b)=\sum_{i=1}^n\big(y_i-(ax_i+b)\big)^2$$
 取最小。$a$、$b$ 称为<strong>斜率</strong>与<strong>截距</strong>。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 最小二乘几何: 数据点 + 拟合直线 + 残差 -->
+  <line x1="40" y1="200" x2="440" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="40" y1="200" x2="40" y2="30" stroke="#666" stroke-width="1.5"/>
+  <text x="445" y="205" font-size="11" fill="#666">x</text>
+  <text x="20" y="35" font-size="11" fill="#666">y</text>
+  <!-- 拟合直线 y = ax + b -->
+  <line x1="60" y1="160" x2="420" y2="60" stroke="#1a365d" stroke-width="2.5"/>
+  <text x="330" y="55" font-size="13" fill="#1a365d" font-weight="bold">y = ax + b</text>
+  <!-- 数据点 + 残差竖线 -->
+  <circle cx="100" cy="120" r="4" fill="#c2410c"/>
+  <line x1="100" y1="120" x2="100" y2="146" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="105" y="138" font-size="9" fill="#c2410c">e₁</text>
+  <circle cx="160" cy="155" r="4" fill="#c2410c"/>
+  <line x1="160" y1="155" x2="160" y2="130" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="165" y="148" font-size="9" fill="#c2410c">e₂</text>
+  <circle cx="220" cy="100" r="4" fill="#c2410c"/>
+  <line x1="220" y1="100" x2="220" y2="115" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <circle cx="280" cy="120" r="4" fill="#c2410c"/>
+  <line x1="280" y1="120" x2="280" y2="100" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <circle cx="340" cy="70" r="4" fill="#c2410c"/>
+  <line x1="340" y1="70" x2="340" y2="85" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <circle cx="395" cy="80" r="4" fill="#c2410c"/>
+  <line x1="395" y1="80" x2="395" y2="70" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <!-- 标题 + 公式 -->
+  <text x="60" y="25" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">最小二乘: 最小化所有残差 e_i = y_i − (ax_i + b) 的平方和</text>
+  <text x="60" y="225" font-size="11" fill="#666">S(a,b) = Σ e_i² 取最小 → 拟合直线 = 平衡 over-/under-shoot 的"最佳"直线</text>
+</svg>
+<figcaption>图 9.10.1 最小二乘几何: 拟合直线让所有数据点的"竖直残差"平方和最小; 黑线 = 拟合, 橙竖线 = 残差 $e_i$</figcaption>
+</figure>
 <div class="box-intuition">
 <p>
 <strong>为什么取平方和?</strong> (1) 平方对大偏差惩罚重(避免离群点带歪);(2) 处处可微,微积分能直接用极值条件;(3) Gauss-Markov 定理证明:噪声服从均值零、同方差独立分布时,最小二乘是<strong>线性无偏估计</strong>中<strong>方差最小</strong>的(BLUE,Best Linear Unbiased Estimator)。
