@@ -825,14 +825,19 @@ $$F'(t)=-\frac{f^{(n+1)}(t)}{n!}(x-t)^n.$$
 由 Newton-Leibniz:$F(x)-F(x_0)=\int_{x_0}^x F'(t)\,dt$,即 $-R_n(x)=-\frac{1}{n!}\int_{x_0}^x f^{(n+1)}(t)(x-t)^n\,dt$。证毕。
 </p>
 </div>
+<div class="box-intuition">
+<p>Taylor 三种余项 — 用途互补</p>
 <p>
-三种余项<strong>用途互补</strong>:
-| 余项 | 形式 | 何时用 |
-| --- | --- | --- |
-| Peano | $o((x-x_0)^n)$ | 估极限阶数(局部) |
-| Lagrange | $f^{(n+1)}(\xi)/(n+1)!\cdot(x-x_0)^{n+1}$ | 给定 $f^{(n+1)}$ 范围估误差(全局) |
-| Cauchy | 积分形式 | 严格分析 / Taylor 级数收敛性证明 |
+| 余项 | 形式 | 何时用 | 典型场景 |
+|---|---|---|---|
+| <strong>Peano</strong> | $o((x-x_0)^n)$ | 估极限阶数 (<strong>局部</strong>) | 算极限 $\lim_{x \to 0}$, 找等价无穷小 |
+| <strong>Lagrange</strong> | $\dfrac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}$ | 给定 $f^{(n+1)}$ 范围估误差 (<strong>全局</strong>) | 数值计算精度上界, 工程估算 |
+| <strong>Cauchy</strong> (积分) | $\dfrac{1}{n!}\int_{x_0}^x f^{(n+1)}(t)(x-t)^n\,dt$ | 严格分析 / 收敛性证明 | 推 Taylor 级数收敛区域, 理论分析 |
 </p>
+<p>
+<strong>3 种余项 = 3 种工具</strong>: Peano 看趋势, Lagrange 给上界, Cauchy 做严格分析. 高数考试 + 工程数值 + 数学分析各自首选不同种.
+</p>
+</div>
 <h3 id="12-5-2-taylor">12.5.2 Taylor 级数与收敛性</h3>
 <div class="box-def">
 <p>
