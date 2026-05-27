@@ -1232,12 +1232,22 @@ $$\int_{\partial M} \omega = \int_M d\omega$$
 </p>
 </div>
 <h3 id="12-2">知识点 12.2: 拉普拉斯算子 Δ = ∇·∇</h3>
+<div class="box-def">
+<p>拉普拉斯算子 (Laplacian)</p>
 <p>
-<strong>定义</strong>: Δf = ∂²f/∂x² + ∂²f/∂y² + ∂²f/∂z² = div(grad f)
+$$\Delta f = \nabla \cdot (\nabla f) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}$$
+即"梯度的散度" (二阶混合导数和).
 </p>
 <p>
-<strong>Δf = 0 的解叫"调和函数"</strong>, 物理含义: 该点的值 = 周围球面平均值 (平均值性质).
+满足 $\Delta f = 0$ 的函数称 <strong>调和函数 (Harmonic)</strong>.
 </p>
+</div>
+<div class="box-intuition">
+<p>调和函数平均值性质</p>
+<p>
+$\Delta f = 0$ 意味着<strong>该点值 = 周围球面平均值</strong>. 直观: 在调和函数中, 任何"凸起" 都会被周围平均"拉平". 这就是为什么 $\Delta T = 0$ 描述<strong>稳态热传导</strong> (温度场达到平衡, 处处=邻域平均).
+</p>
+</div>
 <p>
 <strong>应用全表</strong>:
 </p>
