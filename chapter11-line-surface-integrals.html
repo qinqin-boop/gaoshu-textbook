@@ -126,6 +126,37 @@ $$\sigma=\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\Delta s_i.$$
 <strong>与第一类曲面积分类似</strong>:$ds$ 是<strong>正</strong>的弧长元,<strong>积分与曲线方向无关</strong>(沿 $L$ 走过去和走回来积分值相同)。物理:$f=$ 线密度时 $\int f\,ds=$ 总质量。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 第一类曲线积分: 沿弯曲钢丝按弧长求和 -->
+  <!-- 弯曲曲线 -->
+  <path d="M 50,180 Q 120,80 200,130 T 350,90 Q 410,70 450,130" fill="none" stroke="#1a365d" stroke-width="3"/>
+  <text x="370" y="60" font-size="13" fill="#1a365d" font-weight="bold">曲线 L</text>
+  <!-- 切成小弧段 dots -->
+  <circle cx="50" cy="180" r="3" fill="#1a365d"/>
+  <circle cx="105" cy="115" r="3" fill="#22543d"/>
+  <circle cx="155" cy="100" r="3" fill="#22543d"/>
+  <circle cx="200" cy="130" r="3" fill="#22543d"/>
+  <circle cx="255" cy="118" r="3" fill="#22543d"/>
+  <circle cx="305" cy="98" r="3" fill="#22543d"/>
+  <circle cx="350" cy="90" r="3" fill="#22543d"/>
+  <circle cx="400" cy="80" r="3" fill="#22543d"/>
+  <circle cx="450" cy="130" r="3" fill="#1a365d"/>
+  <!-- 小弧标 ds -->
+  <text x="120" y="93" font-size="12" fill="#c2410c">ds</text>
+  <text x="170" y="86" font-size="12" fill="#c2410c">ds</text>
+  <text x="225" y="105" font-size="12" fill="#c2410c">ds</text>
+  <text x="275" y="93" font-size="12" fill="#c2410c">ds</text>
+  <text x="330" y="73" font-size="12" fill="#c2410c">ds</text>
+  <!-- 起点终点标签 -->
+  <text x="30" y="200" font-size="12" fill="#1a365d">A</text>
+  <text x="455" y="148" font-size="12" fill="#1a365d">B</text>
+  <!-- 公式 -->
+  <text x="40" y="40" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">∫_L f(x,y,z) ds = lim Σ f(Pᵢ)·Δsᵢ (每段长度 × 当地值)</text>
+  <text x="50" y="210" font-size="11" fill="#666">物理: f = 线密度 ⟹ 总质量 = ∫_L f ds; f = 1 ⟹ 总弧长</text>
+</svg>
+<figcaption>图 11.1.1 第一类曲线积分: 把弯曲钢丝切成小弧 $ds$, 每段密度 × 弧长后累加, 极限就是积分</figcaption>
+</figure>
 <h3 id="11-1-2">11.1.2 计算公式</h3>
 <div class="box-thm">
 <p>
