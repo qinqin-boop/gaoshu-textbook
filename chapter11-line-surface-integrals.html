@@ -1431,27 +1431,29 @@ $$\int_M d\omega = \int_{\partial M} \omega$$
 学完高数, 上微分几何课直接秒懂.
 </p>
 </div>
+<div class="box-intuition">
+<p>经典 4 大定理 = 同一广义 Stokes</p>
 <p>
-<strong>对应表</strong>:
-| 经典 | 微分形式 | k |
+| 经典定理 | 微分形式 | $k$ (流形维数) |
 |---|---|---|
-| Newton-Leibniz | ∫_[a,b] df = f(b)-f(a) | 1 |
-| Green | ∫_D dω = ∫_$\partial$D ω | 2 |
-| Stokes | ∫_S dω = ∫_$\partial$S ω | 2 |
-| Gauss | ∫_V dω = ∫_$\partial$V ω | 3 |
+| Newton-Leibniz | $\int_{[a,b]} df = f(b) - f(a)$ | 1 |
+| Green | $\int_D d\omega = \int_{\partial D} \omega$ | 2 |
+| Stokes | $\int_S d\omega = \int_{\partial S} \omega$ | 2 |
+| Gauss | $\int_V d\omega = \int_{\partial V} \omega$ | 3 |
 </p>
 <p>
-<strong>外导数 d 的核心性质</strong>: d∘d = 0 (二阶外导为零). 这就是 "∇×(∇f)=0" 和 "∇·(∇×$\vec{F}$)=0" 的统一表述.
+<strong>外导数 $d$ 的核心性质</strong>: $d \circ d = 0$ (二阶外导为零) — 这就是 $\nabla\times(\nabla f) = 0$ 和 $\nabla\cdot(\nabla\times\vec{F}) = 0$ 的统一表述.
 </p>
-<p>
-<strong>应用</strong>:
-</p>
-<ul>
-<li>现代物理: 广义相对论用张量, 张量= 多线性微分形式</li>
-<li>微分几何: 流形上微积分</li>
-<li>拓扑学: de Rham 上同调 = "几何拓扑桥"</li>
-<li>数据科学: 拓扑数据分析 (TDA) 用微分形式衡量数据流形拓扑</li>
-</ul>
+</div>
+<div class="box-intuition">
+<p>微分形式的现代应用 4 条</p>
+<ol>
+<li><strong>广义相对论</strong>: 用张量场写场方程, 张量就是多线性微分形式</li>
+<li><strong>微分几何</strong>: 流形上微积分的 "<strong>通用语言</strong>"</li>
+<li><strong>代数拓扑</strong>: de Rham 上同调连接"流形几何"跟"代数拓扑"</li>
+<li><strong>数据科学</strong>: 拓扑数据分析 (TDA) 用持久同调衡量数据流形拓扑</li>
+</ol>
+</div>
 <h3 id="12-8-torus">知识点 12.8: 圆环面 (Torus) 面积体积 + 例题</h3>
 <p>
 <strong>圆环面 (donut shape)</strong>: 大圆半径 R, 小圆半径 r, 用参数化:
