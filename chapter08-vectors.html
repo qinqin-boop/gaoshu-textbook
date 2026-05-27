@@ -1309,6 +1309,36 @@ $$[\vec{c},\vec{s}_1,\vec{s}_2]=\vec{c}\cdot(\vec{s}_1\times\vec{s}_2)=(-1)(2)+1
 </p>
 </div>
 <h3 id="8-5-3">8.5.3 直线与平面位置关系</h3>
+<figure>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="lpln_arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <!-- 3 类位置关系 -->
+  <!-- ① 平行 -->
+  <text x="30" y="30" font-size="13" fill="#22543d" font-weight="bold">① 平行</text>
+  <polygon points="20,130 130,110 150,170 40,190" fill="#22543d" fill-opacity="0.15" stroke="#22543d" stroke-width="1.5"/>
+  <line x1="30" y1="80" x2="130" y2="90" stroke="#c2410c" stroke-width="2" marker-end="url(#lpln_arr)"/>
+  <text x="60" y="73" font-size="11" fill="#c2410c">ℓ ∥ π</text>
+  <text x="30" y="208" font-size="10" fill="#666">s · n = 0, ℓ ∉ π</text>
+
+  <!-- ② 相交一点 -->
+  <text x="200" y="30" font-size="13" fill="#1a365d" font-weight="bold">② 相交一点</text>
+  <polygon points="190,130 300,110 320,170 210,190" fill="#1a365d" fill-opacity="0.15" stroke="#1a365d" stroke-width="1.5"/>
+  <line x1="190" y1="80" x2="290" y2="170" stroke="#c2410c" stroke-width="2" marker-end="url(#lpln_arr)"/>
+  <circle cx="245" cy="138" r="4" fill="#c2410c"/>
+  <text x="252" y="135" font-size="10" fill="#c2410c">交点</text>
+  <text x="200" y="208" font-size="10" fill="#666">s · n ≠ 0</text>
+
+  <!-- ③ 垂直 -->
+  <text x="370" y="30" font-size="13" fill="#c2410c" font-weight="bold">③ 垂直</text>
+  <polygon points="360,130 470,110 470,170 360,190" fill="#c2410c" fill-opacity="0.15" stroke="#c2410c" stroke-width="1.5"/>
+  <line x1="415" y1="50" x2="415" y2="150" stroke="#c2410c" stroke-width="2.5" marker-end="url(#lpln_arr)"/>
+  <circle cx="415" cy="150" r="4" fill="#c2410c"/>
+  <text x="370" y="208" font-size="10" fill="#666">s ∥ n (s × n = 0)</text>
+</svg>
+<figcaption>图 8.5.3 直线与平面 3 类位置关系: 平行 / 相交一点 / 垂直 (含子情形 $\ell \subset \pi$)</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 直线 $\ell$(方向 $\vec{s}$,过点 $M_0$)与平面 $\pi$(法向 $\vec{n}$):
