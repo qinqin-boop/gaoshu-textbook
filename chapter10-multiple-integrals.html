@@ -1075,22 +1075,25 @@ ln(100!) ≈ (1/2)ln(200π) + 100·ln(100) - 100 ≈ 363.7
 </p>
 </div>
 <h3 id="13-9">知识点 13.9: 多元积分换元雅可比详细推导</h3>
+<div class="box-intuition">
+<p>雅可比 = "局部面积 / 体积放大比"</p>
 <p>
-<strong>问题</strong>: 重积分换元 ∬ f(x,y) dxdy → ∬ f(x(u,v), y(u,v)) |J| du dv 中, |J| 从哪里来?
+<strong>问题</strong>: 重积分换元 $\iint f(x, y)\,dxdy \to \iint f(x(u,v), y(u,v))\,|J|\,du\,dv$ 中, $|J|$ 从哪里来?
 </p>
 <p>
-<strong>几何推导</strong>: 在 (u,v) 平面取小矩形 [u, u+du]×[v, v+dv]. 映射到 (x,y) 平面变成"准平行四边形":
+<strong>几何推导</strong>: 在 $(u, v)$ 平面取小矩形 $[u, u+du] \times [v, v+dv]$, 映射到 $(x, y)$ 平面后变成"准平行四边形":
 </p>
 <ul>
-<li>边 1: $\vec{r}$_u = (∂x/∂u, ∂y/∂u) du</li>
-<li>边 2: $\vec{r}$_v = (∂x/∂v, ∂y/∂v) dv</li>
+<li>边 1: $\vec{r}_u = (\partial x/\partial u, \partial y/\partial u)\,du$</li>
+<li>边 2: $\vec{r}_v = (\partial x/\partial v, \partial y/\partial v)\,dv$</li>
 </ul>
 <p>
-面积 = |$\vec{r}$_u × $\vec{r}$_v| = |∂x/∂u · ∂y/∂v - ∂x/∂v · ∂y/∂u| · du dv = |J| du dv.
+面积 $= |\vec{r}_u \times \vec{r}_v| = |\partial x/\partial u \cdot \partial y/\partial v - \partial x/\partial v \cdot \partial y/\partial u| \cdot du\,dv = |J|\,du\,dv$.
 </p>
 <p>
-即雅可比 = 局部"面积放大比".
+即 <strong>雅可比 = 局部面积 / 体积放大比</strong>. 高维 ($n$ 维) 同理: $|J|$ 是 $n$ 维体积比, 也是行列式的几何意义.
 </p>
+</div>
 <div class="box-example">
 <p>例题 13-9</p>
 <p>
