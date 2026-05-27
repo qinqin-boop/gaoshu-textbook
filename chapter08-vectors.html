@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>第八章 向量代数与空间解析几何 · 高数下册教材</title>
+<script>
+function toggleAllAnswers() {
+  var btn = document.getElementById('ans-toggle-all');
+  var allDetails = document.querySelectorAll('details.box-answer');
+  var anyClosed = Array.from(allDetails).some(d => !d.open);
+  allDetails.forEach(d => { d.open = anyClosed; });
+  btn.textContent = anyClosed ? '🔽 全部收起答案' : '📖 全部展开答案';
+}
+</script>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -22,7 +31,10 @@
 <header>
   <h1>高等数学 · 下册</h1>
   <p class="tagline">第八章 向量代数与空间解析几何</p>
-  <nav><a href="./index.html">← 章节列表</a></nav>
+  <nav>
+    <a href="./index.html">← 章节列表</a>
+    <button id="ans-toggle-all" onclick="toggleAllAnswers()" style="background:transparent;border:1px solid rgba(255,216,156,0.4);color:#ffd89c;padding:4px 14px;border-radius:4px;font-size:0.85rem;cursor:pointer;font-family:inherit;margin-left:8px;">📖 全部展开答案</button>
+  </nav>
 </header>
 <div class="layout">
 <aside class="toc-sidebar"><h3>本章目录</h3><ul><li><a class="h2" href="#8-0">8.0 整章在干啥?</a></li><li><a class="h3" href="#8-0-1">8.0.1 全章地图</a></li><li><a class="h3" href="#8-0-2">8.0.2 核心代数对象</a></li><li><a class="h3" href="#8-0-3">8.0.3 学这章的意义</a></li><li><a class="h2" href="#8-1">8.1 向量及其线性运算</a></li><li><a class="h3" href="#8-1-1">8.1.1 为什么需要向量?</a></li><li><a class="h3" href="#8-1-2">8.1.2 向量的严格定义</a></li><li><a class="h3" href="#8-1-3">8.1.3 加法、减法、数乘</a></li><li><a class="h3" href="#8-1-4">8.1.4 标准基与分量分解</a></li><li><a class="h3" href="#8-1-5">8.1.5 投影</a></li><li><a class="h3" href="#8-1-6">8.1.6 方向余弦</a></li><li><a class="h2" href="#8-2">8.2 数量积 · 向量积 · 混合积</a></li><li><a class="h3" href="#8-2-1">8.2.1 数量积(点乘 / 内积)</a></li><li><a class="h3" href="#8-2-2">8.2.2 向量积(叉乘)</a></li><li><a class="h3" href="#8-2-3">8.2.3 混合积</a></li><li><a class="h3" href="#8-2-4">8.2.4 三件套总览</a></li><li><a class="h2" href="#8-3">8.3 曲面及其方程</a></li><li><a class="h3" href="#8-3-1">8.3.1 球面方程</a></li><li><a class="h3" href="#8-3-2">8.3.2 旋转曲面</a></li><li><a class="h3" href="#8-3-3">8.3.3 柱面</a></li><li><a class="h3" href="#8-3-4">8.3.4 二次曲面五兄弟(标准型)</a></li><li><a class="h3" href="#8-3-5">8.3.5 截痕法画曲面</a></li><li><a class="h3" href="#8-3-6">8.3.6 应用速览</a></li><li><a class="h2" href="#8-4">8.4 平面及其方程</a></li><li><a class="h3" href="#8-4-1">8.4.1 点法式与一般式</a></li><li><a class="h3" href="#8-4-2">8.4.2 三点式与截距式</a></li><li><a class="h3" href="#8-4-3">8.4.3 点到平面的距离</a></li><li><a class="h3" href="#8-4-4">8.4.4 两平面的位置关系</a></li><li><a class="h2" href="#8-5">8.5 空间直线及其方程</a></li><li><a class="h3" href="#8-5-1">8.5.1 三种方程形式</a></li><li><a class="h3" href="#8-5-2">8.5.2 直线与直线位置关系</a></li><li><a class="h3" href="#8-5-3">8.5.3 直线与平面位置关系</a></li><li><a class="h3" href="#8-5-4">8.5.4 距离公式</a></li><li><a class="h3" href="#15">知识点 15: 真实工程应用举例 (理解为啥学)</a></li><li><a class="h3" href="#6-5-quadric-surfaces">知识点 6.5: 二次曲面 (Quadric Surfaces) 完整目录</a></li><li><a class="h3" href="#6-6-ruled-surface">知识点 6.6: 直纹面 (Ruled Surface)</a></li><li><a class="h3" href="#6-7">知识点 6.7: 空间曲线的弧长公式</a></li><li><a class="h3" href="#6-8-curvature">知识点 6.8: 空间曲线的曲率 (Curvature)</a></li><li><a class="h3" href="#6-9-frenet-frenet-serret-frame">知识点 6.9: Frenet 标架 (Frenet-Serret Frame)</a></li><li><a class="h3" href="#6-10">知识点 6.10: 高斯曲率 与 高斯-博内定理</a></li><li><a class="h3" href="#6-11-quaternion">知识点 6.11: 四元数 (Quaternion) 与三维旋转</a></li><li><a class="h3" href="#6-12-tensor">知识点 6.12: 张量初步 (Tensor)</a></li><li><a class="h3" href="#6-13">知识点 6.13: 向量空间的线性独立性 + 基与维数</a></li><li><a class="h3" href="#6-14">知识点 6.14: 矩阵特征值 / 特征向量 (重要应用)</a></li><li><a class="h3" href="#6-15-svd">知识点 6.15: 奇异值分解 SVD (矩阵分解之王)</a></li><li><a class="h3" href="#6-16">知识点 6.16: 凸集与凸函数 (优化基石)</a></li><li><a class="h3" href="#6-17">知识点 6.17: 行列式深入 — 几何含义 + 性质</a></li><li><a class="h3" href="#6-18">知识点 6.18: 三重积与四元数旋转结合</a></li></ul></aside>

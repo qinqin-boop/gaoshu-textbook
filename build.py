@@ -202,6 +202,15 @@ def main():
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{escape(title_text)} · 高数下册教材</title>
+<script>
+function toggleAllAnswers() {{
+  var btn = document.getElementById('ans-toggle-all');
+  var allDetails = document.querySelectorAll('details.box-answer');
+  var anyClosed = Array.from(allDetails).some(d => !d.open);
+  allDetails.forEach(d => {{ d.open = anyClosed; }});
+  btn.textContent = anyClosed ? '🔽 全部收起答案' : '📖 全部展开答案';
+}}
+</script>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -220,7 +229,10 @@ def main():
 <header>
   <h1>高等数学 · 下册</h1>
   <p class="tagline">{escape(title_text)}</p>
-  <nav><a href="./index.html">← 章节列表</a></nav>
+  <nav>
+    <a href="./index.html">← 章节列表</a>
+    <button id="ans-toggle-all" onclick="toggleAllAnswers()" style="background:transparent;border:1px solid rgba(255,216,156,0.4);color:#ffd89c;padding:4px 14px;border-radius:4px;font-size:0.85rem;cursor:pointer;font-family:inherit;margin-left:8px;">📖 全部展开答案</button>
+  </nav>
 </header>
 <div class="layout">
 {toc_sidebar}

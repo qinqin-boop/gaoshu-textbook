@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>第十二章 无穷级数 · 高数下册教材</title>
+<script>
+function toggleAllAnswers() {
+  var btn = document.getElementById('ans-toggle-all');
+  var allDetails = document.querySelectorAll('details.box-answer');
+  var anyClosed = Array.from(allDetails).some(d => !d.open);
+  allDetails.forEach(d => { d.open = anyClosed; });
+  btn.textContent = anyClosed ? '🔽 全部收起答案' : '📖 全部展开答案';
+}
+</script>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -22,7 +31,10 @@
 <header>
   <h1>高等数学 · 下册</h1>
   <p class="tagline">第十二章 无穷级数</p>
-  <nav><a href="./index.html">← 章节列表</a></nav>
+  <nav>
+    <a href="./index.html">← 章节列表</a>
+    <button id="ans-toggle-all" onclick="toggleAllAnswers()" style="background:transparent;border:1px solid rgba(255,216,156,0.4);color:#ffd89c;padding:4px 14px;border-radius:4px;font-size:0.85rem;cursor:pointer;font-family:inherit;margin-left:8px;">📖 全部展开答案</button>
+  </nav>
 </header>
 <div class="layout">
 <aside class="toc-sidebar"><h3>本章目录</h3><ul><li><a class="h2" href="#12-0">12.0 整章在干啥?</a></li><li><a class="h3" href="#12-0-1">12.0.1 全章地图</a></li><li><a class="h3" href="#12-0-2">12.0.2 五种级数对比</a></li><li><a class="h3" href="#12-0-3">12.0.3 三种"敛散性"模式</a></li><li><a class="h3" href="#12-0-4">12.0.4 与其它章的衔接</a></li><li><a class="h3" href="#12-0-5">12.0.5 入门:为什么"无限加"居然能得到有限数?</a></li><li><a class="h3" href="#12-0-6">12.0.6 怎么读这章</a></li><li><a class="h2" href="#12-1">12.1 常数项级数:概念与基本性质</a></li><li><a class="h3" href="#12-1-1">12.1.1 定义与基本概念</a></li><li><a class="h3" href="#12-1-2">12.1.2 必要条件:通项趋零</a></li><li><a class="h3" href="#12-1-3">12.1.3 两个关键的"参考级数"</a></li><li><a class="h3" href="#12-1-4">12.1.4 级数运算的合法性</a></li><li><a class="h3" href="#12-1-5-cauchy">12.1.5 Cauchy 准则</a></li><li><a class="h3" href="#12-1-6">12.1.6 与广义积分 / 数学分析的连接</a></li><li><a class="h2" href="#12-2">12.2 正项级数判别法</a></li><li><a class="h3" href="#12-2-1">12.2.1 比较判别法</a></li><li><a class="h3" href="#12-2-2-d-alembert">12.2.2 比值判别法(d'Alembert)</a></li><li><a class="h3" href="#12-2-3-cauchy">12.2.3 根值判别法(Cauchy)</a></li><li><a class="h3" href="#12-2-4-cauchy-maclaurin">12.2.4 积分判别法(Cauchy-MacLaurin)</a></li><li><a class="h3" href="#12-2-5-raabe">12.2.5 Raabe 判别法(比值失效时的精化)</a></li><li><a class="h3" href="#12-2-6">12.2.6 判别法选择流程</a></li><li><a class="h2" href="#12-3">12.3 交错级数 · 绝对收敛与条件收敛</a></li><li><a class="h3" href="#12-3-1-leibniz">12.3.1 交错级数与 Leibniz 判别法</a></li><li><a class="h3" href="#12-3-2-vs">12.3.2 绝对收敛 vs 条件收敛</a></li><li><a class="h3" href="#12-3-3-riemann">12.3.3 Riemann 重排定理(条件收敛的危险)</a></li><li><a class="h3" href="#12-3-4-abel-dirichlet">12.3.4 Abel-Dirichlet 判别(非交错的含负项判别)</a></li><li><a class="h2" href="#12-4">12.4 幂级数</a></li><li><a class="h3" href="#12-4-1">12.4.1 收敛半径与收敛区间</a></li><li><a class="h3" href="#12-4-2-r">12.4.2 计算 $R$ 的两种公式</a></li><li><a class="h3" href="#12-4-3-abel">12.4.3 Abel 第二定理:端点连续性</a></li><li><a class="h3" href="#12-4-4">12.4.4 内部的一致收敛与解析性</a></li><li><a class="h3" href="#12-4-5">12.4.5 应用</a></li><li><a class="h2" href="#12-5-taylor">12.5 Taylor 级数</a></li><li><a class="h3" href="#12-5-1-taylor">12.5.1 Taylor 多项式与三种余项</a></li><li><a class="h3" href="#12-5-2-taylor">12.5.2 Taylor 级数与收敛性</a></li><li><a class="h3" href="#12-5-3">12.5.3 光滑但非解析:经典反例</a></li><li><a class="h3" href="#12-5-4-newton">12.5.4 应用:数值计算 / Newton 法 / 物理近似</a></li><li><a class="h3" href="#12-5-5-taylor">12.5.5 多元 Taylor 公式概览</a></li><li><a class="h2" href="#12-6-fourier">12.6 Fourier 级数 · 收敛性定理</a></li><li><a class="h3" href="#12-6-1">12.6.1 三角函数系是正交系</a></li><li><a class="h3" href="#12-6-2">12.6.2 系数公式从正交性的推导</a></li><li><a class="h3" href="#12-6-3-dirichlet">12.6.3 Dirichlet 定理:逐点收敛</a></li><li><a class="h3" href="#12-6-4-bessel-parseval">12.6.4 Bessel 不等式与 Parseval 恒等式</a></li><li><a class="h3" href="#12-6-5">12.6.5 收敛模式的三种区分</a></li><li><a class="h3" href="#12-6-6">12.6.6 物理 / 工程应用速览</a></li><li><a class="h3" href="#15">知识点 15: 无穷级数应用大全 (本章工程价值)</a></li><li><a class="h3" href="#8-6">知识点 8.6: 阿贝尔判别法与狄利克雷判别法</a></li><li><a class="h3" href="#8-7-double-series">知识点 8.7: 双重级数 (Double Series)</a></li><li><a class="h3" href="#8-8-riemann-rearrangement">知识点 8.8: 黎曼重排定理 (Riemann Rearrangement)</a></li><li><a class="h3" href="#8-9">知识点 8.9: 黎曼 ζ 函数 与素数</a></li><li><a class="h3" href="#8-10-aitken-euler">知识点 8.10: 收敛加速 (Aitken / Euler 求和)</a></li><li><a class="h3" href="#8-11">知识点 8.11: 级数与微分方程的桥梁 — 幂级数解法</a></li><li><a class="h3" href="#8-12-pad">知识点 8.12: Padé 逼近 (有理函数逼近)</a></li><li><a class="h3" href="#8-13">知识点 8.13: 级数与勒贝格积分 (一瞥)</a></li><li><a class="h3" href="#8-14-divergent-series">知识点 8.14: 渐近级数 (Divergent Series)</a></li><li><a class="h3" href="#8-15-fft">知识点 8.15: 快速傅里叶变换 FFT (从级数到算法)</a></li><li><a class="h3" href="#8-16-wavelets">知识点 8.16: 小波变换 (Wavelets, 傅里叶的儿子)</a></li><li><a class="h3" href="#8-17-generating-functions">知识点 8.17: 生成函数 (Generating Functions)</a></li><li><a class="h3" href="#8-18-analytic-continuation">知识点 8.18: 解析延拓 (Analytic Continuation)</a></li><li><a class="h3" href="#8-19-cauchy">知识点 8.19: Cauchy 收敛准则与完备性</a></li><li><a class="h3" href="#8-20-clt">知识点 8.20: 中心极限定理 (CLT) 与级数</a></li><li><a class="h3" href="#8-21-lln">知识点 8.21: 大数定律 LLN (级数的概率版本)</a></li><li><a class="h3" href="#8-22">知识点 8.22: 全章串讲 (级数论的统一观点)</a></li></ul></aside>

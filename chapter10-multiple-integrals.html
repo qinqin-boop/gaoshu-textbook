@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>第十章 重积分 · 高数下册教材</title>
+<script>
+function toggleAllAnswers() {
+  var btn = document.getElementById('ans-toggle-all');
+  var allDetails = document.querySelectorAll('details.box-answer');
+  var anyClosed = Array.from(allDetails).some(d => !d.open);
+  allDetails.forEach(d => { d.open = anyClosed; });
+  btn.textContent = anyClosed ? '🔽 全部收起答案' : '📖 全部展开答案';
+}
+</script>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -22,7 +31,10 @@
 <header>
   <h1>高等数学 · 下册</h1>
   <p class="tagline">第十章 重积分</p>
-  <nav><a href="./index.html">← 章节列表</a></nav>
+  <nav>
+    <a href="./index.html">← 章节列表</a>
+    <button id="ans-toggle-all" onclick="toggleAllAnswers()" style="background:transparent;border:1px solid rgba(255,216,156,0.4);color:#ffd89c;padding:4px 14px;border-radius:4px;font-size:0.85rem;cursor:pointer;font-family:inherit;margin-left:8px;">📖 全部展开答案</button>
+  </nav>
 </header>
 <div class="layout">
 <aside class="toc-sidebar"><h3>本章目录</h3><ul><li><a class="h2" href="#10-0">10.0 整章在干啥?</a></li><li><a class="h3" href="#10-0-1">10.0.1 全章地图</a></li><li><a class="h3" href="#10-0-2">10.0.2 三种核心积分对比</a></li><li><a class="h3" href="#10-0-3">10.0.3 坐标选择口诀</a></li><li><a class="h3" href="#10-0-4">10.0.4 学这章的意义</a></li><li><a class="h2" href="#10-1">10.1 二重积分:概念与性质</a></li><li><a class="h3" href="#10-1-1">10.1.1 划分与黎曼和</a></li><li><a class="h3" href="#10-1-2">10.1.2 几何意义与可积性</a></li><li><a class="h3" href="#10-1-3">10.1.3 几何意义</a></li><li><a class="h3" href="#10-1-4">10.1.4 七大基本性质</a></li><li><a class="h3" href="#10-1-5">10.1.5 例题</a></li><li><a class="h2" href="#10-2">10.2 二重积分的计算</a></li><li><a class="h3" href="#10-2-1-fubini">10.2.1 Fubini 定理与区域类型</a></li><li><a class="h3" href="#10-2-2">10.2.2 交换积分次序</a></li><li><a class="h3" href="#10-2-3">10.2.3 极坐标变换与雅可比因子</a></li><li><a class="h3" href="#10-2-4">10.2.4 一般换元公式</a></li><li><a class="h2" href="#10-3">10.3 三重积分</a></li><li><a class="h3" href="#10-3-1">10.3.1 直角坐标:累次积分思想</a></li><li><a class="h3" href="#10-3-2">10.3.2 柱坐标</a></li><li><a class="h3" href="#10-3-3">10.3.3 球坐标(关键)</a></li><li><a class="h3" href="#10-3-4">10.3.4 坐标选择口诀</a></li><li><a class="h2" href="#10-4">10.4 重积分的应用</a></li><li><a class="h3" href="#10-4-1">10.4.1 几何量:面积、体积、曲面面积</a></li><li><a class="h3" href="#10-4-2">10.4.2 质量与质心</a></li><li><a class="h3" href="#10-4-3">10.4.3 转动惯量</a></li><li><a class="h3" href="#10-4-4">10.4.4 引力 / 静电场</a></li><li><a class="h3" href="#10-4-5">10.4.5 概率应用:边缘分布、期望、协方差</a></li><li><a class="h2" href="#10-5">10.5 含参变量的积分</a></li><li><a class="h3" href="#10-5-1">10.5.1 含参定积分的三大定理</a></li><li><a class="h3" href="#10-5-2">10.5.2 含参变量极限的进入积分号</a></li><li><a class="h3" href="#10-5-3">10.5.3 广义含参积分</a></li><li><a class="h3" href="#10-5-4-gamma-beta">10.5.4 Gamma 函数与 Beta 函数</a></li><li><a class="h3" href="#10-5-5">10.5.5 物理 / 工程应用速览</a></li><li><a class="h3" href="#17">知识点 17: 重积分应用大全 (本章工程价值)</a></li><li><a class="h3" href="#13-5">知识点 13.5: 蒙特卡洛积分原理</a></li><li><a class="h3" href="#13-6">知识点 13.6: 高斯积分</a></li><li><a class="h3" href="#13-7-beta-gamma">知识点 13.7: Beta 函数 与 Gamma 函数</a></li><li><a class="h3" href="#13-8-stirling-n">知识点 13.8: Stirling 公式 — n! 的渐近估计</a></li><li><a class="h3" href="#13-9">知识点 13.9: 多元积分换元雅可比详细推导</a></li><li><a class="h3" href="#13-10">知识点 13.10: 概率密度变换 (机器学习的核心)</a></li><li><a class="h3" href="#13-11-feynman">知识点 13.11: 含参积分 (Feynman 求导技巧)</a></li><li><a class="h3" href="#13-12">知识点 13.12: 反常重积分 与 收敛性判别</a></li><li><a class="h3" href="#13-13-fubini">知识点 13.13: 多重积分的 Fubini 定理详解</a></li><li><a class="h3" href="#13-14">知识点 13.14: 雅可比与微分形式的等价</a></li><li><a class="h3" href="#13-15">知识点 13.15: 立方体的"双重广义体积"</a></li></ul></aside>
