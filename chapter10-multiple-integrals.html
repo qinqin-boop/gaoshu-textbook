@@ -797,12 +797,17 @@ $\int_0^\infty\sqrt x e^{-x}\,dx=\Gamma(3/2)=\frac{1}{2}\Gamma(1/2)=\frac{\sqrt\
 </p>
 </div>
 <h3 id="10-5-5">10.5.5 物理 / 工程应用速览</h3>
-<ul>
-<li><strong>概率分布</strong>:Beta 分布 / Gamma 分布 / Chi-squared 分布的归一化系数全由 $\Gamma,B$ 给出;</li>
-<li><strong>统计力学</strong>:Fermi-Dirac / Bose-Einstein 配分函数用 $\Gamma$ 表达;</li>
-<li><strong>数值方法</strong>:Laplace 变换 $\int e^{-st}f(t)\,dt$ 是参数 $s$ 的含参积分,工程电路 / 控制论核心;</li>
-<li><strong>AI Diffusion 模型</strong>:噪声调度 $\beta_t$、$\alpha_t$ 序列与 $\Gamma$ 分布参数化有关。</li>
-</ul>
+<div class="box-intuition">
+<p>Γ / Beta 函数 + 含参积分 4 大跨界</p>
+<p>
+| 领域 | 含参积分 / Γ 在哪里 |
+|---|---|
+| <strong>概率论</strong> | Beta / Gamma / $\chi^2$ 分布的归一化系数全由 $\Gamma, B$ 给出 |
+| 统计力学 | Fermi-Dirac / Bose-Einstein 配分函数用 $\Gamma$ 表达 |
+| 工程数值 | Laplace 变换 $\int_0^\infty e^{-st}f(t)\,dt$ 是参数 $s$ 的含参积分 — 控制论 / 电路必用 |
+| <strong>AI Diffusion</strong> | 噪声调度 $\beta_t, \alpha_t$ 序列与 $\Gamma$ 分布参数化相关; 训练流程公式靠 $\Gamma$ 化简 |
+</p>
+</div>
 <div class="box-pitfall">
 <p>
 <strong>易错点</strong>:
