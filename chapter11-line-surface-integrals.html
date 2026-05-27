@@ -1201,14 +1201,21 @@ $\vec{F}$ 永远拆成 "<strong>源/汇主导</strong>" 部分 + "<strong>涡旋
 $\varphi$ 和 $\vec{A}$ 一起叫"四维势" ($\varphi$, $\vec{A}$) — 相对论中是 4-向量.
 </p>
 </div>
+<div class="box-intuition">
+<p>Helmholtz 分解 — 跨领域万用工具</p>
 <p>
-<strong>应用</strong>:
+| 领域 | 怎么用 Helmholtz 分解 |
+|---|---|
+| 流体力学 | 不可压缩流速分解 = 势流 (无旋) + 涡流 (无散) |
+| 图像处理 | 法线场 / 光流场分解, 切向 / 法向流分离 |
+| GIS 气象 | 风场分解 (<strong>辐散场</strong> + <strong>旋转场</strong>), 数值天气预报必用 |
+| 计算机图形 | 流体仿真 / 烟雾 / 火焰 (势 + 涡分别求解快) |
+| 量子电动力学 | 光子的横场 (旋) / 纵场 (势) 量子化各算各 |
 </p>
-<ul>
-<li>流体力学: 不可压缩流速分解 (势流 + 涡流)</li>
-<li>图像处理: 法线场分解 = 法向反射 + 切向流</li>
-<li>GIS: 风场分解 (辐散场 + 旋转场), 用于气象预测</li>
-</ul>
+<p>
+<strong>核心价值</strong>: "任意向量场 = 散场 + 旋场" 让难问题 → 两个可解的简单子问题, 工程实用极广.
+</p>
+</div>
 <h3 id="12-7-differential-forms">知识点 12.7: 微分形式 (Differential Forms) 入门</h3>
 <div class="box-def">
 <p>微分形式与广义 Stokes</p>
