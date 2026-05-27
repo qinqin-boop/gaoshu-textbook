@@ -1353,19 +1353,24 @@ $\hat{s}_n \to S$ <strong>二次收敛</strong>, 大幅快于原数列.
 经过几步达到 6 位精度, 直接累加需要数千项.
 </p>
 </div>
+<div class="box-thm">
+<p>Euler 求和 (交错级数)</p>
 <p>
-<strong>Euler 求和</strong>:
-∑ (-1)^n aₙ = ∑_(k=0)^∞ Δ^k a₀ / 2^(k+1)
-其中 Δ a_n = a_(n+1) - a_n.
+$$\sum_{n=0}^\infty (-1)^n a_n = \sum_{k=0}^\infty \frac{\Delta^k a_0}{2^{k+1}}$$
+其中前向差分 $\Delta a_n = a_{n+1} - a_n$ (跟 Aitken 的 $\Delta^2$ 同源).
 </p>
+</div>
+<div class="box-intuition">
+<p>加速求和的工程价值</p>
 <p>
-<strong>计算价值</strong>:
+| 应用 | 怎么用 |
+|---|---|
+| 数值库 | `numpy / scipy` 内置 Aitken / Levin / Richardson 加速 |
+| 物理 Feynman | 路径积分发散级数用加速求和提取物理意义 |
+| CG 光照 | 球谐函数 SH 展开加速 (PRT 预算光照) |
+| AI Transformer | 注意力分数 softmax 数值稳定也用类似差分技巧 |
 </p>
-<ul>
-<li>数值计算库 (numpy/scipy) 内置加速算法</li>
-<li>物理计算 (Feynman 路径积分) 用加速求和</li>
-<li>计算机渲染 (球谐函数光照) 加速展开</li>
-</ul>
+</div>
 <h3 id="8-11">知识点 8.11: 级数与微分方程的桥梁 — 幂级数解法</h3>
 <p>
 <strong>核心</strong>: 二阶变系数 ODE y'' + p(x)y' + q(x)y = 0 没有初等函数解时, 假设 y = ∑ aₙxⁿ, 代入求递推关系.
