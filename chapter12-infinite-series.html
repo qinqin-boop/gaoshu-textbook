@@ -1569,21 +1569,22 @@ N = 8 时:
 N = 10⁶ 时: 10¹² vs 2×10⁷, 加速比 5 万倍.
 </p>
 </div>
+<div class="box-intuition">
+<p>FFT 现代算力支柱应用全景</p>
 <p>
-<strong>应用 (现代算力支柱)</strong>:
+| 领域 | 怎么用 FFT |
+|---|---|
+| 多媒体压缩 | JPEG / MP3 / MP4 编码用 DCT (FFT 变种) |
+| 数字通信 | OFDM 调制把宽带分成多窄带 (5G / WiFi / LTE) |
+| 雷达 / 声呐 | 频谱分析探测目标 |
+| 医学影像 | MRI 直接由频域采样重建图像 |
+| 算法理论 | 多项式 $O(n\log n)$ / 大整数 Schönhage-Strassen |
+| 深度学习 | 大卷积核用 FFT 加速 (CNN, vision transformer) |
 </p>
-<ul>
-<li>JPEG/MP3/MP4 编码: DCT/DFT</li>
-<li>数字通信: OFDM 调制 (5G/WiFi/LTE)</li>
-<li>雷达/声呐: 频谱分析</li>
-<li>医学影像: MRI 用 FFT 重建图像</li>
-<li>多项式乘法: O(n log n) (vs 普通 O(n²))</li>
-<li>大整数乘法 (Schönhage-Strassen)</li>
-<li>卷积神经网络: 大卷积核用 FFT 加速</li>
-</ul>
 <p>
-<strong>FFT 是 20 世纪 Top 10 算法</strong>, 来自高数级数论的工程实现.
+<strong>FFT 评为 20 世纪 Top 10 算法</strong>, 来自高数级数论的工程实现 — 真正"数学吃下世界"的代表.
 </p>
+</div>
 <h3 id="8-16-wavelets">知识点 8.16: 小波变换 (Wavelets, 傅里叶的儿子)</h3>
 <div class="box-intuition">
 <p>傅里叶的局限</p>
