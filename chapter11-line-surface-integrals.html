@@ -286,16 +286,24 @@ $$W = \int_L \vec{F}\cdot d\vec{r} = \int_L P\,dx + Q\,dy$$
 </svg>
 <figcaption>图 3.1 第二类曲线积分 = 变力 F 沿曲线 L 做的总功 (F 和位移 dr 的点积累加)</figcaption>
 </figure>
+<div class="box-intuition">
+<p>推车做功的直觉</p>
 <p>
-<strong>生活类比</strong>: 你推车, 力跟方向都变, 走弯曲路径, 总功 = $\vec{F}$ · dr→ 沿路径积分.
+你推车, 力跟方向都变, 走弯曲路径, 总功 = $\vec{F}\cdot d\vec{r}$ 沿路径<strong>累加</strong>. 这是"功 = 力 × 距离"的连续累加版.
 </p>
+</div>
+<div class="box-intuition">
+<p>第一类 vs 第二类核心区别</p>
 <p>
-<strong>第一类 vs 第二类区别</strong>:
+| 维度 | 第一类 (对弧长) | 第二类 (对坐标) |
+|---|---|---|
+| 微元 | $ds > 0$ (长度, 永远正) | $dx, dy$ (带正负) |
+| 方向相关 | 否 (反向积分不变) | 是 (反向变号) |
+| 被积量 | 标量 $f$ | 向量 $\vec{F}$ |
+| 物理 | 质量 / 长度积分 | 功 / 通量 |
+| 转换 | $\int_L P\,dx + Q\,dy = \int_L (P\cos\alpha + Q\cos\beta)\,ds$ ||
 </p>
-<ul>
-<li>第一类: ds 是标量 (长度), 跟方向无关</li>
-<li>第二类: dx, dy 带方向 (反向走积分变号)</li>
-</ul>
+</div>
 <h3 id="3-5-11-2">知识点 3.5: 第二类曲线积分跟方向相关 (对齐书 §11.2 一 进一步)</h3>
 <div class="box-pitfall">
 <p>第二类必看方向</p>
