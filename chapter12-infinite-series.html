@@ -908,11 +908,30 @@ $$g(x)\approx g(x_k)+g'(x_k)(x-x_k).$$
 </p>
 </div>
 <h3 id="12-5-5-taylor">12.5.5 多元 Taylor 公式概览</h3>
+<div class="box-thm">
+<p>多元 Taylor 公式</p>
 <p>
-设 $f:\mathbb{R}^n\to\mathbb{R}$ 在 $\vec{x}_0$ 处 $C^{n+1}$,$\vec{h}=\vec{x}-\vec{x}_0$,则
-$$f(\vec{x})=f(\vec{x}_0)+\nabla f(\vec{x}_0)\cdot\vec{h}+\tfrac12\vec{h}^\top H_f(\vec{x}_0)\vec{h}+\dots+R_n(\vec{x}).$$
-一阶项是<strong>梯度</strong>,二阶项是 <strong>Hessian 二次型</strong>——这就是 §9.8 二阶判别 $D=AC-B^2$ 的来源,也是 §9.6 Descent Lemma 中 $L$-平滑性的二阶推导依据。<strong>$n$ 阶 Taylor 的多元版本本质上是张量,但实操中只用到一阶(梯度下降)、二阶(Newton 法、Hessian 判别)足够</strong>。
+$f: \mathbb{R}^n \to \mathbb{R}$ 在 $\vec{x}_0$ 处 $C^{n+1}$, $\vec{h} = \vec{x} - \vec{x}_0$, 则:
+$$f(\vec{x}) = f(\vec{x}_0) + \nabla f(\vec{x}_0)\cdot\vec{h} + \frac{1}{2}\vec{h}^\top H_f(\vec{x}_0)\vec{h} + \cdots + R_n(\vec{x})$$
 </p>
+</div>
+<div class="box-intuition">
+<p>多元 Taylor — 梯度 + Hessian 各阶意义</p>
+<ul>
+<li><strong>零阶</strong>: $f(\vec{x}_0)$ — 中心点值</li>
+<li><strong>一阶</strong>: $\nabla f \cdot \vec{h}$ — 梯度方向变化 (切平面)</li>
+<li><strong>二阶</strong>: $\frac{1}{2}\vec{h}^\top H\vec{h}$ — Hessian 二次型 (椭球凹凸感)</li>
+<li><strong>更高阶</strong>: 多元张量, 但<strong>实操中很少用</strong></li>
+</ul>
+<p>
+<strong>应用对照</strong>:
+</p>
+<ul>
+<li>一阶: 梯度下降, 切平面线性化</li>
+<li>二阶: Newton 法, Hessian 判别 ([[D=AC-B² 来源]]), $L$-平滑性 (Descent Lemma)</li>
+<li>三阶+: 三阶张量, 数学物理偶尔用 ($Mlpc$ 流形 / 测地线)</li>
+</ul>
+</div>
 <div class="box-pitfall">
 <p>
 <strong>易错点</strong>:
