@@ -65,25 +65,17 @@
 学多元函数 = 给真实世界建模. AI 训练就是在多元函数 (loss) 上找最低点.
 </p>
 </div>
+<div class="box-intuition">
+<p>本章学三件事 (AI 训练的全部数学基础)</p>
+<ol>
+<li><strong>偏导 / 全微分</strong>: 怎么求多元函数的"导数"</li>
+<li><strong>极值 / Hessian / Lagrange</strong>: 怎么找多元函数的"最高 / 最低点" (含约束)</li>
+<li><strong>方向导数 + 梯度</strong>: 怎么沿任意方向算变化率, 找"最陡上升方向"</li>
+</ol>
 <p>
-<strong>学多元函数 = 描述真实世界</strong>:
+<strong>为啥关键</strong>: AI 训练 = 在<strong>多元函数 (loss) 上找最低点</strong>. 整套技巧 (梯度下降 / 反向传播 / Adam / 牛顿法) 全靠这章基础.
 </p>
-<ul>
-<li>山的高度 = f(经度, 纬度)</li>
-<li>气温 = f(经度, 纬度, 海拔, 时间)</li>
-<li>神经网络损失 = f(权重₁, 权重₂, ..., 权重ₙ) (n 可能千亿)</li>
-</ul>
-<p>
-<strong>这章学的核心</strong>:
-</p>
-<ul>
-<li>怎么求多元函数的"导数" (偏导)</li>
-<li>怎么找多元函数的"最高/最低点" (极值)</li>
-<li>怎么沿任意方向计算变化率 (方向导数+梯度)</li>
-</ul>
-<p>
-<strong>为啥这章关键</strong>: AI 训练 = 找一个<strong>多元函数 (损失) 的最低点</strong>. 整套技巧 (梯度下降/反向传播) 全靠这章基础.
-</p>
+</div>
 <h3 id="1">知识点 1: 二元函数定义</h3>
 <div class="box-def">
 <p>二元函数</p>
@@ -91,20 +83,18 @@
 两个输入一个输出. $z = f(x, y)$. 例: $z = x^2 + y^2$ (抛物面/碗形曲面).
 </p>
 </div>
+<div class="box-intuition">
+<p>一元 vs 二元</p>
 <p>
-<strong>一元 vs 二元</strong>:
+| 维度 | 一元 $y = f(x)$ | 二元 $z = f(x,y)$ |
+|---|---|---|
+| 输入 | 1 个数 | 2 个数 (一对) |
+| 输出 | 1 个数 | 1 个数 |
+| 几何对象 | 曲线 (2D 中) | 曲面 (3D 中) |
+| 定义域 | $\mathbb{R}$ 上一段 | $\mathbb{R}^2$ 上一个区域 |
+| 生活类比 | 工资 $=f$(工龄) | 工资 $=f$(工龄, 学历) |
 </p>
-<ul>
-<li>一元 $y = f(x)$ 图像是曲线</li>
-<li>二元 $z = f(x, y)$ 图像是曲面 (3D)</li>
-</ul>
-<p>
-<strong>生活类比</strong>:
-</p>
-<ul>
-<li>一元: 你的工资 = f(工龄) — 只看工龄</li>
-<li>二元: 工资 = f(工龄, 学历) — 两个都看</li>
-</ul>
+</div>
 <figure>
 <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
   <!-- 二元函数曲面示意 z = x²+y² -->
