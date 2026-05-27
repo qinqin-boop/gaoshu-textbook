@@ -609,6 +609,24 @@ $$\frac{\partial^2 z}{\partial x^2}=\frac{\partial}{\partial x}\bigg(f_u u_x+f_v
 很多关系无法显式写成 $y=f(x)$,只能写成 $F(x,y)=0$ 这种<strong>隐式</strong>形式(如圆 $x^2+y^2=1$、椭圆、Cobb-Douglas 等产函数)。本节给出<strong>隐函数存在定理</strong>——什么时候 $F(x,y)=0$ 局部能解出 $y=f(x)$——并推导隐函数的求导公式。随后推广到多元 / 方程组情形,引出<strong>雅可比矩阵</strong>作为「可解性」的核心判据。这是约束优化、流形(Manifold)、最优传输(Optimal Transport)的代数底座。
 </p>
 <h3 id="9-5-1">9.5.1 一元隐函数</h3>
+<figure>
+<svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <line x1="20" y1="120" x2="300" y2="120" stroke="#888" stroke-width="1"/>
+  <line x1="160" y1="20" x2="160" y2="220" stroke="#888" stroke-width="1"/>
+  <text x="305" y="125" font-size="11" fill="#888">x</text>
+  <text x="165" y="20" font-size="11" fill="#888">y</text>
+  <circle cx="160" cy="120" r="80" fill="none" stroke="#1a365d" stroke-width="2"/>
+  <text x="60" y="55" font-size="12" fill="#1a365d">F(x,y)=x²+y²−1=0</text>
+  <circle cx="217" cy="64" r="4" fill="#c2410c"/>
+  <text x="225" y="60" font-size="11" fill="#c2410c">(x₀,y₀)</text>
+  <line x1="155" y1="40" x2="285" y2="125" stroke="#c2410c" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text x="232" y="118" font-size="11" fill="#c2410c">切线 dy/dx=-x/y</text>
+  <circle cx="80" cy="120" r="4" fill="#b91c1c"/>
+  <circle cx="240" cy="120" r="4" fill="#b91c1c"/>
+  <text x="60" y="148" font-size="11" fill="#b91c1c">F_y=0 失效</text>
+</svg>
+<figcaption>图 9.5.1 隐函数 $x^2+y^2=1$ 圆:除 $(\pm 1,0)$($F_y=0$ 失效)外处处可解为 $y=\pm\sqrt{1-x^2}$,$dy/dx=-x/y$。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 (隐函数存在定理 / 一元)设 $F(x,y)$ 在 $(x_0,y_0)$ 邻域内连续可偏导,且
