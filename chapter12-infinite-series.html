@@ -252,6 +252,12 @@ $\rho = \lim_{n\to\infty} u_{n+1}/u_n$:
 <li>$\rho = 1$: <strong>失效</strong> (要换其他方法)</li>
 </ul>
 </div>
+<div class="box-intuition">
+<p>比值法适用场景</p>
+<p>
+带<strong>阶乘 $n!$</strong> / <strong>指数 $a^n$</strong> / <strong>乘积 $n!a^n$</strong> 的级数最适合用比值法. 因为相邻项比通常能消掉很多因子. 例: $\sum n!/n^n$, $\sum n/2^n$.
+</p>
+</div>
 <div class="box-example">
 <p>例题 3</p>
 <p>
@@ -270,6 +276,12 @@ $\rho = \lim_{n\to\infty} \sqrt[n]{u_n}$:
 <li>$\rho > 1$ (含 $+\infty$): 发散</li>
 <li>$\rho = 1$: <strong>失效</strong></li>
 </ul>
+</div>
+<div class="box-intuition">
+<p>根值法适用场景</p>
+<p>
+<strong>带 $n$ 次幂</strong>的级数最适合, 如 $\sum (1/\ln n)^n$, $\sum (n/(n+1))^{n^2}$. 开 $n$ 次方后立刻消掉幂指数, 极限变简单.
+</p>
 </div>
 <div class="box-pitfall">
 <p>比值 vs 根值</p>
