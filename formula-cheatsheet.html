@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高数下册 · 公式速查</title>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+<style>
+.formula-toc { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px; margin:14px 0; }
+.formula-toc a { padding:8px 12px; background:#dbeafe; color:#1e40af; border-radius:6px; text-decoration:none; text-align:center; font-weight:600; font-size:0.92rem; }
+.formula-toc a:hover { background:#1e40af; color:white; }
+.formula-section { margin:24px 0; padding:14px 18px; background:white; border:1px solid #e2e8f0; border-radius:10px; }
+.formula-section h2 { color:#1e40af; border-bottom:2px solid #dbeafe; padding-bottom:8px; }
+.formula-card { padding:10px 14px; margin:10px 0; background:#f8fafc; border-left:4px solid #6366f1; border-radius:4px; }
+.formula-card h4 { margin:0 0 6px; color:#3730a3; font-size:1rem; }
+.formula-card .desc { color:#64748b; font-size:0.88rem; margin-top:4px; }
+.note { background:#fef9e1; border-left:4px solid #f59e0b; padding:10px 14px; border-radius:6px; margin:12px 0; font-size:0.9rem; color:#78350f; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📐 高数下册 · 公式速查</h1>
+  <p class="tagline"><a href="./index.html" style="color:#fff;text-decoration:underline;">← 返回章节列表</a></p>
+</header>
+
+<main>
+<div class="note">
+  📕 高数下册 5 章核心公式整理. 自己手抄速查, 不是替代教材. 想看推导/例题/几何意义请回 <a href="./index.html">章节正文</a>.
+</div>
+
+<div class="formula-toc">
+  <a href="#ch8">第8章 向量</a>
+  <a href="#ch9">第9章 多元微分</a>
+  <a href="#ch10">第10章 重积分</a>
+  <a href="#ch11">第11章 曲线曲面积分</a>
+  <a href="#ch12">第12章 无穷级数</a>
+</div>
+
+<div id="ch8" class="formula-section">
+<h2>第 8 章 · 向量与空间解析几何</h2>
+
+<div class="formula-card">
+<h4>数量积 (点积)</h4>
+$$\vec{a} \cdot \vec{b} = |\vec{a}||\vec{b}|\cos\theta = a_1 b_1 + a_2 b_2 + a_3 b_3$$
+<div class="desc">几何: 投影 × 长度. 用于求夹角 / 投影长度. $\vec{a}\perp\vec{b} \iff \vec{a}\cdot\vec{b}=0$</div>
+</div>
+
+<div class="formula-card">
+<h4>向量积 (叉乘)</h4>
+$$\vec{a}\times\vec{b}=\begin{vmatrix}\vec{i}&\vec{j}&\vec{k}\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix}, \quad |\vec{a}\times\vec{b}|=|\vec{a}||\vec{b}|\sin\theta$$
+<div class="desc">几何: 模长 = 平行四边形面积. 方向由右手定则定. $\vec{a}\parallel\vec{b}\iff\vec{a}\times\vec{b}=\vec{0}$</div>
+</div>
+
+<div class="formula-card">
+<h4>混合积</h4>
+$$[\vec{a},\vec{b},\vec{c}] = (\vec{a}\times\vec{b})\cdot\vec{c} = \begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}$$
+<div class="desc">几何: 绝对值 = 平行六面体体积. 三向量共面 $\iff$ 混合积 = 0.</div>
+</div>
+
+<div class="formula-card">
+<h4>平面方程</h4>
+$$\text{点法式: } A(x-x_0)+B(y-y_0)+C(z-z_0)=0, \quad \vec{n}=(A,B,C)$$
+$$\text{一般式: } Ax+By+Cz+D=0$$
+<div class="desc">$\vec{n}=(A,B,C)$ 为法向量, 即平面"垂直方向".</div>
+</div>
+
+<div class="formula-card">
+<h4>空间直线方程</h4>
+$$\text{对称式: } \frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}, \quad \vec{s}=(m,n,p)$$
+$$\text{参数式: } x=x_0+mt, y=y_0+nt, z=z_0+pt$$
+<div class="desc">$\vec{s}$ 是方向向量.</div>
+</div>
+</div>
+
+<div id="ch9" class="formula-section">
+<h2>第 9 章 · 多元函数微分</h2>
+
+<div class="formula-card">
+<h4>偏导数</h4>
+$$\frac{\partial f}{\partial x}\bigg|_{(x_0,y_0)}=\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}$$
+<div class="desc">把其他变量当常数, 对一个变量求导.</div>
+</div>
+
+<div class="formula-card">
+<h4>全微分</h4>
+$$df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy$$
+<div class="desc">线性近似: $\Delta f\approx df$. 函数可微 $\Rightarrow$ 偏导存在且连续.</div>
+</div>
+
+<div class="formula-card">
+<h4>链式法则 (多元复合)</h4>
+$$\frac{df}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}$$
+$$\text{若 } z=f(u,v), u=u(x,y), v=v(x,y), \text{ 则 } \frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial x}$$
+<div class="desc">复合函数求导, 一层一层"剥".</div>
+</div>
+
+<div class="formula-card">
+<h4>方向导数 + 梯度</h4>
+$$\nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)$$
+$$\frac{\partial f}{\partial \vec{l}}=\nabla f\cdot\vec{l}_0, \quad \vec{l}_0=\frac{\vec{l}}{|\vec{l}|}$$
+<div class="desc">梯度方向 = 函数增长最快方向, 模 = 最大变化率. 跟 AI optimization 的 SGD 同源.</div>
+</div>
+
+<div class="formula-card">
+<h4>极值必要条件 + Hessian 判别</h4>
+$$f_x(x_0,y_0)=0, \quad f_y(x_0,y_0)=0 \quad\Rightarrow\quad (x_0,y_0) \text{ 为驻点}$$
+$$A=f_{xx}, B=f_{xy}, C=f_{yy}, \Delta=AC-B^2$$
+$$\Delta>0, A>0 \to \text{极小}; \quad \Delta>0, A<0 \to \text{极大}; \quad \Delta<0 \to \text{鞍点}$$
+<div class="desc">$\Delta=0$ 时此判别法失效, 需用其他方法.</div>
+</div>
+
+<div class="formula-card">
+<h4>Lagrange 乘子法 (条件极值)</h4>
+$$\text{求 } f(x,y) \text{ 在约束 } \varphi(x,y)=0 \text{ 下极值:}$$
+$$L(x,y,\lambda)=f(x,y)+\lambda\varphi(x,y), \quad \nabla L=0$$
+<div class="desc">即 $f_x+\lambda\varphi_x=0, f_y+\lambda\varphi_y=0, \varphi=0$, 联立解. 对应 ML 的 KKT 条件.</div>
+</div>
+</div>
+
+<div id="ch10" class="formula-section">
+<h2>第 10 章 · 重积分</h2>
+
+<div class="formula-card">
+<h4>二重积分 (直角坐标)</h4>
+$$\iint_D f(x,y) dx dy = \int_a^b\left[\int_{\varphi_1(x)}^{\varphi_2(x)} f(x,y)dy\right]dx$$
+<div class="desc">X 型: 先 y 后 x. Y 型: 先 x 后 y. 注意积分域 D 的描述方式.</div>
+</div>
+
+<div class="formula-card">
+<h4>二重积分 (极坐标)</h4>
+$$\iint_D f(x,y) dx dy = \iint_{D'} f(r\cos\theta,r\sin\theta) \cdot r\, dr\, d\theta$$
+<div class="desc">$dx dy \to r\,dr\,d\theta$. 圆形 / 扇形 / 含 $x^2+y^2$ 的积分用此变换.</div>
+</div>
+
+<div class="formula-card">
+<h4>三重积分 (柱面坐标)</h4>
+$$\iiint_\Omega f\,dV = \iiint f(r\cos\theta,r\sin\theta,z) \cdot r\, dr\,d\theta\,dz$$
+<div class="desc">$dV=r\,dr\,d\theta\,dz$. 圆柱状区域 / 含 $x^2+y^2$ 的函数.</div>
+</div>
+
+<div class="formula-card">
+<h4>三重积分 (球面坐标)</h4>
+$$\iiint_\Omega f\,dV = \iiint f(\rho\sin\varphi\cos\theta,\rho\sin\varphi\sin\theta,\rho\cos\varphi) \cdot \rho^2\sin\varphi\, d\rho\,d\varphi\,d\theta$$
+<div class="desc">$dV=\rho^2\sin\varphi\, d\rho\,d\varphi\,d\theta$. 球状区域 / 含 $x^2+y^2+z^2$ 的函数.</div>
+</div>
+
+<div class="formula-card">
+<h4>常用应用</h4>
+$$\text{面积: } S=\iint_D dx dy \quad \text{体积: } V=\iiint_\Omega dV$$
+$$\text{质量 (密度} \mu \text{): } m=\iint_D \mu(x,y) dx dy \quad \text{重心: } \bar{x}=\frac{1}{m}\iint_D x\mu\, dx dy$$
+<div class="desc">物理意义 + 几何意义.</div>
+</div>
+</div>
+
+<div id="ch11" class="formula-section">
+<h2>第 11 章 · 曲线积分与曲面积分</h2>
+
+<div class="formula-card">
+<h4>第一类曲线积分 (对弧长)</h4>
+$$\int_L f(x,y) ds, \quad ds=\sqrt{1+y'^2}\,dx \text{ (参数式: } ds=\sqrt{x'^2+y'^2}\,dt\text{)}$$
+<div class="desc">几何/物理意义: 曲线"长度积分", 求质量/重心.</div>
+</div>
+
+<div class="formula-card">
+<h4>第二类曲线积分 (对坐标)</h4>
+$$\int_L P\,dx+Q\,dy, \quad \text{方向 sensitive (反向 = 负)}$$
+<div class="desc">物理: 变力做功 $W=\int_L \vec{F}\cdot d\vec{r}$.</div>
+</div>
+
+<div class="formula-card">
+<h4>Green 公式 (平面)</h4>
+$$\oint_L P\,dx+Q\,dy = \iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) dx dy$$
+<div class="desc">封闭曲线 (正向 = 逆时针) 的第二类曲线积分 ↔ 平面区域二重积分. 简化复杂曲线积分.</div>
+</div>
+
+<div class="formula-card">
+<h4>路径无关条件</h4>
+$$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x} \iff P\,dx+Q\,dy \text{ 为某 } u(x,y) \text{ 的全微分}$$
+<div class="desc">满足条件 $\Rightarrow$ 积分只看起点终点, 跟路径无关.</div>
+</div>
+
+<div class="formula-card">
+<h4>第一类曲面积分</h4>
+$$\iint_\Sigma f(x,y,z)\, dS, \quad dS=\sqrt{1+z_x^2+z_y^2}\, dx dy$$
+<div class="desc">对面积积分, 类似第一类曲线积分.</div>
+</div>
+
+<div class="formula-card">
+<h4>Gauss 公式 (散度定理)</h4>
+$$\oiint_\Sigma P\,dy dz+Q\,dz dx+R\,dx dy = \iiint_\Omega\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right) dV$$
+<div class="desc">封闭曲面 (外法向) ↔ 三重积分. 物理: 通量 = 散度积分. 电磁场 div E = ρ/ε₀ 用此.</div>
+</div>
+
+<div class="formula-card">
+<h4>Stokes 公式 (旋度定理)</h4>
+$$\oint_L P\,dx+Q\,dy+R\,dz = \iint_\Sigma \nabla\times\vec{F}\cdot d\vec{S}$$
+<div class="desc">空间曲线 ↔ 张成曲面. 物理: 环量 = 旋度积分. Maxwell 方程组 curl B = μJ 的几何形式.</div>
+</div>
+</div>
+
+<div id="ch12" class="formula-section">
+<h2>第 12 章 · 无穷级数</h2>
+
+<div class="formula-card">
+<h4>正项级数判别法</h4>
+$$\text{比较: } a_n\leq b_n, \sum b_n \text{ 收敛} \Rightarrow \sum a_n \text{ 收敛}$$
+$$\text{比值: } \lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\rho, \quad \rho<1\to\text{收}, \rho>1\to\text{散}$$
+$$\text{根值: } \lim_{n\to\infty}\sqrt[n]{a_n}=\rho, \quad \rho<1\to\text{收}$$
+<div class="desc">$\rho=1$ 时判别失效, 需用其他.</div>
+</div>
+
+<div class="formula-card">
+<h4>交错级数 Leibniz 判别</h4>
+$$\sum (-1)^n a_n, \quad a_n>0, a_n\downarrow 0 \Rightarrow \text{收敛}$$
+<div class="desc">绝对收敛 $\Rightarrow$ 条件收敛, 但反之不真.</div>
+</div>
+
+<div class="formula-card">
+<h4>幂级数收敛半径</h4>
+$$R=\frac{1}{\rho}, \quad \rho=\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| \text{ 或 } \lim\sqrt[n]{|a_n|}$$
+<div class="desc">$|x-x_0|<R$ 必收敛, $|x-x_0|>R$ 发散, 端点要单独验.</div>
+</div>
+
+<div class="formula-card">
+<h4>Taylor 展开 (常用 5 个)</h4>
+$$e^x=\sum_{n=0}^\infty\frac{x^n}{n!}, \quad \sin x=\sum_{n=0}^\infty\frac{(-1)^n x^{2n+1}}{(2n+1)!}, \quad \cos x=\sum_{n=0}^\infty\frac{(-1)^n x^{2n}}{(2n)!}$$
+$$\frac{1}{1-x}=\sum_{n=0}^\infty x^n \text{ (}|x|<1\text{)}, \quad \ln(1+x)=\sum_{n=1}^\infty\frac{(-1)^{n-1}x^n}{n} \text{ (}-1<x\leq 1\text{)}$$
+<div class="desc">最常用 5 个, 必背. 其他靠这 5 个推导.</div>
+</div>
+
+<div class="formula-card">
+<h4>Fourier 级数</h4>
+$$f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty(a_n\cos nx+b_n\sin nx)$$
+$$a_n=\frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos nx\, dx, \quad b_n=\frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin nx\, dx$$
+<div class="desc">周期函数分解为三角级数. 信号处理 / 频谱分析的基础.</div>
+</div>
+
+<div class="formula-card">
+<h4>Dirichlet 收敛条件</h4>
+$$f \text{ 在一周期内} \begin{cases} \text{连续 / 有限个第一类间断} \\ \text{有限个极值点} \end{cases} \Rightarrow \text{Fourier 级数收敛}$$
+$$\text{且在连续点收敛于 } f(x), \text{在间断点 } x_0 \text{ 收敛于 } \frac{f(x_0^-)+f(x_0^+)}{2}$$
+<div class="desc">不是所有函数 Fourier 级数都收敛, Dirichlet 给的是充分条件.</div>
+</div>
+</div>
+
+<div class="note">
+💡 <strong>复习建议</strong>: 公式只是骨架, 看明白 <a href="./index.html">章节正文</a> 的推导 + 几何意义 + 例题 才能真用. 速查页是考前快速找特定公式用的.
+</div>
+</main>
+
+<footer>
+  <p>富贵编 · 高数下册公式速查 · 2026-05-28 夜班补 · 配合章节正文使用</p>
+</footer>
+</body>
+</html>
