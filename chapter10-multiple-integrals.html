@@ -451,17 +451,22 @@ $$V=-2\pi G\rho_0\cdot\frac{2}{d}\!\int_0^R\!\rho^2 d\rho=-\frac{4\pi G\rho_0 R^
 重积分把「微元 $\times$ 密度后累加」推广到二维三维,所以凡是「分布量的总效应」都能用它算。本节给出<strong>面积/体积、质量、质心、转动惯量、引力、曲面面积、概率分布</strong>七大经典应用,每个都从微元推导。这些公式不仅是物理常用工具,也是机器学习中<strong>期望 / 协方差 / 边缘分布</strong>计算的连续版。
 </p>
 <h3 id="10-4-1">10.4.1 几何量:面积、体积、曲面面积</h3>
-<p>
-<strong>平面区域面积</strong>:$\displaystyle S=\iint_D 1\,d\sigma$。
-</p>
-<p>
-<strong>空间立体体积</strong>:$\displaystyle V=\iiint_\Omega 1\,dV$;或当 $\Omega=\{(x,y,z):(x,y)\in D,\ 0\le z\le f(x,y)\}$ 时也可写成 $\iint_D f(x,y)\,d\sigma$。
-</p>
-<p>
-<strong>曲面面积</strong>(§11.4 提前预告):对显式曲面 $z=f(x,y),(x,y)\in D$,
-$$S_{\text{surf}}=\iint_D\sqrt{1+f_x^2+f_y^2}\,dx\,dy.$$
-推导见 §11.4 切平面投影方法。
-</p>
+<div class="box-thm">
+<p>三大几何量公式</p>
+<ul>
+<li><strong>平面区域面积</strong>: $\displaystyle S = \iint_D 1\,d\sigma$</li>
+<li><strong>空间立体体积</strong>: $\displaystyle V = \iiint_\Omega 1\,dV$; 若 $\Omega = \{(x,y,z): (x,y)\in D, 0 \le z \le f(x,y)\}$, 也可写 $\iint_D f(x,y)\,d\sigma$</li>
+<li><strong>曲面面积</strong> (显式 $z = f(x, y)$): $\displaystyle S_{\text{surf}} = \iint_D \sqrt{1 + f_x^2 + f_y^2}\,dx\,dy$ (§11.4 切平面投影法推导)</li>
+</ul>
+</div>
+<div class="box-intuition">
+<p>为啥曲面面积公式多 $\sqrt{1 + f_x^2 + f_y^2}$</p>
+<ul>
+<li>显式曲面 $z = f(x, y)$ 在 $D$ 上每个微元 $dx\,dy$, 对应的曲面"斜片"面积要拉伸</li>
+<li>拉伸因子 = "切平面跟水平面"夹角的 secant: $\sec\gamma = \sqrt{1 + f_x^2 + f_y^2}$</li>
+<li>一元类比: 曲线弧长 $\sqrt{1 + (f')^2}\,dx$ 也是同样直觉的一维版</li>
+</ul>
+</div>
 <div class="box-example">
 <p>
 <strong>例 1</strong>(碗形抛物面体积)由 $z=x^2+y^2$ 与 $z=4$ 围成。极坐标 $r^2=x^2+y^2$,$z$ 从 $r^2$ 到 $4$:
