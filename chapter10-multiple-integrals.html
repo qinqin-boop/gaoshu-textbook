@@ -972,14 +972,20 @@ $$I^2 = \iint_{\mathbb{R}^2} e^{-(x^2+y^2)}\,dxdy = \int_0^{2\pi}\!\!\int_0^\inf
 $e^{-x^2}$ 的一维不定积分<strong>没有初等表达</strong>! 但二维 $e^{-(x^2+y^2)} = e^{-r^2}$ 在极坐标下立刻可算. 把"算不了的一维"通过升维变成"易算的二维"是数学美技.
 </p>
 </div>
+<div class="box-intuition">
+<p>高斯积分 ML 4 大应用</p>
 <p>
-<strong>ML 应用</strong>:
+| 应用 | 用法 |
+|---|---|
+| 高斯过程 (GP) | 协方差 $\Sigma$ 正定, $\det(\Sigma)$ 出现在后验密度 / 边缘似然 |
+| 变分推断 (VI) | 用高斯近似复杂后验 (ELBO 优化) |
+| 扩散模型 | 加噪 transition kernel $q(x_t\|x_{t-1}) = \mathcal{N}(\sqrt{\alpha_t} x_{t-1}, (1-\alpha_t)I)$ |
+| EM 算法 | 高斯混合 (GMM) 模型用 EM 迭代估计 |
 </p>
-<ul>
-<li>高斯过程: 协方差 Σ 正定, det(Σ) 在后验</li>
-<li>变分推断: 用高斯近似复杂后验</li>
-<li>扩散模型: 加噪 transition kernel 是高斯</li>
-</ul>
+<p>
+<strong>$\sqrt{\pi}$ 这个常数渗透了概率密度归一化</strong>, 高斯本身定义中的 $1/\sqrt{2\pi}$ 就来自这.
+</p>
+</div>
 <h3 id="13-7-beta-gamma">知识点 13.7: Beta 函数 与 Gamma 函数</h3>
 <div class="box-def">
 <p>Gamma 函数</p>
