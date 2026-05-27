@@ -1680,19 +1680,24 @@ N = 10⁶ 时: 10¹² vs 2×10⁷, 加速比 5 万倍.
 <strong>FFT 是 20 世纪 Top 10 算法</strong>, 来自高数级数论的工程实现.
 </p>
 <h3 id="8-16-wavelets">知识点 8.16: 小波变换 (Wavelets, 傅里叶的儿子)</h3>
+<div class="box-intuition">
+<p>傅里叶的局限</p>
 <p>
-<strong>问题</strong>: 傅里叶基 sin/cos 在频域定位完美, 在时域<strong>全局</strong>展开 — 不知道某频率出现在哪个时间.
+$\sin/\cos$ 在频域<strong>定位完美</strong>, 但在时域<strong>全局</strong>展开 — 不知道某频率出现在哪个时间. 想分析心电图的"瞬时异常事件" Fourier 看不到时间位置.
 </p>
+</div>
+<div class="box-def">
+<p>小波 / 连续小波变换</p>
 <p>
-<strong>小波变换</strong>: 用 "短时局部基" 替代正弦.
-<strong>Haar 小波</strong> (最简单):
-ψ(x) = 1 if 0$\le$x&lt;1/2, -1 if 1/2$\le$x&lt;1, 0 else
+<strong>小波</strong> $\psi(x)$: 局部支撑的"基函数" (跟 $\sin/\cos$ 全局不同).
+<strong>Haar 小波</strong> (最简单): $\psi(x) = 1$ if $0\le x<1/2$, $-1$ if $1/2\le x<1$, $0$ else.
 </p>
 <p>
 <strong>连续小波变换</strong>:
-W(a, b) = ∫ f(x) · (1/√a) ψ((x-b)/a) dx
-a = 尺度, b = 位置. 同时定位频率和时间.
+$$W(a, b) = \int f(x) \cdot \frac{1}{\sqrt{a}} \psi\left(\frac{x-b}{a}\right) dx$$
+$a$ = 尺度 (频率), $b$ = 位置 (时间). <strong>同时定位频率和时间</strong>.
 </p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
