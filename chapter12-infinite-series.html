@@ -577,6 +577,30 @@ $$\frac{u_n}{u_{n+1}}=\frac{n+1}{\alpha-n}=\frac{1+1/n}{(\alpha/n)-1}\Rightarrow
 前一节正项级数 $u_n\ge 0$ 时部分和单调,问题简化。<strong>含负项</strong>的级数复杂得多——同样的项,<strong>重新排列后总和可能不同</strong>(Riemann 重排定理)。本节用<strong>Leibniz 判别法</strong>处理最常见的交错级数,引入<strong>绝对收敛</strong>与<strong>条件收敛</strong>的区分,并以 Riemann 重排定理结尾,说明条件收敛级数的"危险性"。
 </p>
 <h3 id="12-3-1-leibniz">12.3.1 交错级数与 Leibniz 判别法</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <line x1="20" y1="100" x2="340" y2="100" stroke="#888" stroke-width="1"/>
+  <text x="20" y="22" font-size="11" fill="#888">S_n</text>
+  <circle cx="50" cy="60" r="4" fill="#c2410c"/>
+  <text x="42" y="55" font-size="10" fill="#c2410c">S₁</text>
+  <circle cx="80" cy="140" r="4" fill="#2d6e2d"/>
+  <text x="72" y="158" font-size="10" fill="#2d6e2d">S₂</text>
+  <circle cx="120" cy="75" r="4" fill="#c2410c"/>
+  <text x="113" y="70" font-size="10" fill="#c2410c">S₃</text>
+  <circle cx="160" cy="125" r="4" fill="#2d6e2d"/>
+  <text x="153" y="142" font-size="10" fill="#2d6e2d">S₄</text>
+  <circle cx="200" cy="85" r="4" fill="#c2410c"/>
+  <circle cx="240" cy="115" r="4" fill="#2d6e2d"/>
+  <circle cx="280" cy="92" r="4" fill="#c2410c"/>
+  <circle cx="310" cy="108" r="4" fill="#2d6e2d"/>
+  <path d="M 50 60 L 120 75 L 200 85 L 280 92" stroke="#c2410c" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+  <path d="M 80 140 L 160 125 L 240 115 L 310 108" stroke="#2d6e2d" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+  <line x1="20" y1="100" x2="340" y2="100" stroke="#1a365d" stroke-width="2"/>
+  <text x="285" y="95" font-size="11" font-weight="bold" fill="#1a365d">极限 S</text>
+  <text x="20" y="180" font-size="11" fill="#666">奇子列 S_{2k-1} 单调↓, 偶子列 S_{2k} 单调↑, 同极限 S</text>
+</svg>
+<figcaption>图 12.3.2 Leibniz 判别证明思路:奇子列 $S_1>S_3>S_5>\dots$ 单调减;偶子列 $S_2<S_4<S_6<\dots$ 单调增;两子列收敛到同一极限 $S$。</figcaption>
+</figure>
 <div class="box-def">
 <p>
 形如 $\displaystyle\sum_{n=1}^\infty(-1)^{n-1}a_n=a_1-a_2+a_3-a_4+\dots$($a_n>0$)的级数称为<strong>交错级数</strong>。

@@ -467,6 +467,24 @@ $$J=\det\begin{pmatrix}a\cos\theta&-ar\sin\theta\\ b\sin\theta&br\cos\theta\end{
 把二重积分的「曲面下体积」思想推广到 $\mathbb{R}^3$:对一个空间区域 $\Omega$ 算 $\iiint_\Omega f(x,y,z)\,dV$,几何意义是 $f$ 当作体密度时的总「广义质量」(若 $f=1$ 则为 $\Omega$ 的体积)。和二重一样,实操靠累次积分;遇到柱对称、球对称区域要换柱坐标或球坐标,关键还是<strong>雅可比因子</strong>。
 </p>
 <h3 id="10-3-1">10.3.1 直角坐标:累次积分思想</h3>
+<figure>
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <ellipse cx="160" cy="110" rx="100" ry="40" fill="none" stroke="#1a365d" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <ellipse cx="160" cy="60" rx="60" ry="22" fill="#fef6e4" stroke="#c9a227" stroke-width="1.5"/>
+  <ellipse cx="160" cy="90" rx="80" ry="32" fill="#fef6e4" fill-opacity="0.7" stroke="#c9a227" stroke-width="1.2"/>
+  <ellipse cx="160" cy="120" rx="92" ry="38" fill="#fef6e4" fill-opacity="0.5" stroke="#c9a227" stroke-width="1.2"/>
+  <ellipse cx="160" cy="150" rx="80" ry="32" fill="#fef6e4" fill-opacity="0.7" stroke="#c9a227" stroke-width="1.2"/>
+  <ellipse cx="160" cy="180" rx="50" ry="20" fill="#fef6e4" stroke="#c9a227" stroke-width="1.5"/>
+  <line x1="270" y1="40" x2="270" y2="200" stroke="#1a365d" stroke-width="1"/>
+  <line x1="270" y1="40" x2="265" y2="46" stroke="#1a365d"/>
+  <line x1="270" y1="40" x2="275" y2="46" stroke="#1a365d"/>
+  <text x="280" y="44" font-size="11" fill="#1a365d">z</text>
+  <line x1="265" y1="120" x2="275" y2="120" stroke="#c2410c" stroke-width="2"/>
+  <text x="285" y="125" font-size="11" fill="#c2410c">z=c 切面 D_z</text>
+  <text x="35" y="30" font-size="11" fill="#444">∭ f dV = ∫_c^d (∬_{D_z} f dxdy) dz (先二后一)</text>
+</svg>
+<figcaption>图 10.3.3 三重积分先二后一:把立体沿 $z$ 切片,每个 $z$ 截面 $D_z$ 上二重积分,再对 $z$ 一重积分。适合球/椭球/旋转体。</figcaption>
+</figure>
 <div class="box-def">
 <p>
 <strong>先一后二</strong>:把 $\Omega$ 投影到 $xy$ 平面得 $D_{xy}$,对每个 $(x,y)\in D_{xy}$,$z$ 从下表面 $z_1(x,y)$ 到上表面 $z_2(x,y)$。则
@@ -734,6 +752,23 @@ $$V=\int_0^{2\pi}\!d\theta\!\int_0^2\!(4-r^2)\,r\,dr=2\pi\cdot\big[2r^2-\tfrac{r
 </p>
 </div>
 <h3 id="10-4-2">10.4.2 质量与质心</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <polygon points="50,100 320,100 290,80 75,110" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <text x="55" y="135" font-size="12" fill="#1a365d">板 D</text>
+  <circle cx="80" cy="100" r="3" fill="#c2410c"/>
+  <circle cx="130" cy="103" r="3" fill="#c2410c"/>
+  <circle cx="170" cy="98" r="3" fill="#c2410c"/>
+  <circle cx="220" cy="100" r="3" fill="#c2410c"/>
+  <circle cx="270" cy="98" r="3" fill="#c2410c"/>
+  <text x="160" y="80" font-size="11" fill="#c2410c">每微元 ρ dσ</text>
+  <polygon points="195,150 175,130 215,130" fill="#2d6e2d"/>
+  <text x="180" y="170" font-size="13" font-weight="bold" fill="#2d6e2d">质心 (x̄, ȳ)</text>
+  <line x1="195" y1="100" x2="195" y2="130" stroke="#2d6e2d" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <text x="35" y="30" font-size="12" font-weight="bold" fill="#444">x̄ = (1/M) ∬ x ρ dσ — 质量加权平均位置</text>
+</svg>
+<figcaption>图 10.4.4 质心 = 跷跷板平衡点:把板看作很多小重锤,质心是单点重锤能产生相同合力矩的位置(质量加权平均)。</figcaption>
+</figure>
 <div class="box-def">
 <p>
 设密度场 $\rho(\vec{x})$ 在区域 $\Omega$ 上连续。<strong>总质量</strong>

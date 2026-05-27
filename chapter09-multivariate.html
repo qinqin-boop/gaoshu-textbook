@@ -1228,6 +1228,29 @@ $$\nabla F(P_0)\cdot\vec{r}'(t_0)=0.$$
 </ul>
 </div>
 <h3 id="9-7-5">9.7.5 等量面族的正交性</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="og1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+    <marker id="og2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2d6e2d"/></marker>
+  </defs>
+  <ellipse cx="180" cy="100" rx="120" ry="60" fill="none" stroke="#1a365d" stroke-width="1.5"/>
+  <ellipse cx="180" cy="100" rx="80" ry="40" fill="none" stroke="#1a365d" stroke-width="1.2"/>
+  <text x="60" y="65" font-size="11" fill="#1a365d">F=c₁ 族</text>
+  <line x1="180" y1="100" x2="280" y2="60" stroke="#888" stroke-width="1.5"/>
+  <line x1="180" y1="100" x2="80" y2="140" stroke="#888" stroke-width="1.5"/>
+  <line x1="180" y1="100" x2="180" y2="180" stroke="#888" stroke-width="1.5"/>
+  <line x1="180" y1="100" x2="180" y2="20" stroke="#888" stroke-width="1.5"/>
+  <text x="280" y="60" font-size="11" fill="#888">G=c₂ 族 (射线)</text>
+  <circle cx="240" cy="80" r="3" fill="#c2410c"/>
+  <line x1="240" y1="80" x2="276" y2="65" stroke="#c2410c" stroke-width="1.6" marker-end="url(#og1)"/>
+  <line x1="240" y1="80" x2="245" y2="60" stroke="#2d6e2d" stroke-width="1.6" marker-end="url(#og2)"/>
+  <text x="280" y="60" font-size="11" fill="#c2410c">∇F</text>
+  <text x="250" y="50" font-size="11" fill="#2d6e2d">∇G</text>
+  <text x="35" y="195" font-size="11" fill="#666">∇F·∇G=0 ⇒ 两族曲面正交相交 (椭圆+射线 正交)</text>
+</svg>
+<figcaption>图 9.7.2 等量面族正交:同心椭圆($F=c_1$)与穿过中心的射线($G=c_2$)在每个交点处 $\nabla F\perp\nabla G$ — GIS 等高线 vs 水流方向。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 若 $F(x,y,z)=c_1$ 与 $G(x,y,z)=c_2$ 两族曲面相交于曲线 $\Gamma$,则 $\Gamma$ 上每点处:
@@ -1469,6 +1492,20 @@ $$\Phi(1)=\sum_{k=0}^n\frac{\Phi^{(k)}(0)}{k!}\cdot 1^k+\frac{\Phi^{(n+1)}(\thet
 </p>
 </div>
 <h3 id="9-9-2">9.9.2 一阶 / 二阶展开:专门写出</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <path d="M 30 170 Q 100 60 200 80 Q 280 110 340 50" fill="none" stroke="#1a365d" stroke-width="2.5"/>
+  <text x="35" y="35" font-size="12" fill="#1a365d">原函数 f</text>
+  <line x1="120" y1="118" x2="270" y2="76" stroke="#888" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="135" y="115" font-size="11" fill="#888">1 阶: 切平面</text>
+  <path d="M 110 130 Q 200 50 290 100" fill="none" stroke="#c2410c" stroke-width="2"/>
+  <text x="195" y="60" font-size="11" fill="#c2410c">2 阶: 二次型贴合</text>
+  <circle cx="200" cy="80" r="4" fill="#2d6e2d"/>
+  <text x="208" y="78" font-size="11" fill="#2d6e2d">P₀</text>
+  <text x="30" y="190" font-size="11" fill="#666">f ≈ f₀ + ∇f·h + ½h^T H h + o(|h|²)</text>
+</svg>
+<figcaption>图 9.9.1 多元 Taylor 二阶逼近:一阶切平面只贴在 $P_0$ 附近;二阶用 Hessian 二次型补凹凸信息,逼近半径更大。</figcaption>
+</figure>
 <p>
 <strong>一阶</strong>(全微分形式):
 $$f(x_0+\Delta x,y_0+\Delta y)\approx f(\vec{x}_0)+f_x(\vec{x}_0)\Delta x+f_y(\vec{x}_0)\Delta y=f(\vec{x}_0)+\nabla f(\vec{x}_0)\cdot\vec{h}.$$
