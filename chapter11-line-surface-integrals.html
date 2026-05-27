@@ -348,9 +348,25 @@ $$\int_{L^-} P\,dx + Q\,dy = -\int_L P\,dx + Q\,dy$$
 <p>第二类曲线积分参数法</p>
 <p>
 曲线 $L$ 参数化 $x = x(t), y = y(t)$, $t \in [\alpha, \beta]$ (从 $\alpha$ 到 $\beta$ 即正向):
-$$\int_L P\,dx + Q\,dy = \int_\alpha^\beta \left[P(x(t), y(t)) x'(t) + Q(x(t), y(t)) y'(t)\right] dt$$
-<strong>关键</strong>: $dx \to x'(t) dt$, $dy \to y'(t) dt$.
+$$\int_L P\,dx + Q\,dy = \int_\alpha^\beta \left[P(x(t), y(t)) \cdot x'(t) + Q(x(t), y(t)) \cdot y'(t)\right] dt$$
+<strong>关键</strong>: $dx \to x'(t)\,dt$, $dy \to y'(t)\,dt$ (微元用参数代换).
 </p>
+</div>
+<div class="box-intuition">
+<p>参数法的"代换"机制</p>
+<p>
+$dx, dy$ 都是"位移微元", 在参数化下:
+$$d\vec{r} = (dx, dy) = (x'(t), y'(t))\,dt$$
+所以 $\vec{F}\cdot d\vec{r} = (P, Q)\cdot(x', y')\,dt = (Px' + Qy')\,dt$, 把曲线积分变成关于 $t$ 的一元定积分.
+</p>
+<p>
+<strong>选参数化口诀</strong>:
+</p>
+<ul>
+<li>直线段 $A \to B$: 用 $\vec{r}(t) = A + t(B - A), t \in [0, 1]$</li>
+<li>圆 / 椭圆: 用三角函数 ($x = r\cos t, y = r\sin t$)</li>
+<li>折线: 分段写, 每段独立参数化, 结果相加</li>
+</ul>
 </div>
 <div class="box-example">
 <p>例题 2</p>
