@@ -1235,10 +1235,20 @@ $\sum a_n b_n$ 收敛, 若:
 <div class="box-example">
 <p>例题 8-4</p>
 <p>
-∑ cos(nθ)/√n, 0&lt;$\theta$&lt;2π. 同理由 Dirichlet 收敛.
+$\sum \cos(n\theta)/\sqrt{n}$, $0 < \theta < 2\pi$. 同理由 Dirichlet 收敛.
 </p>
+</div>
+<div class="box-intuition">
+<p>Abel / Dirichlet 在傅里叶级数里的关键角色</p>
 <p>
-这解释了为什么傅里叶级数对一般连续函数能收敛 — 系数虽不绝对收敛, 但 Dirichlet 给出条件收敛.
+傅里叶级数 $\sum a_n \cos(n\theta) + b_n\sin(n\theta)$ 对一般连续函数, 系数往往<strong>不绝对收敛</strong>, 普通比较 / 比值法都失效. 但:
+</p>
+<ul>
+<li>系数 $a_n, b_n$ 单调趋 0 (Riemann-Lebesgue 引理)</li>
+<li>$\sin / \cos$ 部分和有界 (Dirichlet 核估计)</li>
+</ul>
+<p>
+→ <strong>Dirichlet 判别法精确给出收敛性</strong>. 这是傅里叶级数理论的代数底层. Abel / Dirichlet 看似抽象, 实际上撑起了整个信号处理理论的收敛保证.
 </p>
 </div>
 <h3 id="8-7-double-series">知识点 8.7: 双重级数 (Double Series)</h3>
