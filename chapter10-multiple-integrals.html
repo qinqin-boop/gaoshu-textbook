@@ -563,9 +563,20 @@ $$J = \frac{\partial(x,y)}{\partial(u,v)} = \det \begin{pmatrix} \partial x/\par
 $$\iint_D f(x,y)\,dxdy = \iint_{D'} f(x(u,v), y(u,v)) \cdot |J|\,dudv$$
 </p>
 </div>
+<div class="box-intuition">
+<p>Jacobian 是变形比</p>
 <p>
-<strong>生活类比</strong>: 把方格地图扭曲变形 (鱼眼镜头), 每个小方格面积变了 — $|J|$ 是"变形比".
+把方格地图<strong>扭曲变形</strong> (鱼眼镜头), 每个小方格面积变了 — $|J|$ 是该点"局部变形比":
 </p>
+<ul>
+<li>$|J| > 1$: 该处被<strong>拉大</strong></li>
+<li>$|J| < 1$: 该处被<strong>压缩</strong></li>
+<li>$|J| = 1$: 等积变换 (如旋转, 反射)</li>
+</ul>
+<p>
+极坐标 $|J| = r$: 离原点越远, 同样 $du dv$ 对应的真实面积越大.
+</p>
+</div>
 <p>
 <strong>生活类比</strong>: 你把方格地图扭曲变形 (比如鱼眼镜头), 每个小方格面积变了 — |J| 就是"变形比".
 </p>
