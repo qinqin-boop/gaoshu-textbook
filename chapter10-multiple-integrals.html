@@ -1072,6 +1072,24 @@ $$I'(y)=\big[-e^{-x^2}\sin(2xy)\big]_0^\infty+\int_0^\infty 2y\cos(2xy)e^{-x^2}\
 </p>
 </div>
 <h3 id="10-5-3">10.5.3 广义含参积分</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="lp1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <rect x="20" y="40" width="120" height="80" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <text x="35" y="70" font-size="13" font-weight="bold" fill="#1a365d">时域 f(t)</text>
+  <text x="35" y="95" font-size="11" fill="#1a365d">(ODE 难解)</text>
+  <line x1="140" y1="80" x2="220" y2="80" stroke="#1a365d" stroke-width="2" marker-end="url(#lp1)"/>
+  <text x="148" y="73" font-size="11" fill="#888">∫₀^∞ e^{-st}f(t) dt</text>
+  <rect x="220" y="40" width="120" height="80" fill="#fef6e4" stroke="#c9a227" stroke-width="1.5"/>
+  <text x="235" y="70" font-size="13" font-weight="bold" fill="#8b6f1c">s 域 F(s)</text>
+  <text x="235" y="95" font-size="11" fill="#8b6f1c">(代数易解)</text>
+  <text x="35" y="160" font-size="11" fill="#444">Laplace 变换: 微分方程 → 代数方程</text>
+  <text x="35" y="180" font-size="11" fill="#666">L[t^n] = n!/s^{n+1}, L[1] = 1/s, L[e^at] = 1/(s-a)</text>
+</svg>
+<figcaption>图 10.5.4 Laplace 变换 = 含参广义积分:把时域 ODE 化为 $s$ 域代数方程;线性电路 / 控制论 / 信号处理的核心工具。</figcaption>
+</figure>
 <p>
 把上限改为 $\infty$ 或被积函数有奇点时变成广义积分:$I(y)=\int_a^\infty f(x,y)\,dx$。这时上述定理需要<strong>一致收敛</strong>作为额外条件:
 </p>

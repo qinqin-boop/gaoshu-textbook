@@ -131,6 +131,29 @@
 </p>
 </div>
 <h3 id="12-0-6">12.0.6 怎么读这章</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <line x1="30" y1="100" x2="330" y2="100" stroke="#888" stroke-width="1"/>
+  <line x1="100" y1="20" x2="100" y2="180" stroke="#888" stroke-width="1"/>
+  <text x="335" y="105" font-size="11" fill="#888">Re(s)</text>
+  <text x="105" y="20" font-size="11" fill="#888">Im(s)</text>
+  <text x="80" y="115" font-size="11" fill="#888">0</text>
+  <text x="195" y="115" font-size="11" fill="#1a365d" font-weight="bold">1/2</text>
+  <text x="240" y="115" font-size="11" fill="#888">1</text>
+  <rect x="100" y="20" width="160" height="160" fill="#fef6e4" fill-opacity="0.4" stroke="#c9a227" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="115" y="40" font-size="11" fill="#8b6f1c">临界带 0<Re(s)<1</text>
+  <line x1="200" y1="20" x2="200" y2="180" stroke="#c2410c" stroke-width="2"/>
+  <text x="205" y="40" font-size="11" font-weight="bold" fill="#c2410c">临界线 Re(s)=1/2</text>
+  <circle cx="200" cy="55" r="3" fill="#c2410c"/>
+  <circle cx="200" cy="75" r="3" fill="#c2410c"/>
+  <circle cx="200" cy="125" r="3" fill="#c2410c"/>
+  <circle cx="200" cy="145" r="3" fill="#c2410c"/>
+  <rect x="260" y="92" width="60" height="16" fill="#ecf7ec" stroke="#2d6e2d" stroke-width="1"/>
+  <text x="265" y="103" font-size="11" fill="#2d6e2d">∑1/nˢ 收敛区</text>
+  <text x="30" y="195" font-size="10" fill="#666">Riemann 猜想: 所有非平凡零点都在 Re(s)=1/2 (Clay 千年大奖)</text>
+</svg>
+<figcaption>图 12.0.2 Riemann ζ 函数:$\zeta(s)=\sum 1/n^s$ 仅在 $\mathrm{Re}(s)>1$ 收敛,通过解析延拓扩到整个复平面除 $s=1$ 极点;非平凡零点位置 = 千禧 7 大难题之一。</figcaption>
+</figure>
 <ol>
 <li><strong>必背 4 个参考级数的敛散性</strong>:几何 $r$、p-级数 $1/n^p$、调和 $1/n$、$e^x$ 展开;</li>
 <li><strong>必会 6 法判别</strong>:比较 / 极限比 / 比值 / 根值 / 积分 / Leibniz;</li>
@@ -870,6 +893,21 @@ $\sum M r^n$ 是收敛几何级数 $\Rightarrow$ 由比较判别法 $\sum a_n x^
 </p>
 </div>
 <h3 id="12-4-2-r">12.4.2 计算 $R$ 的两种公式</h3>
+<figure>
+<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <rect x="30" y="40" width="120" height="100" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <text x="50" y="65" font-size="13" font-weight="bold" fill="#1a365d">Cauchy-Hadamard</text>
+  <text x="50" y="90" font-size="12">1/R = limsup ⁿ√|aₙ|</text>
+  <text x="50" y="115" font-size="11" fill="#2d6e2d">永远成立</text>
+  <text x="155" y="93" font-size="20" fill="#666">⊃</text>
+  <rect x="180" y="40" width="120" height="100" fill="#fef6e4" stroke="#c9a227" stroke-width="1.5"/>
+  <text x="195" y="65" font-size="13" font-weight="bold" fill="#8b6f1c">d'Alembert 比值</text>
+  <text x="200" y="90" font-size="12">R = lim |aₙ/aₙ₊₁|</text>
+  <text x="200" y="115" font-size="11" fill="#b91c1c">极限存在时</text>
+  <text x="30" y="170" font-size="11" fill="#666">根值更强: 比值跳变时仍可用 (取 limsup 求 R)</text>
+</svg>
+<figcaption>图 12.4.5 Cauchy-Hadamard(根值)vs d'Alembert(比值):根值版用 $\limsup$ 永远成立,比值版要求极限存在,二者求 $R$ 相同(若都给出)。</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 (Cauchy-Hadamard 公式)
