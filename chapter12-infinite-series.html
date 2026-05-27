@@ -913,25 +913,43 @@ y' = y, y(0) = 1. 用幂级数法解.
 </p>
 </div>
 <h3 id="12-9-12-5">知识点 12.9: 欧拉公式 (对齐书 §12.5 三)</h3>
+<div class="box-thm">
+<p>欧拉公式 (Euler's formula)</p>
 <p>
-<strong>著名公式</strong>: e^(ix) = cos x + i sin x
+$$e^{ix} = \cos x + i \sin x$$
 </p>
+</div>
+<div class="box-proof">
+<p>用 Maclaurin 展开</p>
 <p>
-<strong>推导</strong>: 用 e^x, cos x, sin x 的麦克劳林展开.
-e^(ix) = Σ (ix)^n/n! = Σ i^n x^n/n!
-分类 i^n 周期 4: i⁰=1, i¹=i, i²=-1, i³=-i, i⁴=1,...
-偶数项 (i^(2k) = (-1)^k): x^(2k)/(2k)! · (-1)^k → cos x 展开
-奇数项 (i^(2k+1) = i(-1)^k): i · x^(2k+1)/(2k+1)! · (-1)^k → i sin x 展开
-合起来 e^(ix) = cos x + i sin x. ✓
+$$e^{ix} = \sum_{n=0}^\infty \frac{(ix)^n}{n!} = \sum_{n=0}^\infty \frac{i^n x^n}{n!}$$
+$i^n$ 周期 4: $i^0 = 1, i^1 = i, i^2 = -1, i^3 = -i, \ldots$
 </p>
+<ul>
+<li>偶项 ($n = 2k$, $i^{2k} = (-1)^k$): $\sum (-1)^k x^{2k}/(2k)! = \cos x$</li>
+<li>奇项 ($n = 2k+1$, $i^{2k+1} = i(-1)^k$): $i\sum (-1)^k x^{2k+1}/(2k+1)! = i\sin x$</li>
+</ul>
 <p>
-<strong>最美公式</strong>: 代 x = $\pi$:
-e^(iπ) + 1 = 0
-五个常数 e, i, $\pi$, 1, 0 一起出现, 称为"数学最美公式".
+合起来: $e^{ix} = \cos x + i\sin x$. $\square$
 </p>
+</div>
+<div class="box-intuition">
+<p>Euler 恒等式 — "数学最美公式"</p>
 <p>
-<strong>AI 应用</strong>: 离散傅里叶变换 (DFT) 用 e^(-2πikn/N), 这就是欧拉公式离散版.
+代 $x = \pi$:
+$$\boxed{\; e^{i\pi} + 1 = 0 \;}$$
+五大基本常数 $e, i, \pi, 1, 0$ 一起出现, 加法 / 乘法 / 指数三大运算汇合. 被数学家投票评为<strong>最美公式</strong>.
 </p>
+</div>
+<div class="box-intuition">
+<p>AI / 信号处理应用</p>
+<ul>
+<li><strong>DFT</strong> (离散傅里叶变换): $X_k = \sum_n x_n e^{-2\pi i kn/N}$ — Euler 公式离散版</li>
+<li><strong>FFT</strong> (快速 FFT): 基于 Euler 公式分治 → $O(N\log N)$</li>
+<li><strong>Transformer 位置编码</strong>: $\sin / \cos$ 配对编码就是 $e^{i\theta}$ 实虚分离</li>
+<li><strong>量子计算</strong>: 量子门 $e^{-iHt}$ 都是 Euler 公式工具</li>
+</ul>
+</div>
 <h2 id="12-6-fourier">12.6 Fourier 级数 · 收敛性定理</h2>
 <p>
 Taylor 级数用<strong>多项式幂</strong>逼近函数,擅长展开<strong>光滑</strong>函数;Fourier 级数用<strong>三角函数</strong>逼近,擅长展开<strong>周期</strong>函数,且对<strong>带间断</strong>的函数也能逐点表示。它的工程价值是任何信号 / 图像 / 波形都可分解为基频 + 谐波之和——这是 MP3、JPEG、CT 重建、量子力学波函数展开的共同根。这一节给出系数公式由正交性的严格推导、<strong>Dirichlet 收敛定理</strong>的完整证明,以及 Bessel 不等式 / Parseval 恒等式背后的内积空间几何。
