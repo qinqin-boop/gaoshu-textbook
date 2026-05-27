@@ -479,6 +479,19 @@ $$V = \iint_D f(x,y)\,d\sigma$$
 $f$ 是曲面高度, 体积 = 曲面在 $D$ 上方与 $xy$ 平面之间的空间.
 </p>
 </div>
+<div class="box-intuition">
+<p>体积的"切片求和"直觉</p>
+<p>
+把 $D$ 切成无数小块 $d\sigma$, 每块上方都是"近似柱体" $f \cdot d\sigma$. 累加所有柱体 → 总体积. 比一元 $\int_a^b f(x)\,dx$ (曲边梯形面积) 升一维.
+</p>
+</div>
+<div class="box-example">
+<p>例题 9-A</p>
+<p>
+求 $z = x^2 + y^2$ 在 $D: x^2 + y^2 \le 1$ 上的体积.
+极坐标: $V = \int_0^{2\pi}\int_0^1 r^2 \cdot r\,dr\,d\theta = 2\pi \cdot 1/4 = \pi/2$.
+</p>
+</div>
 <h3 id="10">知识点 10: 求质量</h3>
 <div class="box-def">
 <p>质量公式</p>
@@ -486,6 +499,12 @@ $f$ 是曲面高度, 体积 = 曲面在 $D$ 上方与 $xy$ 平面之间的空间
 <li><strong>平面薄板</strong> (密度 $\mu(x,y)$): $m = \iint_D \mu\,d\sigma$</li>
 <li><strong>空间体</strong> (密度 $\mu(x,y,z)$): $m = \iiint_V \mu\,dV$</li>
 </ul>
+</div>
+<div class="box-intuition">
+<p>质量 = "密度 × 微元 dσ/dV" 累加</p>
+<p>
+均匀密度退化为 $m = \mu \cdot \text{(面积或体积)}$ — 跟初中"密度 × 体积"对上. 非均匀就要用积分 (本质是无穷多小块 $\mu\,d\sigma$ 相加).
+</p>
 </div>
 <h3 id="11">知识点 11: 求重心</h3>
 <div class="box-def">
