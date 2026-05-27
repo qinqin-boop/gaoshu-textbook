@@ -1276,16 +1276,23 @@ $$\int_{\partial M} \omega = \int_M d\omega$$
 <li>∮ $\vec{B}$·dr→ = μ₀I_内 + μ₀ε₀ dΦ_E/dt</li>
 </ol>
 <h3 id="12-5">知识点 12.5: 电磁波 (波动方程推导)</h3>
+<div class="box-thm">
+<p>电磁波动方程</p>
 <p>
-真空 (ρ=0, J=0), 对法拉第方程取旋度:
-∇×(∇×$\vec{E}$) = -∂(∇×$\vec{B}$)/∂t
-左边 = ∇(∇·$\vec{E}$) - ΔE→ = -ΔE→.
-右边 = -μ₀ε₀ ∂²E→/∂t².
-∴ ΔE→ - μ₀ε₀ ∂²E→/∂t² = 0
+真空 ($\rho = 0, J = 0$), 对法拉第方程取旋度 + Maxwell 方程组化简:
+$$\Delta \vec{E} - \mu_0 \epsilon_0 \frac{\partial^2 \vec{E}}{\partial t^2} = 0$$
+即 $\vec{E}$ 满足<strong>波动方程</strong>, 波速 $c = 1/\sqrt{\mu_0 \epsilon_0} \approx 3 \times 10^8$ m/s.
+</p>
+</div>
+<div class="box-intuition">
+<p>电磁学 + 光学的世纪大统一</p>
+<p>
+1865 年 Maxwell 推出 $c = 1/\sqrt{\mu_0 \epsilon_0}$ 后, 跟实验测得<strong>光速</strong> $c$ 完全一致 — 立刻断言: <strong>光就是电磁波</strong> (而不是单独某种东西). 这是 19 世纪物理学最大统一之一, 比爱因斯坦光速不变 (1905) 早 40 年.
 </p>
 <p>
-这是<strong>波动方程</strong>, 波速 c = 1/√(μ₀ε₀) ≈ 3×10⁸ m/s. <strong>光就是电磁波</strong> — 麦克斯韦 1865 推出, 电磁学与光学大统一.
+后世 LED / 激光 / 无线电 / 5G 全是 $\vec{E} = E_0 \sin(kz - \omega t)$ 这种平面波解的工程实现.
 </p>
+</div>
 <div class="box-example">
 <p>例题 12-4</p>
 <p>
