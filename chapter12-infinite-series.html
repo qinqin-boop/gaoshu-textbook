@@ -1482,14 +1482,17 @@ e^x ≈ (1 + x/2 + x²/12) / (1 - x/2 + x²/12)
 这是<strong>实分析</strong>核心. 高数级数论是它的特例.
 </p>
 </div>
+<div class="box-intuition">
+<p>Lebesgue 极限定理 — 4 大现代领域的根</p>
 <p>
-<strong>意义</strong>:
+| 领域 | 用 Lebesgue 极限定理干什么 |
+|---|---|
+| 概率论 | $\mathbb{E}[\lim X_n]$ vs $\lim \mathbb{E}[X_n]$ — 强 / 弱大数律的证明 |
+| 蒙特卡洛 | 估计 $\int f$ 用样本均值, 收敛靠 DCT 保证 |
+| 偏微分方程 | 解的存在性 (压缩映像 + DCT) |
+| 机器学习 | 经验风险 $\sum L(x_i, y_i, \theta)/n \to \mathbb{E}_{p}[L]$ — 泛化理论基础 |
 </p>
-<ul>
-<li>概率论: 数学期望的极限交换</li>
-<li>数值方法: 蒙特卡洛收敛证明</li>
-<li>偏微分方程: 解的存在性证明</li>
-</ul>
+</div>
 <h3 id="8-14-divergent-series">知识点 8.14: 渐近级数 (Divergent Series)</h3>
 <div class="box-def">
 <p>渐近展开</p>
