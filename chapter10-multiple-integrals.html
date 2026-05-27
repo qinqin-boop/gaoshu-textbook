@@ -1009,26 +1009,37 @@ $$B(p, q) = \int_0^1 x^{p-1} (1-x)^{q-1}\,dx, \quad p, q > 0$$
 <p>
 <strong>桥</strong>: B(p, q) = Γ(p)Γ(q) / Γ(p+q).
 </p>
+<div class="box-thm">
+<p>Γ-Beta 桥</p>
 <p>
-<strong>推导草图</strong>: Γ(p)Γ(q) 用二元积分换元 (x=tu, y=t(1-u), t=x+y) 转 Beta.
+$$B(p, q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$$
 </p>
+</div>
+<div class="box-proof">
+<p>推导草图</p>
+<p>
+$\Gamma(p)\Gamma(q)$ 用二元积分换元 ($x = tu$, $y = t(1-u)$, $t = x+y$) 化成 $B(p,q) \cdot \Gamma(p+q)$, 整理即得.
+</p>
+</div>
 <div class="box-example">
 <p>例题 13-7</p>
 <p>
-求 ∫_0^($\pi$/2) sin^4($\theta$) dθ.
-换元 x = sin²($\theta$), 化为 B(5/2, 1/2)/2.
-= (1/2)·Γ(5/2)Γ(1/2)/Γ(3) = (1/2)·(3/4·√$\pi$)·√$\pi$/2 = 3π/16.
+求 $\int_0^{\pi/2} \sin^4\theta\,d\theta$.
+换元 $x = \sin^2\theta$, 化为 $B(5/2, 1/2)/2$.
+$= (1/2)\cdot\Gamma(5/2)\Gamma(1/2)/\Gamma(3) = (1/2)\cdot(3/4 \sqrt{\pi})\cdot\sqrt{\pi}/2 = 3\pi/16$.
 </p>
 </div>
+<div class="box-intuition">
+<p>Γ / Beta 函数 4 大领域应用</p>
 <p>
-<strong>应用</strong>:
+| 领域 | 用法 |
+|---|---|
+| 统计 | 卡方分布 $\chi^2_k \sim \Gamma(k/2, 2)$; t 分布密度含 $\Gamma$; F 分布含 Beta |
+| 贝叶斯 | Beta 是<strong>二项分布的共轭先验</strong> (后验仍 Beta), 简化在线更新 |
+| 物理 | Stirling 公式 $\Gamma(n) \sim \sqrt{2\pi}\,n^{n-1/2}e^{-n}$ |
+| 推荐 / 实验 | Thompson 采样用 Beta 分布建模 CTR 不确定性 (A/B 测试现代方法) |
 </p>
-<ul>
-<li>统计: 卡方分布 χ²_k ~ Γ(k/2, 2)</li>
-<li>贝叶斯: Beta 是二项分布的共轭先验 (后验仍 Beta)</li>
-<li>物理: 第一类 Stirling 公式 Γ(n) ~ √(2π) n^(n-1/2) e^(-n)</li>
-<li>推荐系统: Thompson 采样用 Beta 分布建模点击率不确定性</li>
-</ul>
+</div>
 <h3 id="13-8-stirling-n">知识点 13.8: Stirling 公式 — n! 的渐近估计</h3>
 <div class="box-thm">
 <p>Stirling 公式</p>
