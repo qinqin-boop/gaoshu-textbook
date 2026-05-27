@@ -1040,9 +1040,22 @@ $$\text{curl}\,\vec{F} = \nabla \times \vec{F} = \begin{vmatrix} \vec{i} & \vec{
 <strong>类比</strong>: 龙卷风中心旋度极大, 平直气流旋度为 0.
 </p>
 </div>
+<div class="box-thm">
+<p>斯托克斯公式 (向量形式)</p>
 <p>
-<strong>斯托克斯公式 (向量形式)</strong>:
-∮_(∂Σ) $\vec{F}$ · dr→ = ∬_Σ rot $\vec{F}$ · dS→
+$$\oint_{\partial\Sigma} \vec{F} \cdot d\vec{r} = \iint_\Sigma (\nabla\times\vec{F}) \cdot d\vec{S}$$
+<strong>对应关系</strong>: 沿曲面边界的环流 = 曲面上旋度通量的累积. Green 公式是 $\Sigma$ 退化到平面的 2D 特例.
+</p>
+</div>
+<div class="box-intuition">
+<p>旋度 vs 环流 — 微观 vs 宏观</p>
+<ul>
+<li><strong>旋度</strong> $\nabla\times\vec{F}$: 点级微观"小风车转速" (向量)</li>
+<li><strong>环流量</strong> $\oint \vec{F}\cdot d\vec{r}$: 沿宏观闭曲线一圈的"总功"</li>
+<li><strong>Stokes 桥梁</strong>: 全曲面上"每点旋度"加起来 = 边界"总环流". 跟 Gauss "全立体散度 = 边界通量"是孪生兄弟.</li>
+</ul>
+</div>
+<p>
 环流量 = 旋度通过曲面 的通量. <strong>闭曲线环流 = 内部旋转累计</strong>.
 </p>
 <p>
