@@ -1216,31 +1216,30 @@ $$\iint_{[a,b]\times[c,d]} f\,dxdy = \int_a^b\!\!\int_c^d f(x,y)\,dy\,dx = \int_
 若 $f \ge 0$ 且可测, 两种顺序积分总相等 (允许 $+\infty$).
 </p>
 </div>
+<div class="box-pitfall">
+<p>Fubini 失效经典反例</p>
 <p>
-可以交换积分次序.
-</p>
-<p>
-<strong>反例</strong> (无界函数, Fubini 失效):
-f(x,y) = (x-y)/(x+y)³ on (0,1]².
-∫_0^1 [∫_0^1 f dy] dx = 1/2.
-∫_0^1 [∫_0^1 f dx] dy = -1/2.
-</p>
-<p>
-两边不等! 因为 |f| 在原点附近不可积 (∬|f| dxdy = ∞).
-</p>
-<p>
-<strong>Tonelli 定理</strong> (Fubini 的非负版本):
-若 f ≥ 0 且可测, 则两种顺序积分总相等 (允许 ∞).
-</p>
-<p>
-<strong>应用</strong>:
+$f(x,y) = (x-y)/(x+y)^3$ on $(0,1]^2$:
 </p>
 <ul>
-<li>概率论: 期望的累积形式 E[X] = ∫ P(X&gt;t) dt (Layer Cake)</li>
-<li>偏微分方程: 弱解构造常用 Fubini</li>
-<li>信号: 卷积 ∫f(x-y)g(y)dy 频域分析</li>
-<li>ML: 多变量损失函数边缘化</li>
+<li>$\int_0^1\!\left[\int_0^1 f\,dy\right]dx = \frac{1}{2}$</li>
+<li>$\int_0^1\!\left[\int_0^1 f\,dx\right]dy = -\frac{1}{2}$</li>
 </ul>
+<p>
+<strong>两边不等</strong>! 因为 $|f|$ 在原点附近不可积 ($\iint|f|\,dxdy = \infty$). 这就是为啥 Fubini <strong>前提是可积</strong> — 不可积时交换顺序结果不同.
+</p>
+</div>
+<div class="box-intuition">
+<p>Fubini / Tonelli 4 大领域应用</p>
+<p>
+| 领域 | 怎么用 |
+|---|---|
+| 概率论 | $\mathbb{E}[X] = \int_0^\infty P(X > t)\,dt$ (Layer Cake 公式) 靠 Tonelli 推 |
+| 偏微分方程 | 弱解 / 分布解构造常用 Fubini 交换 $\int_x\int_t$ 顺序 |
+| 信号 | 卷积 $\int f(x-y)g(y)\,dy$ 在 $\mathcal{F}$ 域分析 |
+| ML | 多变量损失函数边缘化 / 高维期望分解 |
+</p>
+</div>
 <h3 id="13-14">知识点 13.14: 雅可比与微分形式的等价</h3>
 <div class="box-thm">
 <p>微分形式视角看雅可比</p>
