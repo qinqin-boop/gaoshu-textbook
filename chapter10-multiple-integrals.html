@@ -1363,6 +1363,56 @@ $\int_0^\infty\sqrt x e^{-x}\,dx=\Gamma(3/2)=\frac{1}{2}\Gamma(1/2)=\frac{\sqrt\
 <p>
 ---
 </p>
+<h2 id="">课后习题(同济高数下册风格)</h2>
+<blockquote>仿同济第十章习题精选。</blockquote>
+<div class="box-example">
+<p>
+<strong>习题 1</strong>(二重积分)计算 $\iint_D xy\,d\sigma$,$D$:$0\le x\le 1,\,0\le y\le x^2$。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$I=\int_0^1\!dx\int_0^{x^2}xy\,dy=\int_0^1 x\cdot\frac{x^4}{2}dx=\frac{1}{2}\cdot\frac{1}{6}=\frac{1}{12}$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 2</strong>(极坐标二重)计算 $\iint_D e^{-(x^2+y^2)}\,d\sigma$,$D$:$x^2+y^2\le R^2$。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>极坐标 $I=\int_0^{2\pi}\!d\theta\int_0^R\!e^{-r^2}r\,dr=2\pi\cdot\frac{1-e^{-R^2}}{2}=\pi(1-e^{-R^2})$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 3</strong>(三重积分)用柱坐标算 $\iiint_\Omega(x^2+y^2)\,dV$,$\Omega$ 由 $z=x^2+y^2$ 与 $z=4$ 围成。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\Omega$ 在柱坐标:$0\le\theta\le 2\pi,0\le r\le 2,r^2\le z\le 4$。$I=\int_0^{2\pi}\!\!\int_0^2\!\!\int_{r^2}^4 r^2\cdot r\,dz\,dr\,d\theta=2\pi\int_0^2 r^3(4-r^2)dr=2\pi(16-\frac{64}{6})=\frac{32\pi}{3}$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 4</strong>(球坐标)算 $\iiint_\Omega\sqrt{x^2+y^2+z^2}\,dV$,$\Omega$ 为 $x^2+y^2+z^2\le R^2$。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>球坐标 $I=\int_0^{2\pi}\!d\theta\int_0^\pi\!\sin\varphi\,d\varphi\int_0^R\!\rho\cdot\rho^2 d\rho=2\pi\cdot 2\cdot\frac{R^4}{4}=\pi R^4$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 5</strong>(质心)均匀薄板 $D:x^2+y^2\le 1,y\ge 0$ 的质心。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>面密度 $\mu$ 常数,$M=\mu\cdot\pi/2$。对称性 $\bar x=0$。$\bar y=\frac{1}{M}\iint y\mu\,d\sigma$,极坐标 $\int_0^\pi\!\!\int_0^1(r\sin\theta)r\,dr\,d\theta=\frac{1}{3}\cdot 2=\frac{2}{3}$。$\bar y=\frac{2/3}{\pi/2}=\frac{4}{3\pi}$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 6</strong>(Γ 函数)算 $\int_0^\infty x^3 e^{-2x}dx$。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>换元 $u=2x$,$dx=du/2$:$I=\int_0^\infty(u/2)^3 e^{-u}\frac{du}{2}=\frac{1}{16}\Gamma(4)=\frac{3!}{16}=\frac{3}{8}$。</p>
+</details>
+</div>
 <h2 id="">第十章 小结</h2>
 <div class="box-intuition">
 <p>全章核心</p>

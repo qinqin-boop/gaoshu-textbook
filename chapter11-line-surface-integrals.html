@@ -1571,6 +1571,56 @@ $$\int_{\partial M}\omega=\int_M d\omega$$
 <p>
 ---
 </p>
+<h2 id="">课后习题(同济高数下册风格)</h2>
+<blockquote>仿同济第十一章习题精选。</blockquote>
+<div class="box-example">
+<p>
+<strong>习题 1</strong>(第一类曲线积分)$L:y=x^2,\,0\le x\le 1$,算 $\int_L y\,ds$。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$ds=\sqrt{1+4x^2}dx$。$I=\int_0^1 x^2\sqrt{1+4x^2}dx$。设 $u=1+4x^2,du=8x\,dx$,数值 $\approx 0.566$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 2</strong>(第二类曲线积分 / 用 Green)算 $\oint_C(2x-y)dx+(x+3y)dy$,$C$ 是单位圆 $x^2+y^2=1$ 正向。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$P=2x-y,Q=x+3y$,$\partial_x Q-\partial_y P=1-(-1)=2$。Green:$\oint=\iint_D 2\,d\sigma=2\pi$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 3</strong>(用 Gauss 公式)算 $\oiint_\Sigma\vec{F}\cdot d\vec{S}$,$\vec{F}=(x^3,y^3,z^3)$,$\Sigma$ 为单位球外侧。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\nabla\cdot\vec{F}=3(x^2+y^2+z^2)$。球坐标 $\iiint 3\rho^2\cdot\rho^2\sin\varphi\,d\rho d\varphi d\theta=3\cdot 2\pi\cdot 2\cdot\frac{1}{5}=\frac{12\pi}{5}$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 4</strong>(用 Stokes)$\vec{F}=(y,z,x)$,$L$ 为三角形 $A(1,0,0)\to B(0,1,0)\to C(0,0,1)\to A$,求 $\oint_L\vec{F}\cdot d\vec{r}$。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\nabla\times\vec{F}=(\partial_y x-\partial_z z,\,\partial_z y-\partial_x x,\,\partial_x z-\partial_y y)=(-1,-1,-1)$。三角形所在平面 $x+y+z=1$,法向 $\vec{n}=(1,1,1)/\sqrt 3$,面积 $\sqrt 3/2$。$\oint=(\nabla\times\vec{F})\cdot\vec{n}\cdot S=(-3/\sqrt 3)\cdot(\sqrt 3/2)=-3/2$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 5</strong>(曲面面积)算锥面 $z=\sqrt{x^2+y^2}$($0\le z\le 1$)侧面积。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$z_x=x/r,z_y=y/r$,$\sqrt{1+z_x^2+z_y^2}=\sqrt 2$。$S=\iint_{r\le 1}\sqrt 2\,d\sigma=\sqrt 2\pi$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 6</strong>(保守场判别)$\vec{F}=(2xy+z^2,\,x^2-3,\,2xz)$ 是否保守?若是,求势函数。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$\nabla\times\vec{F}=(\partial_y(2xz)-\partial_z(x^2-3),\partial_z(2xy+z^2)-\partial_x(2xz),\partial_x(x^2-3)-\partial_y(2xy+z^2))=(0,2z-2z,2x-2x)=\vec{0}$。保守。$\phi$:$\partial\phi/\partial x=2xy+z^2\Rightarrow\phi=x^2y+xz^2+g(y,z)$;$\partial\phi/\partial y=x^2+g_y=x^2-3\Rightarrow g=-3y+h(z)$;$\partial\phi/\partial z=2xz+h'(z)=2xz\Rightarrow h=$常数。所以 $\phi=x^2y+xz^2-3y+C$。</p>
+</details>
+</div>
 <h2 id="">第十一章 小结</h2>
 <div class="box-intuition">
 <p>全章核心</p>

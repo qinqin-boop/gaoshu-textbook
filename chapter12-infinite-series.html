@@ -1844,6 +1844,56 @@ $$u(x,t)=\sum_{n=1}^\infty b_n\,e^{-n^2 t}\sin nx,\quad b_n=\frac{2}{\pi}\!\int_
 <p>
 ---
 </p>
+<h2 id="">课后习题(同济高数下册风格)</h2>
+<blockquote>仿同济第十二章习题精选。</blockquote>
+<div class="box-example">
+<p>
+<strong>习题 1</strong>(数项级数判敛)判别 $\sum_{n=1}^\infty\frac{n!}{n^n}$ 的敛散性。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>比值 $\rho=\lim\frac{(n+1)!/(n+1)^{n+1}}{n!/n^n}=\lim\frac{n^n}{(n+1)^n}=\lim(1+1/n)^{-n}=1/e<1$。收敛。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 2</strong>(交错级数)判别 $\sum_{n=1}^\infty\frac{(-1)^{n-1}}{\sqrt n}$ 是绝对收敛 / 条件收敛 / 发散?
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$|u_n|=1/\sqrt n$,$\sum 1/\sqrt n$ 是 $p$-级数 $p=1/2<1$ 发散。但 $1/\sqrt n\downarrow 0$,Leibniz 收敛。结论:<strong>条件收敛</strong>。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 3</strong>(收敛半径)求 $\sum_{n=1}^\infty\frac{x^n}{n\cdot 2^n}$ 的收敛半径与收敛区间。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$R=\lim\frac{|a_n|}{|a_{n+1}|}=\lim\frac{(n+1)2^{n+1}}{n\cdot 2^n}=2$。端点 $x=2$:$\sum 1/n$ 发散;$x=-2$:$\sum(-1)^n/n$ Leibniz 收敛。收敛区间 $[-2,2)$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 4</strong>(Taylor 展开)求 $f(x)=\ln(1+x)$ 的 Maclaurin 展开式与收敛区间。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$f'(x)=1/(1+x)=\sum(-1)^n x^n$($|x|<1$),逐项积分 $f(x)=\sum_{n=0}^\infty\frac{(-1)^n x^{n+1}}{n+1}=x-\frac{x^2}{2}+\frac{x^3}{3}-\dots$。$R=1$;端点 $x=1$ Leibniz 收敛,$x=-1$ 调和发散。收敛区间 $(-1,1]$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 5</strong>(Fourier 系数)$f(x)=x,\,x\in[-\pi,\pi]$ 周期延拓后,求 Fourier 系数 $a_n,b_n$。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>$f$ 奇函数,$a_n=0$。$b_n=\frac{1}{\pi}\int_{-\pi}^\pi x\sin nx\,dx=\frac{2}{\pi}\int_0^\pi x\sin nx\,dx$。分部积分 $=\frac{2}{\pi}\big[-\frac{x\cos nx}{n}+\frac{\sin nx}{n^2}\big]_0^\pi=\frac{2(-1)^{n+1}}{n}$。即 $b_n=\frac{2(-1)^{n+1}}{n}$。</p>
+</details>
+</div>
+<div class="box-example">
+<p>
+<strong>习题 6</strong>(Parseval 应用)由 $f(x)=x$ 的 Fourier 展开 $\sum b_n^2=\sum\frac{4}{n^2}$,用 Parseval 求 $\sum 1/n^2$。
+</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p>Parseval $\sum b_n^2=\frac{1}{\pi}\int_{-\pi}^\pi x^2 dx=\frac{2\pi^2}{3}$。所以 $\sum\frac{4}{n^2}=\frac{2\pi^2}{3}\Rightarrow\sum\frac{1}{n^2}=\frac{\pi^2}{6}$(Basel 问题答案)。</p>
+</details>
+</div>
 <h2 id="">第十二章 小结</h2>
 <div class="box-intuition">
 <p>全章 8 大核心</p>
