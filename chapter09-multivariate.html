@@ -1043,6 +1043,21 @@ $\nabla f(P)=\vec{0}$ 的点称为 $f$ 的<strong>驻点</strong>(stationary poi
 </p>
 </div>
 <h3 id="9-8-3-hessian">9.8.3 二阶判别(Hessian)</h3>
+<figure>
+<svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <ellipse cx="120" cy="100" rx="80" ry="50" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
+  <ellipse cx="120" cy="100" rx="50" ry="30" fill="none" stroke="#1a365d" stroke-width="1" opacity="0.6"/>
+  <circle cx="120" cy="100" r="3" fill="#1a365d"/>
+  <text x="125" y="115" font-size="11" fill="#1a365d">极小</text>
+  <text x="105" y="170" font-size="11" fill="#444">D>0, A>0 正定</text>
+  <path d="M 240 60 Q 300 100 240 140 M 350 60 Q 290 100 350 140" fill="none" stroke="#c2410c" stroke-width="1.5"/>
+  <path d="M 260 70 Q 295 100 260 130 M 330 70 Q 295 100 330 130" fill="none" stroke="#c2410c" stroke-width="1" opacity="0.6"/>
+  <circle cx="295" cy="100" r="3" fill="#c2410c"/>
+  <text x="300" y="115" font-size="11" fill="#c2410c">鞍点</text>
+  <text x="270" y="170" font-size="11" fill="#444">D<0 不定</text>
+</svg>
+<figcaption>图 9.8.1 极小(等高线为同心椭圆,正定 Hessian)vs 鞍点(等高线为双曲线,不定 Hessian)。</figcaption>
+</figure>
 <div class="box-def">
 <p>
 $f(x,y)$ 在 $P_0$ 处二阶连续可偏导时,<strong>Hessian 矩阵</strong>定义为
@@ -1302,6 +1317,29 @@ $$b=\bar y-a\bar x=3.5-0.8\cdot 2.5=1.5.$$
 </p>
 </div>
 <h3 id="9-10-3">9.10.3 矩阵形式与几何意义</h3>
+<figure>
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <line x1="40" y1="170" x2="320" y2="170" stroke="#888" stroke-width="1"/>
+  <line x1="40" y1="170" x2="40" y2="20" stroke="#888" stroke-width="1"/>
+  <text x="325" y="175" font-size="12" fill="#888">x</text>
+  <text x="25" y="22" font-size="12" fill="#888">y</text>
+  <line x1="40" y1="150" x2="320" y2="40" stroke="#1a365d" stroke-width="2"/>
+  <text x="180" y="100" font-size="11" fill="#1a365d">ŷ = ax + b</text>
+  <circle cx="70" cy="140" r="4" fill="#c2410c"/>
+  <circle cx="120" cy="100" r="4" fill="#c2410c"/>
+  <circle cx="180" cy="120" r="4" fill="#c2410c"/>
+  <circle cx="240" cy="60" r="4" fill="#c2410c"/>
+  <circle cx="290" cy="55" r="4" fill="#c2410c"/>
+  <line x1="70" y1="140" x2="70" y2="134" stroke="#2d6e2d" stroke-dasharray="2 2"/>
+  <line x1="120" y1="100" x2="120" y2="110" stroke="#2d6e2d" stroke-dasharray="2 2"/>
+  <line x1="180" y1="120" x2="180" y2="86" stroke="#2d6e2d" stroke-dasharray="2 2"/>
+  <line x1="240" y1="60" x2="240" y2="63" stroke="#2d6e2d" stroke-dasharray="2 2"/>
+  <line x1="290" y1="55" x2="290" y2="44" stroke="#2d6e2d" stroke-dasharray="2 2"/>
+  <text x="100" y="190" font-size="11" fill="#2d6e2d">残差 yᵢ − ŷᵢ (虚线)</text>
+  <text x="200" y="190" font-size="11" fill="#c2410c">数据点 (xᵢ, yᵢ)</text>
+</svg>
+<figcaption>图 9.10.1 最小二乘:在所有直线中选残差平方和 $\sum(y_i-\hat y_i)^2$ 最小者。</figcaption>
+</figure>
 <p>
 设 $\vec{y}=(y_1,\dots,y_n)^\top$、$\vec{a}=(a,b)^\top$,设计矩阵 $X=\begin{pmatrix}x_1&1\\\vdots&\vdots\\ x_n&1\end{pmatrix}$。残差平方和
 $$S=(\vec{y}-X\vec{a})^\top(\vec{y}-X\vec{a})=\|\vec{y}-X\vec{a}\|^2.$$

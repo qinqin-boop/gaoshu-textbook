@@ -531,6 +531,26 @@ $$S=\iint_{x^2+y^2\le 1}\sqrt 2\,dx\,dy=\sqrt 2\cdot\pi=\sqrt 2\,\pi.$$
 第一类 $\iint f\,dS$ 是<strong>标量</strong>积分,面积元 $dS>0$ 与定向无关。物理上更常见的量——流体单位时间穿过曲面的流量、电场穿过曲面的电通量、磁通量——都依赖<strong>穿过的方向</strong>;把曲面换个方向(从前面看变成从后面看),通量整体反号。这就需要<strong>带方向</strong>的曲面积分:第二类曲面积分。本节给出它的定义、与第一类的转换公式、参数化算法,最后证明它的核心定理——<strong>Gauss 公式(散度定理)</strong>。
 </p>
 <h3 id="11-5-1">11.5.1 双侧曲面与定向</h3>
+<figure>
+<svg viewBox="0 0 380 180" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+  <defs>
+    <marker id="flx" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <ellipse cx="190" cy="90" rx="55" ry="55" fill="#eef4fb" stroke="#1a365d" stroke-width="1.8"/>
+  <ellipse cx="190" cy="90" rx="55" ry="15" fill="none" stroke="#1a365d" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="40" y1="60" x2="120" y2="60" stroke="#1a365d" stroke-width="2" marker-end="url(#flx)"/>
+  <line x1="40" y1="90" x2="120" y2="90" stroke="#1a365d" stroke-width="2" marker-end="url(#flx)"/>
+  <line x1="40" y1="120" x2="120" y2="120" stroke="#1a365d" stroke-width="2" marker-end="url(#flx)"/>
+  <line x1="260" y1="60" x2="340" y2="60" stroke="#1a365d" stroke-width="2" marker-end="url(#flx)"/>
+  <line x1="260" y1="90" x2="340" y2="90" stroke="#1a365d" stroke-width="2" marker-end="url(#flx)"/>
+  <line x1="260" y1="120" x2="340" y2="120" stroke="#1a365d" stroke-width="2" marker-end="url(#flx)"/>
+  <line x1="190" y1="90" x2="260" y2="90" stroke="#c2410c" stroke-width="2.5" marker-end="url(#flx)"/>
+  <text x="220" y="80" font-size="13" fill="#c2410c" font-style="italic">n</text>
+  <text x="180" y="95" font-size="14" font-style="italic" fill="#1a365d" font-weight="bold">Σ</text>
+  <text x="48" y="160" font-size="11" fill="#666">流场 F⃗ 穿过曲面 Σ, 通量 = ∬ F·n dS</text>
+</svg>
+<figcaption>图 11.5.1 通量直观:流体场穿过曲面单位时间体积 = $\iint\vec{F}\cdot\vec{n}\,dS$。</figcaption>
+</figure>
 <div class="box-def">
 <p>
 若曲面 $\Sigma$ 上每点存在连续的单位法向量场 $\vec{n}(P)$,称 $\Sigma$ 为<strong>双侧</strong>(可定向)曲面。选定 $\vec{n}$ 的连续场就<strong>给曲面定了向</strong>——另一选 $-\vec{n}$ 是反向。
