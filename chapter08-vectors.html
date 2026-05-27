@@ -1356,29 +1356,34 @@ d = 12 / 3 = 4.
 </p>
 </div>
 <h3 id="15">知识点 15: 真实工程应用举例 (理解为啥学)</h3>
+<div class="box-intuition">
+<p>向量代数 — 现代技术的代数底座</p>
 <p>
-<strong>1. 计算机图形学</strong>
+<strong>1. 计算机图形学</strong>:
 </p>
 <ul>
-<li>3D 渲染: 物体位置/朝向用向量描述, 光照计算用点乘 (光线 vs 法向量)</li>
-<li>碰撞检测: 两物体距离/位置关系</li>
+<li><strong>3D 渲染</strong>: 物体位置 / 朝向用向量, 光照计算 = 点乘 (光线 vs 法向量)</li>
+<li>碰撞检测: 两物体距离 / 位置关系</li>
 <li>相机视角: 旋转矩阵 + 视角向量</li>
+<li>Ray tracing: 光线 = 起点 + 方向向量</li>
 </ul>
 <p>
-<strong>2. 物理引擎</strong>
+<strong>2. 物理引擎 (游戏)</strong>:
 </p>
 <ul>
-<li>游戏中的"力" "加速度" 都是向量</li>
-<li>物体绕轴旋转: 叉乘求力矩</li>
-<li>碰撞: 入射方向跟法线 = 反射方向 (点乘+叉乘)</li>
+<li>力 / 加速度 / 动量 / 角动量都是向量</li>
+<li>力矩 $\vec{\tau} = \vec{r} \times \vec{F}$ (叉乘)</li>
+<li>反射: 入射方向 + 法线 → 反射方向 (点乘 + 叉乘)</li>
 </ul>
 <p>
-<strong>3. 机器人</strong>
+<strong>3. 机器人 / 自动驾驶</strong>:
 </p>
 <ul>
-<li>机械臂末端位置: 一系列向量相加</li>
+<li>机械臂末端位置 = 一系列向量相加 (forward kinematics)</li>
 <li>抓取角度: 叉乘求最佳方向</li>
+<li>SLAM 算法: 位姿 = 平移向量 + 旋转 (四元数/旋转矩阵)</li>
 </ul>
+</div>
 <p>
 <strong>4. AI/ML</strong>
 </p>
