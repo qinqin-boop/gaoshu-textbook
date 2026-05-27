@@ -20,6 +20,7 @@ def format_inline(s):
 BOX_MARKERS = {
     "::def": "box-def", "::thm": "box-thm", "::proof": "box-proof",
     "::ex": "box-example", "::intuition": "box-intuition", "::pitfall": "box-pitfall",
+    "::answer": "box-answer",  # 可折叠答案/详解 (用 <details>)
 }
 
 
@@ -85,20 +86,28 @@ def md_to_html(md):
             continue
 
         # callout box open/close
-        box_open = re.match(r"^(::def|::thm|::proof|::ex|::intuition|::pitfall)\s*(.*)$", line)
+        box_open = re.match(r"^(::def|::thm|::proof|::ex|::intuition|::pitfall|::answer)\s*(.*)$", line)
         if box_open:
             if in_p: out.append("</p>"); in_p = False
             if in_ul: out.append(f"</{ul_tag}>"); in_ul = False
             in_box = BOX_MARKERS[box_open.group(1)]
-            out.append(f'<div class="{in_box}">')
             rest = box_open.group(2).strip()
-            if rest:
-                out.append(f"<p>{format_inline_math_safe(rest)}</p>")
+            if in_box == "box-answer":
+                # 可折叠答案: 用 <details> 渲染
+                summary = format_inline_math_safe(rest) if rest else "📖 点击展开答案 / 详解"
+                out.append(f'<details class="box-answer"><summary>{summary}</summary>')
+            else:
+                out.append(f'<div class="{in_box}">')
+                if rest:
+                    out.append(f"<p>{format_inline_math_safe(rest)}</p>")
             continue
         if line.strip() == "::end" and in_box:
             if in_p: out.append("</p>"); in_p = False
             if in_ul: out.append(f"</{ul_tag}>"); in_ul = False
-            out.append("</div>")
+            if in_box == "box-answer":
+                out.append("</details>")
+            else:
+                out.append("</div>")
             in_box = None
             continue
 

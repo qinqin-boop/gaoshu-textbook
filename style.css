@@ -133,6 +133,52 @@ main.textbook em { color: #8b3a0a; font-style: normal; font-weight: 600; }
   display: block; margin-bottom: 6px;
 }
 
+/* ===== 可折叠答案 / 详解 (老大要求的开关) ===== */
+details.box-answer {
+  margin: 16px 0;
+  padding: 12px 18px;
+  border: 1px solid #d4a373;
+  border-left: 5px solid #c9a227;
+  border-radius: 8px;
+  background: #fffbf0;
+  color: #2d3748;
+  line-height: 1.7;
+  font-size: 0.97rem;
+  transition: background 0.2s;
+}
+details.box-answer summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #8b6f1c;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  padding: 6px 4px;
+  user-select: none;
+  list-style: none;
+  outline: none;
+}
+details.box-answer summary::before {
+  content: "▶ ";
+  display: inline-block;
+  margin-right: 6px;
+  color: #c9a227;
+  transition: transform 0.2s;
+}
+details.box-answer[open] summary::before {
+  content: "▼ ";
+}
+details.box-answer summary::-webkit-details-marker { display: none; }
+details.box-answer[open] {
+  background: #fef9e1;
+  border-left-width: 6px;
+}
+details.box-answer > *:not(summary) {
+  margin-top: 10px;
+}
+details.box-answer:hover summary {
+  color: #6f5614;
+}
+
 main.textbook blockquote {
   border-left: 4px solid #c9b97a;
   padding: 10px 16px;
