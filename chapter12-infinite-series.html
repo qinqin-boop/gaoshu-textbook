@@ -1479,23 +1479,25 @@ e^x 的 [2/2] Padé:
 e^x ≈ (1 + x/2 + x²/12) / (1 - x/2 + x²/12)
 </p>
 </div>
+<div class="box-thm">
+<p>Padé 3 大优势 (相对 Taylor)</p>
+<ol>
+<li><strong>在 Taylor 收敛域外仍能逼近</strong> (有理函数有自己的极点结构)</li>
+<li><strong>收敛速度</strong>比 Taylor 快几个数量级</li>
+<li><strong>能逼近含极点的函数</strong> (Taylor 必死, 有理可活)</li>
+</ol>
+</div>
+<div class="box-intuition">
+<p>Padé 4 大领域应用</p>
 <p>
-<strong>优势</strong>:
+| 领域 | Padé 怎么用 |
+|---|---|
+| 控制论 | 时滞系统 $e^{-sT}$ 的有理逼近 (Padé 1/1, 2/2 是工程标准) |
+| 数值分析 | 解 ODE 的隐式 Runge-Kutta 用 Padé 表 |
+| 物理摄动 | 重整化求和 / Padé-Borel 求和处理发散 |
+| <strong>AI</strong> | 部分研究表明<strong>有理激活函数</strong>比 ReLU 表达力更强 (Boullé 2020) |
 </p>
-<ul>
-<li>在 Taylor 收敛域外仍能逼近</li>
-<li>收敛速度比 Taylor 快几个数量级</li>
-<li>能逼近含极点的函数 (Taylor 不行)</li>
-</ul>
-<p>
-<strong>应用</strong>:
-</p>
-<ul>
-<li>控制论: 时滞系统 e^(-sT) 的有理逼近</li>
-<li>数值分析: 求解微分方程</li>
-<li>物理: 摄动理论里的求和</li>
-<li>AI: 神经网络架构 (有理激活函数比 ReLU 性能更优)</li>
-</ul>
+</div>
 <h3 id="8-13">知识点 8.13: 级数与勒贝格积分 (一瞥)</h3>
 <div class="box-intuition">
 <p>极限交换问题</p>
