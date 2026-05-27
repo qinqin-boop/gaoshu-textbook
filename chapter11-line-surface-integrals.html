@@ -693,20 +693,24 @@ $$\Phi_E=\oiint_\Sigma\vec{E}\cdot d\vec{S}=\iiint_V\frac{\rho}{\varepsilon_0}\,
 | Gauss(散度定理) | 闭曲面通量 $\oiint\vec{F}\cdot d\vec{S}$ | $\iiint\nabla\cdot\vec{F}\,dV$ |
 | Stokes | 空间闭曲线环流 $\oint\vec{F}\cdot d\vec{r}$ | $\iint(\nabla\times\vec{F})\cdot d\vec{S}$ |
 </p>
+<div class="box-intuition">
+<p>广义 Stokes 公式 = 4 大定理同一根</p>
 <p>
-<strong>统一思想</strong>:<strong>$\int_{\partial M}\omega=\int_M d\omega$</strong>——这是<strong>广义 Stokes 公式</strong>(微分形式版本)。$\omega$ 是 $k$-形式,$d\omega$ 是它的外微分,定理把「边界上的 $k$-形式积分」等价于「内部 $(k+1)$-形式积分」。Newton-Leibniz、Green、Gauss、Stokes 都是这同一定理在不同维度的实现:
+<strong>统一思想</strong>: $\boxed{\int_{\partial M} \omega = \int_M d\omega}$ — 微分形式版本.
+$\omega$ 是 $k$-形式, $d\omega$ 是它的外微分, 定理把"边界上的 $k$-形式积分"等价于"内部 $(k+1)$-形式积分".
 </p>
 <p>
-| 维度 | $\omega$ 阶 | $\int_{\partial M}\omega=\int_M d\omega$ |
-| --- | --- | --- |
-| $1$ | $0$-形式 $f$ | $f|_a^b=\int_a^b df$($\Rightarrow$ Newton-Leibniz) |
-| $2$ | $1$-形式 $P\,dx+Q\,dy$ | Green |
-| $3$ | $1$-形式 | Stokes |
-| $3$ | $2$-形式 $P\,dy\wedge dz+\dots$ | Gauss |
+| 维度 | $\omega$ 阶 | 退化为经典定理 |
+|---|---|---|
+| 1 | 0-形式 $f$ | $f\|_a^b = \int_a^b df$ → <strong>Newton-Leibniz</strong> |
+| 2 | 1-形式 $P\,dx + Q\,dy$ | <strong>Green</strong> |
+| 3 | 1-形式 | <strong>Stokes</strong> |
+| 3 | 2-形式 $P\,dy\wedge dz + \cdots$ | <strong>Gauss</strong> (散度定理) |
 </p>
 <p>
-这是现代微分几何的中心定理之一,统一了 19 世纪以来发展的"边界 $\to$ 内部"对应,也是 Maxwell 方程组、规范场论、de Rham 上同调的代数核心。
+<strong>现代微分几何中心定理之一</strong>, 统一了 19 世纪以来 "边界 $\to$ 内部" 对应, 也是 <strong>Maxwell 方程组 / 规范场论 / de Rham 上同调</strong> 的代数核心. 学完高数下册就摸到现代物理 / 几何的门把手.
 </p>
+</div>
 <div class="box-pitfall">
 <p>
 <strong>易错点</strong>:
