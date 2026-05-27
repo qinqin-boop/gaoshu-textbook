@@ -1341,15 +1341,23 @@ $$A_{ij} B^j = \sum_j A_{ij} B^j$$
 </p>
 </div>
 <h3 id="6-13">知识点 6.13: 向量空间的线性独立性 + 基与维数</h3>
-<p>
-<strong>线性独立</strong>: 向量组 $\vec{v}$₁, ..., $\vec{v}$_n 线性独立 ⟺ c₁v→₁ + ... + c_nv→_n = 0 仅当所有 c_i = 0.
-</p>
-<p>
-<strong>基 (basis)</strong>: 极大线性独立组 = 张成全空间的极小集合.
-</p>
-<p>
-<strong>维数</strong>: 基的元素个数 = dim V.
-</p>
+<div class="box-def">
+<p>线性独立 / 基 / 维数</p>
+<ul>
+<li><strong>线性独立</strong>: 向量组 $\vec{v}_1, \ldots, \vec{v}_n$ 独立 ⟺ $c_1\vec{v}_1 + \cdots + c_n\vec{v}_n = \vec{0}$ 仅当所有 $c_i = 0$ (没有非平凡线性组合产生零)</li>
+<li><strong>基 (basis)</strong>: 极大线性独立组 = 张成 (span) 全空间的极小集合</li>
+<li><strong>维数</strong> $\dim V$ = 基的元素个数 (跟基的选取无关, 是空间内禀属性)</li>
+</ul>
+</div>
+<div class="box-intuition">
+<p>基 = "坐标轴" 的推广</p>
+<ul>
+<li>标准基 $\{\vec{e}_1, \ldots, \vec{e}_n\}$ 像 $n$ 维直角坐标系</li>
+<li>但同一空间有<strong>无数组基</strong> (任意 $n$ 个独立向量都行)</li>
+<li>不同基 ↔ 不同坐标系, 同向量在不同基下"坐标数"不同, 但<strong>指向同一几何对象</strong></li>
+<li>这就是物理"坐标无关性"的代数表达</li>
+</ul>
+</div>
 <div class="box-example">
 <p>例题 6-13</p>
 <p>
