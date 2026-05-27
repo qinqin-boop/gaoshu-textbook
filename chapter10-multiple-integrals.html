@@ -1144,18 +1144,20 @@ I($\alpha$) = -arctan $\alpha$ + C. $\alpha$→∞: $\vec{I}$0, 所以 C = $\pi$
 I(0) = $\pi$/2. <strong>狄利克雷积分</strong> ✓
 </p>
 </div>
+<div class="box-intuition">
+<p>Feynman 积分黑魔法 — 4 大领域用</p>
 <p>
-<strong>Feynman 技巧威力</strong>: 物理学家 Feynman 这套方法被誉为"积分黑魔法". 把一个难积分通过参数化变成 ODE 问题.
+<strong>核心思想</strong>: 把一个难积分通过<strong>参数化</strong>变成 ODE 问题, 再解 ODE → 数学技巧名片. 物理学家 Feynman 在量子电动力学 (QED) 计算路径积分时把这套技巧推到极致, 故得名"积分黑魔法".
 </p>
 <p>
-<strong>应用</strong>:
+| 领域 | 怎么用 |
+|---|---|
+| 物理 QED | 路径积分发散级数需逐项含参微分整理 |
+| 信号处理 | 滤波器频响 = Laplace / Fourier 积分, 含参求导推主曲线 |
+| 统计 | 矩生成函数 $M(t) = \mathbb{E}[e^{tX}]$ 的 $n$ 阶导 = $\mathbb{E}[X^n]$ |
+| 深度学习 | Backprop 链式法则本质是 batch 维含参求导 |
 </p>
-<ul>
-<li>物理: 路径积分计算</li>
-<li>信号: 滤波器频响推导</li>
-<li>统计: 矩生成函数求矩 E[X^n] = M^(n)(0)</li>
-<li>高维 ML: backprop 链式法则本质是含参求导</li>
-</ul>
+</div>
 <h3 id="13-12">知识点 13.12: 反常重积分 与 收敛性判别</h3>
 <div class="box-def">
 <p>反常 (improper) 重积分两种情形</p>
