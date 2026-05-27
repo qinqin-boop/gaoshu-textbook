@@ -1631,17 +1631,29 @@ $|\vec{S}| = c u$ — 光携带能量沿光线传播.
 <li>激光: 高能密度光束</li>
 </ul>
 <h3 id="12-13">知识点 12.13: 流形上的积分初步</h3>
+<div class="box-def">
+<p>流形 (Manifold)</p>
 <p>
-<strong>流形 (Manifold)</strong>: 局部看像 R^n 的几何对象. 例: 球面 S² (局部看像 R²), 莫比乌斯带, 环面 T².
-</p>
-<p>
-<strong>积分在流形上</strong>:
+<strong>局部看像 $\mathbb{R}^n$</strong> 的几何对象, 整体可以是弯曲的.
 </p>
 <ul>
-<li>用局部坐标 (chart) 把流形碎片化</li>
-<li>在每片上做欧氏积分</li>
-<li>用"单位分解"粘起来</li>
+<li>球面 $S^2$: 局部看像 $\mathbb{R}^2$ (你站在地球某点感觉是平的)</li>
+<li>Möbius 带: 不可定向流形</li>
+<li>环面 $T^2$: 像甜甜圈 (拓扑同欧拉数 0)</li>
+<li>高维空间: 数据流形假设 (ML)</li>
 </ul>
+</div>
+<div class="box-intuition">
+<p>流形上积分 3 步法</p>
+<ol>
+<li>用<strong>局部坐标 (chart)</strong> 把流形碎片化</li>
+<li>在每片上做欧氏积分 (Riemann/Lebesgue 都行)</li>
+<li>用<strong>单位分解 (partition of unity)</strong> 把局部积分粘起来</li>
+</ol>
+<p>
+广义相对论用伪 Riemann 流形, ML 用数据流形假设, 量子场论用规范丛.
+</p>
+</div>
 <div class="box-example">
 <p>例题 12-13</p>
 <p>
