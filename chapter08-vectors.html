@@ -230,12 +230,13 @@ $\vec{a}$ + $\vec{b}$ = (1+4, 2-1, 3+2) = (5, 1, 5).
 </svg>
 <figcaption>图 2.5 向量减法 = 从 b→ 的终点指向 a→ 的终点 (画两条同起点向量, 连终点 = a→-b→)</figcaption>
 </figure>
-<p>
-<strong>几何意义</strong>: $\vec{a} - \vec{b}$ 是从 $\vec{b}$ 的终点指向 $\vec{a}$ 的终点的向量.
-</p>
-<p>
-<strong>生活类比</strong>: 你在 B 点, 朋友在 A 点, 朋友到你的向量 = $\vec{OB} - \vec{OA} = \vec{AB}$. 用终点减起点.
-</p>
+<div class="box-intuition">
+<p>向量减法 = "从 b 终点指 a 终点"</p>
+<ul>
+<li><strong>几何</strong>: 把 $\vec{a}, \vec{b}$ 同起点画, 连两终点 → 从 $\vec{b}$ 终点指向 $\vec{a}$ 终点的向量就是 $\vec{a} - \vec{b}$.</li>
+<li><strong>生活类比</strong>: 你在 B 点, 朋友在 A 点, "朋友到你"的向量 = $\vec{OB} - \vec{OA} = \vec{AB}$ (<strong>终点减起点</strong>, 常考易错).</li>
+</ul>
+</div>
 <div class="box-example">
 <p>例题 3-3</p>
 <p>
@@ -254,28 +255,33 @@ $\vec{a}$ - $\vec{b}$ = (2, -1, -2), |$\vec{a}$ - $\vec{b}$| = √(4+1+4) = 3.
 ---
 </p>
 <h3 id="2-7-8-1">知识点 2.7: 向量加法的运算律 (对齐书 §8.1 二)</h3>
+<div class="box-thm">
+<p>向量加法运算律</p>
 <p>
-向量加法服从普通数加法同样的运算律 — <strong>可证</strong>:
+向量加法服从普通数加法同样的运算律:
 </p>
 <ol>
-<li><strong>交换律</strong>: $\vec{a}$ + $\vec{b}$ = $\vec{b}$ + $\vec{a}$</li>
+<li><strong>交换律</strong>: $\vec{a} + \vec{b} = \vec{b} + \vec{a}$</li>
+<li><strong>结合律</strong>: $(\vec{a} + \vec{b}) + \vec{c} = \vec{a} + (\vec{b} + \vec{c})$</li>
+<li><strong>零向量恒等</strong>: $\vec{a} + \vec{0} = \vec{a}$</li>
+<li><strong>负向量</strong>: $\vec{a} + (-\vec{a}) = \vec{0}$</li>
 </ol>
-<p>
-   证: 平行四边形法则两条邻边互换不变. □
-</p>
+</div>
+<div class="box-proof">
 <ol>
-<li><strong>结合律</strong>: ($\vec{a}$ + $\vec{b}$) + $\vec{c}$ = $\vec{a}$ + ($\vec{b}$ + $\vec{c}$)</li>
+<li>平行四边形法则两条邻边互换不变 → 交换律.</li>
+<li>三向量首尾相接, 终点位置只取决于"首"与"尾", 跟中间结合顺序无关 → 结合律.</li>
 </ol>
 <p>
-   证: 三向量首尾相接构成三角形外加一边, 顺序不影响终点位置. □
+3-4. 由零向量 / 负向量定义直接验证. $\square$
 </p>
-<ol>
-<li><strong>零向量恒等</strong>: $\vec{a}$ + $\vec{0}$ = $\vec{a}$</li>
-<li><strong>负向量</strong>: $\vec{a}$ + (-$\vec{a}$) = $\vec{0}$</li>
-</ol>
+</div>
+<div class="box-intuition">
+<p>物理意义</p>
 <p>
-<strong>应用</strong>: 多力作用于一点时, 合力 = 所有力向量加和 (顺序无所谓).
+多力作用于一点时, <strong>合力 = 所有力向量加和</strong>, 加的顺序无所谓 (老大早上来车里发动机加速度向量也是这么算的).
 </p>
+</div>
 <h3 id="3">知识点 3: 向量数乘 (用一个数乘向量)</h3>
 <div class="box-def">
 <p>向量数乘</p>
