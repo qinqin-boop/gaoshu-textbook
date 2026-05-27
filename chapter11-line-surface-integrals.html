@@ -1733,6 +1733,30 @@ $$\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \vec{v}) = 0$$
 <strong>不可压缩</strong> ($\rho$ 常数): $\nabla \cdot \vec{v} = 0$ (速度场无源).
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="cont_arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+    <marker id="cont_arrout" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c2410c"/></marker>
+  </defs>
+  <!-- 控制体 V (方块) -->
+  <rect x="160" y="80" width="160" height="100" fill="#1a365d" fill-opacity="0.15" stroke="#1a365d" stroke-width="2"/>
+  <text x="200" y="135" font-size="13" fill="#1a365d" font-weight="bold">控制体 V (密度 ρ)</text>
+  <!-- 入流 (左) -->
+  <line x1="60" y1="110" x2="155" y2="110" stroke="#22543d" stroke-width="2.5" marker-end="url(#cont_arr)"/>
+  <text x="70" y="103" font-size="12" fill="#22543d" font-weight="bold">入流 ρv</text>
+  <line x1="60" y1="150" x2="155" y2="150" stroke="#22543d" stroke-width="2.5" marker-end="url(#cont_arr)"/>
+  <!-- 出流 (右) -->
+  <line x1="325" y1="110" x2="420" y2="110" stroke="#c2410c" stroke-width="2.5" marker-end="url(#cont_arrout)"/>
+  <text x="340" y="103" font-size="12" fill="#c2410c" font-weight="bold">出流 ρv</text>
+  <line x1="325" y1="150" x2="420" y2="150" stroke="#c2410c" stroke-width="2.5" marker-end="url(#cont_arrout)"/>
+  <!-- 公式 -->
+  <text x="40" y="35" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">连续性方程: 进多少 = 出多少 + 内部增量</text>
+  <text x="40" y="210" font-size="12" font-family="serif" fill="#1a365d">∂ρ/∂t + ∇·(ρv) = 0 (质量守恒)</text>
+  <text x="40" y="228" font-size="11" fill="#666">不可压缩流体: ∇·v = 0 (速度场无源, 进多少出多少)</text>
+</svg>
+<figcaption>图 11.7.3 连续性方程: 控制体 $V$ 进出流的差 = 内部密度变化率 (流体力学的"基本守恒律"开端)</figcaption>
+</figure>
 <div class="box-intuition">
 <p>Gauss 公式推导</p>
 <p>
