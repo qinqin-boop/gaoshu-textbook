@@ -1370,21 +1370,33 @@ $\lambda$=-1/2: y = -x, → x = ±1/√2, y = ∓1/√2. f = -1/2 (极小).
 </p>
 </div>
 <h3 id="20">知识点 20: 多元微分应用大全 (本章工程价值)</h3>
+<div class="box-intuition">
+<p>多元微分 — 5 大领域基础</p>
 <p>
 <strong>1. 经济学</strong>:
 </p>
 <ul>
-<li>效用函数 U(x, y) (x 食物, y 衣服), MU_x = ∂U/∂x (食物边际效用)</li>
-<li>拉格朗日乘数: 给定预算约束 px·x + py·y = I, 求 U 最大. $\lambda$ = 边际效用 / 边际价格 = "1 块钱能换多少效用"</li>
+<li>效用函数 $U(x, y)$ (食物 / 衣服), <strong>边际效用</strong> $MU_x = \partial U/\partial x$</li>
+<li>拉格朗日乘数: 预算约束 $p_x x + p_y y = I$ 下 $U$ 最大. $\lambda =$ "1 块钱能换多少效用"</li>
 </ul>
 <p>
-<strong>2. 物理学</strong>:
+<strong>2. 物理 PDE</strong>:
 </p>
 <ul>
-<li>偏微分方程: 热传导 ∂T/∂t = $\alpha$·∇²T (T 是温度), ∇² = 拉普拉斯算子</li>
-<li>波动方程: ∂²u/∂t² = c²·∇²u</li>
-<li>量子力学 Schrödinger 方程: iℏ ∂ψ/∂t = -ℏ²/(2m)·∇²ψ + Vψ</li>
+<li>热传导: $\partial T/\partial t = \alpha \Delta T$</li>
+<li>波动: $\partial^2 u/\partial t^2 = c^2 \Delta u$</li>
+<li><strong>薛定谔</strong>: $i\hbar \partial\psi/\partial t = -\hbar^2/(2m) \Delta\psi + V\psi$</li>
 </ul>
+<p>
+<strong>3. AI / ML 训练</strong>:
+</p>
+<ul>
+<li>损失函数 $L(\theta)$ 多元 ($\theta$ 上亿参数)</li>
+<li>反向传播: 链式法则求 $\nabla L$</li>
+<li>梯度下降: $\theta \leftarrow \theta - \eta \nabla L$</li>
+<li>Hessian: 二阶优化 (实际用 quasi-Newton 近似)</li>
+</ul>
+</div>
 <p>
 <strong>3. AI/ML 训练</strong>:
 </p>
