@@ -1416,28 +1416,33 @@ $\sum_{m,n=1}^\infty a_{m,n}$ — 项按 $(m, n)$ 双指标的级数.
 <strong>教训</strong>: 处理条件收敛级数 (傅里叶系数、量子振幅), 不能随便交换顺序. <strong>绝对收敛</strong>是数值稳定的前提.
 </p>
 <h3 id="8-9">知识点 8.9: 黎曼 ζ 函数 与素数</h3>
+<div class="box-def">
+<p>Riemann ζ 函数</p>
 <p>
-<strong>定义</strong>: ζ(s) = ∑_(n=1)^∞ 1/n^s, Re(s) &gt; 1.
+$$\zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s}, \quad \text{Re}(s) > 1$$
+解析延拓后可定义到除 $s = 1$ 外的整个复平面.
 </p>
+</div>
+<div class="box-thm">
+<p>Euler 乘积公式</p>
 <p>
-<strong>已知特殊值</strong>:
+$$\zeta(s) = \prod_{p \text{ prime}} \frac{1}{1 - p^{-s}}$$
+<strong>意义</strong>: "加" (左边求和) = "乘" (右边按素数乘). <strong>解析数论的起点</strong>.
 </p>
+</div>
+<div class="box-intuition">
+<p>ζ 经典特殊值</p>
 <ul>
-<li>ζ(2) = π²/6 (Basel 问题)</li>
-<li>ζ(4) = π⁴/90</li>
-<li>ζ(2k) = (-1)^(k+1) B_(2k) (2π)^(2k) / (2 (2k)!) (Bernoulli)</li>
-<li>ζ(-1) = -1/12 (解析延拓, 物理学中弦理论用)</li>
+<li>$\zeta(2) = \pi^2/6$ (Basel 问题, Euler 1734)</li>
+<li>$\zeta(4) = \pi^4/90$</li>
+<li>$\zeta(-1) = -1/12$ (解析延拓; 物理学弦理论用)</li>
+<li>$\zeta(2k)$ 用 Bernoulli 数算 (闭式)</li>
+<li>$\zeta(2k+1)$ 闭式至今未知 (Apéry 1978 证 $\zeta(3)$ 无理)</li>
 </ul>
 <p>
-<strong>欧拉乘积</strong>:
-ζ(s) = ∏_p prime 1/(1 - p^(-s))
+<strong>黎曼猜想 (RH)</strong>: $\zeta(s)$ 的非平凡零点全在 $\text{Re}(s) = 1/2$ 上 — 数学界第一大悬案, 100 万美元奖.
 </p>
-<p>
-<strong>证明速写</strong>: 1/(1-p^(-s)) = ∑_(k=0)^∞ p^(-ks). 乘起来按算术基本定理对应每个 n^(-s) 恰好一次.
-</p>
-<p>
-<strong>意义</strong>: 把"加" (左边求和) 等于"乘" (右边按素数). 这是解析数论的起点, 黎曼猜想 (RH) 就讨论 ζ 函数零点位置.
-</p>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
