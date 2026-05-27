@@ -488,8 +488,25 @@ $f$ 是曲面高度, 体积 = 曲面在 $D$ 上方与 $xy$ 平面之间的空间
 </ul>
 </div>
 <h3 id="11">知识点 11: 求重心</h3>
+<div class="box-def">
+<p>平面薄板重心 (Center of Mass)</p>
 <p>
-平面薄板重心:
+$$\bar{x} = \frac{\iint_D x\mu\,d\sigma}{\iint_D \mu\,d\sigma}, \qquad \bar{y} = \frac{\iint_D y\mu\,d\sigma}{\iint_D \mu\,d\sigma}$$
+分母 = 总质量, 分子 = 质量加权位置. 三维体类似 ($d\sigma \to dV$, 多一个 $\bar{z}$).
+</p>
+</div>
+<div class="box-intuition">
+<p>"质量加权平均位置"</p>
+<p>
+重心 = 把质量看成"权重"算位置的加权平均.
+</p>
+<ul>
+<li>均匀密度 ($\mu$ = 常数): 重心 = 几何中心 (形心)</li>
+<li>非均匀: 偏向密度大的一边</li>
+<li><strong>跷跷板平衡</strong>: 支点放重心, 两边力矩自动相等</li>
+</ul>
+<p>
+平面薄板重心 (原文公式):
 x̄ = (∬ xμ  dσ)/(∬ $\mu$  dσ),    ȳ = (∬ yμ  dσ)/(∬ $\mu$  dσ)
 </p>
 <h3 id="12">知识点 12: 求转动惯量</h3>
