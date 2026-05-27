@@ -1111,11 +1111,28 @@ $$L(\theta')\le L(\theta)-\eta\|\nabla L\|^2+\tfrac{L\eta^2}{2}\|\nabla L\|^2=L(
 <div class="box-thm">
 <p>空间曲线切线</p>
 <p>
-参数曲线 $\vec{r}(t) = (x(t), y(t), z(t))$, 切向量 $\vec{r}'(t) = (x'(t), y'(t), z'(t))$.
+参数曲线 $\vec{r}(t) = (x(t), y(t), z(t))$, <strong>切向量</strong> = 速度向量 $\vec{r}'(t) = (x'(t), y'(t), z'(t))$.
 </p>
 <p>
 切线方程 (点向式, 在 $t_0$ 处):
 $$\frac{x - x(t_0)}{x'(t_0)} = \frac{y - y(t_0)}{y'(t_0)} = \frac{z - z(t_0)}{z'(t_0)}$$
+</p>
+<p>
+(要求分母都不为零, 否则用对称式或参数式表达.)
+</p>
+</div>
+<div class="box-intuition">
+<p>物理意义 — "瞬时速度方向"</p>
+<p>
+把曲线想成质点运动轨迹, $t$ 是时间. $\vec{r}'(t)$ 就是质点在 $t_0$ 时刻的<strong>瞬时速度向量</strong>, 大小 = 速率, 方向 = 切线方向. 切线就是"延着速度方向直线运动"的极限.
+</p>
+</div>
+<div class="box-example">
+<p>例题 8-1</p>
+<p>
+螺旋线 $\vec{r}(t) = (\cos t, \sin t, t)$ 在 $t_0 = \pi/2$ 处切线?
+$\vec{r}'(t) = (-\sin t, \cos t, 1)$, 在 $t_0 = \pi/2$ 处 $= (-1, 0, 1)$. 切点 $= (0, 1, \pi/2)$.
+切线: $\dfrac{x}{-1} = \dfrac{y - 1}{0} = \dfrac{z - \pi/2}{1}$ (注意 $y$ 分量为零, 意味着 $y \equiv 1$).
 </p>
 </div>
 <p>
