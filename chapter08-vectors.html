@@ -298,6 +298,33 @@ $$\cos\alpha=\frac{a_1}{|\vec{a}|},\quad\cos\beta=\frac{a_2}{|\vec{a}|},\quad\co
 满足约束 $\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$(即 $|\vec{a}|^2/|\vec{a}|^2=1$),也就是说<strong>方向余弦构成 $\vec{a}$ 的单位向量分量</strong>。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="dirarra" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <!-- 3D 坐标轴 -->
+  <line x1="60" y1="190" x2="320" y2="190" stroke="#666" stroke-width="1.5"/>
+  <line x1="60" y1="190" x2="60" y2="30" stroke="#666" stroke-width="1.5"/>
+  <line x1="60" y1="190" x2="160" y2="140" stroke="#666" stroke-width="1.5"/>
+  <text x="325" y="195" font-size="12" fill="#666">x</text>
+  <text x="50" y="25" font-size="12" fill="#666">z</text>
+  <text x="165" y="135" font-size="12" fill="#666">y</text>
+  <!-- 向量 a -->
+  <line x1="60" y1="190" x2="220" y2="70" stroke="#1a365d" stroke-width="2.5" marker-end="url(#dirarra)"/>
+  <text x="225" y="68" font-size="14" fill="#1a365d" font-weight="bold">a</text>
+  <!-- 三个夹角弧 -->
+  <path d="M 100,190 A 40 40 0 0 0 88,168" fill="none" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="103" y="180" font-size="11" fill="#c2410c" font-weight="bold">α</text>
+  <path d="M 90,150 A 30 30 0 0 1 105,168" fill="none" stroke="#22543d" stroke-width="1.5"/>
+  <text x="105" y="160" font-size="11" fill="#22543d" font-weight="bold">β</text>
+  <path d="M 75,165 A 25 25 0 0 1 85,150" fill="none" stroke="#8b6f1c" stroke-width="1.5"/>
+  <text x="40" y="155" font-size="11" fill="#8b6f1c" font-weight="bold">γ</text>
+  <!-- 公式 -->
+  <text x="40" y="220" font-size="11" fill="#666">cos²α + cos²β + cos²γ = 1 (方向余弦构成单位向量)</text>
+</svg>
+<figcaption>图 8.1.6 方向余弦: $\vec{a}$ 跟 $x/y/z$ 轴的夹角 $\alpha, \beta, \gamma$ 的余弦, 平方和恒等于 1</figcaption>
+</figure>
 <div class="box-pitfall">
 <p>
 <strong>易错点</strong>:
