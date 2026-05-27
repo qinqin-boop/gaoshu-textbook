@@ -1334,6 +1334,37 @@ $$d=\frac{|\overrightarrow{M_0P_1}\times\vec{s}|}{|\vec{s}|}.$$
 $\overrightarrow{M_0P_1}\times\vec{s}$ 的模 $=|\overrightarrow{M_0P_1}|\cdot|\vec{s}|\sin\varphi$(平行四边形面积,$\varphi$ 是 $\overrightarrow{M_0P_1}$ 与 $\vec{s}$ 的夹角)。$|\overrightarrow{M_0P_1}|\sin\varphi$ 就是 $P_1$ 到 $\ell$ 的距离。除以 $|\vec{s}|$ 即得。
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="ptl_arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <!-- 直线 ℓ -->
+  <line x1="40" y1="170" x2="440" y2="170" stroke="#1a365d" stroke-width="2.5" marker-end="url(#ptl_arr)"/>
+  <text x="450" y="174" font-size="13" fill="#1a365d" font-style="italic" font-weight="bold">ℓ</text>
+  <!-- 方向向量 s -->
+  <line x1="240" y1="170" x2="330" y2="170" stroke="#22543d" stroke-width="3"/>
+  <text x="270" y="195" font-size="12" fill="#22543d" font-weight="bold">s (方向)</text>
+  <!-- M_0 点 -->
+  <circle cx="240" cy="170" r="4" fill="#22543d"/>
+  <text x="225" y="195" font-size="11" fill="#22543d" font-weight="bold">M₀</text>
+  <!-- P_1 点 -->
+  <circle cx="320" cy="60" r="5" fill="#c2410c"/>
+  <text x="328" y="60" font-size="13" fill="#c2410c" font-weight="bold">P₁</text>
+  <!-- 距离垂线 -->
+  <line x1="320" y1="60" x2="320" y2="170" stroke="#c2410c" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="330" y="115" font-size="13" fill="#c2410c" font-weight="bold">d</text>
+  <!-- 平行四边形 (M_0 P_1 s) -->
+  <path d="M 240,170 L 320,60 L 410,60 L 330,170 Z" fill="#c2410c" fill-opacity="0.15" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <!-- M_0 P_1 向量 -->
+  <line x1="240" y1="170" x2="320" y2="60" stroke="#1a365d" stroke-width="1.5" marker-end="url(#ptl_arr)"/>
+  <text x="245" y="100" font-size="11" fill="#1a365d">M₀P₁</text>
+  <!-- 公式 -->
+  <text x="40" y="35" font-size="14" font-family="serif" fill="#1a365d" font-weight="bold">点到直线距离: d = |M₀P₁ × s| / |s|</text>
+  <text x="40" y="220" font-size="11" fill="#666">分子 = 平行四边形面积; 分母 = 底边长 |s|; 故 d = 高</text>
+</svg>
+<figcaption>图 8.5.3 点 $P_1$ 到直线 $\ell$ 距离 = 平行四边形面积 / 底边长 = 平行四边形的高</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 (异面直线公垂线距离)两条异面直线 $\ell_1$($M_1,\vec{s}_1$)、$\ell_2$($M_2,\vec{s}_2$)的公垂线段长度
