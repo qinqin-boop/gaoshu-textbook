@@ -1730,33 +1730,35 @@ $\{a_n\}$ 收敛 ⟺ $\forall \epsilon > 0, \exists N, \forall m, n > N: |a_m - 
 <li>PDE: Sobolev H¹ 是 Hilbert 空间</li>
 </ul>
 <h3 id="8-20-clt">知识点 8.20: 中心极限定理 (CLT) 与级数</h3>
+<div class="box-thm">
+<p>中心极限定理 (经典版)</p>
 <p>
-<strong>CLT 经典版</strong>: X₁, X₂, ... 独立同分布, EX=$\mu$, Var X=σ². 则:
-S_n = (X₁ + ... + X_n - nμ)/(σ√n) → N(0, 1) 分布上.
+$X_1, X_2, \ldots$ 独立同分布, 期望 $\mathbb{E}X = \mu$, 方差 $\text{Var}\,X = \sigma^2 < \infty$. 则
+$$S_n = \frac{X_1 + \cdots + X_n - n\mu}{\sigma\sqrt{n}} \xrightarrow{\text{分布}} N(0, 1)$$
 </p>
-<p>
-<strong>为什么这里讲</strong>: CLT 证明用到特征函数 (Fourier 变换), 是级数论 + 复分析的产物.
-</p>
-<p>
-<strong>证明大纲</strong>:
-</p>
+</div>
+<div class="box-proof">
+<p>特征函数法</p>
 <ol>
-<li>特征函数 $\varphi$(t) = E[e^(itX)]. 中心化后 φ_(Xᵢ-$\mu$)(t) = 1 - σ²t²/2 + o(t²).</li>
-<li>φ_(S_n)(t) = [φ_((X-$\mu$)/(σ√n))(t)]^n = [1 - t²/(2n) + o(1/n)]^n → e^(-t²/2).</li>
-<li>e^(-t²/2) 是 N(0,1) 的特征函数.</li>
+<li>特征函数 $\varphi(t) = \mathbb{E}[e^{itX}]$. 中心化后 $\varphi_{X_i - \mu}(t) = 1 - \sigma^2 t^2/2 + o(t^2)$ (用 Taylor)</li>
+<li>$\varphi_{S_n}(t) = [\varphi_{(X-\mu)/(\sigma\sqrt{n})}(t)]^n = [1 - t^2/(2n) + o(1/n)]^n \to e^{-t^2/2}$ (用 $(1+x/n)^n \to e^x$)</li>
+<li>$e^{-t^2/2}$ 是 $N(0,1)$ 的特征函数 → 由 Lévy 连续性定理推 $S_n \to N(0,1)$ 分布. $\square$</li>
 </ol>
+</div>
+<div class="box-intuition">
+<p>CLT 4 大跨界应用</p>
 <p>
-<strong>核心</strong>: 利用 (1+x/n)^n → e^x (高数 e 定义) + Taylor 展开 + 极限交换.
+| 领域 | 怎么用 CLT |
+|---|---|
+| 统计 | 样本均值 $\approx$ 总体均值 + 正态误差 (置信区间核心) |
+| 物理 | 布朗运动从随机分子碰撞 → 正态分布 (Einstein 1905) |
+| ML | 神经网络初始化 (Xavier / He) 用 CLT 保证激活值方差稳定 |
+| 金融 | Black-Scholes 假设股价对数正态 (CLT 在时间维) |
 </p>
 <p>
-<strong>应用</strong>:
+<strong>核心组件</strong>: $(1+x/n)^n \to e^x$ (高数 $e$ 定义) + Taylor 展开 + 极限交换. <strong>整个 CLT 是高数级数论的胜利</strong>.
 </p>
-<ul>
-<li>民意调查: 样本均值 ≈ 总体均值 + 正态误差</li>
-<li>物理: 布朗运动从随机分子碰撞 → CLT → 正态分布</li>
-<li>ML: 神经网络初始化 (Xavier/He 初始化用 CLT)</li>
-<li>金融: Black-Scholes 假设股价对数正态 (CLT 在时间维)</li>
-</ul>
+</div>
 <h3 id="8-21-lln">知识点 8.21: 大数定律 LLN (级数的概率版本)</h3>
 <p>
 <strong>弱大数定律 (WLLN)</strong>: S_n/n → $\mu$ 依概率收敛.
