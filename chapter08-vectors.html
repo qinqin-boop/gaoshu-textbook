@@ -1283,24 +1283,30 @@ q = (cos 45°, 0, 0, sin 45°) = (√2/2, 0, 0, √2/2).
 <li>3 阶: 立方体数组 (RGB 图像 H×W×3)</li>
 <li>高阶: 神经网络权重 (4 阶卷积核 N×C×H×W)</li>
 </ul>
+<div class="box-def">
+<p>张量积 + Einstein 求和约定</p>
 <p>
 <strong>张量积</strong>: 把两个张量"合并"扩展维度:
-(a⊗b)_(ij) = a_i · b_j
+$$(a\otimes b)_{ij} = a_i \cdot b_j$$
 </p>
 <p>
-<strong>爱因斯坦求和约定</strong>: 重复指标自动求和.
-A_(ij) B^(j) = ∑_j A_(ij) B^j
+<strong>Einstein 求和约定</strong>: 重复指标自动求和.
+$$A_{ij} B^j = \sum_j A_{ij} B^j$$
+省掉满纸的求和符号. 广义相对论 / 张量分析的标配记法.
 </p>
+</div>
+<div class="box-intuition">
+<p>张量 5 大跨界应用</p>
 <p>
-<strong>应用</strong>:
+| 领域 | 张量是什么 |
+|---|---|
+| 广义相对论 | 时空度量 $g_{\mu\nu}$ = 2 阶张量, 完整张量方程描述时空弯曲 |
+| 机器学习 | PyTorch / TF 中 "<strong>tensor</strong>" 就是多维数组 (本质张量代数) |
+| 连续介质 | 应力 / 应变张量 (2 阶), 描述各方向受力 |
+| 计算机视觉 | 彩色图像 = $(H, W, 3)$ 张量; batch 训练 $(B, C, H, W)$ 4 阶 |
+| 量子多体 | $N$ 粒子波函数是 $N$ 阶张量, 维度爆炸是量子计算硬件存在的理由 |
 </p>
-<ul>
-<li>广义相对论: 时空度量 g_(μν) 是 2 阶张量</li>
-<li>ML: PyTorch/TF 的 tensor 就是多维数组</li>
-<li>物理: 应力/应变张量</li>
-<li>图像: 彩色图像 = (H, W, 3) 张量</li>
-<li>量子: 多体波函数是高阶张量</li>
-</ul>
+</div>
 <h3 id="6-13">知识点 6.13: 向量空间的线性独立性 + 基与维数</h3>
 <p>
 <strong>线性独立</strong>: 向量组 $\vec{v}$₁, ..., $\vec{v}$_n 线性独立 ⟺ c₁v→₁ + ... + c_nv→_n = 0 仅当所有 c_i = 0.
