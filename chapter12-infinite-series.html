@@ -2502,6 +2502,33 @@ $X_1, X_2, \ldots$ 独立同分布, 期望 $\mathbb{E}X = \mu$, 方差 $\text{Va
 $$S_n = \frac{X_1 + \cdots + X_n - n\mu}{\sigma\sqrt{n}} \xrightarrow{\text{分布}} N(0, 1)$$
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- CLT 直观: 从均匀分布累加变成正态 -->
+  <!-- 1) 均匀分布 n=1 -->
+  <text x="20" y="30" font-size="13" fill="#1a365d" font-weight="bold">n=1: 均匀</text>
+  <line x1="10" y1="200" x2="130" y2="200" stroke="#666" stroke-width="1"/>
+  <rect x="30" y="120" width="90" height="80" fill="#22543d" fill-opacity="0.5" stroke="#22543d"/>
+
+  <!-- 2) n=2: 三角形 -->
+  <text x="160" y="30" font-size="13" fill="#1a365d" font-weight="bold">n=2: 三角形</text>
+  <line x1="150" y1="200" x2="290" y2="200" stroke="#666" stroke-width="1"/>
+  <polygon points="160,200 220,100 280,200" fill="#22543d" fill-opacity="0.5" stroke="#22543d"/>
+
+  <!-- 3) n=5: 接近钟形 -->
+  <text x="320" y="30" font-size="13" fill="#1a365d" font-weight="bold">n=5: 接近钟形</text>
+  <line x1="310" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1"/>
+  <path d="M 320,200 Q 340,160 380,90 Q 420,160 440,200 Z" fill="#22543d" fill-opacity="0.5" stroke="#22543d"/>
+
+  <!-- 4) n→∞: 正态 -->
+  <text x="465" y="30" font-size="12" fill="#c2410c" font-weight="bold">n→∞: 高斯</text>
+  <line x1="455" y1="200" x2="535" y2="200" stroke="#666" stroke-width="1"/>
+  <path d="M 458,200 Q 470,180 495,80 Q 520,180 532,200 Z" fill="#c2410c" fill-opacity="0.5" stroke="#c2410c"/>
+
+  <text x="40" y="222" font-size="13" font-family="serif" fill="#1a365d" font-weight="bold">CLT 直观: n 个 iid 随机变量累加 → 正态分布 (与原分布无关!)</text>
+</svg>
+<figcaption>图 12.5.6 CLT 直观: 从均匀分布出发, 累加项数 $n$ 增大, 部分和分布逐渐收敛到正态 — 跟原分布形态无关</figcaption>
+</figure>
 <div class="box-proof">
 <p>特征函数法</p>
 <ol>
