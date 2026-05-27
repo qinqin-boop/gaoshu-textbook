@@ -1359,21 +1359,32 @@ f(x, y) &amp;= f(a, b) + \big[f_x(a,b)(x-a) + f_y(a,b)(y-b)\big] \\
 </div>
 <h2 id="9-10-9-10">9.10 最小二乘法 (对齐书 §9.10)</h2>
 <h3 id="19">知识点 19: 最小二乘法</h3>
+<div class="box-def">
+<p>最小二乘问题</p>
 <p>
-<strong>问题</strong>: 一堆数据点 (xᵢ, yᵢ), 怎么找一条直线 y = ax + b 最贴合?
+给一堆数据点 $(x_i, y_i)$ ($i = 1, \ldots, n$), 找直线 $y = ax + b$ 使<strong>残差平方和</strong>最小:
+$$S(a, b) = \sum_{i=1}^n (y_i - ax_i - b)^2$$
 </p>
+</div>
+<div class="box-thm">
+<p>最小二乘解 (正规方程)</p>
 <p>
-<strong>思想</strong>: "误差平方和最小". 残差 = (yᵢ - axᵢ - b)², 加起来求最小:
-S(a, b) = Σᵢ (yᵢ - axᵢ - b)²
+对 $S$ 求 $\partial_a, \partial_b$ 都为 0, 联立得:
+$$a = \frac{n\sum x_iy_i - \sum x_i \sum y_i}{n\sum x_i^2 - (\sum x_i)^2}, \qquad b = \frac{\sum y_i - a\sum x_i}{n} = \bar{y} - a\bar{x}$$
 </p>
+</div>
+<div class="box-intuition">
+<p>为啥用平方和 (不用绝对值)</p>
+<ol>
+<li><strong>正负误差不抵消</strong> (相反方向误差不会互消)</li>
+<li><strong>求导方便</strong>: 平方 → 一阶导是线性方程, 闭式解</li>
+<li><strong>统计意义</strong>: 假设噪声服从高斯, 平方和 = 最大似然估计 (MLE)</li>
+<li>几何: 残差向量在解空间正交投影 = 最近距离</li>
+</ol>
 <p>
-对 a, b 求偏导 = 0, 解出:
-a = (n·Σxy - Σx·Σy) / (n·Σx² - (Σx)²)
-b = (Σy - a·Σx) / n
+绝对值的 $L^1$ 也可以 (Robust regression), 但解不是闭式, 要数值求.
 </p>
-<p>
-<strong>为啥用平方和</strong>: ① 处理"正负误差不抵消" ② 求导方便 ③ 跟正态分布最大似然估计一致.
-</p>
+</div>
 <div class="box-example">
 <p>例题 12</p>
 <p>
