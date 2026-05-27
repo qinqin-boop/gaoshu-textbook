@@ -25,25 +25,66 @@
   <nav><a href="./index.html">← 章节列表</a></nav>
 </header>
 <div class="layout">
-<aside class="toc-sidebar"><h3>本章目录</h3><ul><li><a class="h2" href="#9-0">9.0 整章在干啥?</a></li><li><a class="h2" href="#9-1">9.1 多元函数的基本概念</a></li><li><a class="h3" href="#9-1-1">9.1.1 定义域与函数图像</a></li><li><a class="h3" href="#9-1-2">9.1.2 二元函数的极限</a></li><li><a class="h3" href="#9-1-3">9.1.3 连续性</a></li><li><a class="h3" href="#9-1-4">9.1.4 等高线与图像</a></li><li><a class="h2" href="#9-2">9.2 偏导数</a></li><li><a class="h3" href="#9-2-1">9.2.1 定义</a></li><li><a class="h3" href="#9-2-2">9.2.2 偏导数存在 ≠ 函数连续(关键陷阱)</a></li><li><a class="h3" href="#9-2-3-clairaut">9.2.3 高阶偏导与 Clairaut 定理</a></li><li><a class="h3" href="#9-2-4">9.2.4 偏导数的几何意义与切平面</a></li><li><a class="h2" href="#9-3">9.3 全微分</a></li><li><a class="h3" href="#9-3-1">9.3.1 全微分的定义</a></li><li><a class="h3" href="#9-3-2-vs-vs">9.3.2 可微 vs 偏导存在 vs 连续 — 三者关系</a></li><li><a class="h3" href="#9-3-3">9.3.3 全微分的近似计算应用</a></li><li><a class="h3" href="#9-3-4">9.3.4 雅可比矩阵预热</a></li><li><a class="h2" href="#9-4">9.4 多元复合函数求导(链式法则)</a></li><li><a class="h3" href="#9-4-1">9.4.1 一元中间变量</a></li><li><a class="h3" href="#9-4-2">9.4.2 多中间变量(核心情形)</a></li><li><a class="h3" href="#9-4-3">9.4.3 一般情形:雅可比矩阵语言</a></li><li><a class="h3" href="#9-4-4-backpropagation">9.4.4 反向传播(Backpropagation)</a></li><li><a class="h3" href="#9-4-5">9.4.5 高阶导数</a></li><li><a class="h2" href="#9-5">9.5 隐函数求导</a></li><li><a class="h3" href="#9-5-1">9.5.1 一元隐函数</a></li><li><a class="h3" href="#9-5-2">9.5.2 二元隐函数</a></li><li><a class="h3" href="#9-5-3">9.5.3 方程组 / 隐函数组</a></li><li><a class="h3" href="#9-5-4">9.5.4 几何意义:隐函数定理与流形</a></li><li><a class="h3" href="#9-5-5">9.5.5 与机器学习 / 经济学的关系</a></li><li><a class="h2" href="#9-6">9.6 方向导数与梯度</a></li><li><a class="h3" href="#9-6-1">9.6.1 方向导数</a></li><li><a class="h3" href="#9-6-2">9.6.2 梯度</a></li><li><a class="h3" href="#9-6-3">9.6.3 例题</a></li><li><a class="h3" href="#9-6-4-ai">9.6.4 与 AI 优化的联系</a></li><li><a class="h2" href="#9-7">9.7 多元微分的几何应用</a></li><li><a class="h3" href="#9-7-1">9.7.1 空间曲线的切线与法平面</a></li><li><a class="h3" href="#9-7-2">9.7.2 曲面的切平面与法线(隐式)</a></li><li><a class="h3" href="#9-7-3-z-f-x-y">9.7.3 显式曲面 $z=f(x,y)$ 的切平面</a></li><li><a class="h3" href="#9-7-4">9.7.4 切平面在物理 / 工程的应用</a></li><li><a class="h3" href="#9-7-5">9.7.5 等量面族的正交性</a></li><li><a class="h2" href="#9-8">9.8 多元函数的极值</a></li><li><a class="h3" href="#9-8-1">9.8.1 法线方程(补完)</a></li><li><a class="h3" href="#9-8-2-fermat">9.8.2 极值的必要条件(Fermat)</a></li><li><a class="h3" href="#9-8-3-hessian">9.8.3 二阶判别(Hessian)</a></li><li><a class="h3" href="#9-8-4">9.8.4 例题与高维推广</a></li><li><a class="h3" href="#9-8-5">9.8.5 与凸优化、机器学习的联系</a></li><li><a class="h2" href="#9-9-taylor">9.9 二元函数的 Taylor 公式</a></li><li><a class="h3" href="#9-9-1-taylor">9.9.1 二元 Taylor 公式</a></li><li><a class="h3" href="#9-9-2">9.9.2 一阶 / 二阶展开:专门写出</a></li><li><a class="h3" href="#9-9-3">9.9.3 例题</a></li><li><a class="h3" href="#9-9-4-taylor-hessian">9.9.4 用 Taylor 推 Hessian 二阶判别(完整连接)</a></li><li><a class="h3" href="#9-9-5-taylor">9.9.5 多元 Taylor 在数值优化的角色</a></li><li><a class="h2" href="#9-10">9.10 最小二乘法</a></li><li><a class="h3" href="#9-10-1">9.10.1 线性回归的问题陈述</a></li><li><a class="h3" href="#9-10-2">9.10.2 二元极值法解线性回归</a></li><li><a class="h3" href="#9-10-3">9.10.3 矩阵形式与几何意义</a></li><li><a class="h3" href="#9-10-4">9.10.4 推广:多元线性回归与非线性拟合</a></li><li><a class="h3" href="#9-10-5">9.10.5 与机器学习的关系</a></li><li><a class="h3" href="#20">知识点 20: 多元微分应用大全 (本章工程价值)</a></li><li><a class="h2" href="#kkt">补充: 优化深化 — 牛顿法 / KKT 条件</a></li><li><a class="h3" href="#9-5">知识点 9.5: 牛顿法 求多元极值</a></li><li><a class="h3" href="#9-6-kkt">知识点 9.6: KKT 条件 (不等式约束)</a></li><li><a class="h3" href="#9-7">知识点 9.7: 多元函数的方向导数完整定义</a></li><li><a class="h3" href="#9-8-envelope">知识点 9.8: 包络 (Envelope) 与判别曲线</a></li><li><a class="h3" href="#9-9">知识点 9.9: 隐函数定理 — 完整证明思路</a></li><li><a class="h3" href="#9-10">知识点 9.10: 二元函数泰勒展开</a></li><li><a class="h3" href="#9-11">知识点 9.11: 梯度下降变体 (深度学习核心)</a></li><li><a class="h3" href="#9-12-autograd">知识点 9.12: 自动微分 (Autograd)</a></li><li><a class="h3" href="#9-13">知识点 9.13: 函数族的一致收敛 (深度学习的泛化基石)</a></li><li><a class="h3" href="#9-14">知识点 9.14: 多元微分的微分形式回看</a></li></ul></aside>
+<aside class="toc-sidebar"><h3>本章目录</h3><ul><li><a class="h2" href="#9-0">9.0 整章在干啥?</a></li><li><a class="h3" href="#9-0-1">9.0.1 全章地图</a></li><li><a class="h3" href="#9-0-2">9.0.2 核心定理速查</a></li><li><a class="h3" href="#9-0-3">9.0.3 学这章的意义</a></li><li><a class="h2" href="#9-1">9.1 多元函数的基本概念</a></li><li><a class="h3" href="#9-1-1">9.1.1 定义域与函数图像</a></li><li><a class="h3" href="#9-1-2">9.1.2 二元函数的极限</a></li><li><a class="h3" href="#9-1-3">9.1.3 连续性</a></li><li><a class="h3" href="#9-1-4">9.1.4 等高线与图像</a></li><li><a class="h2" href="#9-2">9.2 偏导数</a></li><li><a class="h3" href="#9-2-1">9.2.1 定义</a></li><li><a class="h3" href="#9-2-2">9.2.2 偏导数存在 ≠ 函数连续(关键陷阱)</a></li><li><a class="h3" href="#9-2-3-clairaut">9.2.3 高阶偏导与 Clairaut 定理</a></li><li><a class="h3" href="#9-2-4">9.2.4 偏导数的几何意义与切平面</a></li><li><a class="h2" href="#9-3">9.3 全微分</a></li><li><a class="h3" href="#9-3-1">9.3.1 全微分的定义</a></li><li><a class="h3" href="#9-3-2-vs-vs">9.3.2 可微 vs 偏导存在 vs 连续 — 三者关系</a></li><li><a class="h3" href="#9-3-3">9.3.3 全微分的近似计算应用</a></li><li><a class="h3" href="#9-3-4">9.3.4 雅可比矩阵预热</a></li><li><a class="h2" href="#9-4">9.4 多元复合函数求导(链式法则)</a></li><li><a class="h3" href="#9-4-1">9.4.1 一元中间变量</a></li><li><a class="h3" href="#9-4-2">9.4.2 多中间变量(核心情形)</a></li><li><a class="h3" href="#9-4-3">9.4.3 一般情形:雅可比矩阵语言</a></li><li><a class="h3" href="#9-4-4-backpropagation">9.4.4 反向传播(Backpropagation)</a></li><li><a class="h3" href="#9-4-5">9.4.5 高阶导数</a></li><li><a class="h2" href="#9-5">9.5 隐函数求导</a></li><li><a class="h3" href="#9-5-1">9.5.1 一元隐函数</a></li><li><a class="h3" href="#9-5-2">9.5.2 二元隐函数</a></li><li><a class="h3" href="#9-5-3">9.5.3 方程组 / 隐函数组</a></li><li><a class="h3" href="#9-5-4">9.5.4 几何意义:隐函数定理与流形</a></li><li><a class="h3" href="#9-5-5">9.5.5 与机器学习 / 经济学的关系</a></li><li><a class="h2" href="#9-6">9.6 方向导数与梯度</a></li><li><a class="h3" href="#9-6-1">9.6.1 方向导数</a></li><li><a class="h3" href="#9-6-2">9.6.2 梯度</a></li><li><a class="h3" href="#9-6-3">9.6.3 例题</a></li><li><a class="h3" href="#9-6-4-ai">9.6.4 与 AI 优化的联系</a></li><li><a class="h2" href="#9-7">9.7 多元微分的几何应用</a></li><li><a class="h3" href="#9-7-1">9.7.1 空间曲线的切线与法平面</a></li><li><a class="h3" href="#9-7-2">9.7.2 曲面的切平面与法线(隐式)</a></li><li><a class="h3" href="#9-7-3-z-f-x-y">9.7.3 显式曲面 $z=f(x,y)$ 的切平面</a></li><li><a class="h3" href="#9-7-4">9.7.4 切平面在物理 / 工程的应用</a></li><li><a class="h3" href="#9-7-5">9.7.5 等量面族的正交性</a></li><li><a class="h2" href="#9-8">9.8 多元函数的极值</a></li><li><a class="h3" href="#9-8-1">9.8.1 法线方程(补完)</a></li><li><a class="h3" href="#9-8-2-fermat">9.8.2 极值的必要条件(Fermat)</a></li><li><a class="h3" href="#9-8-3-hessian">9.8.3 二阶判别(Hessian)</a></li><li><a class="h3" href="#9-8-4">9.8.4 例题与高维推广</a></li><li><a class="h3" href="#9-8-5">9.8.5 与凸优化、机器学习的联系</a></li><li><a class="h2" href="#9-9-taylor">9.9 二元函数的 Taylor 公式</a></li><li><a class="h3" href="#9-9-1-taylor">9.9.1 二元 Taylor 公式</a></li><li><a class="h3" href="#9-9-2">9.9.2 一阶 / 二阶展开:专门写出</a></li><li><a class="h3" href="#9-9-3">9.9.3 例题</a></li><li><a class="h3" href="#9-9-4-taylor-hessian">9.9.4 用 Taylor 推 Hessian 二阶判别(完整连接)</a></li><li><a class="h3" href="#9-9-5-taylor">9.9.5 多元 Taylor 在数值优化的角色</a></li><li><a class="h2" href="#9-10">9.10 最小二乘法</a></li><li><a class="h3" href="#9-10-1">9.10.1 线性回归的问题陈述</a></li><li><a class="h3" href="#9-10-2">9.10.2 二元极值法解线性回归</a></li><li><a class="h3" href="#9-10-3">9.10.3 矩阵形式与几何意义</a></li><li><a class="h3" href="#9-10-4">9.10.4 推广:多元线性回归与非线性拟合</a></li><li><a class="h3" href="#9-10-5">9.10.5 与机器学习的关系</a></li><li><a class="h3" href="#20">知识点 20: 多元微分应用大全 (本章工程价值)</a></li><li><a class="h2" href="#kkt">补充: 优化深化 — 牛顿法 / KKT 条件</a></li><li><a class="h3" href="#9-5">知识点 9.5: 牛顿法 求多元极值</a></li><li><a class="h3" href="#9-6-kkt">知识点 9.6: KKT 条件 (不等式约束)</a></li><li><a class="h3" href="#9-7">知识点 9.7: 多元函数的方向导数完整定义</a></li><li><a class="h3" href="#9-8-envelope">知识点 9.8: 包络 (Envelope) 与判别曲线</a></li><li><a class="h3" href="#9-9">知识点 9.9: 隐函数定理 — 完整证明思路</a></li><li><a class="h3" href="#9-10">知识点 9.10: 二元函数泰勒展开</a></li><li><a class="h3" href="#9-11">知识点 9.11: 梯度下降变体 (深度学习核心)</a></li><li><a class="h3" href="#9-12-autograd">知识点 9.12: 自动微分 (Autograd)</a></li><li><a class="h3" href="#9-13">知识点 9.13: 函数族的一致收敛 (深度学习的泛化基石)</a></li><li><a class="h3" href="#9-14">知识点 9.14: 多元微分的微分形式回看</a></li></ul></aside>
 <main class="textbook">
 <h1 id="">第九章 多元函数微分法及其应用</h1>
 <blockquote>对照: 同济大学《高等数学》第七版下册 第九章</blockquote>
 <blockquote>一元函数 y=f(x) 升级到多元 z = f(x, y) — 导数也跟着推广.</blockquote>
 <h2 id="9-0">9.0 整章在干啥?</h2>
 <p>
-一元函数 (中学/上册) 你已经会:
+一元微分 $\frac{dy}{dx}$ 描述「单变量函数」局部变化率;但<strong>现实世界几乎所有现象都依赖多个变量</strong>:温度依赖位置 $(x,y,z)$ 和时间 $t$,损失函数依赖神经网络的百万个参数,经济模型依赖价格 / 利率 / 货币供应。本章把"微分"扩展到多元函数:偏导(单方向)、全微分(线性主部)、方向导数 + 梯度(任意方向)、Hessian(二阶)、链式法则(复合)、隐函数定理(约束)、Taylor(高阶逼近)、极值(最优化)。这就是<strong>所有现代优化、机器学习、物理 PDE 的微分语言</strong>。
 </p>
+<h3 id="9-0-1">9.0.1 全章地图</h3>
+<p>
+```
+§9.1 概念 ─→ 多元极限 + 连续 (路径敏感)
+              │
+§9.2 偏导 ←──┴── 偏导存在 ≠ 连续 (经典反例 xy/(x²+y²))
+              │
+§9.3 全微分 ←─ 可微 ⇒ 连续 + 偏导存在; 偏导连续 ⇒ 可微
+              │
+§9.4 链式 ←── 雅可比 J_{g∘f} = J_g · J_f (反向传播底层)
+              │
+§9.5 隐函数 ← 隐函数定理 + 流形定义 + 逆函数定理
+              │
+§9.6 方向导/梯度 ← 梯度最速上升 (Cauchy-Schwarz 证) + Descent Lemma
+              │
+§9.7 几何应用 ← 切平面 + 法线 (∇F ⊥ 等量面)
+              │
+§9.8 极值 ← Fermat + Hessian 判别 (Taylor 二阶配方推 D=AC-B²)
+              │
+§9.9 二元 Taylor ← 一阶 = 全微分; 二阶 = Hessian 二次型
+              │
+§9.10 最小二乘 ← OLS 正规方程 + 几何投影 + Ridge L2
+```
+</p>
+<h3 id="9-0-2">9.0.2 核心定理速查</h3>
+<p>
+| 概念 | 关键定理 / 公式 | 后续应用 |
+| --- | --- | --- |
+| 可微 | $f$ 可微 $\Rightarrow$ 连续 + 偏导 | §9.6 方向导数前提 |
+| 可微充分 | 偏导<strong>连续</strong> $\Rightarrow$ $f$ 可微 | 实操判别 |
+| Clairaut | $f_{xy}=f_{yx}$(混合偏导连续时) | Hessian 对称 / Green 公式 |
+| 方向导数 | $\partial f/\partial\vec{l}=\nabla f\cdot\vec{l}$ | 梯度下降基础 |
+| 梯度方向 | $\nabla f$ 是最速上升方向 | ML 优化 / PDE |
+| 链式 | $J_{g\circ f}=J_g\cdot J_f$ | 反向传播 |
+| 隐函数 | $\partial F/\partial(\vec{y})$ 满秩 ⇒ 局部解出 | KKT / 流形 |
+| Fermat | 极值点 $\Rightarrow\nabla f=\vec{0}$ | 极值必要 |
+| Hessian | $D>0,A>0\Rightarrow$ 极小 | 极值充分 |
+| Newton 法 | $\theta\gets\theta-H^{-1}\nabla f$ | 二阶优化 |
+| Taylor | $f=f(\vec{x}_0)+\nabla f\cdot\vec{h}+\tfrac12\vec{h}^\top H\vec{h}+\dots$ | 高阶近似 |
+| 最小二乘 | $\hat\beta=(X^\top X)^{-1}X^\top\vec{y}$ | 线性回归 |
+</p>
+<h3 id="9-0-3">9.0.3 学这章的意义</h3>
 <ul>
-<li>给定 y = x², 求<strong>导数</strong> dy/dx</li>
-<li>用导数找<strong>极值</strong> (最高点/最低点)</li>
-<li>求<strong>切线方程</strong></li>
+<li><strong>优化算法</strong>:梯度下降 / Newton / Adam / Lagrange 乘子全建立在本章上;</li>
+<li><strong>机器学习</strong>:神经网络反向传播 = 链式法则;损失景观 = 多元函数图;</li>
+<li><strong>物理 PDE</strong>:Maxwell / N-S / Heat 方程的"算子"$\nabla$、$\nabla^2$ 在本章定义;</li>
+<li><strong>经济 / 工程</strong>:Hessian 矩阵在比较静态分析、稳定性判别中无处不在;</li>
+<li><strong>微分几何</strong>:本章 + §11 三大公式是微分流形(Riemann / Symplectic)、广义相对论的入门。</li>
 </ul>
 <p>
-现在世界更复杂: 山的高度不只跟"东西方向" x 有关, 还跟"南北" y 有关 → z = f(x, y) 是个<strong>曲面</strong>. 怎么算这种"多变量函数" 的导数+极值+切平面? — 这章答.
-</p>
-<p>
-<strong>对你的意义</strong>: AI 神经网络训练靠<strong>梯度下降</strong> — 而梯度 = 多元函数的偏导. 这章直接对应 ML 数学基础.
+---
 </p>
 <h2 id="9-1">9.1 多元函数的基本概念</h2>
 <p>
