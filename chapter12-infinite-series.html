@@ -1781,24 +1781,36 @@ $\sum_{n=1}^\infty n = -1/12$ 听起来荒谬, 但通过<strong>解析延拓</st
 <li>量子场论: 重整化群</li>
 </ul>
 <h3 id="8-19-cauchy">知识点 8.19: Cauchy 收敛准则与完备性</h3>
+<div class="box-thm">
+<p>Cauchy 收敛准则</p>
 <p>
-<strong>Cauchy 准则</strong>: {a_n} 收敛 ⟺ ∀ε&gt;0, ∃N, ∀m,n&gt;N, |a_m - a_n| &lt; ε.
+$\{a_n\}$ 收敛 ⟺ $\forall \epsilon > 0, \exists N, \forall m, n > N: |a_m - a_n| < \epsilon$.
 </p>
 <p>
-<strong>优势</strong>: 不需事先知道极限值, 只看序列内部"趋近".
+<strong>优势</strong>: 不需事先知道极限值, 只看序列<strong>内部趋近</strong>.
 </p>
+</div>
+<div class="box-def">
+<p>完备性 (Completeness)</p>
 <p>
-<strong>完备性</strong>: 实数空间 R "Cauchy 序列必收敛" — R 与 Q 的关键差别.
-(Q 中 ∑ 1/n! 部分和是 Cauchy 但极限 e 不在 Q.)
-</p>
-<p>
-<strong>推广</strong>:
+<strong>度量空间 $X$ 完备</strong> ⟺ $X$ 中任意 Cauchy 序列必收敛 (极限在 $X$ 内).
 </p>
 <ul>
-<li>Banach 空间: 完备的赋范向量空间</li>
-<li>Hilbert 空间: 完备的内积空间 (L², ℓ²)</li>
-<li>完备性 = 泛函分析的基石</li>
+<li>$\mathbb{R}$ 完备: Cauchy 序列必收敛</li>
+<li>$\mathbb{Q}$ <strong>不完备</strong>: 反例 $\sum 1/n!$ 部分和是 Cauchy 但极限 $e \notin \mathbb{Q}$</li>
 </ul>
+</div>
+<div class="box-intuition">
+<p>完备性是现代分析基石</p>
+<p>
+完备空间是泛函分析的核心:
+</p>
+<ul>
+<li><strong>Banach 空间</strong>: 完备 + 赋范 (向量空间)</li>
+<li><strong>Hilbert 空间</strong>: 完备 + 内积 (如 $L^2, \ell^2$, 量子力学态空间)</li>
+<li><strong>完备性</strong>保证: 牛顿法 / Banach 不动点收敛 / Sobolev 空间存在 / PDE 弱解存在.</li>
+</ul>
+</div>
 <p>
 <strong>应用</strong>:
 </p>
