@@ -6,6 +6,21 @@
 <title>高数下册教材</title>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+.progress-widget { margin:14px 0; padding:14px 18px; background:linear-gradient(135deg,#dbeafe,#e0e7ff); border-radius:10px; }
+.progress-widget h3 { margin:0 0 8px; color:#1e40af; font-size:1.05rem; }
+.progress-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; font-size:0.95rem; }
+.p-pill { padding:4px 12px; background:white; border-radius:14px; font-weight:600; color:#1e40af; }
+.p-pill.done { color:#16a34a; }
+.p-pill.review { color:#dc2626; }
+.ch-actions { display:inline-flex; gap:6px; margin-left:10px; }
+.ch-actions button { background:white; border:1px solid #cbd5e1; padding:3px 9px; border-radius:4px; cursor:pointer; font-size:0.82rem; color:#64748b; }
+.ch-actions button:hover { background:#1e40af; color:white; border-color:#1e40af; }
+.ch-actions button.active.done { background:#dcfce7; color:#16a34a; border-color:#86efac; }
+.ch-actions button.active.review { background:#fef3c7; color:#dc2626; border-color:#fbbf24; }
+.ch-list li.read { background:#f0fdf4; }
+.ch-list li.read::before { content:'✓ '; color:#16a34a; font-weight:bold; }
+</style>
 </head>
 <body>
 <header>
@@ -18,14 +33,57 @@
 <li><a href="./formula-cheatsheet.html">📐 公式速查 (5 章核心公式整理, 考前查表用)</a></li>
 </div>
 
+<div class="progress-widget">
+  <h3>📊 我的学习进度</h3>
+  <div class="progress-row">
+    <span class="p-pill">📚 总章: 5</span>
+    <span class="p-pill done">✅ 已读: <span id="p-read">0</span></span>
+    <span class="p-pill review">📝 待复习: <span id="p-review">0</span></span>
+    <button onclick="resetProgress()" style="background:white;border:1px solid #cbd5e1;padding:4px 10px;border-radius:4px;cursor:pointer;margin-left:auto;font-size:0.85rem;">重置</button>
+  </div>
+</div>
+
 <h2>章节列表</h2>
-<ul class="ch-list">
-<li><a href="./chapter08-vectors.html">第八章 向量代数与空间解析几何</a> <span class="meta">(99,289 字符)</span><div class="ch-desc">向量代数 / 空间直角坐标系 / 数量积叉乘混合积 / 平面方程 / 曲面方程. 工科 3D 几何与 AI embedding 的代数基础.</div></li>
-<li><a href="./chapter09-multivariate.html">第九章 多元函数微分法及其应用</a> <span class="meta">(116,694 字符)</span><div class="ch-desc">多元函数极限连续 / 偏导数 / 全微分 / 方向导数与梯度 / 多元 Taylor / 极值与 Lagrange 乘子. 优化算法 (SGD / KKT) 的理论根.</div></li>
-<li><a href="./chapter10-multiple-integrals.html">第十章 重积分</a> <span class="meta">(91,386 字符)</span><div class="ch-desc">二重积分 / 三重积分 / 柱面与球面坐标. 物理质量重心转动惯量 + 概率密度联合分布.</div></li>
-<li><a href="./chapter11-line-surface-integrals.html">第十一章 曲线积分与曲面积分</a> <span class="meta">(112,198 字符)</span><div class="ch-desc">曲线积分两类 / 曲面积分两类 / Green / Gauss / Stokes 三大公式. 电磁场 Maxwell 方程组的几何形式.</div></li>
-<li><a href="./chapter12-infinite-series.html">第十二章 无穷级数</a> <span class="meta">(113,573 字符)</span><div class="ch-desc">数项级数收敛判别 / 幂级数 / Taylor 级数 / Fourier 级数. 数值计算与信号处理的核心工具.</div></li>
+<ul class="ch-list" id="ch-list">
+<li data-ch="08"><a href="./chapter08-vectors.html">第八章 向量代数与空间解析几何</a> <span class="meta">(99,289 字符)</span> <span class="ch-actions"><button class="ch-btn done" data-ch="08" data-kind="read">✅ 已读</button><button class="ch-btn review" data-ch="08" data-kind="review">📝 待复习</button></span><div class="ch-desc">向量代数 / 空间直角坐标系 / 数量积叉乘混合积 / 平面方程 / 曲面方程. 工科 3D 几何与 AI embedding 的代数基础.</div></li>
+<li data-ch="09"><a href="./chapter09-multivariate.html">第九章 多元函数微分法及其应用</a> <span class="meta">(116,694 字符)</span> <span class="ch-actions"><button class="ch-btn done" data-ch="09" data-kind="read">✅ 已读</button><button class="ch-btn review" data-ch="09" data-kind="review">📝 待复习</button></span><div class="ch-desc">多元函数极限连续 / 偏导数 / 全微分 / 方向导数与梯度 / 多元 Taylor / 极值与 Lagrange 乘子. 优化算法 (SGD / KKT) 的理论根.</div></li>
+<li data-ch="10"><a href="./chapter10-multiple-integrals.html">第十章 重积分</a> <span class="meta">(91,386 字符)</span> <span class="ch-actions"><button class="ch-btn done" data-ch="10" data-kind="read">✅ 已读</button><button class="ch-btn review" data-ch="10" data-kind="review">📝 待复习</button></span><div class="ch-desc">二重积分 / 三重积分 / 柱面与球面坐标. 物理质量重心转动惯量 + 概率密度联合分布.</div></li>
+<li data-ch="11"><a href="./chapter11-line-surface-integrals.html">第十一章 曲线积分与曲面积分</a> <span class="meta">(112,198 字符)</span> <span class="ch-actions"><button class="ch-btn done" data-ch="11" data-kind="read">✅ 已读</button><button class="ch-btn review" data-ch="11" data-kind="review">📝 待复习</button></span><div class="ch-desc">曲线积分两类 / 曲面积分两类 / Green / Gauss / Stokes 三大公式. 电磁场 Maxwell 方程组的几何形式.</div></li>
+<li data-ch="12"><a href="./chapter12-infinite-series.html">第十二章 无穷级数</a> <span class="meta">(113,573 字符)</span> <span class="ch-actions"><button class="ch-btn done" data-ch="12" data-kind="read">✅ 已读</button><button class="ch-btn review" data-ch="12" data-kind="review">📝 待复习</button></span><div class="ch-desc">数项级数收敛判别 / 幂级数 / Taylor 级数 / Fourier 级数. 数值计算与信号处理的核心工具.</div></li>
 </ul>
+
+<script>
+function loadProgress() { return JSON.parse(localStorage.getItem('gaoshu_progress') || '{}'); }
+function saveProgress(p) { localStorage.setItem('gaoshu_progress', JSON.stringify(p)); refresh(); }
+function refresh() {
+  const p = loadProgress();
+  const read = Object.values(p).filter(v => v === 'read').length;
+  const review = Object.values(p).filter(v => v === 'review').length;
+  document.getElementById('p-read').textContent = read;
+  document.getElementById('p-review').textContent = review;
+  document.querySelectorAll('#ch-list li').forEach(li => {
+    const ch = li.dataset.ch;
+    li.classList.toggle('read', p[ch] === 'read');
+  });
+  document.querySelectorAll('.ch-btn').forEach(b => {
+    const ch = b.dataset.ch, kind = b.dataset.kind;
+    b.classList.toggle('active', p[ch] === kind);
+  });
+}
+function resetProgress() {
+  if (confirm('清空所有章节进度?')) { localStorage.removeItem('gaoshu_progress'); refresh(); }
+}
+document.querySelectorAll('.ch-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    const p = loadProgress();
+    const ch = b.dataset.ch, kind = b.dataset.kind;
+    p[ch] = (p[ch] === kind) ? null : kind;
+    if (!p[ch]) delete p[ch];
+    saveProgress(p);
+  });
+});
+refresh();
+</script>
 <h2>编写体例</h2>
 <ul>
 <li>每节按 <strong>动机 → 定义 → 定理 + 证明 → 几何直觉 → 例题 → 常见误区</strong> 顺序展开</li>
