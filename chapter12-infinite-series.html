@@ -1624,20 +1624,33 @@ $$\left| f(z) - \sum_{n=0}^N a_n z^{-n} \right| = O(z^{-N-1})$$
 <li>信号: 边缘效应渐近分析</li>
 </ul>
 <h3 id="8-15-fft">知识点 8.15: 快速傅里叶变换 FFT (从级数到算法)</h3>
+<div class="box-def">
+<p>离散傅里叶变换 (DFT)</p>
 <p>
-<strong>问题</strong>: 傅里叶系数计算 a_k = (1/T) ∫_0^T f(t) e^(-ikωt) dt. 离散版本 (N 点采样):
+$N$ 点采样 $\{x_n\}$ 的离散傅里叶变换:
+$$X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-i 2\pi kn/N}, \quad k = 0, 1, \ldots, N-1$$
+朴素计算: $O(N^2)$ 次复乘.
+</p>
+</div>
+<div class="box-thm">
+<p>Cooley-Tukey FFT (1965)</p>
+<p>
+利用对称性 + <strong>分治</strong>, 复杂度从 $O(N^2)$ 降到 $O(N \log N)$.
 </p>
 <p>
-<strong>离散傅里叶变换 (DFT)</strong>:
-X_k = ∑_(n=0)^(N-1) x_n · e^(-i 2π kn/N)
-朴素计算: O(N²).
+<strong>递归核心</strong>: 将 $N$ 点拆奇偶各 $N/2$ 点:
+$$T(N) = 2 T(N/2) + O(N) \Rightarrow T(N) = O(N \log N)$$
+</p>
+</div>
+<div class="box-intuition">
+<p>FFT 是 20 世纪 Top 10 算法</p>
+<p>
+$N = 10^6$ 时朴素 DFT 需 $10^{12}$ 次乘 (不可行); FFT $\sim 2 \times 10^7$ — <strong>快 50,000 倍</strong>.
 </p>
 <p>
-<strong>Cooley-Tukey FFT</strong> (1965): 利用对称性分治, 复杂度 O(N log N).
+<strong>FFT 是现代算力支柱</strong>: JPEG/MP3/MP4 压缩, 5G/WiFi OFDM 调制, MRI 影像重建, 大整数乘法, CNN 大卷积加速 — 全用.
 </p>
-<p>
-<strong>核心思路</strong>: 将 N 点分成奇偶, 复杂度 T(N) = 2 T(N/2) + O(N) ⟹ O(N log N).
-</p>
+</div>
 <div class="box-example">
 <p>例题 8-15</p>
 <p>
