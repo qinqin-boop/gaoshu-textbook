@@ -528,18 +528,34 @@ S_5 = 1 - 1/4 + 1/9 - 1/16 + 1/25 ≈ 0.7836.
 更一般在 $x_0$ 处展开: $\sum a_n (x - x_0)^n$.
 </p>
 </div>
+<div class="box-def">
+<p>收敛域</p>
 <p>
-<strong>收敛域</strong>: 所有让级数收敛的 $x$ 值集合.
+所有让幂级数收敛的 $x$ 值集合, 记 $D$. 幂级数的核心问题: <strong>求出这个 $D$</strong>.
 </p>
+</div>
 <h3 id="10-r">知识点 10: 收敛半径 R</h3>
+<div class="box-thm">
+<p>收敛半径公式 (达朗贝尔型)</p>
 <p>
-$\rho = \lim |a_{n+1}/a_n|$, $R = 1/\rho$ (若 $\rho = 0$ 取 $R = \infty$).
+$$\rho = \lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right|, \qquad R = \frac{1}{\rho}$$
+(若 $\rho = 0$ 取 $R = +\infty$; 若 $\rho = +\infty$ 取 $R = 0$). 同样可用根值型 $\rho = \lim\sqrt[n]{|a_n|}$.
+</p>
+<p>
+判断:
 </p>
 <ul>
-<li>$|x| < R$: 绝对收敛</li>
-<li>$|x| > R$: 发散</li>
-<li>$x = \pm R$: 单独判别</li>
+<li>$|x - x_0| < R$: <strong>绝对收敛</strong></li>
+<li>$|x - x_0| > R$: <strong>发散</strong></li>
+<li>$|x - x_0| = R$ (即 $x = x_0 \pm R$): <strong>单独判别</strong> (两端可能"两收"/"两发"/"一收一发")</li>
 </ul>
+</div>
+<div class="box-intuition">
+<p>收敛半径的几何 — 数轴上的安全区</p>
+<p>
+以 $x_0$ 为中心, 在数轴上画半径 $R$ 的开区间 $(x_0 - R, x_0 + R)$, 这个开区间内级数稳收, 外面稳发, 两端边界要单独算. <strong>R 就是"安全距离"</strong>.
+</p>
+</div>
 <figure>
 <svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
   <!-- 数轴 + 收敛区间标记 -->
