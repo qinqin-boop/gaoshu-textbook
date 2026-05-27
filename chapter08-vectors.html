@@ -1204,6 +1204,38 @@ $$\frac{x-1}{2}=\frac{y+2}{-1}\Rightarrow x+2y+3=0,\quad\frac{y+2}{-1}=\frac{z-3
 </p>
 </div>
 <h3 id="8-5-2">8.5.2 直线与直线位置关系</h3>
+<figure>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <!-- 4 类直线位置关系 -->
+  <!-- 1. 相交 -->
+  <text x="20" y="30" font-size="12" fill="#1a365d" font-weight="bold">① 相交</text>
+  <line x1="20" y1="60" x2="100" y2="120" stroke="#1a365d" stroke-width="2"/>
+  <line x1="100" y1="60" x2="20" y2="120" stroke="#1a365d" stroke-width="2"/>
+  <text x="20" y="145" font-size="10" fill="#666">共面 + 不平行</text>
+
+  <!-- 2. 平行 -->
+  <text x="135" y="30" font-size="12" fill="#22543d" font-weight="bold">② 平行</text>
+  <line x1="130" y1="60" x2="220" y2="80" stroke="#22543d" stroke-width="2"/>
+  <line x1="130" y1="100" x2="220" y2="120" stroke="#22543d" stroke-width="2"/>
+  <text x="135" y="145" font-size="10" fill="#666">同方向 不重合</text>
+
+  <!-- 3. 重合 -->
+  <text x="250" y="30" font-size="12" fill="#c2410c" font-weight="bold">③ 重合</text>
+  <line x1="245" y1="85" x2="335" y2="85" stroke="#c2410c" stroke-width="2.5"/>
+  <line x1="245" y1="89" x2="335" y2="89" stroke="#c2410c" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="250" y="145" font-size="10" fill="#666">同方向 + 同点</text>
+
+  <!-- 4. 异面 (3D) -->
+  <text x="370" y="30" font-size="12" fill="#8b3a0a" font-weight="bold">④ 异面</text>
+  <line x1="365" y1="55" x2="460" y2="100" stroke="#8b3a0a" stroke-width="2"/>
+  <line x1="370" y1="125" x2="450" y2="65" stroke="#8b3a0a" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="370" y="145" font-size="10" fill="#666">不共面 (3D 才有)</text>
+
+  <text x="40" y="180" font-size="13" font-family="serif" fill="#1a365d" font-weight="bold">判别: 混合积 [c, s₁, s₂] = 0 (共面) / ≠ 0 (异面)</text>
+  <text x="40" y="200" font-size="11" fill="#666">c = M₁M₂ (两直线上各取一点连线); s₁, s₂ 是各直线方向向量</text>
+</svg>
+<figcaption>图 8.5.2 空间两直线 4 类位置关系: 相交 / 平行 / 重合 / 异面; 异面是 3D 特有 (2D 只有前 3 种)</figcaption>
+</figure>
 <div class="box-thm">
 <p>
 两直线 $\ell_1$($M_1,\vec{s}_1$)、$\ell_2$($M_2,\vec{s}_2$),令 $\vec{c}=\overrightarrow{M_1M_2}$:
