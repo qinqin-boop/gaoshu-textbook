@@ -1393,6 +1393,30 @@ $$p_Y(y) = p_X(g^{-1}(y)) \cdot |dg^{-1}(y)/dy| = \frac{p_X(x)}{|g'(x)|}$$
 <strong>没有概率密度变换公式, 现代生成式 AI 不成立</strong>.
 </p>
 </div>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="background:#fafaf7">
+  <defs>
+    <marker id="pdf_arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a365d"/></marker>
+  </defs>
+  <!-- 左: 简单分布 (高斯) -->
+  <text x="40" y="35" font-size="13" fill="#1a365d" font-weight="bold">简单分布 p_X(x) (高斯)</text>
+  <line x1="40" y1="180" x2="180" y2="180" stroke="#666" stroke-width="1"/>
+  <path d="M 50,175 Q 80,140 110,80 Q 140,140 170,175" fill="#22543d" fill-opacity="0.4" stroke="#22543d" stroke-width="2"/>
+  <text x="100" y="195" font-size="11" fill="#22543d">X ~ N(0,1)</text>
+  <!-- 中间箭头 (变换 g) -->
+  <line x1="195" y1="120" x2="295" y2="120" stroke="#1a365d" stroke-width="2.5" marker-end="url(#pdf_arr)"/>
+  <text x="215" y="110" font-size="13" fill="#1a365d" font-weight="bold">Y = g(X)</text>
+  <text x="200" y="135" font-size="11" fill="#666">(可逆变换)</text>
+  <!-- 右: 复杂分布 (双峰) -->
+  <text x="310" y="35" font-size="13" fill="#1a365d" font-weight="bold">复杂分布 p_Y(y) (图像/数据)</text>
+  <line x1="310" y1="180" x2="460" y2="180" stroke="#666" stroke-width="1"/>
+  <path d="M 320,175 Q 340,140 355,100 Q 365,80 375,90 Q 385,140 395,165 Q 410,140 420,90 Q 430,80 440,100 Q 450,140 458,175" fill="#c2410c" fill-opacity="0.4" stroke="#c2410c" stroke-width="2"/>
+  <text x="350" y="195" font-size="11" fill="#c2410c">Y ~ 复杂多峰分布</text>
+  <!-- 公式 -->
+  <text x="80" y="220" font-size="13" font-family="serif" fill="#1a365d" font-weight="bold">关键: p_Y(y) = p_X(g⁻¹(y)) · |det J|⁻¹ (雅可比因子保概率守恒)</text>
+</svg>
+<figcaption>图 10.5.4 概率密度变换: 简单分布通过可逆变换 $g$ 映到复杂分布; 雅可比 $|\det J|$ 保证总概率 = 1 (Normalizing Flows / GAN / Diffusion 数学基础)</figcaption>
+</figure>
 <div class="box-example">
 <p>例题 13-11</p>
 <p>
