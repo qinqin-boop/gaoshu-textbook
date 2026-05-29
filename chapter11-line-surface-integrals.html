@@ -2774,6 +2774,49 @@ $$= \sqrt{2}\int_0^{2\pi}\!d\theta\int_0^1 r \cdot r\,dr = 2\sqrt{2}\pi \cdot \f
 </p>
 </details>
 
+<h2 id="11-comprehensive" style="margin-top:40px;border-top:3px solid #f59e0b;padding-top:20px;">💡 综合应用例题 (跨小节)</h2>
+<p style="color:#78350f;background:#fef3c7;padding:10px 14px;border-left:4px solid #f59e0b;border-radius:6px;">把 Green / Gauss / Stokes 串起来用. 3 道.</p>
+
+<h3 id="11-c1">综合例题 1 (Green 公式 + 与路径无关)</h3>
+<p>计算 $\displaystyle\oint_L (e^x \sin y - my)\,dx + (e^x \cos y - m)\,dy$, 其中 $L$ 为上半圆周 $x^2+y^2 = ax$ ($a>0$) 沿逆时针从 $(a,0)$ 到 $(0,0)$ 的弧. $m$ 是常数.</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>思路:</strong> $L$ 是开曲线 (从 $(a,0)$ 到 $(0,0)$), 直接代入难. 补 $x$ 轴上的线段 $L_1: (0,0) \to (a, 0)$, 构成闭曲线, 用 Green 公式.</p>
+<p>记 $P = e^x\sin y - my$, $Q = e^x\cos y - m$.</p>
+<p>$\dfrac{\partial Q}{\partial x} = e^x\cos y$, $\dfrac{\partial P}{\partial y} = e^x\cos y - m$</p>
+<p>$\dfrac{\partial Q}{\partial x} - \dfrac{\partial P}{\partial y} = m$</p>
+<p><strong>闭曲线积分 (Green):</strong></p>
+<p>$\oint_{L+L_1} P\,dx + Q\,dy = \iint_D m\,dA = m\cdot\text{面积}(D) = m\cdot\dfrac{\pi a^2}{8}$ (半圆面积的 1/4? 不,是上半圆 $x^2+y^2=ax$ 内的半圆盘面积).</p>
+<p>圆心 $(\dfrac{a}{2}, 0)$, 半径 $\dfrac{a}{2}$, 半圆面积 $= \dfrac{1}{2}\pi(\dfrac{a}{2})^2 = \dfrac{\pi a^2}{8}$.</p>
+<p><strong>沿 $L_1$ 的积分:</strong> $L_1: y=0, x:0 \to a$, $dy=0$.</p>
+<p>$\int_{L_1} P\,dx + Q\,dy = \int_0^a (e^x\sin 0 - 0)\,dx = 0$</p>
+<p><strong>所求 $L$ 的积分:</strong></p>
+<p>$\int_L = \oint_{L+L_1} - \int_{L_1} = \dfrac{m\pi a^2}{8} - 0 = \dfrac{m\pi a^2}{8}$</p>
+<p style="color:#0891b2;"><em>💡 开曲线 + 补线 + Green = 工作模式. 关键是判断 Green 用得动 (P, Q 连续可微) + 补线积分要好算.</em></p>
+</details>
+
+<h3 id="11-c2">综合例题 2 (Gauss 公式 / 散度定理)</h3>
+<p>计算 $\displaystyle\oiint_\Sigma x^3\,dy\,dz + y^3\,dz\,dx + z^3\,dx\,dy$, 其中 $\Sigma$ 是球面 $x^2+y^2+z^2 = R^2$ 外侧.</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>Gauss 公式:</strong> $\oiint_\Sigma P\,dy\,dz + Q\,dz\,dx + R\,dx\,dy = \iiint_\Omega (\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z})\,dV$</p>
+<p>$P = x^3, Q = y^3, R = z^3$, 散度 $= 3x^2 + 3y^2 + 3z^2 = 3(x^2+y^2+z^2)$.</p>
+<p>$\iiint_\Omega 3(x^2+y^2+z^2)\,dV$ — 这正是 ch10 综合例题 3 的形式!</p>
+<p>$= 3 \cdot \dfrac{4\pi R^5}{5} = \dfrac{12\pi R^5}{5}$</p>
+<p style="color:#0891b2;"><em>💡 球面+对称形被积函数 = Gauss 转球坐标重积分模板. 复用 ch10 结果, 不重新算.</em></p>
+</details>
+
+<h3 id="11-c3">综合例题 3 (Stokes 公式)</h3>
+<p>计算 $\displaystyle\oint_L y\,dx + z\,dy + x\,dz$, 其中 $L$ 是平面 $x+y+z = 1$ 与三个坐标面交线围成的三角形, 取从 $x$ 轴正向看为逆时针.</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>Stokes 公式:</strong> $\oint_L P\,dx+Q\,dy+R\,dz = \iint_\Sigma (\nabla\times\vec{F})\cdot d\vec{S}$</p>
+<p>$\vec{F} = (y, z, x)$, 旋度: $\nabla\times\vec{F} = (\dfrac{\partial x}{\partial y}-\dfrac{\partial z}{\partial z}, \dfrac{\partial y}{\partial z}-\dfrac{\partial x}{\partial x}, \dfrac{\partial z}{\partial x}-\dfrac{\partial y}{\partial y}) = (0-1, 0-1, 0-1) = (-1, -1, -1)$</p>
+<p><strong>曲面 $\Sigma$:</strong> 平面 $x+y+z=1$ 上由 3 个顶点 $(1,0,0),(0,1,0),(0,0,1)$ 围成的三角形.</p>
+<p>单位法向量 (从 $x$ 轴正向看逆时针 $\Rightarrow$ 法向朝外, 即 $(1,1,1)/\sqrt{3}$).</p>
+<p>$(\nabla\times\vec{F})\cdot\hat{n} = (-1,-1,-1)\cdot\dfrac{(1,1,1)}{\sqrt{3}} = -\dfrac{3}{\sqrt{3}} = -\sqrt{3}$</p>
+<p>三角形面积: 顶点构成等边三角形 (边长 $\sqrt{2}$), 面积 $= \dfrac{\sqrt{3}}{4}\cdot 2 = \dfrac{\sqrt{3}}{2}$.</p>
+<p>$\iint_\Sigma (\nabla\times\vec{F})\cdot d\vec{S} = -\sqrt{3}\cdot\dfrac{\sqrt{3}}{2} = -\dfrac{3}{2}$</p>
+<p style="color:#0891b2;"><em>💡 Stokes = "曲线积分降维到曲面". 选最简曲面 (这里是平面三角形) 而不是被 $L$ 围起的复杂曲面.</em></p>
+</details>
+
 <div class="chapter-footer-nav" style="display:flex;gap:10px;margin:30px 0 10px;padding:14px;background:#dbeafe;border-radius:10px;flex-wrap:wrap;">
   <a href="./chapter10-multiple-integrals.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;">← 第十章 重积分</a>
   <a href="./index.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;font-weight:600;">🏠 返回目录</a>
