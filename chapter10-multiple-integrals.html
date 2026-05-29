@@ -2405,6 +2405,54 @@ $$z_x^2 + z_y^2 = \frac{x^2+y^2}{x^2+y^2} = 1$$
 </p>
 </details>
 
+<h2 id="10-comprehensive" style="margin-top:40px;border-top:3px solid #f59e0b;padding-top:20px;">💡 综合应用例题 (跨小节)</h2>
+<p style="color:#78350f;background:#fef3c7;padding:10px 14px;border-left:4px solid #f59e0b;border-radius:6px;">把二重 / 三重 / 极坐标 / 柱坐标 / 球坐标串起来用. 3 道.</p>
+
+<h3 id="10-c1">综合例题 1 (二重积分 + 极坐标变换)</h3>
+<p>计算 $\displaystyle\iint_D e^{-(x^2+y^2)}\,dx\,dy$, 其中 $D: x^2 + y^2 \leq R^2$.</p>
+<p>进一步: 求 $\displaystyle\int_{-\infty}^{+\infty} e^{-x^2}\,dx$ (高斯积分, 一个标志性应用).</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>(1) 圆域积分用极坐标:</strong> 令 $x = r\cos\theta, y = r\sin\theta$, $dx\,dy = r\,dr\,d\theta$.</p>
+<p>$D \Leftrightarrow 0 \leq r \leq R, 0 \leq \theta \leq 2\pi$.</p>
+<p>$\iint_D e^{-(x^2+y^2)}\,dx\,dy = \int_0^{2\pi}\!\!\int_0^R e^{-r^2}\cdot r\,dr\,d\theta$</p>
+<p>内层: $\int_0^R e^{-r^2}\cdot r\,dr = -\dfrac{1}{2}e^{-r^2}\Big|_0^R = \dfrac{1}{2}(1 - e^{-R^2})$</p>
+<p>外层: $\int_0^{2\pi} d\theta = 2\pi$, 故原积分 $= \pi(1 - e^{-R^2})$.</p>
+<p><strong>(2) 高斯积分应用:</strong> 令 $R \to \infty$, 上式 $\to \pi$.</p>
+<p>而 $\iint_{\mathbb{R}^2} e^{-(x^2+y^2)}\,dx\,dy = (\int_{-\infty}^{+\infty}e^{-x^2}\,dx)^2$ (分离变量).</p>
+<p>所以 $(\int_{-\infty}^{+\infty}e^{-x^2}\,dx)^2 = \pi \Rightarrow \int_{-\infty}^{+\infty}e^{-x^2}\,dx = \sqrt{\pi}$</p>
+<p style="color:#0891b2;"><em>💡 这是数学最优美的应用之一: 一维积分算不出, 二维换极坐标秒杀. 物理 / 概率论 (正态分布) 全靠它.</em></p>
+</details>
+
+<h3 id="10-c2">综合例题 2 (三重积分柱坐标)</h3>
+<p>求由曲面 $z = x^2 + y^2$, $z = 4$ 所围立体的体积及质量 (密度 $\rho = z$).</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>形状判断:</strong> $z = x^2 + y^2$ 是开口向上的抛物面, $z = 4$ 是水平平面, 围成"碗状"立体.</p>
+<p>交线: 抛物面与 $z=4$ 相交 $\Rightarrow x^2+y^2=4 \Rightarrow $ 半径 $r=2$ 的圆.</p>
+<p><strong>柱坐标变换:</strong> $x=r\cos\theta, y=r\sin\theta, z=z$, $dV = r\,dr\,d\theta\,dz$.</p>
+<p>积分范围: $0 \leq \theta \leq 2\pi$, $0 \leq r \leq 2$, $r^2 \leq z \leq 4$.</p>
+<p><strong>(1) 体积:</strong></p>
+<p>$V = \int_0^{2\pi}\!\!\int_0^2\!\!\int_{r^2}^4 r\,dz\,dr\,d\theta$</p>
+<p>内层: $\int_{r^2}^4 dz = 4 - r^2$</p>
+<p>中层: $\int_0^2 (4-r^2)\,r\,dr = \int_0^2 (4r - r^3)\,dr = [2r^2 - \dfrac{r^4}{4}]_0^2 = 8 - 4 = 4$</p>
+<p>外层: $\int_0^{2\pi} 4\,d\theta = 8\pi$, $V = 8\pi$.</p>
+<p><strong>(2) 质量:</strong> $m = \int\int\int_\Omega z\,dV$.</p>
+<p>$m = \int_0^{2\pi}\!\!\int_0^2\!\!\int_{r^2}^4 z\cdot r\,dz\,dr\,d\theta = 2\pi\int_0^2 r\cdot[\dfrac{z^2}{2}]_{r^2}^4\,dr$</p>
+<p>$= 2\pi\int_0^2 r\cdot(8 - \dfrac{r^4}{2})\,dr = 2\pi\int_0^2 (8r - \dfrac{r^5}{2})\,dr = 2\pi[4r^2 - \dfrac{r^6}{12}]_0^2 = 2\pi(16 - \dfrac{64}{12}) = 2\pi\cdot\dfrac{128}{12} = \dfrac{64\pi}{3}$</p>
+<p style="color:#0891b2;"><em>💡 凡是带 $x^2+y^2$ 的旋转体,柱坐标系数 $r$ 的雅可比是吃饭工具.</em></p>
+</details>
+
+<h3 id="10-c3">综合例题 3 (球坐标 + 球面区域)</h3>
+<p>求 $\displaystyle\iiint_\Omega (x^2+y^2+z^2)\,dV$, $\Omega: x^2+y^2+z^2 \leq R^2$ (半径 $R$ 实心球).</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>球坐标变换:</strong> $x=\rho\sin\phi\cos\theta, y=\rho\sin\phi\sin\theta, z=\rho\cos\phi$.</p>
+<p>$dV = \rho^2\sin\phi\,d\rho\,d\phi\,d\theta$, $x^2+y^2+z^2 = \rho^2$.</p>
+<p>积分范围: $0 \leq \rho \leq R$, $0 \leq \phi \leq \pi$, $0 \leq \theta \leq 2\pi$.</p>
+<p>$\iiint_\Omega \rho^2\cdot\rho^2\sin\phi\,d\rho\,d\phi\,d\theta = \int_0^{2\pi}\!\!\int_0^\pi\!\!\int_0^R \rho^4\sin\phi\,d\rho\,d\phi\,d\theta$</p>
+<p>三层独立: $[\int_0^R\rho^4 d\rho]\cdot[\int_0^\pi\sin\phi\,d\phi]\cdot[\int_0^{2\pi}d\theta]$</p>
+<p>$= \dfrac{R^5}{5}\cdot 2 \cdot 2\pi = \dfrac{4\pi R^5}{5}$</p>
+<p style="color:#0891b2;"><em>💡 球域 + 被积函数仅含 $\rho^2$ 形式, 球坐标最快. 注意 $\sin\phi$ 是球坐标雅可比的固定因子.</em></p>
+</details>
+
 <div class="chapter-footer-nav" style="display:flex;gap:10px;margin:30px 0 10px;padding:14px;background:#dbeafe;border-radius:10px;flex-wrap:wrap;">
   <a href="./chapter09-multivariate.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;">← 第九章 多元函数</a>
   <a href="./index.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;font-weight:600;">🏠 返回目录</a>
