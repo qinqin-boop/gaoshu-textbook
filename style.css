@@ -254,3 +254,53 @@ footer {
   margin-top: 64px;
   background: #f6f5ef;
 }
+
+/* ===== v2 移动端二轮适配 (2026-05-29) ===== */
+@media (max-width: 700px) {
+  body { font-size: 15.5px; line-height: 1.65; }
+  main.textbook, main.textbook-toc { padding: 16px 12px 40px; }
+  main.textbook h2 { font-size: 1.3rem; margin: 28px 0 14px; padding-bottom: 8px; }
+  main.textbook h3 { font-size: 1.05rem; margin: 20px 0 10px; padding-left: 10px; }
+  main.textbook h4 { font-size: 0.98rem; }
+  main.textbook p { text-align: left; text-justify: none; }
+  .box-def, .box-thm, .box-proof, .box-example, .box-intuition, .box-pitfall, .box-answer {
+    padding: 12px 14px; margin: 14px 0;
+  }
+  .chapter-footer-nav { flex-direction: column !important; gap: 8px !important; }
+  .chapter-footer-nav a, .chapter-footer-nav span {
+    min-height: 44px; display: flex !important; align-items: center; justify-content: center;
+    padding: 12px !important;
+  }
+  details.box-answer summary {
+    padding: 10px 12px; min-height: 44px;
+    display: flex; align-items: center;
+    font-size: 0.95rem;
+  }
+  /* KaTeX 公式横向滚动防溢出 */
+  .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: 4px 0; }
+  .katex-display > .katex { white-space: nowrap; }
+  ol, ul { padding-left: 22px; }
+  ol li, ul li { margin: 6px 0; }
+}
+@media (max-width: 400px) {
+  body { font-size: 14.5px; }
+  main.textbook h2 { font-size: 1.18rem; }
+  main.textbook h3 { font-size: 1rem; }
+  .layout { padding: 0; }
+}
+
+/* ===== v2 阅读进度持久化 hint  ===== */
+#reading-progress-bar {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+  width: 0; z-index: 9999; transition: width 0.15s;
+}
+#last-pos-toast {
+  position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+  background: rgba(31, 41, 55, 0.92); color: white;
+  padding: 10px 16px; border-radius: 22px; font-size: 0.9rem;
+  z-index: 9998; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: none; cursor: pointer;
+  max-width: calc(100% - 32px);
+}
+#last-pos-toast:hover { background: rgba(31, 41, 55, 1); }
