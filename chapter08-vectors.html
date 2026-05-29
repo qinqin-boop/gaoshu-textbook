@@ -2691,6 +2691,64 @@ $$\frac{x - 1}{1} = \frac{y}{3} = \frac{z + 2}{5}$$
 </p>
 </details>
 
+<h2 id="8-comprehensive" style="margin-top:40px;border-top:3px solid #f59e0b;padding-top:20px;">💡 综合应用例题 (跨小节)</h2>
+<p style="color:#78350f;background:#fef3c7;padding:10px 14px;border-left:4px solid #f59e0b;border-radius:6px;">这一节把 8.1-8.5 的工具串起来用 — 不是单点公式套, 而是真实题型混合考察. 3 道, 看不懂就翻回去找对应小节.</p>
+
+<h3 id="8-c1">综合例题 1 (向量代数综合)</h3>
+<p>已知向量 $\vec{a} = (1, 2, -1)$, $\vec{b} = (2, 1, 3)$, $\vec{c} = (-1, 1, 2)$. 求:</p>
+<ol>
+  <li>$\vec{a}$ 与 $\vec{b}$ 的夹角 $\theta$ (cos 值即可)</li>
+  <li>$\vec{a} \times \vec{b}$ 在 $\vec{c}$ 上的投影</li>
+  <li>判断 $\vec{a}, \vec{b}, \vec{c}$ 是否共面</li>
+</ol>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>(1) 夹角:</strong> 用数量积公式 $\cos\theta = \dfrac{\vec{a}\cdot\vec{b}}{|\vec{a}||\vec{b}|}$.</p>
+<p>$\vec{a}\cdot\vec{b} = 1\cdot 2 + 2\cdot 1 + (-1)\cdot 3 = 2 + 2 - 3 = 1$</p>
+<p>$|\vec{a}| = \sqrt{1+4+1} = \sqrt{6}$, $|\vec{b}| = \sqrt{4+1+9} = \sqrt{14}$</p>
+<p>$\cos\theta = \dfrac{1}{\sqrt{6}\cdot\sqrt{14}} = \dfrac{1}{2\sqrt{21}}$</p>
+<p><strong>(2) 投影:</strong> 先算 $\vec{a}\times\vec{b}$, 再用投影公式 $\text{Prj}_{\vec{c}}\vec{u} = \dfrac{\vec{u}\cdot\vec{c}}{|\vec{c}|}$.</p>
+<p>$\vec{a}\times\vec{b} = \begin{vmatrix}\vec{i}&\vec{j}&\vec{k}\\1&2&-1\\2&1&3\end{vmatrix} = (2\cdot 3-(-1)\cdot 1)\vec{i}-(1\cdot 3-(-1)\cdot 2)\vec{j}+(1\cdot 1-2\cdot 2)\vec{k} = (7, -5, -3)$</p>
+<p>$(7,-5,-3)\cdot(-1,1,2) = -7-5-6 = -18$, $|\vec{c}| = \sqrt{1+1+4} = \sqrt{6}$</p>
+<p>投影 $= \dfrac{-18}{\sqrt{6}} = -3\sqrt{6}$</p>
+<p><strong>(3) 共面判断:</strong> 三向量共面 $\Leftrightarrow$ 混合积 $[\vec{a},\vec{b},\vec{c}] = 0$.</p>
+<p>$[\vec{a},\vec{b},\vec{c}] = (\vec{a}\times\vec{b})\cdot\vec{c} = -18 \neq 0$, <strong>不共面</strong>.</p>
+<p style="color:#0891b2;"><em>💡 关键: 混合积绝对值 = 以三向量为棱的平行六面体体积. 这里体积 18, 显然不共面.</em></p>
+</details>
+
+<h3 id="8-c2">综合例题 2 (空间直线 + 平面综合)</h3>
+<p>已知平面 $\pi: 2x - y + 2z - 5 = 0$ 和点 $P_0(3, -1, 2)$. 求:</p>
+<ol>
+  <li>$P_0$ 到 $\pi$ 的距离 $d$</li>
+  <li>$P_0$ 在 $\pi$ 上的投影点 $P_1$ 坐标</li>
+  <li>过 $P_0$ 且与 $\pi$ 垂直的直线 $L$ 的方程</li>
+</ol>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>(1) 距离:</strong> 公式 $d = \dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$.</p>
+<p>$d = \dfrac{|2\cdot 3 - (-1) + 2\cdot 2 - 5|}{\sqrt{4+1+4}} = \dfrac{|6+1+4-5|}{3} = \dfrac{6}{3} = 2$</p>
+<p><strong>(3) 直线 $L$ (先求):</strong> $L$ 与 $\pi$ 垂直 $\Rightarrow$ $L$ 的方向向量 = $\pi$ 的法向量 $\vec{n} = (2, -1, 2)$.</p>
+<p>$L: \dfrac{x-3}{2} = \dfrac{y+1}{-1} = \dfrac{z-2}{2}$</p>
+<p><strong>(2) 投影点 $P_1$:</strong> 沿 $L$ 走距离 $d=2$, 单位法向量 $\hat{n} = \dfrac{(2,-1,2)}{3}$.</p>
+<p>$P_1 = P_0 - d\cdot\hat{n} = (3,-1,2) - 2\cdot\dfrac{(2,-1,2)}{3} = (3-\dfrac{4}{3}, -1+\dfrac{2}{3}, 2-\dfrac{4}{3}) = (\dfrac{5}{3}, -\dfrac{1}{3}, \dfrac{2}{3})$</p>
+<p>验算: $2\cdot\dfrac{5}{3} - (-\dfrac{1}{3}) + 2\cdot\dfrac{2}{3} - 5 = \dfrac{10}{3}+\dfrac{1}{3}+\dfrac{4}{3}-5 = 5-5 = 0$ ✓</p>
+<p style="color:#0891b2;"><em>💡 顺序: 先求方向向量, 再走距离, 验证回 π 方程上是否为 0.</em></p>
+</details>
+
+<h3 id="8-c3">综合例题 3 (二次曲面 + 平面截痕)</h3>
+<p>给定椭圆抛物面 $z = \dfrac{x^2}{4} + \dfrac{y^2}{9}$. 求:</p>
+<ol>
+  <li>它的对称轴 / 顶点</li>
+  <li>$z = 1$ 平面截痕方程及形状</li>
+  <li>$y = 0$ 平面截痕方程及形状</li>
+</ol>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>(1) 对称轴 / 顶点:</strong> 椭圆抛物面 $z = \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}$ 的标准形式, 对称轴是 $z$ 轴, 顶点在原点 $(0,0,0)$, 开口向上.</p>
+<p><strong>(2) $z=1$ 截痕:</strong> 代入 $z=1$ 得 $1 = \dfrac{x^2}{4}+\dfrac{y^2}{9}$, 即 $\dfrac{x^2}{4}+\dfrac{y^2}{9} = 1$.</p>
+<p>这是一个<strong>椭圆</strong>, 长半轴 $b=3$ (沿 $y$), 短半轴 $a=2$ (沿 $x$), 在 $z=1$ 平面上.</p>
+<p><strong>(3) $y=0$ 截痕:</strong> 代入 $y=0$ 得 $z = \dfrac{x^2}{4}$.</p>
+<p>这是 $xOz$ 平面上的一条<strong>抛物线</strong>, 开口向上, 顶点 $(0,0,0)$, 焦准距 $\dfrac{p}{2}=1$ (因 $4p=4 \Rightarrow p=1$).</p>
+<p style="color:#0891b2;"><em>💡 截痕法 = 选不同平面切曲面, 看截痕的样子拼出 3D 形状. 椭圆抛物面 = 上下抛物线 + 横切椭圆.</em></p>
+</details>
+
 <div class="chapter-footer-nav" style="display:flex;gap:10px;margin:30px 0 10px;padding:14px;background:#dbeafe;border-radius:10px;flex-wrap:wrap;">
   <span style="flex:1;text-align:center;padding:10px;color:#cbd5e1;background:#f8fafc;border-radius:6px;">← 已是第一章</span>
   <a href="./index.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;font-weight:600;">🏠 返回目录</a>
