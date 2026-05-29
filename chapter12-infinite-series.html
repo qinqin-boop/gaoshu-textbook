@@ -3179,6 +3179,62 @@ $$|x| = \frac{\pi}{2} - \frac{4}{\pi}\sum_{k=0}^\infty \frac{\cos((2k+1)x)}{(2k+
 </p>
 </details>
 
+<h2 id="12-comprehensive" style="margin-top:40px;border-top:3px solid #f59e0b;padding-top:20px;">💡 综合应用例题 (跨小节)</h2>
+<p style="color:#78350f;background:#fef3c7;padding:10px 14px;border-left:4px solid #f59e0b;border-radius:6px;">把级数审敛 / 幂级数 / Taylor / Fourier 串起来用. 3 道.</p>
+
+<h3 id="12-c1">综合例题 1 (级数收敛判别综合)</h3>
+<p>判断下列级数的敛散性, 收敛时区分绝对/条件收敛:</p>
+<ol>
+  <li>$\displaystyle\sum_{n=1}^\infty \dfrac{(-1)^n}{n\ln(n+1)}$</li>
+  <li>$\displaystyle\sum_{n=1}^\infty \dfrac{n!}{n^n}$</li>
+  <li>$\displaystyle\sum_{n=1}^\infty (\sqrt{n+1} - \sqrt{n})$</li>
+</ol>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>(1) Leibniz 交错级数 + 比较审敛:</strong></p>
+<p>$a_n = \dfrac{1}{n\ln(n+1)} > 0$ 且单调递减趋于 0, 由 Leibniz 知交错级数收敛.</p>
+<p>取绝对值 $|a_n| = \dfrac{1}{n\ln(n+1)}$. 用积分判别法对比 $\int_2^\infty \dfrac{dx}{x\ln x}$ 发散 (变量 $u = \ln x$, $\int\dfrac{du}{u} = \ln u \to \infty$).</p>
+<p><strong>条件收敛</strong>.</p>
+<p><strong>(2) 比值审敛 (d'Alembert):</strong></p>
+<p>$\dfrac{a_{n+1}}{a_n} = \dfrac{(n+1)!/(n+1)^{n+1}}{n!/n^n} = \dfrac{(n+1)\cdot n^n}{(n+1)^{n+1}} = \dfrac{n^n}{(n+1)^n} = (\dfrac{n}{n+1})^n = \dfrac{1}{(1+\dfrac{1}{n})^n} \to \dfrac{1}{e} < 1$</p>
+<p><strong>绝对收敛</strong>.</p>
+<p><strong>(3) 部分和望远镜:</strong></p>
+<p>$S_N = \sum_{n=1}^N (\sqrt{n+1}-\sqrt{n}) = \sqrt{N+1} - 1 \to +\infty$</p>
+<p><strong>发散</strong>.</p>
+<p style="color:#0891b2;"><em>💡 三种典型审敛工具: Leibniz (交错) / 比值 (含 n!^n) / 望远镜 (差分形式).</em></p>
+</details>
+
+<h3 id="12-c2">综合例题 2 (幂级数收敛域 + Taylor 展开)</h3>
+<p>求 $f(x) = \ln(1+x^2)$ 的麦克劳林级数及收敛域.</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>用已知展开:</strong> $\ln(1+u) = \sum_{n=1}^\infty \dfrac{(-1)^{n-1}}{n} u^n$, 收敛域 $u \in (-1, 1]$.</p>
+<p>代入 $u = x^2$: $\ln(1+x^2) = \sum_{n=1}^\infty \dfrac{(-1)^{n-1}}{n} x^{2n}$</p>
+<p>$= x^2 - \dfrac{x^4}{2} + \dfrac{x^6}{3} - \dfrac{x^8}{4} + \cdots$</p>
+<p><strong>收敛域:</strong> 由 $u \in (-1, 1]$ 知 $x^2 \in [0, 1]$, 即 $x \in [-1, 1]$.</p>
+<p>端点检验: $x = \pm 1$ 时, 级数为 $\sum\dfrac{(-1)^{n-1}}{n}$ — 交错调和级数, 收敛.</p>
+<p>所以收敛域 $[-1, 1]$.</p>
+<p style="color:#0891b2;"><em>💡 工程套路: 找已知展开 (5 个常用 $e^x, \sin x, \cos x, \dfrac{1}{1-x}, \ln(1+x)$) → 代入变换 → 端点检验.</em></p>
+</details>
+
+<h3 id="12-c3">综合例题 3 (Fourier 级数 + Parseval 等式)</h3>
+<p>设 $f(x) = x$, $x \in (-\pi, \pi)$, 周期延拓. 求:</p>
+<ol>
+  <li>$f(x)$ 的 Fourier 级数</li>
+  <li>用 Parseval 等式证明 $\displaystyle\sum_{n=1}^\infty \dfrac{1}{n^2} = \dfrac{\pi^2}{6}$ (欧拉 1735 年震惊数学界的结果)</li>
+</ol>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>(1) Fourier 系数 (奇函数, $a_n = 0$):</strong></p>
+<p>$b_n = \dfrac{1}{\pi}\int_{-\pi}^\pi x\sin(nx)\,dx = \dfrac{2}{\pi}\int_0^\pi x\sin(nx)\,dx$</p>
+<p>分部积分: $u=x, dv=\sin(nx)dx$.</p>
+<p>$= \dfrac{2}{\pi}\left[-\dfrac{x\cos(nx)}{n}\Big|_0^\pi + \int_0^\pi\dfrac{\cos(nx)}{n}dx\right] = \dfrac{2}{\pi}\cdot\left[-\dfrac{\pi\cos(n\pi)}{n} + 0\right] = -\dfrac{2\cos(n\pi)}{n} = \dfrac{2(-1)^{n+1}}{n}$</p>
+<p>$f(x) \sim \sum_{n=1}^\infty \dfrac{2(-1)^{n+1}}{n}\sin(nx) = 2(\sin x - \dfrac{\sin 2x}{2} + \dfrac{\sin 3x}{3} - \cdots)$</p>
+<p><strong>(2) Parseval 等式:</strong></p>
+<p>$\dfrac{1}{\pi}\int_{-\pi}^\pi |f(x)|^2 dx = \dfrac{a_0^2}{2} + \sum_{n=1}^\infty (a_n^2 + b_n^2)$</p>
+<p>左边: $\dfrac{1}{\pi}\int_{-\pi}^\pi x^2 dx = \dfrac{2}{\pi}\cdot\dfrac{\pi^3}{3} = \dfrac{2\pi^2}{3}$</p>
+<p>右边: $\sum_{n=1}^\infty (\dfrac{2(-1)^{n+1}}{n})^2 = \sum_{n=1}^\infty \dfrac{4}{n^2} = 4\sum_{n=1}^\infty\dfrac{1}{n^2}$</p>
+<p>$\dfrac{2\pi^2}{3} = 4\sum_{n=1}^\infty\dfrac{1}{n^2}$, 故 $\displaystyle\sum_{n=1}^\infty\dfrac{1}{n^2} = \dfrac{\pi^2}{6}$. ∎</p>
+<p style="color:#0891b2;"><em>💡 Basel 问题 — 欧拉用 sin x 的因式分解 + Fourier/Parseval 都能证. 这里展示 Parseval 路径.</em></p>
+</details>
+
 <div class="chapter-footer-nav" style="display:flex;gap:10px;margin:30px 0 10px;padding:14px;background:#dbeafe;border-radius:10px;flex-wrap:wrap;">
   <a href="./chapter11-line-surface-integrals.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;">← 第十一章 曲线曲面积分</a>
   <a href="./index.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;font-weight:600;">🏠 返回目录</a>
