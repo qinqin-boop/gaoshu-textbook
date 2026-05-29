@@ -3066,6 +3066,62 @@ $$u(x,y) = x^3 y + xy^3 + C$$
 </p>
 </details>
 
+<h2 id="9-comprehensive" style="margin-top:40px;border-top:3px solid #f59e0b;padding-top:20px;">💡 综合应用例题 (跨小节)</h2>
+<p style="color:#78350f;background:#fef3c7;padding:10px 14px;border-left:4px solid #f59e0b;border-radius:6px;">这一节把 9.1-9.10 的工具串起来用 — 链式法则 + 方向导数 + 多元极值真实题型考察. 3 道.</p>
+
+<h3 id="9-c1">综合例题 1 (复合函数链式法则 + 全微分)</h3>
+<p>设 $z = f(u, v)$ 二阶可微, 其中 $u = x^2 - y^2$, $v = xy$. 求:</p>
+<ol>
+  <li>$\dfrac{\partial z}{\partial x}$ 和 $\dfrac{\partial z}{\partial y}$</li>
+  <li>$\dfrac{\partial^2 z}{\partial x \partial y}$ (用 $f$ 的偏导符号表示)</li>
+</ol>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>(1) 一阶偏导 (链式法则):</strong></p>
+<p>$\dfrac{\partial z}{\partial x} = f_u\cdot\dfrac{\partial u}{\partial x} + f_v\cdot\dfrac{\partial v}{\partial x} = 2x\,f_u + y\,f_v$</p>
+<p>$\dfrac{\partial z}{\partial y} = f_u\cdot(-2y) + f_v\cdot x = -2y\,f_u + x\,f_v$</p>
+<p><strong>(2) 二阶混合偏导:</strong> 对 $\dfrac{\partial z}{\partial x}$ 再对 $y$ 求偏导.</p>
+<p>$\dfrac{\partial^2 z}{\partial x\partial y} = \dfrac{\partial}{\partial y}(2x\,f_u + y\,f_v)$</p>
+<p>对 $2x\,f_u$ 求 $y$ 偏导: $2x\cdot(f_{uu}\cdot(-2y) + f_{uv}\cdot x) = -4xy\,f_{uu} + 2x^2\,f_{uv}$</p>
+<p>对 $y\,f_v$ 求 $y$ 偏导: $f_v + y\cdot(f_{vu}\cdot(-2y) + f_{vv}\cdot x) = f_v - 2y^2\,f_{vu} + xy\,f_{vv}$</p>
+<p>由 $f_{uv} = f_{vu}$ (二阶混合连续), 合并:</p>
+<p>$\boxed{\dfrac{\partial^2 z}{\partial x\partial y} = -4xy\,f_{uu} + (2x^2 - 2y^2)\,f_{uv} + xy\,f_{vv} + f_v}$</p>
+<p style="color:#0891b2;"><em>💡 关键: 把 $f_u$ 当成新的复合函数 $f_u(u(x,y), v(x,y))$, 对 $y$ 求偏导时还要走一遍链式.</em></p>
+</details>
+
+<h3 id="9-c2">综合例题 2 (方向导数 + 梯度几何意义)</h3>
+<p>设 $f(x,y,z) = x^2 + 2y^2 + 3z^2$, 在点 $P_0(1, 1, 1)$ 处. 求:</p>
+<ol>
+  <li>$f$ 在 $P_0$ 沿方向 $\vec{l} = (1, 2, 2)$ 的方向导数</li>
+  <li>$f$ 在 $P_0$ 增长最快的方向及最大方向导数</li>
+  <li>过 $P_0$ 的等值面 $f = 6$ 的切平面方程</li>
+</ol>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>梯度 (核心):</strong> $\nabla f = (2x, 4y, 6z)$, 在 $P_0$ 处 $\nabla f|_{P_0} = (2, 4, 6)$.</p>
+<p><strong>(1) 方向导数:</strong> $\dfrac{\partial f}{\partial \vec{l}} = \nabla f \cdot \hat{l}$ (单位向量).</p>
+<p>$|\vec{l}| = \sqrt{1+4+4} = 3$, $\hat{l} = (\dfrac{1}{3}, \dfrac{2}{3}, \dfrac{2}{3})$</p>
+<p>$(2,4,6)\cdot(\dfrac{1}{3}, \dfrac{2}{3}, \dfrac{2}{3}) = \dfrac{2}{3}+\dfrac{8}{3}+\dfrac{12}{3} = \dfrac{22}{3}$</p>
+<p><strong>(2) 最大方向导数:</strong> 增长最快方向 = $\nabla f$ 方向 = $(2,4,6)$ 或单位化 $\dfrac{1}{\sqrt{56}}(2,4,6) = \dfrac{1}{2\sqrt{14}}(2,4,6)$.</p>
+<p>最大方向导数 $= |\nabla f| = \sqrt{4+16+36} = \sqrt{56} = 2\sqrt{14}$</p>
+<p><strong>(3) 切平面:</strong> 等值面 $F = f - 6 = 0$, 法向量 $= \nabla f|_{P_0} = (2,4,6)$.</p>
+<p>切平面: $2(x-1) + 4(y-1) + 6(z-1) = 0$, 即 $x + 2y + 3z = 6$</p>
+<p style="color:#0891b2;"><em>💡 三件套: 梯度方向 = 函数增最快方向 = 等值面法线方向. 一次算 $\nabla f$ 三题全解决.</em></p>
+</details>
+
+<h3 id="9-c3">综合例题 3 (条件极值 + 拉格朗日乘数法)</h3>
+<p>求函数 $f(x, y) = x^2 + y^2$ 在约束 $x + 2y = 5$ 下的极值, 并验证用代入法结果一致.</p>
+<details class="box-answer"><summary>📖 点击展开答案 / 详解</summary>
+<p><strong>方法 1 拉格朗日:</strong> 设 $L = x^2 + y^2 + \lambda(x + 2y - 5)$.</p>
+<p>$\dfrac{\partial L}{\partial x} = 2x + \lambda = 0 \Rightarrow x = -\dfrac{\lambda}{2}$</p>
+<p>$\dfrac{\partial L}{\partial y} = 2y + 2\lambda = 0 \Rightarrow y = -\lambda$</p>
+<p>$\dfrac{\partial L}{\partial \lambda} = x + 2y - 5 = 0 \Rightarrow -\dfrac{\lambda}{2} - 2\lambda = 5 \Rightarrow \lambda = -2$</p>
+<p>解得 $x = 1, y = 2$, $f(1, 2) = 1 + 4 = 5$.</p>
+<p><strong>方法 2 代入法验证:</strong> 由 $x = 5 - 2y$, 代入 $f$:</p>
+<p>$g(y) = (5-2y)^2 + y^2 = 25 - 20y + 4y^2 + y^2 = 5y^2 - 20y + 25$</p>
+<p>$g'(y) = 10y - 20 = 0 \Rightarrow y = 2$, 此时 $x = 1$, $g(2) = 5$. ✓ 一致.</p>
+<p><strong>几何意义:</strong> $f = x^2 + y^2$ 是以原点为圆心的圆族, $x + 2y = 5$ 是一条直线. 求圆与直线相切时的最小半径平方, 答案 $= 5$ (即原点到直线距离平方 $= \dfrac{|5|^2}{1+4} = 5$).</p>
+<p style="color:#0891b2;"><em>💡 拉格朗日是"一般工具", 代入法是"取巧". 复杂约束 (非线性 / 多约束) 必须拉格朗日.</em></p>
+</details>
+
 <div class="chapter-footer-nav" style="display:flex;gap:10px;margin:30px 0 10px;padding:14px;background:#dbeafe;border-radius:10px;flex-wrap:wrap;">
   <a href="./chapter08-vectors.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;">← 第八章 向量</a>
   <a href="./index.html" style="flex:1;text-align:center;padding:10px;color:#1e40af;text-decoration:none;background:white;border-radius:6px;border:1px solid #cbd5e1;font-weight:600;">🏠 返回目录</a>
