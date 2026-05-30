@@ -384,6 +384,7 @@ $$f(x,y)=\begin{cases}\dfrac{xy(x^2-y^2)}{x^2+y^2},&(x,y)\neq(0,0)\\ 0,&(x,y)=(0
 </p>
 </div>
 <h3 id="9-2-4">9.2.4 偏导数的几何意义与切平面</h3>
+<figure class="concept-video"><video src="./anim/partial-derivative.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>固定 $y=y_0$ 用平面切曲面得切片曲线 (红), 它在某点的切线斜率 (绿) 就是偏导数 $\partial z/\partial x$。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <defs>
@@ -984,6 +985,7 @@ $$J_{\vec{F}^{-1}}(\vec{F}(\vec{x}_0))=[J_{\vec{F}}(\vec{x}_0)]^{-1}.$$
 偏导数只能告诉我们沿坐标轴方向的变化率。如果一个登山者站在山坡上想知道「往东北方向走、高度变化多快」,偏导给不出直接答案。<strong>方向导数</strong>把这件事扩展到任意方向;<strong>梯度</strong>则把所有方向的变化率压成一个向量,并且这个向量本身就指向「<strong>变化最快</strong>」的方向。这是后续条件极值、机器学习中梯度下降、最速下降法的代数基础。
 </p>
 <h3 id="9-6-1">9.6.1 方向导数</h3>
+<figure class="concept-video"><video src="./anim/directional-derivative.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>方向导数 $D_{\vec u}f=\nabla f\cdot\vec u$; $\vec u$ 与梯度 $\nabla f$ 同向时最大, 垂直时为 0。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <defs>
@@ -1042,6 +1044,7 @@ $$f(x,y)=\begin{cases}\dfrac{xy}{x^2+y^2},&(x,y)\neq(0,0)\\ 0,&(x,y)=(0,0)\end{c
 </p>
 </div>
 <h3 id="9-6-2">9.6.2 梯度</h3>
+<figure class="concept-video"><video src="./anim/gradient-descent.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>沿负梯度 $-\nabla f$ 方向每步下降, 逐步滚到最低点 —— SGD 等优化算法的几何原型。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <defs>

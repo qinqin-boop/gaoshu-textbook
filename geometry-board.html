@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>几何画板 · 高数下册</title>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta name="description" content="高数下册交互式几何画板: 3D 曲面 z=f(x,y) / 等高线 / 2D 函数曲线 / 空间参数曲线. 可旋转缩放, 配各章节预设例子. 纯前端, Plotly 渲染.">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+<style>
+.gb-main { max-width: 980px; margin: 0 auto; padding: 32px 28px 64px; }
+.gb-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0 0; border-bottom: 2px solid #c9b97a; }
+.gb-tab {
+  background: #f6f5ef; border: 1px solid #e5e5e0; border-bottom: none;
+  padding: 9px 16px; border-radius: 6px 6px 0 0; cursor: pointer;
+  font-size: 0.92rem; color: #4a5568; font-weight: 600; transition: all 0.15s;
+}
+.gb-tab:hover { background: #ece9dd; color: #1a365d; }
+.gb-tab.active { background: #1a365d; color: #fff; border-color: #1a365d; }
+.gb-panel { display: none; }
+.gb-panel.active { display: block; }
+.gb-controls {
+  background: #f6f5ef; border: 1px solid #e5e5e0; border-radius: 0 0 8px 8px;
+  border-top: none; padding: 18px 20px; margin-bottom: 16px;
+}
+.gb-row { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: flex-end; }
+.gb-field { display: flex; flex-direction: column; gap: 4px; }
+.gb-field label { font-size: 0.78rem; color: #8b6f3a; font-weight: 700; letter-spacing: 0.5px; }
+.gb-field input {
+  font-family: "SFMono-Regular", Consolas, "Courier New", monospace;
+  font-size: 0.95rem; padding: 7px 10px; border: 1px solid #cbd5e1;
+  border-radius: 5px; background: #fff; color: #1d1d1f;
+}
+.gb-field input.expr { min-width: 220px; }
+.gb-field input.num { width: 76px; }
+.gb-btn {
+  background: #1a365d; color: #fff; border: none; padding: 9px 22px;
+  border-radius: 5px; cursor: pointer; font-size: 0.95rem; font-weight: 600;
+  transition: background 0.15s;
+}
+.gb-btn:hover { background: #2d4a73; }
+.gb-presets { margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.gb-presets .lbl { font-size: 0.8rem; color: #8b6f3a; font-weight: 700; margin-right: 4px; }
+.gb-preset {
+  background: #fff; border: 1px solid #c9b97a; color: #8b6f1c;
+  padding: 4px 11px; border-radius: 14px; cursor: pointer; font-size: 0.82rem;
+  transition: all 0.15s;
+}
+.gb-preset:hover { background: #c9a227; color: #fff; border-color: #c9a227; }
+.gb-plot { width: 100%; height: 520px; border: 1px solid #e5e5e0; border-radius: 8px; background: #fff; }
+.gb-err { color: #b91c1c; font-size: 0.88rem; margin-top: 8px; min-height: 1.2em; font-weight: 600; }
+.gb-hint { color: #6b7280; font-size: 0.86rem; margin: 10px 0 0; line-height: 1.6; }
+.gb-hint code { background: #f1efe6; padding: 1px 6px; border-radius: 3px; color: #8b3a0a; font-size: 0.9em; }
+.gb-checkbox { display: flex; align-items: center; gap: 6px; font-size: 0.88rem; color: #4a5568; cursor: pointer; }
+.gb-checkbox input { width: auto; }
+.gb-back { display: inline-block; margin-bottom: 4px; color: #1a365d; text-decoration: none; font-size: 0.9rem; }
+.gb-back:hover { text-decoration: underline; }
+@media (max-width: 700px) {
+  .gb-main { padding: 18px 12px 40px; }
+  .gb-plot { height: 380px; }
+  .gb-field input.expr { min-width: 150px; }
+  .gb-tab { padding: 8px 11px; font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>📐 几何画板</h1>
+  <p class="tagline">高数下册 · 函数图像 / 曲面 / 等高线 / 空间曲线 交互可视化</p>
+</header>
+<main class="gb-main">
+<a class="gb-back" href="./index.html">← 返回目录</a>
+
+<div class="gb-tabs">
+  <div class="gb-tab active" data-tab="surf">🏔️ 3D 曲面 z=f(x,y)</div>
+  <div class="gb-tab" data-tab="contour">🗺️ 等高线</div>
+  <div class="gb-tab" data-tab="curve2d">📈 2D 函数 y=f(x)</div>
+  <div class="gb-tab" data-tab="curve3d">🌀 空间曲线 (参数)</div>
+</div>
+
+<!-- ===== 3D 曲面 ===== -->
+<div class="gb-panel active" id="panel-surf">
+  <div class="gb-controls">
+    <div class="gb-row">
+      <div class="gb-field"><label>z = f(x, y)</label><input class="expr" id="surf-fn" value="x^2 + y^2"></div>
+      <div class="gb-field"><label>x 范围</label><input class="num" id="surf-xmin" value="-3"></div>
+      <div class="gb-field"><label>~</label><input class="num" id="surf-xmax" value="3"></div>
+      <div class="gb-field"><label>y 范围</label><input class="num" id="surf-ymin" value="-3"></div>
+      <div class="gb-field"><label>~</label><input class="num" id="surf-ymax" value="3"></div>
+      <div class="gb-field"><label>精度</label><input class="num" id="surf-n" value="50"></div>
+      <button class="gb-btn" id="surf-go">绘制</button>
+    </div>
+    <div class="gb-presets">
+      <span class="lbl">预设:</span>
+      <button class="gb-preset" data-fn="x^2 + y^2" data-r="3">旋转抛物面</button>
+      <button class="gb-preset" data-fn="x^2 - y^2" data-r="3">马鞍面 (双曲抛物面)</button>
+      <button class="gb-preset" data-fn="sin(x)*cos(y)" data-r="6">sin·cos 波纹</button>
+      <button class="gb-preset" data-fn="sin(sqrt(x^2+y^2))" data-r="8">水波 (径向)</button>
+      <button class="gb-preset" data-fn="sqrt(9 - x^2 - y^2)" data-r="3">上半球面</button>
+      <button class="gb-preset" data-fn="exp(-(x^2+y^2))" data-r="3">高斯钟形面</button>
+    </div>
+    <div class="gb-err" id="surf-err"></div>
+  </div>
+  <div class="gb-plot" id="surf-plot"></div>
+  <p class="gb-hint">拖动旋转 · 滚轮缩放 · 双击复位。对应第九章多元函数：曲面 <code>z=f(x,y)</code> 的图形、偏导数(沿坐标方向的切线斜率)、极值(局部最高/最低点)。</p>
+</div>
+
+<!-- ===== 等高线 ===== -->
+<div class="gb-panel" id="panel-contour">
+  <div class="gb-controls">
+    <div class="gb-row">
+      <div class="gb-field"><label>z = f(x, y)</label><input class="expr" id="cont-fn" value="x^2 + y^2"></div>
+      <div class="gb-field"><label>x 范围</label><input class="num" id="cont-xmin" value="-3"></div>
+      <div class="gb-field"><label>~</label><input class="num" id="cont-xmax" value="3"></div>
+      <div class="gb-field"><label>y 范围</label><input class="num" id="cont-ymin" value="-3"></div>
+      <div class="gb-field"><label>~</label><input class="num" id="cont-ymax" value="3"></div>
+      <div class="gb-field"><label>精度</label><input class="num" id="cont-n" value="80"></div>
+      <button class="gb-btn" id="cont-go">绘制</button>
+    </div>
+    <div class="gb-presets">
+      <span class="lbl">预设:</span>
+      <button class="gb-preset" data-fn="x^2 + y^2" data-r="3">同心圆 (圆抛物面)</button>
+      <button class="gb-preset" data-fn="x^2 - y^2" data-r="3">双曲线族 (鞍点)</button>
+      <button class="gb-preset" data-fn="x*y" data-r="3">xy 双曲线</button>
+      <button class="gb-preset" data-fn="sin(x)+cos(y)" data-r="6">周期等高线</button>
+    </div>
+    <div class="gb-err" id="cont-err"></div>
+  </div>
+  <div class="gb-plot" id="cont-plot"></div>
+  <p class="gb-hint">等高线 = 曲面被水平面 <code>z=C</code> 切出的曲线投影。线越密 → 越陡 → 梯度 <code>∇f</code> 越大；梯度方向垂直于等高线。对应第九章方向导数与梯度。</p>
+</div>
+
+<!-- ===== 2D 曲线 ===== -->
+<div class="gb-panel" id="panel-curve2d">
+  <div class="gb-controls">
+    <div class="gb-row">
+      <div class="gb-field"><label>y = f(x)</label><input class="expr" id="c2-fn" value="sin(x)/x"></div>
+      <div class="gb-field"><label>x 范围</label><input class="num" id="c2-xmin" value="-10"></div>
+      <div class="gb-field"><label>~</label><input class="num" id="c2-xmax" value="10"></div>
+      <div class="gb-field"><label>精度</label><input class="num" id="c2-n" value="400"></div>
+      <button class="gb-btn" id="c2-go">绘制</button>
+    </div>
+    <div class="gb-presets">
+      <span class="lbl">预设:</span>
+      <button class="gb-preset" data-fn="sin(x)/x" data-min="-15" data-max="15">sinc 函数</button>
+      <button class="gb-preset" data-fn="exp(-x^2)" data-min="-3" data-max="3">高斯函数</button>
+      <button class="gb-preset" data-fn="x - x^3/6 + x^5/120" data-min="-6" data-max="6">sin 的 Taylor 展开</button>
+      <button class="gb-preset" data-fn="1/(1-x)" data-min="-3" data-max="0.95">几何级数和 1/(1-x)</button>
+    </div>
+    <div class="gb-err" id="c2-err"></div>
+  </div>
+  <div class="gb-plot" id="c2-plot"></div>
+  <p class="gb-hint">支持多函数对比：用分号隔开，如 <code>sin(x); x; x-x^3/6</code> 可看 Taylor 逼近(第十二章)。</p>
+</div>
+
+<!-- ===== 3D 空间曲线 ===== -->
+<div class="gb-panel" id="panel-curve3d">
+  <div class="gb-controls">
+    <div class="gb-row">
+      <div class="gb-field"><label>x(t)</label><input class="expr" id="c3-x" value="cos(t)"></div>
+      <div class="gb-field"><label>y(t)</label><input class="expr" id="c3-y" value="sin(t)"></div>
+      <div class="gb-field"><label>z(t)</label><input class="expr" id="c3-z" value="t/3"></div>
+      <div class="gb-field"><label>t 范围</label><input class="num" id="c3-tmin" value="0"></div>
+      <div class="gb-field"><label>~</label><input class="num" id="c3-tmax" value="18.8"></div>
+      <div class="gb-field"><label>精度</label><input class="num" id="c3-n" value="600"></div>
+      <button class="gb-btn" id="c3-go">绘制</button>
+    </div>
+    <div class="gb-presets">
+      <span class="lbl">预设:</span>
+      <button class="gb-preset" data-x="cos(t)" data-y="sin(t)" data-z="t/3" data-min="0" data-max="18.8">螺旋线</button>
+      <button class="gb-preset" data-x="cos(t)" data-y="sin(t)" data-z="0" data-min="0" data-max="6.3">单位圆</button>
+      <button class="gb-preset" data-x="t*cos(t)" data-y="t*sin(t)" data-z="t" data-min="0" data-max="12.6">圆锥螺线</button>
+      <button class="gb-preset" data-x="sin(3*t)*cos(t)" data-y="sin(3*t)*sin(t)" data-z="cos(3*t)" data-min="0" data-max="6.3">球面曲线</button>
+    </div>
+    <div class="gb-err" id="c3-err"></div>
+  </div>
+  <div class="gb-plot" id="c3-plot"></div>
+  <p class="gb-hint">空间参数曲线 <code>r(t)=(x(t),y(t),z(t))</code>，对应第八章向量值函数、第十一章曲线积分的积分路径。</p>
+</div>
+
+</main>
+<footer>
+  <p>富贵 (AI 助理) 编 · 2026-05 · 几何画板基于 <a href="https://plotly.com/javascript/" style="color:#8b6f3a;">Plotly.js</a></p>
+</footer>
+
+<script>
+// ---- 安全表达式编译: 把用户输入编译成 JS 函数 ----
+function compile(expr, vars) {
+  // 只允许数学相关字符, 防注入
+  if (!/^[0-9a-zA-Z_+\-*/^().,\s]*$/.test(expr)) throw new Error('表达式含非法字符');
+  const js = expr.replace(/\^/g, '**');
+  const body = `
+    const {sin,cos,tan,asin,acos,atan,atan2,sinh,cosh,tanh,exp,sqrt,abs,sign,floor,ceil,round,min,max,cbrt}=Math;
+    const ln=Math.log, log=Math.log, log10=Math.log10, log2=Math.log2;
+    const pi=Math.PI, PI=Math.PI, e=Math.E, E=Math.E;
+    return (${js});`;
+  const fn = new Function(...vars, body);
+  // 试运行一次, 提前暴露语法错误
+  fn(...vars.map(() => 1));
+  return fn;
+}
+function linspace(a, b, n) {
+  const arr = [], step = (b - a) / (n - 1);
+  for (let i = 0; i < n; i++) arr.push(a + step * i);
+  return arr;
+}
+function num(id) { return parseFloat(document.getElementById(id).value); }
+function val(id) { return document.getElementById(id).value.trim(); }
+function clampN(n, lo, hi) { n = Math.round(n); return isNaN(n) ? lo : Math.max(lo, Math.min(hi, n)); }
+
+const LAYOUT_BASE = {
+  margin: { l: 0, r: 0, t: 10, b: 0 },
+  paper_bgcolor: '#fff',
+  font: { family: 'Georgia, serif', color: '#2d3748' }
+};
+const CONFIG = { responsive: true, displaylogo: false };
+
+// ---- 3D 曲面 ----
+function drawSurf() {
+  const err = document.getElementById('surf-err'); err.textContent = '';
+  try {
+    const f = compile(val('surf-fn'), ['x', 'y']);
+    const n = clampN(num('surf-n'), 10, 120);
+    const xs = linspace(num('surf-xmin'), num('surf-xmax'), n);
+    const ys = linspace(num('surf-ymin'), num('surf-ymax'), n);
+    const z = ys.map(y => xs.map(x => { const v = f(x, y); return isFinite(v) ? v : null; }));
+    Plotly.react('surf-plot', [{
+      type: 'surface', x: xs, y: ys, z: z, colorscale: 'Viridis',
+      contours: { z: { show: true, usecolormap: true, project: { z: true } } }
+    }], { ...LAYOUT_BASE, scene: { xaxis: { title: 'x' }, yaxis: { title: 'y' }, zaxis: { title: 'z' } } }, CONFIG);
+  } catch (e) { err.textContent = '⚠ ' + e.message; }
+}
+
+// ---- 等高线 ----
+function drawContour() {
+  const err = document.getElementById('cont-err'); err.textContent = '';
+  try {
+    const f = compile(val('cont-fn'), ['x', 'y']);
+    const n = clampN(num('cont-n'), 20, 200);
+    const xs = linspace(num('cont-xmin'), num('cont-xmax'), n);
+    const ys = linspace(num('cont-ymin'), num('cont-ymax'), n);
+    const z = ys.map(y => xs.map(x => { const v = f(x, y); return isFinite(v) ? v : null; }));
+    Plotly.react('cont-plot', [{
+      type: 'contour', x: xs, y: ys, z: z, colorscale: 'Viridis',
+      contours: { coloring: 'heatmap', showlabels: true }
+    }], { ...LAYOUT_BASE, margin: { l: 40, r: 10, t: 10, b: 40 },
+      xaxis: { title: 'x', scaleanchor: 'y' }, yaxis: { title: 'y' } }, CONFIG);
+  } catch (e) { err.textContent = '⚠ ' + e.message; }
+}
+
+// ---- 2D 曲线 (支持 ; 分隔多条) ----
+function drawCurve2d() {
+  const err = document.getElementById('c2-err'); err.textContent = '';
+  try {
+    const exprs = val('c2-fn').split(';').map(s => s.trim()).filter(Boolean);
+    const n = clampN(num('c2-n'), 50, 2000);
+    const xs = linspace(num('c2-xmin'), num('c2-xmax'), n);
+    const traces = exprs.map(ex => {
+      const f = compile(ex, ['x']);
+      return { x: xs, y: xs.map(x => { const v = f(x); return isFinite(v) ? v : null; }),
+        type: 'scatter', mode: 'lines', name: 'y=' + ex, line: { width: 2.5 } };
+    });
+    Plotly.react('c2-plot', traces, { ...LAYOUT_BASE, margin: { l: 50, r: 16, t: 10, b: 40 },
+      xaxis: { title: 'x', zeroline: true, zerolinecolor: '#999' },
+      yaxis: { title: 'y', zeroline: true, zerolinecolor: '#999' },
+      showlegend: traces.length > 1, legend: { x: 0.02, y: 0.98 } }, CONFIG);
+  } catch (e) { err.textContent = '⚠ ' + e.message; }
+}
+
+// ---- 3D 空间曲线 ----
+function drawCurve3d() {
+  const err = document.getElementById('c3-err'); err.textContent = '';
+  try {
+    const fx = compile(val('c3-x'), ['t']), fy = compile(val('c3-y'), ['t']), fz = compile(val('c3-z'), ['t']);
+    const n = clampN(num('c3-n'), 50, 3000);
+    const ts = linspace(num('c3-tmin'), num('c3-tmax'), n);
+    Plotly.react('c3-plot', [{
+      type: 'scatter3d', mode: 'lines',
+      x: ts.map(fx), y: ts.map(fy), z: ts.map(fz),
+      line: { width: 5, color: ts, colorscale: 'Viridis' }
+    }], { ...LAYOUT_BASE, scene: { xaxis: { title: 'x' }, yaxis: { title: 'y' }, zaxis: { title: 'z' } } }, CONFIG);
+  } catch (e) { err.textContent = '⚠ ' + e.message; }
+}
+
+// ---- Tab 切换 ----
+document.querySelectorAll('.gb-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.gb-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.gb-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const id = tab.dataset.tab;
+    document.getElementById('panel-' + id).classList.add('active');
+    // 切到该 tab 时若未画过, 触发一次重绘以适配尺寸
+    ({ surf: drawSurf, contour: drawContour, curve2d: drawCurve2d, curve3d: drawCurve3d }[id])();
+  });
+});
+
+// ---- 按钮 ----
+document.getElementById('surf-go').addEventListener('click', drawSurf);
+document.getElementById('cont-go').addEventListener('click', drawContour);
+document.getElementById('c2-go').addEventListener('click', drawCurve2d);
+document.getElementById('c3-go').addEventListener('click', drawCurve3d);
+
+// ---- 预设 ----
+document.querySelectorAll('#panel-surf .gb-preset, #panel-contour .gb-preset').forEach(b => {
+  b.addEventListener('click', () => {
+    const pre = b.closest('.gb-panel').id === 'panel-surf' ? 'surf' : 'cont';
+    document.getElementById(pre + '-fn').value = b.dataset.fn;
+    const r = parseFloat(b.dataset.r);
+    document.getElementById(pre + '-xmin').value = -r;
+    document.getElementById(pre + '-xmax').value = r;
+    document.getElementById(pre + '-ymin').value = -r;
+    document.getElementById(pre + '-ymax').value = r;
+    pre === 'surf' ? drawSurf() : drawContour();
+  });
+});
+document.querySelectorAll('#panel-curve2d .gb-preset').forEach(b => {
+  b.addEventListener('click', () => {
+    document.getElementById('c2-fn').value = b.dataset.fn;
+    document.getElementById('c2-xmin').value = b.dataset.min;
+    document.getElementById('c2-xmax').value = b.dataset.max;
+    drawCurve2d();
+  });
+});
+document.querySelectorAll('#panel-curve3d .gb-preset').forEach(b => {
+  b.addEventListener('click', () => {
+    document.getElementById('c3-x').value = b.dataset.x;
+    document.getElementById('c3-y').value = b.dataset.y;
+    document.getElementById('c3-z').value = b.dataset.z;
+    document.getElementById('c3-tmin').value = b.dataset.min;
+    document.getElementById('c3-tmax').value = b.dataset.max;
+    drawCurve3d();
+  });
+});
+
+// 首屏渲染默认曲面
+drawSurf();
+</script>
+</body>
+</html>

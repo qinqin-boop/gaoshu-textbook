@@ -206,6 +206,7 @@ function toggleAllAnswers() {
 把无穷个数加起来——「无穷和」一开始是个哲学难题(Zeno 悖论:阿喀琉斯追不上乌龟)。微积分给出了严格定义:<strong>无穷和 $=$ 部分和的极限</strong>。本节给出常数项级数的严格定义、收敛 / 发散的判定框架、必要条件 $u_n\to 0$、几何级数与调和级数两个最重要的"参考级数",以及级数运算的合法性边界。
 </p>
 <h3 id="12-1-1">12.1.1 定义与基本概念</h3>
+<figure class="concept-video"><video src="./anim/partial-sum.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>几何级数 $\sum 1/2^n=1$; 部分和 $S_n$ 随 $n$ 增大越来越接近极限线, 这就是级数收敛。</figcaption></figure>
 <div class="box-def">
 <p>
 设 $\{u_n\}$ 为数列。形式表达式 $\displaystyle\sum_{n=1}^\infty u_n=u_1+u_2+u_3+\dots$ 称为<strong>(常数项)无穷级数</strong>;$u_n$ 是<strong>通项</strong>,$\displaystyle S_n=\sum_{k=1}^n u_k$ 称为<strong>部分和</strong>。
@@ -1237,6 +1238,7 @@ $$F'(t)=-\frac{f^{(n+1)}(t)}{n!}(x-t)^n.$$
 </p>
 </div>
 <h3 id="12-5-2-taylor">12.5.2 Taylor 级数与收敛性</h3>
+<figure class="concept-video"><video src="./anim/taylor-approx.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>$\sin x$ 的 Taylor 多项式 (红) 随阶数升高, 在越来越宽的区间上贴合原函数 (蓝)。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <line x1="20" y1="100" x2="360" y2="100" stroke="#888" stroke-width="1"/>
@@ -1576,6 +1578,7 @@ $$\int_{-\pi}^\pi\!f(x)\cos mx\,dx=\frac{a_0}{2}\underbrace{\int\cos mx\,dx}_{=0
 注意:这是<strong>形式推导</strong>——它假设了级数处处成立。<strong>真正的问题是:把 $a_n,b_n$ 由公式给出后,所得级数到底是否收敛到 $f$?</strong> 这就是 Dirichlet 定理要回答的。
 </p>
 <h3 id="12-6-3-dirichlet">12.6.3 Dirichlet 定理:逐点收敛</h3>
+<figure class="concept-video"><video src="./anim/fourier-square.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>叠加越来越多正弦谐波逼近方波; 谐波越多越像, 跳变处的小过冲即 Gibbs 现象。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <line x1="30" y1="120" x2="330" y2="120" stroke="#888" stroke-width="1"/>
