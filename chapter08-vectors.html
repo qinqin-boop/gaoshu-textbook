@@ -340,6 +340,7 @@ $$\vec{a}=a_1\vec{i}+a_2\vec{j}+a_3\vec{k}.$$
 </p>
 </div>
 <h3 id="8-1-5">8.1.5 投影</h3>
+<figure class="concept-video"><video src="./anim/projection.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>$\vec a$ 在 $\vec b$ 上的投影向量 $\mathrm{proj}_{\vec b}\vec a=(|\vec a|\cos\theta)\,\hat b$; 转动 $\vec a$ 看投影长短变化。</figcaption></figure>
 <p>
 向量到向量、向量到平面的投影,在曲面切平面、最小二乘、机器学习正交化(Gram-Schmidt)中反复出现。这里给二维基本版。
 </p>
@@ -732,6 +733,7 @@ $$\vec{AB}\times\vec{AC}=\begin{vmatrix}\vec{i}&\vec{j}&\vec{k}\\-1&1&0\\-1&0&1\
 </ul>
 </div>
 <h3 id="8-2-3">8.2.3 混合积</h3>
+<figure class="concept-video"><video src="./anim/triple-product.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>混合积 $(\vec a\times\vec b)\cdot\vec c$ 的绝对值 = 三向量张成的平行六面体体积。</figcaption></figure>
 <div class="box-def">
 <p>
 三个向量 $\vec{a},\vec{b},\vec{c}\in\mathbb{R}^3$ 的<strong>混合积</strong>(三重积)记作 $[\vec{a},\vec{b},\vec{c}]$,定义为
@@ -846,6 +848,7 @@ $$[\vec{a},\vec{b},\vec{c}]=\begin{vmatrix}1&1&0\\ 0&1&1\\ 1&0&-1\end{vmatrix}=1
 平面方程是空间中"线性"的代数对象,曲面是其非线性推广:$F(x,y,z)=0$ 这种<strong>隐式</strong>方程刻画了球面、圆柱面、圆锥面、椭球面、双曲面、抛物面等无穷多种几何形态。本节系统给出:球面 / 旋转曲面 / 柱面 / 二次曲面五兄弟、参数化与截痕法、与 §9.7 切平面、§11.4 曲面积分的联结。这是计算机图形学(隐式曲面 / NURBS)、机器人 CAD、广义相对论时空几何的代数语言。
 </p>
 <h3 id="8-3-1">8.3.1 球面方程</h3>
+<figure class="concept-video"><video src="./anim/sphere.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>球面 $x^2+y^2+z^2=R^2$: 到定点 (球心) 距离为常数 $R$ 的点集。</figcaption></figure>
 <div class="box-def">
 <p>
 球心 $(x_0,y_0,z_0)$、半径 $R$ 的<strong>球面</strong>:
@@ -973,6 +976,7 @@ $$\boxed{f(\pm\sqrt{x^2+y^2},\,z)=0}\quad(\text{把 }y\text{ 替换为 }\pm\sqrt
 </ul>
 </div>
 <h3 id="8-3-4">8.3.4 二次曲面五兄弟(标准型)</h3>
+<figure class="concept-video"><video src="./anim/quadric-surfaces.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>二次曲面五兄弟: 椭球面 / 椭圆抛物面 / 双曲抛物面(鞍) / 圆锥面 等标准型轮播。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <ellipse cx="50" cy="100" rx="35" ry="50" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>
@@ -1046,6 +1050,7 @@ $$\boxed{f(\pm\sqrt{x^2+y^2},\,z)=0}\quad(\text{把 }y\text{ 替换为 }\pm\sqrt
 </p>
 </div>
 <h3 id="8-3-5">8.3.5 截痕法画曲面</h3>
+<figure class="concept-video"><video src="./anim/cross-section.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>截痕法: 用一族平面 $z=C$ 去切曲面, 得到的截痕曲线帮你还原整张曲面的形状。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <ellipse cx="80" cy="100" rx="50" ry="35" fill="#eef4fb" stroke="#1a365d" stroke-width="1.5"/>

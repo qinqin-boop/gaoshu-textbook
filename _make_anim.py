@@ -19,7 +19,7 @@ os.makedirs(OUT, exist_ok=True)
 FPS = 25
 
 def writer(): return animation.FFMpegWriter(fps=FPS, codec="libx264", bitrate=1800,
-                                            extra_args=["-pix_fmt","yuv420p"])
+                                            extra_args=["-pix_fmt","yuv420p","-movflags","+faststart"])
 def arrow2(ax,x1,y1,x2,y2,color,lw=2.4):
     ax.annotate("", xy=(x2,y2), xytext=(x1,y1),
                 arrowprops=dict(arrowstyle="-|>", color=color, lw=lw, shrinkA=0, shrinkB=0))
@@ -248,6 +248,296 @@ def fourier_square():
         ax.set_title("Fourier 级数逼近方波 (Gibbs)",color=NAVY,fontsize=12)
     save("fourier-square",fig,up,N)
 
+# ============ 第二批: 18 个新动画 (扩大知识点覆盖) ============
+def surf3d(ax,f,rng=1.5,n=30,color=NAVY,alpha=.35):
+    xs=np.linspace(-rng,rng,n); X,Y=np.meshgrid(xs,xs)
+    ax.plot_surface(X,Y,f(X,Y),color=color,alpha=alpha,linewidth=0,antialiased=True)
+
+# --- CH8 ---
+def projection():
+    fig,ax=plt.subplots(figsize=(6,3.6)); N=100; La=2.4; Lb=3.4
+    def up(f):
+        ax.clear(); ax.set_xlim(-1.5,3.8); ax.set_ylim(-.5,2.8); ax.axis("off")
+        th=math.radians(20+50*(0.5-0.5*math.cos(2*math.pi*f/N)))
+        arrow2(ax,0,0,Lb,0,RUST); ax_,ay=La*math.cos(th),La*math.sin(th)
+        arrow2(ax,0,0,ax_,ay,NAVY)
+        p=La*math.cos(th); ax.plot([ax_,p],[ay,0],":",color=GREY,lw=1.2)
+        arrow2(ax,0,0,p,0,GREEN,4)
+        ax.text(ax_+.05,ay,"a",color=NAVY,fontsize=13); ax.text(Lb+.05,.05,"b",color=RUST,fontsize=13)
+        ax.text(-1.4,2.6,r"投影向量 $\mathrm{proj}_b a=(|a|\cos\theta)\hat b$",color=GREEN,fontsize=11)
+        ax.set_title("投影·a 在 b 上的投影向量",color=NAVY,fontsize=12)
+    save("projection",fig,up,N)
+
+def triple_product():
+    fig=plt.figure(figsize=(5.2,3.6)); ax=fig.add_subplot(111,projection="3d"); N=90
+    a=np.array([2,0,0]); b=np.array([.5,1.8,0]); c=np.array([.4,.5,1.7])
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,1))
+        O=np.zeros(3); pts={(0,0,0):O,(1,0,0):a,(0,1,0):b,(0,0,1):c,(1,1,0):a+b,(1,0,1):a+c,(0,1,1):b+c,(1,1,1):a+b+c}
+        faces=[[(0,0,0),(1,0,0),(1,1,0),(0,1,0)],[(0,0,1),(1,0,1),(1,1,1),(0,1,1)],
+               [(0,0,0),(1,0,0),(1,0,1),(0,0,1)],[(0,1,0),(1,1,0),(1,1,1),(0,1,1)],
+               [(0,0,0),(0,1,0),(0,1,1),(0,0,1)],[(1,0,0),(1,1,0),(1,1,1),(1,0,1)]]
+        ax.add_collection3d(Poly3DCollection([[pts[v] for v in fc] for fc in faces],facecolor=GOLD,alpha=.18,edgecolor=GOLD))
+        ax.quiver(0,0,0,*a,color=NAVY,lw=2,arrow_length_ratio=.12)
+        ax.quiver(0,0,0,*b,color=RUST,lw=2,arrow_length_ratio=.12)
+        ax.quiver(0,0,0,*c,color=GREEN,lw=2,arrow_length_ratio=.12)
+        ax.text(*a,"a",color=NAVY); ax.text(*b,"b",color=RUST); ax.text(*c,"c",color=GREEN)
+        ax.view_init(elev=22,azim=f/N*360)
+        ax.set_title("混合积 = 平行六面体体积 |(a×b)·c|",color=NAVY,fontsize=10.5)
+    save("triple-product",fig,up,N)
+
+def sphere():
+    fig=plt.figure(figsize=(5,3.6)); ax=fig.add_subplot(111,projection="3d"); N=90
+    u=np.linspace(0,2*math.pi,40); v=np.linspace(0,math.pi,20)
+    X=np.outer(np.cos(u),np.sin(v)); Y=np.outer(np.sin(u),np.sin(v)); Z=np.outer(np.ones_like(u),np.cos(v))
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,1))
+        ax.plot_surface(X,Y,Z,color=NAVY,alpha=.35,linewidth=0); ax.set_xlim(-1,1);ax.set_ylim(-1,1);ax.set_zlim(-1,1)
+        ax.view_init(elev=18,azim=f/N*360)
+        ax.set_title(r"球面 $x^2+y^2+z^2=R^2$",color=NAVY,fontsize=11)
+    save("sphere",fig,up,N)
+
+def quadric_surfaces():
+    fig=plt.figure(figsize=(5.2,3.6)); ax=fig.add_subplot(111,projection="3d")
+    names=["椭球面","椭圆抛物面","双曲抛物面(鞍)","圆锥面"]
+    per=24; N=per*len(names); xs=np.linspace(-1.4,1.4,30); X,Y=np.meshgrid(xs,xs)
+    u=np.linspace(0,2*math.pi,30); v=np.linspace(0,math.pi,20)
+    EX=1.4*np.outer(np.cos(u),np.sin(v)); EY=1.4*np.outer(np.sin(u),np.sin(v)); EZ=1.0*np.outer(np.ones_like(u),np.cos(v))
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,.85))
+        idx=(f//per)%len(names); name=names[idx]
+        if idx==0:   ax.plot_surface(EX,EY,EZ,color=NAVY,alpha=.35,linewidth=0)
+        elif idx==1: ax.plot_surface(X,Y,0.5*(X**2+Y**2)-1,color=NAVY,alpha=.35,linewidth=0)
+        elif idx==2: ax.plot_surface(X,Y,0.4*(X**2-Y**2),color=NAVY,alpha=.35,linewidth=0)
+        else:        ax.plot_surface(X,Y,np.sqrt(X**2+Y**2)-1,color=NAVY,alpha=.35,linewidth=0)
+        ax.view_init(elev=20,azim=35+f/N*40)
+        ax.set_title("二次曲面五兄弟: "+name,color=NAVY,fontsize=11)
+    save("quadric-surfaces",fig,up,N)
+
+def cross_section():
+    fig=plt.figure(figsize=(5.2,3.6)); ax=fig.add_subplot(111,projection="3d"); N=100
+    xs=np.linspace(-1.4,1.4,30); X,Y=np.meshgrid(xs,xs); Z=X**2+Y**2
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,.9))
+        ax.plot_surface(X,Y,Z,color=NAVY,alpha=.2,linewidth=0)
+        c=0.15+1.7*(0.5-0.5*math.cos(2*math.pi*f/N))   # 切平面高度
+        if c>0:
+            r=math.sqrt(c); t=np.linspace(0,2*math.pi,60)
+            ax.plot(r*np.cos(t),r*np.sin(t),c+0*t,color=RUST,lw=2.5)  # 截痕圆
+        ax.view_init(elev=24,azim=-50)
+        ax.set_title("截痕法: 平面 z=C 切曲面得截痕",color=NAVY,fontsize=10.5)
+    save("cross-section",fig,up,N)
+
+# --- CH9 ---
+def bivariate_limit():
+    fig,ax=plt.subplots(figsize=(6,3.6)); N=120
+    def up(f):
+        ax.clear(); ax.set_xlim(-1.2,1.2); ax.set_ylim(-1.2,1.4); ax.axis("off"); ax.set_aspect("equal")
+        t=np.linspace(-1.2,1.2,50)
+        for k,col in [(0,GREY),(1,GREY),(3,GREY)]:
+            ax.plot(t,k*t,color=col,lw=.8,alpha=.6)
+        ang=2*math.pi*f/N; k=math.tan(ang) if abs(math.cos(ang))>1e-3 else 50
+        d=1-(f%(N//3))/(N//3)*0.95   # 沿直线趋近原点
+        x=d*math.cos(ang); y=d*math.sin(ang)
+        ax.plot([0,x],[0,y],color=NAVY,lw=1.5)
+        ax.scatter([x],[y],color=RUST,s=45,zorder=5)
+        val=(x*y/(x*x+y*y)) if (x*x+y*y)>1e-6 else 0
+        ax.scatter([0],[0],facecolors="none",edgecolors=NAVY,s=60)
+        ax.text(-1.15,1.25,r"$f=\dfrac{xy}{x^2+y^2}$  沿不同方向 → 不同值",color=NAVY,fontsize=11)
+        ax.text(-1.15,-1.1,"f ≈ %.2f  ⟹ 极限不存在"%val,color=RUST,fontsize=12)
+        ax.set_title("二元极限·路径依赖",color=NAVY,fontsize=12)
+    save("bivariate-limit",fig,up,N)
+
+def level_curves():
+    fig=plt.figure(figsize=(5.4,3.6)); ax=fig.add_subplot(111,projection="3d"); N=90
+    xs=np.linspace(-1.6,1.6,40); X,Y=np.meshgrid(xs,xs); Z=X**2+Y**2
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,.9))
+        ax.plot_surface(X,Y,Z,color=NAVY,alpha=.3,linewidth=0)
+        ax.contour(X,Y,Z,levels=[.3,1,2,3,4],colors=RUST,offset=0,linewidths=1.5)
+        ax.set_zlim(0,5.2); ax.view_init(elev=26,azim=f/N*360)
+        ax.set_title("等高线 = 曲面在地面的投影",color=NAVY,fontsize=11)
+    save("level-curves",fig,up,N)
+
+def tangent_plane():
+    fig=plt.figure(figsize=(5.2,3.6)); ax=fig.add_subplot(111,projection="3d"); N=100
+    xs=np.linspace(-1.5,1.5,30); X,Y=np.meshgrid(xs,xs); fn=lambda x,y:0.45*(x*x-y*y)
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,.8))
+        ax.plot_surface(X,Y,fn(X,Y),color=NAVY,alpha=.25,linewidth=0)
+        x0=1.0*math.cos(2*math.pi*f/N); y0=1.0*math.sin(2*math.pi*f/N)
+        fx=0.9*x0; fy=-0.9*y0; z0=fn(x0,y0); d=0.7
+        px=np.array([x0-d,x0+d,x0+d,x0-d]); py=np.array([y0-d,y0-d,y0+d,y0+d])
+        pz=z0+fx*(px-x0)+fy*(py-y0)
+        ax.add_collection3d(Poly3DCollection([list(zip(px,py,pz))],facecolor=GOLD,alpha=.4,edgecolor=RUST))
+        ax.scatter([x0],[y0],[z0],color=GREEN,s=30)
+        ax.view_init(elev=22,azim=-55)
+        ax.set_title("切平面 (随切点移动)",color=NAVY,fontsize=11)
+    save("tangent-plane",fig,up,N)
+
+def extrema_hessian():
+    fig=plt.figure(figsize=(5.2,3.6)); ax=fig.add_subplot(111,projection="3d")
+    defs=[("极小值 (碗)",lambda X,Y:X**2+Y**2),("极大值 (穹)",lambda X,Y:-(X**2+Y**2)),
+          ("鞍点 (马鞍)",lambda X,Y:X**2-Y**2)]
+    per=28; N=per*len(defs); xs=np.linspace(-1.4,1.4,30); X,Y=np.meshgrid(xs,xs)
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,.8))
+        name,fn=defs[(f//per)%len(defs)]
+        ax.plot_surface(X,Y,fn(X,Y),color=NAVY,alpha=.35,linewidth=0)
+        ax.scatter([0],[0],[0],color=RUST,s=40)
+        ax.view_init(elev=22,azim=35+f/N*30)
+        ax.set_title("Hessian 判别: "+name,color=NAVY,fontsize=11)
+    save("extrema-hessian",fig,up,N)
+
+# --- CH10 ---
+def volume_under_surface():
+    fig=plt.figure(figsize=(5.2,3.6)); ax=fig.add_subplot(111,projection="3d")
+    fn=lambda x,y:1.2+0.5*np.sin(x*1.5)+0.4*y; ns=[3,5,8,12]; N=len(ns)*16
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,.8))
+        n=ns[(f//16)%len(ns)]; step=2.0/n
+        xs=np.linspace(-1,1-step,n)+step/2; ys=np.linspace(-1,1-step,n)+step/2
+        for x in xs:
+            for y in ys:
+                h=fn(x,y); ax.bar3d(x-step/2,y-step/2,0,step*.9,step*.9,h,color=NAVY,alpha=.5,shade=True)
+        gx=np.linspace(-1,1,25); GX,GY=np.meshgrid(gx,gx)
+        ax.plot_surface(GX,GY,fn(GX,GY),color=GOLD,alpha=.25,linewidth=0)
+        ax.view_init(elev=24,azim=-50)
+        ax.set_title("曲顶柱体 = 二重积分 (n=%d)"%n,color=NAVY,fontsize=11)
+    save("volume-under-surface",fig,up,N)
+
+def cylindrical_coords():
+    fig=plt.figure(figsize=(5.2,3.6)); ax=fig.add_subplot(111,projection="3d"); N=100
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,1))
+        t=np.linspace(0,2*math.pi,40)
+        for z in [0,1.6]:
+            ax.plot(np.cos(t),np.sin(t),z+0*t,color=GREY,lw=.8)
+        th=2*math.pi*f/N; dth=math.pi/7; r=.55; dr=.32; z0=.4; dz=.7
+        aa=np.linspace(th,th+dth,8)
+        for zz in [z0,z0+dz]:
+            ax.plot(np.r_[r*np.cos(aa),(r+dr)*np.cos(aa[::-1])],
+                    np.r_[r*np.sin(aa),(r+dr)*np.sin(aa[::-1])],zz,color=RUST,lw=1.6)
+        ax.view_init(elev=20,azim=f/N*360)
+        ax.set_title(r"柱坐标体积元 $dV=r\,dr\,d\theta\,dz$",color=NAVY,fontsize=10.5)
+    save("cylindrical-coords",fig,up,N)
+
+def spherical_coords():
+    fig=plt.figure(figsize=(5.2,3.6)); ax=fig.add_subplot(111,projection="3d"); N=100
+    u=np.linspace(0,2*math.pi,30); v=np.linspace(0,math.pi,20)
+    X=np.outer(np.cos(u),np.sin(v)); Y=np.outer(np.sin(u),np.sin(v)); Z=np.outer(np.ones_like(u),np.cos(v))
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,1))
+        ax.plot_surface(X,Y,Z,color=NAVY,alpha=.12,linewidth=0)
+        th=2*math.pi*f/N; dth=math.pi/7; ph=math.pi/3; dph=math.pi/9; rho=1.0
+        for (p1,p2) in [(ph,ph),(ph+dph,ph+dph)]:
+            tt=np.linspace(th,th+dth,8)
+            ax.plot(rho*np.sin(p1)*np.cos(tt),rho*np.sin(p1)*np.sin(tt),rho*np.cos(p1)*np.ones_like(tt),color=RUST,lw=1.8)
+        ax.set_xlim(-1,1);ax.set_ylim(-1,1);ax.set_zlim(-1,1); ax.view_init(elev=18,azim=f/N*360)
+        ax.set_title(r"球坐标体积元 $dV=\rho^2\sin\varphi\,d\rho\,d\varphi\,d\theta$",color=NAVY,fontsize=10)
+    save("spherical-coords",fig,up,N)
+
+# --- CH11 ---
+def line_integral_scalar():
+    fig=plt.figure(figsize=(5.4,3.6)); ax=fig.add_subplot(111,projection="3d"); N=100
+    t=np.linspace(0,2*math.pi,60); cx,cy=np.cos(t),np.sin(t); fz=1.2+0.6*np.sin(2*t)
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,.7))
+        ax.plot(cx,cy,0*t,color=NAVY,lw=2)                 # 路径
+        m=int(2+(f/N)*(len(t)-2))
+        for i in range(m):                                  # 曲帘
+            ax.plot([cx[i],cx[i]],[cy[i],cy[i]],[0,fz[i]],color=GREEN,alpha=.5,lw=1)
+        ax.plot(cx[:m],cy[:m],fz[:m],color=RUST,lw=2)
+        ax.set_zlim(0,2.2); ax.view_init(elev=22,azim=-60)
+        ax.set_title("第一类曲线积分 = 曲帘面积 ∫f ds",color=NAVY,fontsize=10.5)
+    save("line-integral-scalar",fig,up,N)
+
+def gauss_flux():
+    fig=plt.figure(figsize=(5,3.6)); ax=fig.add_subplot(111,projection="3d"); N=90
+    u=np.linspace(0,2*math.pi,24); v=np.linspace(0,math.pi,12)
+    X=np.outer(np.cos(u),np.sin(v)); Y=np.outer(np.sin(u),np.sin(v)); Z=np.outer(np.ones_like(u),np.cos(v))
+    pts=[]
+    for a in np.linspace(0,2*math.pi,8,endpoint=False):
+        for b in np.linspace(.4,math.pi-.4,4):
+            pts.append((math.sin(b)*math.cos(a),math.sin(b)*math.sin(a),math.cos(b)))
+    pts=np.array(pts)
+    def up(f):
+        ax.clear(); ax.set_axis_off(); ax.set_box_aspect((1,1,1))
+        ax.plot_surface(X,Y,Z,color=NAVY,alpha=.15,linewidth=0)
+        ax.quiver(pts[:,0],pts[:,1],pts[:,2],pts[:,0],pts[:,1],pts[:,2],length=.45,color=RUST,lw=1.3,arrow_length_ratio=.3)
+        ax.set_xlim(-1.3,1.3);ax.set_ylim(-1.3,1.3);ax.set_zlim(-1.3,1.3); ax.view_init(elev=16,azim=f/N*360)
+        ax.set_title("Gauss 散度定理: 向外的总通量",color=NAVY,fontsize=11)
+    save("gauss-flux",fig,up,N)
+
+def curl_paddle():
+    fig,ax=plt.subplots(figsize=(5.6,3.6)); N=100
+    gx,gy=np.meshgrid(np.arange(-2,2.1,1),np.arange(-1.5,1.6,1))
+    def up(f):
+        ax.clear(); ax.set_xlim(-2.6,2.6); ax.set_ylim(-2,2); ax.axis("off"); ax.set_aspect("equal")
+        ax.quiver(gx,gy,-gy,gx,color=GREY,scale=22,width=.004)   # 旋转场
+        cx,cy=0.0,0.0; rot=2*math.pi*f/N                          # 风车随场旋转
+        for k in range(4):
+            a=rot+k*math.pi/2; arrow2(ax,cx,cy,cx+0.7*math.cos(a),cy+0.7*math.sin(a),RUST,2)
+        ax.scatter([cx],[cy],color=NAVY,s=30,zorder=5)
+        ax.text(-2.5,-1.9,"旋度 ≠ 0 → 小风车被场带着转",color=RUST,fontsize=11)
+        ax.set_title("旋度·小风车转动",color=NAVY,fontsize=12)
+    save("curl-paddle",fig,up,N)
+
+# --- CH12 ---
+def p_series():
+    fig,ax=plt.subplots(figsize=(6,3.6)); Nn=40; N=120
+    def up(f):
+        ax.clear(); ax.set_xlim(0,Nn); ax.set_ylim(0,5); ax.axis("off")
+        shown=2+int((f/N)*(Nn-2))
+        ns=np.arange(1,shown+1)
+        h=np.cumsum(1.0/ns); p2=np.cumsum(1.0/ns**2)
+        ax.plot(ns,h,color=RUST,lw=2,label="调和 Σ1/n (发散)")
+        ax.plot(ns,p2,color=GREEN,lw=2,label="Σ1/n² (收敛→π²/6)")
+        ax.axhline(math.pi**2/6,ls="--",color=GREEN,lw=1,alpha=.6)
+        ax.text(.5,4.7,"调和级数 Σ1/n: 一直涨 → 发散",color=RUST,fontsize=11)
+        ax.text(.5,4.2,"Σ1/n²: 趋于 π²/6 → 收敛",color=GREEN,fontsize=11)
+        ax.set_title("参考级数: p>1 收敛, p≤1 发散",color=NAVY,fontsize=12)
+    save("p-series",fig,up,N)
+
+def ratio_test():
+    fig,ax=plt.subplots(figsize=(6,3.6)); Nn=12; N=120
+    def up(f):
+        ax.clear(); ax.set_xlim(0,Nn+1); ax.set_ylim(0,1.15); ax.axis("off")
+        shown=1+int((f/N)*(Nn-1))
+        terms=[2.0**n/math.factorial(n) for n in range(1,Nn+1)]
+        mx=max(terms)
+        for i in range(shown):
+            ax.add_patch(plt.Rectangle((i+.6,0),.8,terms[i]/mx,facecolor=NAVY,alpha=.5,edgecolor=NAVY))
+        if shown>=2:
+            ratio=terms[shown-1]/terms[shown-2]
+            ax.text(.5,1.08,"aₙ₊₁/aₙ = %.3f → 0 < 1, 收敛"%ratio,color=RUST,fontsize=12)
+        ax.set_title("比值判别法  Σ 2ⁿ/n!  (aₙ₊₁/aₙ→0)",color=NAVY,fontsize=12)
+    save("ratio-test",fig,up,N)
+
+def power_series_radius():
+    fig,ax=plt.subplots(figsize=(6,3.6)); degs=[2,4,8,16,32]; N=len(degs)*16
+    xs=np.linspace(-1.6,1.6,400)
+    def up(f):
+        ax.clear(); ax.set_xlim(-1.6,1.6); ax.set_ylim(-1,5); ax.axhline(0,color=GREY,lw=.8); ax.axis("off")
+        ax.axvspan(-1,1,color=GREEN,alpha=.10)            # 收敛域
+        ax.axvline(-1,ls="--",color=GREEN,lw=1); ax.axvline(1,ls="--",color=GREEN,lw=1)
+        m=degs[(f//16)%len(degs)]
+        S=np.zeros_like(xs)
+        for k in range(m+1): S=S+xs**k
+        S=np.clip(S,-1,5)
+        ax.plot(xs,np.clip(1/(1-xs),-1,5),color=NAVY,lw=1.5,alpha=.5)   # 极限 1/(1-x)
+        ax.plot(xs,S,color=RUST,lw=2)
+        ax.text(-1.55,4.6,"Σ xⁿ 部分和 (N=%d); |x|<1 收敛到 1/(1-x)"%m,color=RUST,fontsize=10.5)
+        ax.text(-.55,-.8,"收敛域 |x| < R=1",color=GREEN,fontsize=11)
+        ax.set_title("幂级数收敛域 |x| < R",color=NAVY,fontsize=12)
+    save("power-series-radius",fig,up,N)
+
+NEW_BATCH=[projection,triple_product,sphere,quadric_surfaces,cross_section,
+           bivariate_limit,level_curves,tangent_plane,extrema_hessian,
+           volume_under_surface,cylindrical_coords,spherical_coords,
+           line_integral_scalar,gauss_flux,curl_paddle,
+           p_series,ratio_test,power_series_radius]
+
 if __name__=="__main__":
     # 中文字体: 尝试常见 Windows 字体, 否则标题用拼音回退由 matplotlib 处理
     for fam in ["Microsoft YaHei","SimHei","Noto Sans CJK SC"]:
@@ -255,8 +545,12 @@ if __name__=="__main__":
             matplotlib.rcParams["font.sans-serif"]=[fam]; matplotlib.rcParams["axes.unicode_minus"]=False
             break
         except Exception: pass
-    for fn in [vector_add,dot_product,cross_product,surface_revolution,partial_derivative,
+    import sys
+    only=set(sys.argv[1:])   # 可选: 只渲指定动画名
+    base=[vector_add,dot_product,cross_product,surface_revolution,partial_derivative,
                gradient_descent,directional_derivative,riemann_sum,polar_element,
-               vector_field_flow,partial_sum,taylor_approx,fourier_square]:
+               vector_field_flow,partial_sum,taylor_approx,fourier_square]
+    for fn in base+NEW_BATCH:
+        if only and fn.__name__.replace("_","-") not in only: continue
         fn()
     print("ALL DONE ->", OUT)

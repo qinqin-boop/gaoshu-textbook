@@ -44,7 +44,7 @@
 <body>
 <header>
   <h1>🎬 概念动画库</h1>
-  <p class="tagline">高数下册 · 13 个核心概念动画汇总 · 看一遍就懂的几何直觉</p>
+  <p class="tagline">高数下册 · 31 个核心概念动画汇总 · 看一遍就懂的几何直觉</p>
 </header>
 <main class="gal-main">
 <a class="gal-back" href="./index.html">← 返回目录</a>
@@ -53,7 +53,7 @@
   <a class="gal-tool" href="./geometry-board.html">🎨 交互几何画板</a>
   <a class="gal-tool" href="./formula-cheatsheet.html">📐 公式速查</a>
 </div>
-<p class="gal-intro">下面 13 个动画覆盖高数下五章最该"动起来"的概念。每个动画滚动到屏幕内会自动播放、移出暂停; 点卡片底部链接可跳到原章节看完整讲解。</p>
+<p class="gal-intro">下面 31 个动画覆盖高数下五章最该"动起来"的概念。每个动画滚动到屏幕内会自动播放、移出暂停; 点卡片底部链接可跳到原章节看完整讲解。</p>
 
 <h2 class="gal-chapter">第八章 · 向量代数与空间解析几何</h2>
 <div class="gal-grid">
@@ -61,6 +61,11 @@
   <figure class="gal-card"><video src="./anim/dot-product.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">数量积 · 投影几何意义</div><div class="gc-cap">$\vec a\cdot\vec b=|\vec a||\vec b|\cos\theta$ = ($\vec a$ 在 $\vec b$ 上的投影长) × $|\vec b|$; 钝角时投影为负 → 点乘变负。</div><div class="gc-link"><a href="./chapter08-vectors.html#8-2-1">→ §8.2.1 数量积</a></div></div></figure>
   <figure class="gal-card"><video src="./anim/cross-product.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">向量积 · 右手定则</div><div class="gc-cap">$\vec a\times\vec b$ 垂直于 $\vec a,\vec b$ 所在平面, 模 = 平行四边形面积 $|\vec a||\vec b|\sin\theta$, 方向由右手定则定。</div><div class="gc-link"><a href="./chapter08-vectors.html#8-2-2">→ §8.2.2 向量积</a></div></div></figure>
   <figure class="gal-card"><video src="./anim/surface-revolution.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">旋转曲面的生成</div><div class="gc-cap">一条母线绕轴旋转一周扫出旋转曲面; 每个点的轨迹是一个垂直于轴的圆 (纬圆)。</div><div class="gc-link"><a href="./chapter08-vectors.html#8-3-2">→ §8.3.2 旋转曲面</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/projection.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">投影 · 投影向量</div><div class="gc-cap">$\vec a$ 在 $\vec b$ 上的投影向量 $\mathrm{proj}_{\vec b}\vec a=(|\vec a|\cos\theta)\,\hat b$。</div><div class="gc-link"><a href="./chapter08-vectors.html#8-1-5">→ §8.1.5 投影</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/triple-product.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">混合积 · 平行六面体</div><div class="gc-cap">$(\vec a\times\vec b)\cdot\vec c$ 的绝对值 = 三向量张成的平行六面体体积。</div><div class="gc-link"><a href="./chapter08-vectors.html#8-2-3">→ §8.2.3 混合积</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/sphere.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">球面</div><div class="gc-cap">球面 $x^2+y^2+z^2=R^2$: 到球心距离为常数 $R$ 的点集。</div><div class="gc-link"><a href="./chapter08-vectors.html#8-3-1">→ §8.3.1 球面方程</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/quadric-surfaces.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">二次曲面五兄弟</div><div class="gc-cap">椭球面 / 椭圆抛物面 / 双曲抛物面(鞍) / 圆锥面 等标准型轮播。</div><div class="gc-link"><a href="./chapter08-vectors.html#8-3-4">→ §8.3.4 二次曲面</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/cross-section.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">截痕法画曲面</div><div class="gc-cap">用一族平面 $z=C$ 切曲面, 截痕曲线帮你还原整张曲面的形状。</div><div class="gc-link"><a href="./chapter08-vectors.html#8-3-5">→ §8.3.5 截痕法</a></div></div></figure>
 </div>
 
 <h2 class="gal-chapter">第九章 · 多元函数微分法</h2>
@@ -68,17 +73,27 @@
   <figure class="gal-card"><video src="./anim/partial-derivative.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">偏导数 · 切片求斜率</div><div class="gc-cap">固定 $y=y_0$ 用平面切曲面得切片曲线 (红), 它在某点的切线斜率 (绿) 就是偏导数 $\partial z/\partial x$。</div><div class="gc-link"><a href="./chapter09-multivariate.html#9-2-4">→ §9.2.4 偏导几何意义</a></div></div></figure>
   <figure class="gal-card"><video src="./anim/directional-derivative.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">方向导数 · 梯度方向最陡</div><div class="gc-cap">方向导数 $D_{\vec u}f=\nabla f\cdot\vec u$; $\vec u$ 与梯度 $\nabla f$ 同向时最大, 垂直时为 0。</div><div class="gc-link"><a href="./chapter09-multivariate.html#9-6-1">→ §9.6.1 方向导数</a></div></div></figure>
   <figure class="gal-card"><video src="./anim/gradient-descent.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">梯度下降 · 滚向谷底</div><div class="gc-cap">沿负梯度 $-\nabla f$ 方向每步下降, 逐步滚到最低点 —— SGD 等优化算法的几何原型。</div><div class="gc-link"><a href="./chapter09-multivariate.html#9-6-2">→ §9.6.2 梯度</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/bivariate-limit.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">二元极限 · 路径依赖</div><div class="gc-cap">$f=\dfrac{xy}{x^2+y^2}$ 沿不同方向趋于原点得不同值, 极限不存在。</div><div class="gc-link"><a href="./chapter09-multivariate.html#9-1-2">→ §9.1.2 二元极限</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/level-curves.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">等高线与曲面</div><div class="gc-cap">等高线是曲面被水平面切出的曲线在地面的投影; 线越密越陡。</div><div class="gc-link"><a href="./chapter09-multivariate.html#9-1-4">→ §9.1.4 等高线</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/tangent-plane.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">切平面</div><div class="gc-cap">曲面在一点的切平面 $z=z_0+f_x(x-x_0)+f_y(y-y_0)$, 随切点移动而倾斜。</div><div class="gc-link"><a href="./chapter09-multivariate.html#9-7-3-z-f-x-y">→ §9.7.3 切平面</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/extrema-hessian.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">极值与鞍点 (Hessian)</div><div class="gc-cap">Hessian 判别: 碗形→极小, 穹形→极大, 马鞍形→鞍点。</div><div class="gc-link"><a href="./chapter09-multivariate.html#9-8-3-hessian">→ §9.8.3 Hessian 判别</a></div></div></figure>
 </div>
 
 <h2 class="gal-chapter">第十章 · 重积分</h2>
 <div class="gal-grid">
   <figure class="gal-card"><video src="./anim/riemann-sum.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">积分 = 黎曼和的极限</div><div class="gc-cap">小矩形求和逼近曲边面积, 分得越细越准; 二重积分把这一思想推广到平面区域上的小块求和。</div><div class="gc-link"><a href="./chapter10-multiple-integrals.html#10-1-1">→ §10.1.1 划分与黎曼和</a></div></div></figure>
   <figure class="gal-card"><video src="./anim/polar-element.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">极坐标面积元 dA = r·dr·dθ</div><div class="gc-cap">极坐标下小块是扇环, 面积 $dA=r\,dr\,d\theta$; 离原点越远块越大 —— 这就是雅可比因子 $r$。</div><div class="gc-link"><a href="./chapter10-multiple-integrals.html#10-2-3">→ §10.2.3 极坐标变换</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/volume-under-surface.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">曲顶柱体 = 二重积分</div><div class="gc-cap">$\iint_D f\,dA$ = 以 $D$ 为底、$z=f(x,y)$ 为顶的曲顶柱体体积。</div><div class="gc-link"><a href="./chapter10-multiple-integrals.html#10-1-2">→ §10.1.2 几何意义</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/cylindrical-coords.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">柱坐标体积元</div><div class="gc-cap">$dV=r\,dr\,d\theta\,dz$: 圆柱面+半平面+水平面切出的小块。</div><div class="gc-link"><a href="./chapter10-multiple-integrals.html#10-3-2">→ §10.3.2 柱坐标</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/spherical-coords.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">球坐标体积元</div><div class="gc-cap">$dV=\rho^2\sin\varphi\,d\rho\,d\varphi\,d\theta$; $\rho^2\sin\varphi$ 即雅可比因子。</div><div class="gc-link"><a href="./chapter10-multiple-integrals.html#10-3-3">→ §10.3.3 球坐标</a></div></div></figure>
 </div>
 
 <h2 class="gal-chapter">第十一章 · 曲线积分与曲面积分</h2>
 <div class="gal-grid">
   <figure class="gal-card"><video src="./anim/vector-field-flow.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">向量场 · 沿路径做功</div><div class="gc-cap">质点沿曲线移动, 每步累加 $\vec F\cdot d\vec r$ (力在位移上的投影), 总和即曲线积分 $\oint\vec F\cdot d\vec r$。</div><div class="gc-link"><a href="./chapter11-line-surface-integrals.html#11-2-1">→ §11.2.1 第二类曲线积分</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/line-integral-scalar.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">第一类曲线积分 (曲帘)</div><div class="gc-cap">$\int_L f\,ds$ = 以曲线 $L$ 为底、$f$ 为高的'曲帘'面积。</div><div class="gc-link"><a href="./chapter11-line-surface-integrals.html#11-1-1">→ §11.1.1 第一类曲线积分</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/gauss-flux.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">Gauss 散度定理 · 通量</div><div class="gc-cap">穿出闭曲面的总通量 $\oiint\vec F\cdot d\vec S$ = 内部散度的体积分。</div><div class="gc-link"><a href="./chapter11-line-surface-integrals.html#11-5-4-gauss">→ §11.5.4 Gauss 公式</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/curl-paddle.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">旋度 · 小风车</div><div class="gc-cap">小风车放进向量场, 旋度≠0 时被场带着转; 旋度量化局部旋转。</div><div class="gc-link"><a href="./chapter11-line-surface-integrals.html#11-6-1">→ §11.6.1 旋度</a></div></div></figure>
 </div>
 
 <h2 class="gal-chapter">第十二章 · 无穷级数</h2>
@@ -86,6 +101,9 @@
   <figure class="gal-card"><video src="./anim/partial-sum.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">部分和收敛</div><div class="gc-cap">几何级数 $\sum 1/2^n=1$; 部分和 $S_n$ 随 $n$ 增大越来越接近极限线, 这就是级数收敛。</div><div class="gc-link"><a href="./chapter12-infinite-series.html#12-1-1">→ §12.1.1 级数定义</a></div></div></figure>
   <figure class="gal-card"><video src="./anim/taylor-approx.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">Taylor 多项式逐阶逼近</div><div class="gc-cap">$\sin x$ 的 Taylor 多项式 (红) 随阶数升高, 在越来越宽的区间上贴合原函数 (蓝)。</div><div class="gc-link"><a href="./chapter12-infinite-series.html#12-5-2-taylor">→ §12.5.2 Taylor 级数</a></div></div></figure>
   <figure class="gal-card"><video src="./anim/fourier-square.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">Fourier 级数逼近方波</div><div class="gc-cap">叠加越来越多正弦谐波逼近方波; 谐波越多越像, 跳变处的小过冲即 Gibbs 现象。</div><div class="gc-link"><a href="./chapter12-infinite-series.html#12-6-3-dirichlet">→ §12.6.3 Dirichlet 定理</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/p-series.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">p-级数判敛</div><div class="gc-cap">$p$-级数 $\sum 1/n^p$: $p>1$ 收敛, $p\le 1$ (含调和级数) 发散。</div><div class="gc-link"><a href="./chapter12-infinite-series.html#12-1-3">→ §12.1.3 参考级数</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/ratio-test.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">比值判别法</div><div class="gc-cap">若 $\lim a_{n+1}/a_n=L<1$ 收敛; $\sum 2^n/n!$ 比值 $\to0$ 收敛。</div><div class="gc-link"><a href="./chapter12-infinite-series.html#12-2-2-d-alembert">→ §12.2.2 比值判别</a></div></div></figure>
+  <figure class="gal-card"><video src="./anim/power-series-radius.mp4" loop muted playsinline preload="metadata"></video><div class="gc-body"><div class="gc-title">幂级数收敛域</div><div class="gc-cap">$\sum x^n$ 在 $|x|<R$ 收敛 ($R=1$, 和为 $1/(1-x)$), $|x|>R$ 发散。</div><div class="gc-link"><a href="./chapter12-infinite-series.html#12-4-1">→ §12.4.1 收敛半径</a></div></div></figure>
 </div>
 
 </main>

@@ -171,6 +171,7 @@ function toggleAllAnswers() {
 一元定积分 $\int_a^b f(x)\,dx$ 是在 $x$ 轴一段区间上对 $f$ 求积分。空间或平面里弯曲的"曲线" $L$ 不是直线段,但它仍是「一维」对象——所以理论上也可以在 $L$ 上"对 $f$ 求积分",只需把直线段上的 $dx$ 换成沿曲线的<strong>弧长微元</strong> $ds$。这就是<strong>第一类曲线积分</strong>(line integral with respect to arc length)。本节给出定义、参数化计算公式,以及与质量 / 形心 / 转动惯量的物理对应。
 </p>
 <h3 id="11-1-1">11.1.1 定义与几何意义</h3>
+<figure class="concept-video"><video src="./anim/line-integral-scalar.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>第一类曲线积分 $\int_L f\,ds$ = 以曲线 $L$ 为底、$f$ 为高的'曲帘'面积。</figcaption></figure>
 <div class="box-def">
 <p>
 设 $L$ 是 $\mathbb{R}^3$(或 $\mathbb{R}^2$)中分段光滑曲线,$f(x,y,z)$ 在 $L$ 上有定义。把 $L$ 分成 $n$ 段小弧 $\Delta L_i$,弧长 $\Delta s_i$,在 $\Delta L_i$ 上取点 $(\xi_i,\eta_i,\zeta_i)$,作和
@@ -958,6 +959,7 @@ $$\iint_\Sigma 1\,dS=4\pi.$$
 </details>
 </div>
 <h3 id="11-5-4-gauss">11.5.4 Gauss 公式(散度定理)</h3>
+<figure class="concept-video"><video src="./anim/gauss-flux.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>Gauss 散度定理: 穿出闭曲面的总通量 $\oiint \vec F\cdot d\vec S$ = 内部散度的体积分。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <defs>
@@ -1197,6 +1199,7 @@ $\omega$ 是 $k$-形式, $d\omega$ 是它的外微分, 定理把"边界上的 $k
 平面上<strong>边界环路</strong> $=$ <strong>内部旋度密度积分</strong>(Green);三维空间<strong>闭曲面通量</strong> $=$ <strong>内部散度积分</strong>(Gauss)。还差一种联系——<strong>空间曲线环流</strong> $=$ 张在曲线上的<strong>任意曲面的旋度通量</strong>——这就是 Stokes 公式,Green 在三维曲面上的完整推广。它统一了所有"边界 $\leftrightarrow$ 内部"的对应,也是 19 世纪经典电磁学(法拉第电磁感应、Ampère 环路定律)与现代微分几何(de Rham 上同调、规范场论)共同的代数根。
 </p>
 <h3 id="11-6-1">11.6.1 旋度与方向匹配</h3>
+<figure class="concept-video"><video src="./anim/curl-paddle.mp4" controls autoplay loop muted playsinline preload="metadata"></video><figcaption>把小风车放进向量场, 旋度 $\neq 0$ 时它会被场带着转; 旋度量化场的局部旋转。</figcaption></figure>
 <figure>
 <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
   <defs>
